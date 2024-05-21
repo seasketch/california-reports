@@ -1,7 +1,7 @@
 [{
-  "objectiveId": "eez",
-  "shortDesc": "EEZ Objective",
-  "target": 0.2,
+  "objectiveId": "30x30",
+  "shortDesc": "30x30 Objective",
+  "target": 0.3,
   "countsToward": {
       "Fully Protected Area": "yes"
   }

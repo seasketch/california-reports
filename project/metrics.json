@@ -1,13 +1,52 @@
-[{
-  "metricId": "boundaryAreaOverlap",
-  "type": "areaOverlap",
-  "classes": [
+[
+  {
+    "metricId": "boundaryAreaOverlap",
+    "type": "areaOverlap",
+    "classes": [
       {
-          "classId": "eez",
-          "display": "EEZ",
-          "datasourceId": "global-eez-mr-v12",
-          "objectiveId": "eez",
-          "layerId": ""
+        "classId": "state_waters",
+        "display": "State Waters",
+        "datasourceId": "mlpa_regions",
+        "objectiveId": "30x30",
+        "layerId": "BS_cz66RE"
       }
-  ]
-}]
+    ]
+  },
+  {
+    "metricId": "regions",
+    "type": "areaOverlap",
+    "layerId": "BS_cz66RE",
+    "classes": [
+      {
+        "classId": "North Coast",
+        "classKey": "studyregio",
+        "display": "North Coast",
+        "datasourceId": "mlpa_regions"
+      },
+      {
+        "classId": "North Central Coast",
+        "classKey": "studyregio",
+        "display": "North Central Coast",
+        "datasourceId": "mlpa_regions"
+      },
+      {
+        "classId": "Central Coast",
+        "classKey": "studyregio",
+        "display": "Central Coast",
+        "datasourceId": "mlpa_regions"
+      },
+      {
+        "classId": "San Francisco Bay",
+        "classKey": "studyregio",
+        "display": "San Francisco Bay",
+        "datasourceId": "mlpa_regions"
+      },
+      {
+        "classId": "South Coast",
+        "classKey": "studyregio",
+        "display": "South Coast",
+        "datasourceId": "mlpa_regions"
+      }
+    ]
+  }
+]

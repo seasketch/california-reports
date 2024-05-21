@@ -1,1 +1,98 @@
-[]
+[
+  {
+    "geographyId": "eez",
+    "metricId": "area",
+    "classId": "mlpa_regions-Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2928396354.848464
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "area",
+    "classId": "mlpa_regions-North Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1706463459.923136
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "area",
+    "classId": "mlpa_regions-North Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2846875200.0129414
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "area",
+    "classId": "mlpa_regions-San Francisco Bay",
+    "sketchId": null,
+    "groupId": null,
+    "value": 977697220.4870615
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "area",
+    "classId": "mlpa_regions-South Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6005689817.460702
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "area",
+    "classId": "mlpa_regions-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 14465122052.732304
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "count",
+    "classId": "mlpa_regions-Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "count",
+    "classId": "mlpa_regions-North Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "count",
+    "classId": "mlpa_regions-North Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "count",
+    "classId": "mlpa_regions-San Francisco Bay",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "count",
+    "classId": "mlpa_regions-South Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 7
+  },
+  {
+    "geographyId": "eez",
+    "metricId": "count",
+    "classId": "mlpa_regions-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 12
+  }
+]

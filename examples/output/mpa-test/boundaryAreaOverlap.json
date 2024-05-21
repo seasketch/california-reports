@@ -1,0 +1,63 @@
+{
+  "metrics": [
+    {
+      "geographyId": "eez",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29399",
+      "groupId": null,
+      "value": 84385086.133525,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 29399,
+    "bbox": [
+      -122.03556,
+      36.20003,
+      -121.76753,
+      36.305798
+    ],
+    "type": "Feature",
+    "properties": {
+      "4768": "mpa-test",
+      "4769": "SMCANT",
+      "id": "29399",
+      "name": "mpa-test",
+      "postId": null,
+      "userId": "531",
+      "comments": null,
+      "userSlug": "Abby",
+      "createdAt": "2024-05-21T22:10:27.45032+00:00",
+      "updatedAt": "2024-05-21T22:59:00.255995+00:00",
+      "designation": "SMCANT",
+      "collectionId": null,
+      "isCollection": false,
+      "sharedInForum": false,
+      "sketchClassId": "492",
+      "userAttributes": [
+        {
+          "label": "Designation",
+          "value": "SMCANT",
+          "exportId": "designation",
+          "fieldType": "ComboBox",
+          "valueLabel": "State Marine Conervation Area (No-Take)",
+          "formElementId": 4769,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Comments",
+          "value": null,
+          "exportId": "comments",
+          "fieldType": "TextArea",
+          "valueLabel": null,
+          "formElementId": 4770,
+          "alternateLanguages": {}
+        }
+      ]
+    },
+    "geometry": null
+  }
+}

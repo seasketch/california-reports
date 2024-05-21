@@ -112,13 +112,10 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
               }
             >
               <p>
-                {planningUnitName}{" "}
                 <Trans i18nKey="SizeCard - introduction">
-                  national waters extend from the shoreline out to 200 nautical
-                  miles, known as the Exclusive Economic Zone (EEZ). This report
-                  summarizes offshore plan overlap with the EEZ and other
-                  boundaries within it, measuring progress towards achieving %
-                  targets for each boundary.
+                  Californian state waters extend from the shoreline out to 12
+                  nautical miles. This report summarizes plan overlap with state
+                  waters and measures progress towards 30x30 marine protection.
                 </Trans>
               </p>
               {genSingleSizeTable(data, precalcMetrics, metricGroup, t)}
