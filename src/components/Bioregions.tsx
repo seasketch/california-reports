@@ -26,12 +26,12 @@ import project from "../../project/projectClient.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * Regions component
+ * Bioregions component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const Regions: React.FunctionComponent<GeogProp> = (props) => {
+export const Bioregions: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const curGeography = project.getGeographyById(props.geographyId, {
@@ -39,7 +39,7 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
   });
 
   // Metrics
-  const metricGroup = project.getMetricGroup("regions", t);
+  const metricGroup = project.getMetricGroup("bioregions", t);
   const precalcMetrics = project.getPrecalcMetrics(
     metricGroup,
     "area",
@@ -47,7 +47,7 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
   );
 
   // Labels
-  const titleLabel = t("Study Regions");
+  const titleLabel = t("Bioregions");
   const countLabel = t("# MPAs");
   const areaLabel = t("Area");
   const percWithinLabel = t("% Area Within Plan");
@@ -56,7 +56,7 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
   return (
     <ResultsCard
       title={titleLabel}
-      functionName="regions"
+      functionName="bioregions"
       extraParams={{ geographyIds: [curGeography.geographyId] }}
     >
       {(data: ReportResult) => {
@@ -82,9 +82,9 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
         return (
           <ReportError>
             <p>
-              <Trans i18nKey="Regions 1">
-                This report summarizes this plan's overlap with the study
-                regions in this planning process.
+              <Trans i18nKey="Bioregions 1">
+                This report summarizes this plan's overlap with California's
+                bioregions.
               </Trans>
             </p>
 
@@ -152,7 +152,7 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="Regions - learn more">
+              <Trans i18nKey="Bioregions - learn more">
                 <p>ℹ️ Overview:</p>
                 <p>🎯 Planning Objective:</p>
                 <p>🗺️ Source Data:</p>

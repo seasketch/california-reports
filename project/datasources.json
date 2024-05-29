@@ -2,7 +2,9 @@
   {
     "datasourceId": "global-clipping-osm-land",
     "geo_type": "vector",
-    "formats": ["subdivided"],
+    "formats": [
+      "subdivided"
+    ],
     "precalc": false,
     "idProperty": "gid",
     "nameProperty": "gid",
@@ -12,7 +14,9 @@
   {
     "datasourceId": "global-clipping-eez-land-union",
     "geo_type": "vector",
-    "formats": ["subdivided"],
+    "formats": [
+      "subdivided"
+    ],
     "precalc": false,
     "idProperty": "UNION",
     "nameProperty": "UNION",
@@ -22,7 +26,10 @@
   {
     "datasourceId": "global-eez-mr-v12",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": true,
     "metadata": {
       "name": "World EEZ v11",
@@ -36,10 +43,14 @@
     "nameProperty": "GEONAME",
     "propertyFilter": {
       "property": "GEONAME",
-      "values": ["United States Exclusive Economic Zone"]
+      "values": [
+        "United States Exclusive Economic Zone"
+      ]
     },
     "bboxFilter": [
-      -129.23482665059146, 23.833333333167218, -65.69971857933155,
+      -129.23482665059146,
+      23.833333333167218,
+      -65.69971857933155,
       49.00226354612636
     ],
     "classKeys": [],
@@ -48,7 +59,10 @@
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": ["json", "fgb"],
+    "formats": [
+      "json",
+      "fgb"
+    ],
     "precalc": false,
     "metadata": {
       "name": "World Outline Polygon",
@@ -65,7 +79,9 @@
   {
     "datasourceId": "bo-present-surface-ph",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "metadata": {
       "name": "BioOracle Present Day Surface pH",
@@ -77,7 +93,7 @@
     },
     "measurementType": "quantitative",
     "band": 1,
-    "noDataValue": -3.3999999521443642e38,
+    "noDataValue": -3.3999999521443642e+38,
     "created": "2023-12-11T11:55:31.053Z",
     "lastUpdated": "2023-12-11T12:52:22.966Z",
     "src": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-ph.tif"
@@ -85,7 +101,9 @@
   {
     "datasourceId": "bo-present-surface-temp-max",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "metadata": {
       "name": "BioOracle Present Day Surface Temperature Maximum",
@@ -97,13 +115,15 @@
     },
     "measurementType": "quantitative",
     "band": 1,
-    "noDataValue": -1.7e308,
+    "noDataValue": -1.7e+308,
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-temp-max.tif"
   },
   {
     "datasourceId": "bo-present-surface-temp-min",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "metadata": {
       "name": "BioOracle Present Day Surface Temperature Minimum",
@@ -115,13 +135,15 @@
     },
     "measurementType": "quantitative",
     "band": 1,
-    "noDataValue": -1.7e308,
+    "noDataValue": -1.7e+308,
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-temp-min.tif"
   },
   {
     "datasourceId": "meow-ecos",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "metadata": {
       "name": "Marine Ecoregions of the World",
@@ -138,15 +160,40 @@
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/meow-ecos.fgb"
   },
   {
-    "src": "data/src/California MPAs 2024/Analytics/draft_report_data/MLPA_Study_Regions.shp",
-    "layerName": "MLPA_Study_Regions",
+    "datasourceId": "study_regions",
     "geo_type": "vector",
-    "datasourceId": "mlpa_regions",
-    "formats": ["fgb"],
-    "classKeys": ["studyregio"],
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "MAN_CA_MLPA_StudyRegionBoundaries",
+    "classKeys": [
+      "NAME"
+    ],
     "created": "2024-05-21T22:23:21.520Z",
-    "lastUpdated": "2024-05-21T22:23:21.520Z",
-    "propertiesToKeep": ["studyregio"],
+    "lastUpdated": "2024-05-28T17:29:25.922Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/MAN_CA_MLPA_StudyRegionBoundaries.shp",
+    "propertiesToKeep": [
+      "NAME"
+    ],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/MAN_CA_MPA_BioRegions.shp",
+    "layerName": "MAN_CA_MPA_BioRegions",
+    "geo_type": "vector",
+    "datasourceId": "bioregions",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [
+      "NAME"
+    ],
+    "created": "2024-05-28T18:42:44.795Z",
+    "lastUpdated": "2024-05-28T18:42:44.795Z",
+    "propertiesToKeep": [
+      "NAME"
+    ],
     "explodeMulti": true,
     "precalc": true
   }

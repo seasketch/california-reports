@@ -8,7 +8,7 @@ import { genClipLoader } from "@seasketch/geoprocessing/dataproviders";
 
 const clipLoader = genClipLoader(project, [
   {
-    datasourceId: "mlpa_regions",
+    datasourceId: "study_regions",
     operation: "intersection",
     options: {},
   },

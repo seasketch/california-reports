@@ -10,6 +10,8 @@ import {
   sortMetricsDisplayOrder,
   MetricGroup,
   GeogProp,
+  squareMeterToMile,
+  Metric,
 } from "@seasketch/geoprocessing/client-core";
 import {
   ClassTable,
@@ -22,10 +24,6 @@ import {
   ToolbarCard,
   DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
-import {
-  Metric,
-  squareMeterToKilometer,
-} from "@seasketch/geoprocessing/client-core";
 import { styled } from "styled-components";
 import project from "../../project/projectClient.js";
 import Translator from "../components/TranslatorAsync.js";
@@ -167,7 +165,7 @@ const genSingleSizeTable = (
   const areaWithinLabel = t("Area Within Plan");
   const areaPercWithinLabel = t("% Within Plan");
   const mapLabel = t("Map");
-  const sqKmLabel = t("km²");
+  const sqKmLabel = t("mi²");
 
   const classesById = keyBy(mg.classes, (c) => c.classId);
   let singleMetrics = data.metrics.filter(
@@ -204,7 +202,7 @@ const genSingleSizeTable = (
             valueFormatter: (val: string | number) =>
               Number.format(
                 Math.round(
-                  squareMeterToKilometer(
+                  squareMeterToMile(
                     typeof val === "string" ? parseInt(val) : val
                   )
                 )
@@ -297,9 +295,9 @@ const genNetworkSizeTable = (
                   mg.metricId
                 ][0].value;
               return (
-                Number.format(Math.round(squareMeterToKilometer(value))) +
+                Number.format(Math.round(squareMeterToMile(value))) +
                 " " +
-                t("km²")
+                t("mi²")
               );
             },
           },

@@ -6,46 +6,71 @@
       {
         "classId": "state_waters",
         "display": "State Waters",
-        "datasourceId": "mlpa_regions",
+        "datasourceId": "study_regions",
         "objectiveId": "30x30",
-        "layerId": "BS_cz66RE"
+        "layerId": "Io5IzPfsL"
       }
     ]
   },
   {
     "metricId": "regions",
     "type": "areaOverlap",
-    "layerId": "BS_cz66RE",
+    "layerId": "Io5IzPfsL",
     "classes": [
       {
         "classId": "North Coast",
-        "classKey": "studyregio",
+        "classKey": "NAME",
         "display": "North Coast",
-        "datasourceId": "mlpa_regions"
+        "datasourceId": "study_regions"
       },
       {
         "classId": "North Central Coast",
-        "classKey": "studyregio",
+        "classKey": "NAME",
         "display": "North Central Coast",
-        "datasourceId": "mlpa_regions"
+        "datasourceId": "study_regions"
       },
       {
         "classId": "Central Coast",
-        "classKey": "studyregio",
+        "classKey": "NAME",
         "display": "Central Coast",
-        "datasourceId": "mlpa_regions"
-      },
-      {
-        "classId": "San Francisco Bay",
-        "classKey": "studyregio",
-        "display": "San Francisco Bay",
-        "datasourceId": "mlpa_regions"
+        "datasourceId": "study_regions"
       },
       {
         "classId": "South Coast",
-        "classKey": "studyregio",
+        "classKey": "NAME",
         "display": "South Coast",
-        "datasourceId": "mlpa_regions"
+        "datasourceId": "study_regions"
+      },
+      {
+        "classId": "San Francisco Bay",
+        "classKey": "NAME",
+        "display": "San Francisco Bay",
+        "datasourceId": "study_regions"
+      }
+    ]
+  },
+  {
+    "metricId": "bioregions",
+    "type": "areaOverlap",
+    "layerId": "TAckL4LGM",
+    "classes": [
+      {
+        "classId": "North Coast",
+        "classKey": "NAME",
+        "display": "North Coast",
+        "datasourceId": "bioregions"
+      },
+      {
+        "classId": "Central Coast",
+        "classKey": "NAME",
+        "display": "Central Coast",
+        "datasourceId": "bioregions"
+      },
+      {
+        "classId": "South Coast",
+        "classKey": "NAME",
+        "display": "South Coast",
+        "datasourceId": "bioregions"
       }
     ]
   }

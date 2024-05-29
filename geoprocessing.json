@@ -21,6 +21,7 @@
   ],
   "geoprocessingFunctions": [
     "src/functions/boundaryAreaOverlap.ts",
-    "src/functions/regions.ts"
+    "src/functions/regions.ts",
+    "src/functions/bioregions.ts"
   ]
 }
