@@ -57,26 +57,6 @@
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/global-eez-mr-v12.fgb"
   },
   {
-    "datasourceId": "world",
-    "geo_type": "vector",
-    "formats": [
-      "json",
-      "fgb"
-    ],
-    "precalc": false,
-    "metadata": {
-      "name": "World Outline Polygon",
-      "description": "World polygon for default project geography in seasketch geoprocessing proejcts",
-      "version": "1.0",
-      "publisher": "SeaSketch",
-      "publishDate": "20231018",
-      "publishLink": ""
-    },
-    "layerName": "world",
-    "classKeys": [],
-    "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/world.fgb"
-  },
-  {
     "datasourceId": "bo-present-surface-ph",
     "geo_type": "raster",
     "formats": [
@@ -179,22 +159,37 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/MAN_CA_MPA_BioRegions.shp",
-    "layerName": "MAN_CA_MPA_BioRegions",
-    "geo_type": "vector",
     "datasourceId": "bioregions",
+    "geo_type": "vector",
     "formats": [
       "fgb"
     ],
+    "precalc": true,
+    "layerName": "MAN_CA_MPA_BioRegions",
     "classKeys": [
       "NAME"
     ],
     "created": "2024-05-28T18:42:44.795Z",
     "lastUpdated": "2024-05-28T18:42:44.795Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/MAN_CA_MPA_BioRegions.shp",
     "propertiesToKeep": [
       "NAME"
     ],
-    "explodeMulti": true,
-    "precalc": true
+    "explodeMulti": true
+  },
+  {
+    "src": "data/bin/world.json",
+    "layerName": "world",
+    "geo_type": "vector",
+    "datasourceId": "world",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2024-05-31T20:58:18.854Z",
+    "lastUpdated": "2024-05-31T20:58:18.854Z",
+    "propertiesToKeep": [],
+    "explodeMulti": false,
+    "precalc": false
   }
 ]

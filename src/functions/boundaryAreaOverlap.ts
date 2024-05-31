@@ -74,28 +74,29 @@ export async function boundaryAreaOverlap(
     };
   }, {});
 
-  const metrics: Metric[] = ( // calculate area overlap metrics for each class
-    await Promise.all(
-      metricGroup.classes.map(async (curClass) => {
-        const overlapResult = await overlapFeatures(
-          metricGroup.metricId,
-          polysByBoundary[curClass.classId],
-          clippedSketch
-        );
-        return overlapResult.map(
-          (metric): Metric => ({
-            ...metric,
-            classId: curClass.classId,
-            geographyId: curGeography.geographyId,
-          })
-        );
-      })
-    )
-  ).reduce(
-    // merge
-    (metricsSoFar, curClassMetrics) => [...metricsSoFar, ...curClassMetrics],
-    []
-  );
+  const metrics: Metric[] = // calculate area overlap metrics for each class
+    (
+      await Promise.all(
+        metricGroup.classes.map(async (curClass) => {
+          const overlapResult = await overlapFeatures(
+            metricGroup.metricId,
+            polysByBoundary[curClass.classId],
+            clippedSketch
+          );
+          return overlapResult.map(
+            (metric): Metric => ({
+              ...metric,
+              classId: curClass.classId,
+              geographyId: curGeography.geographyId,
+            })
+          );
+        })
+      )
+    ).reduce(
+      // merge
+      (metricsSoFar, curClassMetrics) => [...metricsSoFar, ...curClassMetrics],
+      []
+    );
 
   return {
     metrics: sortMetrics(rekeyMetrics(metrics)),

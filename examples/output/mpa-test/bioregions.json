@@ -1,18 +1,18 @@
 {
   "metrics": [
     {
-      "geographyId": "eez",
+      "geographyId": "world",
       "metricId": "bioregions",
       "classId": "Central Coast",
       "sketchId": "29399",
       "groupId": null,
-      "value": 84385086.133525,
+      "value": 85334595.21133,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "eez",
+      "geographyId": "world",
       "metricId": "bioregions",
       "classId": "North Coast",
       "sketchId": "29399",
@@ -23,7 +23,7 @@
       }
     },
     {
-      "geographyId": "eez",
+      "geographyId": "world",
       "metricId": "bioregions",
       "classId": "South Coast",
       "sketchId": "29399",
