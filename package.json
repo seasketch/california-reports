@@ -34,11 +34,10 @@
     "build:client": "geoprocessing build:client",
     "build:lambda": "geoprocessing build:lambda",
     "storybook": "PROJECT_PATH=$(pwd) npx tsx .storybook/genReportStories.ts && storybook dev -p 6006",
-    "storybook:install": "npx tsx scripts/translationInstall.ts",
+    "storybook:install": "npx tsx scripts/storybookInstall.ts",
     "url": "geoprocessing url",
     "clear-results": "geoprocessing clear-results",
-    "clear-all-results": "geoprocessing clear-all-results",
-    "prepare": "npm run translation:install"
+    "clear-all-results": "geoprocessing clear-all-results"
   },
   "keywords": [
     "@seasketch/geoprocessing"
@@ -51,12 +50,13 @@
     "@turf/helpers": "7.0.0-alpha.113",
     "@turf/simplify": "7.0.0-alpha.113",
     "geojson-antimeridian-cut": "^0.1.0",
-    "react-i18next": "^12.2.0",
+    "react-i18next": "^14.1.1",
     "@turf/combine": "7.0.0-alpha.113",
     "@turf/flatten": "7.0.0-alpha.113",
     "@turf/invariant": "7.0.0-alpha.113",
     "@turf/kinks": "7.0.0-alpha.113",
     "geoblaze": "2.6.1",
+    "i18next-browser-languagedetector": "^8.0.0",
     "union-subdivided-polygons": "^0.9.1"
   },
   "devDependencies": {
@@ -74,7 +74,6 @@
     "babel-plugin-i18next-extract": "0.10.0",
     "globby": "^14.0.1",
     "prop-types": "^15.8.1",
-    "request": "^2.88.2",
     "storybook": "^8.1.1",
     "vite": "^5.2.11",
     "vitest": "^1.6.0",
