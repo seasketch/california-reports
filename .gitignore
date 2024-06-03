@@ -12,5 +12,4 @@ data/dist/**
 .story-cache
 data/src
 data/dist/**
-src/i18n
 .story-cache
