@@ -254,5 +254,181 @@
     "sketchId": null,
     "groupId": null,
     "value": 12
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "bioregions-Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3412518707.9990425
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "bioregions-North Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4188762962.366083
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "bioregions-South Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6090956902.148005
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "bioregions-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 13692238572.513132
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "kelp-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 0
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "study_regions-Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2963692203.4428215
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "study_regions-North Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1974495826.3775332
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "study_regions-North Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2657319141.6134577
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "study_regions-San Francisco Bay",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1548786231.1889443
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "study_regions-South Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6090956902.148005
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "study_regions-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 15235250304.770761
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "bioregions-Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "bioregions-North Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "bioregions-South Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 7
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "bioregions-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 11
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "kelp-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 0
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "study_regions-Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "study_regions-North Central Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "study_regions-North Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "study_regions-San Francisco Bay",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "study_regions-South Coast",
+    "sketchId": null,
+    "groupId": null,
+    "value": 7
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "study_regions-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 13
   }
 ]

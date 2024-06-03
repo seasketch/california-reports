@@ -4,6 +4,6 @@
     "datasourceId": "world",
     "display": "World",
     "groups": ["default-boundary"],
-    "precalc": false
+    "precalc": true
   }
 ]

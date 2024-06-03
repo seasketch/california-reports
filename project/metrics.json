@@ -73,5 +73,16 @@
         "datasourceId": "bioregions"
       }
     ]
+  },
+  {
+    "metricId": "kelp",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "kelp",
+        "display": "Kelp",
+        "datasourceId": "kelp"
+      }
+    ]
   }
 ]
