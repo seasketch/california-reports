@@ -7,7 +7,6 @@
         "classId": "state_waters",
         "display": "State Waters",
         "datasourceId": "study_regions",
-        "objectiveId": "30x30",
         "layerId": "Io5IzPfsL"
       }
     ]
@@ -79,9 +78,38 @@
     "type": "areaOverlap",
     "classes": [
       {
-        "classId": "kelp",
-        "display": "Kelp",
-        "datasourceId": "kelp"
+        "classId": "kelp2016north",
+        "display": "North Coast",
+        "datasourceId": "kelp2016north",
+        "layerId": "KS6YlOHTR"
+      },
+      {
+        "classId": "kelp2016northcentral",
+        "display": "North Central Coast",
+        "datasourceId": "kelp2016northcentral",
+        "layerId": "T_m7IPEsc"
+      },
+      {
+        "classId": "kelp2016central",
+        "display": "Central Coast",
+        "datasourceId": "kelp2016central",
+        "layerId": "sA05E8mXC"
+      },
+      {
+        "classId": "kelp2016south",
+        "display": "South Coast",
+        "datasourceId": "kelp2016south",
+        "layerId": "FkUbPj_a9"
+      }
+    ]
+  },
+  {
+    "metricId": "protection",
+    "type": "countOverlap",
+    "classes": [
+      {
+        "classId": "mpa",
+        "display": "MPA"
       }
     ]
   }

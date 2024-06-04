@@ -7,9 +7,8 @@ import {
   getFirstFromParam,
   DefaultExtraParams,
   splitSketchAntimeridian,
-  Feature,
-  isVectorDatasource,
-  overlapFeatures,
+  rasterMetrics,
+  isRasterDatasource,
 } from "@seasketch/geoprocessing";
 import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
@@ -21,7 +20,7 @@ import {
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
-import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
+import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 
 /**
  * kelp: A geoprocessing function that calculates overlap metrics
@@ -52,50 +51,37 @@ export async function kelp(
   // Get bounding box of sketch remainder
   const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
 
-  // Chached features
-  let cachedFeatures: Record<string, Feature<Polygon | MultiPolygon>[]> = {};
-
   // Calculate overlap metrics for each class in metric group
   const metricGroup = project.getMetricGroup("kelp");
-  const metrics = (
+  const metrics: Metric[] = (
     await Promise.all(
       metricGroup.classes.map(async (curClass) => {
         if (!curClass.datasourceId)
           throw new Error(`Expected datasourceId for ${curClass.classId}`);
 
         const ds = project.getDatasourceById(curClass.datasourceId);
-        if (!isVectorDatasource(ds))
-          throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
+        if (!isRasterDatasource(ds))
+          throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
         const url = project.getDatasourceUrl(ds);
 
-        // Fetch features overlapping with sketch, pull from cache if already fetched
-        const features =
-          cachedFeatures[curClass.datasourceId] ||
-          (await fgbFetchAll<Feature<Polygon | MultiPolygon>>(url, sketchBox));
-        cachedFeatures[curClass.datasourceId] = features;
+        // Start raster load and move on in loop while awaiting finish
+        const raster = await loadCog(url);
 
-        // If this is a sub-class, filter by class name
-        const finalFeatures =
-          curClass.classKey && curClass.classId !== `${ds.datasourceId}_all`
-            ? features.filter((feat) => {
-                return (
-                  feat.geometry &&
-                  feat.properties![ds.classKeys[0]] === curClass.classId
-                );
-              }, [])
-            : features;
-
-        // Calculate overlap metrics
-        const overlapResult = await overlapFeatures(
-          metricGroup.metricId,
-          finalFeatures,
-          clippedSketch
-        );
+        // Start analysis when raster load finishes
+        const overlapResult = await rasterMetrics(raster, {
+          metricId: metricGroup.metricId,
+          feature: clippedSketch,
+          ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
+          ...(ds.measurementType === "categorical" && {
+            categorical: true,
+            categoryMetricValues: [curClass.classId],
+          }),
+        });
 
         return overlapResult.map(
-          (metric): Metric => ({
-            ...metric,
+          (metrics): Metric => ({
+            ...metrics,
             classId: curClass.classId,
             geographyId: curGeography.geographyId,
           })

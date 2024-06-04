@@ -13,12 +13,17 @@ import {
   Metric,
   MetricGroup,
   ReportResult,
+  createMetric,
   flattenBySketchAllClass,
   metricsWithSketchId,
+  roundDecimal,
+  squareMeterToMile,
   toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+
+const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
  * Kelp component
@@ -42,11 +47,11 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
   );
 
   // Labels
-  const titleLabel = t("Kelp");
+  const titleLabel = t("Kelp Forests (2016)");
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("units");
+  const unitsLabel = t("mi²");
 
   return (
     <ResultsCard
@@ -61,10 +66,37 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
           [data.sketch.properties.id]
         );
+
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
         });
-        const metrics = [...valueMetrics, ...percentMetrics];
+
+        const studyRegionMetrics = [...valueMetrics, ...percentMetrics];
+
+        const overallValue = createMetric({
+          ...valueMetrics[0],
+          classId: "overall",
+          value: valueMetrics.reduce((acc, m) => acc + m.value, 0),
+        });
+        const overallPrecalc = createMetric({
+          classId: "overall",
+          value: precalcMetrics.reduce((acc, m) => acc + m.value, 0),
+        });
+        const overallPerc = toPercentMetric([overallValue], [overallPrecalc], {
+          metricIdOverride: percMetricIdName,
+        });
+        const overallMetrics = [overallValue, ...overallPerc];
+        const overallMG = {
+          metricId: "kelp",
+          type: "areaOverlap",
+          classes: [
+            {
+              classId: "overall",
+              display: "Kelp Forest",
+              layerId: "",
+            },
+          ],
+        };
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
@@ -76,15 +108,15 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <p>
               <Trans i18nKey="Kelp 1">
-                This report summarizes this plan's overlap with Kelp
-                data.
+                This report summarizes this plan's overlap with kelp forests.
+                Plans should consider protection of kelp forest habitat for
+                conservation.
               </Trans>
             </p>
 
             <ClassTable
-              rows={metrics}
-              metricGroup={metricGroup}
-              objective={objectives}
+              rows={overallMetrics}
+              metricGroup={overallMG}
               columnConfig={[
                 {
                   columnLabel: " ",
@@ -95,7 +127,14 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                   columnLabel: withinLabel,
                   type: "metricValue",
                   metricId: metricGroup.metricId,
-                  valueFormatter: "integer",
+                  valueFormatter: (val: string | number) =>
+                    Number.format(
+                      roundDecimal(
+                        squareMeterToMile(
+                          typeof val === "string" ? parseInt(val) : val
+                        )
+                      )
+                    ),
                   valueLabel: unitsLabel,
                   chartOptions: {
                     showTitle: true,
@@ -112,13 +151,64 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                   },
                   width: 40,
                 },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
               ]}
             />
+
+            <Collapse title={t("Show by Study Region")} collapsed={false}>
+              <p>
+                <Trans i18nKey="Kelp Study Region">
+                  The following is a breakdown of this plan's overlap with kelp
+                  forests by <i>study region</i>. The San Francisco Bay study
+                  region is excluded due to not containing any kelp forests per
+                  the data provided.
+                </Trans>
+              </p>
+              <ClassTable
+                rows={studyRegionMetrics}
+                metricGroup={metricGroup}
+                objective={objectives}
+                columnConfig={[
+                  {
+                    columnLabel: "Study Region",
+                    type: "class",
+                    width: 30,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (val: string | number) =>
+                      Number.format(
+                        roundDecimal(
+                          squareMeterToMile(
+                            typeof val === "string" ? parseInt(val) : val
+                          )
+                        )
+                      ),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 40,
+                  },
+                  {
+                    columnLabel: mapLabel,
+                    type: "layerToggle",
+                    width: 10,
+                  },
+                ]}
+              />
+            </Collapse>
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
@@ -128,9 +218,15 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Kelp - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+                <p>
+                  ℹ️ Overview: Area of kelp forests protected by this plan is
+                  shown. Kelp data has been downsampled to a 40m x 40m raster
+                  grid for efficiency, so area calculations are estimates. Final
+                  plans should check area totals in GIS tools before publishing
+                  final area statistics.{" "}
+                </p>
+                <p>🎯 Planning Objective: None</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total

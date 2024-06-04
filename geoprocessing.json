@@ -23,7 +23,7 @@
     "src/functions/boundaryAreaOverlap.ts",
     "src/functions/regions.ts",
     "src/functions/bioregions.ts",
-    "src/functions/kelp.ts",
-    "src/functions/protection.ts"
+    "src/functions/protection.ts",
+    "src/functions/kelp.ts"
   ]
 }

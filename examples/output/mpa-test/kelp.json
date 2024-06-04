@@ -2,21 +2,21 @@
   "metrics": [
     {
       "geographyId": "world",
-      "metricId": "bioregions",
-      "classId": "Central Coast",
+      "metricId": "kelp",
+      "classId": "kelp2016central",
       "sketchId": "29784",
-      "groupId": null,
-      "value": 85265859.154822,
+      "groupId": "band-0",
+      "value": 4576344.678393,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "bioregions",
-      "classId": "North Coast",
+      "metricId": "kelp",
+      "classId": "kelp2016north",
       "sketchId": "29784",
-      "groupId": null,
+      "groupId": "band-0",
       "value": 0,
       "extra": {
         "sketchName": "mpa-test"
@@ -24,10 +24,21 @@
     },
     {
       "geographyId": "world",
-      "metricId": "bioregions",
-      "classId": "South Coast",
+      "metricId": "kelp",
+      "classId": "kelp2016northcentral",
       "sketchId": "29784",
-      "groupId": null,
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelp",
+      "classId": "kelp2016south",
+      "sketchId": "29784",
+      "groupId": "band-0",
       "value": 0,
       "extra": {
         "sketchName": "mpa-test"

@@ -153,9 +153,12 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Regions - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+                <p>
+                  ℹ️ Overview: This planning process is split into multiple
+                  study regions down the California coast.
+                </p>
+                <p>🎯 Planning Objective: None</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total

@@ -110,10 +110,10 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
               }
             >
               <p>
-                <Trans i18nKey="SizeCard - introduction">
+                <Trans i18nKey="SizeCard - intro">
                   Californian state waters extend from the shoreline out to 12
                   nautical miles. This report summarizes plan overlap with state
-                  waters and measures progress towards 30x30 marine protection.
+                  waters.
                 </Trans>
               </p>
               {genSingleSizeTable(data, precalcMetrics, metricGroup, t)}
@@ -161,7 +161,7 @@ const genSingleSizeTable = (
   t: TFunction
 ) => {
   const boundaryLabel = t("Boundary");
-  const foundWithinLabel = t("Found Within Plan");
+  const foundWithinLabel = t("Within Plan");
   const areaWithinLabel = t("Area Within Plan");
   const areaPercWithinLabel = t("% Within Plan");
   const mapLabel = t("Map");
@@ -188,10 +188,9 @@ const genSingleSizeTable = (
       <ClassTable
         rows={finalMetrics}
         metricGroup={mg}
-        objective={project.getMetricGroupObjectives(mg, t)}
         columnConfig={[
           {
-            columnLabel: boundaryLabel,
+            columnLabel: "boundaryLabel",
             type: "class",
             width: 25,
           },

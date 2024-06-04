@@ -1,7 +1,12 @@
 import React from "react";
+import { Kelp } from "./Kelp.js";
 
 const ReportPage = () => {
-  return <></>;
+  return (
+    <>
+      <Kelp />
+    </>
+  );
 };
 
 export default ReportPage;
