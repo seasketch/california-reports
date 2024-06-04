@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   SketchClassTable,
@@ -12,6 +13,9 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
+  OBJECTIVE_NO,
+  OBJECTIVE_YES,
+  ObjectiveAnswer,
   ReportResult,
   createMetric,
   flattenBySketchAllClass,
@@ -104,6 +108,14 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           else return objectives;
         })();
 
+        const studyRegionIsMet = valueMetrics.every((m) => m.value > 0)
+          ? OBJECTIVE_YES
+          : OBJECTIVE_NO;
+        const studyRegionMsg = objectiveMsgs["studyRegion"](
+          studyRegionIsMet,
+          t
+        );
+
         return (
           <ReportError>
             <p>
@@ -163,6 +175,9 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                   the data provided.
                 </Trans>
               </p>
+
+              <ObjectiveStatus status={studyRegionIsMet} msg={studyRegionMsg} />
+
               <ClassTable
                 rows={studyRegionMetrics}
                 metricGroup={metricGroup}
@@ -266,4 +281,26 @@ const genSketchTable = (
   return (
     <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
+};
+
+const objectiveMsgs: Record<string, any> = {
+  studyRegion: (objectiveMet: ObjectiveAnswer, t: any) => {
+    if (objectiveMet === OBJECTIVE_YES) {
+      return (
+        <>
+          {t(
+            "This plan meets the objective of habitat replication in all study regions."
+          )}
+        </>
+      );
+    } else if (objectiveMet === OBJECTIVE_NO) {
+      return (
+        <>
+          {t(
+            "This plan does not meet the objective of habitat replication in all study regions."
+          )}
+        </>
+      );
+    }
+  },
 };
