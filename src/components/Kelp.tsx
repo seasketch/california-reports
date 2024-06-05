@@ -309,11 +309,6 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                     },
                     width: 40,
                   },
-                  {
-                    columnLabel: mapLabel,
-                    type: "layerToggle",
-                    width: 10,
-                  },
                 ]}
               />
             </Collapse>

@@ -250,11 +250,6 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     },
                     width: 35,
                   },
-                  {
-                    columnLabel: mapLabel,
-                    type: "layerToggle",
-                    width: 10,
-                  },
                 ]}
               />
             </Collapse>
