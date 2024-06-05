@@ -3,7 +3,18 @@
     {
       "geographyId": "world",
       "metricId": "kelp",
-      "classId": "kelp2016central",
+      "classId": "kelp2016central_br",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 4662107.601062,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelp",
+      "classId": "kelp2016central_sr",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 4576344.678393,
@@ -14,7 +25,7 @@
     {
       "geographyId": "world",
       "metricId": "kelp",
-      "classId": "kelp2016north",
+      "classId": "kelp2016north_br",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -25,7 +36,7 @@
     {
       "geographyId": "world",
       "metricId": "kelp",
-      "classId": "kelp2016northcentral",
+      "classId": "kelp2016north_sr",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -36,7 +47,29 @@
     {
       "geographyId": "world",
       "metricId": "kelp",
-      "classId": "kelp2016south",
+      "classId": "kelp2016northcentral_sr",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelp",
+      "classId": "kelp2016south_br",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelp",
+      "classId": "kelp2016south_sr",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,

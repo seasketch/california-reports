@@ -290,6 +290,14 @@
   {
     "geographyId": "world",
     "metricId": "area",
+    "classId": "kelp_sr_north_central-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 0
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
     "classId": "kelp-total",
     "sketchId": null,
     "groupId": null,
@@ -298,7 +306,15 @@
   {
     "geographyId": "world",
     "metricId": "area",
-    "classId": "kelp2016central-total",
+    "classId": "kelp2016central_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 44485770.95872
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "kelp2016central_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 44503982.425118
@@ -306,7 +322,15 @@
   {
     "geographyId": "world",
     "metricId": "area",
-    "classId": "kelp2016north-total",
+    "classId": "kelp2016north_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3085492.586559
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "kelp2016north_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 1602766.160634
@@ -314,7 +338,7 @@
   {
     "geographyId": "world",
     "metricId": "area",
-    "classId": "kelp2016northcentral-total",
+    "classId": "kelp2016northcentral_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 2122641.767063
@@ -322,7 +346,15 @@
   {
     "geographyId": "world",
     "metricId": "area",
-    "classId": "kelp2016south-total",
+    "classId": "kelp2016south_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 25990926.526062
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "kelp2016south_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 26705696.412911
@@ -410,6 +442,14 @@
   {
     "geographyId": "world",
     "metricId": "count",
+    "classId": "kelp_sr_north_central-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 0
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
     "classId": "kelp-total",
     "sketchId": null,
     "groupId": null,
@@ -418,7 +458,15 @@
   {
     "geographyId": "world",
     "metricId": "count",
-    "classId": "kelp2016central-total",
+    "classId": "kelp2016central_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 43179752
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "kelp2016central_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 5537903
@@ -426,7 +474,15 @@
   {
     "geographyId": "world",
     "metricId": "count",
-    "classId": "kelp2016north-total",
+    "classId": "kelp2016north_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 59508765
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "kelp2016north_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 2874375
@@ -434,7 +490,7 @@
   {
     "geographyId": "world",
     "metricId": "count",
-    "classId": "kelp2016northcentral-total",
+    "classId": "kelp2016northcentral_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 2266896
@@ -442,7 +498,15 @@
   {
     "geographyId": "world",
     "metricId": "count",
-    "classId": "kelp2016south-total",
+    "classId": "kelp2016south_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 37706108
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "kelp2016south_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 6034374
@@ -498,7 +562,23 @@
   {
     "geographyId": "world",
     "metricId": "sum",
-    "classId": "kelp2016central-total",
+    "classId": "kelp_sr_north_central-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 0
+  },
+  {
+    "geographyId": "world",
+    "metricId": "sum",
+    "classId": "kelp2016central_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 29771
+  },
+  {
+    "geographyId": "world",
+    "metricId": "sum",
+    "classId": "kelp2016central_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 4730
@@ -506,7 +586,15 @@
   {
     "geographyId": "world",
     "metricId": "sum",
-    "classId": "kelp2016north-total",
+    "classId": "kelp2016north_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 2289
+  },
+  {
+    "geographyId": "world",
+    "metricId": "sum",
+    "classId": "kelp2016north_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 202
@@ -514,7 +602,7 @@
   {
     "geographyId": "world",
     "metricId": "sum",
-    "classId": "kelp2016northcentral-total",
+    "classId": "kelp2016northcentral_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 225
@@ -522,7 +610,15 @@
   {
     "geographyId": "world",
     "metricId": "sum",
-    "classId": "kelp2016south-total",
+    "classId": "kelp2016south_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 15748
+  },
+  {
+    "geographyId": "world",
+    "metricId": "sum",
+    "classId": "kelp2016south_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 2589
@@ -530,7 +626,23 @@
   {
     "geographyId": "world",
     "metricId": "valid",
-    "classId": "kelp2016central-total",
+    "classId": "kelp_sr_north_central-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 0
+  },
+  {
+    "geographyId": "world",
+    "metricId": "valid",
+    "classId": "kelp2016central_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 29771
+  },
+  {
+    "geographyId": "world",
+    "metricId": "valid",
+    "classId": "kelp2016central_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 4730
@@ -538,7 +650,15 @@
   {
     "geographyId": "world",
     "metricId": "valid",
-    "classId": "kelp2016north-total",
+    "classId": "kelp2016north_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 2289
+  },
+  {
+    "geographyId": "world",
+    "metricId": "valid",
+    "classId": "kelp2016north_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 202
@@ -546,7 +666,7 @@
   {
     "geographyId": "world",
     "metricId": "valid",
-    "classId": "kelp2016northcentral-total",
+    "classId": "kelp2016northcentral_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 225
@@ -554,7 +674,15 @@
   {
     "geographyId": "world",
     "metricId": "valid",
-    "classId": "kelp2016south-total",
+    "classId": "kelp2016south_br-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 15748
+  },
+  {
+    "geographyId": "world",
+    "metricId": "valid",
+    "classId": "kelp2016south_sr-total",
     "sketchId": null,
     "groupId": "band-0",
     "value": 2589

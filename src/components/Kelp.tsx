@@ -66,21 +66,65 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
-        const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
+        // Study region
+        const srMg = {
+          ...metricGroup,
+          classes: metricGroup.classes.filter((c) =>
+            c.classId?.endsWith("_sr")
+          ),
+        };
+        const srValueMetrics = metricsWithSketchId(
+          data.metrics.filter(
+            (m) =>
+              m.metricId === metricGroup.metricId && m.classId?.endsWith("_sr")
+          ),
           [data.sketch.properties.id]
         );
+        const srPercMetrics = toPercentMetric(
+          srValueMetrics,
+          precalcMetrics.filter((m) => m.classId?.endsWith("_sr")),
+          {
+            metricIdOverride: percMetricIdName,
+          }
+        );
+        const srMetrics = [...srValueMetrics, ...srPercMetrics];
+        const srIsMet = srValueMetrics.every((m) => m.value > 0)
+          ? OBJECTIVE_YES
+          : OBJECTIVE_NO;
+        const srMsg = objectiveMsgs["studyRegion"](srIsMet, t);
 
-        const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
-          metricIdOverride: percMetricIdName,
-        });
+        // Bioregion
+        const brMg = {
+          ...metricGroup,
+          classes: metricGroup.classes.filter((c) =>
+            c.classId?.endsWith("_br")
+          ),
+        };
+        const brValueMetrics = metricsWithSketchId(
+          data.metrics.filter(
+            (m) =>
+              m.metricId === metricGroup.metricId && m.classId?.endsWith("_br")
+          ),
+          [data.sketch.properties.id]
+        );
+        const brPercMetrics = toPercentMetric(
+          brValueMetrics,
+          precalcMetrics.filter((m) => m.classId?.endsWith("_br")),
+          {
+            metricIdOverride: percMetricIdName,
+          }
+        );
+        const brMetrics = [...brValueMetrics, ...brPercMetrics];
+        const brIsMet = brValueMetrics.every((m) => m.value > 0)
+          ? OBJECTIVE_YES
+          : OBJECTIVE_NO;
+        const brMsg = objectiveMsgs["bioregion"](srIsMet, t);
 
-        const studyRegionMetrics = [...valueMetrics, ...percentMetrics];
-
+        // Overall / total metrics
         const overallValue = createMetric({
-          ...valueMetrics[0],
+          ...srValueMetrics[0],
           classId: "overall",
-          value: valueMetrics.reduce((acc, m) => acc + m.value, 0),
+          value: srValueMetrics.reduce((acc, m) => acc + m.value, 0),
         });
         const overallPrecalc = createMetric({
           classId: "overall",
@@ -107,14 +151,6 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           if (!objectives.length) return undefined;
           else return objectives;
         })();
-
-        const studyRegionIsMet = valueMetrics.every((m) => m.value > 0)
-          ? OBJECTIVE_YES
-          : OBJECTIVE_NO;
-        const studyRegionMsg = objectiveMsgs["studyRegion"](
-          studyRegionIsMet,
-          t
-        );
 
         return (
           <ReportError>
@@ -166,7 +202,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            <Collapse title={t("Show by Study Region")} collapsed={false}>
+            <Collapse title={t("Show by Study Region")}>
               <p>
                 <Trans i18nKey="Kelp Study Region">
                   The following is a breakdown of this plan's overlap with kelp
@@ -176,22 +212,79 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                 </Trans>
               </p>
 
-              <ObjectiveStatus status={studyRegionIsMet} msg={studyRegionMsg} />
+              <ObjectiveStatus status={srIsMet} msg={srMsg} />
 
               <ClassTable
-                rows={studyRegionMetrics}
-                metricGroup={metricGroup}
+                rows={srMetrics}
+                metricGroup={srMg}
                 objective={objectives}
                 columnConfig={[
                   {
                     columnLabel: "Study Region",
+                    type: "class",
+                    width: 35,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: srMg.metricId,
+                    valueFormatter: (val: string | number) =>
+                      Number.format(
+                        roundDecimal(
+                          squareMeterToMile(
+                            typeof val === "string" ? parseInt(val) : val
+                          )
+                        )
+                      ),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 35,
+                  },
+                  {
+                    columnLabel: mapLabel,
+                    type: "layerToggle",
+                    width: 10,
+                  },
+                ]}
+              />
+            </Collapse>
+
+            <Collapse title={t("Show by Bioregion")}>
+              <p>
+                <Trans i18nKey="Kelp Bioregion">
+                  The following is a breakdown of this plan's overlap with kelp
+                  forests by <i>bioregion</i>.
+                </Trans>
+              </p>
+
+              <ObjectiveStatus status={brIsMet} msg={brMsg} />
+
+              <ClassTable
+                rows={brMetrics}
+                metricGroup={brMg}
+                objective={objectives}
+                columnConfig={[
+                  {
+                    columnLabel: "Bioregion",
                     type: "class",
                     width: 30,
                   },
                   {
                     columnLabel: withinLabel,
                     type: "metricValue",
-                    metricId: metricGroup.metricId,
+                    metricId: srMg.metricId,
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
@@ -298,6 +391,25 @@ const objectiveMsgs: Record<string, any> = {
         <>
           {t(
             "This plan does not meet the objective of habitat replication in all study regions."
+          )}
+        </>
+      );
+    }
+  },
+  bioregion: (objectiveMet: ObjectiveAnswer, t: any) => {
+    if (objectiveMet === OBJECTIVE_YES) {
+      return (
+        <>
+          {t(
+            "This plan meets the objective of habitat replication in all bioregions."
+          )}
+        </>
+      );
+    } else if (objectiveMet === OBJECTIVE_NO) {
+      return (
+        <>
+          {t(
+            "This plan does not meet the objective of habitat replication in all bioregions."
           )}
         </>
       );
