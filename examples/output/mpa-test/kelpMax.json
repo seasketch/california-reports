@@ -3,10 +3,32 @@
     {
       "geographyId": "world",
       "metricId": "kelpMax",
+      "classId": "kelp_max_central_br",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 8934356.377059,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
       "classId": "kelp_max_central_sr",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 9074037.389426,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_north_br",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -26,6 +48,17 @@
       "geographyId": "world",
       "metricId": "kelpMax",
       "classId": "kelp_max_northcentral_sr",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_south_br",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,

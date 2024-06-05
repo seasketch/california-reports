@@ -3,6 +3,51 @@
     {
       "geographyId": "world",
       "metricId": "kelpMax",
+      "classId": "kelp_max_central_br",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_central_br",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 13104915.12631,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_central_br",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 8934356.377059,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_central_br",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 4170558.749251,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
       "classId": "kelp_max_central_sr",
       "sketchId": "29481",
       "groupId": "band-0",
@@ -48,6 +93,51 @@
     {
       "geographyId": "world",
       "metricId": "kelpMax",
+      "classId": "kelp_max_north_br",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_north_br",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_north_br",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_north_br",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
       "classId": "kelp_max_north_sr",
       "sketchId": "29481",
       "groupId": "band-0",
@@ -131,6 +221,51 @@
       "sketchId": "29484",
       "groupId": "band-0",
       "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_south_br",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 1017921.012223,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_south_br",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 9139876.53208,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_south_br",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelp_max_south_br",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 8121955.519857,
       "extra": {
         "sketchName": "split"
       }

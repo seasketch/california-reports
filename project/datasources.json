@@ -333,17 +333,149 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_south.tif"
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_northcentral.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "kelp_max_northcentral_sr",
+    "geo_type": "raster",
     "formats": [
       "tif"
     ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
     "created": "2024-06-05T17:52:40.651Z",
     "lastUpdated": "2024-06-05T17:52:40.651Z",
-    "noDataValue": 0,
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_northcentral.tif"
+  },
+  {
+    "datasourceId": "kelp_max_central_br",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
     "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2024-06-05T21:32:10.673Z",
+    "lastUpdated": "2024-06-05T21:32:10.673Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/bioregions/kelp_br_central.tif"
+  },
+  {
+    "datasourceId": "kelp_max_north_br",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2024-06-05T21:32:26.083Z",
+    "lastUpdated": "2024-06-05T21:32:26.083Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/bioregions/kelp_br_north.tif"
+  },
+  {
+    "datasourceId": "kelp_max_south_br",
+    "geo_type": "raster",
+    "formats": [
+      "tif"
+    ],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 0,
+    "created": "2024-06-05T21:32:43.330Z",
+    "lastUpdated": "2024-06-05T21:32:43.330Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/bioregions/kelp_br_south.tif"
+  },
+  {
+    "datasourceId": "beaches",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "beaches",
+    "classKeys": [],
+    "created": "2024-06-05T22:32:24.312Z",
+    "lastUpdated": "2024-06-05T22:32:24.312Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/beaches.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "coastal_marsh",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "coastalmarsh",
+    "classKeys": [],
+    "created": "2024-06-05T22:32:40.333Z",
+    "lastUpdated": "2024-06-05T22:32:40.333Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/coastalmarsh.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rocky_shores",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "rockyshores",
+    "classKeys": [],
+    "created": "2024-06-05T22:33:01.812Z",
+    "lastUpdated": "2024-06-05T22:33:01.812Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rockyshores.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "tidal_flats",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "tidalflats",
+    "classKeys": [],
+    "created": "2024-06-05T22:33:19.103Z",
+    "lastUpdated": "2024-06-05T22:33:19.103Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/tidalflats.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "unclassified",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": false,
+    "layerName": "unclassified",
+    "classKeys": [],
+    "created": "2024-06-05T22:33:34.514Z",
+    "lastUpdated": "2024-06-05T22:33:34.514Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/unclassified.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_polygons.fgb",
+    "layerName": "rock_islands_polygons",
+    "geo_type": "vector",
+    "datasourceId": "rock_islands",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2024-06-05T22:34:23.307Z",
+    "lastUpdated": "2024-06-05T22:34:23.307Z",
+    "propertiesToKeep": [],
+    "explodeMulti": true,
     "precalc": true
   }
 ]

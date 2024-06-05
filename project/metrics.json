@@ -145,6 +145,21 @@
         "display": "South Study Region",
         "datasourceId": "kelp_max_south_sr",
         "layerId": ""
+      },
+      {
+        "classId": "kelp_max_north_br",
+        "display": "North Bioregion",
+        "datasourceId": "kelp_max_north_br"
+      },
+      {
+        "classId": "kelp_max_central_br",
+        "display": "Central Bioregion",
+        "datasourceId": "kelp_max_central_br"
+      },
+      {
+        "classId": "kelp_max_south_br",
+        "display": "South Bioregion",
+        "datasourceId": "kelp_max_south_br"
       }
     ]
   },
