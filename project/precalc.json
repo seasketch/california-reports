@@ -418,6 +418,14 @@
   {
     "geographyId": "world",
     "metricId": "area",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2520971.7674409915
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -622,6 +630,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 6034374
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 11640
   },
   {
     "geographyId": "world",

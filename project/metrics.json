@@ -126,25 +126,25 @@
         "classId": "kelp_max_north_sr",
         "display": "North Study Region",
         "datasourceId": "kelp_max_north_sr",
-        "layerId": ""
+        "layerId": "UM12YiZBF"
       },
       {
         "classId": "kelp_max_northcentral_sr",
         "display": "North Central Study Region",
         "datasourceId": "kelp_max_northcentral_sr",
-        "layerId": ""
+        "layerId": "n3hbpUw5X"
       },
       {
         "classId": "kelp_max_central_sr",
         "display": "Central Study Region",
         "datasourceId": "kelp_max_central_sr",
-        "layerId": ""
+        "layerId": "eyph8kKz0"
       },
       {
         "classId": "kelp_max_south_sr",
         "display": "South Study Region",
         "datasourceId": "kelp_max_south_sr",
-        "layerId": ""
+        "layerId": "0SpXFm9Is"
       },
       {
         "classId": "kelp_max_north_br",
@@ -160,6 +160,18 @@
         "classId": "kelp_max_south_br",
         "display": "South Bioregion",
         "datasourceId": "kelp_max_south_br"
+      }
+    ]
+  },
+  {
+    "metricId": "rockIslands",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "rock_islands",
+        "display": "Rock Islands",
+        "datasourceId": "rock_islands",
+        "layerId": "E17RoLlb0"
       }
     ]
   },
