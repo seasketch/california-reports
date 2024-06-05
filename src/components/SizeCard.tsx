@@ -190,7 +190,7 @@ const genSingleSizeTable = (
         metricGroup={mg}
         columnConfig={[
           {
-            columnLabel: "boundaryLabel",
+            columnLabel: boundaryLabel,
             type: "class",
             width: 25,
           },

@@ -24,6 +24,7 @@
     "src/functions/regions.ts",
     "src/functions/bioregions.ts",
     "src/functions/protection.ts",
-    "src/functions/kelp.ts"
+    "src/functions/kelp.ts",
+    "src/functions/kelpMax.ts"
   ]
 }

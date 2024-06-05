@@ -119,6 +119,36 @@
     ]
   },
   {
+    "metricId": "kelpMax",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "kelp_max_north_sr",
+        "display": "North Study Region",
+        "datasourceId": "kelp_max_north_sr",
+        "layerId": ""
+      },
+      {
+        "classId": "kelp_max_northcentral_sr",
+        "display": "North Central Study Region",
+        "datasourceId": "kelp_max_northcentral_sr",
+        "layerId": ""
+      },
+      {
+        "classId": "kelp_max_central_sr",
+        "display": "Central Study Region",
+        "datasourceId": "kelp_max_central_sr",
+        "layerId": ""
+      },
+      {
+        "classId": "kelp_max_south_sr",
+        "display": "South Study Region",
+        "datasourceId": "kelp_max_south_sr",
+        "layerId": ""
+      }
+    ]
+  },
+  {
     "metricId": "protection",
     "type": "countOverlap",
     "classes": [
