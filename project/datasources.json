@@ -464,16 +464,216 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/unclassified_buffered.fgb",
-    "layerName": "unclassified_buffered",
-    "geo_type": "vector",
     "datasourceId": "unclassified",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "unclassified_buffered",
+    "classKeys": [],
+    "created": "2024-06-06T17:13:15.110Z",
+    "lastUpdated": "2024-06-06T17:13:15.110Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/unclassified_buffered.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "central_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "NAME_Central Coast",
+    "classKeys": [],
+    "created": "2024-06-06T18:13:12.780Z",
+    "lastUpdated": "2024-06-06T18:18:27.944Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/CentralCoast.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "northcentral_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "NAME_North Central Coast",
+    "classKeys": [],
+    "created": "2024-06-06T18:13:47.142Z",
+    "lastUpdated": "2024-06-06T18:18:28.179Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/NorthCentralCoast.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "north_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "NAME_North Coast",
+    "classKeys": [],
+    "created": "2024-06-06T18:14:05.645Z",
+    "lastUpdated": "2024-06-06T18:18:28.581Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/NorthCoast.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "sfbay_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "NAME_San Francisco Bay",
+    "classKeys": [],
+    "created": "2024-06-06T18:14:46.355Z",
+    "lastUpdated": "2024-06-06T18:18:28.875Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/SanFranciscoBay.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "south_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "NAME_South Coast",
+    "classKeys": [],
+    "created": "2024-06-06T18:15:07.149Z",
+    "lastUpdated": "2024-06-06T18:18:29.199Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/SouthCoast.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_central_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_central_sr",
+    "classKeys": [],
+    "created": "2024-06-06T18:32:50.314Z",
+    "lastUpdated": "2024-06-06T18:32:50.314Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_central_sr.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_north_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_north_sr",
+    "classKeys": [],
+    "created": "2024-06-06T18:33:05.800Z",
+    "lastUpdated": "2024-06-06T18:33:05.800Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_north_sr.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_northcentral_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_northcentral_sr",
+    "classKeys": [],
+    "created": "2024-06-06T18:33:23.337Z",
+    "lastUpdated": "2024-06-06T18:33:23.337Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_northcentral_sr.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_sfbay_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_sfbay_sr",
+    "classKeys": [],
+    "created": "2024-06-06T18:33:40.507Z",
+    "lastUpdated": "2024-06-06T18:33:40.507Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_sfbay_sr.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_south_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_south_sr",
+    "classKeys": [],
+    "created": "2024-06-06T18:33:55.515Z",
+    "lastUpdated": "2024-06-06T18:33:55.515Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_south_sr.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_north_br",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_north_br",
+    "classKeys": [],
+    "created": "2024-06-06T19:50:15.148Z",
+    "lastUpdated": "2024-06-06T19:50:15.148Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_north_br.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "rock_islands_south_br",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rock_islands_south_br",
+    "classKeys": [],
+    "created": "2024-06-06T19:50:36.313Z",
+    "lastUpdated": "2024-06-06T19:50:36.313Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_south_br.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rock_islands_central_br.fgb",
+    "layerName": "rock_islands_central_br",
+    "geo_type": "vector",
+    "datasourceId": "rock_islands_central_br",
     "formats": [
       "fgb"
     ],
     "classKeys": [],
-    "created": "2024-06-06T17:13:15.110Z",
-    "lastUpdated": "2024-06-06T17:13:15.110Z",
+    "created": "2024-06-06T19:51:01.829Z",
+    "lastUpdated": "2024-06-06T19:51:01.829Z",
     "propertiesToKeep": [],
     "explodeMulti": true,
     "precalc": true

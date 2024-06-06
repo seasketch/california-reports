@@ -256,6 +256,38 @@
     "value": 12
   },
   {
+    "geographyId": "north_sr",
+    "metricId": "area",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 977958.8779837788
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 58366.190251017135
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4064
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 119
+  },
+  {
     "geographyId": "world",
     "metricId": "area",
     "classId": "beaches-total",
@@ -430,6 +462,70 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 26705696.412911
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_central_br-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 975625.4540093895
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_central_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 873368.54638127
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_north_br-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1514722.1242148394
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_north_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 977958.8779837791
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_northcentral_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 639020.1538591781
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_sfbay_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 223.23583258702956
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_south_br-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 28477.129967815235
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "rock_islands_south_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 28477.129967815235
   },
   {
     "geographyId": "world",
@@ -686,6 +782,70 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 6034374
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_central_br-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4836
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_central_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4395
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_north_br-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6655
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_north_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4064
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_northcentral_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3032
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_sfbay_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_south_br-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 145
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "rock_islands_south_sr-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 145
   },
   {
     "geographyId": "world",

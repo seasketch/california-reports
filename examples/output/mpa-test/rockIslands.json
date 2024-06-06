@@ -10,6 +10,83 @@
       "extra": {
         "sketchName": "mpa-test"
       }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_central_br",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 76972.475106,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_central_sr",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 76972.475106,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_north_br",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_north_sr",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_northcentral_sr",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_south_br",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "rockIslands",
+      "classId": "rock_islands_south_sr",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
     }
   ],
   "sketch": {

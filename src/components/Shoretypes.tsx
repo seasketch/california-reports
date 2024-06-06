@@ -6,22 +6,18 @@ import {
   LayerToggle,
   ReportError,
   ResultsCard,
-  SketchClassTable,
   VerticalSpacer,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
-  Metric,
-  MetricGroup,
   ReportResult,
-  flattenBySketchAllClass,
   metricsWithSketchId,
   roundDecimal,
-  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -139,7 +135,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(data, metricGroup, precalcMetrics)}
+                {genAreaSketchTable(data, precalcMetrics, metricGroup, t)}
               </Collapse>
             )}
 
@@ -177,30 +173,5 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
-  );
-};
-
-const genSketchTable = (
-  data: ReportResult,
-  metricGroup: MetricGroup,
-  precalcMetrics: Metric[]
-) => {
-  // Build agg metric objects for each child sketch in collection with percValue for each class
-  const childSketches = toNullSketchArray(data.sketch);
-  const childSketchIds = childSketches.map((sk) => sk.properties.id);
-  const childSketchMetrics = toPercentMetric(
-    metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-      childSketchIds
-    ),
-    precalcMetrics
-  );
-  const sketchRows = flattenBySketchAllClass(
-    childSketchMetrics,
-    metricGroup.classes,
-    childSketches
-  );
-  return (
-    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };

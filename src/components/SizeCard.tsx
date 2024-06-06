@@ -1,10 +1,7 @@
 import React from "react";
 import {
   ReportResult,
-  percentWithEdge,
   keyBy,
-  toNullSketchArray,
-  nestMetrics,
   valueFormatter,
   toPercentMetric,
   sortMetricsDisplayOrder,
@@ -16,56 +13,20 @@ import {
 import {
   ClassTable,
   Collapse,
-  Column,
-  ReportTableStyled,
   ResultsCard,
-  Table,
   useSketchProperties,
   ToolbarCard,
   DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
-import { styled } from "styled-components";
 import project from "../../project/projectClient.js";
 import Translator from "../components/TranslatorAsync.js";
 import { Trans, useTranslation } from "react-i18next";
 import { TFunction } from "i18next";
 
 import watersImgUrl from "../assets/img/territorial_waters.png";
+import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
-
-const TableStyled = styled(ReportTableStyled)`
-  font-size: 12px;
-  td {
-    text-align: right;
-  }
-
-  tr:nth-child(1) > th:nth-child(n + 1) {
-    text-align: center;
-  }
-
-  tr:nth-child(2) > th:nth-child(n + 1) {
-    text-align: center;
-  }
-
-  tr > td:nth-child(1),
-  tr > th:nth-child(1) {
-    border-right: 1px solid #777;
-  }
-
-  tr:nth-child(1) > th:nth-child(2) {
-    border-right: 1px solid #777;
-  }
-
-  tr > td:nth-child(3),
-  tr > th:nth-child(3) {
-    border-right: 1px solid #777;
-  }
-  tr > td:nth-child(5),
-  tr > th:nth-child(5) {
-    border-right: 1px solid #777;
-  }
-`;
 
 export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   const [{ isCollection }] = useSketchProperties();
@@ -119,7 +80,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
               {genSingleSizeTable(data, precalcMetrics, metricGroup, t)}
               {isCollection && (
                 <Collapse title={t("Show by MPA")}>
-                  {genNetworkSizeTable(data, precalcMetrics, metricGroup, t)}
+                  {genAreaSketchTable(data, precalcMetrics, metricGroup, t)}
                 </Collapse>
               )}
               <Collapse title={t("Learn more")}>
@@ -246,87 +207,6 @@ const genSingleSizeTable = (
         ]}
       />
     </>
-  );
-};
-
-const genNetworkSizeTable = (
-  data: ReportResult,
-  precalcMetrics: Metric[],
-  mg: MetricGroup,
-  t: TFunction
-) => {
-  const sketches = toNullSketchArray(data.sketch);
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
-  const sketchMetrics = data.metrics.filter(
-    (m) => m.sketchId && sketchIds.includes(m.sketchId)
-  );
-  const finalMetrics = [
-    ...sketchMetrics,
-    ...toPercentMetric(sketchMetrics, precalcMetrics, {
-      metricIdOverride: project.getMetricGroupPercId(mg),
-    }),
-  ];
-
-  const aggMetrics = nestMetrics(finalMetrics, [
-    "sketchId",
-    "classId",
-    "metricId",
-  ]);
-  // Use sketch ID for each table row, index into aggMetrics
-  const rows = Object.keys(aggMetrics).map((sketchId) => ({
-    sketchId,
-  }));
-
-  const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
-    (curClass, index) => {
-      /* i18next-extract-disable-next-line */
-      const transString = t(curClass.display);
-      return {
-        Header: transString,
-        style: { color: "#777" },
-        columns: [
-          {
-            Header: t("Area") + " ".repeat(index),
-            accessor: (row) => {
-              const value =
-                aggMetrics[row.sketchId][curClass.classId as string][
-                  mg.metricId
-                ][0].value;
-              return (
-                Number.format(Math.round(squareMeterToMile(value))) +
-                " " +
-                t("mi²")
-              );
-            },
-          },
-          {
-            Header: t("% Area") + " ".repeat(index),
-            accessor: (row) => {
-              const value =
-                aggMetrics[row.sketchId][curClass.classId as string][
-                  project.getMetricGroupPercId(mg)
-                ][0].value;
-              return percentWithEdge(value);
-            },
-          },
-        ],
-      };
-    }
-  );
-
-  const columns: Column<any>[] = [
-    {
-      Header: " ",
-      accessor: (row) => <b>{sketchesById[row.sketchId].properties.name}</b>,
-    },
-    ...(classColumns as Column<any>[]),
-  ];
-
-  return (
-    <TableStyled>
-      <Table columns={columns} data={rows} />
-    </TableStyled>
   );
 };
 
