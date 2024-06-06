@@ -2,22 +2,22 @@
   "metrics": [
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
       "sketchId": "29481",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 5342.363057,
       "extra": {
         "sketchName": "anacapa"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
       "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 43274.584078,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -25,32 +25,32 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
       "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 4662107.601062,
+      "groupId": null,
+      "value": 14658.5366,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
       "sketchId": "29484",
-      "groupId": "band-0",
-      "value": 1964958.812627,
+      "groupId": null,
+      "value": 23273.684421,
       "extra": {
         "sketchName": "split"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
       "sketchId": "29481",
-      "groupId": "band-0",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "anacapa"
@@ -58,11 +58,11 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
       "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 6337635.228959,
+      "groupId": null,
+      "value": 227.56412,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -70,66 +70,21 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
       "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 4576344.678393,
+      "groupId": null,
+      "value": 227.56412,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016central_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
       "sketchId": "29484",
-      "groupId": "band-0",
-      "value": 1761290.550566,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_br",
-      "sketchId": "29481",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_br",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_br",
-      "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_br",
-      "sketchId": "29484",
-      "groupId": "band-0",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "split"
@@ -137,22 +92,22 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
       "sketchId": "29481",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 32318.943768,
       "extra": {
         "sketchName": "anacapa"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
       "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 61754.994202,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -160,21 +115,66 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
       "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 12063.520152,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016north_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
       "sketchId": "29484",
-      "groupId": "band-0",
+      "groupId": null,
+      "value": 17372.530282,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 354.403057,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 354.403057,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29484",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "split"
@@ -182,10 +182,10 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
       "sketchId": "29481",
-      "groupId": "band-0",
+      "groupId": null,
       "value": 0,
       "extra": {
         "sketchName": "anacapa"
@@ -193,11 +193,11 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
       "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 2536.462503,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -205,112 +205,22 @@
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
       "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 0,
+      "groupId": null,
+      "value": 1608.07832,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
       "sketchId": "29484",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_br",
-      "sketchId": "29481",
-      "groupId": "band-0",
-      "value": 23105.979894,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_br",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 3195226.933862,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_br",
-      "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_br",
-      "sketchId": "29484",
-      "groupId": "band-0",
-      "value": 3172120.953968,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_sr",
-      "sketchId": "29481",
-      "groupId": "band-0",
-      "value": 23105.979894,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_sr",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 3195226.933862,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_sr",
-      "sketchId": "29483",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelp",
-      "classId": "kelp2016south_sr",
-      "sketchId": "29484",
-      "groupId": "band-0",
-      "value": 3172120.953968,
+      "groupId": null,
+      "value": 928.384183,
       "extra": {
         "sketchName": "split"
       }

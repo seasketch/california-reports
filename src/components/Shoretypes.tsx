@@ -3,9 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  LayerToggle,
   ReportError,
   ResultsCard,
   SketchClassTable,
+  VerticalSpacer,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -24,12 +26,12 @@ import project from "../../project/projectClient.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * RockIslands component
+ * Shoretypes component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
+export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const curGeography = project.getGeographyById(props.geographyId, {
@@ -37,7 +39,7 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
   });
 
   // Metrics
-  const metricGroup = project.getMetricGroup("rockIslands", t);
+  const metricGroup = project.getMetricGroup("shoretypes", t);
   const precalcMetrics = project.getPrecalcMetrics(
     metricGroup,
     "area",
@@ -45,16 +47,16 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
   );
 
   // Labels
-  const titleLabel = t("Rock Islands");
-  const mapLabel = t("Map");
+  const titleLabel = t("Shoreline Habitats");
+  const classLabel = t("Shoretype");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("m²");
+  const unitsLabel = t("mi");
 
   return (
     <ResultsCard
       title={titleLabel}
-      functionName="rockIslands"
+      functionName="shoretypes"
       extraParams={{ geographyIds: [curGeography.geographyId] }}
     >
       {(data: ReportResult) => {
@@ -78,11 +80,21 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
         return (
           <ReportError>
             <p>
-              <Trans i18nKey="RockIslands 1">
-                This report summarizes this plan's overlap with rock islands in
-                the study region.
+              <Trans i18nKey="Shoretypes 1">
+                This report summarizes this plan's protection of California's
+                shoretypes.
               </Trans>
             </p>
+
+            <LayerToggle
+              label={t("Show Landward Shoretypes")}
+              layerId={metricGroup.classes[0].layerId}
+            />
+            <VerticalSpacer />
+            <LayerToggle
+              label={t("Show Seaward Shoretypes")}
+              layerId={metricGroup.classes[1].layerId}
+            />
 
             <ClassTable
               rows={metrics}
@@ -90,7 +102,7 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
               objective={objectives}
               columnConfig={[
                 {
-                  columnLabel: " ",
+                  columnLabel: classLabel,
                   type: "class",
                   width: 30,
                 },
@@ -101,7 +113,9 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        typeof val === "string" ? parseInt(val) : val
+                        typeof val === "string"
+                          ? parseInt(val) / 1609
+                          : val / 1609
                       )
                     ),
                   valueLabel: unitsLabel,
@@ -120,11 +134,6 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
                   },
                   width: 40,
                 },
-                {
-                  columnLabel: mapLabel,
-                  type: "layerToggle",
-                  width: 10,
-                },
               ]}
             />
 
@@ -135,10 +144,26 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="RockIslands - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+              <Trans i18nKey="Shoretypes - learn more">
+                <p>
+                  ℹ️ Overview: Shoretype data has been categorized into five
+                  types: beaches, coastal marsh, rocky shores, tidal flats, and
+                  unclassified if qualifiying ESI codes were present in the
+                  landward or seaward fields for that stretch of coastline.
+                  Therefore, the same shoreline can count for multiple
+                  shoretypes. More specific shoreline types can be viewed by
+                  turning on the matching map layers and hovering.
+                </p>
+                <p>Tidal flats = ESI 7, 9, 9A, and 9C.</p>
+                <p>Beaches = ESI 3, 3A, 4, 5, 6A.</p>
+                <p>Rocky shores = ESI 1A, 1C, 2, 2A, 8, and 8A.</p>
+                <p>Coastal marsh = ESI 10 and 10A.</p>
+                <p>
+                  Unclassified = ESI 0, 1B, 3B, 6B, 6D, 8B, 8C, 9B, 10B, 10C,
+                  and 10D.
+                </p>
+                <p>🎯 Planning Objective: None</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total

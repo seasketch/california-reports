@@ -176,6 +176,39 @@
     ]
   },
   {
+    "metricId": "shoretypes",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "beaches",
+        "display": "Beaches",
+        "datasourceId": "beaches",
+        "layerId": "PoUrhdHm2"
+      },
+      {
+        "classId": "coastal_marsh",
+        "display": "Coastal Marsh",
+        "datasourceId": "coastal_marsh",
+        "layerId": "wI8i1rqAm"
+      },
+      {
+        "classId": "rocky_shores",
+        "display": "Rocky Shores",
+        "datasourceId": "rocky_shores"
+      },
+      {
+        "classId": "tidal_flats",
+        "display": "Tidal Flats",
+        "datasourceId": "tidal_flats"
+      },
+      {
+        "classId": "unclassified",
+        "display": "Unclassified",
+        "datasourceId": "unclassified"
+      }
+    ]
+  },
+  {
     "metricId": "protection",
     "type": "countOverlap",
     "classes": [

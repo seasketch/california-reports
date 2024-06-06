@@ -258,6 +258,14 @@
   {
     "geographyId": "world",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1860191.914901235
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
     "classId": "bioregions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -286,6 +294,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 13692238572.513132
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2113521.1982745347
   },
   {
     "geographyId": "world",
@@ -426,6 +442,14 @@
   {
     "geographyId": "world",
     "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1360867.2662392757
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -473,6 +497,30 @@
   },
   {
     "geographyId": "world",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2144285.0014146147
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1534704.956238754
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4805
+  },
+  {
+    "geographyId": "world",
     "metricId": "count",
     "classId": "bioregions-Central Coast",
     "sketchId": null,
@@ -502,6 +550,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 11
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3785
   },
   {
     "geographyId": "world",
@@ -642,6 +698,14 @@
   {
     "geographyId": "world",
     "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 5223
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -686,6 +750,22 @@
     "sketchId": null,
     "groupId": null,
     "value": 13
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3764
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3303
   },
   {
     "geographyId": "world",
