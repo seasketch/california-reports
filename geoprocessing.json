@@ -29,6 +29,7 @@
     "src/functions/kelp.ts",
     "src/functions/kelpMax.ts",
     "src/functions/rockIslands.ts",
-    "src/functions/shoretypes.ts"
+    "src/functions/shoretypes.ts",
+    "src/functions/habitat.ts"
   ]
 }

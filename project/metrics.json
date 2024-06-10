@@ -252,5 +252,284 @@
         "display": "MPA"
       }
     ]
+  },
+  {
+    "metricId": "habitat",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "0",
+        "classKey": "ccsr",
+        "display": "Sediment 0-30m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-1",
+        "classKey": "ccsr",
+        "display": "Rock 0-30m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-30",
+        "classKey": "ccsr",
+        "display": "Sediment 30-100m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-31",
+        "classKey": "ccsr",
+        "display": "Rock 30-100m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-100",
+        "classKey": "ccsr",
+        "display": "Sediment 100-200m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-101",
+        "classKey": "ccsr",
+        "display": "Rock 100-200m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-200",
+        "classKey": "ccsr",
+        "display": "Sediment >200m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "-201",
+        "classKey": "ccsr",
+        "display": "Rock >200m",
+        "datasourceId": "hab_ccsr",
+        "layerId": "SaB_Xd_lP"
+      },
+      {
+        "classId": "0",
+        "classKey": "nccsr",
+        "display": "Sediment 0-30m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "-1",
+        "classKey": "nccsr",
+        "display": "Rock 0-30m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "-30",
+        "classKey": "nccsr",
+        "display": "Sediment 30-100m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "-31",
+        "classKey": "nccsr",
+        "display": "Rock 30-100m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "-100",
+        "classKey": "nccsr",
+        "display": "Sediment 100-200m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "-101",
+        "classKey": "nccsr",
+        "display": "Rock 100-200m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "-200",
+        "classKey": "nccsr",
+        "display": "Sediment >200m",
+        "datasourceId": "hab_nccsr",
+        "layerId": "NBv6kegpX"
+      },
+      {
+        "classId": "0",
+        "classKey": "ncsr",
+        "display": "Sediment 0-30m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-1",
+        "classKey": "ncsr",
+        "display": "Rock 0-30m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-30",
+        "classKey": "ncsr",
+        "display": "Sediment 30-100m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-31",
+        "classKey": "ncsr",
+        "display": "Rock 30-100m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-100",
+        "classKey": "ncsr",
+        "display": "Sediment 100-200m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-101",
+        "classKey": "ncsr",
+        "display": "Rock 100-200m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-200",
+        "classKey": "ncsr",
+        "display": "Sediment >200m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "-201",
+        "classKey": "ncsr",
+        "display": "Rock >200m",
+        "datasourceId": "hab_ncsr",
+        "layerId": "JjK3WOMvN"
+      },
+      {
+        "classId": "0",
+        "classKey": "scsr_is",
+        "display": "Sediment 0-30m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-1",
+        "classKey": "scsr_is",
+        "display": "Rock 0-30m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-30",
+        "classKey": "scsr_is",
+        "display": "Sediment 30-100m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-31",
+        "classKey": "scsr_is",
+        "display": "Rock 30-100m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-100",
+        "classKey": "scsr_is",
+        "display": "Sediment 100-200m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-101",
+        "classKey": "scsr_is",
+        "display": "Rock 100-200m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-200",
+        "classKey": "scsr_is",
+        "display": "Sediment >200m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "-201",
+        "classKey": "scsr_is",
+        "display": "Rock >200m",
+        "datasourceId": "scsr_is",
+        "layerId": "wbfehARSg"
+      },
+      {
+        "classId": "0",
+        "classKey": "scsr_ml",
+        "display": "Sediment 0-30m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-1",
+        "classKey": "scsr_ml",
+        "display": "Rock 0-30m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-30",
+        "classKey": "scsr_ml",
+        "display": "Sediment 30-100m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-31",
+        "classKey": "scsr_ml",
+        "display": "Rock 30-100m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-100",
+        "classKey": "scsr_ml",
+        "display": "Sediment 100-200m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-101",
+        "classKey": "scsr_ml",
+        "display": "Rock 100-200m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-200",
+        "classKey": "scsr_ml",
+        "display": "Sediment >200m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      },
+      {
+        "classId": "-201",
+        "classKey": "scsr_ml",
+        "display": "Rock >200m",
+        "datasourceId": "scsr_ml",
+        "layerId": "2nZ5K2qmi"
+      }
+    ]
   }
 ]
