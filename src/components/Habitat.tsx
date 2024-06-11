@@ -52,11 +52,11 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
   // Study Regions
   const studyRegions = ["ncsr", "nccsr", "ccsr", "scsr_is", "scsr_ml"];
   const studyRegionsDisplay: Record<string, string> = {
-    ncsr: "North Coast Study Region",
-    nccsr: "North Central Coast Study Region",
-    ccsr: "Central Coast Study Region",
-    scsr_is: "South Coast Study Region: Islands",
-    scsr_ml: "South Coast Study Region: Mainland",
+    ncsr: "North Coast",
+    nccsr: "North Central Coast",
+    ccsr: "Central Coast",
+    scsr_is: "South Coast: Islands",
+    scsr_ml: "South Coast: Mainland",
   };
 
   // Labels
@@ -65,6 +65,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
   const percWithinLabel = t("% Within Plan");
   const unitsLabel = t("mi²");
   const substrateLabel = t("Substrate");
+  const replicationLabel = t("Replication");
 
   return (
     <ResultsCard
@@ -167,7 +168,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   width: 40,
                 },
                 {
-                  columnLabel: "Replication",
+                  columnLabel: replicationLabel,
                   type: "metricValue",
                   metricId: `${mg.metricId}Count`,
                   valueFormatter: (val) =>
@@ -183,74 +184,77 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
             />
 
             {/* Individual study region metrics */}
-            {studyRegions.map((region) => {
-              const regionMg = {
-                ...mg,
-                classes: mg.classes.filter((c) => c.classKey === region),
-              };
-              const regionValueMetrics = valueMetrics.filter(
-                (m) => m.groupId === region
-              );
-              const regionPrecalcMetrics = project.getPrecalcMetrics(
-                regionMg,
-                "valid",
-                curGeography.geographyId
-              );
-              const regionPercMetrics = toPercentMetric(
-                regionValueMetrics,
-                regionPrecalcMetrics,
-                {
-                  metricIdOverride: percMetricIdName,
-                }
-              );
-              const metrics = [...regionValueMetrics, ...regionPercMetrics];
+            <Collapse title={t("Show by Study Region")}>
+              {studyRegions.map((region) => {
+                const regionMg = {
+                  ...mg,
+                  classes: mg.classes.filter((c) => c.classKey === region),
+                };
+                const regionValueMetrics = valueMetrics.filter(
+                  (m) => m.groupId === region
+                );
+                const regionPrecalcMetrics = project.getPrecalcMetrics(
+                  regionMg,
+                  "valid",
+                  curGeography.geographyId
+                );
+                const regionPercMetrics = toPercentMetric(
+                  regionValueMetrics,
+                  regionPrecalcMetrics,
+                  {
+                    metricIdOverride: percMetricIdName,
+                  }
+                );
+                const metrics = [...regionValueMetrics, ...regionPercMetrics];
 
-              const columnConfig: ClassTableColumnConfig[] = [
-                { columnLabel: substrateLabel, type: "class", width: 40 },
-                {
-                  columnLabel: withinLabel,
-                  type: "metricValue",
-                  metricId: mg.metricId,
-                  valueFormatter: (val) =>
-                    Number.format(
-                      roundDecimal(
-                        squareMeterToMile(
-                          typeof val === "string"
-                            ? parseInt(val) * 40 * 40
-                            : val * 40 * 40
+                const columnConfig: ClassTableColumnConfig[] = [
+                  { columnLabel: substrateLabel, type: "class", width: 40 },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: mg.metricId,
+                    valueFormatter: (val) =>
+                      Number.format(
+                        roundDecimal(
+                          squareMeterToMile(
+                            typeof val === "string"
+                              ? parseInt(val) * 40 * 40
+                              : val * 40 * 40
+                          )
                         )
-                      )
-                    ),
-                  valueLabel: unitsLabel,
-                  chartOptions: { showTitle: true },
-                  width: 20,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: { showTitle: true },
-                  width: 40,
-                },
-              ];
+                      ),
+                    valueLabel: unitsLabel,
+                    chartOptions: { showTitle: true },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: { showTitle: true },
+                    width: 40,
+                  },
+                ];
 
-              return (
-                <Collapse title={t(studyRegionsDisplay[region])}>
-                  <VerticalSpacer />
-                  <LayerToggle
-                    label={t("Show Map Layer")}
-                    layerId={regionMg.classes[0].layerId}
-                  />
-                  <ClassTable
-                    rows={metrics}
-                    metricGroup={regionMg}
-                    objective={objectives}
-                    columnConfig={columnConfig}
-                  />
-                </Collapse>
-              );
-            })}
+                return (
+                  <Collapse title={t(studyRegionsDisplay[region])}>
+                    <VerticalSpacer />
+                    <LayerToggle
+                      label={t("Show Map Layer")}
+                      layerId={regionMg.classes[0].layerId}
+                    />
+                    <ClassTable
+                      rows={metrics}
+                      metricGroup={regionMg}
+                      objective={objectives}
+                      columnConfig={columnConfig}
+                    />
+                  </Collapse>
+                );
+              })}
+            </Collapse>
+
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
                 {genSketchTable(data, totalPrecalcMetrics, totalMg, t)}
