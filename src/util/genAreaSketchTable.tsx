@@ -13,8 +13,8 @@ import {
   percentWithEdge,
   keyBy,
   nestMetrics,
-  squareMeterToKilometer,
   roundDecimal,
+  squareMeterToMile,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import styled from "styled-components";
@@ -113,14 +113,14 @@ export const genAreaSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const kmVal = squareMeterToKilometer(value);
+              const miVal = squareMeterToMile(value);
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =
-                kmVal && kmVal < 0.1
+                miVal && miVal < 0.1
                   ? "< 0.1"
-                  : Number.format(roundDecimal(kmVal));
-              return valDisplay + " " + t("km²");
+                  : Number.format(roundDecimal(miVal));
+              return valDisplay + " " + t("mi²");
             },
           },
           {
