@@ -4,23 +4,20 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
   DefaultExtraParams,
-  splitSketchAntimeridian,
-  rasterMetrics,
-  isRasterDatasource,
 } from "@seasketch/geoprocessing";
-import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
 import {
+  GeoprocessingRequestModel,
   Metric,
   ReportResult,
   rekeyMetrics,
   sortMetrics,
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
-import { clipToGeography } from "../util/clipToGeography.js";
-import { loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
+import awsSdk from "aws-sdk";
+import { kelpWorker } from "./kelpWorker.js";
 
 /**
  * kelp: A geoprocessing function that calculates overlap metrics
@@ -32,69 +29,37 @@ export async function kelp(
   sketch:
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
-  extraParams: DefaultExtraParams = {}
+  extraParams: DefaultExtraParams = {},
+  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
-  // Use caller-provided geographyId if provided
-  const geographyId = getFirstFromParam("geographyIds", extraParams);
-
-  // Get geography features, falling back to geography assigned to default-boundary group
-  const curGeography = project.getGeographyById(geographyId, {
-    fallbackGroup: "default-boundary",
-  });
-
-  // Support sketches crossing antimeridian
-  const splitSketch = splitSketchAntimeridian(sketch);
-
-  // Clip to portion of sketch within current geography
-  const clippedSketch = await clipToGeography(splitSketch, curGeography);
-
-  // Get bounding box of sketch remainder
-  const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
-
-  // Calculate overlap metrics for each class in metric group
   const metricGroup = project.getMetricGroup("kelp");
-  const metrics: Metric[] = (
+
+  const metrics = (
     await Promise.all(
       metricGroup.classes.map(async (curClass) => {
-        if (!curClass.datasourceId)
-          throw new Error(`Expected datasourceId for ${curClass.classId}`);
+        const parameters = {
+          ...extraParams,
+          metricGroup,
+          classId: curClass.classId,
+        };
 
-        const ds = project.getDatasourceById(curClass.datasourceId);
-        if (!isRasterDatasource(ds))
-          throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
-
-        const url = project.getDatasourceUrl(ds);
-
-        // Start raster load and move on in loop while awaiting finish
-        const raster = await loadCog(url);
-
-        // Start analysis when raster load finishes
-        const overlapResult = await rasterMetrics(raster, {
-          metricId: metricGroup.metricId,
-          feature: clippedSketch,
-          ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
-          ...(ds.measurementType === "categorical" && {
-            categorical: true,
-            categoryMetricValues: [curClass.classId],
-          }),
-        });
-
-        return overlapResult.map(
-          (metrics): Metric => ({
-            ...metrics,
-            classId: curClass.classId,
-            geographyId: curGeography.geographyId,
-          })
-        );
+        return process.env.NODE_ENV === "test"
+          ? kelpWorker(sketch, parameters)
+          : runLambdaWorker(sketch, parameters, "kelpWorker", request);
       })
     )
-  ).reduce(
-    // merge
-    (metricsSoFar, curClassMetrics) => [...metricsSoFar, ...curClassMetrics],
+  ).reduce<Metric[]>(
+    (metrics, lambdaResult) =>
+      metrics.concat(
+        process.env.NODE_ENV === "test"
+          ? (lambdaResult as Metric[])
+          : parseLambdaResponse(
+              lambdaResult as awsSdk.Lambda.InvocationResponse
+            )
+      ),
     []
   );
 
-  // Return a report result with metrics and a null sketch
   return {
     metrics: sortMetrics(rekeyMetrics(metrics)),
     sketch: toNullSketch(sketch, true),
@@ -103,7 +68,7 @@ export async function kelp(
 
 export default new GeoprocessingHandler(kelp, {
   title: "kelp",
-  description: "",
+  description: "kelp overlap",
   timeout: 500, // seconds
   memory: 1024, // megabytes
   executionMode: "async",
