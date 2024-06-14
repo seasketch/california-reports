@@ -667,5 +667,20 @@
     "created": "2024-06-07T22:45:19.443Z",
     "lastUpdated": "2024-06-07T22:45:19.443Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_scsr_ml/scsr_ml.tif"
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bioregions_Petitions_Dissolve/MAN_CA_MPA_Bio_Pet_PairwiseDisso.shp",
+    "layerName": "MAN_CA_MPA_Bio_Pet_PairwiseDisso",
+    "geo_type": "vector",
+    "datasourceId": "clipLayer",
+    "formats": [
+      "fgb"
+    ],
+    "classKeys": [],
+    "created": "2024-06-14T19:10:34.383Z",
+    "lastUpdated": "2024-06-14T19:10:34.383Z",
+    "propertiesToKeep": [],
+    "explodeMulti": true,
+    "precalc": false
   }
 ]
