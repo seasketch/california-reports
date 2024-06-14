@@ -32,6 +32,8 @@
     "src/functions/kelpMaxWorker.ts",
     "src/functions/rockIslands.ts",
     "src/functions/shoretypes.ts",
-    "src/functions/habitat.ts"
+    "src/functions/shoretypesWorker.ts",
+    "src/functions/habitat.ts",
+    "src/functions/habitatWorker.ts"
   ]
 }
