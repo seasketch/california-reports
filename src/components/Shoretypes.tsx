@@ -198,8 +198,7 @@ export const genLengthSketchTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   mg: MetricGroup,
-  t: any,
-  printing: boolean = false
+  t: any
 ) => {
   const sketches = toNullSketchArray(data.sketch);
   const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
@@ -272,37 +271,8 @@ export const genLengthSketchTable = (
     ...classColumns,
   ];
 
-  if (printing) {
-    const tables: JSX.Element[] = [];
-    const totalClasses = mg.classes.length;
-    const numTables = Math.ceil(totalClasses / 5);
-
-    for (let i = 0; i < numTables; i++) {
-      const startIndex = i * 5;
-      const endIndex = Math.min((i + 1) * 5, totalClasses);
-
-      const tableColumns: Column<{ sketchId: string }>[] = [
-        columns[0], // "This plan contains" column
-        ...classColumns.slice(startIndex, endIndex),
-      ];
-
-      tables.push(
-        <AreaSketchTableStyled printing={printing} key={String(i)}>
-          <Table
-            columns={tableColumns}
-            data={rows}
-            manualPagination={printing}
-          />
-        </AreaSketchTableStyled>
-      );
-    }
-
-    return tables;
-  }
-
-  // If not printing, return a single table
   return (
-    <AreaSketchTableStyled printing={printing}>
+    <AreaSketchTableStyled>
       <Table columns={columns} data={rows} />
     </AreaSketchTableStyled>
   );

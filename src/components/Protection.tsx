@@ -83,13 +83,8 @@ export const ProtectionCard: React.FunctionComponent<ReportProps> = (props) => {
         return (
           <ReportError>
             {isCollection
-              ? sketchCollectionReport(
-                  data.sketch,
-                  data.metrics,
-                  t,
-                  props.printing
-                )
-              : sketchReport(data.metrics, t, props.printing)}
+              ? sketchCollectionReport(data.sketch, data.metrics, t)
+              : sketchReport(data.metrics, t)}
           </ReportError>
         );
       }}
@@ -103,7 +98,7 @@ export const ProtectionCard: React.FunctionComponent<ReportProps> = (props) => {
  * @param mg MetricGroup
  * @param t TFunction for translation
  */
-const sketchReport = (metrics: Metric[], t: any, printing: boolean = false) => {
+const sketchReport = (metrics: Metric[], t: any) => {
   // Should only have only a single metric
   if (metrics.length !== 1)
     throw new Error(
@@ -129,11 +124,9 @@ const sketchReport = (metrics: Metric[], t: any, printing: boolean = false) => {
         />
       </div>
 
-      {!printing && (
-        <Collapse title={t("Learn More")}>
-          <ProtectionLearnMore t={t} />
-        </Collapse>
-      )}
+      <Collapse title={t("Learn More")}>
+        <ProtectionLearnMore t={t} />
+      </Collapse>
     </>
   );
 };
@@ -148,8 +141,7 @@ const sketchReport = (metrics: Metric[], t: any, printing: boolean = false) => {
 const sketchCollectionReport = (
   sketch: NullSketchCollection | NullSketch,
   metrics: Metric[],
-  t: any,
-  printing: boolean = false
+  t: any
 ) => {
   const sketches = toNullSketchArray(sketch);
   const columns: Column<Metric>[] = [
@@ -171,19 +163,13 @@ const sketchCollectionReport = (
     <>
       <Table className="styled" columns={columns} data={metrics} />
 
-      <Collapse
-        title={t("Show by MPA")}
-        collapsed={!printing}
-        key={String(printing)}
-      >
-        {genMpaSketchTable(sketches, t, printing)}
+      <Collapse title={t("Show by MPA")}>
+        {genMpaSketchTable(sketches, t)}
       </Collapse>
 
-      {!printing && (
-        <Collapse title={t("Learn More")}>
-          <ProtectionLearnMore t={t} />
-        </Collapse>
-      )}
+      <Collapse title={t("Learn More")}>
+        <ProtectionLearnMore t={t} />
+      </Collapse>
     </>
   );
 };
@@ -191,11 +177,7 @@ const sketchCollectionReport = (
 /**
  * Show by MPA sketch table for sketch collection
  */
-const genMpaSketchTable = (
-  sketches: NullSketch[],
-  t: any,
-  printing?: boolean
-) => {
+const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
   const columns: Column<NullSketch>[] = [
     {
       Header: t("MPA"),
@@ -226,7 +208,6 @@ const genMpaSketchTable = (
         data={sketches.sort((a, b) =>
           a.properties.name.localeCompare(b.properties.name)
         )}
-        manualPagination={printing}
       />
     </SmallReportTableStyled>
   );

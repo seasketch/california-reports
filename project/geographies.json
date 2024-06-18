@@ -5,5 +5,26 @@
     "display": "World",
     "groups": ["default-boundary"],
     "precalc": true
+  },
+  {
+    "geographyId": "north_br",
+    "datasourceId": "north_br",
+    "display": "North Bioregion",
+    "groups": [],
+    "precalc": true
+  },
+  {
+    "geographyId": "central_br",
+    "datasourceId": "central_br",
+    "display": "Central Bioregion",
+    "groups": [],
+    "precalc": true
+  },
+  {
+    "geographyId": "south_br",
+    "datasourceId": "south_br",
+    "display": "South Bioregion",
+    "groups": [],
+    "precalc": true
   }
 ]

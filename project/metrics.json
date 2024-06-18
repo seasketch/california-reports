@@ -531,5 +531,17 @@
         "layerId": "2nZ5K2qmi"
       }
     ]
+  },
+  {
+    "metricId": "estuaries",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "estuaries",
+        "display": "Estuaries",
+        "datasourceId": "estuaries",
+        "layerId": "JHmagVqRe"
+      }
+    ]
   }
 ]
