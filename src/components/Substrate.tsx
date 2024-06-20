@@ -22,33 +22,33 @@ import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * Estuaries component
+ * Substrate component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
+export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
-  const metricGroup = project.getMetricGroup("estuaries", t);
+  const metricGroup = project.getMetricGroup("substrate", t);
   const precalcMetrics = geographies
     .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
+      project.getPrecalcMetrics(metricGroup, "valid", geography.geographyId)
     )
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
   // Labels
-  const titleLabel = t("Estuaries");
+  const titleLabel = t("Substrate");
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const unitsLabel = t("mi²");
 
   return (
-    <ResultsCard title={titleLabel} functionName="estuaries">
+    <ResultsCard title={titleLabel} functionName="substrate">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -60,6 +60,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
           metricIdOverride: percMetricIdName,
           idProperty: "geographyId",
         });
+
         const metrics = [...valueMetrics, ...percentMetrics];
 
         const objectives = (() => {
@@ -71,8 +72,8 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
         return (
           <ReportError>
             <p>
-              <Trans i18nKey="Estuaries 1">
-                This report summarizes this plan's overlap with estuaries within
+              <Trans i18nKey="Substrate 1">
+                This report summarizes this plan's overlap with substrate within
                 California's territorial sea.
               </Trans>
             </p>
@@ -95,7 +96,9 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                     Number.format(
                       roundDecimal(
                         squareMeterToMile(
-                          typeof val === "string" ? parseInt(val) : val
+                          typeof val === "string"
+                            ? parseInt(val) * 30 * 30
+                            : val * 30 * 30
                         ),
                         2,
                         { keepSmallValues: true }
@@ -126,51 +129,60 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
             />
 
             <Collapse title={t("Show By Bioregion")}>
-              <GeographyTable
-                rows={metrics.filter((m) => m.geographyId !== "world")}
-                metricGroup={metricGroup}
-                geographies={geographies.filter(
-                  (g) => g.geographyId !== "world"
-                )}
-                objective={objectives}
-                columnConfig={[
-                  {
-                    columnLabel: " ",
-                    type: "class",
-                    width: 30,
-                  },
-                  {
-                    columnLabel: withinLabel,
-                    type: "metricValue",
-                    metricId: metricGroup.metricId,
-                    valueFormatter: (val: string | number) =>
-                      Number.format(
-                        roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
-                          ),
-                          2,
-                          { keepSmallValues: true }
-                        )
-                      ),
-                    valueLabel: unitsLabel,
-                    chartOptions: {
-                      showTitle: true,
+              {metricGroup.classes.map((curClass) => (
+                <GeographyTable
+                  key={curClass.classId}
+                  rows={metrics.filter(
+                    (m) =>
+                      m.geographyId !== "world" &&
+                      m.classId === curClass.classId
+                  )}
+                  metricGroup={metricGroup}
+                  geographies={geographies.filter(
+                    (g) => g.geographyId !== "world"
+                  )}
+                  objective={objectives}
+                  columnConfig={[
+                    {
+                      columnLabel: t(curClass.display),
+                      type: "class",
+                      width: 30,
                     },
-                    width: 20,
-                  },
-                  {
-                    columnLabel: percWithinLabel,
-                    type: "metricChart",
-                    metricId: percMetricIdName,
-                    valueFormatter: "percent",
-                    chartOptions: {
-                      showTitle: true,
+                    {
+                      columnLabel: withinLabel,
+                      type: "metricValue",
+                      metricId: metricGroup.metricId,
+                      valueFormatter: (val: string | number) =>
+                        Number.format(
+                          roundDecimal(
+                            squareMeterToMile(
+                              typeof val === "string"
+                                ? parseInt(val) * 30 * 30
+                                : val * 30 * 30
+                            ),
+                            2,
+                            { keepSmallValues: true }
+                          )
+                        ),
+                      valueLabel: unitsLabel,
+                      chartOptions: {
+                        showTitle: true,
+                      },
+                      width: 20,
                     },
-                    width: 40,
-                  },
-                ]}
-              />
+                    {
+                      columnLabel: percWithinLabel,
+                      type: "metricChart",
+                      metricId: percMetricIdName,
+                      valueFormatter: "percent",
+                      chartOptions: {
+                        showTitle: true,
+                      },
+                      width: 40,
+                    },
+                  ]}
+                />
+              ))}
             </Collapse>
 
             {isCollection && (
@@ -184,13 +196,14 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
-                  t
+                  t,
+                  (val) => val * 30 * 30
                 )}
               </Collapse>
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="Estuaries - learn more">
+              <Trans i18nKey="Substrate - learn more">
                 <p>ℹ️ Overview:</p>
                 <p>🎯 Planning Objective:</p>
                 <p>🗺️ Source Data:</p>

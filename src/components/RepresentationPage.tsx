@@ -4,6 +4,7 @@ import { RockIslands } from "./RockIslands.js";
 import { Shoretypes } from "./Shoretypes.js";
 import { Habitat } from "./Habitat.js";
 import { Estuaries } from "./Estuaries.js";
+import { Substrate } from "./Substrate.js";
 
 const ReportPage = () => {
   return (
@@ -13,6 +14,7 @@ const ReportPage = () => {
       <Shoretypes />
       <Habitat />
       <Estuaries />
+      <Substrate />
     </>
   );
 };

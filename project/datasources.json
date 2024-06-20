@@ -529,5 +529,17 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/south_br_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate30.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "substrate",
+    "formats": ["tif"],
+    "created": "2024-06-20T16:39:17.383Z",
+    "lastUpdated": "2024-06-20T16:39:17.383Z",
+    "noDataValue": -9999,
+    "measurementType": "categorical",
+    "precalc": true
   }
 ]

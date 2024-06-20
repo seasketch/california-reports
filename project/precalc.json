@@ -32,6 +32,22 @@
     "value": 4836
   },
   {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "substrate-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 481844
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "substrate-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3997015
+  },
+  {
     "geographyId": "eez",
     "metricId": "area",
     "classId": "bioregions-Central Coast",
@@ -320,6 +336,22 @@
     "value": 6659
   },
   {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "substrate-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 533771
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "substrate-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 4380705
+  },
+  {
     "geographyId": "north_sr",
     "metricId": "area",
     "classId": "rock_islands-total",
@@ -382,6 +414,38 @@
     "sketchId": null,
     "groupId": null,
     "value": 145
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "substrate-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 679880
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "substrate-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 10667562
+  },
+  {
+    "geographyId": "world",
+    "metricId": "valid",
+    "classId": "substrate-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1695495
+  },
+  {
+    "geographyId": "world",
+    "metricId": "valid",
+    "classId": "substrate-2",
+    "sketchId": null,
+    "groupId": "19045282",
+    "value": 10667562
   },
   {
     "geographyId": "world",

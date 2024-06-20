@@ -508,5 +508,25 @@
         "layerId": "JHmagVqRe"
       }
     ]
+  },
+  {
+    "metricId": "substrate",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "1",
+        "classKey": "1",
+        "display": "Hard Substrate",
+        "datasourceId": "substrate",
+        "layerId": "1FA9RLpao"
+      },
+      {
+        "classId": "2",
+        "classKey": "2",
+        "display": "Soft Substrate",
+        "datasourceId": "substrate",
+        "layerId": "1FA9RLpao"
+      }
+    ]
   }
 ]

@@ -37,6 +37,8 @@
     "src/functions/habitat.ts",
     "src/functions/habitatWorker.ts",
     "src/functions/estuaries.ts",
-    "src/functions/estuariesWorker.ts"
+    "src/functions/estuariesWorker.ts",
+    "src/functions/substrate.ts",
+    "src/functions/substrateWorker.ts"
   ]
 }

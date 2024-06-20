@@ -72,7 +72,8 @@ export const genAreaSketchTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   mg: MetricGroup,
-  t: any
+  t: any,
+  valueFormatter?: (val: number) => number
 ) => {
   const sketches = toNullSketchArray(data.sketch);
   const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
@@ -112,7 +113,9 @@ export const genAreaSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = squareMeterToMile(value);
+              const miVal = squareMeterToMile(
+                valueFormatter ? valueFormatter(value) : value
+              );
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =

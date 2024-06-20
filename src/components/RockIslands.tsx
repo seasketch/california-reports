@@ -44,8 +44,6 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
     )
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
-  console.log("precalcMetrics", precalcMetrics);
-
   // Labels
   const titleLabel = t("Rock Islands");
   const mapLabel = t("Map");
@@ -62,7 +60,6 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
           [data.sketch.properties.id]
         );
-        console.log("valueMetrics", valueMetrics);
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
           idProperty: "geographyId",
