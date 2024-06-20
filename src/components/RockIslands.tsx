@@ -3,24 +3,26 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
+  SketchClassTable,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
-  OBJECTIVE_NO,
-  OBJECTIVE_YES,
-  ObjectiveAnswer,
+  Metric,
+  MetricGroup,
   ReportResult,
+  flattenBySketchAllClass,
   metricsWithSketchId,
   roundDecimal,
+  squareMeterToMile,
+  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
+import { GeographyTable } from "../util/GeographyTable.js";
 import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
-
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -32,113 +34,40 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
 export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
-  const curGeography = project.getGeographyById(props.geographyId, {
-    fallbackGroup: "default-boundary",
-  });
+  const geographies = project.geographies;
 
+  // Metrics
   const metricGroup = project.getMetricGroup("rockIslands", t);
-  const precalcMetrics = project.getPrecalcMetrics(
-    metricGroup,
-    "area",
-    curGeography.geographyId
-  );
+  const precalcMetrics = geographies
+    .map((geography) =>
+      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
+    )
+    .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
+
+  console.log("precalcMetrics", precalcMetrics);
 
   // Labels
   const titleLabel = t("Rock Islands");
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("m²");
-  const srLabel = t("Study Region");
-  const brLabel = t("Bioregion");
+  const unitsLabel = t("sq. mi.");
 
   return (
-    <ResultsCard
-      title={titleLabel}
-      functionName="rockIslands"
-      extraParams={{ geographyIds: [curGeography.geographyId] }}
-    >
+    <ResultsCard title={titleLabel} functionName="rockIslands">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
-        // Metrics
-        // Overall metrics
-        const overallMg = {
-          ...metricGroup,
-          classes: metricGroup.classes.filter(
-            (c) => c.classId === "rock_islands"
-          ),
-        };
-        const overallValueMetrics = metricsWithSketchId(
-          data.metrics.filter(
-            (m) =>
-              m.metricId === metricGroup.metricId &&
-              m.classId === "rock_islands"
-          ),
+        const valueMetrics = metricsWithSketchId(
+          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
           [data.sketch.properties.id]
         );
-        const overallPercMetrics = toPercentMetric(
-          overallValueMetrics,
-          precalcMetrics.filter((m) => m.classId === "rock_islands"),
-          {
-            metricIdOverride: percMetricIdName,
-          }
-        );
-        const overallMetrics = [...overallValueMetrics, ...overallPercMetrics];
-
-        // Study region metrics
-        const srMg = {
-          ...metricGroup,
-          classes: metricGroup.classes.filter((c) =>
-            c.classId?.endsWith("_sr")
-          ),
-        };
-        const srValueMetrics = metricsWithSketchId(
-          data.metrics.filter(
-            (m) =>
-              m.metricId === metricGroup.metricId && m.classId?.endsWith("_sr")
-          ),
-          [data.sketch.properties.id]
-        );
-        const srPercMetrics = toPercentMetric(
-          srValueMetrics,
-          precalcMetrics.filter((m) => m.classId?.endsWith("_sr")),
-          {
-            metricIdOverride: percMetricIdName,
-          }
-        );
-        const srMetrics = [...srValueMetrics, ...srPercMetrics];
-        const srIsMet = srValueMetrics.every((m) => m.value > 0)
-          ? OBJECTIVE_YES
-          : OBJECTIVE_NO;
-        const srMsg = objectiveMsgs["studyRegion"](srIsMet, t);
-
-        // Bioregion metrics
-        const brMg = {
-          ...metricGroup,
-          classes: metricGroup.classes.filter((c) =>
-            c.classId?.endsWith("_br")
-          ),
-        };
-        const brValueMetrics = metricsWithSketchId(
-          data.metrics.filter(
-            (m) =>
-              m.metricId === metricGroup.metricId && m.classId?.endsWith("_br")
-          ),
-          [data.sketch.properties.id]
-        );
-        const brPercMetrics = toPercentMetric(
-          brValueMetrics,
-          precalcMetrics.filter((m) => m.classId?.endsWith("_br")),
-          {
-            metricIdOverride: percMetricIdName,
-          }
-        );
-        const brMetrics = [...brValueMetrics, ...brPercMetrics];
-        const brIsMet = brValueMetrics.every((m) => m.value > 0)
-          ? OBJECTIVE_YES
-          : OBJECTIVE_NO;
-        const brMsg = objectiveMsgs["bioregion"](srIsMet, t);
+        console.log("valueMetrics", valueMetrics);
+        const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
+          metricIdOverride: percMetricIdName,
+          idProperty: "geographyId",
+        });
+        const metrics = [...valueMetrics, ...percentMetrics];
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
@@ -150,14 +79,14 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <p>
               <Trans i18nKey="RockIslands 1">
-                This report summarizes this plan's overlap with rock islands in
-                the study region.
+                This report summarizes this plan's overlap with rock islands
+                within California's territorial sea.
               </Trans>
             </p>
 
             <ClassTable
-              rows={overallMetrics}
-              metricGroup={overallMg}
+              rows={metrics.filter((m) => m.geographyId === "world")}
+              metricGroup={metricGroup}
               objective={objectives}
               columnConfig={[
                 {
@@ -172,7 +101,11 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        typeof val === "string" ? parseInt(val) : val
+                        squareMeterToMile(
+                          typeof val === "string" ? parseInt(val) : val
+                        ),
+                        2,
+                        { keepSmallValues: true }
                       )
                     ),
                   valueLabel: unitsLabel,
@@ -199,27 +132,19 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            <Collapse title={t("Show by Study Region")}>
-              <p>
-                <Trans i18nKey="Rock Islands Study Region">
-                  The following is a breakdown of this plan's overlap with rock
-                  islands by <i>study region</i>. The San Francisco Bay study
-                  region is excluded due to not containing any rock islands per
-                  the data provided.
-                </Trans>
-              </p>
-
-              <ObjectiveStatus status={srIsMet} msg={srMsg} />
-
-              <ClassTable
-                rows={srMetrics}
-                metricGroup={srMg}
+            <Collapse title={t("Show By Bioregion")}>
+              <GeographyTable
+                rows={metrics.filter((m) => m.geographyId !== "world")}
+                metricGroup={metricGroup}
+                geographies={geographies.filter(
+                  (g) => g.geographyId !== "world"
+                )}
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: srLabel,
+                    columnLabel: " ",
                     type: "class",
-                    width: 40,
+                    width: 30,
                   },
                   {
                     columnLabel: withinLabel,
@@ -228,59 +153,11 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          typeof val === "string" ? parseInt(val) : val
-                        )
-                      ),
-                    valueLabel: unitsLabel,
-                    chartOptions: {
-                      showTitle: true,
-                    },
-                    width: 20,
-                  },
-                  {
-                    columnLabel: percWithinLabel,
-                    type: "metricChart",
-                    metricId: percMetricIdName,
-                    valueFormatter: "percent",
-                    chartOptions: {
-                      showTitle: true,
-                    },
-                    width: 40,
-                  },
-                ]}
-              />
-            </Collapse>
-
-            <Collapse title={t("Show by Bioregion")}>
-              <p>
-                <Trans i18nKey="Rock Islands Bioregion">
-                  The following is a breakdown of this plan's overlap with rock
-                  islands by <i>bioregion</i>. The San Francisco Bay study
-                  region is excluded due to not containing any rock islands per
-                  the data provided.
-                </Trans>
-              </p>
-
-              <ObjectiveStatus status={brIsMet} msg={brMsg} />
-
-              <ClassTable
-                rows={brMetrics}
-                metricGroup={brMg}
-                objective={objectives}
-                columnConfig={[
-                  {
-                    columnLabel: brLabel,
-                    type: "class",
-                    width: 40,
-                  },
-                  {
-                    columnLabel: withinLabel,
-                    type: "metricValue",
-                    metricId: metricGroup.metricId,
-                    valueFormatter: (val: string | number) =>
-                      Number.format(
-                        roundDecimal(
-                          typeof val === "string" ? parseInt(val) : val
+                          squareMeterToMile(
+                            typeof val === "string" ? parseInt(val) : val
+                          ),
+                          2,
+                          { keepSmallValues: true }
                         )
                       ),
                     valueLabel: unitsLabel,
@@ -305,12 +182,17 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genAreaSketchTable(data, precalcMetrics, metricGroup, t)}
+                {genAreaSketchTable(
+                  data,
+                  precalcMetrics.filter((m) => m.geographyId === "world"),
+                  metricGroup,
+                  t
+                )}
               </Collapse>
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="RockIslands - learn more">
+              <Trans i18nKey="ockIslands - learn more">
                 <p>ℹ️ Overview:</p>
                 <p>🎯 Planning Objective:</p>
                 <p>🗺️ Source Data:</p>
@@ -330,43 +212,27 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
   );
 };
 
-const objectiveMsgs: Record<string, any> = {
-  studyRegion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan meets the objective of rock island replication in all study regions."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not meet the objective of rock island replication in all study regions."
-          )}
-        </>
-      );
-    }
-  },
-  bioregion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan meets the objective of rock island replication in all bioregions."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not meet the objective of rock island replication in all bioregions."
-          )}
-        </>
-      );
-    }
-  },
+const genSketchTable = (
+  data: ReportResult,
+  metricGroup: MetricGroup,
+  precalcMetrics: Metric[]
+) => {
+  // Build agg metric objects for each child sketch in collection with percValue for each class
+  const childSketches = toNullSketchArray(data.sketch);
+  const childSketchIds = childSketches.map((sk) => sk.properties.id);
+  const childSketchMetrics = toPercentMetric(
+    metricsWithSketchId(
+      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
+      childSketchIds
+    ),
+    precalcMetrics
+  );
+  const sketchRows = flattenBySketchAllClass(
+    childSketchMetrics,
+    metricGroup.classes,
+    childSketches
+  );
+  return (
+    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
+  );
 };

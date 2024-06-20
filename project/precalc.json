@@ -9,11 +9,27 @@
   },
   {
     "geographyId": "central_br",
+    "metricId": "area",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 975848.6068154494
+  },
+  {
+    "geographyId": "central_br",
     "metricId": "count",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 62
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4836
   },
   {
     "geographyId": "eez",
@@ -281,11 +297,27 @@
   },
   {
     "geographyId": "north_br",
+    "metricId": "area",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1516646.0306577112
+  },
+  {
+    "geographyId": "north_br",
     "metricId": "count",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 116
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6659
   },
   {
     "geographyId": "north_sr",
@@ -329,11 +361,27 @@
   },
   {
     "geographyId": "south_br",
+    "metricId": "area",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 28477.129967815228
+  },
+  {
+    "geographyId": "south_br",
     "metricId": "count",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 92
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "rock_islands-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 145
   },
   {
     "geographyId": "world",

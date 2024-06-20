@@ -172,41 +172,6 @@
         "display": "Rock Islands",
         "datasourceId": "rock_islands",
         "layerId": "E17RoLlb0"
-      },
-      {
-        "classId": "rock_islands_north_sr",
-        "display": "North Study Region",
-        "datasourceId": "rock_islands_north_sr"
-      },
-      {
-        "classId": "rock_islands_northcentral_sr",
-        "display": "North Central Study Region",
-        "datasourceId": "rock_islands_northcentral_sr"
-      },
-      {
-        "classId": "rock_islands_central_sr",
-        "display": "Central Study Region",
-        "datasourceId": "rock_islands_central_sr"
-      },
-      {
-        "classId": "rock_islands_south_sr",
-        "display": "South Study Region",
-        "datasourceId": "rock_islands_south_sr"
-      },
-      {
-        "classId": "rock_islands_north_br",
-        "display": "North Bioregion",
-        "datasourceId": "rock_islands_north_br"
-      },
-      {
-        "classId": "rock_islands_central_br",
-        "display": "Central Bioregion",
-        "datasourceId": "rock_islands_central_br"
-      },
-      {
-        "classId": "rock_islands_south_br",
-        "display": "South Bioregion",
-        "datasourceId": "rock_islands_south_br"
       }
     ]
   },

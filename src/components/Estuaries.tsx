@@ -62,6 +62,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
+          idProperty: "geographyId",
         });
         const metrics = [...valueMetrics, ...percentMetrics];
 

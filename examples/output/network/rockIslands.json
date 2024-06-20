@@ -1,6 +1,141 @@
 {
   "metrics": [
     {
+      "geographyId": "central_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 78450.523732,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 76972.475106,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 1478.048626,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "rockIslands",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
       "geographyId": "world",
       "metricId": "rockIslands",
       "classId": "rock_islands",
@@ -41,321 +176,6 @@
       "sketchId": "29484",
       "groupId": null,
       "value": 1478.048626,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_br",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_br",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 78450.523732,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_br",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 76972.475106,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_br",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 1478.048626,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_sr",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_sr",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 78450.523732,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_sr",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 76972.475106,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_central_sr",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 1478.048626,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_br",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_br",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_br",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_br",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_sr",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_sr",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_sr",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_north_sr",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_northcentral_sr",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_northcentral_sr",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_northcentral_sr",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_northcentral_sr",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_br",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_br",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_br",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_br",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "split"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_sr",
-      "sketchId": "29481",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_sr",
-      "sketchId": "29482",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_sr",
-      "sketchId": "29483",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "rockIslands",
-      "classId": "rock_islands_south_sr",
-      "sketchId": "29484",
-      "groupId": null,
-      "value": 0,
       "extra": {
         "sketchName": "split"
       }
