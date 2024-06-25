@@ -528,5 +528,17 @@
         "layerId": "1FA9RLpao"
       }
     ]
+  },
+  {
+    "metricId": "eelgrass",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "eelgrass",
+        "display": "Eelgrass",
+        "datasourceId": "eelgrass",
+        "layerId": ""
+      }
+    ]
   }
 ]

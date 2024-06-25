@@ -191,9 +191,27 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Estuaries - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+                <p>
+                  ℹ️ Overview:Accurate mapping of tidal wetlands is vital for
+                  effective conservation and restoration of these valued
+                  habitats, and good mapping is key to strategic planning for
+                  coastal resilience. Tidal wetlands are defined by regular
+                  inundation by the tides; therefore, mapping of tidal wetlands
+                  should be based on knowledge of tidal water levels and the
+                  land areas inundated by the tides. We developed this tidal
+                  wetland mapping following that principle.
+                </p>
+                <p>
+                  This mapping includes areas currently inundated by the tides
+                  -- current tidal wetlands -- from ocean to head of tide,
+                  including the freshwater tidal zone. To assist restoration
+                  planning, our mapping also includes historical tidal wetlands
+                  -- areas that were historically inundated by the tides, but
+                  are no longer inundated by the tides due to human alterations
+                  to the landscape such as dikes and tide gates.
+                </p>
+                <p>🎯 Planning Objective: None.</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total

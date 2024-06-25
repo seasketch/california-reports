@@ -26,18 +26,18 @@ import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * RockIslands component
+ * Eelgrass component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
+export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
-  const metricGroup = project.getMetricGroup("rockIslands", t);
+  const metricGroup = project.getMetricGroup("eelgrass", t);
   const precalcMetrics = geographies
     .map((geography) =>
       project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
@@ -45,14 +45,14 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
   // Labels
-  const titleLabel = t("Rock Islands");
+  const titleLabel = t("Eelgrass");
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
   const unitsLabel = t("sq. mi.");
 
   return (
-    <ResultsCard title={titleLabel} functionName="rockIslands">
+    <ResultsCard title={titleLabel} functionName="eelgrass">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -75,9 +75,9 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
         return (
           <ReportError>
             <p>
-              <Trans i18nKey="RockIslands 1">
-                This report summarizes this plan's overlap with rock islands
-                within California's territorial sea.
+              <Trans i18nKey="Eelgrass 1">
+                This report summarizes this plan's overlap with eelgrass within
+                California's territorial sea.
               </Trans>
             </p>
 
@@ -194,10 +194,20 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="rockIslands - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+              <Trans i18nKey="eelgrass - learn more">
+                <p>
+                  ℹ️ Overview: Zostera marina, or eelgrass, grows intertidally
+                  and in the shallow subtidal of estuaries, bays, and other
+                  protected coastal areas of the ecoregion. It is a flowering
+                  plant, not an alga, and often occurs in dense beds. It helps
+                  prevent erosion and maintain stability near shore by anchoring
+                  sediment with its spreading rhizomes and slowing water flow.
+                  Eelgrass beds also provide foraging, breeding, and nursery
+                  areas for many species of invertebrates, fish, and birds. This
+                  file aggregates data from many sources across multiple years.
+                </p>
+                <p>🎯 Planning Objective: None.</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total
@@ -211,30 +221,5 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
-  );
-};
-
-const genSketchTable = (
-  data: ReportResult,
-  metricGroup: MetricGroup,
-  precalcMetrics: Metric[]
-) => {
-  // Build agg metric objects for each child sketch in collection with percValue for each class
-  const childSketches = toNullSketchArray(data.sketch);
-  const childSketchIds = childSketches.map((sk) => sk.properties.id);
-  const childSketchMetrics = toPercentMetric(
-    metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-      childSketchIds
-    ),
-    precalcMetrics
-  );
-  const sketchRows = flattenBySketchAllClass(
-    childSketchMetrics,
-    metricGroup.classes,
-    childSketches
-  );
-  return (
-    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
