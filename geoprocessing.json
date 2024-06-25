@@ -39,6 +39,8 @@
     "src/functions/estuaries.ts",
     "src/functions/estuariesWorker.ts",
     "src/functions/substrate.ts",
-    "src/functions/substrateWorker.ts"
+    "src/functions/substrateWorker.ts",
+    "src/functions/eelgrass.ts",
+    "src/functions/eelgrassWorker.ts"
   ]
 }

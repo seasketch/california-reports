@@ -543,45 +543,6 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate30.tif"
   },
   {
-    "datasourceId": "eelgrass_north_br",
-    "geo_type": "vector",
-    "formats": ["fgb"],
-    "precalc": true,
-    "layerName": "eelgrass_north_br",
-    "classKeys": [],
-    "created": "2024-06-24T18:47:31.796Z",
-    "lastUpdated": "2024-06-24T18:47:31.796Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_north_br.fgb",
-    "propertiesToKeep": [],
-    "explodeMulti": true
-  },
-  {
-    "datasourceId": "eelgrass_central_br",
-    "geo_type": "vector",
-    "formats": ["fgb"],
-    "precalc": true,
-    "layerName": "eelgrass_central_br",
-    "classKeys": [],
-    "created": "2024-06-24T18:47:45.757Z",
-    "lastUpdated": "2024-06-24T18:47:45.757Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_central_br.fgb",
-    "propertiesToKeep": [],
-    "explodeMulti": true
-  },
-  {
-    "datasourceId": "eelgrass_south_br",
-    "geo_type": "vector",
-    "formats": ["fgb"],
-    "precalc": true,
-    "layerName": "eelgrass_south_br",
-    "classKeys": [],
-    "created": "2024-06-24T18:47:54.519Z",
-    "lastUpdated": "2024-06-24T18:47:54.519Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_south_br.fgb",
-    "propertiesToKeep": [],
-    "explodeMulti": true
-  },
-  {
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass.fgb",
     "layerName": "eelgrass",
     "geo_type": "vector",
