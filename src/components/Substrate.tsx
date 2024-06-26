@@ -204,9 +204,16 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Substrate - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+                <p>
+                  ℹ️ Overview: California's waters were modelled into two
+                  substrate classes: soft and hard. Substrate data has been
+                  downsampled to a 30m x 30m raster grid for efficiency,
+                  therefore area calculations are estimates. Final plans should
+                  check area totals in GIS tools before publishing final area
+                  statistics.
+                </p>
+                <p>🎯 Planning Objective: N/A</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total

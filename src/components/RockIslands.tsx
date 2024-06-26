@@ -195,9 +195,14 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="rockIslands - learn more">
-                <p>ℹ️ Overview:</p>
-                <p>🎯 Planning Objective:</p>
-                <p>🗺️ Source Data:</p>
+                <p>
+                  ℹ️ Overview: This report displays the total area of rock
+                  island contained within this plan. Rock island data was
+                  converted from outlines of rock island to polygons of rock
+                  islands for area calculations.
+                </p>
+                <p>🎯 Planning Objective: N/A</p>
+                <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
                   feature within the plan. This value is divided by the total
@@ -211,30 +216,5 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
-  );
-};
-
-const genSketchTable = (
-  data: ReportResult,
-  metricGroup: MetricGroup,
-  precalcMetrics: Metric[]
-) => {
-  // Build agg metric objects for each child sketch in collection with percValue for each class
-  const childSketches = toNullSketchArray(data.sketch);
-  const childSketchIds = childSketches.map((sk) => sk.properties.id);
-  const childSketchMetrics = toPercentMetric(
-    metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-      childSketchIds
-    ),
-    precalcMetrics
-  );
-  const sketchRows = flattenBySketchAllClass(
-    childSketchMetrics,
-    metricGroup.classes,
-    childSketches
-  );
-  return (
-    <SketchClassTable rows={sketchRows} metricGroup={metricGroup} formatPerc />
   );
 };
