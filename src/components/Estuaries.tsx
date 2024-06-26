@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -10,6 +11,9 @@ import {
 import {
   GeogProp,
   Metric,
+  OBJECTIVE_NO,
+  OBJECTIVE_YES,
+  ObjectiveAnswer,
   ReportResult,
   metricsWithSketchId,
   roundDecimal,
@@ -126,6 +130,20 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
             />
 
             <Collapse title={t("Show By Bioregion")}>
+              {metrics
+                .filter((m) => m.geographyId !== "world")
+                .every((m) => m.value > 0) ? (
+                <ObjectiveStatus
+                  status={OBJECTIVE_YES}
+                  msg={objectiveMsgs["bioregion"](OBJECTIVE_YES, t)}
+                />
+              ) : (
+                <ObjectiveStatus
+                  status={OBJECTIVE_NO}
+                  msg={objectiveMsgs["bioregion"](OBJECTIVE_NO, t)}
+                />
+              )}
+
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId !== "world")}
                 metricGroup={metricGroup}
@@ -226,4 +244,45 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
       }}
     </ResultsCard>
   );
+};
+
+const objectiveMsgs: Record<string, any> = {
+  studyRegion: (objectiveMet: ObjectiveAnswer, t: any) => {
+    if (objectiveMet === OBJECTIVE_YES) {
+      return (
+        <>
+          {t(
+            "This plan contains estuaries in all study regions and may achieve habitat replication."
+          )}
+        </>
+      );
+    } else if (objectiveMet === OBJECTIVE_NO) {
+      return (
+        <>
+          {t(
+            "This plan does not contain estuaries in all study regions and does not achieve habitat replication."
+          )}
+        </>
+      );
+    }
+  },
+  bioregion: (objectiveMet: ObjectiveAnswer, t: any) => {
+    if (objectiveMet === OBJECTIVE_YES) {
+      return (
+        <>
+          {t(
+            "This plan contains estuaries in all bioregions and may achieve habitat replication."
+          )}
+        </>
+      );
+    } else if (objectiveMet === OBJECTIVE_NO) {
+      return (
+        <>
+          {t(
+            "This plan does not contain estuaries in all bioregions and does not achieve habitat replication."
+          )}
+        </>
+      );
+    }
+  },
 };

@@ -114,7 +114,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
         const brIsMet = brValueMetrics.every((m) => m.value > 0)
           ? OBJECTIVE_YES
           : OBJECTIVE_NO;
-        const brMsg = objectiveMsgs["bioregion"](srIsMet, t);
+        const brMsg = objectiveMsgs["bioregion"](brIsMet, t);
 
         // Overall / total metrics
         const overallValue = createMetric({
