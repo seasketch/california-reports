@@ -1,12 +1,5 @@
 [
   {
-    "geographyId": "world",
-    "datasourceId": "world",
-    "display": "World",
-    "groups": ["default-boundary"],
-    "precalc": true
-  },
-  {
     "geographyId": "north_br",
     "datasourceId": "north_br",
     "display": "North Bioregion",

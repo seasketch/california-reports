@@ -2,6 +2,22 @@
   {
     "geographyId": "central_br",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 499848.8528581358
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2264835.114980312
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
@@ -22,6 +38,46 @@
     "sketchId": null,
     "groupId": null,
     "value": 975848.6068154494
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 817135.9791291774
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2297801.831304031
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 406829.64154674835
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1381
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 713
   },
   {
     "geographyId": "central_br",
@@ -46,6 +102,102 @@
     "sketchId": null,
     "groupId": null,
     "value": 4836
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1643
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 832
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 945
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 14859
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 8058
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-3",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 5429
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-4",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3953
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-5",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 3085
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-6",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 2406
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-7",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1804
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-8",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1144
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-9",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 305
   },
   {
     "geographyId": "central_br",
@@ -322,6 +474,22 @@
   {
     "geographyId": "north_br",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 862868.4696461922
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1940695.0576471598
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
     "classId": "eelgrass_north_br-total",
     "sketchId": null,
     "groupId": null,
@@ -350,6 +518,46 @@
     "sketchId": null,
     "groupId": null,
     "value": 1516646.0306577112
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1917630.9032717976
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 919370.5342388302
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 174865.8805217615
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1592
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 693
   },
   {
     "geographyId": "north_br",
@@ -382,6 +590,94 @@
     "sketchId": null,
     "groupId": null,
     "value": 6659
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1779
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 838
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 385
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 8763
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 2741
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-3",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1127
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-4",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 514
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-5",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 241
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-6",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 76
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-7",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 15
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-8",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 6
   },
   {
     "geographyId": "north_br",
@@ -434,6 +730,22 @@
   {
     "geographyId": "south_br",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 757675.9562736053
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 707184.5314063675
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
@@ -454,6 +766,46 @@
     "sketchId": null,
     "groupId": null,
     "value": 28477.129967815228
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1760949.2270130515
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 352187.60336406296
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2094477.091517951
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1684
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 850
   },
   {
     "geographyId": "south_br",
@@ -478,6 +830,126 @@
     "sketchId": null,
     "groupId": null,
     "value": 145
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1718
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 474
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1204
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-1",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 36765
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-10",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 234
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-11",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 63
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-12",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 10
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-2",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 20055
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-3",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 13686
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-4",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 9281
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-5",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 6507
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-6",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 4108
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-7",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 2379
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-8",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 1388
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpPersist-9",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 648
   },
   {
     "geographyId": "south_br",

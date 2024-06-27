@@ -33,20 +33,33 @@ export async function shoretypes(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("shoretypes");
+  const geographies = project.geographies;
 
   const metrics = (
     await Promise.all(
-      metricGroup.classes.map(async (curClass) => {
-        const parameters = {
-          ...extraParams,
-          metricGroup,
-          classId: curClass.classId,
-        };
+      geographies.map(async (geography) =>
+        (
+          await Promise.all(
+            metricGroup.classes.map(async (curClass) => {
+              const parameters = {
+                ...extraParams,
+                geography: geography,
+                metricGroup,
+                classId: curClass.classId,
+              };
 
-        return process.env.NODE_ENV === "test"
-          ? shoretypesWorker(sketch, parameters)
-          : runLambdaWorker(sketch, parameters, "shoretypesWorker", request);
-      })
+              return process.env.NODE_ENV === "test"
+                ? shoretypesWorker(sketch, parameters)
+                : runLambdaWorker(
+                    sketch,
+                    parameters,
+                    "shoretypesWorker",
+                    request
+                  );
+            })
+          )
+        ).flat()
+      )
     )
   ).reduce<Metric[]>(
     (metrics, lambdaResult) =>

@@ -12,7 +12,11 @@ import {
 } from "@seasketch/geoprocessing";
 import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
-import { Metric, MetricGroup } from "@seasketch/geoprocessing/client-core";
+import {
+  Geography,
+  Metric,
+  MetricGroup,
+} from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
@@ -29,34 +33,26 @@ export async function shoretypesWorker(
   extraParams: {
     metricGroup: MetricGroup;
     classId: string;
-    geographyIds?: string[];
+    geography: Geography;
   }
 ) {
+  const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
   const curClass = metricGroup.classes.find(
     (c) => c.classId === extraParams.classId
   );
 
-  // Use caller-provided geographyId if provided
-  const geographyId = getFirstFromParam("geographyIds", extraParams);
-
-  // Get geography features, falling back to geography assigned to default-boundary group
-  const curGeography = project.getGeographyById(geographyId, {
-    fallbackGroup: "default-boundary",
-  });
-
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
-  // Clip to portion of sketch within current geography
-  const clippedSketch = await clipToGeography(splitSketch, curGeography);
+  if (!curClass || !curClass.datasourceId)
+    throw new Error(`Expected datasourceId for ${curClass}`);
+
+  // Clip sketch to geography
+  const clippedSketch = await clipToGeography(splitSketch, geography);
 
   // Get bounding box of sketch remainder
   const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
-
-  // Calculate overlap metrics for each class in metric group
-  if (!curClass || !curClass.datasourceId)
-    throw new Error(`Expected datasourceId for ${curClass}`);
 
   const ds = project.getDatasourceById(curClass.datasourceId);
   if (!isVectorDatasource(ds))
@@ -92,7 +88,7 @@ export async function shoretypesWorker(
     (metric): Metric => ({
       ...metric,
       classId: curClass.classId,
-      geographyId: curGeography.geographyId,
+      geographyId: geography.geographyId,
     })
   );
 }
