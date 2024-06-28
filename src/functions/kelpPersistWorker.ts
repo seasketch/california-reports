@@ -1,0 +1,92 @@
+import {
+  Sketch,
+  SketchCollection,
+  Polygon,
+  MultiPolygon,
+  GeoprocessingHandler,
+  splitSketchAntimeridian,
+} from "@seasketch/geoprocessing";
+import project from "../../project/projectClient.js";
+import {
+  Geography,
+  Metric,
+  MetricGroup,
+  isRasterDatasource,
+} from "@seasketch/geoprocessing/client-core";
+import { clipToGeography } from "../util/clipToGeography.js";
+import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
+import bbox from "@turf/bbox";
+import { rasterMetrics } from "../util/rasterMetrics.js";
+
+/**
+ * substrate: A geoprocessing function that calculates overlap metrics
+ * @param sketch - A sketch or collection of sketches
+ * @param extraParams
+ * @returns Calculated metrics and a null sketch
+ */
+export async function kelpPersistWorker(
+  sketch:
+    | Sketch<Polygon | MultiPolygon>
+    | SketchCollection<Polygon | MultiPolygon>,
+  extraParams: {
+    geography: Geography;
+    metricGroup: MetricGroup;
+    classId: string;
+  }
+) {
+  const geography = extraParams.geography;
+  const metricGroup = extraParams.metricGroup;
+  const curClass = metricGroup.classes.find(
+    (c) => c.classId === extraParams.classId
+  );
+
+  // Support sketches crossing antimeridian
+  const splitSketch = splitSketchAntimeridian(sketch);
+
+  if (!curClass || !curClass.datasourceId)
+    throw new Error(`Expected datasourceId for ${curClass}`);
+
+  // Clip sketch to geography
+  const clippedSketch = await clipToGeography(splitSketch, geography);
+
+  // Get bounding box of sketch remainder
+  const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
+
+  const ds = project.getDatasourceById(curClass.datasourceId);
+  if (!isRasterDatasource(ds))
+    throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
+
+  const url = project.getDatasourceUrl(ds);
+
+  // Start raster load and move on in loop while awaiting finish
+  const raster = await loadCog(url);
+
+  // Start analysis when raster load finishes
+  const overlapResult = await rasterMetrics(raster, {
+    metricId: metricGroup.metricId,
+    feature: clippedSketch,
+    ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
+    ...(ds.measurementType === "categorical" && {
+      categorical: true,
+      categoryMetricValues: [curClass.classId],
+    }),
+  });
+
+  return overlapResult.map(
+    (metrics): Metric => ({
+      ...metrics,
+      classId: curClass.classId,
+      geographyId: geography.geographyId,
+    })
+  );
+}
+
+export default new GeoprocessingHandler(kelpPersistWorker, {
+  title: "kelpPersistWorker",
+  description: "",
+  timeout: 500, // seconds
+  memory: 1024, // megabytes
+  executionMode: "sync",
+  // Specify any Sketch Class form attributes that are required
+  requiresProperties: [],
+});

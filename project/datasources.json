@@ -666,7 +666,71 @@
     "band": 1,
     "noDataValue": 15,
     "created": "2024-06-26T22:25:33.236Z",
-    "lastUpdated": "2024-06-27T17:38:58.084Z",
-    "src": "data/src/California MPAs 2024/KelpPersistence/lookup/lookup100.tif"
+    "lastUpdated": "2024-06-27T22:22:43.831Z",
+    "src": "data/src/California MPAs 2024/KelpPersistence/lookup/kelpPersistence60Compressed.tif"
+  },
+  {
+    "datasourceId": "north_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "north_sr_extent",
+    "classKeys": [],
+    "created": "2024-06-27T18:42:26.181Z",
+    "lastUpdated": "2024-06-27T18:42:26.181Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/north_sr_extent.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "northcentral_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "northcentral_sr_extent",
+    "classKeys": [],
+    "created": "2024-06-27T18:43:48.206Z",
+    "lastUpdated": "2024-06-27T18:43:48.206Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/northcentral_sr_extent.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "central_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "central_sr_extent",
+    "classKeys": [],
+    "created": "2024-06-27T18:44:12.053Z",
+    "lastUpdated": "2024-06-27T18:44:12.053Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/central_sr_extent.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "south_sr",
+    "geo_type": "vector",
+    "formats": [
+      "fgb",
+      "json"
+    ],
+    "precalc": true,
+    "layerName": "south_sr_extent",
+    "classKeys": [],
+    "created": "2024-06-27T18:44:33.505Z",
+    "lastUpdated": "2024-06-27T18:44:33.505Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/south_sr_extent.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
   }
 ]

@@ -165,10 +165,7 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
             })();
             const suffix = (() => {
               if (isNaN(value)) {
-                const tooltipText =
-                  (geographyByName[row.geographyId || "missing"]?.display ||
-                    "This feature class") +
-                  " not found in the selected planning area";
+                const tooltipText = "Not present in this geography";
                 return (
                   <Tooltip
                     text={tooltipText}
@@ -226,10 +223,7 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
               }
             })();
 
-            const tooltipText =
-              (geographyByName[row.geographyId || "missing"]?.display ||
-                "This feature class") +
-              " not found in the selected planning area";
+            const tooltipText = "Not present in this region";
 
             const chartProps = {
               ...(colConfig.chartOptions ? colConfig.chartOptions : {}),

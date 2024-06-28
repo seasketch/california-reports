@@ -19,5 +19,12 @@
     "display": "South Bioregion",
     "groups": [],
     "precalc": true
+  },
+  {
+    "geographyId": "world",
+    "datasourceId": "world",
+    "display": "World",
+    "groups": ["default-boundary"],
+    "precalc": true
   }
 ]

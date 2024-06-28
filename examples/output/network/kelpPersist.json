@@ -1,0 +1,2854 @@
+{
+  "metrics": [
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 1863,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 1067,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 796,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 1075,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 607,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 468,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 701,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 489,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 212,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 409,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 362,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 47,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 353,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 352,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 1,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 291,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 291,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 253,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 253,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 131,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 131,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 17,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 17,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 235,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 1745,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 1510,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 103,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 719,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 616,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 51,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 497,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 446,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 15,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 368,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 353,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 7,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 261,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 254,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 9,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 108,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 99,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 4,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 33,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 29,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 3,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 3,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 235,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 3608,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 1067,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "1",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 2306,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "10",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "11",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "12",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 103,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 1794,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 607,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "2",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 1084,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 51,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 1198,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 489,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "3",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 658,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 15,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 777,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 362,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "4",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 400,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 7,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 614,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 352,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "5",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 255,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 9,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 399,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 291,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "6",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 99,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 4,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 286,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 253,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "7",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 29,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 134,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 131,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "8",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 3,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29481",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29482",
+      "groupId": "band-0",
+      "value": 17,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29483",
+      "groupId": "band-0",
+      "value": 17,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpPersist",
+      "classId": "9",
+      "sketchId": "29484",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    }
+  ],
+  "sketch": {
+    "id": 29482,
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": 29483,
+        "bbox": [
+          -121.962715,
+          36.209553,
+          -121.7673,
+          36.305416
+        ],
+        "type": "Feature",
+        "properties": {
+          "4768": "mpa-test",
+          "4769": "SMCANT",
+          "8340": "SMR",
+          "id": "29483",
+          "ccr": null,
+          "fid": null,
+          "name": "mpa-test",
+          "type": "SMCANT",
+          "AddMPA": null,
+          "Method": null,
+          "Tribal": null,
+          "postId": null,
+          "userId": "531",
+          "DFG_URL": null,
+          "contact": null,
+          "OBJECTID": null,
+          "Petition": null,
+          "userSlug": "Abby",
+          "Bioregion": null,
+          "createdAt": "2024-05-28T20:04:12.993219+00:00",
+          "updatedAt": "2024-06-03T18:29:40.726829+00:00",
+          "AffectedMP": null,
+          "Change_Cat": null,
+          "Descriptio": null,
+          "Organizati": null,
+          "PetitionLi": null,
+          "Study_Regi": null,
+          "TakeChange": null,
+          "collectionId": "29482",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "492",
+          "userAttributes": [
+            {
+              "label": "Description",
+              "value": null,
+              "exportId": "Descriptio",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 4770,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "CCR",
+              "value": null,
+              "exportId": "ccr",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8317,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Study Region",
+              "value": null,
+              "exportId": "Study_Regi",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8318,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Current Designation (type)",
+              "value": "SMCANT",
+              "exportId": "type",
+              "fieldType": "ComboBox",
+              "valueLabel": "State Marine Conervation Area (No-Take)",
+              "formElementId": 4769,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "DFG URL",
+              "value": null,
+              "exportId": "DFG_URL",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8319,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Add or Remove MPA",
+              "value": null,
+              "exportId": "AddMPA",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8320,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Affected MPA",
+              "value": null,
+              "exportId": "AffectedMP",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8321,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Bioregion",
+              "value": null,
+              "exportId": "Bioregion",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8322,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Change Category",
+              "value": null,
+              "exportId": "Change_Cat",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8323,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Method",
+              "value": null,
+              "exportId": "Method",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8324,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Orginization",
+              "value": null,
+              "exportId": "Organizati",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8325,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Take Change",
+              "value": null,
+              "exportId": "TakeChange",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8326,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Tribal?",
+              "value": null,
+              "exportId": "Tribal",
+              "fieldType": "YesNo",
+              "valueLabel": null,
+              "formElementId": 8328,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition",
+              "value": null,
+              "exportId": "Petition",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8329,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition Link (URL)",
+              "value": null,
+              "exportId": "PetitionLi",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8331,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "FID",
+              "value": null,
+              "exportId": "fid",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8337,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Contact",
+              "value": null,
+              "exportId": "contact",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8338,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Proposed Designation (type)",
+              "value": "SMR",
+              "exportId": "proposed_designation",
+              "fieldType": "ComboBox",
+              "valueLabel": "State Marine Reserve",
+              "formElementId": 8340,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Object ID",
+              "value": null,
+              "exportId": "OBJECTID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8341,
+              "alternateLanguages": {}
+            }
+          ],
+          "proposed_designation": "SMR"
+        },
+        "geometry": null
+      },
+      {
+        "id": 29484,
+        "bbox": [
+          -120.58906,
+          34.3916,
+          -120.31646,
+          34.53999
+        ],
+        "type": "Feature",
+        "properties": {
+          "4768": "split",
+          "4769": "FMCA",
+          "8340": "Special",
+          "id": "29484",
+          "ccr": null,
+          "fid": null,
+          "name": "split",
+          "type": "FMCA",
+          "AddMPA": null,
+          "Method": null,
+          "Tribal": null,
+          "postId": null,
+          "userId": "531",
+          "DFG_URL": null,
+          "contact": null,
+          "OBJECTID": null,
+          "Petition": null,
+          "userSlug": "Abby",
+          "Bioregion": null,
+          "createdAt": "2024-05-28T20:04:49.549506+00:00",
+          "updatedAt": "2024-06-03T18:29:57.768727+00:00",
+          "AffectedMP": null,
+          "Change_Cat": null,
+          "Descriptio": null,
+          "Organizati": null,
+          "PetitionLi": null,
+          "Study_Regi": null,
+          "TakeChange": null,
+          "collectionId": "29482",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "492",
+          "userAttributes": [
+            {
+              "label": "Description",
+              "value": null,
+              "exportId": "Descriptio",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 4770,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "CCR",
+              "value": null,
+              "exportId": "ccr",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8317,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Study Region",
+              "value": null,
+              "exportId": "Study_Regi",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8318,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Current Designation (type)",
+              "value": "FMCA",
+              "exportId": "type",
+              "fieldType": "ComboBox",
+              "valueLabel": "Federal Marine Conservation Area",
+              "formElementId": 4769,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "DFG URL",
+              "value": null,
+              "exportId": "DFG_URL",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8319,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Add or Remove MPA",
+              "value": null,
+              "exportId": "AddMPA",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8320,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Affected MPA",
+              "value": null,
+              "exportId": "AffectedMP",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8321,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Bioregion",
+              "value": null,
+              "exportId": "Bioregion",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8322,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Change Category",
+              "value": null,
+              "exportId": "Change_Cat",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8323,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Method",
+              "value": null,
+              "exportId": "Method",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8324,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Orginization",
+              "value": null,
+              "exportId": "Organizati",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8325,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Take Change",
+              "value": null,
+              "exportId": "TakeChange",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8326,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Tribal?",
+              "value": null,
+              "exportId": "Tribal",
+              "fieldType": "YesNo",
+              "valueLabel": null,
+              "formElementId": 8328,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition",
+              "value": null,
+              "exportId": "Petition",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8329,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition Link (URL)",
+              "value": null,
+              "exportId": "PetitionLi",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8331,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "FID",
+              "value": null,
+              "exportId": "fid",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8337,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Contact",
+              "value": null,
+              "exportId": "contact",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8338,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Proposed Designation (type)",
+              "value": "Special",
+              "exportId": "proposed_designation",
+              "fieldType": "ComboBox",
+              "valueLabel": "Special Closure",
+              "formElementId": 8340,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Object ID",
+              "value": null,
+              "exportId": "OBJECTID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8341,
+              "alternateLanguages": {}
+            }
+          ],
+          "proposed_designation": "Special"
+        },
+        "geometry": null
+      },
+      {
+        "id": 29481,
+        "bbox": [
+          -119.488525,
+          33.952343,
+          -119.29513,
+          34.068176
+        ],
+        "type": "Feature",
+        "properties": {
+          "4768": "anacapa",
+          "4769": "FMCA",
+          "8337": 2,
+          "8340": "FMCA",
+          "id": "29481",
+          "ccr": null,
+          "fid": 2,
+          "name": "anacapa",
+          "type": "FMCA",
+          "AddMPA": null,
+          "Method": null,
+          "Tribal": null,
+          "postId": null,
+          "userId": "531",
+          "DFG_URL": null,
+          "contact": null,
+          "OBJECTID": null,
+          "Petition": null,
+          "userSlug": "Abby",
+          "Bioregion": null,
+          "createdAt": "2024-05-28T20:03:43.811482+00:00",
+          "updatedAt": "2024-06-03T18:29:22.893998+00:00",
+          "AffectedMP": null,
+          "Change_Cat": null,
+          "Descriptio": null,
+          "Organizati": null,
+          "PetitionLi": null,
+          "Study_Regi": null,
+          "TakeChange": null,
+          "collectionId": "29482",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "492",
+          "userAttributes": [
+            {
+              "label": "Description",
+              "value": null,
+              "exportId": "Descriptio",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 4770,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "CCR",
+              "value": null,
+              "exportId": "ccr",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8317,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Study Region",
+              "value": null,
+              "exportId": "Study_Regi",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8318,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Current Designation (type)",
+              "value": "FMCA",
+              "exportId": "type",
+              "fieldType": "ComboBox",
+              "valueLabel": "Federal Marine Conservation Area",
+              "formElementId": 4769,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "DFG URL",
+              "value": null,
+              "exportId": "DFG_URL",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8319,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Add or Remove MPA",
+              "value": null,
+              "exportId": "AddMPA",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8320,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Affected MPA",
+              "value": null,
+              "exportId": "AffectedMP",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8321,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Bioregion",
+              "value": null,
+              "exportId": "Bioregion",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8322,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Change Category",
+              "value": null,
+              "exportId": "Change_Cat",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8323,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Method",
+              "value": null,
+              "exportId": "Method",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8324,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Orginization",
+              "value": null,
+              "exportId": "Organizati",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8325,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Take Change",
+              "value": null,
+              "exportId": "TakeChange",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8326,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Tribal?",
+              "value": null,
+              "exportId": "Tribal",
+              "fieldType": "YesNo",
+              "valueLabel": null,
+              "formElementId": 8328,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition",
+              "value": null,
+              "exportId": "Petition",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8329,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition Link (URL)",
+              "value": null,
+              "exportId": "PetitionLi",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8331,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "FID",
+              "value": 2,
+              "exportId": "fid",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8337,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Contact",
+              "value": null,
+              "exportId": "contact",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8338,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Proposed Designation (type)",
+              "value": "FMCA",
+              "exportId": "proposed_designation",
+              "fieldType": "ComboBox",
+              "valueLabel": "Federal Marine Conservation Area",
+              "formElementId": 8340,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Object ID",
+              "value": null,
+              "exportId": "OBJECTID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8341,
+              "alternateLanguages": {}
+            }
+          ],
+          "proposed_designation": "FMCA"
+        },
+        "geometry": null
+      }
+    ],
+    "properties": {
+      "4771": "network",
+      "id": "29482",
+      "name": "network",
+      "postId": null,
+      "userId": "531",
+      "userSlug": "Abby",
+      "createdAt": "2024-05-28T20:04:07.4329+00:00",
+      "updatedAt": "2024-06-03T18:29:57.768727+00:00",
+      "description": null,
+      "collectionId": null,
+      "isCollection": true,
+      "sharedInForum": false,
+      "sketchClassId": "493",
+      "userAttributes": [
+        {
+          "label": "Description",
+          "value": null,
+          "exportId": "description",
+          "fieldType": "TextArea",
+          "valueLabel": null,
+          "formElementId": 8330,
+          "alternateLanguages": {}
+        }
+      ]
+    }
+  }
+}

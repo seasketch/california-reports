@@ -540,5 +540,95 @@
         "layerId": "bawZZ14X0"
       }
     ]
+  },
+  {
+    "metricId": "kelpPersist",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "1",
+        "classKey": "1",
+        "display": "1 year",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "2",
+        "classKey": "2",
+        "display": "2 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "3",
+        "classKey": "3",
+        "display": "3 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "4",
+        "classKey": "4",
+        "display": "4 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "5",
+        "classKey": "5",
+        "display": "5 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "6",
+        "classKey": "6",
+        "display": "6 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "7",
+        "classKey": "7",
+        "display": "7 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "8",
+        "classKey": "8",
+        "display": "8 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "9",
+        "classKey": "9",
+        "display": "9 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "10",
+        "classKey": "10",
+        "display": "10 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "11",
+        "classKey": "11",
+        "display": "11 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      },
+      {
+        "classId": "12",
+        "classKey": "12",
+        "display": "12 years",
+        "datasourceId": "kelpPersist",
+        "layerId": "bRNhvDeAo"
+      }
+    ]
   }
 ]
