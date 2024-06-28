@@ -146,7 +146,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Show By Bioregion")}>
               {metricGroup.classes.map((curClass) => (
-                <>
+                <React.Fragment key={curClass.classId}>
                   {metrics
                     .filter(
                       (m) =>
@@ -221,7 +221,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                       },
                     ]}
                   />
-                </>
+                </React.Fragment>
               ))}
             </Collapse>
 

@@ -6,7 +6,7 @@
       {
         "classId": "state_waters",
         "display": "State Waters",
-        "datasourceId": "study_regions",
+        "datasourceId": "world",
         "layerId": "Io5IzPfsL"
       }
     ]

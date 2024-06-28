@@ -134,7 +134,7 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Show By Bioregion")}>
               {metricGroup.classes.map((curClass) => (
-                <>
+                <React.Fragment key={curClass.classId}>
                   {metrics
                     .filter(
                       (m) =>
@@ -213,7 +213,7 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                       },
                     ]}
                   />
-                </>
+                </React.Fragment>
               ))}
             </Collapse>
 

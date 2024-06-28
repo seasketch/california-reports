@@ -9,6 +9,7 @@ import {
   GeogProp,
   squareMeterToMile,
   Metric,
+  firstMatchingMetric,
 } from "@seasketch/geoprocessing/client-core";
 import {
   ClassTable,
@@ -36,11 +37,17 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
     fallbackGroup: "default-boundary",
   });
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
-  const precalcMetrics = project.getPrecalcMetrics(
-    metricGroup,
-    "area",
-    curGeography.geographyId
-  );
+  // Study regions total area
+  const precalcMetrics = [
+    {
+      metricId: "area",
+      value: 15235250304.770761,
+      classId: "state_waters",
+      groupId: null,
+      geographyId: "world",
+      sketchId: null,
+    },
+  ];
 
   const notFoundString = t("Results not found");
 
@@ -122,13 +129,11 @@ const genSingleSizeTable = (
   t: TFunction
 ) => {
   const boundaryLabel = t("Boundary");
-  const foundWithinLabel = t("Within Plan");
   const areaWithinLabel = t("Area Within Plan");
-  const areaPercWithinLabel = t("% Within Plan");
+  const areaPercWithinLabel = t("% Area Within Plan");
   const mapLabel = t("Map");
   const sqKmLabel = t("mi²");
 
-  const classesById = keyBy(mg.classes, (c) => c.classId);
   let singleMetrics = data.metrics.filter(
     (m) => m.sketchId === data.sketch.properties.id
   );
@@ -156,7 +161,7 @@ const genSingleSizeTable = (
             width: 25,
           },
           {
-            columnLabel: foundWithinLabel,
+            columnLabel: areaWithinLabel,
             type: "metricValue",
             metricId: mg.metricId,
             valueFormatter: (val: string | number) =>
@@ -171,7 +176,7 @@ const genSingleSizeTable = (
             width: 20,
           },
           {
-            columnLabel: " ",
+            columnLabel: areaPercWithinLabel,
             type: "metricChart",
             metricId: project.getMetricGroupPercId(mg),
             valueFormatter: "percent",
