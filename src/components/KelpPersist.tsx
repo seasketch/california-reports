@@ -151,60 +151,58 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Show By Bioregion")}>
               {metricGroup.classes.map((curClass) => (
-                <>
-                  <GeographyTable
-                    key={curClass.classId}
-                    rows={metrics.filter(
-                      (m) =>
-                        m.geographyId !== "world" &&
-                        m.classId === curClass.classId
-                    )}
-                    metricGroup={metricGroup}
-                    geographies={geographies.filter(
-                      (g) => g.geographyId !== "world"
-                    )}
-                    objective={objectives}
-                    columnConfig={[
-                      {
-                        columnLabel: t("Kelp (" + curClass.display + ")"),
-                        type: "class",
-                        width: 30,
+                <GeographyTable
+                  key={curClass.classId}
+                  rows={metrics.filter(
+                    (m) =>
+                      m.geographyId !== "world" &&
+                      m.classId === curClass.classId
+                  )}
+                  metricGroup={metricGroup}
+                  geographies={geographies.filter(
+                    (g) => g.geographyId !== "world"
+                  )}
+                  objective={objectives}
+                  columnConfig={[
+                    {
+                      columnLabel: t("Kelp (" + curClass.display + ")"),
+                      type: "class",
+                      width: 30,
+                    },
+                    {
+                      columnLabel: withinLabel,
+                      type: "metricValue",
+                      metricId: metricGroup.metricId,
+                      valueFormatter: (val: string | number) =>
+                        Number.format(
+                          roundDecimal(
+                            squareMeterToMile(
+                              typeof val === "string"
+                                ? parseInt(val) * 60 * 60
+                                : val * 60 * 60
+                            ),
+                            2,
+                            { keepSmallValues: true }
+                          )
+                        ),
+                      valueLabel: unitsLabel,
+                      chartOptions: {
+                        showTitle: true,
                       },
-                      {
-                        columnLabel: withinLabel,
-                        type: "metricValue",
-                        metricId: metricGroup.metricId,
-                        valueFormatter: (val: string | number) =>
-                          Number.format(
-                            roundDecimal(
-                              squareMeterToMile(
-                                typeof val === "string"
-                                  ? parseInt(val) * 60 * 60
-                                  : val * 60 * 60
-                              ),
-                              2,
-                              { keepSmallValues: true }
-                            )
-                          ),
-                        valueLabel: unitsLabel,
-                        chartOptions: {
-                          showTitle: true,
-                        },
-                        width: 20,
+                      width: 20,
+                    },
+                    {
+                      columnLabel: percWithinLabel,
+                      type: "metricChart",
+                      metricId: percMetricIdName,
+                      valueFormatter: "percent",
+                      chartOptions: {
+                        showTitle: true,
                       },
-                      {
-                        columnLabel: percWithinLabel,
-                        type: "metricChart",
-                        metricId: percMetricIdName,
-                        valueFormatter: "percent",
-                        chartOptions: {
-                          showTitle: true,
-                        },
-                        width: 40,
-                      },
-                    ]}
-                  />
-                </>
+                      width: 40,
+                    },
+                  ]}
+                />
               ))}
             </Collapse>
 
@@ -261,49 +259,4 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
       }}
     </ResultsCard>
   );
-};
-
-const objectiveMsgs: Record<string, any> = {
-  studyRegion: (
-    objectiveMet: ObjectiveAnswer,
-    classDisplay: string,
-    t: any
-  ) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            `This plan contains ${classDisplay.toLowerCase()} in all study regions and may achieve habitat replication.`
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            `This plan does not contain ${classDisplay.toLowerCase()} in all study regions and does not achieve habitat replication.`
-          )}
-        </>
-      );
-    }
-  },
-  bioregion: (objectiveMet: ObjectiveAnswer, classDisplay: string, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            `This plan contains ${classDisplay.toLowerCase()} in all bioregions and may achieve habitat replication.`
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            `This plan does not contain ${classDisplay.toLowerCase()} in all bioregions and does not achieve habitat replication.`
-          )}
-        </>
-      );
-    }
-  },
 };

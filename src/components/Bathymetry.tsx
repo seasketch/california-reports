@@ -18,10 +18,9 @@ import { ReportProps } from "../util/ReportProp.js";
 import styled from "styled-components";
 
 const formatDepth = (val: number) => {
-  if (!val) return "0m";
-  if (val > 0) val = 0;
-  const baseVal = Math.abs(parseInt(val.toString()));
-  return val ? `-${baseVal}m` : `0m`;
+  if (!val || val > 0) return "0ft";
+  const baseVal = Math.round(Math.abs(parseInt(val.toString())) * 3.281);
+  return `-${baseVal}ft`;
 };
 
 export const Bathymetry: React.FunctionComponent<ReportProps> = (props) => {
@@ -40,7 +39,7 @@ export const Bathymetry: React.FunctionComponent<ReportProps> = (props) => {
 
           return (
             <ToolbarCard
-              title={t("Depth")}
+              title={t("Bathymetry")}
               items={
                 <>
                   <LayerToggle label={mapLabel} layerId={mg.layerId} simple />
@@ -70,11 +69,21 @@ export const Bathymetry: React.FunctionComponent<ReportProps> = (props) => {
                 </Collapse>
               )}
 
-              {!props.printing && (
-                <Collapse title={t("Learn More")}>
-                  <BathymetryLearnMore />
-                </Collapse>
-              )}
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="Bathymetry Card - Learn more">
+                  <p>
+                    ℹ️ Overview: Ocean depth is useful in determining where fish
+                    and other marine life feed, live, and breed. Plans should
+                    consider protecting a wide range of water depths.
+                  </p>
+                  <p>🎯 Planning Objective: None</p>
+                  <p>🗺️ Source Data: NOAA NCEI</p>
+                  <p>
+                    📈 Report: Calculates the minimum, average, and maximum
+                    ocean depth within the plan.
+                  </p>
+                </Trans>
+              </Collapse>
             </ToolbarCard>
           );
         }}
@@ -83,30 +92,7 @@ export const Bathymetry: React.FunctionComponent<ReportProps> = (props) => {
   );
 };
 
-/** Protection level learn more */
-export const BathymetryLearnMore: React.FunctionComponent = () => {
-  return (
-    <>
-      <Trans i18nKey="Bathymetry Card - Learn more">
-        <p>
-          ℹ️ Overview: Ocean depth is useful in determining where fish and other
-          marine life feed, live, and breed. Plans should consider protecting a
-          wide range of water depths.
-        </p>
-        <p>🎯 Planning Objective: None</p>
-        <p>🗺️ Source Data: NOAA NCEI</p>
-        <p>
-          📈 Report: Calculates the minimum, average, and maximum ocean depth
-          within the plan.
-        </p>
-      </Trans>
-    </>
-  );
-};
-
-const Number = new Intl.NumberFormat("en", { style: "decimal" });
-
-export const AreaSketchTableStyled = styled(ReportTableStyled)`
+export const BathyTableStyled = styled(ReportTableStyled)`
   & {
     width: 100%;
     overflow-x: scroll;
@@ -134,25 +120,21 @@ export const AreaSketchTableStyled = styled(ReportTableStyled)`
   }
 `;
 
-/**
- * Creates "Show by Zone" report, with area + percentages
- * @param data data returned from lambda
- * @param precalcMetrics metrics from precalc.json
- * @param metricGroup metric group to get stats for
- * @param t TFunction
- */
 export const genBathymetryTable = (data: BathymetryResults[]) => {
   const sketchMetrics = data.filter((s) => !s.isCollection);
-  console.log(sketchMetrics);
 
-  const classColumns: Column<BathymetryResults>[] = [
+  const columns: Column<BathymetryResults>[] = [
+    {
+      Header: "MPA",
+      accessor: (row) => row.sketchName,
+    },
     {
       Header: "Min",
       accessor: (row) => formatDepth(row.max),
     },
     {
       Header: "Mean",
-      accessor: (row) => formatDepth(row.mean),
+      accessor: (row) => formatDepth(row.mean!),
     },
     {
       Header: "Max",
@@ -160,17 +142,9 @@ export const genBathymetryTable = (data: BathymetryResults[]) => {
     },
   ];
 
-  const columns: Column<BathymetryResults>[] = [
-    {
-      Header: "MPA",
-      accessor: (row) => row.sketchName,
-    },
-    ...classColumns,
-  ];
-
   return (
-    <AreaSketchTableStyled>
+    <BathyTableStyled>
       <Table columns={columns} data={sketchMetrics} />
-    </AreaSketchTableStyled>
+    </BathyTableStyled>
   );
 };
