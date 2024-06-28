@@ -630,5 +630,17 @@
         "layerId": "bRNhvDeAo"
       }
     ]
+  },
+  {
+    "metricId": "bathymetry",
+    "type": "valueOverlap",
+    "classes": [
+      {
+        "classId": "bathymetry",
+        "display": "Depth",
+        "datasourceId": "depth",
+        "layerId": ""
+      }
+    ]
   }
 ]

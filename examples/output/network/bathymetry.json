@@ -1,0 +1,30 @@
+[
+  {
+    "min": -423.88775634765625,
+    "max": 27.718400955200195,
+    "mean": -70.55996308576844,
+    "units": "meters",
+    "sketchName": "mpa-test"
+  },
+  {
+    "min": -156.62452697753906,
+    "max": 12.586949348449707,
+    "mean": -53.82518485855723,
+    "units": "meters",
+    "sketchName": "split"
+  },
+  {
+    "min": -741.7828369140625,
+    "max": 39.1199951171875,
+    "mean": -216.00605728342606,
+    "units": "meters",
+    "sketchName": "anacapa"
+  },
+  {
+    "min": -741.7828369140625,
+    "max": 0,
+    "units": "meters",
+    "sketchName": "network",
+    "isCollection": true
+  }
+]

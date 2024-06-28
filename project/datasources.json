@@ -732,5 +732,19 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/south_sr_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Products/CAbathyClipped.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "depth",
+    "formats": [
+      "tif"
+    ],
+    "created": "2024-06-28T18:37:50.902Z",
+    "lastUpdated": "2024-06-28T18:37:50.902Z",
+    "noDataValue": -9999,
+    "measurementType": "quantitative",
+    "precalc": false
   }
 ]
