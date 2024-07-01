@@ -4,7 +4,6 @@ import {
   ClassTable,
   Collapse,
   LayerToggle,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   VerticalSpacer,
@@ -13,9 +12,6 @@ import {
 import {
   GeogProp,
   Metric,
-  OBJECTIVE_NO,
-  OBJECTIVE_YES,
-  ObjectiveAnswer,
   ReportResult,
   metricsWithSketchId,
   roundDecimal,
@@ -123,8 +119,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string"
-                            ? parseInt(val) * 60 * 60
-                            : val * 60 * 60
+                            ? parseInt(val) * 46.42 * 46.42
+                            : val * 46.42 * 46.42
                         ),
                         2,
                         { keepSmallValues: true }
@@ -178,8 +174,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 60 * 60
-                                : val * 60 * 60
+                                ? parseInt(val) * 46.42 * 46.42
+                                : val * 46.42 * 46.42
                             ),
                             2,
                             { keepSmallValues: true }
@@ -218,7 +214,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  (val) => val * 60 * 60
+                  (val) => val * 46.42 * 46.42
                 )}
               </Collapse>
             )}
@@ -238,7 +234,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   cell over the period of all the surveys.
                 </p>
                 <p>
-                  Substrate data has been downsampled to a 60m x 60m raster grid
+                  Substrate data has been downsampled to a 45m x 45m raster grid
                   for efficiency, therefore area calculations are estimates.
                   Final plans should check area totals in GIS tools before
                   publishing final area statistics.
