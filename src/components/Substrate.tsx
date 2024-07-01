@@ -38,11 +38,6 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
 
   // Metrics
   const metricGroup = project.getMetricGroup("substrate", t);
-  const precalcMetrics = geographies
-    .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "valid", geography.geographyId)
-    )
-    .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
   // Labels
   const titleLabel = t("Substrate");
@@ -56,16 +51,36 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
-        const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id]
-        );
-        const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
-          metricIdOverride: percMetricIdName,
-          idProperty: "geographyId",
+        let valueMetrics: Metric[] = [];
+        let precalcMetrics: Metric[] = [];
+        let percMetrics: Metric[] = [];
+
+        geographies.forEach((g) => {
+          const vMetrics = metricsWithSketchId(
+            data.metrics.filter(
+              (m) =>
+                m.metricId === metricGroup.metricId &&
+                m.geographyId === g.geographyId
+            ),
+            [data.sketch.properties.id]
+          );
+          valueMetrics = valueMetrics.concat(vMetrics);
+
+          const preMetrics = project.getPrecalcMetrics(
+            metricGroup,
+            "valid",
+            g.geographyId
+          );
+          precalcMetrics = precalcMetrics.concat(preMetrics);
+
+          percMetrics = percMetrics.concat(
+            toPercentMetric(vMetrics, preMetrics, {
+              metricIdOverride: percMetricIdName,
+            })
+          );
         });
 
-        const metrics = [...valueMetrics, ...percentMetrics];
+        const metrics = [...valueMetrics, ...percMetrics];
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);

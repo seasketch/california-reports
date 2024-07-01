@@ -49,7 +49,7 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const unitsLabel = t("mi²");
 
   return (
     <ResultsCard title={titleLabel} functionName="rockIslands">
