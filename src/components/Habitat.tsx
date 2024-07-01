@@ -220,7 +220,9 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                             typeof val === "string"
                               ? parseInt(val) * 40 * 40
                               : val * 40 * 40
-                          )
+                          ),
+                          1,
+                          { keepSmallValues: true }
                         )
                       ),
                     valueLabel: unitsLabel,
