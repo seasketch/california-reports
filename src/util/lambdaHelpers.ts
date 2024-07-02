@@ -14,7 +14,7 @@ import {
   GeoprocessingRequestModel,
 } from "@seasketch/geoprocessing/client-core";
 import awsSdk from "aws-sdk";
-import gp from "../../geoprocessing.json";
+import gp from "../../project/geoprocessing.json";
 
 /**
  * Runs a function on a specified lambda worker
