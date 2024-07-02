@@ -456,7 +456,7 @@
       "classId": "1",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 17160,
+      "value": 16928,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -467,7 +467,7 @@
       "classId": "1",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 29166,
+      "value": 28934,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -501,7 +501,7 @@
       "classId": "2",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 195231,
+      "value": 195210,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -512,7 +512,7 @@
       "classId": "2",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 307396,
+      "value": 307375,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -546,7 +546,7 @@
       "classId": "1",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 17160,
+      "value": 16928,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -557,7 +557,7 @@
       "classId": "1",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 29166,
+      "value": 28934,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -591,7 +591,7 @@
       "classId": "2",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 195231,
+      "value": 195210,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -602,7 +602,7 @@
       "classId": "2",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 307396,
+      "value": 307375,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -636,7 +636,7 @@
       "classId": "1",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 17160,
+      "value": 16928,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -647,7 +647,7 @@
       "classId": "1",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 54830,
+      "value": 54598,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -681,7 +681,7 @@
       "classId": "2",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 195231,
+      "value": 195210,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -692,7 +692,7 @@
       "classId": "2",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 447943,
+      "value": 447922,
       "extra": {
         "sketchName": "network",
         "isCollection": true

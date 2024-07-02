@@ -14,7 +14,7 @@ describe("Basic smoke tests", () => {
     expect(typeof eelgrass).toBe("function");
   });
   test("eelgrass - tests run against all examples", async () => {
-    const examples = await getExamplePolygonSketchAll("network");
+    const examples = await getExamplePolygonSketchAll();
     for (const example of examples) {
       const result = await eelgrass(example);
       expect(result).toBeTruthy();
