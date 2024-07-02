@@ -51,10 +51,13 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   // Metrics
   const metricGroup = project.getMetricGroup("shoretypes", t);
   const precalcMetrics = geographies
+    .filter((g) => !g.geographyId?.endsWith("_sr"))
     .map((geography) =>
       project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
     )
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
+
+  console.log(precalcMetrics);
 
   // Labels
   const titleLabel = t("Shoreline Habitats");
@@ -150,7 +153,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   {metrics
                     .filter(
                       (m) =>
-                        m.geographyId !== "world" &&
+                        m.geographyId?.endsWith("_br") &&
                         m.classId === curClass.classId
                     )
                     .every((m) => m.value > 0) ? (
@@ -177,12 +180,12 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                     key={curClass.classId}
                     rows={metrics.filter(
                       (m) =>
-                        m.geographyId !== "world" &&
+                        m.geographyId?.endsWith("_br") &&
                         m.classId === curClass.classId
                     )}
                     metricGroup={metricGroup}
-                    geographies={geographies.filter(
-                      (g) => g.geographyId !== "world"
+                    geographies={geographies.filter((g) =>
+                      g.geographyId.endsWith("_br")
                     )}
                     objective={objectives}
                     columnConfig={[

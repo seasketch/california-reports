@@ -104,13 +104,14 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 </p>
                 <Trans i18nKey="SizeCard - learn more">
                   <p>
-                    {" "}
-                    This report summarizes the size and proportion of this plan
-                    within these boundaries.
+                    ℹ️ Overview: This report summarizes the size and proportion
+                    of this plan within these boundaries.
                   </p>
+                  <p>🎯 Planning Objective: None </p>
+                  <p>🗺️ Source Data: CDFW </p>
                   <p>
-                    If sketch boundaries within a plan overlap with each other,
-                    the overlap is only counted once.
+                    📈 Report: If sketch boundaries within a plan overlap with
+                    each other, the overlap is only counted once.
                   </p>
                 </Trans>
               </Collapse>

@@ -1,5 +1,33 @@
 [
   {
+    "geographyId": "north_sr",
+    "datasourceId": "north_sr",
+    "display": "North Study Region",
+    "groups": [],
+    "precalc": true
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "datasourceId": "northcentral_sr",
+    "display": "North Central Study Region",
+    "groups": [],
+    "precalc": true
+  },
+  {
+    "geographyId": "central_sr",
+    "datasourceId": "central_sr",
+    "display": "Central Study Region",
+    "groups": [],
+    "precalc": true
+  },
+  {
+    "geographyId": "south_sr",
+    "datasourceId": "south_sr",
+    "display": "South Study Region",
+    "groups": [],
+    "precalc": true
+  },
+  {
     "geographyId": "north_br",
     "datasourceId": "north_br",
     "display": "North Bioregion",

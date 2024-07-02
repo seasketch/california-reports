@@ -129,9 +129,71 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
+            <Collapse title={t("Show By Study Region")}>
+              {metrics
+                .filter((m) => m.geographyId?.endsWith("_sr"))
+                .every((m) => m.value > 0) ? (
+                <ObjectiveStatus
+                  status={OBJECTIVE_YES}
+                  msg={objectiveMsgs["studyRegion"](OBJECTIVE_YES, t)}
+                />
+              ) : (
+                <ObjectiveStatus
+                  status={OBJECTIVE_NO}
+                  msg={objectiveMsgs["studyRegion"](OBJECTIVE_NO, t)}
+                />
+              )}
+
+              <GeographyTable
+                rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
+                metricGroup={metricGroup}
+                geographies={geographies.filter((g) =>
+                  g.geographyId?.endsWith("_sr")
+                )}
+                objective={objectives}
+                columnConfig={[
+                  {
+                    columnLabel: " ",
+                    type: "class",
+                    width: 30,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (val: string | number) =>
+                      Number.format(
+                        roundDecimal(
+                          squareMeterToMile(
+                            typeof val === "string" ? parseInt(val) : val
+                          ),
+                          2,
+                          { keepSmallValues: true }
+                        )
+                      ),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 40,
+                  },
+                ]}
+              />
+            </Collapse>
+
             <Collapse title={t("Show By Bioregion")}>
               {metrics
-                .filter((m) => m.geographyId !== "world")
+                .filter((m) => m.geographyId?.endsWith("_br"))
                 .every((m) => m.value > 0) ? (
                 <ObjectiveStatus
                   status={OBJECTIVE_YES}
@@ -145,10 +207,10 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
               )}
 
               <GeographyTable
-                rows={metrics.filter((m) => m.geographyId !== "world")}
+                rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
-                geographies={geographies.filter(
-                  (g) => g.geographyId !== "world"
+                geographies={geographies.filter((g) =>
+                  g.geographyId?.endsWith("_br")
                 )}
                 objective={objectives}
                 columnConfig={[

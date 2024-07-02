@@ -43,6 +43,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   // Metrics
   const metricGroup = project.getMetricGroup("eelgrass", t);
   const precalcMetrics = geographies
+    .filter((g) => !g.geographyId?.endsWith("_sr"))
     .map((geography) =>
       project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
     )
@@ -135,7 +136,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Show By Bioregion")}>
               {metrics
-                .filter((m) => m.geographyId !== "world")
+                .filter((m) => m.geographyId?.endsWith("_br"))
                 .every((m) => m.value > 0) ? (
                 <ObjectiveStatus
                   status={OBJECTIVE_YES}
@@ -149,10 +150,10 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
               )}
 
               <GeographyTable
-                rows={metrics.filter((m) => m.geographyId !== "world")}
+                rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
-                geographies={geographies.filter(
-                  (g) => g.geographyId !== "world"
+                geographies={geographies.filter((g) =>
+                  g.geographyId?.endsWith("_br")
                 )}
                 objective={objectives}
                 columnConfig={[

@@ -230,7 +230,7 @@ export const ProtectionLearnMore: React.FunctionComponent<LearnMoreProps> = ({
         <p>
           ℹ️ Overview: This planning process uses a combination of marine
           protection levels: Federal Marine Conservation Areas, Federal Marine
-          Reserves, State Marine Conservation Areas, State Marine Conervation
+          Reserves, State Marine Conservation Areas, State Marine Conservation
           Area (No-Take), REDs, State Marine Parks, State Marine Reserves, State
           Marine Recreation Management Areas, and Special Closures.
         </p>

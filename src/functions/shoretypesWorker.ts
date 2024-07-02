@@ -42,6 +42,10 @@ export async function shoretypesWorker(
     (c) => c.classId === extraParams.classId
   );
 
+  console.log(geography);
+  console.log(metricGroup);
+  console.log(curClass);
+
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
@@ -83,6 +87,8 @@ export async function shoretypesWorker(
     finalFeatures,
     clippedSketch
   );
+
+  console.log(overlapResult);
 
   return overlapResult.map(
     (metric): Metric => ({

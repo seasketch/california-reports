@@ -153,7 +153,7 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                   {metrics
                     .filter(
                       (m) =>
-                        m.geographyId !== "world" &&
+                        m.geographyId?.endsWith("_br") &&
                         m.classId === curClass.classId
                     )
                     .every((m) => m.value > 0) ? (
@@ -180,12 +180,12 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                     key={curClass.classId}
                     rows={metrics.filter(
                       (m) =>
-                        m.geographyId !== "world" &&
+                        m.geographyId?.endsWith("_br") &&
                         m.classId === curClass.classId
                     )}
                     metricGroup={metricGroup}
-                    geographies={geographies.filter(
-                      (g) => g.geographyId !== "world"
+                    geographies={geographies.filter((g) =>
+                      g.geographyId.endsWith("_br")
                     )}
                     objective={objectives}
                     columnConfig={[

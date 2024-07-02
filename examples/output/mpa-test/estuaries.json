@@ -12,6 +12,17 @@
       }
     },
     {
+      "geographyId": "central_sr",
+      "metricId": "estuaries",
+      "classId": "estuaries",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 7650.371709,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
       "geographyId": "north_br",
       "metricId": "estuaries",
       "classId": "estuaries",
@@ -23,7 +34,40 @@
       }
     },
     {
+      "geographyId": "north_sr",
+      "metricId": "estuaries",
+      "classId": "estuaries",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "estuaries",
+      "classId": "estuaries",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
       "geographyId": "south_br",
+      "metricId": "estuaries",
+      "classId": "estuaries",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
       "metricId": "estuaries",
       "classId": "estuaries",
       "sketchId": "29784",

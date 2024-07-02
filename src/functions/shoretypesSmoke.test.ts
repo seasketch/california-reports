@@ -14,7 +14,7 @@ describe("Basic smoke tests", () => {
     expect(typeof shoretypes).toBe("function");
   });
   test("shoretypes - tests run against all examples", async () => {
-    const examples = await getExamplePolygonSketchAll();
+    const examples = await getExamplePolygonSketchAll("mpa-test");
     for (const example of examples) {
       const result = await shoretypes(example);
       expect(result).toBeTruthy();
