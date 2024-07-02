@@ -23,6 +23,28 @@
       }
     },
     {
+      "geographyId": "central_sr",
+      "metricId": "substrate",
+      "classId": "1",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 16359,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "substrate",
+      "classId": "2",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 82323,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
       "geographyId": "north_br",
       "metricId": "substrate",
       "classId": "1",
@@ -45,6 +67,50 @@
       }
     },
     {
+      "geographyId": "north_sr",
+      "metricId": "substrate",
+      "classId": "1",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "substrate",
+      "classId": "2",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "substrate",
+      "classId": "1",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "substrate",
+      "classId": "2",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
       "geographyId": "south_br",
       "metricId": "substrate",
       "classId": "1",
@@ -57,6 +123,28 @@
     },
     {
       "geographyId": "south_br",
+      "metricId": "substrate",
+      "classId": "2",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "substrate",
+      "classId": "1",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
       "metricId": "substrate",
       "classId": "2",
       "sketchId": "29784",
