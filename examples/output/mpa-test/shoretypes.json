@@ -1,12 +1,441 @@
 {
   "metrics": [
     {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 14658.5366,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 227.56412,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 12063.520152,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 354.403057,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 1608.07832,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 14658.5366,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 227.56412,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 12063.520152,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 354.403057,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 1608.07832,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "rocky_shores",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "beaches",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 14658.5366,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 227.56412,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
       "geographyId": "world",
       "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
-      "value": 36432.547386,
+      "value": 12063.520152,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "tidal_flats",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 354.403057,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "unclassified",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 1608.07832,
       "extra": {
         "sketchName": "mpa-test"
       }

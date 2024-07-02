@@ -5,7 +5,7 @@
     "classId": "beaches-total",
     "sketchId": null,
     "groupId": null,
-    "value": 499848.8528581358
+    "value": 467381.951087347
   },
   {
     "geographyId": "central_br",
@@ -13,7 +13,7 @@
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
-    "value": 2264835.114980312
+    "value": 490742.7959879626
   },
   {
     "geographyId": "central_br",
@@ -45,7 +45,7 @@
     "classId": "rocky_shores-total",
     "sketchId": null,
     "groupId": null,
-    "value": 817135.9791291774
+    "value": 386837.2996056352
   },
   {
     "geographyId": "central_br",
@@ -53,7 +53,7 @@
     "classId": "tidal_flats-total",
     "sketchId": null,
     "groupId": null,
-    "value": 2297801.831304031
+    "value": 571589.46372391
   },
   {
     "geographyId": "central_br",
@@ -242,6 +242,22 @@
   {
     "geographyId": "central_sr",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 382007.46668399393
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 73644.2916157515
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
@@ -254,6 +270,38 @@
     "sketchId": null,
     "groupId": null,
     "value": 873368.5463812693
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 342949.3693664102
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 70553.95065523696
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1173
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 202
   },
   {
     "geographyId": "central_sr",
@@ -270,6 +318,22 @@
     "sketchId": null,
     "groupId": null,
     "value": 4395
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1449
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 167
   },
   {
     "geographyId": "central_sr",
@@ -645,7 +709,7 @@
     "classId": "beaches-total",
     "sketchId": null,
     "groupId": null,
-    "value": 862868.4696461922
+    "value": 643156.5899032704
   },
   {
     "geographyId": "north_br",
@@ -653,7 +717,7 @@
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1940695.0576471598
+    "value": 392606.32023233053
   },
   {
     "geographyId": "north_br",
@@ -693,7 +757,7 @@
     "classId": "rocky_shores-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1917630.9032717976
+    "value": 486032.8969365446
   },
   {
     "geographyId": "north_br",
@@ -701,7 +765,7 @@
     "classId": "tidal_flats-total",
     "sketchId": null,
     "groupId": null,
-    "value": 919370.5342388302
+    "value": 420693.207133406
   },
   {
     "geographyId": "north_br",
@@ -898,6 +962,22 @@
   {
     "geographyId": "north_sr",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 396966.7010152159
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 162802.258259354
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
@@ -914,10 +994,42 @@
   {
     "geographyId": "north_sr",
     "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 256123.26289256633
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 172250.45968842506
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
     "classId": "unclassified-total",
     "sketchId": null,
     "groupId": null,
     "value": 58366.190251017135
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 826
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 244
   },
   {
     "geographyId": "north_sr",
@@ -934,6 +1046,22 @@
     "sketchId": null,
     "groupId": null,
     "value": 4064
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 918
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 282
   },
   {
     "geographyId": "north_sr",
@@ -1061,7 +1189,15 @@
     "classId": "beaches-total",
     "sketchId": null,
     "groupId": null,
-    "value": 324242.1680499795
+    "value": 309960.2526989111
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 94973.9450713321
   },
   {
     "geographyId": "northcentral_sr",
@@ -1089,11 +1225,35 @@
   },
   {
     "geographyId": "northcentral_sr",
+    "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 269161.57840774267
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 97950.70031693896
+  },
+  {
+    "geographyId": "northcentral_sr",
     "metricId": "count",
     "classId": "beaches-total",
     "sketchId": null,
     "groupId": null,
     "value": 914
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 208
   },
   {
     "geographyId": "northcentral_sr",
@@ -1118,6 +1278,22 @@
     "sketchId": null,
     "groupId": null,
     "value": 3036
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1041
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 262
   },
   {
     "geographyId": "northcentral_sr",
@@ -1237,7 +1413,7 @@
     "classId": "beaches-total",
     "sketchId": null,
     "groupId": null,
-    "value": 757675.9562736053
+    "value": 710129.3644976583
   },
   {
     "geographyId": "south_br",
@@ -1245,7 +1421,7 @@
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
-    "value": 707184.5314063675
+    "value": 215021.5417801228
   },
   {
     "geographyId": "south_br",
@@ -1277,7 +1453,7 @@
     "classId": "rocky_shores-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1760949.2270130515
+    "value": 463794.87430190627
   },
   {
     "geographyId": "south_br",
@@ -1285,7 +1461,7 @@
     "classId": "tidal_flats-total",
     "sketchId": null,
     "groupId": null,
-    "value": 352187.60336406296
+    "value": 156929.59233729873
   },
   {
     "geographyId": "south_br",
@@ -1474,6 +1650,22 @@
   {
     "geographyId": "south_sr",
     "metricId": "area",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 686655.5261681293
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 171322.66162650098
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
@@ -1486,6 +1678,38 @@
     "sketchId": null,
     "groupId": null,
     "value": 28477.129967815228
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 460283.42766042723
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 125870.71582179335
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "beaches-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1656
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "coastal_marsh-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 763
   },
   {
     "geographyId": "south_sr",
@@ -1502,6 +1726,22 @@
     "sketchId": null,
     "groupId": null,
     "value": 145
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "rocky_shores-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1714
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "tidal_flats-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 442
   },
   {
     "geographyId": "south_sr",
