@@ -8,11 +8,16 @@ import {
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import { test, expect } from "vitest";
 import projectClient from "../../project/projectClient.js";
+import bbox from "@turf/bbox";
 
-test("unittest", async () => {
+test("rockyShores", async () => {
   const ds = projectClient.getDatasourceById("rocky_shores");
   const url = projectClient.getDatasourceUrl(ds);
-  const rocky = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(url);
+  const sketchBox = rockSketch.bbox || bbox(rockSketch);
+  const rocky = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
+    url,
+    sketchBox
+  );
 
   const metrics = await overlapFeatures("test", rocky, rockSketch);
 
