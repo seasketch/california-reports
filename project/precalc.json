@@ -61,7 +61,7 @@
     "classId": "unclassified-total",
     "sketchId": null,
     "groupId": null,
-    "value": 406829.64154674835
+    "value": 373550.0056357186
   },
   {
     "geographyId": "central_br",
@@ -289,6 +289,14 @@
   },
   {
     "geographyId": "central_sr",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 89270.85405444955
+  },
+  {
+    "geographyId": "central_sr",
     "metricId": "count",
     "classId": "beaches-total",
     "sketchId": null,
@@ -334,6 +342,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 167
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 229
   },
   {
     "geographyId": "central_sr",
@@ -1013,7 +1029,7 @@
     "classId": "unclassified-total",
     "sketchId": null,
     "groupId": null,
-    "value": 58366.190251017135
+    "value": 65325.26602172013
   },
   {
     "geographyId": "north_sr",
@@ -1069,7 +1085,7 @@
     "classId": "unclassified-total",
     "sketchId": null,
     "groupId": null,
-    "value": 119
+    "value": 122
   },
   {
     "geographyId": "north_sr",
@@ -1241,6 +1257,14 @@
   },
   {
     "geographyId": "northcentral_sr",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 32210.450857488562
+  },
+  {
+    "geographyId": "northcentral_sr",
     "metricId": "count",
     "classId": "beaches-total",
     "sketchId": null,
@@ -1294,6 +1318,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 262
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 126
   },
   {
     "geographyId": "northcentral_sr",
@@ -1469,7 +1501,7 @@
     "classId": "unclassified-total",
     "sketchId": null,
     "groupId": null,
-    "value": 2094477.091517951
+    "value": 636440.0824843169
   },
   {
     "geographyId": "south_br",
@@ -1697,6 +1729,14 @@
   },
   {
     "geographyId": "south_sr",
+    "metricId": "area",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 548567.4598823215
+  },
+  {
+    "geographyId": "south_sr",
     "metricId": "count",
     "classId": "beaches-total",
     "sketchId": null,
@@ -1742,6 +1782,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 442
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "unclassified-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1110
   },
   {
     "geographyId": "south_sr",

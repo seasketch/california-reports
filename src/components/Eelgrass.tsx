@@ -64,7 +64,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
           [data.sketch.properties.id]
-        );
+        ).filter((m) => !m.geographyId?.endsWith("_sr"));
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
           idProperty: "geographyId",

@@ -50,14 +50,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
   // Metrics
   const metricGroup = project.getMetricGroup("shoretypes", t);
-  const precalcMetrics = geographies
-    .filter((g) => !g.geographyId?.endsWith("_sr"))
-    .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
-    )
-    .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
-
-  console.log(precalcMetrics);
 
   // Labels
   const titleLabel = t("Shoreline Habitats");
@@ -71,15 +63,36 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
-        const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id]
-        );
-        const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
-          metricIdOverride: percMetricIdName,
-          idProperty: "geographyId",
+        let valueMetrics: Metric[] = [];
+        let precalcMetrics: Metric[] = [];
+        let percMetrics: Metric[] = [];
+
+        geographies.forEach((g) => {
+          const vMetrics = metricsWithSketchId(
+            data.metrics.filter(
+              (m) =>
+                m.metricId === metricGroup.metricId &&
+                m.geographyId === g.geographyId
+            ),
+            [data.sketch.properties.id]
+          );
+          valueMetrics = valueMetrics.concat(vMetrics);
+
+          const preMetrics = project.getPrecalcMetrics(
+            metricGroup,
+            "area",
+            g.geographyId
+          );
+          precalcMetrics = precalcMetrics.concat(preMetrics);
+
+          percMetrics = percMetrics.concat(
+            toPercentMetric(vMetrics, preMetrics, {
+              metricIdOverride: percMetricIdName,
+            })
+          );
         });
-        const metrics = [...valueMetrics, ...percentMetrics];
+
+        const metrics = [...valueMetrics, ...percMetrics];
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
@@ -146,6 +159,87 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                 },
               ]}
             />
+
+            <Collapse title={t("Show By Study Region")}>
+              {metricGroup.classes.map((curClass) => (
+                <React.Fragment key={curClass.classId}>
+                  {metrics
+                    .filter(
+                      (m) =>
+                        m.geographyId?.endsWith("_sr") &&
+                        m.classId === curClass.classId
+                    )
+                    .every((m) => m.value > 0) ? (
+                    <ObjectiveStatus
+                      status={OBJECTIVE_YES}
+                      msg={objectiveMsgs["studyRegion"](
+                        OBJECTIVE_YES,
+                        curClass.display,
+                        t
+                      )}
+                    />
+                  ) : (
+                    <ObjectiveStatus
+                      status={OBJECTIVE_NO}
+                      msg={objectiveMsgs["studyRegion"](
+                        OBJECTIVE_NO,
+                        curClass.display,
+                        t
+                      )}
+                    />
+                  )}
+
+                  <GeographyTable
+                    key={curClass.classId}
+                    rows={metrics.filter(
+                      (m) =>
+                        m.geographyId?.endsWith("_sr") &&
+                        m.classId === curClass.classId
+                    )}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId.endsWith("_sr")
+                    )}
+                    objective={objectives}
+                    columnConfig={[
+                      {
+                        columnLabel: t(curClass.display),
+                        type: "class",
+                        width: 30,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              typeof val === "string"
+                                ? parseInt(val) / 1609
+                                : val / 1609
+                            )
+                          ),
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 20,
+                      },
+                      {
+                        columnLabel: percWithinLabel,
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 40,
+                      },
+                    ]}
+                  />
+                </React.Fragment>
+              ))}
+            </Collapse>
 
             <Collapse title={t("Show By Bioregion")}>
               {metricGroup.classes.map((curClass) => (

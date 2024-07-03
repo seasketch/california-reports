@@ -147,7 +147,7 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-<Collapse title={t("Show By Study Region")}>
+            <Collapse title={t("Show By Study Region")}>
               {metricGroup.classes.map((curClass) => (
                 <React.Fragment key={curClass.classId}>
                   {metrics
