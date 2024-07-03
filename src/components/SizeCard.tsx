@@ -10,6 +10,7 @@ import {
   squareMeterToMile,
   Metric,
   firstMatchingMetric,
+  roundDecimal,
 } from "@seasketch/geoprocessing/client-core";
 import {
   ClassTable,
@@ -167,10 +168,12 @@ const genSingleSizeTable = (
             metricId: mg.metricId,
             valueFormatter: (val: string | number) =>
               Number.format(
-                Math.round(
+                roundDecimal(
                   squareMeterToMile(
                     typeof val === "string" ? parseInt(val) : val
-                  )
+                  ),
+                  2,
+                  { keepSmallValues: true }
                 )
               ),
             valueLabel: sqKmLabel,

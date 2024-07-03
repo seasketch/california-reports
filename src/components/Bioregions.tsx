@@ -14,6 +14,7 @@ import {
   ReportResult,
   createMetric,
   metricsWithSketchId,
+  roundDecimal,
   squareMeterToMile,
   toNullSketchArray,
   toPercentMetric,
@@ -117,10 +118,12 @@ export const Bioregions: React.FunctionComponent<GeogProp> = (props) => {
                   metricId: metricGroup.metricId,
                   valueFormatter: (val: string | number) =>
                     Number.format(
-                      Math.round(
+                      roundDecimal(
                         squareMeterToMile(
                           typeof val === "string" ? parseInt(val) : val
-                        )
+                        ),
+                        2,
+                        { keepSmallValues: true }
                       )
                     ),
                   colStyle: { textAlign: "center" },

@@ -12,6 +12,7 @@ import {
   genTaskCacheKey,
   GeoprocessingRequestParams,
   GeoprocessingRequestModel,
+  isMetricArray,
 } from "@seasketch/geoprocessing/client-core";
 import awsSdk from "aws-sdk";
 import gp from "../../project/geoprocessing.json";
@@ -85,5 +86,10 @@ export function parseLambdaResponse(
   if (lambdaResult.StatusCode !== 200)
     throw Error(`Report error: ${lambdaResult.Payload}`);
 
-  return JSON.parse(JSON.parse(lambdaResult.Payload as string).body).data;
+  const parsedResult = JSON.parse(
+    JSON.parse(lambdaResult.Payload as string).body
+  ).data;
+  if (!isMetricArray(parsedResult))
+    console.log("Not metric array", parsedResult);
+  return parsedResult;
 }
