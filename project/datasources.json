@@ -565,7 +565,7 @@
     "noDataValue": 15,
     "created": "2024-06-26T22:25:33.236Z",
     "lastUpdated": "2024-06-27T22:22:43.831Z",
-    "src": "data/src/California MPAs 2024/KelpPersistence/lookup/kelpPersistence60Compressed.tif"
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/KelpPersistence/lookup/kelpPersistence60Compressed.tif"
   },
   {
     "datasourceId": "north_sr",
@@ -620,7 +620,7 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Products/CAbathyClipped.tif",
+    "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif",
     "band": 1,
     "geo_type": "raster",
     "datasourceId": "depth",
