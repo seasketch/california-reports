@@ -96,7 +96,7 @@ export default new GeoprocessingHandler(eelgrassWorker, {
   title: "eelgrassWorker",
   description: "",
   timeout: 500, // seconds
-  memory: 1024, // megabytes
+  memory: 4096, // megabytes
   executionMode: "sync",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],

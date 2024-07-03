@@ -81,6 +81,7 @@ export async function runLambdaWorker(
 export function parseLambdaResponse(
   lambdaResult: awsSdk.Lambda.InvocationResponse
 ): Metric[] {
+  console.log(lambdaResult);
   if (lambdaResult.StatusCode !== 200)
     throw Error(`Report error: ${lambdaResult.Payload}`);
 

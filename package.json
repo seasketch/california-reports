@@ -1,5 +1,5 @@
 {
-  "name": "california-reports",
+  "name": "california-reports-stack",
   "version": "7.0.0-beta.1",
   "description": "",
   "private": false,
@@ -65,7 +65,7 @@
   "devDependencies": {
     "@babel/cli": "^7.24.5",
     "@babel/plugin-syntax-import-attributes": "^7.24.1",
-    "@seasketch/geoprocessing": "7.0.0-beta.5",
+    "@seasketch/geoprocessing": "7.0.0-experimental-nested-stack.2",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",

@@ -44,7 +44,6 @@ export async function eelgrass(
           metricGroup,
           classId: "eelgrass",
         };
-        console.log("running", geography.geographyId);
 
         return process.env.NODE_ENV === "test"
           ? eelgrassWorker(sketch, parameters)
@@ -63,8 +62,6 @@ export async function eelgrass(
     []
   );
 
-  console.log("done");
-
   return {
     metrics: sortMetrics(rekeyMetrics(metrics)),
     sketch: toNullSketch(sketch, true),
@@ -74,7 +71,7 @@ export async function eelgrass(
 export default new GeoprocessingHandler(eelgrass, {
   title: "eelgrass",
   description: "eelgrass overlap",
-  timeout: 1000, // seconds
+  timeout: 900, // seconds
   memory: 1024, // megabytes
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required

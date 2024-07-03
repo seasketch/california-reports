@@ -35,48 +35,50 @@ export async function substrate(
   const metricGroup = project.getMetricGroup("substrate");
   const geographies = project.geographies;
 
-  const metrics = (
-    await Promise.all(
-      geographies.map(async (geography) =>
-        (
-          await Promise.all(
-            metricGroup.classes.map(async (curClass) => {
-              const parameters = {
-                ...extraParams,
-                geography: geography,
-                metricGroup,
-                classId: curClass.classId,
-              };
+  try {
+    const allMetrics = await Promise.all(
+      geographies.map(async (geography) => {
+        const classMetrics = await Promise.all(
+          metricGroup.classes.map(async (curClass) => {
+            const parameters = {
+              ...extraParams,
+              geography: geography,
+              metricGroup,
+              classId: curClass.classId,
+            };
 
-              return process.env.NODE_ENV === "test"
-                ? substrateWorker(sketch, parameters)
-                : runLambdaWorker(
-                    sketch,
-                    parameters,
-                    "substrateWorker",
-                    request
-                  );
-            })
-          )
-        ).flat()
-      )
-    )
-  ).reduce<Metric[]>(
-    (metrics, lambdaResult) =>
-      metrics.concat(
-        process.env.NODE_ENV === "test"
-          ? (lambdaResult as Metric[])
-          : parseLambdaResponse(
-              lambdaResult as awsSdk.Lambda.InvocationResponse
-            )
-      ),
-    []
-  );
+            console.log(
+              `Processing classId: ${curClass.classId} for geography: ${geography}`
+            );
 
-  return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
-    sketch: toNullSketch(sketch, true),
-  };
+            return process.env.NODE_ENV === "test"
+              ? substrateWorker(sketch, parameters)
+              : runLambdaWorker(sketch, parameters, "substrateWorker", request);
+          })
+        );
+
+        console.log(`Results for geography ${geography}:`, classMetrics);
+
+        return classMetrics.flat();
+      })
+    );
+
+    const metrics = allMetrics
+      .flat()
+      .reduce<
+        Metric[]
+      >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as awsSdk.Lambda.InvocationResponse)), []);
+
+    console.log("Final metrics:", metrics);
+
+    return {
+      metrics: sortMetrics(rekeyMetrics(metrics)),
+      sketch: toNullSketch(sketch, true),
+    };
+  } catch (error) {
+    console.error("Error fetching metrics:", error);
+    throw error;
+  }
 }
 
 export default new GeoprocessingHandler(substrate, {
