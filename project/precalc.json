@@ -10,6 +10,14 @@
   {
     "geographyId": "central_br",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3411472886.6718626
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -70,6 +78,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1381
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
   },
   {
     "geographyId": "central_br",
@@ -250,6 +266,14 @@
   {
     "geographyId": "central_sr",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2968314517.219216
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -302,6 +326,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1173
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1
   },
   {
     "geographyId": "central_sr",
@@ -730,6 +762,14 @@
   {
     "geographyId": "north_br",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 4189557681.573887
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -798,6 +838,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1592
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3
   },
   {
     "geographyId": "north_br",
@@ -986,6 +1034,14 @@
   {
     "geographyId": "north_sr",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2657876174.4624553
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -1038,6 +1094,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 826
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2
   },
   {
     "geographyId": "north_sr",
@@ -1210,6 +1274,14 @@
   {
     "geographyId": "northcentral_sr",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1974795694.9992247
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -1270,6 +1342,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 914
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 2
   },
   {
     "geographyId": "northcentral_sr",
@@ -1450,6 +1530,14 @@
   {
     "geographyId": "south_br",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6090124931.871927
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -1510,6 +1598,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1684
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 7
   },
   {
     "geographyId": "south_br",
@@ -1690,6 +1786,14 @@
   {
     "geographyId": "south_sr",
     "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6086750299.521614
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
     "classId": "coastal_marsh-total",
     "sketchId": null,
     "groupId": null,
@@ -1742,6 +1846,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1656
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 7
   },
   {
     "geographyId": "south_sr",
@@ -1942,6 +2054,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 13692238572.513132
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 13691155498.136543
   },
   {
     "geographyId": "world",
@@ -2302,6 +2422,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 11
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "clipLayer-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 9
   },
   {
     "geographyId": "world",

@@ -469,12 +469,12 @@
     "datasourceId": "clipLayer",
     "geo_type": "vector",
     "formats": ["fgb"],
-    "precalc": false,
-    "layerName": "MAN_CA_MPA_Bio_Pet_PairwiseDisso",
+    "precalc": true,
+    "layerName": "MPA_Petitions_bioregions_nofed_PairwiseDisso selection",
     "classKeys": [],
     "created": "2024-06-14T19:10:34.383Z",
-    "lastUpdated": "2024-06-14T19:10:34.383Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bioregions_Petitions_Dissolve/MAN_CA_MPA_Bio_Pet_PairwiseDisso.shp",
+    "lastUpdated": "2024-07-08T21:33:40.610Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/ClippingLayer/MPA_Petitions_bioregions_nofed_PairwiseDisso selection.shp",
     "propertiesToKeep": [],
     "explodeMulti": true
   },
@@ -620,15 +620,15 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "depth",
+    "geo_type": "raster",
     "formats": ["tif"],
+    "precalc": false,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": -9999,
     "created": "2024-06-28T18:37:50.902Z",
     "lastUpdated": "2024-06-28T18:37:50.902Z",
-    "noDataValue": -9999,
-    "measurementType": "quantitative",
-    "precalc": false
+    "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif"
   }
 ]
