@@ -33,7 +33,7 @@ export async function eelgrass(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("eelgrass");
-  const geographies = project.geographies;
+  const geographies = project.geographies.filter((g)=> !g.geographyId?.endsWith("_sr"));
 
   const metrics = (
     await Promise.all(
