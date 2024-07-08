@@ -1,45 +1,40 @@
 import React from "react";
 import {
   ReportResult,
-  keyBy,
-  valueFormatter,
-  toPercentMetric,
-  sortMetricsDisplayOrder,
-  MetricGroup,
   GeogProp,
   squareMeterToMile,
-  Metric,
   firstMatchingMetric,
-  roundDecimal,
+  roundLower,
+  percentWithEdge,
 } from "@seasketch/geoprocessing/client-core";
 import {
-  ClassTable,
   Collapse,
   ResultsCard,
   useSketchProperties,
   ToolbarCard,
   DataDownload,
+  VerticalSpacer,
+  KeySection,
+  LayerToggle,
 } from "@seasketch/geoprocessing/client-ui";
 import project from "../../project/projectClient.js";
 import Translator from "../components/TranslatorAsync.js";
 import { Trans, useTranslation } from "react-i18next";
-import { TFunction } from "i18next";
-
-import watersImgUrl from "../assets/img/territorial_waters.png";
 import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
+import {
+  genAreaGroupLevelTable,
+  groupedCollectionReport,
+  groupedSketchReport,
+} from "../util/ProtectionLevelOverlapReports.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
-
-  const curGeography = project.getGeographyById(props.geographyId, {
-    fallbackGroup: "default-boundary",
-  });
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
   // Study regions total area
-  const precalcMetrics = [
+  const boundaryTotalMetrics = [
     {
       metricId: "area",
       value: 15235250304.770761,
@@ -51,9 +46,6 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   ];
 
   const notFoundString = t("Results not found");
-
-  /* i18next-extract-disable-next-line */
-  const planningUnitName = t(project.basic.planningAreaName);
   return (
     <ResultsCard
       title={t("Size")}
@@ -62,6 +54,26 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
     >
       {(data: ReportResult) => {
         if (Object.keys(data).length === 0) throw new Error(notFoundString);
+
+        // Get overall area of sketch metric
+        const areaMetric = firstMatchingMetric(
+          data.metrics,
+          (m) => m.sketchId === data.sketch.properties.id && m.groupId === null
+        );
+
+        // Grab overall size precalc metric
+        const totalAreaMetric = firstMatchingMetric(
+          boundaryTotalMetrics,
+          (m) => m.groupId === null
+        );
+
+        // Format area metrics for key section display
+        const areaDisplay = roundLower(squareMeterToMile(areaMetric.value));
+        const percDisplay = percentWithEdge(
+          areaMetric.value / totalAreaMetric.value
+        );
+        const areaUnitDisplay = t("mi²");
+        const mapLabel = t("Show Map Layer");
 
         return (
           <>
@@ -85,31 +97,72 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                   waters.
                 </Trans>
               </p>
-              {genSingleSizeTable(data, precalcMetrics, metricGroup, t)}
+              <KeySection>
+                {t("This plan is")}{" "}
+                <b>
+                  {areaDisplay} {areaUnitDisplay}
+                </b>
+                {", "}
+                {t("which is")} <b>{percDisplay}</b> {t("of")}{" "}
+                {t("Californian state waters")}.
+              </KeySection>
+
+              <LayerToggle label={mapLabel} layerId={metricGroup.layerId} />
+              <VerticalSpacer />
+
+              {isCollection
+                ? groupedCollectionReport(
+                    data,
+                    boundaryTotalMetrics,
+                    metricGroup,
+                    t
+                  )
+                : groupedSketchReport(
+                    data,
+                    boundaryTotalMetrics,
+                    metricGroup,
+                    t
+                  )}
+
               {isCollection && (
-                <Collapse title={t("Show by MPA")}>
-                  {genAreaSketchTable(data, precalcMetrics, metricGroup, t)}
-                </Collapse>
+                <>
+                  <Collapse
+                    title={t("Show by Protection Level")}
+                    key={"Protection"}
+                  >
+                    {genAreaGroupLevelTable(
+                      data,
+                      boundaryTotalMetrics,
+                      metricGroup,
+                      t
+                    )}
+                  </Collapse>
+                  <Collapse title={t("Show by MPA")} key={"MPA"}>
+                    {genAreaSketchTable(
+                      data,
+                      boundaryTotalMetrics,
+                      metricGroup,
+                      t
+                    )}
+                  </Collapse>
+                </>
               )}
               <Collapse title={t("Learn more")}>
-                <p>
-                  {<img src={watersImgUrl} style={{ maxWidth: "100%" }} />}
-                  <a
-                    target="_blank"
-                    href="https://en.wikipedia.org/wiki/Territorial_waters"
-                  >
-                    <Trans i18nKey="SizeCard - learn more source">
-                      Source: Wikipedia - Territorial Waters
-                    </Trans>
-                  </a>
-                </p>
-                <Trans i18nKey="SizeCard - learn more">
+                <Trans i18nKey="SizeCard-learn more">
                   <p>
                     ℹ️ Overview: This report summarizes the size and proportion
                     of this plan within these boundaries.
                   </p>
+                  <p>
+                    Designations to protection levels come from the Californian
+                    MLPA process. No-take: State Marine Reserve, "No Take" State
+                    Marine Conservation Area. Limited-take: State Marine
+                    Conservation Area, State Marine Park, State Marine
+                    Recreational Management Area, State Marine Conservation
+                    Area. Special closures are in their own protection level.
+                  </p>
                   <p>🎯 Planning Objective: None </p>
-                  <p>🗺️ Source Data: CDFW </p>
+                  <p>🗺️ Source Data: CDFW</p>
                   <p>
                     📈 Report: If sketch boundaries within a plan overlap with
                     each other, the overlap is only counted once.
@@ -121,101 +174,6 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
-  );
-};
-
-const genSingleSizeTable = (
-  data: ReportResult,
-  precalcMetrics: Metric[],
-  mg: MetricGroup,
-  t: TFunction
-) => {
-  const boundaryLabel = t("Boundary");
-  const areaWithinLabel = t("Area Within Plan");
-  const areaPercWithinLabel = t("% Area Within Plan");
-  const mapLabel = t("Map");
-  const sqKmLabel = t("mi²");
-
-  let singleMetrics = data.metrics.filter(
-    (m) => m.sketchId === data.sketch.properties.id
-  );
-
-  const finalMetrics = sortMetricsDisplayOrder(
-    [
-      ...singleMetrics,
-      ...toPercentMetric(singleMetrics, precalcMetrics, {
-        metricIdOverride: project.getMetricGroupPercId(mg),
-      }),
-    ],
-    "classId",
-    ["eez", "offshore", "contiguous"]
-  );
-
-  return (
-    <>
-      <ClassTable
-        rows={finalMetrics}
-        metricGroup={mg}
-        columnConfig={[
-          {
-            columnLabel: boundaryLabel,
-            type: "class",
-            width: 25,
-          },
-          {
-            columnLabel: areaWithinLabel,
-            type: "metricValue",
-            metricId: mg.metricId,
-            valueFormatter: (val: string | number) =>
-              Number.format(
-                roundDecimal(
-                  squareMeterToMile(
-                    typeof val === "string" ? parseInt(val) : val
-                  ),
-                  2,
-                  { keepSmallValues: true }
-                )
-              ),
-            valueLabel: sqKmLabel,
-            width: 20,
-          },
-          {
-            columnLabel: areaPercWithinLabel,
-            type: "metricChart",
-            metricId: project.getMetricGroupPercId(mg),
-            valueFormatter: "percent",
-            chartOptions: {
-              showTitle: true,
-              showTargetLabel: true,
-              targetLabelPosition: "bottom",
-              targetLabelStyle: "tight",
-              barHeight: 11,
-            },
-            width: 40,
-            targetValueFormatter: (
-              value: number,
-              row: number,
-              numRows: number
-            ) => {
-              if (row === 0) {
-                return (value: number) =>
-                  `${valueFormatter(value / 100, "percent0dig")} ${t(
-                    "Target"
-                  )}`;
-              } else {
-                return (value: number) =>
-                  `${valueFormatter(value / 100, "percent0dig")}`;
-              }
-            },
-          },
-          {
-            type: "layerToggle",
-            width: 15,
-            columnLabel: mapLabel,
-          },
-        ]}
-      />
-    </>
   );
 };
 

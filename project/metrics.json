@@ -2,12 +2,12 @@
   {
     "metricId": "boundaryAreaOverlap",
     "type": "areaOverlap",
+    "layerId": "Io5IzPfsL",
     "classes": [
       {
         "classId": "state_waters",
         "display": "State Waters",
-        "datasourceId": "world",
-        "layerId": "Io5IzPfsL"
+        "datasourceId": "world"
       }
     ]
   },

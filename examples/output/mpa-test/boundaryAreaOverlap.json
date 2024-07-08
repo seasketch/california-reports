@@ -10,6 +10,39 @@
       "extra": {
         "sketchName": "mpa-test"
       }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "noTake",
+      "value": 85265862.640884,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "limitedTake",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "specialClosure",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
     }
   ],
   "sketch": {

@@ -15,9 +15,56 @@
       "geographyId": "world",
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
+      "sketchId": "29481",
+      "groupId": "limitedTake",
+      "value": 186595109.415119,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
       "sketchId": "29482",
       "groupId": null,
       "value": 438065508.735672,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "noTake",
+      "value": 85265862.640884,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "limitedTake",
+      "value": 186595173.08780468,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "specialClosure",
+      "value": 166204408.11059096,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -38,8 +85,30 @@
       "geographyId": "world",
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
+      "sketchId": "29483",
+      "groupId": "noTake",
+      "value": 85265862.640884,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
       "sketchId": "29484",
       "groupId": null,
+      "value": 166204536.679669,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29484",
+      "groupId": "specialClosure",
       "value": 166204536.679669,
       "extra": {
         "sketchName": "split"

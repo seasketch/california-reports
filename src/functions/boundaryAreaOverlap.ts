@@ -15,11 +15,13 @@ import {
   DefaultExtraParams,
   splitSketchAntimeridian,
   isVectorDatasource,
+  overlapAreaGroupMetrics,
 } from "@seasketch/geoprocessing";
 import { getFeatures } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
 import { clipToGeography } from "../util/clipToGeography.js";
+import { getGroup, groups } from "../util/getGroup.js";
 
 const metricGroup = project.getMetricGroup("boundaryAreaOverlap");
 
@@ -98,8 +100,28 @@ export async function boundaryAreaOverlap(
       []
     );
 
+  // Generate area metrics grouped by zone type, with area overlap within zones removed
+  // Each sketch gets one group metric for its zone type, while collection generates one for each zone type
+  const sketchToZone = getGroup(sketch);
+  const metricToZone = (sketchMetric: Metric) => {
+    return sketchToZone[sketchMetric.sketchId!];
+  };
+
+  // Study regions total area
+  const totalArea = 15235250304.770761;
+
+  const levelMetrics = await overlapAreaGroupMetrics({
+    metricId: metricGroup.metricId,
+    groupIds: groups,
+    sketch: clippedSketch as Sketch<Polygon> | SketchCollection<Polygon>,
+    metricToGroup: metricToZone,
+    metrics: metrics,
+    classId: metricGroup.classes[0].classId,
+    outerArea: totalArea,
+  });
+
   return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
+    metrics: sortMetrics(rekeyMetrics([...metrics, ...levelMetrics])),
     sketch: toNullSketch(sketch, true),
   };
 }
