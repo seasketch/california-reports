@@ -526,19 +526,19 @@ export const genAreaGroupLevelTable = (
             Header: t("Area") + " ".repeat(index),
             accessor: (row) => {
               const value = row[curClass.classId] as number;
-              const kmVal = squareMeterToMile(value);
+              const miVal = squareMeterToMile(value);
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =
-                kmVal && kmVal < 0.1
+                miVal && miVal < 0.1
                   ? "< 0.1"
-                  : Number.format(roundDecimal(kmVal));
+                  : Number.format(roundDecimal(miVal));
               return (
                 <GroupPill
                   groupColorMap={groupColorMapTransparent}
                   group={row.groupId.toString()}
                 >
-                  {valDisplay + " " + t("km²")}
+                  {valDisplay + " " + t("mi²")}
                 </GroupPill>
               );
             },
@@ -732,14 +732,14 @@ export const genAreaSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const kmVal = squareMeterToMile(value);
+              const miVal = squareMeterToMile(value);
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =
-                kmVal && kmVal < 0.1
+                miVal && miVal < 0.1
                   ? "< 0.1"
-                  : Number.format(roundDecimal(kmVal));
-              return valDisplay + " " + t("km²");
+                  : Number.format(roundDecimal(miVal));
+              return valDisplay + " " + t("mi²");
             },
           },
           {
