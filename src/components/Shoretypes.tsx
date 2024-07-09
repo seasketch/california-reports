@@ -25,8 +25,9 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { AreaSketchTableStyled } from "../util/genAreaSketchTable.js";
+import { ReplicateAreaSketchTableStyled } from "../util/genAreaSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
+import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -356,6 +357,21 @@ export const genLengthSketchTable = (
         style: { color: "#777" },
         columns: [
           {
+            Header: t("Replicate") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+
+              return value ? (
+                <CheckCircleFill size={15} style={{ color: "#78c679" }} />
+              ) : (
+                <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
+              );
+            },
+          },
+          {
             Header: t("Area") + " ".repeat(index),
             accessor: (row) => {
               const value =
@@ -396,8 +412,8 @@ export const genLengthSketchTable = (
   ];
 
   return (
-    <AreaSketchTableStyled>
+    <ReplicateAreaSketchTableStyled>
       <Table columns={columns} data={rows} />
-    </AreaSketchTableStyled>
+    </ReplicateAreaSketchTableStyled>
   );
 };

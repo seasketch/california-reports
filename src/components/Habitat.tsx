@@ -29,7 +29,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
-import { AreaSketchTableStyled } from "../util/genAreaSketchTable.js";
+import { ReplicateAreaSketchTableStyled } from "../util/genAreaSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -166,19 +166,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: "percent",
                   chartOptions: { showTitle: true },
                   width: 40,
-                },
-                {
-                  columnLabel: replicationLabel,
-                  type: "metricValue",
-                  metricId: `${mg.metricId}Count`,
-                  valueFormatter: (val) =>
-                    val === 5 ? (
-                      <CheckCircleFill size={15} style={{ color: "#78c679" }} />
-                    ) : (
-                      <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
-                    ),
-                  chartOptions: { showTitle: true },
-                  width: 10,
                 },
               ]}
             />
@@ -398,6 +385,21 @@ export const genSketchTable = (
         style: { color: "#777" },
         columns: [
           {
+            Header: t("Replicate") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+
+              return value ? (
+                <CheckCircleFill size={15} style={{ color: "#78c679" }} />
+              ) : (
+                <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
+              );
+            },
+          },
+          {
             Header: t("Area") + " ".repeat(index),
             accessor: (row) => {
               const value =
@@ -438,8 +440,8 @@ export const genSketchTable = (
   ];
 
   return (
-    <AreaSketchTableStyled>
+    <ReplicateAreaSketchTableStyled>
       <Table columns={columns} data={rows} />
-    </AreaSketchTableStyled>
+    </ReplicateAreaSketchTableStyled>
   );
 };

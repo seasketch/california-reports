@@ -17,7 +17,7 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
+import { genReplicateAreaSketchTable } from "../util/genAreaSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -295,7 +295,12 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genAreaSketchTable(data, precalcMetrics, metricGroup, t)}
+                {genReplicateAreaSketchTable(
+                  data,
+                  precalcMetrics,
+                  metricGroup,
+                  t
+                )}
               </Collapse>
             )}
 
