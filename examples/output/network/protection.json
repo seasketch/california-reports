@@ -3,9 +3,9 @@
     {
       "geographyId": null,
       "metricId": "protection",
-      "classId": "FMCA",
+      "classId": "SMCANT",
       "sketchId": null,
-      "groupId": "FMCA",
+      "groupId": "SMCANT",
       "value": 1
     },
     {
@@ -31,12 +31,7 @@
     "features": [
       {
         "id": 29483,
-        "bbox": [
-          -121.962715,
-          36.209553,
-          -121.7673,
-          36.305416
-        ],
+        "bbox": [-121.962715, 36.209553, -121.7673, 36.305416],
         "type": "Feature",
         "properties": {
           "4768": "mpa-test",
@@ -249,22 +244,17 @@
       },
       {
         "id": 29484,
-        "bbox": [
-          -120.58906,
-          34.3916,
-          -120.31646,
-          34.53999
-        ],
+        "bbox": [-120.58906, 34.3916, -120.31646, 34.53999],
         "type": "Feature",
         "properties": {
           "4768": "split",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8340": "Special",
           "id": "29484",
           "ccr": null,
           "fid": null,
           "name": "split",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -319,7 +309,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -467,23 +457,18 @@
       },
       {
         "id": 29481,
-        "bbox": [
-          -119.488525,
-          33.952343,
-          -119.29513,
-          34.068176
-        ],
+        "bbox": [-119.488525, 33.952343, -119.29513, 34.068176],
         "type": "Feature",
         "properties": {
           "4768": "anacapa",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8337": 2,
-          "8340": "FMCA",
+          "8340": "SMCANT",
           "id": "29481",
           "ccr": null,
           "fid": 2,
           "name": "anacapa",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -538,7 +523,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -664,7 +649,7 @@
             },
             {
               "label": "Proposed Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "proposed_designation",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -681,7 +666,7 @@
               "alternateLanguages": {}
             }
           ],
-          "proposed_designation": "FMCA"
+          "proposed_designation": "SMCANT"
         }
       }
     ],

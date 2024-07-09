@@ -7,35 +7,57 @@ import {
   getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
 
-// Designation of protection levels
-export const groups = ["noTake", "limitedTake", "specialClosure"];
-export const groupsDisplay = ["No-Take", "Limited-Take", "Special Closure"];
+export const groups = [
+  "SMCA",
+  "SMCANT",
+  "RED",
+  "SMP",
+  "SMR",
+  "SMRMA",
+  "Special",
+];
 
 // Display values for groups (plural)
 export const groupDisplayMapPl: Record<string, string> = {
-  noTake: "No-Take Area(s)",
-  limitedTake: "Limited-Take Area(s)",
-  specialClosure: "Special Closure(s)",
+  SMCA: "State Marine Conservation Area(s)",
+  SMCANT: "State Marine Conservation Area(s) (No-Take)",
+  RED: "RED(s)",
+  SMP: "State Marine Park(s)",
+  SMR: "State Marine Reserve(s)",
+  SMRMA: "State Marine Recreation Management Area(s)",
+  Special: "Special Closure(s)",
 };
 
 // Display values for groups (singular)
 export const groupDisplayMapSg: Record<string, string> = {
-  noTake: "No-Take Area",
-  limitedTake: "Limited-Take Area",
-  specialClosure: "Special Closure",
+  SMCA: "State Marine Conservation Area",
+  SMCANT: "State Marine Conservation Area (No-Take)",
+  RED: "RED",
+  SMP: "State Marine Park",
+  SMR: "State Marine Reserve",
+  SMRMA: "State Marine Recreation Management Area",
+  Special: "Special Closure",
 };
 
 // Mapping groupIds to colors
 export const groupColorMap: Record<string, string> = {
-  noTake: "#BEE4BE",
-  limitedTake: "#FFE1A3",
-  specialClosure: "#98DBF4",
+  SMCA: "#0070FF",
+  SMCANT: "#C500FF",
+  RED: "#98DBF4",
+  SMP: "#FFFF00",
+  SMR: "#E60000",
+  SMRMA: "#4CE600",
+  Special: "#FF00C5",
 };
-
-// Designations of high and medium protection levels
-export const noTakeZones = ["SMR", "SMCANT"];
-export const limitedTakeZones = ["FMCA", "FMR", "SMCA", "RED", "SMP", "SMRMA"];
-export const specialClosureZones = ["Special"];
+export const groupColorMapTransparent: Record<string, string> = {
+  SMCA: "#0070FF80",
+  SMCANT: "#C500FF80",
+  RED: "#98DBF480",
+  SMP: "#FFFF0080",
+  SMR: "#E6000080",
+  SMRMA: "#4CE60080",
+  Special: "#FF00C580",
+};
 
 /**
  * Gets MPA Protection levels for all MPAs in a sketch collection from user attributes
@@ -54,13 +76,12 @@ export function getGroup(
         ""
       ).toString();
 
-      if (noTakeZones.includes(designation))
-        levels[sketch.properties.id] = "noTake";
-      else if (limitedTakeZones.includes(designation))
-        levels[sketch.properties.id] = "limitedTake";
-      else if (specialClosureZones.includes(designation))
-        levels[sketch.properties.id] = "specialClosure";
-      else levels[sketch.properties.id] = "default";
+      if (!designation)
+        throw new Error(
+          `${sketch.properties.name} has no proposed designation.`
+        );
+
+      levels[sketch.properties.id] = designation;
 
       return levels;
     },

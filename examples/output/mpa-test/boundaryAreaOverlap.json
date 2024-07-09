@@ -12,22 +12,11 @@
       }
     },
     {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "noTake",
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
       "geographyId": null,
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "limitedTake",
+      "groupId": "SMCA",
       "value": 0,
       "extra": {
         "sketchName": "mpa-test"
@@ -38,7 +27,62 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "specialClosure",
+      "groupId": "SMCANT",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "RED",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "SMP",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "SMR",
+      "value": 85265862.640884,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "SMRMA",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29784",
+      "groupId": "Special",
       "value": 0,
       "extra": {
         "sketchName": "mpa-test"

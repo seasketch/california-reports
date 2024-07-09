@@ -23,6 +23,12 @@ import {
 import { styled } from "styled-components";
 import { Trans, useTranslation } from "react-i18next";
 import { ReportProps } from "../util/ReportProp.js";
+import {
+  groupColorMap,
+  groupColorMapTransparent,
+  groupDisplayMapPl,
+  groupDisplayMapSg,
+} from "../util/getGroup.js";
 
 // Table styling for Show by MPA table
 export const SmallReportTableStyled = styled(ReportTableStyled)`
@@ -30,45 +36,6 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
     font-size: 13px;
   }
 `;
-
-// Display values for groups (plural)
-export const groupDisplayMapPl: Record<string, string> = {
-  FMCA: "Federal Marine Conservation Area(s)",
-  FMR: "Federal Marine Reserve(s)",
-  SMCA: "State Marine Conservation Area(s)",
-  SMCANT: "State Marine Conervation Area(s) (No-Take)",
-  RED: "RED(s)",
-  SMP: "State Marine Park(s)",
-  SMR: "State Marine Reserve(s)",
-  SMRMA: "State Marine Recreation Management Area(s)",
-  Special: "Special Closure(s)",
-};
-
-// Display values for groups (singular)
-export const groupDisplayMapSg: Record<string, string> = {
-  FMCA: "Federal Marine Conservation Area",
-  FMR: "Federal Marine Reserve",
-  SMCA: "State Marine Conservation Area",
-  SMCANT: "State Marine Conervation Area (No-Take)",
-  RED: "RED",
-  SMP: "State Marine Park",
-  SMR: "State Marine Reserve",
-  SMRMA: "State Marine Recreation Management Area",
-  Special: "Special Closure",
-};
-
-// Mapping groupIds to colors
-const groupColorMap: Record<string, string> = {
-  FMCA: "#98DBF4",
-  FMR: "#98DBF4",
-  SMCA: "#98DBF4",
-  SMCANT: "#98DBF4",
-  RED: "#98DBF4",
-  SMP: "#98DBF4",
-  SMR: "#98DBF4",
-  SMRMA: "#98DBF4",
-  Special: "#98DBF4",
-};
 
 /**
  * Top level Protection report - JSX.Element
@@ -187,7 +154,7 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
       Header: t("Protection Level"),
       accessor: (row) => (
         <GroupPill
-          groupColorMap={groupColorMap}
+          groupColorMap={groupColorMapTransparent}
           group={getUserAttribute(row.properties, "proposed_designation", "")}
         >
           {t(

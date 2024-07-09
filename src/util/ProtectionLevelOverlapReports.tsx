@@ -18,7 +18,6 @@ import {
   toPercentMetric,
   GroupMetricAgg,
   firstMatchingMetric,
-  flattenByGroupAllClass,
   isSketchCollection,
   percentWithEdge,
   OBJECTIVE_YES,
@@ -29,12 +28,13 @@ import {
   nestMetrics,
   squareMeterToMile,
   roundDecimal,
+  roundLower,
 } from "@seasketch/geoprocessing/client-core";
 import {
   groupColorMap,
+  groupColorMapTransparent,
   groupDisplayMapPl,
   groups,
-  groupsDisplay,
 } from "./getGroup.js";
 import { InfoCircleFill } from "@styled-icons/bootstrap";
 import project from "../../project/index.js";
@@ -94,7 +94,7 @@ export const groupedSketchReport = (
         (m) => m.classId === curClass.classId
       );
       const objective = curClass.objectiveId;
-      const values = objective
+      const percValues = objective
         ? classMetrics
             .filter((levelAgg) => {
               const level = levelAgg.groupId;
@@ -107,8 +107,13 @@ export const groupedSketchReport = (
         : classMetrics.map(
             (group) => group.value / totalAreas[curClass.classId]
           );
+      const values = classMetrics.map((group) => group.value);
 
-      return { ...acc, [curClass.classId]: values };
+      return {
+        ...acc,
+        [curClass.classId + "Perc"]: percValues,
+        [curClass.classId]: values,
+      };
     },
     {}
   );
@@ -137,7 +142,7 @@ export const groupedCollectionReport = (
     (m) => m.groupId && groups.includes(m.groupId)
   );
 
-  const groupLevelAggs: GroupMetricAgg[] = flattenByGroupAllClass(
+  const groupLevelAggs: GroupMetricAgg[] = flattenByGroup(
     data.sketch,
     levelMetrics,
     precalcMetrics
@@ -147,6 +152,19 @@ export const groupedCollectionReport = (
   const totalsByClass = metricGroup.classes.reduce<Record<string, number[]>>(
     (acc, curClass) => {
       const objective = curClass.objectiveId;
+      const percValues = objective
+        ? groupLevelAggs
+            .filter((levelAgg) => {
+              const level = levelAgg.groupId;
+              return (
+                project.getObjectiveById(objective).countsToward[level!] ===
+                OBJECTIVE_YES
+              );
+            })
+            .map((yesAgg) => yesAgg[curClass.classId + "Perc"] as number)
+        : groupLevelAggs.map(
+            (group) => group[curClass.classId + "Perc"] as number
+          );
       const values = objective
         ? groupLevelAggs
             .filter((levelAgg) => {
@@ -159,7 +177,11 @@ export const groupedCollectionReport = (
             .map((yesAgg) => yesAgg[curClass.classId] as number)
         : groupLevelAggs.map((group) => group[curClass.classId] as number);
 
-      return { ...acc, [curClass.classId]: values };
+      return {
+        ...acc,
+        [curClass.classId + "Perc"]: percValues,
+        [curClass.classId]: values,
+      };
     },
     {}
   );
@@ -188,11 +210,14 @@ export const genClassTableGrouped = (
   };
   // Coloring and styling for horizontal bars
   const groupColors = Object.values(groupColorMap);
-  const blockGroupNames = groupsDisplay.map((level) => t(level));
+  const blockGroupNames = groups.map((level) => t(level));
   const blockGroupStyles = groupColors.map((curBlue) => ({
     backgroundColor: curBlue,
   }));
   const valueFormatter = (value: number) => {
+    return roundLower(squareMeterToMile(value)) + " mi²";
+  };
+  const percValueFormatter = (value: number) => {
     if (isNaN(value)) {
       const tooltipText =
         "This feature is not present in the selected planning area";
@@ -224,7 +249,10 @@ export const genClassTableGrouped = (
 
   const config = {
     rows: metricGroup.classes.map((curClass) =>
-      totalsByClass[curClass.classId].map((value) => [value * 100])
+      totalsByClass[curClass.classId + "Perc"].map((value) => [value * 100])
+    ),
+    values: metricGroup.classes.map((curClass) =>
+      totalsByClass[curClass.classId].map((value) => [value])
     ),
     target: metricGroup.classes.map((curClass) =>
       curClass.objectiveId
@@ -279,6 +307,7 @@ export const genClassTableGrouped = (
           {...config}
           blockGroupNames={blockGroupNames}
           blockGroupStyles={blockGroupStyles}
+          percValueFormatter={percValueFormatter}
           valueFormatter={valueFormatter}
           targetValueFormatter={(value) => targetLabel + ` - ` + value + `%`}
           showLayerToggles={finalOptions.showLayerToggles}
@@ -419,7 +448,7 @@ export const genPercGroupLevelTable = (
       accessor: (row) => {
         return (
           <GroupPill
-            groupColorMap={groupColorMap}
+            groupColorMap={groupColorMapTransparent}
             group={row.groupId.toString()}
           >
             {percentWithEdge(
@@ -438,7 +467,7 @@ export const genPercGroupLevelTable = (
       accessor: (row) => (
         <GroupCircleRow
           group={row.groupId.toString()}
-          groupColorMap={groupColorMap}
+          groupColorMap={groupColorMapTransparent}
           circleText={`${row.numSketches}`}
           rowText={t(groupDisplayMapPl[row.groupId])}
         />
@@ -506,7 +535,7 @@ export const genAreaGroupLevelTable = (
                   : Number.format(roundDecimal(kmVal));
               return (
                 <GroupPill
-                  groupColorMap={groupColorMap}
+                  groupColorMap={groupColorMapTransparent}
                   group={row.groupId.toString()}
                 >
                   {valDisplay + " " + t("km²")}
@@ -518,7 +547,7 @@ export const genAreaGroupLevelTable = (
             Header: t("% Area") + " ".repeat(index),
             accessor: (row) => (
               <GroupPill
-                groupColorMap={groupColorMap}
+                groupColorMap={groupColorMapTransparent}
                 group={row.groupId.toString()}
               >
                 {percentWithEdge(
@@ -539,7 +568,7 @@ export const genAreaGroupLevelTable = (
       accessor: (row) => (
         <GroupCircleRow
           group={row.groupId.toString()}
-          groupColorMap={groupColorMap}
+          groupColorMap={groupColorMapTransparent}
           circleText={`${row.numSketches}`}
           rowText={t(groupDisplayMapPl[row.groupId])}
         />
@@ -728,7 +757,7 @@ export const genAreaSketchTable = (
     }
   );
 
-  const columns: Column<any>[] = [
+  const columns: Column<{ sketchId: string }>[] = [
     {
       Header: "Zone",
       accessor: (row) => sketchesById[row.sketchId].properties.name,

@@ -182,7 +182,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
         .row-${index} .total-label {
           position: absolute;
           left: ${total + 0.75}%;
-          width: 100px;
+          width: 200px;
           font-size: 0.9em;
           text-shadow: 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF;
           font-weight: bold;
@@ -295,6 +295,7 @@ export interface HorizontalStackedBarProps {
   max: number;
   blockGroupNames: string[];
   /** Style for each block group */
+  values: HorizontalStackedBarRow[];
   blockGroupStyles?: React.CSSProperties[];
   barHeight?: number;
   titleWidth?: number;
@@ -308,6 +309,7 @@ export interface HorizontalStackedBarProps {
   targetLabelPosition?: "top" | "bottom";
   targetLabelStyle?: "normal" | "tight";
   valueFormatter?: (value: number) => string | JSX.Element;
+  percValueFormatter?: (value: number) => string | JSX.Element;
   targetValueFormatter?: (value: number) => string | JSX.Element;
   targetReachedColor?: string;
 }
@@ -321,6 +323,7 @@ export const HorizontalStackedBar: React.FunctionComponent<
   HorizontalStackedBarProps
 > = ({
   rows,
+  values,
   rowConfigs,
   max = 100,
   barHeight,
@@ -335,6 +338,7 @@ export const HorizontalStackedBar: React.FunctionComponent<
   targetLabelStyle = "normal",
   target,
   blockGroupNames,
+  percValueFormatter,
   valueFormatter,
   targetValueFormatter,
   targetReachedColor,
@@ -352,6 +356,9 @@ export const HorizontalStackedBar: React.FunctionComponent<
   const rowTotals = rows.reduce<number[]>((rowSumsSoFar, row) => {
     return [...rowSumsSoFar, sumRow(row)];
   }, []);
+  const valueTotals = values.reduce<number[]>((valueSumsSoFar, value) => {
+    return [...valueSumsSoFar, sumRow(value)];
+  }, []);
 
   const rowRems = rowTotals.map((rowTotal) => {
     const rem = max - rowTotal;
@@ -364,6 +371,7 @@ export const HorizontalStackedBar: React.FunctionComponent<
   return (
     <StyledHorizontalStackedBar
       rowTotals={rowTotals}
+      valueTotals={valueTotals}
       target={target}
       barHeight={barHeight}
       showTitle={showTitle}
@@ -418,8 +426,8 @@ export const HorizontalStackedBar: React.FunctionComponent<
                       <span
                         key={`${blockGroupNumber}${blockNumber}`}
                         title={`${
-                          valueFormatter
-                            ? valueFormatter(blockValue)
+                          percValueFormatter
+                            ? percValueFormatter(blockValue)
                             : blockValue
                         }`}
                         style={{
@@ -451,7 +459,11 @@ export const HorizontalStackedBar: React.FunctionComponent<
                   {showTotalLabel && (
                     <div className="total-label">
                       {valueFormatter
-                        ? valueFormatter(rowTotals[rowNumber])
+                        ? valueFormatter(valueTotals[rowNumber]) + ", "
+                        : valueTotals[rowNumber] + ", "}
+
+                      {percValueFormatter
+                        ? percValueFormatter(rowTotals[rowNumber])
                         : rowTotals[rowNumber]}
                     </div>
                   )}

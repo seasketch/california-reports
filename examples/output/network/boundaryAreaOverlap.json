@@ -6,7 +6,7 @@
       "classId": "state_waters",
       "sketchId": "29481",
       "groupId": null,
-      "value": 186595109.415119,
+      "value": 189405214.489702,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -16,8 +16,8 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29481",
-      "groupId": "limitedTake",
-      "value": 186595109.415119,
+      "groupId": "SMCANT",
+      "value": 189405214.489702,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -28,7 +28,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": null,
-      "value": 438065508.735672,
+      "value": 440875613.810255,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -39,8 +39,8 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29482",
-      "groupId": "noTake",
-      "value": 85265862.640884,
+      "groupId": "SMCA",
+      "value": 0,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -51,8 +51,8 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29482",
-      "groupId": "limitedTake",
-      "value": 186595173.08780468,
+      "groupId": "SMCANT",
+      "value": 189405214.489702,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -63,7 +63,55 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29482",
-      "groupId": "specialClosure",
+      "groupId": "RED",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "SMP",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "SMR",
+      "value": 85265605.47555882,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "SMRMA",
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": null,
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "Special",
       "value": 166204408.11059096,
       "extra": {
         "sketchName": "network",
@@ -86,7 +134,7 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29483",
-      "groupId": "noTake",
+      "groupId": "SMR",
       "value": 85265862.640884,
       "extra": {
         "sketchName": "mpa-test"
@@ -108,7 +156,7 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29484",
-      "groupId": "specialClosure",
+      "groupId": "Special",
       "value": 166204536.679669,
       "extra": {
         "sketchName": "split"
@@ -349,13 +397,13 @@
         "type": "Feature",
         "properties": {
           "4768": "split",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8340": "Special",
           "id": "29484",
           "ccr": null,
           "fid": null,
           "name": "split",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -410,7 +458,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -568,14 +616,14 @@
         "type": "Feature",
         "properties": {
           "4768": "anacapa",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8337": 2,
-          "8340": "FMCA",
+          "8340": "SMCANT",
           "id": "29481",
           "ccr": null,
           "fid": 2,
           "name": "anacapa",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -630,7 +678,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -756,7 +804,7 @@
             },
             {
               "label": "Proposed Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "proposed_designation",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -773,7 +821,7 @@
               "alternateLanguages": {}
             }
           ],
-          "proposed_designation": "FMCA"
+          "proposed_designation": "SMCANT"
         },
         "geometry": null
       }
