@@ -145,7 +145,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            <Collapse title={t("Show By Study Region")}>
+            <Collapse title={t("Show By Planning Region")}>
               {metricGroup.classes.map((curClass) => (
                 <GeographyTable
                   key={curClass.classId}

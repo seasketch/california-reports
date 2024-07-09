@@ -46,7 +46,7 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
   );
 
   // Labels
-  const titleLabel = t("Study Regions");
+  const titleLabel = t("Planning Regions");
   const countLabel = t("# MPAs");
   const areaLabel = t("Area");
   const percWithinLabel = t("% Area Within Plan");
@@ -156,7 +156,7 @@ export const Regions: React.FunctionComponent<GeogProp> = (props) => {
               <Trans i18nKey="Regions - learn more">
                 <p>
                   ℹ️ Overview: This planning process is split into multiple
-                  study regions down the California coast.
+                  planning regions down the California coast.
                 </p>
                 <p>🎯 Planning Objective: None</p>
                 <p>🗺️ Source Data: CDFW</p>

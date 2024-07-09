@@ -2,28 +2,28 @@
   {
     "geographyId": "north_sr",
     "datasourceId": "north_sr",
-    "display": "North Study Region",
+    "display": "North Planning Region",
     "groups": [],
     "precalc": true
   },
   {
     "geographyId": "northcentral_sr",
     "datasourceId": "northcentral_sr",
-    "display": "North Central Study Region",
+    "display": "North Central Planning Region",
     "groups": [],
     "precalc": true
   },
   {
     "geographyId": "central_sr",
     "datasourceId": "central_sr",
-    "display": "Central Study Region",
+    "display": "Central Planning Region",
     "groups": [],
     "precalc": true
   },
   {
     "geographyId": "south_sr",
     "datasourceId": "south_sr",
-    "display": "South Study Region",
+    "display": "South Planning Region",
     "groups": [],
     "precalc": true
   },

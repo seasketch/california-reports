@@ -107,7 +107,7 @@ export async function boundaryAreaOverlap(
     return sketchToZone[sketchMetric.sketchId!];
   };
 
-  // Study regions total area
+  // Planning regions total area
   const totalArea = 15235250304.770761;
 
   const levelMetrics = await overlapAreaGroupMetrics({

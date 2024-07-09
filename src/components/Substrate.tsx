@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -11,9 +10,6 @@ import {
 import {
   GeogProp,
   Metric,
-  OBJECTIVE_NO,
-  OBJECTIVE_YES,
-  ObjectiveAnswer,
   ReportResult,
   metricsWithSketchId,
   roundDecimal,
@@ -147,173 +143,117 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            <Collapse title={t("Show By Study Region")}>
+            <Collapse title={t("Show By Planning Region")}>
               {metricGroup.classes.map((curClass) => (
-                <React.Fragment key={curClass.classId}>
-                  {metrics
-                    .filter(
-                      (m) =>
-                        m.geographyId?.endsWith("_sr") &&
-                        m.classId === curClass.classId
-                    )
-                    .every((m) => m.value > 0) ? (
-                    <ObjectiveStatus
-                      status={OBJECTIVE_YES}
-                      msg={objectiveMsgs["studyRegion"](
-                        OBJECTIVE_YES,
-                        curClass.display,
-                        t
-                      )}
-                    />
-                  ) : (
-                    <ObjectiveStatus
-                      status={OBJECTIVE_NO}
-                      msg={objectiveMsgs["studyRegion"](
-                        OBJECTIVE_NO,
-                        curClass.display,
-                        t
-                      )}
-                    />
+                <GeographyTable
+                  key={curClass.classId}
+                  rows={metrics.filter(
+                    (m) =>
+                      m.geographyId?.endsWith("_sr") &&
+                      m.classId === curClass.classId
                   )}
-
-                  <GeographyTable
-                    key={curClass.classId}
-                    rows={metrics.filter(
-                      (m) =>
-                        m.geographyId?.endsWith("_sr") &&
-                        m.classId === curClass.classId
-                    )}
-                    metricGroup={metricGroup}
-                    geographies={geographies.filter((g) =>
-                      g.geographyId.endsWith("_sr")
-                    )}
-                    objective={objectives}
-                    columnConfig={[
-                      {
-                        columnLabel: t(curClass.display),
-                        type: "class",
-                        width: 30,
+                  metricGroup={metricGroup}
+                  geographies={geographies.filter((g) =>
+                    g.geographyId.endsWith("_sr")
+                  )}
+                  objective={objectives}
+                  columnConfig={[
+                    {
+                      columnLabel: t(curClass.display),
+                      type: "class",
+                      width: 30,
+                    },
+                    {
+                      columnLabel: withinLabel,
+                      type: "metricValue",
+                      metricId: metricGroup.metricId,
+                      valueFormatter: (val: string | number) =>
+                        Number.format(
+                          roundDecimal(
+                            squareMeterToMile(
+                              typeof val === "string"
+                                ? parseInt(val) * 30 * 30
+                                : val * 30 * 30
+                            ),
+                            2,
+                            { keepSmallValues: true }
+                          )
+                        ),
+                      valueLabel: unitsLabel,
+                      chartOptions: {
+                        showTitle: true,
                       },
-                      {
-                        columnLabel: withinLabel,
-                        type: "metricValue",
-                        metricId: metricGroup.metricId,
-                        valueFormatter: (val: string | number) =>
-                          Number.format(
-                            roundDecimal(
-                              squareMeterToMile(
-                                typeof val === "string"
-                                  ? parseInt(val) * 30 * 30
-                                  : val * 30 * 30
-                              ),
-                              2,
-                              { keepSmallValues: true }
-                            )
-                          ),
-                        valueLabel: unitsLabel,
-                        chartOptions: {
-                          showTitle: true,
-                        },
-                        width: 20,
+                      width: 20,
+                    },
+                    {
+                      columnLabel: percWithinLabel,
+                      type: "metricChart",
+                      metricId: percMetricIdName,
+                      valueFormatter: "percent",
+                      chartOptions: {
+                        showTitle: true,
                       },
-                      {
-                        columnLabel: percWithinLabel,
-                        type: "metricChart",
-                        metricId: percMetricIdName,
-                        valueFormatter: "percent",
-                        chartOptions: {
-                          showTitle: true,
-                        },
-                        width: 40,
-                      },
-                    ]}
-                  />
-                </React.Fragment>
+                      width: 40,
+                    },
+                  ]}
+                />
               ))}
             </Collapse>
 
             <Collapse title={t("Show By Bioregion")}>
               {metricGroup.classes.map((curClass) => (
-                <React.Fragment key={curClass.classId}>
-                  {metrics
-                    .filter(
-                      (m) =>
-                        m.geographyId?.endsWith("_br") &&
-                        m.classId === curClass.classId
-                    )
-                    .every((m) => m.value > 0) ? (
-                    <ObjectiveStatus
-                      status={OBJECTIVE_YES}
-                      msg={objectiveMsgs["bioregion"](
-                        OBJECTIVE_YES,
-                        curClass.display,
-                        t
-                      )}
-                    />
-                  ) : (
-                    <ObjectiveStatus
-                      status={OBJECTIVE_NO}
-                      msg={objectiveMsgs["bioregion"](
-                        OBJECTIVE_NO,
-                        curClass.display,
-                        t
-                      )}
-                    />
+                <GeographyTable
+                  key={curClass.classId}
+                  rows={metrics.filter(
+                    (m) =>
+                      m.geographyId?.endsWith("_br") &&
+                      m.classId === curClass.classId
                   )}
-
-                  <GeographyTable
-                    key={curClass.classId}
-                    rows={metrics.filter(
-                      (m) =>
-                        m.geographyId?.endsWith("_br") &&
-                        m.classId === curClass.classId
-                    )}
-                    metricGroup={metricGroup}
-                    geographies={geographies.filter((g) =>
-                      g.geographyId.endsWith("_br")
-                    )}
-                    objective={objectives}
-                    columnConfig={[
-                      {
-                        columnLabel: t(curClass.display),
-                        type: "class",
-                        width: 30,
+                  metricGroup={metricGroup}
+                  geographies={geographies.filter((g) =>
+                    g.geographyId.endsWith("_br")
+                  )}
+                  objective={objectives}
+                  columnConfig={[
+                    {
+                      columnLabel: t(curClass.display),
+                      type: "class",
+                      width: 30,
+                    },
+                    {
+                      columnLabel: withinLabel,
+                      type: "metricValue",
+                      metricId: metricGroup.metricId,
+                      valueFormatter: (val: string | number) =>
+                        Number.format(
+                          roundDecimal(
+                            squareMeterToMile(
+                              typeof val === "string"
+                                ? parseInt(val) * 30 * 30
+                                : val * 30 * 30
+                            ),
+                            2,
+                            { keepSmallValues: true }
+                          )
+                        ),
+                      valueLabel: unitsLabel,
+                      chartOptions: {
+                        showTitle: true,
                       },
-                      {
-                        columnLabel: withinLabel,
-                        type: "metricValue",
-                        metricId: metricGroup.metricId,
-                        valueFormatter: (val: string | number) =>
-                          Number.format(
-                            roundDecimal(
-                              squareMeterToMile(
-                                typeof val === "string"
-                                  ? parseInt(val) * 30 * 30
-                                  : val * 30 * 30
-                              ),
-                              2,
-                              { keepSmallValues: true }
-                            )
-                          ),
-                        valueLabel: unitsLabel,
-                        chartOptions: {
-                          showTitle: true,
-                        },
-                        width: 20,
+                      width: 20,
+                    },
+                    {
+                      columnLabel: percWithinLabel,
+                      type: "metricChart",
+                      metricId: percMetricIdName,
+                      valueFormatter: "percent",
+                      chartOptions: {
+                        showTitle: true,
                       },
-                      {
-                        columnLabel: percWithinLabel,
-                        type: "metricChart",
-                        metricId: percMetricIdName,
-                        valueFormatter: "percent",
-                        chartOptions: {
-                          showTitle: true,
-                        },
-                        width: 40,
-                      },
-                    ]}
-                  />
-                </React.Fragment>
+                      width: 40,
+                    },
+                  ]}
+                />
               ))}
             </Collapse>
 
@@ -360,49 +300,4 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
       }}
     </ResultsCard>
   );
-};
-
-const objectiveMsgs: Record<string, any> = {
-  studyRegion: (
-    objectiveMet: ObjectiveAnswer,
-    classDisplay: string,
-    t: any
-  ) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            `This plan contains ${classDisplay.toLowerCase()} in all study regions and may achieve habitat replication.`
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            `This plan does not contain ${classDisplay.toLowerCase()} in all study regions and does not achieve habitat replication.`
-          )}
-        </>
-      );
-    }
-  },
-  bioregion: (objectiveMet: ObjectiveAnswer, classDisplay: string, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            `This plan contains ${classDisplay.toLowerCase()} in all bioregions and may achieve habitat replication.`
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            `This plan does not contain ${classDisplay.toLowerCase()} in all bioregions and does not achieve habitat replication.`
-          )}
-        </>
-      );
-    }
-  },
 };

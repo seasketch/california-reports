@@ -3,16 +3,12 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
-  OBJECTIVE_NO,
-  OBJECTIVE_YES,
-  ObjectiveAnswer,
   ReportResult,
   createMetric,
   metricsWithSketchId,
@@ -62,7 +58,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
-        // Study region
+        // Planning region
         const srMg = {
           ...metricGroup,
           classes: metricGroup.classes.filter((c) =>
@@ -84,10 +80,6 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           }
         );
         const srMetrics = [...srValueMetrics, ...srPercMetrics];
-        const srIsMet = srValueMetrics.every((m) => m.value > 0)
-          ? OBJECTIVE_YES
-          : OBJECTIVE_NO;
-        const srMsg = objectiveMsgs["studyRegion"](srIsMet, t);
 
         // Bioregion
         const brMg = {
@@ -111,10 +103,6 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           }
         );
         const brMetrics = [...brValueMetrics, ...brPercMetrics];
-        const brIsMet = brValueMetrics.every((m) => m.value > 0)
-          ? OBJECTIVE_YES
-          : OBJECTIVE_NO;
-        const brMsg = objectiveMsgs["bioregion"](brIsMet, t);
 
         // Overall / total metrics
         const overallValue = createMetric({
@@ -198,17 +186,15 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            <Collapse title={t("Show by Study Region")}>
+            <Collapse title={t("Show by Planning Region")}>
               <p>
-                <Trans i18nKey="Kelp Study Region">
+                <Trans i18nKey="Kelp Planning Region">
                   The following is a breakdown of this plan's overlap with kelp
-                  forests by <i>study region</i>. The San Francisco Bay study
-                  region is excluded due to not containing any kelp forests per
-                  the data provided.
+                  forests by <i>planning region</i>. The San Francisco Bay
+                  planning region is excluded due to not containing any kelp
+                  forests per the data provided.
                 </Trans>
               </p>
-
-              <ObjectiveStatus status={srIsMet} msg={srMsg} />
 
               <ClassTable
                 rows={srMetrics}
@@ -216,7 +202,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Study Region",
+                    columnLabel: "Planning Region",
                     type: "class",
                     width: 35,
                   },
@@ -264,8 +250,6 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                   forests by <i>bioregion</i>.
                 </Trans>
               </p>
-
-              <ObjectiveStatus status={brIsMet} msg={brMsg} />
 
               <ClassTable
                 rows={brMetrics}
@@ -340,45 +324,4 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
       }}
     </ResultsCard>
   );
-};
-
-const objectiveMsgs: Record<string, any> = {
-  studyRegion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan meets the objective of kelp habitat replication in all study regions."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not meet the objective of kelp habitat replication in all study regions."
-          )}
-        </>
-      );
-    }
-  },
-  bioregion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan meets the objective of kelp habitat replication in all bioregions."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not meet the objective of kelp habitat replication in all bioregions."
-          )}
-        </>
-      );
-    }
-  },
 };

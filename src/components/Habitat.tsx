@@ -49,9 +49,9 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
   // Metric group
   const mg = project.getMetricGroup("habitat", t);
 
-  // Study Regions
-  const studyRegions = ["ncsr", "nccsr", "ccsr", "scsr_is", "scsr_ml"];
-  const studyRegionsDisplay: Record<string, string> = {
+  // Planning Regions
+  const planningRegions = ["ncsr", "nccsr", "ccsr", "scsr_is", "scsr_ml"];
+  const planningRegionsDisplay: Record<string, string> = {
     ncsr: "North Coast",
     nccsr: "North Central Coast",
     ccsr: "Central Coast",
@@ -183,9 +183,9 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            {/* Individual study region metrics */}
-            <Collapse title={t("Show by Study Region")}>
-              {studyRegions.map((region) => {
+            {/* Individual planning region metrics */}
+            <Collapse title={t("Show by Planning Region")}>
+              {planningRegions.map((region) => {
                 const regionMg = {
                   ...mg,
                   classes: mg.classes.filter((c) => c.classKey === region),
@@ -240,7 +240,10 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                 ];
 
                 return (
-                  <Collapse title={t(studyRegionsDisplay[region])} key={region}>
+                  <Collapse
+                    title={t(planningRegionsDisplay[region])}
+                    key={region}
+                  >
                     <VerticalSpacer />
                     <LayerToggle
                       label={t("Show Map Layer")}
@@ -271,8 +274,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   for efficiency, therefore area calculations are estimates.
                   Final plans should check area totals in GIS tools before
                   publishing final area statistics. Replication indicates
-                  whether that seafloor habitat is protected in all five study
-                  regions.
+                  whether that seafloor habitat is protected in all five
+                  planning regions.
                 </p>
                 <p>🎯 Planning Objective: None</p>
                 <p>🗺️ Source Data: CDFW</p>

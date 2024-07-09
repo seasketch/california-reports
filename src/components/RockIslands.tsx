@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -11,9 +10,6 @@ import {
 import {
   GeogProp,
   Metric,
-  OBJECTIVE_NO,
-  OBJECTIVE_YES,
-  ObjectiveAnswer,
   ReportResult,
   metricsWithSketchId,
   roundDecimal,
@@ -129,21 +125,7 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
               ]}
             />
 
-            <Collapse title={t("Show By Study Region")}>
-              {metrics
-                .filter((m) => m.geographyId?.endsWith("_sr"))
-                .every((m) => m.value > 0) ? (
-                <ObjectiveStatus
-                  status={OBJECTIVE_YES}
-                  msg={objectiveMsgs["studyRegion"](OBJECTIVE_YES, t)}
-                />
-              ) : (
-                <ObjectiveStatus
-                  status={OBJECTIVE_NO}
-                  msg={objectiveMsgs["studyRegion"](OBJECTIVE_NO, t)}
-                />
-              )}
-
+            <Collapse title={t("Show By Planning Region")}>
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
                 metricGroup={metricGroup}
@@ -192,20 +174,6 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             <Collapse title={t("Show By Bioregion")}>
-              {metrics
-                .filter((m) => m.geographyId?.endsWith("_br"))
-                .every((m) => m.value > 0) ? (
-                <ObjectiveStatus
-                  status={OBJECTIVE_YES}
-                  msg={objectiveMsgs["bioregion"](OBJECTIVE_YES, t)}
-                />
-              ) : (
-                <ObjectiveStatus
-                  status={OBJECTIVE_NO}
-                  msg={objectiveMsgs["bioregion"](OBJECTIVE_NO, t)}
-                />
-              )}
-
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
@@ -293,45 +261,4 @@ export const RockIslands: React.FunctionComponent<GeogProp> = (props) => {
       }}
     </ResultsCard>
   );
-};
-
-const objectiveMsgs: Record<string, any> = {
-  studyRegion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan contains rock islands in all study regions and may achieve habitat replication."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not contain rock islands in all study regions and does not achieve habitat replication."
-          )}
-        </>
-      );
-    }
-  },
-  bioregion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan contains rock islands in all bioregions and may achieve habitat replication."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not contain rock islands in all bioregions and does not achieve habitat replication."
-          )}
-        </>
-      );
-    }
-  },
 };

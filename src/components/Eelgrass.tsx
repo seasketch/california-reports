@@ -3,25 +3,17 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
-  SketchClassTable,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
   Metric,
-  MetricGroup,
-  OBJECTIVE_NO,
-  OBJECTIVE_YES,
-  ObjectiveAnswer,
   ReportResult,
-  flattenBySketchAllClass,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
-  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
@@ -135,20 +127,6 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
             />
 
             <Collapse title={t("Show By Bioregion")}>
-              {metrics
-                .filter((m) => m.geographyId?.endsWith("_br"))
-                .every((m) => m.value > 0) ? (
-                <ObjectiveStatus
-                  status={OBJECTIVE_YES}
-                  msg={objectiveMsgs["bioregion"](OBJECTIVE_YES, t)}
-                />
-              ) : (
-                <ObjectiveStatus
-                  status={OBJECTIVE_NO}
-                  msg={objectiveMsgs["bioregion"](OBJECTIVE_NO, t)}
-                />
-              )}
-
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
@@ -158,7 +136,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: "Eelgrass",
                     type: "class",
                     width: 30,
                   },
@@ -241,45 +219,4 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
       }}
     </ResultsCard>
   );
-};
-
-const objectiveMsgs: Record<string, any> = {
-  studyRegion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan contains eelgrass in all study regions and may achieve habitat replication."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not contain eelgrass in all study regions and does not achieve habitat replication."
-          )}
-        </>
-      );
-    }
-  },
-  bioregion: (objectiveMet: ObjectiveAnswer, t: any) => {
-    if (objectiveMet === OBJECTIVE_YES) {
-      return (
-        <>
-          {t(
-            "This plan contains eelgrass in all bioregions and may achieve habitat replication."
-          )}
-        </>
-      );
-    } else if (objectiveMet === OBJECTIVE_NO) {
-      return (
-        <>
-          {t(
-            "This plan does not contain eelgrass in all bioregions and does not achieve habitat replication."
-          )}
-        </>
-      );
-    }
-  },
 };

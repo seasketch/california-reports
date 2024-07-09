@@ -33,7 +33,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
-  // Study regions total area
+  // Planning regions total area
   const boundaryTotalMetrics = [
     {
       metricId: "area",
