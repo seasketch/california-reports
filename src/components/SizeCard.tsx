@@ -187,22 +187,18 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 const SizeObjectives = (props: { value: number }) => {
   return (
     <>
-      {props.value > 9 ? (
+      {props.value > 9 && props.value < 18 ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={<>This MPA meets the 9 square mile minimum size guideline.</>}
-        />
-      ) : (
-        <ObjectiveStatus
-          status={"no"}
+          style={{ color: "#EBB414" }}
           msg={
             <>
-              This MPA does not meet the 9 square mile minimum size guideline.
+              This MPA meets the 9 mi² minimum size guideline, but does not meet
+              the 18 mi² preferred size guideline.
             </>
           }
         />
-      )}
-      {props.value > 18 ? (
+      ) : props.value > 18 ? (
         <ObjectiveStatus
           status={"yes"}
           msg={<>This MPA meets the 18 square mile preferred size guideline.</>}
@@ -212,8 +208,7 @@ const SizeObjectives = (props: { value: number }) => {
           status={"no"}
           msg={
             <>
-              This MPA does not meet the 18 square mile preferred size
-              guideline.
+              This MPA does not meet the 9 square mile minimum size guideline.
             </>
           }
         />
