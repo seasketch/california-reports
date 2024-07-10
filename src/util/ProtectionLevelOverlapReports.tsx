@@ -10,12 +10,8 @@ import {
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
-  toNullSketchArray,
-  flattenBySketchAllClass,
-  metricsWithSketchId,
   Metric,
   MetricGroup,
-  toPercentMetric,
   GroupMetricAgg,
   firstMatchingMetric,
   isSketchCollection,
@@ -24,8 +20,6 @@ import {
   OBJECTIVE_NO,
   Objective,
   ObjectiveAnswer,
-  keyBy,
-  nestMetrics,
   squareMeterToMile,
   roundDecimal,
   roundLower,
@@ -33,6 +27,7 @@ import {
 import {
   groupColorMap,
   groupColorMapTransparent,
+  groupColors,
   groupDisplayMapPl,
   groups,
 } from "./getGroup.js";
@@ -40,10 +35,7 @@ import { InfoCircleFill } from "@styled-icons/bootstrap";
 import project from "../../project/index.js";
 import { HorizontalStackedBar, RowConfig } from "./HorizontalStackedBar.js";
 import { flattenByGroup } from "./flattenByGroup.js";
-import {
-  AreaSketchTableStyled,
-  PercentSketchTableStyled,
-} from "./TableStyles.js";
+import { AreaSketchTableStyled } from "./genSketchTable.js";
 
 export interface ClassTableGroupedProps {
   showDetailedObjectives?: boolean;
@@ -208,12 +200,12 @@ export const genClassTableGrouped = (
     showTargetPass: false,
     ...options,
   };
-  // Coloring and styling for horizontal bars
-  const groupColors = Object.values(groupColorMap);
+  // Coloring and styling for horizontal bars;
   const blockGroupNames = groups.map((level) => t(level));
   const blockGroupStyles = groupColors.map((curBlue) => ({
     backgroundColor: curBlue,
   }));
+
   const valueFormatter = (value: number) => {
     return roundLower(squareMeterToMile(value)) + " mi²";
   };
@@ -262,6 +254,9 @@ export const genClassTableGrouped = (
     rowConfigs: rowConfig,
     max: 100,
   };
+
+  console.log(totalsByClass);
+  console.log(config);
 
   const targetLabel = t("Target");
 
@@ -426,8 +421,7 @@ export const genPercGroupLevelTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
-  t: any,
-  printing: boolean = false
+  t: any
 ) => {
   if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
 
@@ -476,13 +470,13 @@ export const genPercGroupLevelTable = (
     ...classColumns,
   ];
   return (
-    <PercentSketchTableStyled printing={printing}>
+    <AreaSketchTableStyled>
       <Table
         className="styled"
         columns={columns}
         data={levelAggs.sort((a, b) => a.groupId.localeCompare(b.groupId))}
       />
-    </PercentSketchTableStyled>
+    </AreaSketchTableStyled>
   );
 };
 
@@ -497,8 +491,7 @@ export const genAreaGroupLevelTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
-  t: any,
-  printing: boolean = false
+  t: any
 ) => {
   if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
 
@@ -576,227 +569,15 @@ export const genAreaGroupLevelTable = (
     },
     ...classColumns,
   ];
-  if (printing) {
-    const tables: JSX.Element[] = [];
-    const totalClasses = metricGroup.classes.length;
-    const numTables = Math.ceil(totalClasses / 5);
-
-    for (let i = 0; i < numTables; i++) {
-      const startIndex = i * 5;
-      const endIndex = Math.min((i + 1) * 5, totalClasses);
-
-      const tableColumns: Column<Record<string, string | number>>[] = [
-        columns[0], // "This plan contains" column
-        ...classColumns.slice(startIndex, endIndex),
-      ];
-
-      tables.push(
-        <AreaSketchTableStyled printing={printing} key={String(i)}>
-          <Table
-            className="styled"
-            columns={tableColumns}
-            data={levelAggs.sort((a, b) => a.groupId.localeCompare(b.groupId))}
-            manualPagination={printing}
-          />
-        </AreaSketchTableStyled>
-      );
-    }
-
-    return tables;
-  }
 
   // If not printing, return a single table
   return (
-    <AreaSketchTableStyled printing={printing}>
+    <AreaSketchTableStyled>
       <Table
         className="styled"
         columns={columns}
         data={levelAggs.sort((a, b) => a.groupId.localeCompare(b.groupId))}
       />
-    </AreaSketchTableStyled>
-  );
-};
-
-/**
- * Creates "Show by Zone" report, with only percentages
- * @param data data returned from lambda
- * @param precalcMetrics metrics from precalc.json
- * @param metricGroup metric group to get stats for
- * @param t TFunction
- */
-export const genSketchTable = (
-  data: ReportResult,
-  precalcMetrics: Metric[],
-  metricGroup: MetricGroup,
-  printing: boolean = false
-) => {
-  // Build agg metric objects for each child sketch in collection with percValue for each class
-  const childSketches = toNullSketchArray(data.sketch);
-  const childSketchIds = childSketches.map((sk) => sk.properties.id);
-  const childSketchMetrics = toPercentMetric(
-    metricsWithSketchId(
-      data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-      childSketchIds
-    ),
-    precalcMetrics
-  );
-  const sketchRows = flattenBySketchAllClass(
-    childSketchMetrics,
-    metricGroup.classes,
-    childSketches
-  );
-
-  const zoneLabel = "Zone";
-
-  const classColumns: Column<Record<string, string | number>>[] =
-    metricGroup.classes.map((curClass) => ({
-      Header: curClass.display,
-      accessor: (row) =>
-        percentWithEdge(
-          isNaN(row[curClass.classId] as number)
-            ? 0
-            : (row[curClass.classId] as number)
-        ),
-    }));
-
-  const columns: Column<Record<string, string | number>>[] = [
-    {
-      Header: zoneLabel,
-      accessor: (row) => row.sketchName,
-    },
-    ...classColumns,
-  ];
-
-  return (
-    <PercentSketchTableStyled printing={printing}>
-      <Table
-        className="styled"
-        columns={columns}
-        data={sketchRows.sort((a, b) =>
-          (a.sketchName as string).localeCompare(b.sketchName as string)
-        )}
-      />
-    </PercentSketchTableStyled>
-  );
-};
-
-/**
- * Creates "Show by Zone" report, with area + percentages
- * @param data data returned from lambda
- * @param precalcMetrics metrics from precalc.json
- * @param metricGroup metric group to get stats for
- * @param t TFunction
- */
-export const genAreaSketchTable = (
-  data: ReportResult,
-  precalcMetrics: Metric[],
-  mg: MetricGroup,
-  t: any,
-  printing: boolean = false
-) => {
-  const sketches = toNullSketchArray(data.sketch);
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
-  const sketchMetrics = data.metrics.filter(
-    (m) => m.sketchId && sketchIds.includes(m.sketchId)
-  );
-  const finalMetrics = [
-    ...sketchMetrics,
-    ...toPercentMetric(sketchMetrics, precalcMetrics, {
-      metricIdOverride: project.getMetricGroupPercId(mg),
-    }),
-  ];
-
-  const aggMetrics = nestMetrics(finalMetrics, [
-    "sketchId",
-    "classId",
-    "metricId",
-  ]);
-  // Use sketch ID for each table row, index into aggMetrics
-  const rows = Object.keys(aggMetrics).map((sketchId) => ({
-    sketchId,
-  }));
-
-  const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
-    (curClass, index) => {
-      /* i18next-extract-disable-next-line */
-      const transString = t(curClass.display);
-      return {
-        Header: transString,
-        style: { color: "#777" },
-        columns: [
-          {
-            Header: t("Area") + " ".repeat(index),
-            accessor: (row) => {
-              const value =
-                aggMetrics[row.sketchId][curClass.classId as string][
-                  mg.metricId
-                ][0].value;
-              const miVal = squareMeterToMile(value);
-
-              // If value is nonzero but would be rounded to zero, replace with < 0.1
-              const valDisplay =
-                miVal && miVal < 0.1
-                  ? "< 0.1"
-                  : Number.format(roundDecimal(miVal));
-              return valDisplay + " " + t("mi²");
-            },
-          },
-          {
-            Header: t("% Area") + " ".repeat(index),
-            accessor: (row) => {
-              const value =
-                aggMetrics[row.sketchId][curClass.classId as string][
-                  project.getMetricGroupPercId(mg)
-                ][0].value;
-              return percentWithEdge(isNaN(value) ? 0 : value);
-            },
-          },
-        ],
-      };
-    }
-  );
-
-  const columns: Column<{ sketchId: string }>[] = [
-    {
-      Header: "Zone",
-      accessor: (row) => sketchesById[row.sketchId].properties.name,
-    },
-    ...classColumns,
-  ];
-
-  if (printing) {
-    const tables: JSX.Element[] = [];
-    const totalClasses = mg.classes.length;
-    const numTables = Math.ceil(totalClasses / 5);
-
-    for (let i = 0; i < numTables; i++) {
-      const startIndex = i * 5;
-      const endIndex = Math.min((i + 1) * 5, totalClasses);
-
-      const tableColumns: Column<{ sketchId: string }>[] = [
-        columns[0], // "This plan contains" column
-        ...classColumns.slice(startIndex, endIndex),
-      ];
-
-      tables.push(
-        <AreaSketchTableStyled printing={printing} key={String(i)}>
-          <Table
-            columns={tableColumns}
-            data={rows}
-            manualPagination={printing}
-          />
-        </AreaSketchTableStyled>
-      );
-    }
-
-    return tables;
-  }
-
-  // If not printing, return a single table
-  return (
-    <AreaSketchTableStyled printing={printing}>
-      <Table columns={columns} data={rows} />
     </AreaSketchTableStyled>
   );
 };

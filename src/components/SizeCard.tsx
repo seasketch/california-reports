@@ -16,11 +16,12 @@ import {
   VerticalSpacer,
   KeySection,
   LayerToggle,
+  ObjectiveStatus,
 } from "@seasketch/geoprocessing/client-ui";
 import project from "../../project/projectClient.js";
 import Translator from "../components/TranslatorAsync.js";
 import { Trans, useTranslation } from "react-i18next";
-import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
+import { genSketchTable } from "../util/genSketchTable.js";
 import {
   genAreaGroupLevelTable,
   groupedCollectionReport,
@@ -110,19 +111,24 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
               <LayerToggle label={mapLabel} layerId={metricGroup.layerId} />
               <VerticalSpacer />
 
-              {isCollection
-                ? groupedCollectionReport(
-                    data,
-                    boundaryTotalMetrics,
-                    metricGroup,
-                    t
-                  )
-                : groupedSketchReport(
+              {isCollection ? (
+                groupedCollectionReport(
+                  data,
+                  boundaryTotalMetrics,
+                  metricGroup,
+                  t
+                )
+              ) : (
+                <>
+                  <SizeObjectives value={squareMeterToMile(areaMetric.value)} />
+                  {groupedSketchReport(
                     data,
                     boundaryTotalMetrics,
                     metricGroup,
                     t
                   )}
+                </>
+              )}
 
               {isCollection && (
                 <>
@@ -138,11 +144,12 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     )}
                   </Collapse>
                   <Collapse title={t("Show by MPA")} key={"MPA"}>
-                    {genAreaSketchTable(
+                    {genSketchTable(
                       data,
                       boundaryTotalMetrics,
                       metricGroup,
-                      t
+                      t,
+                      { size: true }
                     )}
                   </Collapse>
                 </>
@@ -174,6 +181,44 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+const SizeObjectives = (props: { value: number }) => {
+  return (
+    <>
+      {props.value > 9 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={<>This MPA meets the 9 square mile minimum size guideline.</>}
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the 9 square mile minimum size guideline.
+            </>
+          }
+        />
+      )}
+      {props.value > 18 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={<>This MPA meets the 18 square mile preferred size guideline.</>}
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the 18 square mile preferred size
+              guideline.
+            </>
+          }
+        />
+      )}
+    </>
   );
 };
 

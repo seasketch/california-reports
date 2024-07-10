@@ -16,6 +16,15 @@ export const groups = [
   "SMRMA",
   "Special",
 ];
+export const groupColors = [
+  "#0070FF",
+  "#C500FF",
+  "#98DBF4",
+  "#FFFF00",
+  "#E60000",
+  "#4CE600",
+  "#FF00C5",
+];
 
 // Display values for groups (plural)
 export const groupDisplayMapPl: Record<string, string> = {

@@ -6,7 +6,7 @@ import {
   LayerToggle,
 } from "@seasketch/geoprocessing/client-ui";
 import React from "react";
-import styled from "styled-components";
+import { styled } from "styled-components";
 // CHANGE: Import CheckCircleFill
 import { CheckCircleFill } from "@styled-icons/bootstrap";
 
@@ -393,6 +393,8 @@ export const HorizontalStackedBar: React.FunctionComponent<
                 return () => titleProp;
               }
             })();
+            console.log("row", row);
+            console.log("blockGroupStyles", blockGroupStyles);
 
             const layerId = rowConfigs[rowNumber].layerId;
             const curTarget = (() => {

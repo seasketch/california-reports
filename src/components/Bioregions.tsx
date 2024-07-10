@@ -20,7 +20,7 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { genAreaSketchTable } from "../util/genAreaSketchTable.js";
+import { genSketchTable } from "../util/genSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -148,7 +148,7 @@ export const Bioregions: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genAreaSketchTable(data, precalcMetrics, metricGroup, t)}
+                {genSketchTable(data, precalcMetrics, metricGroup, t)}
               </Collapse>
             )}
 

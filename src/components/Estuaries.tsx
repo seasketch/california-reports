@@ -18,7 +18,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-import { genReplicateAreaSketchTable } from "../util/genAreaSketchTable.js";
+import { genSketchTable } from "../util/genSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -223,7 +223,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genReplicateAreaSketchTable(
+                {genSketchTable(
                   {
                     ...data,
                     metrics: data.metrics.filter(
@@ -232,7 +232,8 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
-                  t
+                  t,
+                  { replicate: true }
                 )}
               </Collapse>
             )}

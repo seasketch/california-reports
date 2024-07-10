@@ -6,6 +6,7 @@ import {
   groupBy,
   keyBy,
 } from "@seasketch/geoprocessing/client-core";
+import { groups } from "./getGroup.js";
 
 /**
  * Aggregates metrics by group - keeps values and perc values
@@ -30,8 +31,7 @@ export const flattenByGroup = (
 }[] => {
   // Stratify in order by Group -> Collection -> Class. Then flatten
   const metricsByGroup = groupBy(groupMetrics, (m) => m.groupId || "undefined");
-
-  return Object.keys(metricsByGroup).map((curGroupId) => {
+  return groups.map((curGroupId) => {
     const collGroupMetrics = metricsByGroup[curGroupId].filter(
       (m) => m.sketchId === collection.properties.id && m.groupId === curGroupId
     );

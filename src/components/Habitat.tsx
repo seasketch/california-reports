@@ -29,7 +29,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
-import { ReplicateAreaSketchTableStyled } from "../util/genAreaSketchTable.js";
+import { ReplicateAreaSketchTableStyled } from "../util/genSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 

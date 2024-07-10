@@ -22,7 +22,7 @@ import {
   percentWithEdge,
   valueFormatter,
 } from "@seasketch/geoprocessing/client-core";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 export const GeographyTableStyled = styled(ReportTableStyled)`
   .styled {
