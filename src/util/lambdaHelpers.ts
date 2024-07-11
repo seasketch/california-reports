@@ -84,12 +84,12 @@ export function parseLambdaResponse(
 ): Metric[] {
   console.log(lambdaResult);
   if (lambdaResult.StatusCode !== 200)
-    throw Error(`Report error: ${lambdaResult.Payload}`);
+    throw Error(`Report error: ${JSON.stringify(lambdaResult.Payload)}`);
 
   const payload = JSON.parse(lambdaResult.Payload as string);
 
-  if (payload.StatusCode !== 200)
-    throw Error(`Report error: ${JSON.parse(payload.body)}`);
+  if (payload.statusCode !== 200)
+    throw Error(`Report error: ${JSON.stringify(JSON.parse(payload.body))}`);
 
   const parsedResult = JSON.parse(payload.body).data;
   if (!isMetricArray(parsedResult))

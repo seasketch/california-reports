@@ -65,7 +65,7 @@
   "devDependencies": {
     "@babel/cli": "^7.24.5",
     "@babel/plugin-syntax-import-attributes": "^7.24.1",
-    "@seasketch/geoprocessing": "7.0.0-experimental-result-split.8",
+    "@seasketch/geoprocessing": "7.0.0-experimental-nested-stack.8",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
