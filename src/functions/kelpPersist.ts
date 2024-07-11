@@ -18,6 +18,7 @@ import {
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
 import awsSdk from "aws-sdk";
 import { kelpPersistWorker } from "./kelpPersistWorker.js";
+import { GeographyTableStyled } from "../util/GeographyTable.js";
 
 /**
  * kelpPersist: A geoprocessing function that calculates overlap metrics
@@ -62,7 +63,7 @@ export async function kelpPersist(
           })
         );
 
-        console.log(`Results for geography ${geography}:`, classMetrics);
+        console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
 
         return classMetrics.flat();
       })

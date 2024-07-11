@@ -86,10 +86,13 @@ export function parseLambdaResponse(
   if (lambdaResult.StatusCode !== 200)
     throw Error(`Report error: ${lambdaResult.Payload}`);
 
-  const parsedResult = JSON.parse(
-    JSON.parse(lambdaResult.Payload as string).body
-  ).data;
+  const payload = JSON.parse(lambdaResult.Payload as string);
+
+  if (payload.StatusCode !== 200)
+    throw Error(`Report error: ${JSON.parse(payload.body)}`);
+
+  const parsedResult = JSON.parse(payload.body).data;
   if (!isMetricArray(parsedResult))
-    console.log("Not metric array", parsedResult);
+    throw Error("Not metric array", parsedResult);
   return parsedResult;
 }

@@ -62,7 +62,7 @@ export async function shoretypes(
           })
         );
 
-        console.log(`Results for geography ${geography}:`, classMetrics);
+        console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
 
         return classMetrics.flat();
       })

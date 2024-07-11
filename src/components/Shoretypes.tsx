@@ -312,6 +312,11 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   );
 };
 
+const replicateMap: Record<string,number> = {
+  beaches: 1.1,
+  rocky_shores: .55
+}
+
 /**
  * Creates "Show by Zone" report, with area + percentages
  * @param data data returned from lambda
@@ -362,9 +367,9 @@ export const genLengthSketchTable = (
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
-                ][0].value;
+                ][0].value / 1609;
 
-              return value ? (
+              return (value > replicateMap[curClass.classId]) || (!replicateMap[curClass.classId] && value) ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
               ) : (
                 <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
