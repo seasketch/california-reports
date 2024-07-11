@@ -5,6 +5,7 @@ import {
   Collapse,
   Column,
   LayerToggle,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   Table,
@@ -16,6 +17,7 @@ import {
   Metric,
   MetricGroup,
   ReportResult,
+  firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
@@ -87,12 +89,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
         const metrics = [...valueMetrics, ...percMetrics];
 
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (!objectives.length) return undefined;
-          else return objectives;
-        })();
-
         return (
           <ReportError>
             <p>
@@ -101,6 +97,13 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                 shoretypes.
               </Trans>
             </p>
+
+            {!isCollection && (
+              <ShoretypesObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
 
             <LayerToggle
               label={t("Show Landward Shoretypes")}
@@ -115,7 +118,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
               metricGroup={metricGroup}
-              objective={objectives}
               columnConfig={[
                 {
                   columnLabel: classLabel,
@@ -166,7 +168,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   geographies={geographies.filter((g) =>
                     g.geographyId.endsWith("_sr")
                   )}
-                  objective={objectives}
                   columnConfig={[
                     {
                       columnLabel: t(curClass.display),
@@ -219,7 +220,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   geographies={geographies.filter((g) =>
                     g.geographyId.endsWith("_br")
                   )}
-                  objective={objectives}
                   columnConfig={[
                     {
                       columnLabel: t(curClass.display),
@@ -294,7 +294,17 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   Unclassified = ESI 0, 1B, 3B, 6B, 6D, 8B, 8C, 9B, 10B, 10C,
                   and 10D.
                 </p>
-                <p>🎯 Planning Objective: None</p>
+                <p>
+                  MPA replicates must meet certain size standards for certain
+                  habitats: 1.1 linear miles of beaches, 0.55 linear miles of
+                  rocky shores, 0.55 linear miles of rock islands. Coastal
+                  marsh, tidal flats, and unclassified are considered replicates
+                  if area is above 0.
+                </p>
+                <p>
+                  🎯 Planning Objective: Habitat replication throughout state
+                  waters.
+                </p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
@@ -312,10 +322,11 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   );
 };
 
-const replicateMap: Record<string,number> = {
+const replicateMap: Record<string, number> = {
   beaches: 1.1,
-  rocky_shores: .55
-}
+  rocky_shores: 0.55,
+  rock_islands: 0.55,
+};
 
 /**
  * Creates "Show by Zone" report, with area + percentages
@@ -369,7 +380,8 @@ export const genLengthSketchTable = (
                   mg.metricId
                 ][0].value / 1609;
 
-              return (value > replicateMap[curClass.classId]) || (!replicateMap[curClass.classId] && value) ? (
+              return value > replicateMap[curClass.classId] ||
+                (!replicateMap[curClass.classId] && value) ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
               ) : (
                 <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
@@ -420,5 +432,43 @@ export const genLengthSketchTable = (
     <ReplicateAreaSketchTableStyled>
       <Table columns={columns} data={rows} />
     </ReplicateAreaSketchTableStyled>
+  );
+};
+
+const ShoretypesObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  // Habitat replication
+  let habitatReplicationPass: string[] = [];
+  let habitatReplicationFail: string[] = [];
+
+  props.metricGroup.classes.forEach((curClass) => {
+    const metric = firstMatchingMetric(
+      props.metrics,
+      (m) => m.classId === curClass.classId
+    );
+    const value = metric.value / 1609;
+
+    value > replicateMap[curClass.classId] ||
+    (!replicateMap[curClass.classId] && value)
+      ? habitatReplicationPass.push(curClass.display)
+      : habitatReplicationFail.push(curClass.display);
+  });
+
+  return (
+    <>
+      {habitatReplicationPass.length && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>
+              This MPA meets the habitat replicate guidelines for:{" "}
+              {habitatReplicationPass.join(", ")}
+            </>
+          }
+        />
+      )}
+    </>
   );
 };

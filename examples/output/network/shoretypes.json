@@ -93,6 +93,51 @@
     {
       "geographyId": "central_br",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 18840.290868,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 18517.156413,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 323.134455,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
@@ -318,6 +363,51 @@
     {
       "geographyId": "central_sr",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 18840.290868,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 18517.156413,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 323.134455,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
@@ -543,6 +633,51 @@
     {
       "geographyId": "north_br",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
@@ -768,6 +903,51 @@
     {
       "geographyId": "north_sr",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
@@ -983,6 +1163,51 @@
       "geographyId": "northcentral_sr",
       "metricId": "shoretypes",
       "classId": "coastal_marsh",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
       "sketchId": "29484",
       "groupId": null,
       "value": 0,
@@ -1218,6 +1443,51 @@
     {
       "geographyId": "south_br",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
@@ -1433,6 +1703,51 @@
       "geographyId": "south_sr",
       "metricId": "shoretypes",
       "classId": "coastal_marsh",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
       "sketchId": "29484",
       "groupId": null,
       "value": 0,
@@ -1661,6 +1976,51 @@
       "sketchId": "29484",
       "groupId": null,
       "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 18840.290868,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 18517.156413,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 323.134455,
       "extra": {
         "sketchName": "split"
       }
@@ -2035,13 +2395,13 @@
         "type": "Feature",
         "properties": {
           "4768": "split",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8340": "Special",
           "id": "29484",
           "ccr": null,
           "fid": null,
           "name": "split",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -2096,7 +2456,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -2254,14 +2614,14 @@
         "type": "Feature",
         "properties": {
           "4768": "anacapa",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8337": 2,
-          "8340": "FMCA",
+          "8340": "SMCANT",
           "id": "29481",
           "ccr": null,
           "fid": 2,
           "name": "anacapa",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -2316,7 +2676,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -2442,7 +2802,7 @@
             },
             {
               "label": "Proposed Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "proposed_designation",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -2459,7 +2819,7 @@
               "alternateLanguages": {}
             }
           ],
-          "proposed_designation": "FMCA"
+          "proposed_designation": "SMCANT"
         },
         "geometry": null
       }

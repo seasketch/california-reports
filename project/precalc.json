@@ -45,7 +45,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 975848.6068154494
+    "value": 249531.27293145104
   },
   {
     "geographyId": "central_br",
@@ -293,7 +293,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 873368.5463812693
+    "value": 225376.15072207333
   },
   {
     "geographyId": "central_sr",
@@ -805,7 +805,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1516646.0306577112
+    "value": 358867.44413477316
   },
   {
     "geographyId": "north_br",
@@ -1061,7 +1061,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 977958.8779837788
+    "value": 225374.39819839783
   },
   {
     "geographyId": "north_sr",
@@ -1309,7 +1309,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 640942.6067150517
+    "value": 157609.64010805805
   },
   {
     "geographyId": "northcentral_sr",
@@ -1565,7 +1565,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 28477.129967815228
+    "value": 7274.924964563679
   },
   {
     "geographyId": "south_br",
@@ -1813,7 +1813,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 28477.129967815228
+    "value": 7274.924964563679
   },
   {
     "geographyId": "south_sr",
@@ -2309,7 +2309,7 @@
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
-    "value": 2520971.7674409915
+    "value": 615673.6420307899
   },
   {
     "geographyId": "world",

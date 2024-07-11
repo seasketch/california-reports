@@ -74,51 +74,6 @@
     ]
   },
   {
-    "metricId": "kelp",
-    "type": "areaOverlap",
-    "classes": [
-      {
-        "classId": "kelp2016north_sr",
-        "display": "North Planning Region",
-        "datasourceId": "kelp2016north_sr",
-        "layerId": "KS6YlOHTR"
-      },
-      {
-        "classId": "kelp2016northcentral_sr",
-        "display": "North Central Planning Region",
-        "datasourceId": "kelp2016northcentral_sr",
-        "layerId": "T_m7IPEsc"
-      },
-      {
-        "classId": "kelp2016central_sr",
-        "display": "Central Planning Region",
-        "datasourceId": "kelp2016central_sr",
-        "layerId": "sA05E8mXC"
-      },
-      {
-        "classId": "kelp2016south_sr",
-        "display": "South Planning Region",
-        "datasourceId": "kelp2016south_sr",
-        "layerId": "FkUbPj_a9"
-      },
-      {
-        "classId": "kelp2016north_br",
-        "display": "North Bioregion",
-        "datasourceId": "kelp2016north_br"
-      },
-      {
-        "classId": "kelp2016central_br",
-        "display": "Central Bioregion",
-        "datasourceId": "kelp2016central_br"
-      },
-      {
-        "classId": "kelp2016south_br",
-        "display": "South Bioregion",
-        "datasourceId": "kelp2016south_br"
-      }
-    ]
-  },
-  {
     "metricId": "kelpMax",
     "type": "areaOverlap",
     "classes": [
@@ -164,18 +119,6 @@
     ]
   },
   {
-    "metricId": "rockIslands",
-    "type": "areaOverlap",
-    "classes": [
-      {
-        "classId": "rock_islands",
-        "display": "Rock Islands",
-        "datasourceId": "rock_islands",
-        "layerId": "E17RoLlb0"
-      }
-    ]
-  },
-  {
     "metricId": "shoretypes",
     "type": "areaOverlap",
     "classes": [
@@ -190,6 +133,11 @@
         "display": "Coastal Marsh",
         "datasourceId": "coastal_marsh",
         "layerId": "wI8i1rqAm"
+      },
+      {
+        "classId": "rock_islands",
+        "display": "Rock Islands",
+        "datasourceId": "rock_islands"
       },
       {
         "classId": "rocky_shores",

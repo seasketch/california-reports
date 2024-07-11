@@ -25,6 +25,17 @@
     {
       "geographyId": "central_br",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 18517.156413,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
@@ -80,6 +91,17 @@
     {
       "geographyId": "central_sr",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 18517.156413,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
@@ -135,6 +157,17 @@
     {
       "geographyId": "north_br",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
@@ -190,6 +223,17 @@
     {
       "geographyId": "north_sr",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
@@ -245,6 +289,17 @@
     {
       "geographyId": "northcentral_sr",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
@@ -300,6 +355,17 @@
     {
       "geographyId": "south_br",
       "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "shoretypes",
       "classId": "rocky_shores",
       "sketchId": "29784",
       "groupId": null,
@@ -345,6 +411,17 @@
       "geographyId": "south_sr",
       "metricId": "shoretypes",
       "classId": "coastal_marsh",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
       "sketchId": "29784",
       "groupId": null,
       "value": 0,
@@ -403,6 +480,17 @@
       "sketchId": "29784",
       "groupId": null,
       "value": 227.56412,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "shoretypes",
+      "classId": "rock_islands",
+      "sketchId": "29784",
+      "groupId": null,
+      "value": 18517.156413,
       "extra": {
         "sketchName": "mpa-test"
       }
