@@ -439,32 +439,49 @@ const ShoretypesObjectives = (props: {
   metricGroup: MetricGroup;
   metrics: Metric[];
 }) => {
-  // Habitat replication
-  let habitatReplicationPass: string[] = [];
-  let habitatReplicationFail: string[] = [];
+  const { metricGroup, metrics } = props;
 
-  props.metricGroup.classes.forEach((curClass) => {
-    const metric = firstMatchingMetric(
-      props.metrics,
-      (m) => m.classId === curClass.classId
-    );
-    const value = metric.value / 1609;
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
 
-    value > replicateMap[curClass.classId] ||
-    (!replicateMap[curClass.classId] && value)
-      ? habitatReplicationPass.push(curClass.display)
-      : habitatReplicationFail.push(curClass.display);
-  });
+      const value = metric.value / 1609;
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] }
+  );
 
   return (
     <>
-      {habitatReplicationPass.length && (
+      {passes.length > 0 && (
         <ObjectiveStatus
           status={"yes"}
           msg={
             <>
               This MPA meets the habitat replicate guidelines for:{" "}
-              {habitatReplicationPass.join(", ")}
+              {passes.join(", ")}
+            </>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for:{" "}
+              {fails.join(", ")}
             </>
           }
         />

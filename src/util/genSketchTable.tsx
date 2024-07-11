@@ -93,12 +93,14 @@ export const genSketchTable = (
     valueFormatter?: (val: number) => number;
     size?: boolean;
     replicate?: boolean;
+    replicateMap?: Record<string, number>;
   }
 ) => {
   const {
     valueFormatter = (val: any) => val,
     size = false,
     replicate = false,
+    replicateMap = {},
   } = options || {};
 
   const sketches = toNullSketchArray(data.sketch);
@@ -135,11 +137,14 @@ export const genSketchTable = (
         columns.push({
           Header: t("Replicate") + " ".repeat(index),
           accessor: (row: { sketchId: string }) => {
-            const value =
+            const value = squareMeterToMile(
               aggMetrics[row.sketchId][curClass.classId as string][
                 mg.metricId
-              ][0].value;
-            return value ? (
+              ][0].value
+            );
+
+            return (replicateMap && value > replicateMap[curClass.classId]) ||
+              (!replicateMap[curClass.classId] && value) ? (
               <CheckCircleFill size={15} style={{ color: "#78c679" }} />
             ) : (
               <XCircleFill size={15} style={{ color: "#ED2C7C" }} />

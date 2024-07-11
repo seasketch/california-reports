@@ -6,6 +6,7 @@ import {
   Collapse,
   Column,
   LayerToggle,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   Table,
@@ -18,6 +19,7 @@ import {
   MetricGroup,
   ReportResult,
   createMetric,
+  firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
@@ -65,7 +67,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
   const percWithinLabel = t("% Within Plan");
   const unitsLabel = t("mi²");
   const substrateLabel = t("Substrate");
-  const replicationLabel = t("Replication");
 
   return (
     <ResultsCard
@@ -106,7 +107,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
         };
         const totalValueMetrics = flattenByClass(valueMetrics, mg);
         const totalPrecalcMetrics = flattenByClass(precalcMetrics, mg);
-        const replicationMetrics = replication(valueMetrics, mg);
         const totalPercMetrics = toPercentMetric(
           totalValueMetrics,
           totalPrecalcMetrics,
@@ -114,17 +114,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
             metricIdOverride: percMetricIdName,
           }
         );
-        const totalMetrics = [
-          ...totalValueMetrics,
-          ...totalPercMetrics,
-          ...replicationMetrics,
-        ];
-
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(mg, t);
-          if (!objectives.length) return undefined;
-          else return objectives;
-        })();
+        const totalMetrics = [...totalValueMetrics, ...totalPercMetrics];
 
         return (
           <ReportError>
@@ -134,6 +124,13 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                 habitats.
               </Trans>
             </p>
+
+            {!isCollection && (
+              <HabitatObjectives
+                metricGroup={totalMg}
+                metrics={totalValueMetrics}
+              />
+            )}
 
             {/* Total metrics */}
             <ClassTable
@@ -239,7 +236,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                     <ClassTable
                       rows={metrics}
                       metricGroup={regionMg}
-                      objective={objectives}
                       columnConfig={columnConfig}
                     />
                   </Collapse>
@@ -264,7 +260,18 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   whether that seafloor habitat is protected in all five
                   planning regions.
                 </p>
-                <p>🎯 Planning Objective: None</p>
+                <p>
+                  Habitat replication guidelines come from the SAT 2011 MLPA
+                  Guidelines. Rock guidelines are listed under 'rocky reef' and
+                  sediment listed under 'soft bottom'. Rock 0-30m: 1.1 square
+                  miles, 30-100: 0.13 square miles, above 100m: 0.13 square
+                  miles. Sediment 0-30m: 1.1 square miles, 30-100m: 7 square
+                  miles, above 100m: 17 square miles.
+                </p>
+                <p>
+                  🎯 Planning Objective: Habitat replication for each substrate
+                  type and depth level.
+                </p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
@@ -300,25 +307,16 @@ function flattenByClass(metrics: Metric[], mg: MetricGroup): Metric[] {
   });
 }
 
-function replication(metrics: Metric[], mg: MetricGroup): Metric[] {
-  return Object.entries(
-    metrics.reduce<Record<string, number>>((acc: Record<string, number>, m) => {
-      if (!m.classId) throw new Error("Missing classId");
-      if (m.value) {
-        if (acc[m.classId]) acc[m.classId] += 1;
-        else acc[m.classId] = 1;
-      }
-      return acc;
-    }, {})
-  ).map(([classId, value]) => {
-    return createMetric({
-      metricId: `${mg.metricId}Count`,
-      classId,
-      value,
-      groupId: "total",
-    });
-  });
-}
+const replicateMap: Record<string, number> = {
+  "0": 1.1,
+  "-1": 1.1,
+  "-30": 7,
+  "-31": 0.13,
+  "-100": 17,
+  "-101": 0.13,
+  "-200": 17,
+  "-201": 0.13,
+};
 
 /**
  * Creates "Show by Zone" report, with area + percentages
@@ -391,8 +389,10 @@ export const genSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
+              const miVal = squareMeterToMile(value * 40 * 40);
 
-              return value ? (
+              return miVal > replicateMap[curClass.classId] ||
+                (!replicateMap[curClass.classId] && miVal) ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
               ) : (
                 <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
@@ -443,5 +443,60 @@ export const genSketchTable = (
     <ReplicateAreaSketchTableStyled>
       <Table columns={columns} data={rows} />
     </ReplicateAreaSketchTableStyled>
+  );
+};
+
+const HabitatObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  const { metricGroup, metrics } = props;
+
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+
+      const value = squareMeterToMile(metric.value * 40 * 40);
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] }
+  );
+
+  return (
+    <>
+      {passes.length > 0 && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>
+              This MPA meets the habitat replicate guidelines for:{" "}
+              {passes.join(", ")}
+            </>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for:{" "}
+              {fails.join(", ")}
+            </>
+          }
+        />
+      )}
+    </>
   );
 };

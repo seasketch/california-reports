@@ -186,7 +186,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { replicate: true }
+                  { replicate: true, replicateMap: { eelgrass: 0.04 } }
                 )}
               </Collapse>
             )}
@@ -204,7 +204,14 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   areas for many species of invertebrates, fish, and birds. This
                   file aggregates data from many sources across multiple years.
                 </p>
-                <p>🎯 Planning Objective: None.</p>
+                <p>
+                  MPA habitat replicates must contain 0.04 square miles of
+                  eelgrass.
+                </p>
+                <p>
+                  🎯 Planning Objective: Habitat replication across state
+                  waters.
+                </p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
                   📈 Report: This report calculates the total value of each
