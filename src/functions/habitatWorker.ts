@@ -7,13 +7,13 @@ import {
   getFirstFromParam,
   splitSketchAntimeridian,
   isRasterDatasource,
+  rasterMetrics,
 } from "@seasketch/geoprocessing";
 import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
 import { Metric, MetricGroup } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
-import { rasterMetrics } from "../util/rasterMetrics.js";
 
 /**
  * habitatWorker: A geoprocessing function that calculates overlap metrics

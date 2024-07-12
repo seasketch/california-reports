@@ -5,6 +5,7 @@ import {
   MultiPolygon,
   GeoprocessingHandler,
   splitSketchAntimeridian,
+  rasterMetrics,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -16,7 +17,6 @@ import {
 import { clipToGeography } from "../util/clipToGeography.js";
 import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
-import { rasterMetrics } from "../util/rasterMetrics.js";
 
 /**
  * substrate: A geoprocessing function that calculates overlap metrics

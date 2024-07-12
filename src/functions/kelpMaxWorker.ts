@@ -5,21 +5,13 @@ import {
   MultiPolygon,
   GeoprocessingHandler,
   getFirstFromParam,
-  DefaultExtraParams,
   splitSketchAntimeridian,
-  rasterMetrics,
   isRasterDatasource,
+  rasterMetrics,
 } from "@seasketch/geoprocessing";
 import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
-import {
-  Metric,
-  MetricGroup,
-  ReportResult,
-  rekeyMetrics,
-  sortMetrics,
-  toNullSketch,
-} from "@seasketch/geoprocessing/client-core";
+import { Metric, MetricGroup } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 
