@@ -460,13 +460,13 @@
         "type": "Feature",
         "properties": {
           "4768": "split",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8340": "Special",
           "id": "29484",
           "ccr": null,
           "fid": null,
           "name": "split",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -521,7 +521,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -679,14 +679,14 @@
         "type": "Feature",
         "properties": {
           "4768": "anacapa",
-          "4769": "FMCA",
+          "4769": "SMCANT",
           "8337": 2,
-          "8340": "FMCA",
+          "8340": "SMCANT",
           "id": "29481",
           "ccr": null,
           "fid": 2,
           "name": "anacapa",
-          "type": "FMCA",
+          "type": "SMCANT",
           "AddMPA": null,
           "Method": null,
           "Tribal": null,
@@ -741,7 +741,7 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -867,7 +867,7 @@
             },
             {
               "label": "Proposed Designation (type)",
-              "value": "FMCA",
+              "value": "SMCANT",
               "exportId": "proposed_designation",
               "fieldType": "ComboBox",
               "valueLabel": "Federal Marine Conservation Area",
@@ -884,7 +884,7 @@
               "alternateLanguages": {}
             }
           ],
-          "proposed_designation": "FMCA"
+          "proposed_designation": "SMCANT"
         },
         "geometry": null
       }
