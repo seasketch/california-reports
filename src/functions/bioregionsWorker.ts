@@ -95,7 +95,7 @@ export default new GeoprocessingHandler(bioregionsWorker, {
   title: "bioregionsWorker",
   description: "",
   timeout: 900, // seconds
-  memory: 1024, // megabytes
+  memory: 4096, // megabytes
   executionMode: "sync",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
