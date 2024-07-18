@@ -82,7 +82,7 @@ export async function runLambdaWorker(
 export function parseLambdaResponse(
   lambdaResult: awsSdk.Lambda.InvocationResponse
 ): Metric[] {
-  console.log(lambdaResult);
+  console.log("lambdaResult", JSON.stringify(lambdaResult, null, 2));
   if (lambdaResult.StatusCode !== 200)
     throw Error(`Report error: ${JSON.stringify(lambdaResult.Payload)}`);
 
@@ -92,7 +92,11 @@ export function parseLambdaResponse(
     throw Error(`Report error: ${JSON.stringify(JSON.parse(payload.body))}`);
 
   const parsedResult = JSON.parse(payload.body).data;
-  if (!isMetricArray(parsedResult))
+  console.log("parsedResult", JSON.stringify(parsedResult, null, 2));
+  if (
+    !Array.isArray(parsedResult) ||
+    (parsedResult.length > 0 && !isMetricArray(parsedResult))
+  )
     throw Error("Not metric array", parsedResult);
   return parsedResult;
 }
