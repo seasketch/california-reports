@@ -27,43 +27,16 @@ export async function habitatWorker(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: {
     metricGroup: MetricGroup;
-    curClass: {
-      classId: string;
-      display: string;
-      datasourceId?: string | undefined;
-      classKey?: string | undefined;
-      numericClassId?: number | undefined;
-      layerId?: string | undefined;
-      objectiveId?: string | undefined;
-    };
-    geographyIds?: string[];
+    datasourceId: string;
   }
 ) {
   const metricGroup = extraParams.metricGroup;
-  const curClass = extraParams.curClass;
-
-  // Use caller-provided geographyId if provided
-  const geographyId = getFirstFromParam("geographyIds", extraParams);
-
-  // Get geography features, falling back to geography assigned to default-boundary group
-  const curGeography = project.getGeographyById(geographyId, {
-    fallbackGroup: "default-boundary",
-  });
+  const datasourceId = extraParams.datasourceId;
 
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
-  // Clip to portion of sketch within current geography
-  const clippedSketch = await clipToGeography(splitSketch, curGeography);
-
-  // Get bounding box of sketch remainder
-  const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
-
-  // Calculate overlap metrics for each class in metric group
-  if (!curClass || !curClass.datasourceId)
-    throw new Error(`Expected datasourceId for ${curClass}`);
-
-  const ds = project.getDatasourceById(curClass.datasourceId);
+  const ds = project.getDatasourceById(datasourceId);
   if (!isRasterDatasource(ds))
     throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
@@ -75,21 +48,25 @@ export async function habitatWorker(
   // Start analysis when raster load finishes
   const overlapResult = await rasterMetrics(raster, {
     metricId: metricGroup.metricId,
-    feature: clippedSketch,
+    feature: splitSketch,
     ...(ds.measurementType === "quantitative" && { stats: ["valid"] }),
     ...(ds.measurementType === "categorical" && {
       categorical: true,
-      categoryMetricValues: [curClass.classId],
+      categoryMetricValues: metricGroup.classes
+        .filter((c) => c.datasourceId === datasourceId)
+        .map((c) => c.classId),
     }),
     bandMetricProperty: "groupId",
-    bandMetricValues: [curClass.classKey!],
+    bandMetricValues: [
+      metricGroup.classes.filter((c) => c.datasourceId === datasourceId)[0]
+        .classKey!,
+    ],
   });
 
   return overlapResult.map(
     (metrics): Metric => ({
       ...metrics,
-      classId: curClass.classId,
-      geographyId: curGeography.geographyId,
+      geographyId: "world",
     })
   );
 }

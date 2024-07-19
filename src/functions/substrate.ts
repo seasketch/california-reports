@@ -35,50 +35,40 @@ export async function substrate(
   const metricGroup = project.getMetricGroup("substrate");
   const geographies = project.geographies;
 
-  try {
-    const allMetrics = await Promise.all(
+  const metrics = (
+    await Promise.all(
       geographies.map(async (geography) => {
-        const classMetrics = await Promise.all(
-          metricGroup.classes.map(async (curClass) => {
-            const parameters = {
-              ...extraParams,
-              geography: geography,
-              metricGroup,
-              classId: curClass.classId,
-            };
+        const parameters = {
+          ...extraParams,
+          geography: geography,
+          metricGroup,
+        };
 
-            console.log(
-              `Processing classId: ${curClass.classId} for geography: ${geography}`
-            );
-
-            return process.env.NODE_ENV === "test"
-              ? substrateWorker(sketch, parameters)
-              : runLambdaWorker(sketch, parameters, "substrateWorker", request);
-          })
+        console.log(
+          `Processing metric group: ${metricGroup.metricId} for geography: ${geography.geographyId}`
         );
 
-        console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
-
-        return classMetrics.flat();
+        return process.env.NODE_ENV === "test"
+          ? substrateWorker(sketch, parameters)
+          : runLambdaWorker(sketch, parameters, "substrateWorker", request);
       })
-    );
+    )
+  ).reduce<Metric[]>(
+    (metrics, lambdaResult) =>
+      metrics.concat(
+        process.env.NODE_ENV === "test"
+          ? (lambdaResult as Metric[])
+          : parseLambdaResponse(
+              lambdaResult as awsSdk.Lambda.InvocationResponse
+            )
+      ),
+    []
+  );
 
-    const metrics = allMetrics
-      .flat()
-      .reduce<
-        Metric[]
-      >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as awsSdk.Lambda.InvocationResponse)), []);
-
-    console.log("Final metrics:", metrics);
-
-    return {
-      metrics: sortMetrics(rekeyMetrics(metrics)),
-      sketch: toNullSketch(sketch, true),
-    };
-  } catch (error) {
-    console.error("Error fetching metrics:", error);
-    throw error;
-  }
+  return {
+    metrics: sortMetrics(rekeyMetrics(metrics)),
+    sketch: toNullSketch(sketch, true),
+  };
 }
 
 export default new GeoprocessingHandler(substrate, {

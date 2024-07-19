@@ -34,13 +34,21 @@ export async function habitat(
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("habitat");
 
+  const datasourceIds = metricGroup.classes.reduce(
+    (acc, c) =>
+      !c.datasourceId || acc.includes(c.datasourceId)
+        ? acc
+        : [...acc, c.datasourceId],
+    [] as string[]
+  );
+
   const metrics = (
     await Promise.all(
-      metricGroup.classes.map(async (curClass) => {
+      datasourceIds.map(async (datasourceId) => {
         const parameters = {
           ...extraParams,
           metricGroup,
-          curClass,
+          datasourceId,
         };
 
         return process.env.NODE_ENV === "test"

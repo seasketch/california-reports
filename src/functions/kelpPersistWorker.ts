@@ -36,6 +36,9 @@ export async function kelpPersistWorker(
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
 
+  if (!metricGroup.datasourceId)
+    throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
+
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
@@ -45,8 +48,7 @@ export async function kelpPersistWorker(
   // Get bounding box of sketch remainder
   const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
 
-  const datasourceId = metricGroup.classes[0].datasourceId!;
-  const ds = project.getDatasourceById(datasourceId);
+  const ds = project.getDatasourceById(metricGroup.datasourceId);
   if (!isRasterDatasource(ds))
     throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
