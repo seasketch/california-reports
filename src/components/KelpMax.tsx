@@ -162,7 +162,8 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string" ? parseInt(val) : val
-                        )
+                        ), 2,
+                        { keepSmallValues: true }
                       )
                     ),
                   valueLabel: unitsLabel,

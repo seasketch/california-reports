@@ -16,6 +16,8 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import awsSdk from "aws-sdk";
 import gp from "../../project/geoprocessing.json";
+import geobuf from "geobuf";
+import Pbf from "pbf";
 
 /**
  * Runs a function on a specified lambda worker
@@ -39,17 +41,34 @@ export async function runLambdaWorker(
   } as GeoprocessingRequestParams);
 
   // Create payload including geometry and parameters for function
-  const payload = JSON.stringify(
-    {
-      queryStringParameters: {
-        geometryUri: request!.geometryUri,
-        extraParams: parameters,
-        cacheKey,
-      },
-    },
-    null,
-    2
-  );
+  const workerRequest: GeoprocessingRequestModel = (() => {
+    let newRequest: GeoprocessingRequestModel = {
+      geometryUri: request!.geometryUri,
+      extraParams: parameters,
+      cacheKey,
+    };
+
+    const sketchBuffer = geobuf.encode(sketch, new Pbf());
+    var sketch64 = Buffer.from(sketchBuffer).toString("base64");
+
+    const requestSizeBytes = JSON.stringify(newRequest).length * 2;
+    const sketchSizeBytes = JSON.stringify(sketch).length * 2;
+    const sketch64SizeBytes = JSON.stringify(sketch64).length * 2;
+
+    const MAX_SIZE_BYTES = 6_000_000; // 6MB max payload size
+    console.log(
+      "requestSize",
+      requestSizeBytes + sketchSizeBytes,
+      "requestGeobufSize",
+      requestSizeBytes + sketch64SizeBytes,
+      MAX_SIZE_BYTES
+    );
+    if (requestSizeBytes + sketch64SizeBytes < MAX_SIZE_BYTES) {
+      newRequest.geometryGeobuf = sketch64;
+    }
+    return newRequest;
+  })();
+  const payload = JSON.stringify(workerRequest, null, 2);
 
   // Configure task
   const service = gp.region;
