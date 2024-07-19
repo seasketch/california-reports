@@ -25,8 +25,6 @@ const ReportPage = () => {
       </Card>
       <ProtectionCard />
       <SizeCard />
-      <Regions />
-      <Bioregions />
       <SketchAttributesCard autoHide />
     </>
   );

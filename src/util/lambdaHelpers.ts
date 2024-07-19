@@ -117,5 +117,6 @@ export function parseLambdaResponse(
     (parsedResult.length > 0 && !isMetricArray(parsedResult))
   )
     throw Error("Not metric array", parsedResult);
+    console.log("Parsed metrics:", JSON.stringify(parsedResult))
   return parsedResult;
 }

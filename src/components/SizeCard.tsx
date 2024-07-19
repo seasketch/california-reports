@@ -6,6 +6,10 @@ import {
   firstMatchingMetric,
   roundLower,
   percentWithEdge,
+  roundDecimal,
+  Metric,
+  metricsWithSketchId,
+  toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import {
   Collapse,
@@ -27,24 +31,29 @@ import {
   groupedCollectionReport,
   groupedSketchReport,
 } from "../util/ProtectionLevelOverlapReports.js";
+import { GeographyTable } from "../util/GeographyTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
+  const geographies = project.geographies;
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
   // Planning regions total area
-  const boundaryTotalMetrics = [
-    {
-      metricId: "area",
-      value: 15235250304.770761,
-      classId: "state_waters",
-      groupId: null,
-      geographyId: "world",
-      sketchId: null,
-    },
-  ];
+  const boundaryTotalMetrics = project
+    .getPrecalcMetrics()
+    .filter((m) => m.metricId === "area" && m.classId === "study_regions-total")
+    .map(
+      (metric): Metric => ({
+        ...metric,
+        classId: "state_waters",
+      })
+    );
+
+  const withinLabel = t("Within Plan");
+  const percWithinLabel = t("% Within Plan");
+  const unitsLabel = t("sq. mi.");
 
   const notFoundString = t("Results not found");
   return (
@@ -59,13 +68,16 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
         // Get overall area of sketch metric
         const areaMetric = firstMatchingMetric(
           data.metrics,
-          (m) => m.sketchId === data.sketch.properties.id && m.groupId === null
+          (m) =>
+            m.sketchId === data.sketch.properties.id &&
+            m.groupId === null &&
+            m.geographyId === "world"
         );
 
         // Grab overall size precalc metric
         const totalAreaMetric = firstMatchingMetric(
           boundaryTotalMetrics,
-          (m) => m.groupId === null
+          (m) => m.groupId === null && m.geographyId === "world"
         );
 
         // Format area metrics for key section display
@@ -75,6 +87,21 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
         );
         const areaUnitDisplay = t("mi²");
         const mapLabel = t("Show Map Layer");
+        const percMetricIdName = `${metricGroup.metricId}Perc`;
+
+        const valueMetrics = metricsWithSketchId(
+          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
+          [data.sketch.properties.id]
+        );
+        const percentMetrics = toPercentMetric(
+          valueMetrics,
+          boundaryTotalMetrics,
+          {
+            metricIdOverride: percMetricIdName,
+            idProperty: "geographyId",
+          }
+        );
+        const metrics = [...valueMetrics, ...percentMetrics];
 
         return (
           <>
@@ -113,8 +140,13 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 
               {isCollection ? (
                 groupedCollectionReport(
-                  data,
-                  boundaryTotalMetrics,
+                  {
+                    ...data,
+                    metrics: data.metrics.filter(
+                      (m) => m.geographyId === "world"
+                    ),
+                  },
+                  boundaryTotalMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t
                 )
@@ -122,8 +154,15 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 <>
                   <SizeObjectives value={squareMeterToMile(areaMetric.value)} />
                   {groupedSketchReport(
-                    data,
-                    boundaryTotalMetrics,
+                    {
+                      ...data,
+                      metrics: data.metrics.filter(
+                        (m) => m.geographyId === "world"
+                      ),
+                    },
+                    boundaryTotalMetrics.filter(
+                      (m) => m.geographyId === "world"
+                    ),
                     metricGroup,
                     t
                   )}
@@ -137,15 +176,124 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     key={"Protection"}
                   >
                     {genAreaGroupLevelTable(
-                      data,
-                      boundaryTotalMetrics,
+                      {
+                        ...data,
+                        metrics: data.metrics.filter(
+                          (m) => m.geographyId === "world"
+                        ),
+                      },
+                      boundaryTotalMetrics.filter(
+                        (m) => m.geographyId === "world"
+                      ),
                       metricGroup,
                       t
                     )}
                   </Collapse>
+                  <Collapse title={t("Show By Planning Region")}>
+                    <GeographyTable
+                      rows={metrics.filter((m) =>
+                        m.geographyId?.endsWith("_sr")
+                      )}
+                      metricGroup={metricGroup}
+                      geographies={geographies.filter((g) =>
+                        g.geographyId?.endsWith("_sr")
+                      )}
+                      columnConfig={[
+                        {
+                          columnLabel: " ",
+                          type: "class",
+                          width: 30,
+                        },
+                        {
+                          columnLabel: withinLabel,
+                          type: "metricValue",
+                          metricId: metricGroup.metricId,
+                          valueFormatter: (val: string | number) =>
+                            Number.format(
+                              roundDecimal(
+                                squareMeterToMile(
+                                  typeof val === "string" ? parseInt(val) : val
+                                ),
+                                2,
+                                { keepSmallValues: true }
+                              )
+                            ),
+                          valueLabel: unitsLabel,
+                          chartOptions: {
+                            showTitle: true,
+                          },
+                          width: 20,
+                        },
+                        {
+                          columnLabel: percWithinLabel,
+                          type: "metricChart",
+                          metricId: percMetricIdName,
+                          valueFormatter: "percent",
+                          chartOptions: {
+                            showTitle: true,
+                          },
+                          width: 40,
+                        },
+                      ]}
+                    />
+                  </Collapse>
+
+                  <Collapse title={t("Show By Bioregion")}>
+                    <GeographyTable
+                      rows={metrics.filter((m) =>
+                        m.geographyId?.endsWith("_br")
+                      )}
+                      metricGroup={metricGroup}
+                      geographies={geographies.filter((g) =>
+                        g.geographyId?.endsWith("_br")
+                      )}
+                      columnConfig={[
+                        {
+                          columnLabel: " ",
+                          type: "class",
+                          width: 30,
+                        },
+                        {
+                          columnLabel: withinLabel,
+                          type: "metricValue",
+                          metricId: metricGroup.metricId,
+                          valueFormatter: (val: string | number) =>
+                            Number.format(
+                              roundDecimal(
+                                squareMeterToMile(
+                                  typeof val === "string" ? parseInt(val) : val
+                                ),
+                                2,
+                                { keepSmallValues: true }
+                              )
+                            ),
+                          valueLabel: unitsLabel,
+                          chartOptions: {
+                            showTitle: true,
+                          },
+                          width: 20,
+                        },
+                        {
+                          columnLabel: percWithinLabel,
+                          type: "metricChart",
+                          metricId: percMetricIdName,
+                          valueFormatter: "percent",
+                          chartOptions: {
+                            showTitle: true,
+                          },
+                          width: 40,
+                        },
+                      ]}
+                    />
+                  </Collapse>
                   <Collapse title={t("Show by MPA")} key={"MPA"}>
                     {genSketchTable(
-                      data,
+                      {
+                        ...data,
+                        metrics: data.metrics.filter(
+                          (m) => m.geographyId === "world"
+                        ),
+                      },
                       boundaryTotalMetrics,
                       metricGroup,
                       t,
@@ -154,6 +302,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                   </Collapse>
                 </>
               )}
+
               <Collapse title={t("Learn more")}>
                 <Trans i18nKey="SizeCard-learn more">
                   <p>
