@@ -31,20 +31,13 @@ export async function kelpPersistWorker(
   extraParams: {
     geography: Geography;
     metricGroup: MetricGroup;
-    classId: string;
   }
 ) {
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
-  const curClass = metricGroup.classes.find(
-    (c) => c.classId === extraParams.classId
-  );
 
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
-
-  if (!curClass || !curClass.datasourceId)
-    throw new Error(`Expected datasourceId for ${curClass}`);
 
   // Clip sketch to geography
   const clippedSketch = await clipToGeography(splitSketch, geography);
@@ -52,7 +45,8 @@ export async function kelpPersistWorker(
   // Get bounding box of sketch remainder
   const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
 
-  const ds = project.getDatasourceById(curClass.datasourceId);
+  const datasourceId = metricGroup.classes[0].datasourceId!;
+  const ds = project.getDatasourceById(datasourceId);
   if (!isRasterDatasource(ds))
     throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
@@ -68,14 +62,13 @@ export async function kelpPersistWorker(
     ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
     ...(ds.measurementType === "categorical" && {
       categorical: true,
-      categoryMetricValues: [curClass.classId],
+      categoryMetricValues: metricGroup.classes.map((c) => c.classId),
     }),
   });
 
   return overlapResult.map(
     (metrics): Metric => ({
       ...metrics,
-      classId: curClass.classId,
       geographyId: geography.geographyId,
     })
   );

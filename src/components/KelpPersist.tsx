@@ -119,8 +119,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string"
-                            ? parseInt(val) * 46.42 * 46.42
-                            : val * 46.42 * 46.42
+                            ? parseInt(val) * 60 * 60
+                            : val * 60 * 60
                         ),
                         2,
                         { keepSmallValues: true }
@@ -174,8 +174,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 46.42 * 46.42
-                                : val * 46.42 * 46.42
+                                ? parseInt(val) * 60 * 60
+                                : val * 60 * 60
                             ),
                             2,
                             { keepSmallValues: true }
@@ -231,8 +231,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 46.42 * 46.42
-                                : val * 46.42 * 46.42
+                                ? parseInt(val) * 60 * 60
+                                : val * 60 * 60
                             ),
                             2,
                             { keepSmallValues: true }
@@ -272,7 +272,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   metricGroup,
                   t,
                   {
-                    valueFormatter: (val) => val * 46.42 * 46.42,
+                    valueFormatter: (val) => val * 60 * 60,
                     replicate: true,
                   }
                 )}
