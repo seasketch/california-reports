@@ -22,10 +22,6 @@
   "geoprocessingFunctions": [
     "src/functions/boundaryAreaOverlap.ts",
     "src/functions/boundaryAreaOverlapWorker.ts",
-    "src/functions/regions.ts",
-    "src/functions/regionsWorker.ts",
-    "src/functions/bioregions.ts",
-    "src/functions/bioregionsWorker.ts",
     "src/functions/protection.ts",
     "src/functions/kelpMax.ts",
     "src/functions/kelpMaxWorker.ts",
