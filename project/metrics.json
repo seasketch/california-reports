@@ -76,30 +76,27 @@
   {
     "metricId": "kelpMax",
     "type": "areaOverlap",
+    "layerId": "kx7B7uIAa",
     "classes": [
       {
         "classId": "kelp_max_north_sr",
         "display": "North Planning Region",
-        "datasourceId": "kelp_max_north_sr",
-        "layerId": "UM12YiZBF"
+        "datasourceId": "kelp_max_north_sr"
       },
       {
         "classId": "kelp_max_northcentral_sr",
         "display": "North Central Planning Region",
-        "datasourceId": "kelp_max_northcentral_sr",
-        "layerId": "n3hbpUw5X"
+        "datasourceId": "kelp_max_northcentral_sr"
       },
       {
         "classId": "kelp_max_central_sr",
         "display": "Central Planning Region",
-        "datasourceId": "kelp_max_central_sr",
-        "layerId": "eyph8kKz0"
+        "datasourceId": "kelp_max_central_sr"
       },
       {
         "classId": "kelp_max_south_sr",
         "display": "South Planning Region",
-        "datasourceId": "kelp_max_south_sr",
-        "layerId": "0SpXFm9Is"
+        "datasourceId": "kelp_max_south_sr"
       },
       {
         "classId": "kelp_max_north_br",
@@ -571,12 +568,12 @@
   {
     "metricId": "bathymetry",
     "type": "valueOverlap",
+    "layerId": "CHUMXivJe",
     "classes": [
       {
         "classId": "bathymetry",
         "display": "Depth",
-        "datasourceId": "depth",
-        "layerId": ""
+        "datasourceId": "depth"
       }
     ]
   }

@@ -3,9 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  LayerToggle,
   ReportError,
   ResultsCard,
   useSketchProperties,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
@@ -143,6 +145,12 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 distribution over the years 2002-2016.
               </Trans>
             </p>
+
+            <LayerToggle
+              label={t("Show Kelp Layer On Map")}
+              layerId={metricGroup.layerId}
+            />
+            <VerticalSpacer />
 
             <ClassTable
               rows={overallMetrics}
