@@ -205,6 +205,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   file aggregates data from many sources across multiple years.
                 </p>
                 <p>
+                  Eelgrass data has been simplified to a tolerance of 1 meter. 
                   MPA habitat replicates must contain 0.04 square miles of
                   eelgrass.
                 </p>

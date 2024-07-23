@@ -301,7 +301,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   ℹ️ Overview: The maximum area of kelp across the years
                   2002-2016 is used in this report. The area and % area of kelp
                   protected by this plan is shown. Kelp data has been
-                  downsampled to a 40m x 40m raster grid for efficiency, so area
+                  rasterized to a 40m x 40m raster grid for efficiency, so area
                   calculations are estimates. Final plans should check area
                   totals in GIS tools before publishing final area statistics.
                 </p>

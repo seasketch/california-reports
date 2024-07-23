@@ -534,13 +534,13 @@
     "formats": [
       "tif"
     ],
-    "precalc": true,
+    "precalc": false,
     "measurementType": "categorical",
     "band": 1,
     "noDataValue": -9999,
     "created": "2024-06-20T16:39:17.383Z",
     "lastUpdated": "2024-06-20T16:39:17.383Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate30.tif"
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate-old/substrate30.tif"
   },
   {
     "datasourceId": "eelgrass",
@@ -650,17 +650,17 @@
     "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif"
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate/substrate.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "substrate",
+    "geo_type": "raster",
     "formats": [
       "tif"
     ],
-    "created": "2024-07-22T18:55:43.392Z",
-    "lastUpdated": "2024-07-22T18:55:43.392Z",
-    "noDataValue": -9999,
+    "precalc": true,
     "measurementType": "categorical",
-    "precalc": true
+    "band": 1,
+    "noDataValue": -9999,
+    "created": "2024-07-22T18:55:43.392Z",
+    "lastUpdated": "2024-07-23T18:40:55.538Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate_clipped.tif"
   }
 ]
