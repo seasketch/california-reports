@@ -294,7 +294,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   cell over the period of all the surveys.
                 </p>
                 <p>
-                  Substrate data has been downsampled to a 45m x 45m raster grid
+                  Kelp data has been downsampled to a 60m x 60m raster grid
                   for efficiency, therefore area calculations are estimates.
                   Final plans should check area totals in GIS tools before
                   publishing final area statistics.
