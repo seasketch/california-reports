@@ -245,7 +245,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 14859
+    "value": 54259
   },
   {
     "geographyId": "central_br",
@@ -277,7 +277,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 8058
+    "value": 29565
   },
   {
     "geographyId": "central_br",
@@ -285,7 +285,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 5429
+    "value": 20123
   },
   {
     "geographyId": "central_br",
@@ -293,7 +293,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 3953
+    "value": 14589
   },
   {
     "geographyId": "central_br",
@@ -301,7 +301,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 3085
+    "value": 11121
   },
   {
     "geographyId": "central_br",
@@ -309,7 +309,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2406
+    "value": 8539
   },
   {
     "geographyId": "central_br",
@@ -317,7 +317,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1804
+    "value": 6522
   },
   {
     "geographyId": "central_br",
@@ -325,7 +325,7 @@
     "classId": "kelpPersist-8",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1144
+    "value": 4070
   },
   {
     "geographyId": "central_br",
@@ -333,7 +333,7 @@
     "classId": "kelpPersist-9",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 305
+    "value": 1171
   },
   {
     "geographyId": "central_br",
@@ -581,7 +581,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 14700
+    "value": 53631
   },
   {
     "geographyId": "central_sr",
@@ -613,7 +613,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 8042
+    "value": 29488
   },
   {
     "geographyId": "central_sr",
@@ -621,7 +621,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 5426
+    "value": 20115
   },
   {
     "geographyId": "central_sr",
@@ -629,7 +629,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 3952
+    "value": 14588
   },
   {
     "geographyId": "central_sr",
@@ -637,7 +637,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 3085
+    "value": 11121
   },
   {
     "geographyId": "central_sr",
@@ -645,7 +645,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2406
+    "value": 8539
   },
   {
     "geographyId": "central_sr",
@@ -653,7 +653,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1804
+    "value": 6522
   },
   {
     "geographyId": "central_sr",
@@ -661,7 +661,7 @@
     "classId": "kelpPersist-8",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1144
+    "value": 4070
   },
   {
     "geographyId": "central_sr",
@@ -669,7 +669,7 @@
     "classId": "kelpPersist-9",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 305
+    "value": 1171
   },
   {
     "geographyId": "central_sr",
@@ -1205,7 +1205,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 8763
+    "value": 35128
   },
   {
     "geographyId": "north_br",
@@ -1237,7 +1237,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2741
+    "value": 10455
   },
   {
     "geographyId": "north_br",
@@ -1245,7 +1245,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1127
+    "value": 4621
   },
   {
     "geographyId": "north_br",
@@ -1253,7 +1253,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 514
+    "value": 2150
   },
   {
     "geographyId": "north_br",
@@ -1261,7 +1261,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 241
+    "value": 905
   },
   {
     "geographyId": "north_br",
@@ -1269,7 +1269,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 76
+    "value": 315
   },
   {
     "geographyId": "north_br",
@@ -1277,7 +1277,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 15
+    "value": 60
   },
   {
     "geographyId": "north_br",
@@ -1541,7 +1541,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 4145
+    "value": 16845
   },
   {
     "geographyId": "north_sr",
@@ -1573,7 +1573,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 521
+    "value": 1984
   },
   {
     "geographyId": "north_sr",
@@ -1581,7 +1581,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 54
+    "value": 266
   },
   {
     "geographyId": "north_sr",
@@ -1589,7 +1589,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 10
+    "value": 60
   },
   {
     "geographyId": "north_sr",
@@ -1597,7 +1597,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 4
+    "value": 17
   },
   {
     "geographyId": "north_sr",
@@ -1605,7 +1605,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1
+    "value": 3
   },
   {
     "geographyId": "north_sr",
@@ -1893,7 +1893,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 4777
+    "value": 18911
   },
   {
     "geographyId": "northcentral_sr",
@@ -1925,7 +1925,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2236
+    "value": 8548
   },
   {
     "geographyId": "northcentral_sr",
@@ -1933,7 +1933,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1076
+    "value": 4363
   },
   {
     "geographyId": "northcentral_sr",
@@ -1941,7 +1941,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 505
+    "value": 2091
   },
   {
     "geographyId": "northcentral_sr",
@@ -1949,7 +1949,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 237
+    "value": 888
   },
   {
     "geographyId": "northcentral_sr",
@@ -1957,7 +1957,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 75
+    "value": 312
   },
   {
     "geographyId": "northcentral_sr",
@@ -1965,7 +1965,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 15
+    "value": 60
   },
   {
     "geographyId": "northcentral_sr",
@@ -2245,7 +2245,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 36765
+    "value": 126396
   },
   {
     "geographyId": "south_br",
@@ -2253,7 +2253,7 @@
     "classId": "kelpPersist-10",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 234
+    "value": 815
   },
   {
     "geographyId": "south_br",
@@ -2261,7 +2261,7 @@
     "classId": "kelpPersist-11",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 63
+    "value": 184
   },
   {
     "geographyId": "south_br",
@@ -2269,7 +2269,7 @@
     "classId": "kelpPersist-12",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 10
+    "value": 19
   },
   {
     "geographyId": "south_br",
@@ -2277,7 +2277,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 20055
+    "value": 69922
   },
   {
     "geographyId": "south_br",
@@ -2285,7 +2285,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 13686
+    "value": 47537
   },
   {
     "geographyId": "south_br",
@@ -2293,7 +2293,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 9281
+    "value": 32078
   },
   {
     "geographyId": "south_br",
@@ -2301,7 +2301,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 6507
+    "value": 22279
   },
   {
     "geographyId": "south_br",
@@ -2309,7 +2309,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 4108
+    "value": 14401
   },
   {
     "geographyId": "south_br",
@@ -2317,7 +2317,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2379
+    "value": 8326
   },
   {
     "geographyId": "south_br",
@@ -2325,7 +2325,7 @@
     "classId": "kelpPersist-8",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1388
+    "value": 4674
   },
   {
     "geographyId": "south_br",
@@ -2333,7 +2333,7 @@
     "classId": "kelpPersist-9",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 648
+    "value": 2227
   },
   {
     "geographyId": "south_br",
@@ -2581,7 +2581,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 36540
+    "value": 126396
   },
   {
     "geographyId": "south_sr",
@@ -2589,7 +2589,7 @@
     "classId": "kelpPersist-10",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 234
+    "value": 815
   },
   {
     "geographyId": "south_sr",
@@ -2597,7 +2597,7 @@
     "classId": "kelpPersist-11",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 63
+    "value": 184
   },
   {
     "geographyId": "south_sr",
@@ -2605,7 +2605,7 @@
     "classId": "kelpPersist-12",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 10
+    "value": 19
   },
   {
     "geographyId": "south_sr",
@@ -2613,7 +2613,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 20012
+    "value": 69922
   },
   {
     "geographyId": "south_sr",
@@ -2621,7 +2621,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 13678
+    "value": 47537
   },
   {
     "geographyId": "south_sr",
@@ -2629,7 +2629,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 9278
+    "value": 32078
   },
   {
     "geographyId": "south_sr",
@@ -2637,7 +2637,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 6507
+    "value": 22279
   },
   {
     "geographyId": "south_sr",
@@ -2645,7 +2645,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 4108
+    "value": 14401
   },
   {
     "geographyId": "south_sr",
@@ -2653,7 +2653,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2379
+    "value": 8326
   },
   {
     "geographyId": "south_sr",
@@ -2661,7 +2661,7 @@
     "classId": "kelpPersist-8",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 1388
+    "value": 4674
   },
   {
     "geographyId": "south_sr",
@@ -2669,7 +2669,7 @@
     "classId": "kelpPersist-9",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 648
+    "value": 2227
   },
   {
     "geographyId": "south_sr",
@@ -3853,7 +3853,7 @@
     "classId": "kelpPersist-1",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 60387
+    "value": 215783
   },
   {
     "geographyId": "world",
@@ -3861,7 +3861,7 @@
     "classId": "kelpPersist-10",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 234
+    "value": 815
   },
   {
     "geographyId": "world",
@@ -3869,7 +3869,7 @@
     "classId": "kelpPersist-11",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 63
+    "value": 184
   },
   {
     "geographyId": "world",
@@ -3877,7 +3877,7 @@
     "classId": "kelpPersist-12",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 10
+    "value": 19
   },
   {
     "geographyId": "world",
@@ -3885,7 +3885,7 @@
     "classId": "kelpPersist-2",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 30854
+    "value": 109942
   },
   {
     "geographyId": "world",
@@ -3893,7 +3893,7 @@
     "classId": "kelpPersist-3",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 20242
+    "value": 72281
   },
   {
     "geographyId": "world",
@@ -3901,7 +3901,7 @@
     "classId": "kelpPersist-4",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 13748
+    "value": 48817
   },
   {
     "geographyId": "world",
@@ -3909,7 +3909,7 @@
     "classId": "kelpPersist-5",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 9833
+    "value": 34305
   },
   {
     "geographyId": "world",
@@ -3917,7 +3917,7 @@
     "classId": "kelpPersist-6",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 6590
+    "value": 23255
   },
   {
     "geographyId": "world",
@@ -3925,7 +3925,7 @@
     "classId": "kelpPersist-7",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 4198
+    "value": 14908
   },
   {
     "geographyId": "world",
@@ -3933,7 +3933,7 @@
     "classId": "kelpPersist-8",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 2538
+    "value": 8750
   },
   {
     "geographyId": "world",
@@ -3941,7 +3941,7 @@
     "classId": "kelpPersist-9",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 953
+    "value": 3398
   },
   {
     "geographyId": "world",

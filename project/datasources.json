@@ -558,7 +558,7 @@
     "explodeMulti": true
   },
   {
-    "datasourceId": "kelpPersist",
+    "datasourceId": "kelpPersist_old",
     "geo_type": "raster",
     "formats": [
       "tif"
@@ -662,5 +662,19 @@
     "created": "2024-07-22T18:55:43.392Z",
     "lastUpdated": "2024-07-23T18:40:55.538Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate_clipped.tif"
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/KelpPersistence/lookup/lookup30.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "kelpPersist",
+    "formats": [
+      "tif"
+    ],
+    "created": "2024-07-24T16:15:49.909Z",
+    "lastUpdated": "2024-07-24T16:15:49.909Z",
+    "noDataValue": 15,
+    "measurementType": "categorical",
+    "precalc": true
   }
 ]
