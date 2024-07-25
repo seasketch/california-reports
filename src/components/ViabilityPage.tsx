@@ -5,8 +5,7 @@ import {
   InfoStatus,
   SketchAttributesCard,
 } from "@seasketch/geoprocessing/client-ui";
-import { Regions } from "./Regions.js";
-import { Bioregions } from "./Bioregions.js";
+import { Spacing } from "./Spacing.js";
 import { ProtectionCard } from "./Protection.js";
 
 const ReportPage = () => {
@@ -26,6 +25,7 @@ const ReportPage = () => {
       <ProtectionCard />
       <SizeCard />
       <SketchAttributesCard autoHide />
+      <Spacing />
     </>
   );
 };
