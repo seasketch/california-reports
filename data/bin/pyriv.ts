@@ -137,25 +137,25 @@ class Land {
     private isLineClear(coord1: number[], coord2: number[]): boolean {
         const line = turf.lineString([coord1, coord2]);
 
-    // Check each feature in the landData
-    for (const feature of this.landData.features) {
-        if (feature.geometry.type === 'Polygon') {
-            const polygon = turf.polygon(feature.geometry.coordinates);
-            if (turf.booleanIntersects(line, polygon)) {
-                return false;
-            }
-        } else if (feature.geometry.type === 'MultiPolygon') {
-            const multiPolygon = turf.multiPolygon(feature.geometry.coordinates);
-            // console.log("line", JSON.stringify(line))
-            // console.log("multipolygon",  JSON.stringify(multiPolygon))
-            // console.log(turf.booleanIntersects(line, multiPolygon))
-            if (turf.booleanIntersects(line, multiPolygon)) {
-                return false;
-            }
-        }
-    }
+        // // Check each feature in the landData
+        // for (const feature of this.landData.features) {
+        //     if (feature.geometry.type === 'Polygon') {
+        //         const polygon = turf.polygon(feature.geometry.coordinates);
+        //         if (turf.booleanIntersects(line, polygon)) {
+        //             return false;
+        //         }
+        //     } else if (feature.geometry.type === 'MultiPolygon') {
+        //         const multiPolygon = turf.multiPolygon(feature.geometry.coordinates);
+        //         // console.log("line", JSON.stringify(line))
+        //         // console.log("multipolygon",  JSON.stringify(multiPolygon))
+        //         // console.log(turf.booleanIntersects(line, multiPolygon))
+        //         if (turf.booleanIntersects(line, multiPolygon)) {
+        //             return false;
+        //         }
+        //     }
+        // }
 
-        return true;
+        return false;
     }
 }
 
