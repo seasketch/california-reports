@@ -79,7 +79,7 @@ export const Spacing: React.FunctionComponent = (props) => {
   const [graphData, setGraphData] = useState<GraphData | null>(null);
 
   useEffect(() => {
-    fetch('../../data/bin/coast1000m.gpickle') // Update the path as necessary
+    fetch('../../data/bin/coast0.01m.gpickle') // Update the path as necessary
       .then(response => response.json())
       .then(data => {
         console.log("Graph data:", data); // Debugging line to inspect the data
