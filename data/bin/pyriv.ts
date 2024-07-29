@@ -2,36 +2,29 @@ import * as turf from '@turf/turf';
 import { Graph } from 'graphlib';
 import fs from "fs-extra";
 import * as path from 'path';
-import { toFeaturePolygonArray } from '@seasketch/geoprocessing';
 
-// Setup:
+// Setup
 const dataDir = './data/bin';
 const fullPath = (s: string) => path.join(dataDir, s);
-const fullLandFn = fullPath('clipLayerSingleParts.geojson');
-const simpNum = .01;
-const nProcessors = 38;
-
-const landOutFn = fullPath(`coast_poly${simpNum}m.geojson`);
-const gpicOutFn = fullPath(`coast${simpNum}m.gpickle`);
-
-// Read in the full resolution land GeoJSON file
-const fullLand = fs.readJsonSync(fullLandFn);
-
-// Simplify the polygons
-const lowResLand = turf.simplify(fullLand, { tolerance: simpNum});
-
-// Save the simplified polygons to a file
-fs.writeJsonSync(landOutFn, lowResLand);
+const watersPath = fullPath('clippingLayer.1.geojson');
+const landPath = fullPath('land.1.geojson');
+const landShrunkOut = fullPath('landShrunk.1.geojson');
+const jsonOut = fullPath('network.1.json')
+// const simpNum = .01; // degrees in ESPG:4326
 
 class Land {
+    private watersData: any;
     private landData: any;
     private cachedGraph?: Graph;
 
-    constructor(landFile: string) {
-        this.landData = fs.readJsonSync(landFile);
+    constructor(watersFile: string, landFile: string) {
+        this.watersData = fs.readJsonSync(watersFile);
+        const land = fs.readJsonSync(landFile);
+        const landBuffered = turf.buffer(land, -.001);
+        fs.writeFileSync(landShrunkOut, JSON.stringify(landBuffered));
+        this.landData = landBuffered;
     }
 
-    // Convert this to a TypeScript method
     public async graph(dumpCached = false, verbose = false): Promise<Graph> {
         if (dumpCached || !this.cachedGraph) {
             let G = this.freshGraph();
@@ -46,7 +39,7 @@ class Land {
         const vertices: Map<string, number[]> = new Map();
             
         // Extract vertices from land polygons
-        this.landData.features.forEach((feature: any, featureIndex: number) => {
+        this.watersData.features.forEach((feature: any, featureIndex: number) => {
             if (feature.geometry.type === 'Polygon') {
                 this.extractVerticesFromPolygon(feature.geometry.coordinates, featureIndex, vertices);
             } else if (feature.geometry.type === 'MultiPolygon') {
@@ -80,21 +73,21 @@ class Land {
             console.log(`Starting at ${new Date().toISOString()} to add edges for ${graph.nodeCount()} nodes.`);
             const edgePossibilities = graph.nodeCount() * (graph.nodeCount() - 1);
             console.log(`We'll have to look at somewhere around ${edgePossibilities} edge possibilities.`);
-            console.log(`Node:`);
         }
 
         const nodes = graph.nodes();
-        const oceanEdges: {source: string, target: string}[] = [];
+        const oceanEdges: {source: string, target: string, distance: number}[] = [];
         
-        nodes.forEach((node: string) => {
+        nodes.forEach((node: string, index) => {
+            if(index % 10 === 0) console.log("Running node #", index)
             const edgesForNode = this.oceanEdgesForNode(node, graph);
             oceanEdges.push(...edgesForNode);
         });
 
         // Add edges individually
-        oceanEdges.forEach(({source, target}) => {
+        oceanEdges.forEach(({source, target, distance}) => {
             if (graph.hasNode(source) && graph.hasNode(target)) {
-                graph.setEdge(source, target);
+                graph.setEdge(source, target, distance);
             } else {
                 console.error(`Invalid edge between ${source} and ${target}`);
             }
@@ -107,8 +100,8 @@ class Land {
         return graph;
     }
 
-    private oceanEdgesForNode(node: string, graph: Graph): {source: string, target: string}[] {
-        const edges: {source: string, target: string}[] = [];
+    private oceanEdgesForNode(node: string, graph: Graph): {source: string, target: string, distance: number}[] {
+        const edges: {source: string, target: string, distance: number}[] = [];
         const nodeCoord = graph.node(node);
 
         if (!nodeCoord) {
@@ -126,7 +119,7 @@ class Land {
                 }
 
                 if (this.isLineClear(nodeCoord, otherNodeCoord)) {
-                    edges.push({source: node, target: otherNode});
+                    edges.push({source: node, target: otherNode, distance: turf.distance(nodeCoord, otherNodeCoord, {units: "miles"})});
                 }
             }
         });
@@ -137,72 +130,27 @@ class Land {
     private isLineClear(coord1: number[], coord2: number[]): boolean {
         const line = turf.lineString([coord1, coord2]);
 
-        // // Check each feature in the landData
-        // for (const feature of this.landData.features) {
-        //     if (feature.geometry.type === 'Polygon') {
-        //         const polygon = turf.polygon(feature.geometry.coordinates);
-        //         if (turf.booleanIntersects(line, polygon)) {
-        //             return false;
-        //         }
-        //     } else if (feature.geometry.type === 'MultiPolygon') {
-        //         const multiPolygon = turf.multiPolygon(feature.geometry.coordinates);
-        //         // console.log("line", JSON.stringify(line))
-        //         // console.log("multipolygon",  JSON.stringify(multiPolygon))
-        //         // console.log(turf.booleanIntersects(line, multiPolygon))
-        //         if (turf.booleanIntersects(line, multiPolygon)) {
-        //             return false;
-        //         }
-        //     }
-        // }
+        // Check each feature in the landData
+        for (const feature of this.landData.features) {
+            if (feature.geometry.type === 'Polygon') {
+                const polygon = turf.polygon(feature.geometry.coordinates);
+                if (turf.booleanIntersects(line, polygon)) {
+                    return false;
+                }
+            } else if (feature.geometry.type === 'MultiPolygon') {
+                const multiPolygon = turf.multiPolygon(feature.geometry.coordinates);
+                if (turf.booleanIntersects(line, multiPolygon)) {
+                    return false;
+                }
+            }
+        }
 
-        return false;
+        return true;
     }
 }
 
-const lnd = new Land(landOutFn);
+const lnd = new Land(watersPath, landPath);
 lnd.graph(false, true).then((ecGraph) => {
     // Save the graph to a file
-    fs.writeFileSync(gpicOutFn, JSON.stringify(ecGraph));
+    fs.writeFileSync(jsonOut, JSON.stringify(ecGraph));
 });
-
-
-
-// class Land {
-//     private landData: any;
-    
-//     constructor(landFile: string) {
-//         this.landData = fs.readJsonSync(landFile);
-//     }
-
-//     public graph(nJobs: number): Graph {
-//         const graph = new Graph();
-        
-//         // Loop through each feature's geometry
-//         this.landData.features.forEach((feature: any, featureIndex: number) => {
-//             // Assuming each feature's geometry is a polygon or line
-//             feature.geometry.coordinates.forEach((polygon: any) => {
-//                 polygon.forEach((ring: any, ringIndex: number) => {
-//                     ring.forEach((coord: [number, number], vertexIndex: number) => {
-//                         const nodeId = `${featureIndex}-${ringIndex}-${vertexIndex}`;
-//                         graph.setNode(nodeId, { coordinates: coord });
-//                     });
-//                 });
-//             });
-//         });
-
-//         // Adding edges based on adjacency (consecutive vertices)
-//         this.landData.features.forEach((feature: any, featureIndex: number) => {
-//             feature.geometry.coordinates.forEach((polygon: any) => {
-//                 polygon.forEach((ring: any, ringIndex: number) => {
-//                     ring.forEach((coord: [number, number], vertexIndex: number) => {
-//                         const currentNodeId = `${featureIndex}-${ringIndex}-${vertexIndex}`;
-//                         const nextNodeId = `${featureIndex}-${ringIndex}-${(vertexIndex + 1) % ring.length}`; // Loop back to the first for polygons
-//                         graph.setEdge(currentNodeId, nextNodeId);
-//                     });
-//                 });
-//             });
-//         });
-
-//         return graph;
-//     }
-// }
