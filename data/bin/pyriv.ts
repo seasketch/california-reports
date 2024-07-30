@@ -3,14 +3,13 @@ import { Graph } from 'graphlib';
 import fs from "fs-extra";
 import * as path from 'path';
 
-// Setup
+// Setup directories and paths
 const dataDir = './data/bin';
 const fullPath = (s: string) => path.join(dataDir, s);
-const watersPath = fullPath('clippingLayer.1.geojson');
-const landPath = fullPath('land.1.geojson');
-const landShrunkOut = fullPath('landShrunk.1.geojson');
-const jsonOut = fullPath('network.1.json')
-// const simpNum = .01; // degrees in ESPG:4326
+const watersPath = fullPath('clippingLayer.01.geojson');
+const landPath = fullPath('land.01.geojson');
+const landShrunkOut = fullPath('landShrunk.01.geojson');
+const jsonOut = fullPath('network.01.json')
 
 class Land {
     private watersData: any;

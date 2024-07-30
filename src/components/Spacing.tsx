@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import fs from "fs-extra";
 import * as d3 from 'd3';
 import *  as turf from '@turf/turf';
 import { Graph, alg } from 'graphlib';
@@ -10,12 +9,9 @@ import {
   Card,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  LineString,
-  Point,
   ReportResult,
 } from "@seasketch/geoprocessing/client-core";
 import {useTranslation } from "react-i18next";
-import { lineString } from "@turf/helpers";
 
 interface GraphData {
   _nodes: { [key: string]:  [number, number]  };
@@ -52,6 +48,24 @@ const GraphPlotter: React.FC<{ graphData: GraphData, shortestPathEdges: { source
     const yScale = d3.scaleLinear()
       .domain(d3.extent(nodes, d => d[1]) as [number, number])
       .range([height, 0]);
+
+      // Load and render GeoJSON background map
+    d3.json('../../data/bin/land.01.geojson').then((geojson: any) => {
+      const projection = d3.geoTransform({
+        point: function (x, y) {
+          this.stream.point(xScale(x), yScale(y));
+        }
+      });
+      const path = d3.geoPath().projection(projection);
+
+      svg.append("g")
+        .selectAll("path")
+        .data(geojson.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("fill", "#d3d3d3") // Light grey color for land
+        .attr("stroke", "#000"); // Black stroke for boundaries
 
       svg.selectAll(".link")
       .data(links)
@@ -98,6 +112,7 @@ const GraphPlotter: React.FC<{ graphData: GraphData, shortestPathEdges: { source
       .attr("cy", d => yScale(d[1]))
       .attr("r", 3)
       .attr("fill", "red");
+    }).catch(error => console.error("Failed to load GeoJSON:", error));
   }, [graphData, shortestPathEdges, shortestPathNodes]);
 
   return <svg ref={svgRef}></svg>;
@@ -111,7 +126,7 @@ export const Spacing: React.FunctionComponent = (props) => {
   const [shortestPathNodes, setShortestPathNodes] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch('../../data/bin/coast.json') // Update the path as necessary
+    fetch('../../data/bin/network.01.json') // Update the path as necessary
       .then(response => response.json())
       .then(data => {
         console.log("Graph data:", data); // Debugging line to inspect the data
@@ -121,10 +136,10 @@ export const Spacing: React.FunctionComponent = (props) => {
           console.log("graph", graph)
           checkGraphConnectivity(graph);
 
-          const pos0: [number, number] = [-122.96280291693277,
-            37.988491001065526];
-          const pos1: [number, number] = [-118.52143382444083,
-            34.02176891404156];
+          const pos0: [number, number] = [-124.08564619268653,
+            41.5442591626165];
+          const pos1: [number, number] = [-117.14776559202397,
+            32.63547106944684];
 
           const { path, edges, totalDistance } = findShortestPath(graph, pos0, pos1);
           console.log('Shortest path:', path);
