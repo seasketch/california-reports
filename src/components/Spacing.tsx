@@ -1,6 +1,5 @@
 import React, {useEffect, useRef} from "react";
 import * as d3 from 'd3';
-import fs from 'fs-extra'
 import *  as turf from '@turf/turf';
 import { Graph, alg } from 'graphlib';
 import {
@@ -16,27 +15,29 @@ import {
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import {useTranslation } from "react-i18next";
-import graphData from '../../data/bin/network.01.json'
+import graphData from '../../data/bin/network.01.json';
 
-interface GraphPlotterProps {
-  graph: Graph;
-  shortestPathEdges: { source: string; target: string, distance: number }[];
-  importantNodes: string[];
+// Props for the Replicate Map
+interface ReplicateMapProps {
+  graph: Graph; // Graph with 
+  shortestPaths: { source: string; target: string, distance: number }[];
+  sketchNodes: string[];
   pathColors: { [key: string]: string };
 }
 
-const GraphPlotter: React.FC<GraphPlotterProps> = ({ graph, shortestPathEdges, importantNodes, pathColors }) => {
+// Plots replicates and shortest paths between them
+const ReplicateMap: React.FC<ReplicateMapProps> = ({ graph, shortestPaths, sketchNodes, pathColors }) => {
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
-    svg.selectAll("*").remove(); // Clear previous content
+    svg.selectAll("*").remove();
 
     const width = 400;
     const height = 800;
-
     svg.attr("width", width).attr("height", height);
 
+    // Scale map to extent of nodes
     const nodes = graph.nodes().map(node => graph.node(node));
     const links = graph.edges().map(edge => ({
       source: edge.v,
@@ -47,12 +48,11 @@ const GraphPlotter: React.FC<GraphPlotterProps> = ({ graph, shortestPathEdges, i
     const xScale = d3.scaleLinear()
       .domain(d3.extent(nodes, d => d[0]) as [number, number])
       .range([0, width]);
-
     const yScale = d3.scaleLinear()
       .domain(d3.extent(nodes, d => d[1]) as [number, number])
       .range([height, 0]);
 
-    // Load and render GeoJSON background map
+    // Load and plot background land
     d3.json('../../data/bin/land.01.geojson').then((geojson: any) => {
       const projection = d3.geoTransform({
         point: function (x, y) {
@@ -60,19 +60,31 @@ const GraphPlotter: React.FC<GraphPlotterProps> = ({ graph, shortestPathEdges, i
         }
       });
       const path = d3.geoPath().projection(projection);
-
       svg.append("g")
         .selectAll("path")
         .data(geojson.features)
         .enter()
         .append("path")
         .attr("d", path)
-        .attr("fill", "#d3d3d3") // Light grey color for land
-        .attr("stroke", "#000"); // Black stroke for boundaries
+        .attr("fill", "#d3d3d3")
+        .attr("stroke", "#000"); 
 
-      // Render shortest path links on top
-      svg.selectAll(".shortest-path-link")
-        .data(shortestPathEdges)
+      // Plot shortest path routes 
+      const overlayGroup = svg.append("g");
+      // overlayGroup.selectAll(".links")
+      //   .data(links)
+      //   .enter()
+      //   .append("line")
+      //   .attr("class", "links")
+      //   .attr("x1", d => xScale(graph.node(d.source)[0]))
+      //   .attr("y1", d => yScale(graph.node(d.source)[1]))
+      //   .attr("x2", d => xScale(graph.node(d.target)[0]))
+      //   .attr("y2", d => yScale(graph.node(d.target)[1]))
+      //   .attr("stroke", d => "blue")
+      //   .attr("stroke-width", .5);
+
+      overlayGroup.selectAll(".shortest-path-link")
+        .data(shortestPaths)
         .enter()
         .append("line")
         .attr("class", "shortest-path-link")
@@ -83,18 +95,28 @@ const GraphPlotter: React.FC<GraphPlotterProps> = ({ graph, shortestPathEdges, i
         .attr("stroke", d => pathColors[`${d.source}-${d.target}`])
         .attr("stroke-width", 1.5);
 
-      // Render circles for the important nodes
-      svg.selectAll(".important-node")
-        .data(importantNodes)
+        // overlayGroup.selectAll(".nodes")
+        // .data(nodes)
+        // .enter()
+        // .append("circle")
+        // .attr("class", "nodes")
+        // .attr("cx", d => xScale(d[0]))
+        // .attr("cy", d => yScale(d[1]))
+        // .attr("r", 3)
+        // .attr("fill", d => "black");
+
+      // Plot nodes for sketches
+      overlayGroup.selectAll(".important-node")
+        .data(sketchNodes)
         .enter()
         .append("circle")
         .attr("class", "important-node")
         .attr("cx", d => xScale(graph.node(d)[0]))
         .attr("cy", d => yScale(graph.node(d)[1]))
-        .attr("r", 5)
-        .attr("fill", d =>  "black");
+        .attr("r", 3)
+        .attr("fill", d => "black");
     }).catch(error => console.error("Failed to load GeoJSON:", error));
-  }, [graph, shortestPathEdges, importantNodes, pathColors]);
+  }, [graph, shortestPaths, sketchNodes, pathColors]);
 
   return <svg ref={svgRef}></svg>;
 };
@@ -111,46 +133,50 @@ export const Spacing: React.FunctionComponent = (props) => {
         }
 
         const graph = readGraphFromFile(graphData);
-        checkGraphConnectivity(graph);
-
         const sketches = toSketchArray(sketch);
-        if (sketches.length < 2) {
-          return <p>Not enough polygons in the sketch collection</p>;
-        }
 
-        // Calculate centroids and sort sketches from north to south
+        // Calculate centroids
         const sketchesWithCentroids = sketches.map(sketch => ({
           sketch,
           centroid: turf.centroid(sketch).geometry.coordinates as [number, number]
         }));
 
+        // Sort sketches by latitude
         sketchesWithCentroids.sort((a, b) => b.centroid[1] - a.centroid[1]);
 
         let allEdges: { source: string; target: string; distance: number }[] = [];
-        let importantNodes: string[] = [];
-        let pos0 = sketchesWithCentroids[0].centroid;
+        let sketchNodes: string[] = [];
         const pathColors: { [key: string]: string } = {};
 
-        for (let i = 1; i < sketchesWithCentroids.length; i++) {
-          const pos1 = sketchesWithCentroids[i].centroid;
-          const { path, edges, totalDistance } = findShortestPath(graph, pos0, pos1);
-          allEdges = allEdges.concat(edges.map(edge => ({ ...edge, distance: totalDistance })));
-          importantNodes.push(path[0], path[path.length - 1]);
-          pos0 = pos1;
+        // Start with northernmost sketch
+        let currentPos = sketchesWithCentroids[0].centroid;
+        let remainingSketches = sketchesWithCentroids.slice(1);
 
-          const color = totalDistance < 100 ? "green" : "red";
-          edges.forEach(edge => {
-            pathColors[`${edge.source}-${edge.target}`] = color;
-            pathColors[edge.source] = color;
-            pathColors[edge.target] = color;
-          });
+        while (remainingSketches.length > 0) {
+          // Find the closest unvisited sketch
+          const closestSketch = remainingSketches.reduce((closest, sketch) => {
+            const distance = turf.distance(turf.point(currentPos), turf.point(sketch.centroid));
+            return distance < closest.distance ? { sketch, distance } : closest;
+          }, { sketch: remainingSketches[0], distance: Infinity });
+
+          const pos1 = closestSketch.sketch.centroid;
+          const { path, edges, totalDistance } = findShortestPath(graph, currentPos, pos1);
+
+          allEdges = allEdges.concat(edges.map(edge => ({ ...edge, distance: totalDistance })));
+          sketchNodes.push(path[0], path[path.length - 1]);
+
+          const color = totalDistance < 62 ? "green" : "red";
+          edges.forEach(edge => pathColors[`${edge.source}-${edge.target}`] = color);
+
+          currentPos = pos1;
+          remainingSketches = remainingSketches.filter(sketch => sketch !== closestSketch.sketch);
         }
 
         return (
           <ReportError>
             <Card>
               {graphData ? 
-                <GraphPlotter graph={graph} shortestPathEdges={allEdges} importantNodes={importantNodes} pathColors={pathColors} /> 
+                <ReplicateMap graph={graph} shortestPaths={allEdges} sketchNodes={sketchNodes} pathColors={pathColors} /> 
                 : <p>Loading graph...</p>}            
             </Card>
           </ReportError>
@@ -160,7 +186,7 @@ export const Spacing: React.FunctionComponent = (props) => {
   );
 };
 
-// Function to find the closest node to a given position
+// Finds closest node to a given position
 function findClosestNode(graph: Graph, pos: [number, number]): string {
   let closestNode = '';
   let minDistance = Infinity;
@@ -177,7 +203,7 @@ function findClosestNode(graph: Graph, pos: [number, number]): string {
   return closestNode;
 }
 
-
+// Finds shortest path between two nodes using Dijkstra's algorithm
 function findShortestPath(graph: Graph, pos0: [number, number], pos1: [number, number]): { path: string[], edges: { source: string, target: string }[], totalDistance: number } {
   const node0 = findClosestNode(graph, pos0);
   const node1 = findClosestNode(graph, pos1);
@@ -185,9 +211,13 @@ function findShortestPath(graph: Graph, pos0: [number, number], pos1: [number, n
   console.log(`Closest node to pos0 (${pos0}) is ${node0}`);
   console.log(`Closest node to pos1 (${pos1}) is ${node1}`);
 
+  // If sketches are connected/overlapping
+  if(node0 === node1) {
+    return {path: [node0], edges: [], totalDistance: 0};
+  }
+
   // Using Dijkstra's algorithm to find the shortest path
   const path = alg.dijkstra(graph, node0, edge => graph.edge(edge));
-  console.log(path);
   if (!path[node1].predecessor) {
     throw new Error(`No path from ${node0} to ${node1}`);
   }
@@ -234,26 +264,4 @@ function readGraphFromFile(graphData: any): Graph {
   }
 
   return graph;
-}
-
-function checkGraphConnectivity(graph) {
-  const nodes = graph.nodes();
-  const visited = new Set();
-
-  function dfs(node) {
-    visited.add(node);
-    graph.successors(node).forEach(successor => {
-      if (!visited.has(successor)) {
-        dfs(successor);
-      }
-    });
-  }
-
-  dfs(nodes[0]);
-
-  if (visited.size !== nodes.length) {
-    console.log('The graph has disconnected components.');
-  } else {
-    console.log('The graph is fully connected.');
-  }
 }
