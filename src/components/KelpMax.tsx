@@ -3,23 +3,33 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  Column,
   LayerToggle,
   ReportError,
   ResultsCard,
+  Table,
   useSketchProperties,
   VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
+  Metric,
+  MetricGroup,
   ReportResult,
   createMetric,
+  flattenBySketchAllClass,
+  keyBy,
   metricsWithSketchId,
+  nestMetrics,
+  percentWithEdge,
   roundDecimal,
   squareMeterToMile,
+  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { genSketchTable } from "../util/genSketchTable.js";
+import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
+import { ReplicateAreaSketchTableStyled } from "../util/genSketchTable.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -297,9 +307,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(data, precalcMetrics, metricGroup, t, {
-                  replicate: true,
-                })}
+                {genSketchTable(data, [overallPrecalc], metricGroup, t)}
               </Collapse>
             )}
 
@@ -328,5 +336,127 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+/**
+ * Creates "Show by Zone" report, with area + percentages
+ * @param data data returned from lambda
+ * @param precalcMetrics metrics from precalc.json
+ * @param metricGroup metric group to get stats for
+ * @param t TFunction
+ */
+export const genSketchTable = (
+  data: ReportResult,
+  precalcMetrics: Metric[],
+  mg: MetricGroup,
+  t: any
+) => {
+  const sketches = toNullSketchArray(data.sketch);
+  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
+  const sketchIds = sketches.map((sk) => sk.properties.id);
+  const sketchMetrics = data.metrics.filter(
+    (m) => m.sketchId && sketchIds.includes(m.sketchId) && m.classId?.endsWith("_br")
+  );
+
+  console.log(precalcMetrics)
+
+  let sumMetrics: Metric[] = [];
+  sketchIds.forEach((sketchId) => {
+      const metrics = sketchMetrics.filter(
+        (m) => m.sketchId === sketchId
+      );
+      const sum = metrics.reduce((acc, cur) => acc + cur.value, 0);
+      sumMetrics.push(
+        createMetric({
+          metricId: mg.metricId,
+          classId: "overall",
+          sketchId,
+          extra: { sketchName: sketchesById[sketchId].properties.name },
+          value: sum,
+        })
+      );
+  });
+
+  console.log(sumMetrics);
+
+  const finalMetrics = [
+    ...sumMetrics,
+    ...toPercentMetric(sumMetrics, precalcMetrics, {
+      metricIdOverride: project.getMetricGroupPercId(mg),
+    }),
+  ];
+
+  const aggMetrics = nestMetrics(finalMetrics, [
+    "sketchId",
+    "metricId",
+  ]);
+  // Use sketch ID for each table row, index into aggMetrics
+  const rows = Object.keys(aggMetrics).map((sketchId) => ({
+    sketchId,
+  }));
+
+  const classColumns: Column<{ sketchId: string }> = {
+        Header: "Kelp Maximum Extent",
+        style: { color: "#777" },
+        columns: [
+          {
+            Header: t("Replicate"),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][
+                  mg.metricId
+                ][0].value;
+              const miVal = squareMeterToMile(value);
+
+              return miVal > 0 ? (
+                <CheckCircleFill size={15} style={{ color: "#78c679" }} />
+              ) : (
+                <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
+              );
+            },
+          },
+          {
+            Header: t("Area"),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][
+                  mg.metricId
+                ][0].value;
+              const miVal = squareMeterToMile(value);
+
+              // If value is nonzero but would be rounded to zero, replace with < 0.1
+              const valDisplay =
+                miVal && miVal < 0.1
+                  ? "< 0.1"
+                  : Number.format(roundDecimal(miVal));
+              return valDisplay + " " + t("mi²");
+            },
+          },
+          {
+            Header: t("% Area"),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][
+                  project.getMetricGroupPercId(mg)
+                ][0].value;
+              return percentWithEdge(isNaN(value) ? 0 : value);
+            },
+          },
+        ],
+      };
+
+  const columns: Column<{ sketchId: string }>[] = [
+    {
+      Header: "MPA",
+      accessor: (row) => sketchesById[row.sketchId].properties.name,
+    },
+    classColumns,
+  ];
+
+  return (
+    <ReplicateAreaSketchTableStyled>
+      <Table columns={columns} data={rows} />
+    </ReplicateAreaSketchTableStyled>
   );
 };
