@@ -1,0 +1,226 @@
+[
+  {
+    "min": -66.36566925048828,
+    "max": 15.361968040466309,
+    "mean": -41.125812841930205,
+    "units": "meters",
+    "sketchName": "Point Buchon SMR - existing (136, 150)"
+  },
+  {
+    "min": -611.4212036132812,
+    "max": 0,
+    "mean": -356.1080154548257,
+    "units": "meters",
+    "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
+  },
+  {
+    "min": 0,
+    "max": 1.854722261428833,
+    "mean": 0.41553640945090187,
+    "units": "meters",
+    "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
+  },
+  {
+    "min": -177.84719848632812,
+    "max": 17.68625259399414,
+    "mean": -49.04192086307718,
+    "units": "meters",
+    "sketchName": "Point Lobos SMR - existing (128, 81)"
+  },
+  {
+    "min": -53.53849792480469,
+    "max": 11.28692626953125,
+    "mean": -40.42838619679748,
+    "units": "meters",
+    "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
+  },
+  {
+    "min": -96.5442886352539,
+    "max": -10.192445755004883,
+    "mean": -40.07901462004146,
+    "units": "meters",
+    "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
+  },
+  {
+    "min": -6.531986713409424,
+    "max": 10.880000114440918,
+    "mean": 0.04477921219601813,
+    "units": "meters",
+    "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
+  },
+  {
+    "min": -56.77117156982422,
+    "max": 7.843928337097168,
+    "mean": -11.613166236560163,
+    "units": "meters",
+    "sketchName": "Asilomar SMR - existing, no change (126, 78)"
+  },
+  {
+    "min": -13.21740436553955,
+    "max": 3.721151828765869,
+    "mean": -4.869358021765947,
+    "units": "meters",
+    "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
+  },
+  {
+    "min": -753.2431640625,
+    "max": 56.39548873901367,
+    "mean": -279.0706061311896,
+    "units": "meters",
+    "sketchName": "Big Creek SMR - existing, no change (131, 85)"
+  },
+  {
+    "min": -1512.8006591796875,
+    "max": 0,
+    "mean": -300.20091717267275,
+    "units": "meters",
+    "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
+  },
+  {
+    "min": -57.53813934326172,
+    "max": 17.32364273071289,
+    "mean": -25.922531817028958,
+    "units": "meters",
+    "sketchName": "Point Sur SMR - existing, no change (129, 83)"
+  },
+  {
+    "min": -239.9467315673828,
+    "max": 6.732436656951904,
+    "mean": -23.47426350802011,
+    "units": "meters",
+    "sketchName": "Carmel Bay SMCA - existing (127, 80)"
+  },
+  {
+    "min": -7.531711578369141,
+    "max": 0.46271368861198425,
+    "mean": -1.3061452074640099,
+    "units": "meters",
+    "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
+  },
+  {
+    "min": -1.587579369544983,
+    "max": 4.79921293258667,
+    "mean": -0.32810801156438313,
+    "units": "meters",
+    "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
+  },
+  {
+    "min": -49.89141845703125,
+    "max": 9.127362251281738,
+    "mean": -23.46271486033799,
+    "units": "meters",
+    "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
+  },
+  {
+    "min": -652.0260009765625,
+    "max": 0,
+    "mean": -162.15271512657043,
+    "units": "meters",
+    "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
+  },
+  {
+    "min": -53.04198455810547,
+    "max": 11.859772682189941,
+    "mean": -19.07026265385743,
+    "units": "meters",
+    "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
+  },
+  {
+    "min": -24.419687271118164,
+    "max": 5.218623161315918,
+    "mean": -10.921934781379479,
+    "units": "meters",
+    "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
+  },
+  {
+    "min": -24.396709442138672,
+    "max": 1.4190593957901,
+    "mean": -9.330099155177486,
+    "units": "meters",
+    "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
+  },
+  {
+    "min": -120.06050109863281,
+    "max": 0,
+    "mean": -90.76618269928025,
+    "units": "meters",
+    "sketchName": "Point Buchon SMCA - existing (135, 151)"
+  },
+  {
+    "min": -10.417581558227539,
+    "max": 12.163945198059082,
+    "mean": -2.1736895759610126,
+    "units": "meters",
+    "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
+  },
+  {
+    "min": -236.40029907226562,
+    "max": 0,
+    "mean": -66.52518516696308,
+    "units": "meters",
+    "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
+  },
+  {
+    "min": -33.709991455078125,
+    "max": 12.596611022949219,
+    "mean": -16.886637691043262,
+    "units": "meters",
+    "sketchName": "Cambria SMCA - existing, no change (133, 89)"
+  },
+  {
+    "min": -53.49116897583008,
+    "max": 4.358945846557617,
+    "mean": -18.236818384976768,
+    "units": "meters",
+    "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
+  },
+  {
+    "min": -44.12103271484375,
+    "max": 10.831074714660645,
+    "mean": -18.149998896698293,
+    "units": "meters",
+    "sketchName": "White Rock SMCA - existing, no change (134, 90)"
+  },
+  {
+    "min": -51.17995834350586,
+    "max": 6.21150541305542,
+    "mean": -33.161907068448464,
+    "units": "meters",
+    "sketchName": "Montara SMR - existing, no change (119,65)"
+  },
+  {
+    "min": -3.6556591987609863,
+    "max": 4.125603675842285,
+    "mean": -0.58063678162913,
+    "units": "meters",
+    "sketchName": "Natural Bridges SMR - existing (46, 69)"
+  },
+  {
+    "min": -587.1735229492188,
+    "max": 0,
+    "mean": -239.53855662795732,
+    "units": "meters",
+    "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
+  },
+  {
+    "min": -106.31562805175781,
+    "max": 0,
+    "mean": -57.94420391225714,
+    "units": "meters",
+    "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
+  },
+  {
+    "min": -66.68660736083984,
+    "max": 16.897552490234375,
+    "mean": -38.41923399798281,
+    "units": "meters",
+    "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
+  },
+  {
+    "min": -1512.8006591796875,
+    "max": 0,
+    "units": "meters",
+    "sketchName": "CentralMPAs",
+    "isCollection": true
+  }
+]
