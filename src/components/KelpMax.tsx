@@ -108,13 +108,13 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
         // Overall / total metrics
         const overallValue = createMetric({
-          ...srValueMetrics[0],
+          ...brValueMetrics[0],
           classId: "overall",
-          value: srValueMetrics.reduce((acc, m) => acc + m.value, 0),
+          value: brValueMetrics.reduce((acc, m) => acc + m.value, 0),
         });
         const overallPrecalc = createMetric({
           classId: "overall",
-          value: precalcMetrics.reduce((acc, m) => acc + m.value, 0),
+          value: precalcMetrics.filter((m) => m.classId?.endsWith("_br")).reduce((acc, m) => acc + m.value, 0),
         });
         const overallPerc = toPercentMetric([overallValue], [overallPrecalc], {
           metricIdOverride: percMetricIdName,

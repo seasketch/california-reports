@@ -91,7 +91,7 @@ export const Bathymetry: React.FunctionComponent = () => {
   );
 };
 
-export const BathyTableStyled = styled.styled(ReportTableStyled)`
+export const BathyTableStyled = styled(ReportTableStyled)`
   & {
     width: 100%;
     overflow-x: scroll;
