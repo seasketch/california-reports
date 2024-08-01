@@ -147,8 +147,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string"
-                            ? parseInt(val) * 40 * 40
-                            : val * 40 * 40
+                            ? parseInt(val) * 38.88490204036146025 * 38.88490204036146025
+                            : val * 38.88490204036146025 * 38.88490204036146025
                         )
                       )
                     ),
@@ -162,7 +162,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   metricId: percMetricIdName,
                   valueFormatter: "percent",
                   chartOptions: { showTitle: true },
-                  width: 40,
+                  width: 38.88490204036146025,
                 },
               ]}
             />
@@ -192,7 +192,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                 const metrics = [...regionValueMetrics, ...regionPercMetrics];
 
                 const columnConfig: ClassTableColumnConfig[] = [
-                  { columnLabel: substrateLabel, type: "class", width: 40 },
+                  { columnLabel: substrateLabel, type: "class", width: 38.88490204036146025 },
                   {
                     columnLabel: withinLabel,
                     type: "metricValue",
@@ -202,8 +202,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                         roundDecimal(
                           squareMeterToMile(
                             typeof val === "string"
-                              ? parseInt(val) * 40 * 40
-                              : val * 40 * 40
+                              ? parseInt(val) * 38.88490204036146025 * 38.88490204036146025
+                              : val * 38.88490204036146025 * 38.88490204036146025
                           ),
                           1,
                           { keepSmallValues: true }
@@ -219,7 +219,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                     metricId: percMetricIdName,
                     valueFormatter: "percent",
                     chartOptions: { showTitle: true },
-                    width: 40,
+                    width: 38.88490204036146025,
                   },
                 ];
 
@@ -389,7 +389,7 @@ export const genSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = squareMeterToMile(value * 40 * 40);
+              const miVal = squareMeterToMile(value * 38.88490204036146025 * 38.88490204036146025);
 
               return miVal > replicateMap[curClass.classId] ||
                 (!replicateMap[curClass.classId] && miVal) ? (
@@ -406,7 +406,7 @@ export const genSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = squareMeterToMile(value * 40 * 40);
+              const miVal = squareMeterToMile(value * 38.88490204036146025 * 38.88490204036146025);
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =
@@ -461,7 +461,7 @@ const HabitatObjectives = (props: {
       );
       if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
 
-      const value = squareMeterToMile(metric.value * 40 * 40);
+      const value = squareMeterToMile(metric.value * 38.88490204036146025 * 38.88490204036146025);
       const replicateValue = replicateMap[curClass.classId];
 
       value > replicateValue || (!replicateValue && value)

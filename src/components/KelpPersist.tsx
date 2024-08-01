@@ -108,7 +108,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: t("Kelp Persistance"),
                   type: "class",
-                  width: 30,
+                  width: 23.21062239466359856,
                 },
                 {
                   columnLabel: withinLabel,
@@ -119,8 +119,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string"
-                            ? parseInt(val) * 30 * 30
-                            : val * 30 * 30
+                            ? parseInt(val) * 23.21062239466359856 * 23.21062239466359856
+                            : val * 23.21062239466359856 * 23.21062239466359856
                         ),
                         2,
                         { keepSmallValues: true }
@@ -163,7 +163,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       columnLabel: t("Kelp (" + curClass.display + ")"),
                       type: "class",
-                      width: 30,
+                      width: 23.21062239466359856,
                     },
                     {
                       columnLabel: withinLabel,
@@ -174,8 +174,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 30 * 30
-                                : val * 30 * 30
+                                ? parseInt(val) * 23.21062239466359856 * 23.21062239466359856
+                                : val * 23.21062239466359856 * 23.21062239466359856
                             ),
                             2,
                             { keepSmallValues: true }
@@ -220,7 +220,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       columnLabel: t("Kelp (" + curClass.display + ")"),
                       type: "class",
-                      width: 30,
+                      width: 23.21062239466359856,
                     },
                     {
                       columnLabel: withinLabel,
@@ -231,8 +231,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 30 * 30
-                                : val * 30 * 30
+                                ? parseInt(val) * 23.21062239466359856 * 23.21062239466359856
+                                : val * 23.21062239466359856 * 23.21062239466359856
                             ),
                             2,
                             { keepSmallValues: true }
@@ -272,7 +272,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   metricGroup,
                   t,
                   {
-                    valueFormatter: (val) => val * 30 * 30,
+                    valueFormatter: (val) => val * 23.21062239466359856 * 23.21062239466359856,
                     replicate: true,
                   }
                 )}
