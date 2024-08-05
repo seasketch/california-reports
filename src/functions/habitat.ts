@@ -33,23 +33,20 @@ export async function habitat(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("habitat");
-
-  const datasourceIds = metricGroup.classes.reduce(
-    (acc, c) =>
-      !c.datasourceId || acc.includes(c.datasourceId)
-        ? acc
-        : [...acc, c.datasourceId],
-    [] as string[]
-  );
+  const geographies = project.geographies;
 
   const metrics = (
     await Promise.all(
-      datasourceIds.map(async (datasourceId) => {
+      geographies.map(async (geography) => {
         const parameters = {
           ...extraParams,
+          geography: geography,
           metricGroup,
-          datasourceId,
         };
+
+        console.log(
+          `Processing metric group: ${metricGroup.metricId} for geography: ${geography.geographyId}`
+        );
 
         return process.env.NODE_ENV === "test"
           ? habitatWorker(sketch, parameters)
@@ -76,7 +73,7 @@ export async function habitat(
 
 export default new GeoprocessingHandler(habitat, {
   title: "habitat",
-  description: "region overlap",
+  description: "habitat overlap",
   timeout: 500, // seconds
   memory: 1024, // megabytes
   executionMode: "async",

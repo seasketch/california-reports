@@ -4,19 +4,22 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
   splitSketchAntimeridian,
-  isRasterDatasource,
   rasterMetrics,
 } from "@seasketch/geoprocessing";
-import bbox from "@turf/bbox";
 import project from "../../project/projectClient.js";
-import { Metric, MetricGroup } from "@seasketch/geoprocessing/client-core";
+import {
+  Geography,
+  Metric,
+  MetricGroup,
+  isRasterDatasource,
+} from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
+import bbox from "@turf/bbox";
 
 /**
- * habitatWorker: A geoprocessing function that calculates overlap metrics
+ * habitat: A geoprocessing function that calculates overlap metrics
  * @param sketch - A sketch or collection of sketches
  * @param extraParams
  * @returns Calculated metrics and a null sketch
@@ -26,17 +29,26 @@ export async function habitatWorker(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: {
+    geography: Geography;
     metricGroup: MetricGroup;
-    datasourceId: string;
   }
 ) {
+  const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
-  const datasourceId = extraParams.datasourceId;
 
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
-  const ds = project.getDatasourceById(datasourceId);
+  if (!metricGroup.datasourceId)
+    throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
+
+  // Clip sketch to geography
+  const clippedSketch = await clipToGeography(splitSketch, geography);
+
+  // Get bounding box of sketch remainder
+  const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
+
+  const ds = project.getDatasourceById(metricGroup.datasourceId);
   if (!isRasterDatasource(ds))
     throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
@@ -48,25 +60,18 @@ export async function habitatWorker(
   // Start analysis when raster load finishes
   const overlapResult = await rasterMetrics(raster, {
     metricId: metricGroup.metricId,
-    feature: splitSketch,
-    ...(ds.measurementType === "quantitative" && { stats: ["valid"] }),
+    feature: clippedSketch,
+    ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
     ...(ds.measurementType === "categorical" && {
       categorical: true,
-      categoryMetricValues: metricGroup.classes
-        .filter((c) => c.datasourceId === datasourceId)
-        .map((c) => c.classId),
+      categoryMetricValues: metricGroup.classes.map((c) => c.classId),
     }),
-    bandMetricProperty: "groupId",
-    bandMetricValues: [
-      metricGroup.classes.filter((c) => c.datasourceId === datasourceId)[0]
-        .classKey!,
-    ],
   });
 
   return overlapResult.map(
     (metrics): Metric => ({
       ...metrics,
-      geographyId: "world",
+      geographyId: geography.geographyId,
     })
   );
 }
@@ -75,7 +80,7 @@ export default new GeoprocessingHandler(habitatWorker, {
   title: "habitatWorker",
   description: "",
   timeout: 500, // seconds
-  memory: 1024, // megabytes
+  memory: 4096, // megabytes
   executionMode: "sync",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
