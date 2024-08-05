@@ -167,6 +167,7 @@
     "metricId": "habitat",
     "type": "areaOverlap",
     "datasourceId": "hab_ca",
+    "layerId": "caliHab30",
     "classes": [
       {
         "classId": "0",

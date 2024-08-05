@@ -3,9 +3,11 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  LayerToggle,
   ReportError,
   ResultsCard,
   useSketchProperties,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
@@ -91,6 +93,12 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                 California's territorial sea.
               </Trans>
             </p>
+
+            <LayerToggle
+              label={t("Show Seafloor Habitat On Map")}
+              layerId={metricGroup.layerId}
+            />
+            <VerticalSpacer />
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
