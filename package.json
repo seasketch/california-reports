@@ -45,6 +45,7 @@
     "url": "geoprocessing url"
   },
   "dependencies": {
+    "@aws-sdk/util-stream": "^3.374.0",
     "@turf/area": "7.0.0",
     "@turf/bbox": "7.0.0",
     "@turf/bbox-clip": "7.0.0",
@@ -68,7 +69,7 @@
   "devDependencies": {
     "@babel/cli": "^7.24.5",
     "@babel/plugin-syntax-import-attributes": "^7.24.1",
-    "@seasketch/geoprocessing": "7.0.0-experimental-split-one.9",
+    "@seasketch/geoprocessing": "7.0.0-experimental-aws-sdk-v3.26",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",

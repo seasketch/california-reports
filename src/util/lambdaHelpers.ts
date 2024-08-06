@@ -4,6 +4,11 @@ import {
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
+  InvokeCommand,
+  LambdaClient,
+  InvocationResponse,
+} from "@aws-sdk/client-lambda";
+import {
   Metric,
   Sketch,
   SketchCollection,
@@ -14,7 +19,6 @@ import {
   GeoprocessingRequestModel,
   isMetricArray,
 } from "@seasketch/geoprocessing/client-core";
-import awsSdk from "aws-sdk";
 import gp from "../../project/geoprocessing.json";
 import geobuf from "geobuf";
 import Pbf from "pbf";
@@ -34,7 +38,7 @@ export async function runLambdaWorker(
   parameters = {},
   functionName: string,
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
-): Promise<awsSdk.Lambda.InvocationResponse> {
+): Promise<InvocationResponse> {
   // Create cache key for this task
   const cacheKey = genTaskCacheKey(sketch.properties, {
     cacheId: `${JSON.stringify(parameters)}`,
@@ -85,27 +89,29 @@ export async function runLambdaWorker(
     estimate: 2,
   };
 
-  // Run lambda
-  const Lambda = new awsSdk.Lambda();
-  return Lambda.invoke({
-    FunctionName: `gp-${project.package.name}-sync-${functionName}`,
-    ClientContext: Buffer.from(JSON.stringify(task)).toString("base64"),
-    InvocationType: "RequestResponse",
-    Payload: payload,
-  }).promise();
+  const client = new LambdaClient({});
+  return client.send(
+    new InvokeCommand({
+      FunctionName: `gp-${project.package.name}-sync-${functionName}`,
+      ClientContext: Buffer.from(JSON.stringify(task)).toString("base64"),
+      InvocationType: "RequestResponse",
+      Payload: payload,
+    })
+  );
 }
 
 /**
  * Parses lambda worker response
  */
 export function parseLambdaResponse(
-  lambdaResult: awsSdk.Lambda.InvocationResponse
+  lambdaResult: InvocationResponse
 ): Metric[] {
   console.log("lambdaResult", JSON.stringify(lambdaResult, null, 2));
   if (lambdaResult.StatusCode !== 200)
     throw Error(`Report error: ${JSON.stringify(lambdaResult.Payload)}`);
+  if (!lambdaResult.Payload) throw Error("No payload in lambda response");
 
-  const payload = JSON.parse(lambdaResult.Payload as string);
+  const payload = JSON.parse(Buffer.from(lambdaResult.Payload).toString());
 
   if (payload.statusCode !== 200)
     throw Error(`Report error: ${JSON.stringify(JSON.parse(payload.body))}`);
@@ -117,6 +123,6 @@ export function parseLambdaResponse(
     (parsedResult.length > 0 && !isMetricArray(parsedResult))
   )
     throw Error("Not metric array", parsedResult);
-    console.log("Parsed metrics:", JSON.stringify(parsedResult))
+  console.log("Parsed metrics:", JSON.stringify(parsedResult));
   return parsedResult;
 }
