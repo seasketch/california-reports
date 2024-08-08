@@ -137,7 +137,7 @@
     "datasourceId": "bioregions",
     "geo_type": "vector",
     "formats": ["fgb"],
-    "precalc": true,
+    "precalc": false,
     "layerName": "MAN_CA_MPA_BioRegions",
     "classKeys": ["NAME"],
     "created": "2024-05-28T18:42:44.795Z",
