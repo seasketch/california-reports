@@ -12,68 +12,6 @@
     ]
   },
   {
-    "metricId": "regions",
-    "type": "areaOverlap",
-    "layerId": "Io5IzPfsL",
-    "classes": [
-      {
-        "classId": "North Coast",
-        "classKey": "NAME",
-        "display": "North Coast",
-        "datasourceId": "study_regions"
-      },
-      {
-        "classId": "North Central Coast",
-        "classKey": "NAME",
-        "display": "North Central Coast",
-        "datasourceId": "study_regions"
-      },
-      {
-        "classId": "Central Coast",
-        "classKey": "NAME",
-        "display": "Central Coast",
-        "datasourceId": "study_regions"
-      },
-      {
-        "classId": "South Coast",
-        "classKey": "NAME",
-        "display": "South Coast",
-        "datasourceId": "study_regions"
-      },
-      {
-        "classId": "San Francisco Bay",
-        "classKey": "NAME",
-        "display": "San Francisco Bay",
-        "datasourceId": "study_regions"
-      }
-    ]
-  },
-  {
-    "metricId": "bioregions",
-    "type": "areaOverlap",
-    "layerId": "TAckL4LGM",
-    "classes": [
-      {
-        "classId": "North Coast",
-        "classKey": "NAME",
-        "display": "North Coast",
-        "datasourceId": "bioregions"
-      },
-      {
-        "classId": "Central Coast",
-        "classKey": "NAME",
-        "display": "Central Coast",
-        "datasourceId": "bioregions"
-      },
-      {
-        "classId": "South Coast",
-        "classKey": "NAME",
-        "display": "South Coast",
-        "datasourceId": "bioregions"
-      }
-    ]
-  },
-  {
     "metricId": "kelpMax",
     "type": "areaOverlap",
     "layerId": "kx7B7uIAa",
