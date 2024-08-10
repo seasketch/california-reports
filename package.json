@@ -48,7 +48,7 @@
     "@aws-sdk/util-stream": "^3.374.0",
     "@turf/turf": "7.1.0",
     "@types/geobuf": "^3.0.4",
-    "geoblaze": "2.6.1",
+    "geoblaze": "2.8.0",
     "geobuf": "^3.0.2",
     "geojson-antimeridian-cut": "^0.1.0",
     "i18next-browser-languagedetector": "^8.0.0",

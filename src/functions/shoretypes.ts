@@ -47,9 +47,9 @@ export async function shoretypes(
               classId: curClass.classId,
             };
 
-            console.log(
-              `Processing classId: ${curClass.classId} for geography: ${geography}`
-            );
+            // console.log(
+            //   `Processing classId: ${curClass.classId} for geography: ${geography}`
+            // );
 
             return process.env.NODE_ENV === "test"
               ? shoretypesWorker(sketch, parameters)
@@ -62,7 +62,7 @@ export async function shoretypes(
           })
         );
 
-        console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
+        // console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
 
         return classMetrics.flat();
       })
@@ -74,7 +74,7 @@ export async function shoretypes(
         Metric[]
       >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as awsSdk.Lambda.InvocationResponse)), []);
 
-    console.log("Final metrics:", metrics);
+    // console.log("Final metrics:", metrics);
 
     return {
       metrics: sortMetrics(rekeyMetrics(metrics)),
