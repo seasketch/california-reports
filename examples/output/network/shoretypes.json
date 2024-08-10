@@ -422,7 +422,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 18916.591957,
+      "value": 18916.361755,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -445,7 +445,7 @@
       "classId": "rocky_shores",
       "sketchId": "29484",
       "groupId": null,
-      "value": 6853.071805,
+      "value": 6852.841603,
       "extra": {
         "sketchName": "split"
       }
@@ -1502,7 +1502,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 42838.402246,
+      "value": 42838.402245,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -1626,7 +1626,7 @@
       "classId": "beaches",
       "sketchId": "29481",
       "groupId": null,
-      "value": 5342.66379,
+      "value": 5339.14719,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -1637,7 +1637,7 @@
       "classId": "beaches",
       "sketchId": "29482",
       "groupId": null,
-      "value": 15815.865764,
+      "value": 15812.604086,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -1660,7 +1660,7 @@
       "classId": "beaches",
       "sketchId": "29484",
       "groupId": null,
-      "value": 10473.201974,
+      "value": 10473.456896,
       "extra": {
         "sketchName": "split"
       }
@@ -1761,7 +1761,7 @@
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
-      "value": 32318.60948,
+      "value": 32307.222346,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -1772,7 +1772,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 42835.744548,
+      "value": 42822.162063,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -1795,7 +1795,7 @@
       "classId": "rocky_shores",
       "sketchId": "29484",
       "groupId": null,
-      "value": 10517.135068,
+      "value": 10514.939716,
       "extra": {
         "sketchName": "split"
       }
@@ -1907,7 +1907,7 @@
       "classId": "beaches",
       "sketchId": "29482",
       "groupId": null,
-      "value": 43274.584078,
+      "value": 43274.584079,
       "extra": {
         "sketchName": "network",
         "isCollection": true

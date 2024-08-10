@@ -17,7 +17,7 @@
       "classId": "kelp_max_central_br",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 13104915.12631,
+      "value": 13104899.187634,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -29,7 +29,7 @@
       "classId": "kelp_max_central_br",
       "sketchId": "29483",
       "groupId": "band-0",
-      "value": 8934356.377059,
+      "value": 8932854.962635,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -40,7 +40,7 @@
       "classId": "kelp_max_central_br",
       "sketchId": "29484",
       "groupId": "band-0",
-      "value": 4170558.749251,
+      "value": 4172044.224999,
       "extra": {
         "sketchName": "split"
       }
@@ -62,7 +62,7 @@
       "classId": "kelp_max_central_sr",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 13228706.134418,
+      "value": 13218144.944167,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -74,7 +74,7 @@
       "classId": "kelp_max_central_sr",
       "sketchId": "29483",
       "groupId": "band-0",
-      "value": 9074037.389426,
+      "value": 9066494.362683,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -85,7 +85,7 @@
       "classId": "kelp_max_central_sr",
       "sketchId": "29484",
       "groupId": "band-0",
-      "value": 4154668.744993,
+      "value": 4151650.581484,
       "extra": {
         "sketchName": "split"
       }
@@ -231,7 +231,7 @@
       "classId": "kelp_max_south_br",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 1017921.012223,
+      "value": 1019568.077586,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -242,7 +242,7 @@
       "classId": "kelp_max_south_br",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 9139876.53208,
+      "value": 9136581.787353,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -265,7 +265,7 @@
       "classId": "kelp_max_south_br",
       "sketchId": "29484",
       "groupId": "band-0",
-      "value": 8121955.519857,
+      "value": 8117013.709767,
       "extra": {
         "sketchName": "split"
       }
@@ -276,7 +276,7 @@
       "classId": "kelp_max_south_sr",
       "sketchId": "29481",
       "groupId": "band-0",
-      "value": 1017921.012223,
+      "value": 1019568.077586,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -287,7 +287,7 @@
       "classId": "kelp_max_south_sr",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 9139876.53208,
+      "value": 9136581.787353,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -310,7 +310,7 @@
       "classId": "kelp_max_south_sr",
       "sketchId": "29484",
       "groupId": "band-0",
-      "value": 8121955.519857,
+      "value": 8117013.709767,
       "extra": {
         "sketchName": "split"
       }

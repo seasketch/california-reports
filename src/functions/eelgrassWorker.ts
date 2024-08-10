@@ -17,7 +17,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/turf";
 
 /**
  * eelgrass: A geoprocessing function that calculates overlap metrics

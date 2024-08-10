@@ -15,8 +15,8 @@ import {
   isRasterDatasource,
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
-import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
-import bbox from "@turf/bbox";
+import { loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { bbox } from "@turf/turf";
 
 /**
  * substrate: A geoprocessing function that calculates overlap metrics

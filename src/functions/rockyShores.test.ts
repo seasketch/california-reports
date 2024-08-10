@@ -8,7 +8,7 @@ import {
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import { test, expect } from "vitest";
 import projectClient from "../../project/projectClient.js";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/turf";
 
 test("rockyShores", async () => {
   const ds = projectClient.getDatasourceById("rocky_shores");

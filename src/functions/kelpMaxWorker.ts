@@ -9,7 +9,7 @@ import {
   isRasterDatasource,
   rasterMetrics,
 } from "@seasketch/geoprocessing";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
 import { Metric, MetricGroup } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";

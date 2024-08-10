@@ -14,7 +14,7 @@ import {
   MetricGroup,
 } from "@seasketch/geoprocessing";
 import { getFeatures } from "@seasketch/geoprocessing/dataproviders";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { getGroup, groups } from "../util/getGroup.js";
