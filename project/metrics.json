@@ -14,42 +14,12 @@
   {
     "metricId": "kelpMax",
     "type": "areaOverlap",
+    "datasourceId": "kelpMax",
     "layerId": "kx7B7uIAa",
     "classes": [
       {
-        "classId": "kelp_max_north_sr",
-        "display": "North Planning Region",
-        "datasourceId": "kelp_max_north_sr"
-      },
-      {
-        "classId": "kelp_max_northcentral_sr",
-        "display": "North Central Planning Region",
-        "datasourceId": "kelp_max_northcentral_sr"
-      },
-      {
-        "classId": "kelp_max_central_sr",
-        "display": "Central Planning Region",
-        "datasourceId": "kelp_max_central_sr"
-      },
-      {
-        "classId": "kelp_max_south_sr",
-        "display": "South Planning Region",
-        "datasourceId": "kelp_max_south_sr"
-      },
-      {
-        "classId": "kelp_max_north_br",
-        "display": "North Bioregion",
-        "datasourceId": "kelp_max_north_br"
-      },
-      {
-        "classId": "kelp_max_central_br",
-        "display": "Central Bioregion",
-        "datasourceId": "kelp_max_central_br"
-      },
-      {
-        "classId": "kelp_max_south_br",
-        "display": "South Bioregion",
-        "datasourceId": "kelp_max_south_br"
+        "classId": "kelpMax",
+        "display": "Kelp (Maximum)"
       }
     ]
   },

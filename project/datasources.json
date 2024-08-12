@@ -160,90 +160,6 @@
     "explodeMulti": false
   },
   {
-    "datasourceId": "kelp_max_central_sr",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T17:51:20.727Z",
-    "lastUpdated": "2024-06-05T17:51:20.727Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_central.tif"
-  },
-  {
-    "datasourceId": "kelp_max_north_sr",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T17:51:58.075Z",
-    "lastUpdated": "2024-06-05T17:51:58.075Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_north.tif"
-  },
-  {
-    "datasourceId": "kelp_max_south_sr",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T17:52:21.104Z",
-    "lastUpdated": "2024-06-05T17:52:21.104Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_south.tif"
-  },
-  {
-    "datasourceId": "kelp_max_northcentral_sr",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T17:52:40.651Z",
-    "lastUpdated": "2024-06-05T17:52:40.651Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/study_regions/kelp_sr_northcentral.tif"
-  },
-  {
-    "datasourceId": "kelp_max_central_br",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T21:32:10.673Z",
-    "lastUpdated": "2024-06-05T21:32:10.673Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/bioregions/kelp_br_central.tif"
-  },
-  {
-    "datasourceId": "kelp_max_north_br",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T21:32:26.083Z",
-    "lastUpdated": "2024-06-05T21:32:26.083Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/bioregions/kelp_br_north.tif"
-  },
-  {
-    "datasourceId": "kelp_max_south_br",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 0,
-    "created": "2024-06-05T21:32:43.330Z",
-    "lastUpdated": "2024-06-05T21:32:43.330Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/bioregions/kelp_br_south.tif"
-  },
-  {
     "datasourceId": "rock_islands",
     "geo_type": "vector",
     "formats": ["fgb"],
@@ -498,5 +414,17 @@
     "created": "2024-08-05T16:20:51.668Z",
     "lastUpdated": "2024-08-05T16:20:51.668Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca/hab_ca30.tif"
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/kelpMax.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "kelpMax",
+    "formats": ["tif"],
+    "created": "2024-08-12T20:59:52.498Z",
+    "lastUpdated": "2024-08-12T20:59:52.498Z",
+    "noDataValue": 65535,
+    "measurementType": "quantitative",
+    "precalc": true
   }
 ]
