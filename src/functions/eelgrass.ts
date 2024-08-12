@@ -16,7 +16,7 @@ import {
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import awsSdk from "aws-sdk";
+import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { eelgrassWorker } from "./eelgrassWorker.js";
 
 /**
@@ -33,7 +33,7 @@ export async function eelgrass(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("eelgrass");
-  const geographies = project.geographies.filter((g)=> !g.geographyId?.endsWith("_sr"));
+  const geographies = project.geographies;
 
   const metrics = (
     await Promise.all(
@@ -55,9 +55,7 @@ export async function eelgrass(
       metrics.concat(
         process.env.NODE_ENV === "test"
           ? (lambdaResult as Metric[])
-          : parseLambdaResponse(
-              lambdaResult as awsSdk.Lambda.InvocationResponse
-            )
+          : parseLambdaResponse(lambdaResult as InvocationResponse)
       ),
     []
   );

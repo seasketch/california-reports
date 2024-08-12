@@ -29,7 +29,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 3805676.3767751427
+    "value": 3763293.233928006
   },
   {
     "geographyId": "central_br",
@@ -149,7 +149,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 49334
+    "value": 49331
   },
   {
     "geographyId": "central_br",
@@ -442,6 +442,14 @@
   {
     "geographyId": "central_sr",
     "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3740087.9040887626
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
@@ -550,6 +558,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 202
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 49328
   },
   {
     "geographyId": "central_sr",
@@ -853,7 +869,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 34199751.96725338
+    "value": 34179756.129310615
   },
   {
     "geographyId": "north_br",
@@ -1274,6 +1290,14 @@
   {
     "geographyId": "north_sr",
     "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 23033611.30108229
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
@@ -1382,6 +1406,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 244
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 775
   },
   {
     "geographyId": "north_sr",
@@ -1677,7 +1709,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 12448183.43930176
+    "value": 11169350.1581
   },
   {
     "geographyId": "northcentral_sr",
@@ -2093,7 +2125,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 21164261.392640315
+    "value": 20498120.534451768
   },
   {
     "geographyId": "south_br",
@@ -2506,6 +2538,14 @@
   {
     "geographyId": "south_sr",
     "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 20498120.534451768
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
@@ -2614,6 +2654,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 763
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 8889
   },
   {
     "geographyId": "south_sr",
@@ -2933,7 +2981,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 63466949.421357065
+    "value": 58441169.89768935
   },
   {
     "geographyId": "world",

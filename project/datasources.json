@@ -446,7 +446,7 @@
     "layerName": "south_sr_extent",
     "classKeys": [],
     "created": "2024-06-27T18:44:33.505Z",
-    "lastUpdated": "2024-06-27T18:44:33.505Z",
+    "lastUpdated": "2024-08-12T18:18:34.820Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/south_sr_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -488,15 +488,15 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/KelpPersistence/lookup/lookup30.tif"
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca/hab_ca30.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "hab_ca",
+    "geo_type": "raster",
     "formats": ["tif"],
+    "precalc": true,
+    "measurementType": "categorical",
+    "band": 1,
+    "noDataValue": -32768,
     "created": "2024-08-05T16:20:51.668Z",
     "lastUpdated": "2024-08-05T16:20:51.668Z",
-    "noDataValue": -32768,
-    "measurementType": "categorical",
-    "precalc": true
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca/hab_ca30.tif"
   }
 ]
