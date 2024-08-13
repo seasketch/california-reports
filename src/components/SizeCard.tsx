@@ -43,7 +43,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   // Planning regions total area
   const boundaryTotalMetrics = project
     .getPrecalcMetrics()
-    .filter((m) => m.metricId === "area" && m.classId === "study_regions-total")
+    .filter((m) => m.metricId === "area" && m.classId === "clipLayer-total")
     .map(
       (metric): Metric => ({
         ...metric,
