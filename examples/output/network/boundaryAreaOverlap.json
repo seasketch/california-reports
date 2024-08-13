@@ -276,7 +276,7 @@
       "classId": "state_waters",
       "sketchId": "29481",
       "groupId": null,
-      "value": 186595156.004291,
+      "value": 186595109.415119,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -287,7 +287,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": null,
-      "value": 294358419.33103,
+      "value": 294358387.393138,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -310,7 +310,7 @@
       "classId": "state_waters",
       "sketchId": "29484",
       "groupId": null,
-      "value": 107763263.326739,
+      "value": 107763277.978019,
       "extra": {
         "sketchName": "split"
       }
