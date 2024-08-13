@@ -14,7 +14,7 @@ import {
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import awsSdk from "aws-sdk";
+import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { boundaryAreaOverlapWorker } from "./boundaryAreaOverlapWorker.js";
 
 export async function boundaryAreaOverlap(
@@ -50,9 +50,7 @@ export async function boundaryAreaOverlap(
       metrics.concat(
         process.env.NODE_ENV === "test"
           ? (lambdaResult as Metric[])
-          : parseLambdaResponse(
-              lambdaResult as awsSdk.Lambda.InvocationResponse
-            )
+          : parseLambdaResponse(lambdaResult as InvocationResponse)
       ),
     []
   );

@@ -18,6 +18,7 @@ import {
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
 import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { eelgrassWorker } from "./eelgrassWorker.js";
+import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
 /**
  * eelgrass: A geoprocessing function that calculates overlap metrics
@@ -33,7 +34,9 @@ export async function eelgrass(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("eelgrass");
-  const geographies = project.geographies;
+  const geographies = project.geographies.filter(
+    (g) => g.geographyId !== "world"
+  );
 
   const metrics = (
     await Promise.all(
@@ -61,7 +64,12 @@ export async function eelgrass(
   );
 
   return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
+    metrics: sortMetrics(
+      rekeyMetrics([
+        ...metrics,
+        ...genWorldMetrics(sketch, metrics, metricGroup),
+      ])
+    ),
     sketch: toNullSketch(sketch, true),
   };
 }

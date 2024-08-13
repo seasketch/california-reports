@@ -18,6 +18,7 @@ import {
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
 import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { kelpMaxWorker } from "./kelpMaxWorker.js";
+import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
 /**
  * kelpMax: A geoprocessing function that calculates overlap metrics
@@ -33,7 +34,9 @@ export async function kelpMax(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("kelpMax");
-  const geographies = project.geographies;
+  const geographies = project.geographies.filter(
+    (g) => g.geographyId !== "world"
+  );
 
   const metrics = (
     await Promise.all(
@@ -64,7 +67,12 @@ export async function kelpMax(
   );
 
   return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
+    metrics: sortMetrics(
+      rekeyMetrics([
+        ...metrics,
+        ...genWorldMetrics(sketch, metrics, metricGroup),
+      ])
+    ),
     sketch: toNullSketch(sketch, true),
   };
 }

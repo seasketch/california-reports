@@ -332,7 +332,7 @@
       "classId": "kelpMax",
       "sketchId": "29482",
       "groupId": "band-0",
-      "value": 22416883.905256,
+      "value": 22416883.905257,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -355,7 +355,7 @@
       "classId": "kelpMax",
       "sketchId": "29484",
       "groupId": "band-0",
-      "value": 12305269.266085,
+      "value": 12305269.266084999,
       "extra": {
         "sketchName": "split"
       }
