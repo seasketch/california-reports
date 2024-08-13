@@ -1626,7 +1626,7 @@
       "classId": "beaches",
       "sketchId": "29481",
       "groupId": null,
-      "value": 5342.66379,
+      "value": 5342.363057,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -1637,7 +1637,7 @@
       "classId": "beaches",
       "sketchId": "29482",
       "groupId": null,
-      "value": 15815.865764,
+      "value": 15816.42907,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -1660,7 +1660,7 @@
       "classId": "beaches",
       "sketchId": "29484",
       "groupId": null,
-      "value": 10473.201974,
+      "value": 10474.066012,
       "extra": {
         "sketchName": "split"
       }
@@ -1761,7 +1761,7 @@
       "classId": "rocky_shores",
       "sketchId": "29481",
       "groupId": null,
-      "value": 32318.60948,
+      "value": 32318.943768,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -1772,7 +1772,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 42835.744548,
+      "value": 42838.402246,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -1795,7 +1795,7 @@
       "classId": "rocky_shores",
       "sketchId": "29484",
       "groupId": null,
-      "value": 10517.135068,
+      "value": 10519.458477,
       "extra": {
         "sketchName": "split"
       }

@@ -388,7 +388,7 @@
     "band": 1,
     "noDataValue": -9999,
     "created": "2024-07-22T18:55:43.392Z",
-    "lastUpdated": "2024-07-23T18:40:55.538Z",
+    "lastUpdated": "2024-08-13T18:08:51.607Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate_clipped.tif"
   },
   {
@@ -416,15 +416,15 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca/hab_ca30.tif"
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/kelpMax.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "kelpMax",
+    "geo_type": "raster",
     "formats": ["tif"],
+    "precalc": true,
+    "measurementType": "quantitative",
+    "band": 1,
+    "noDataValue": 65535,
     "created": "2024-08-12T20:59:52.498Z",
     "lastUpdated": "2024-08-12T20:59:52.498Z",
-    "noDataValue": 65535,
-    "measurementType": "quantitative",
-    "precalc": true
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/kelpMax.tif"
   }
 ]
