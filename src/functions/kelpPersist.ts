@@ -47,10 +47,6 @@ export async function kelpPersist(
           metricGroup,
         };
 
-        console.log(
-          `Processing metric group: ${metricGroup.metricId} for geography: ${geography.geographyId}`
-        );
-
         return process.env.NODE_ENV === "test"
           ? kelpPersistWorker(sketch, parameters)
           : runLambdaWorker(sketch, parameters, "kelpPersistWorker", request);

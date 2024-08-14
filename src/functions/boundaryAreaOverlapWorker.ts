@@ -35,7 +35,6 @@ export async function boundaryAreaOverlapWorker(
     (c) => c.classId === extraParams.classId
   );
 
-  console.log(geography.geographyId, curClass?.classId);
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
@@ -72,8 +71,6 @@ export async function boundaryAreaOverlapWorker(
       geographyId: geography.geographyId,
     })
   );
-
-  console.log(JSON.stringify(metrics));
 
   if (geography.geographyId === "world") {
     // Generate area metrics grouped by zone type, with area overlap within zones removed

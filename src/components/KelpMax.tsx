@@ -63,7 +63,6 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
           idProperty: "geographyId",
         });
         const metrics = [...valueMetrics, ...percentMetrics];
-        console.log(metrics);
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);

@@ -50,10 +50,6 @@ export async function shoretypes(
               classId: curClass.classId,
             };
 
-            // console.log(
-            //   `Processing classId: ${curClass.classId} for geography: ${geography}`
-            // );
-
             return process.env.NODE_ENV === "test"
               ? shoretypesWorker(sketch, parameters)
               : runLambdaWorker(

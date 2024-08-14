@@ -106,7 +106,6 @@ export async function runLambdaWorker(
 export function parseLambdaResponse(
   lambdaResult: InvocationResponse
 ): Metric[] {
-  // console.log("lambdaResult", JSON.stringify(lambdaResult, null, 2));
   if (lambdaResult.StatusCode !== 200)
     throw Error(`Report error: ${JSON.stringify(lambdaResult.Payload)}`);
   if (!lambdaResult.Payload) throw Error("No payload in lambda response");
@@ -117,12 +116,10 @@ export function parseLambdaResponse(
     throw Error(`Report error: ${JSON.stringify(JSON.parse(payload.body))}`);
 
   const parsedResult = JSON.parse(payload.body).data;
-  // console.log("parsedResult", JSON.stringify(parsedResult, null, 2));
   if (
     !Array.isArray(parsedResult) ||
     (parsedResult.length > 0 && !isMetricArray(parsedResult))
   )
     throw Error("Not metric array", parsedResult);
-  // console.log("Parsed metrics:", JSON.stringify(parsedResult));
   return parsedResult;
 }

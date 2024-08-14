@@ -255,9 +255,6 @@ export const genClassTableGrouped = (
     max: 100,
   };
 
-  console.log(totalsByClass);
-  console.log(config);
-
   const targetLabel = t("Target");
 
   return (

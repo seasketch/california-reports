@@ -47,10 +47,6 @@ export async function habitat(
           metricGroup,
         };
 
-        console.log(
-          `Processing metric group: ${metricGroup.metricId} for geography: ${geography.geographyId}`
-        );
-
         return process.env.NODE_ENV === "test"
           ? habitatWorker(sketch, parameters)
           : runLambdaWorker(sketch, parameters, "habitatWorker", request);
