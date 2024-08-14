@@ -29,7 +29,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 3805676.3767751427
+    "value": 3763293.233928006
   },
   {
     "geographyId": "central_br",
@@ -38,6 +38,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 32379158.534678705
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 105906837.780095
   },
   {
     "geographyId": "central_br",
@@ -149,7 +157,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 49334
+    "value": 49331
   },
   {
     "geographyId": "central_br",
@@ -158,6 +166,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 62
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 84132952
   },
   {
     "geographyId": "central_br",
@@ -241,6 +257,14 @@
   },
   {
     "geographyId": "central_br",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 25484182
+  },
+  {
+    "geographyId": "central_br",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -302,6 +326,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1016215
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 125235
   },
   {
     "geographyId": "central_br",
@@ -442,10 +474,26 @@
   {
     "geographyId": "central_sr",
     "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 3740087.9040887626
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 22242788.736811884
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 105229460.233388
   },
   {
     "geographyId": "central_sr",
@@ -554,10 +602,26 @@
   {
     "geographyId": "central_sr",
     "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 49328
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 49
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 63623252
   },
   {
     "geographyId": "central_sr",
@@ -641,6 +705,14 @@
   },
   {
     "geographyId": "central_sr",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 25303955
+  },
+  {
+    "geographyId": "central_sr",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -702,6 +774,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 752385
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 124434
   },
   {
     "geographyId": "central_sr",
@@ -842,18 +922,10 @@
   {
     "geographyId": "north_br",
     "metricId": "area",
-    "classId": "eelgrass_north_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 34199751.96725432
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "area",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 34199751.96725338
+    "value": 34179756.129310615
   },
   {
     "geographyId": "north_br",
@@ -862,6 +934,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 171356490.03948864
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 43385143.918491
   },
   {
     "geographyId": "north_br",
@@ -970,14 +1050,6 @@
   {
     "geographyId": "north_br",
     "metricId": "count",
-    "classId": "eelgrass_north_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 88047
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "count",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
@@ -990,6 +1062,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 116
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 98924852
   },
   {
     "geographyId": "north_br",
@@ -1073,6 +1153,14 @@
   },
   {
     "geographyId": "north_br",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 15653313
+  },
+  {
+    "geographyId": "north_br",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -1134,6 +1222,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1324397
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 51303
   },
   {
     "geographyId": "north_br",
@@ -1274,10 +1370,26 @@
   {
     "geographyId": "north_sr",
     "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 23033611.30108229
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 112675903.13265741
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 16841415.533921
   },
   {
     "geographyId": "north_sr",
@@ -1386,10 +1498,26 @@
   {
     "geographyId": "north_sr",
     "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 775
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 90
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 24553568
   },
   {
     "geographyId": "north_sr",
@@ -1473,6 +1601,14 @@
   },
   {
     "geographyId": "north_sr",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 6116599
+  },
+  {
+    "geographyId": "north_sr",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -1534,6 +1670,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1000465
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 19915
   },
   {
     "geographyId": "north_sr",
@@ -1677,7 +1821,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 12448183.43930176
+    "value": 11169350.1581
   },
   {
     "geographyId": "northcentral_sr",
@@ -1686,6 +1830,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 68816972.98794925
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 27221105.931277
   },
   {
     "geographyId": "northcentral_sr",
@@ -1810,6 +1962,14 @@
   {
     "geographyId": "northcentral_sr",
     "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 28453299
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
@@ -1889,6 +2049,14 @@
   },
   {
     "geographyId": "northcentral_sr",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 9716941
+  },
+  {
+    "geographyId": "northcentral_sr",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -1950,6 +2118,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 587762
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 32189
   },
   {
     "geographyId": "northcentral_sr",
@@ -2093,7 +2269,7 @@
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 21164261.392640315
+    "value": 20498120.534451768
   },
   {
     "geographyId": "south_br",
@@ -2102,6 +2278,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 151197271.3148939
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 211660610.221921
   },
   {
     "geographyId": "south_br",
@@ -2226,6 +2410,14 @@
   {
     "geographyId": "south_br",
     "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 82543916
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
     "classId": "rock_islands-total",
     "sketchId": null,
     "groupId": null,
@@ -2305,6 +2497,14 @@
   },
   {
     "geographyId": "south_br",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 19050312
+  },
+  {
+    "geographyId": "south_br",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -2366,6 +2566,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1475463
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 250289
   },
   {
     "geographyId": "south_br",
@@ -2506,10 +2714,26 @@
   {
     "geographyId": "south_sr",
     "metricId": "area",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 20498120.534451768
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 151196519.86757436
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 211217481.839306
   },
   {
     "geographyId": "south_sr",
@@ -2618,10 +2842,26 @@
   {
     "geographyId": "south_sr",
     "metricId": "count",
+    "classId": "eelgrass-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 8889
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
     "value": 92
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 81704056
   },
   {
     "geographyId": "south_sr",
@@ -2705,6 +2945,14 @@
   },
   {
     "geographyId": "south_sr",
+    "metricId": "sum",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 19034507
+  },
+  {
+    "geographyId": "south_sr",
     "metricId": "valid",
     "classId": "hab_ca--1",
     "sketchId": null,
@@ -2766,6 +3014,14 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1475463
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "valid",
+    "classId": "kelpMax-total",
+    "sketchId": null,
+    "groupId": "band-0",
+    "value": 249765
   },
   {
     "geographyId": "south_sr",
@@ -2906,34 +3162,10 @@
   {
     "geographyId": "world",
     "metricId": "area",
-    "classId": "eelgrass_central_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 3805676.3767751358
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "eelgrass_north_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 34199751.96725432
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "eelgrass_south_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 21187433.729809046
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
-    "value": 63466949.421357065
+    "value": 58441169.89768935
   },
   {
     "geographyId": "world",
@@ -2946,194 +3178,10 @@
   {
     "geographyId": "world",
     "metricId": "area",
-    "classId": "kelp_max_central_br-total",
+    "classId": "kelpMax-total",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 105290957.644159
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_max_central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 104641955.727594
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_max_north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 43172246.040597
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_max_north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 16780626.095274
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_max_northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 27270819.792707
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_max_south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 210248455.544031
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_max_south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 210248455.544031
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp_sr_north_central-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 0
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 0
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016central_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 44485770.95872
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 44503982.425118
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 3085492.586559
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1602766.160634
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2122641.767063
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 25990926.526062
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "kelp2016south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 26705696.412911
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_central_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 975625.4540093895
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_central_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 873368.54638127
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_north_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 1514722.1242148394
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_north_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 977958.8779837791
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_northcentral_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 639020.1538591781
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_sfbay_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 223.23583258702956
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_south_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 28477.129967815235
-  },
-  {
-    "geographyId": "world",
-    "metricId": "area",
-    "classId": "rock_islands_south_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 28477.129967815235
+    "value": 360952591.920507
   },
   {
     "geographyId": "world",
@@ -3242,30 +3290,6 @@
   {
     "geographyId": "world",
     "metricId": "count",
-    "classId": "eelgrass_central_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 49334
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "eelgrass_north_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 88047
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "eelgrass_south_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 8892
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
     "classId": "eelgrass-total",
     "sketchId": null,
     "groupId": null,
@@ -3282,194 +3306,10 @@
   {
     "geographyId": "world",
     "metricId": "count",
-    "classId": "kelp_max_central_br-total",
+    "classId": "kelpMax-total",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 44274576
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_max_central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 35427775
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_max_north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 59629312
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_max_north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 18245772
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_max_northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 14614020
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_max_south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 41200736
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_max_south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 41200736
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp_sr_north_central-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 0
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 0
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016central_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 43179752
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 5537903
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 59508765
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2874375
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2266896
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 37706108
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "kelp2016south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 6034374
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_central_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 4836
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_central_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 4395
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_north_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 6655
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_north_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 4064
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_northcentral_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 3032
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_sfbay_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 1
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_south_br-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 145
-  },
-  {
-    "geographyId": "world",
-    "metricId": "count",
-    "classId": "rock_islands_south_sr-total",
-    "sketchId": null,
-    "groupId": null,
-    "value": 145
+    "value": 265601720
   },
   {
     "geographyId": "world",
@@ -3554,122 +3394,10 @@
   {
     "geographyId": "world",
     "metricId": "sum",
-    "classId": "kelp_max_central_br-total",
+    "classId": "kelpMax-total",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 70639
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_max_central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 69515
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_max_north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 32019
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_max_north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 13215
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_max_northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 18117
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_max_south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 127646
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_max_south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 127646
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp_sr_north_central-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 0
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016central_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 29771
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 4730
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2289
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 202
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 225
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 15748
-  },
-  {
-    "geographyId": "world",
-    "metricId": "sum",
-    "classId": "kelp2016south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2589
+    "value": 60187807
   },
   {
     "geographyId": "world",
@@ -3738,122 +3466,10 @@
   {
     "geographyId": "world",
     "metricId": "valid",
-    "classId": "kelp_max_central_br-total",
+    "classId": "kelpMax-total",
     "sketchId": null,
     "groupId": "band-0",
-    "value": 70639
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_max_central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 69515
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_max_north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 32019
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_max_north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 13215
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_max_northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 18117
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_max_south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 127646
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_max_south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 127646
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp_sr_north_central-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 0
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016central_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 29771
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016central_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 4730
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016north_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2289
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016north_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 202
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016northcentral_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 225
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016south_br-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 15748
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "kelp2016south_sr-total",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2589
+    "value": 426827
   },
   {
     "geographyId": "world",

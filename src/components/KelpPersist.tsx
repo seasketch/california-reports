@@ -119,7 +119,9 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string"
-                            ? parseInt(val) * 23.21062239466359856 * 23.21062239466359856
+                            ? parseInt(val) *
+                                23.21062239466359856 *
+                                23.21062239466359856
                             : val * 23.21062239466359856 * 23.21062239466359856
                         ),
                         2,
@@ -174,8 +176,12 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 23.21062239466359856 * 23.21062239466359856
-                                : val * 23.21062239466359856 * 23.21062239466359856
+                                ? parseInt(val) *
+                                    23.21062239466359856 *
+                                    23.21062239466359856
+                                : val *
+                                    23.21062239466359856 *
+                                    23.21062239466359856
                             ),
                             2,
                             { keepSmallValues: true }
@@ -231,8 +237,12 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 23.21062239466359856 * 23.21062239466359856
-                                : val * 23.21062239466359856 * 23.21062239466359856
+                                ? parseInt(val) *
+                                    23.21062239466359856 *
+                                    23.21062239466359856
+                                : val *
+                                    23.21062239466359856 *
+                                    23.21062239466359856
                             ),
                             2,
                             { keepSmallValues: true }
@@ -272,8 +282,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   metricGroup,
                   t,
                   {
-                    valueFormatter: (val) => val * 23.21062239466359856 * 23.21062239466359856,
-                    replicate: true,
+                    valueFormatter: (val) =>
+                      val * 23.21062239466359856 * 23.21062239466359856,
                   }
                 )}
               </Collapse>
@@ -294,10 +304,10 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   cell over the period of all the surveys.
                 </p>
                 <p>
-                  Kelp data has been downsampled to a 30m x 30m raster grid
-                  for efficiency, therefore area calculations are estimates.
-                  Final plans should check area totals in GIS tools before
-                  publishing final area statistics.
+                  Kelp data has been downsampled to a 30m x 30m raster grid for
+                  efficiency, therefore area calculations are estimates. Final
+                  plans should check area totals in GIS tools before publishing
+                  final area statistics.
                 </p>
                 <p>🎯 Planning Objective: N/A</p>
                 <p>🗺️ Source Data: CDFW</p>

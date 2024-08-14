@@ -11,7 +11,11 @@ import {
 } from "@seasketch/geoprocessing";
 import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
-import { Metric, MetricGroup } from "@seasketch/geoprocessing/client-core";
+import {
+  Geography,
+  Metric,
+  MetricGroup,
+} from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 
@@ -26,38 +30,26 @@ export async function kelpMaxWorker(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: {
+    geography: Geography;
     metricGroup: MetricGroup;
-    classId: string;
-    geographyIds?: string[];
   }
 ) {
+  const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
-  const curClass = metricGroup.classes.find(
-    (c) => c.classId === extraParams.classId
-  );
 
-  // Use caller-provided geographyId if provided
-  const geographyId = getFirstFromParam("geographyIds", extraParams);
-
-  // Get geography features, falling back to geography assigned to default-boundary group
-  const curGeography = project.getGeographyById(geographyId, {
-    fallbackGroup: "default-boundary",
-  });
+  if (!metricGroup.datasourceId)
+    throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
 
   // Support sketches crossing antimeridian
   const splitSketch = splitSketchAntimeridian(sketch);
 
-  // Clip to portion of sketch within current geography
-  const clippedSketch = await clipToGeography(splitSketch, curGeography);
+  // Clip sketch to geography
+  const clippedSketch = await clipToGeography(splitSketch, geography);
 
   // Get bounding box of sketch remainder
   const sketchBox = clippedSketch.bbox || bbox(clippedSketch);
 
-  // Calculate overlap metrics for each class in metric group
-  if (!curClass || !curClass.datasourceId)
-    throw new Error(`Expected datasourceId for ${curClass}`);
-
-  const ds = project.getDatasourceById(curClass.datasourceId);
+  const ds = project.getDatasourceById(metricGroup.datasourceId);
   if (!isRasterDatasource(ds))
     throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
@@ -73,15 +65,15 @@ export async function kelpMaxWorker(
     ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
     ...(ds.measurementType === "categorical" && {
       categorical: true,
-      categoryMetricValues: [curClass.classId],
+      categoryMetricValues: metricGroup.classes.map((c) => c.classId),
     }),
   });
 
   return overlapResult.map(
     (metrics): Metric => ({
       ...metrics,
-      classId: curClass.classId,
-      geographyId: curGeography.geographyId,
+      classId: "kelpMax",
+      geographyId: geography.geographyId,
     })
   );
 }

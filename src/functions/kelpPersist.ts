@@ -16,9 +16,9 @@ import {
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import awsSdk from "aws-sdk";
+import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { kelpPersistWorker } from "./kelpPersistWorker.js";
-import { GeographyTableStyled } from "../util/GeographyTable.js";
+import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
 /**
  * kelpPersist: A geoprocessing function that calculates overlap metrics
@@ -34,7 +34,9 @@ export async function kelpPersist(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("kelpPersist");
-  const geographies = project.geographies;
+  const geographies = project.geographies.filter(
+    (g) => g.geographyId !== "world"
+  );
 
   const metrics = (
     await Promise.all(
@@ -59,15 +61,18 @@ export async function kelpPersist(
       metrics.concat(
         process.env.NODE_ENV === "test"
           ? (lambdaResult as Metric[])
-          : parseLambdaResponse(
-              lambdaResult as awsSdk.Lambda.InvocationResponse
-            )
+          : parseLambdaResponse(lambdaResult as InvocationResponse)
       ),
     []
   );
 
   return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
+    metrics: sortMetrics(
+      rekeyMetrics([
+        ...metrics,
+        ...genWorldMetrics(sketch, metrics, metricGroup),
+      ])
+    ),
     sketch: toNullSketch(sketch, true),
   };
 }

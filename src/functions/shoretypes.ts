@@ -16,8 +16,9 @@ import {
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
 import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import awsSdk from "aws-sdk";
+import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { shoretypesWorker } from "./shoretypesWorker.js";
+import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
 /**
  * shoretypes: A geoprocessing function that calculates overlap metrics
@@ -33,7 +34,9 @@ export async function shoretypes(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("shoretypes");
-  const geographies = project.geographies;
+  const geographies = project.geographies.filter(
+    (g) => g.geographyId !== "world"
+  );
 
   try {
     const allMetrics = await Promise.all(
@@ -62,8 +65,6 @@ export async function shoretypes(
           })
         );
 
-        // console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
-
         return classMetrics.flat();
       })
     );
@@ -72,12 +73,15 @@ export async function shoretypes(
       .flat()
       .reduce<
         Metric[]
-      >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as awsSdk.Lambda.InvocationResponse)), []);
-
-    // console.log("Final metrics:", metrics);
+      >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as InvocationResponse)), []);
 
     return {
-      metrics: sortMetrics(rekeyMetrics(metrics)),
+      metrics: sortMetrics(
+        rekeyMetrics([
+          ...metrics,
+          ...genWorldMetrics(sketch, metrics, metricGroup),
+        ])
+      ),
       sketch: toNullSketch(sketch, true),
     };
   } catch (error) {
