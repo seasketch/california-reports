@@ -62,7 +62,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": null,
-      "value": 143706472.573039,
+      "value": 143707121.342549,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -85,7 +85,7 @@
       "classId": "state_waters",
       "sketchId": "29484",
       "groupId": null,
-      "value": 58440609.932156,
+      "value": 58441258.701665,
       "extra": {
         "sketchName": "split"
       }
@@ -231,7 +231,7 @@
       "classId": "state_waters",
       "sketchId": "29481",
       "groupId": null,
-      "value": 186595109.41512,
+      "value": 186595109.415119,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -242,7 +242,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": null,
-      "value": 294358387.393139,
+      "value": 294358387.393138,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -321,7 +321,7 @@
       "classId": "state_waters",
       "sketchId": "29481",
       "groupId": null,
-      "value": 186595109.41512,
+      "value": 186595109.415119,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -332,7 +332,7 @@
       "classId": "state_waters",
       "sketchId": "29481",
       "groupId": "SMCANT",
-      "value": 186595109.41512,
+      "value": 186595109.415119,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -343,7 +343,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": null,
-      "value": 438065508.735673,
+      "value": 438065508.735672,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -367,7 +367,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": "SMCANT",
-      "value": 186595109.41512,
+      "value": 186595109.415119,
       "extra": {
         "sketchName": "network",
         "isCollection": true
