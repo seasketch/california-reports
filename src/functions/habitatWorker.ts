@@ -16,7 +16,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/turf";
 
 /**
  * habitat: A geoprocessing function that calculates overlap metrics

@@ -403,7 +403,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": "SMR",
-      "value": 85265605.47555882,
+      "value": 85265605.47556068,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -427,7 +427,7 @@
       "classId": "state_waters",
       "sketchId": "29482",
       "groupId": "Special",
-      "value": 166204408.11059096,
+      "value": 166204408.11059165,
       "extra": {
         "sketchName": "network",
         "isCollection": true

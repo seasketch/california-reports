@@ -47,10 +47,6 @@ export async function substrate(
           metricGroup,
         };
 
-        console.log(
-          `Processing metric group: ${metricGroup.metricId} for geography: ${geography.geographyId}`
-        );
-
         return process.env.NODE_ENV === "test"
           ? substrateWorker(sketch, parameters)
           : runLambdaWorker(sketch, parameters, "substrateWorker", request);

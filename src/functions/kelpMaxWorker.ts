@@ -9,7 +9,7 @@ import {
   isRasterDatasource,
   rasterMetrics,
 } from "@seasketch/geoprocessing";
-import bbox from "@turf/bbox";
+import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
 import {
   Geography,

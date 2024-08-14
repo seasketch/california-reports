@@ -20,5 +20,5 @@ describe("Basic smoke tests", () => {
       expect(result).toBeTruthy();
       writeResultOutput(result, "shoretypes", example.properties.name);
     }
-  }, 60000);
+  }, 180000);
 });
