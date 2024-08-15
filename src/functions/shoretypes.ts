@@ -4,6 +4,8 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
+  runLambdaWorker,
+  parseLambdaResponse,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -11,12 +13,11 @@ import {
   GeoprocessingRequestModel,
   Metric,
   ReportResult,
+  isMetricArray,
   rekeyMetrics,
   sortMetrics,
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
-import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { shoretypesWorker } from "./shoretypesWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
@@ -54,22 +55,28 @@ export async function shoretypes(
               ? shoretypesWorker(sketch, parameters)
               : runLambdaWorker(
                   sketch,
-                  parameters,
+                  project.package.name,
                   "shoretypesWorker",
-                  request
+                  project.geoprocessing.region,
+                  parameters,
+                  request!
                 );
           })
         );
 
-        return classMetrics.flat();
+        return classMetrics.reduce<Metric[]>(
+          (metrics, result) =>
+            metrics.concat(
+              isMetricArray(result)
+                ? result
+                : (parseLambdaResponse(result) as Metric[])
+            ),
+          []
+        );
       })
     );
 
-    const metrics = allMetrics
-      .flat()
-      .reduce<
-        Metric[]
-      >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as InvocationResponse)), []);
+    const metrics = allMetrics.flat();
 
     return {
       metrics: sortMetrics(

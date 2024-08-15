@@ -5,18 +5,19 @@ import {
   MultiPolygon,
   GeoprocessingHandler,
   DefaultExtraParams,
+  runLambdaWorker,
+  parseLambdaResponse,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
   GeoprocessingRequestModel,
   Metric,
   ReportResult,
+  isMetricArray,
   rekeyMetrics,
   sortMetrics,
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
-import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { eelgrassWorker } from "./eelgrassWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
@@ -50,15 +51,22 @@ export async function eelgrass(
 
         return process.env.NODE_ENV === "test"
           ? eelgrassWorker(sketch, parameters)
-          : runLambdaWorker(sketch, parameters, "eelgrassWorker", request);
+          : runLambdaWorker(
+              sketch,
+              project.package.name,
+              "eelgrassWorker",
+              project.geoprocessing.region,
+              parameters,
+              request!
+            );
       })
     )
   ).reduce<Metric[]>(
-    (metrics, lambdaResult) =>
+    (metrics, result) =>
       metrics.concat(
-        process.env.NODE_ENV === "test"
-          ? (lambdaResult as Metric[])
-          : parseLambdaResponse(lambdaResult as InvocationResponse)
+        isMetricArray(result)
+          ? result
+          : (parseLambdaResponse(result) as Metric[])
       ),
     []
   );
