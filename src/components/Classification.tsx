@@ -44,7 +44,10 @@ export const ClassificationCard: React.FunctionComponent = () => {
   const { t } = useTranslation();
 
   return (
-    <ResultsCard title={t("Classification Overview")} functionName="protection">
+    <ResultsCard
+      title={t("Classification Overview")}
+      functionName="classification"
+    >
       {(data: ReportResult) => {
         return (
           <ReportError>
@@ -67,7 +70,7 @@ export const ClassificationCard: React.FunctionComponent = () => {
 };
 
 /**
- * Report protection level for single sketch
+ * Report classification level for single sketch
  * @param metrics Metric[] passed from ReportResult
  * @param mg MetricGroup
  * @param t TFunction for translation
@@ -76,7 +79,7 @@ const sketchReport = (metrics: Metric[], t: any) => {
   // Should only have only a single metric
   if (metrics.length !== 1)
     throw new Error(
-      "In single sketch protection report, and getting !=1 metric"
+      "In single sketch classification report, and getting !=1 metric"
     );
 
   return (
@@ -106,7 +109,7 @@ const sketchReport = (metrics: Metric[], t: any) => {
 };
 
 /**
- * Report protection level for sketch collection
+ * Report classification level for sketch collection
  * @param sketch NullSketchCollection | NullSketch passed from ReportResult
  * @param metrics Metric[] passed from ReportResult
  * @param mg MetricGroup

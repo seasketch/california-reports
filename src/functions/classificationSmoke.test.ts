@@ -1,7 +1,7 @@
 /**
  * @group smoke
  */
-import { protection } from "./protection";
+import { classification } from "./classification";
 import {
   getExamplePolygonSketchAll,
   writeResultOutput,
@@ -9,14 +9,14 @@ import {
 
 describe("Basic smoke tests", () => {
   test("handler function is present", () => {
-    expect(typeof protection).toBe("function");
+    expect(typeof classification).toBe("function");
   });
-  test("protectionLevelSmoke - tests run against all examples", async () => {
+  test("classificationLevelSmoke - tests run against all examples", async () => {
     const examples = await getExamplePolygonSketchAll();
     for (const example of examples) {
-      const result = await protection(example);
+      const result = await classification(example);
       expect(result).toBeTruthy();
-      writeResultOutput(result, "protection", example.properties.name);
+      writeResultOutput(result, "classification", example.properties.name);
     }
   });
 });

@@ -1,158 +1,12 @@
 {
   "metrics": [
     {
-      "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMCA",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMCANT",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMP",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
+      "geographyId": null,
+      "metricId": "classification",
+      "classId": "SMR",
+      "sketchId": null,
       "groupId": "SMR",
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMRMA",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "Special",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
+      "value": 1
     }
   ],
   "sketch": {
@@ -371,7 +225,6 @@
         }
       ],
       "proposed_designation": "SMR"
-    },
-    "geometry": null
+    }
   }
 }
