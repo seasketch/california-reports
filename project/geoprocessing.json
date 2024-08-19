@@ -22,7 +22,7 @@
   "geoprocessingFunctions": [
     "src/functions/boundaryAreaOverlap.ts",
     "src/functions/boundaryAreaOverlapWorker.ts",
-    "src/functions/protection.ts",
+    "src/functions/classification.ts",
     "src/functions/kelpMax.ts",
     "src/functions/kelpMaxWorker.ts",
     "src/functions/kelpPersist.ts",

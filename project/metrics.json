@@ -62,7 +62,7 @@
     ]
   },
   {
-    "metricId": "protection",
+    "metricId": "classification",
     "type": "countOverlap",
     "classes": [
       {
