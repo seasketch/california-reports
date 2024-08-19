@@ -22,7 +22,6 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import { styled } from "styled-components";
 import { Trans, useTranslation } from "react-i18next";
-import { ReportProps } from "../util/ReportProp.js";
 import {
   groupColorMap,
   groupColorMapTransparent,
@@ -38,17 +37,25 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
 `;
 
 /**
- * Top level Protection report - JSX.Element
+ * Top level Classification report - JSX.Element
  */
-export const ProtectionCard: React.FunctionComponent<ReportProps> = (props) => {
+export const ClassificationCard: React.FunctionComponent = () => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
 
   return (
-    <ResultsCard title={t("Plan Overview")} functionName="protection">
+    <ResultsCard title={t("Classification Overview")} functionName="protection">
       {(data: ReportResult) => {
         return (
           <ReportError>
+            <p>
+              The following classifications are used for designating managed
+              marine and estuarine areas in California: State Marine Reserve
+              (SMR), State Marine Conservation Area (SMCA), SMCA no-take, State
+              Marine Recreational Management Area (SMRMA), and Special Closure.
+              In addition, the classification State Marine Park (SMP) is used by
+              the California Department of Parks and Recreation.
+            </p>
             {isCollection
               ? sketchCollectionReport(data.sketch, data.metrics, t)
               : sketchReport(data.metrics, t)}
@@ -92,7 +99,7 @@ const sketchReport = (metrics: Metric[], t: any) => {
       </div>
 
       <Collapse title={t("Learn More")}>
-        <ProtectionLearnMore t={t} />
+        <ClassificationLearnMore t={t} />
       </Collapse>
     </>
   );
@@ -135,7 +142,7 @@ const sketchCollectionReport = (
       </Collapse>
 
       <Collapse title={t("Learn More")}>
-        <ProtectionLearnMore t={t} />
+        <ClassificationLearnMore t={t} />
       </Collapse>
     </>
   );
@@ -151,7 +158,7 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
       accessor: (row) => row.properties.name,
     },
     {
-      Header: t("Protection Level"),
+      Header: t("Classification Level"),
       accessor: (row) => (
         <GroupPill
           groupColorMap={groupColorMapTransparent}
@@ -187,25 +194,14 @@ interface LearnMoreProps {
   t: any;
 }
 
-/** Protection level learn more */
-export const ProtectionLearnMore: React.FunctionComponent<LearnMoreProps> = ({
-  t,
-}) => {
+/** Classification level learn more */
+export const ClassificationLearnMore: React.FunctionComponent<
+  LearnMoreProps
+> = ({ t }) => {
   return (
     <>
-      <Trans i18nKey="Protection Card - Learn more">
-        <p>
-          ℹ️ Overview: This planning process uses a combination of marine
-          protection levels: Federal Marine Conservation Areas, Federal Marine
-          Reserves, State Marine Conservation Areas, State Marine Conservation
-          Area (No-Take), REDs, State Marine Parks, State Marine Reserves, State
-          Marine Recreation Management Areas, and Special Closures.
-        </p>
-        <p>🎯 Planning Objective: None</p>
-        <p>🗺️ Source Data: None</p>
-        <p>
-          📈 Report: Simply counts number of zones in each protection level.
-        </p>
+      <Trans i18nKey="Classification Card - Learn more">
+        <p>📈 Report: Totals number of areas in each classification.</p>
       </Trans>
     </>
   );
