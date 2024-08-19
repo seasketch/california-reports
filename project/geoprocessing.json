@@ -29,8 +29,6 @@
     "src/functions/kelpPersistWorker.ts",
     "src/functions/shoretypes.ts",
     "src/functions/shoretypesWorker.ts",
-    "src/functions/habitat.ts",
-    "src/functions/habitatWorker.ts",
     "src/functions/estuaries.ts",
     "src/functions/estuariesWorker.ts",
     "src/functions/substrate.ts",
