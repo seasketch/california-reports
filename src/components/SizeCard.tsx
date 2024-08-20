@@ -313,19 +313,6 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 
               <Collapse title={t("Learn more")}>
                 <Trans i18nKey="SizeCard-learn more">
-                  <p>
-                    ℹ️ Overview: This report summarizes the size and proportion
-                    of this plan within these boundaries.
-                  </p>
-                  <p>
-                    Designations to protection levels come from the Californian
-                    MLPA process. No-take: State Marine Reserve, "No Take" State
-                    Marine Conservation Area. Limited-take: State Marine
-                    Conservation Area, State Marine Park, State Marine
-                    Recreational Management Area, State Marine Conservation
-                    Area. Special closures are in their own protection level.
-                  </p>
-                  <p>🎯 Planning Objective: None </p>
                   <p>🗺️ Source Data: CDFW</p>
                   <p>
                     📈 Report: If sketch boundaries within a plan overlap with
