@@ -6,10 +6,10 @@ import * as path from 'path';
 // Setup directories and paths
 const dataDir = './data/bin';
 const fullPath = (s: string) => path.join(dataDir, s);
-const watersPath = fullPath('clippingLayer.01.geojson');
-const landPath = fullPath('land.01.geojson');
-const landShrunkOut = fullPath('landShrunk.01.geojson');
-const jsonOut = fullPath('network.01.json')
+const watersPath = fullPath('clippingLayer.1.geojson');
+const landPath = fullPath('land.1.geojson');
+const landShrunkOut = fullPath('landShrunk.1.geojson');
+const jsonOut = fullPath('network.1.json')
 
 class Land {
     private watersData: any;
@@ -41,9 +41,11 @@ class Land {
         this.watersData.features.forEach((feature: any, featureIndex: number) => {
             if (feature.geometry.type === 'Polygon') {
                 this.extractVerticesFromPolygon(feature.geometry.coordinates, featureIndex, vertices);
+                this.addGridNodes(feature.geometry.coordinates, featureIndex, vertices);
             } else if (feature.geometry.type === 'MultiPolygon') {
                 feature.geometry.coordinates.forEach((polygon: any) => {
                     this.extractVerticesFromPolygon(polygon, featureIndex, vertices);
+                    this.addGridNodes(polygon, featureIndex, vertices);
                 });
             }
         });
@@ -66,25 +68,63 @@ class Land {
         });
     }
 
+    private addGridNodes(polygon: any, featureIndex: number, vertices: Map<string, number[]>): void {
+        const bbox = turf.bbox(turf.polygon(polygon));
+        const grid = turf.pointGrid(bbox, 5, { units: 'miles' });
+        
+        grid.features.forEach((point: any, gridIndex: number) => {
+            const [x, y] = point.geometry.coordinates;
+            // Check if the point is within the polygon
+            if (turf.booleanPointInPolygon(point, turf.polygon(polygon))) {
+                const id = `gridnode_${featureIndex}_${gridIndex}`;
+                vertices.set(id, [x, y]);
+            }
+        });
+    }
+
     private _addOceanEdgesComplete(graph: Graph, verbose: boolean): Graph {
         const t0 = Date.now();
         if (verbose) {
             console.log(`Starting at ${new Date().toISOString()} to add edges for ${graph.nodeCount()} nodes.`);
-            const edgePossibilities = graph.nodeCount() * (graph.nodeCount() - 1);
+            const edgePossibilities = graph.nodeCount() * (graph.nodeCount() - 1) / 2;
             console.log(`We'll have to look at somewhere around ${edgePossibilities} edge possibilities.`);
         }
 
-        const nodes = graph.nodes();
-        const oceanEdges: {source: string, target: string, distance: number}[] = [];
-        
-        nodes.forEach((node: string, index) => {
-            if(index % 10 === 0) console.log("Running node #", index)
-            const edgesForNode = this.oceanEdgesForNode(node, graph);
-            oceanEdges.push(...edgesForNode);
-        });
+        let nodes = graph.nodes();
+        const oceanEdges: { source: string, target: string, distance: number }[] = [];
 
-        // Add edges individually
-        oceanEdges.forEach(({source, target, distance}) => {
+        while (nodes.length > 0) {
+            const node = nodes.shift() as string; // Remove the first node and process it
+            const nodeCoord = graph.node(node);
+
+            if (!nodeCoord) {
+                console.error(`Node ${node} does not have coordinates.`);
+                continue;
+            }
+
+            nodes.forEach((otherNode: string) => {
+                const otherNodeCoord = graph.node(otherNode);
+
+                if (!otherNodeCoord) {
+                    console.error(`Other node ${otherNode} does not have coordinates.`);
+                    return;
+                }
+
+                if (this.isLineClear(nodeCoord, otherNodeCoord)) {
+                    const distance = turf.distance(nodeCoord, otherNodeCoord, { units: "miles" });
+                    // Add both the forward and reverse edges
+                    oceanEdges.push({ source: node, target: otherNode, distance });
+                    oceanEdges.push({ source: otherNode, target: node, distance });
+                }
+            });
+
+            if (verbose && nodes.length % 10 === 0) {
+                console.log(`Remaining nodes: ${nodes.length}`);
+            }
+        }
+
+        // Add all edges to the graph
+        oceanEdges.forEach(({ source, target, distance }) => {
             if (graph.hasNode(source) && graph.hasNode(target)) {
                 graph.setEdge(source, target, distance);
             } else {

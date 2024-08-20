@@ -7,6 +7,7 @@ import { Substrate } from "./Substrate.js";
 import { Eelgrass } from "./Eelgrass.js";
 import { KelpPersist } from "./KelpPersist.js";
 import { Bathymetry } from "./Bathymetry.js";
+import { Spacing } from "./Spacing.js";
 
 const ReportPage = () => {
   return (
@@ -19,6 +20,7 @@ const ReportPage = () => {
       <Estuaries />
       <Eelgrass />
       <Substrate />
+      <Spacing />
     </>
   );
 };
