@@ -4,6 +4,8 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
+  runLambdaWorker,
+  parseLambdaResponse,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -11,13 +13,13 @@ import {
   GeoprocessingRequestModel,
   Metric,
   ReportResult,
+  isMetricArray,
   rekeyMetrics,
   sortMetrics,
   toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
-import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import awsSdk from "aws-sdk";
 import { shoretypesWorker } from "./shoretypesWorker.js";
+import { genWorldMetrics } from "../util/genWorldMetrics.js";
 
 /**
  * shoretypes: A geoprocessing function that calculates overlap metrics
@@ -33,7 +35,9 @@ export async function shoretypes(
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("shoretypes");
-  const geographies = project.geographies;
+  const geographies = project.geographies.filter(
+    (g) => g.geographyId !== "world"
+  );
 
   try {
     const allMetrics = await Promise.all(
@@ -47,37 +51,40 @@ export async function shoretypes(
               classId: curClass.classId,
             };
 
-            console.log(
-              `Processing classId: ${curClass.classId} for geography: ${geography}`
-            );
-
             return process.env.NODE_ENV === "test"
               ? shoretypesWorker(sketch, parameters)
               : runLambdaWorker(
                   sketch,
-                  parameters,
+                  project.package.name,
                   "shoretypesWorker",
-                  request
+                  project.geoprocessing.region,
+                  parameters,
+                  request!
                 );
           })
         );
 
-        console.log(`Results for geography ${geography.geographyId}:`, classMetrics);
-
-        return classMetrics.flat();
+        return classMetrics.reduce<Metric[]>(
+          (metrics, result) =>
+            metrics.concat(
+              isMetricArray(result)
+                ? result
+                : (parseLambdaResponse(result) as Metric[])
+            ),
+          []
+        );
       })
     );
 
-    const metrics = allMetrics
-      .flat()
-      .reduce<
-        Metric[]
-      >((acc, lambdaResult) => acc.concat(process.env.NODE_ENV === "test" ? (lambdaResult as Metric[]) : parseLambdaResponse(lambdaResult as awsSdk.Lambda.InvocationResponse)), []);
-
-    console.log("Final metrics:", metrics);
+    const metrics = allMetrics.flat();
 
     return {
-      metrics: sortMetrics(rekeyMetrics(metrics)),
+      metrics: sortMetrics(
+        rekeyMetrics([
+          ...metrics,
+          ...genWorldMetrics(sketch, metrics, metricGroup),
+        ])
+      ),
       sketch: toNullSketch(sketch, true),
     };
   } catch (error) {

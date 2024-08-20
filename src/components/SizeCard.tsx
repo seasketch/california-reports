@@ -43,7 +43,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   // Planning regions total area
   const boundaryTotalMetrics = project
     .getPrecalcMetrics()
-    .filter((m) => m.metricId === "area" && m.classId === "study_regions-total")
+    .filter((m) => m.metricId === "area" && m.classId === "clipLayer-total")
     .map(
       (metric): Metric => ({
         ...metric,
@@ -120,9 +120,11 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
             >
               <p>
                 <Trans i18nKey="SizeCard - intro">
-                  Californian state waters extend from the shoreline out to 12
-                  nautical miles. This report summarizes plan overlap with state
-                  waters.
+                  California state waters extend to 3 nautical miles from shore,
+                  covering about 5,285 square miles (excluding the 473 square
+                  miles of state waters in San Francisco Bay). This report
+                  summarizes the total area and the proportion of state waters
+                  contained within the selected MPA(s).
                 </Trans>
               </p>
               <KeySection>
@@ -287,6 +289,12 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     />
                   </Collapse>
                   <Collapse title={t("Show by MPA")} key={"MPA"}>
+                    <p>
+                      During the planning process to establish California’s
+                      Network of MPAs, the Science Advisory Team recommended a
+                      minimum size of 9-18 square statute miles for each MPA,
+                      and preferably 18-36 square statute miles.
+                    </p>
                     {genSketchTable(
                       {
                         ...data,
@@ -305,19 +313,6 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 
               <Collapse title={t("Learn more")}>
                 <Trans i18nKey="SizeCard-learn more">
-                  <p>
-                    ℹ️ Overview: This report summarizes the size and proportion
-                    of this plan within these boundaries.
-                  </p>
-                  <p>
-                    Designations to protection levels come from the Californian
-                    MLPA process. No-take: State Marine Reserve, "No Take" State
-                    Marine Conservation Area. Limited-take: State Marine
-                    Conservation Area, State Marine Park, State Marine
-                    Recreational Management Area, State Marine Conservation
-                    Area. Special closures are in their own protection level.
-                  </p>
-                  <p>🎯 Planning Objective: None </p>
                   <p>🗺️ Source Data: CDFW</p>
                   <p>
                     📈 Report: If sketch boundaries within a plan overlap with
@@ -336,28 +331,38 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 const SizeObjectives = (props: { value: number }) => {
   return (
     <>
+      <p>
+        During the planning process to establish California’s Network of MPAs,
+        the Science Advisory Team recommended a minimum size of 9-18 square
+        statute miles for each MPA, and preferably 18-36 square statute miles.
+      </p>
       {props.value > 9 && props.value < 18 ? (
         <ObjectiveStatus
           status={"yes"}
           style={{ color: "#EBB414" }}
           msg={
             <>
-              This MPA meets the 9 mi² minimum size guideline, but does not meet
-              the 18 mi² preferred size guideline.
+              This MPA meets the 9-18 mi² minimum size guideline, but does not
+              meet the {">"}18 mi² preferred size guideline.
             </>
           }
         />
       ) : props.value > 18 ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={<>This MPA meets the 18 square mile preferred size guideline.</>}
+          msg={
+            <>
+              This MPA meets the {">"}18 square mile preferred size guideline.
+            </>
+          }
         />
       ) : (
         <ObjectiveStatus
           status={"no"}
           msg={
             <>
-              This MPA does not meet the 9 square mile minimum size guideline.
+              This MPA does not meet the 9-18 square mile minimum size
+              guideline.
             </>
           }
         />

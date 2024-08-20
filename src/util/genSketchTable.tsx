@@ -137,10 +137,11 @@ export const genSketchTable = (
         columns.push({
           Header: t("Replicate") + " ".repeat(index),
           accessor: (row: { sketchId: string }) => {
-            const value = squareMeterToMile(
-              aggMetrics[row.sketchId][curClass.classId as string][
+            const val = aggMetrics[row.sketchId][curClass.classId as string][
                 mg.metricId
-              ][0].value
+              ][0].value;
+            const value = squareMeterToMile(
+              valueFormatter ? valueFormatter(val) : val
             );
 
             return (replicateMap && value > replicateMap[curClass.classId]) ||

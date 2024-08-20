@@ -46,6 +46,51 @@
       }
     },
     {
+      "geographyId": "central_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
       "geographyId": "north_br",
       "metricId": "eelgrass",
       "classId": "eelgrass",
@@ -91,6 +136,96 @@
       }
     },
     {
+      "geographyId": "north_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
       "geographyId": "south_br",
       "metricId": "eelgrass",
       "classId": "eelgrass",
@@ -126,6 +261,51 @@
     },
     {
       "geographyId": "south_br",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29484",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "split"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29481",
+      "groupId": null,
+      "value": 11762.713419,
+      "extra": {
+        "sketchName": "anacapa"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29482",
+      "groupId": null,
+      "value": 11762.713419,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "eelgrass",
+      "classId": "eelgrass",
+      "sketchId": "29483",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
       "metricId": "eelgrass",
       "classId": "eelgrass",
       "sketchId": "29484",

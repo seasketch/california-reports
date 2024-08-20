@@ -14,16 +14,15 @@ import {
 import { BathymetryResults } from "../functions/bathymetry.js";
 import { Trans, useTranslation } from "react-i18next";
 import project from "../../project/index.js";
-import { ReportProps } from "../util/ReportProp.js";
 import styled from "styled-components";
 
 const formatDepth = (val: number) => {
   if (!val || val > 0) return "0ft";
-  const baseVal = Math.round(Math.abs(parseInt(val.toString())) * 3.281);
+  const baseVal = Math.round(Math.abs(val) * 3.281);
   return `-${baseVal}ft`;
 };
 
-export const Bathymetry: React.FunctionComponent<ReportProps> = (props) => {
+export const Bathymetry: React.FunctionComponent = () => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const mg = project.getMetricGroup("bathymetry", t);

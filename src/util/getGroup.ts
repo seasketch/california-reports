@@ -7,19 +7,10 @@ import {
   getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
 
-export const groups = [
-  "SMCA",
-  "SMCANT",
-  "RED",
-  "SMP",
-  "SMR",
-  "SMRMA",
-  "Special",
-];
+export const groups = ["SMCA", "SMCANT", "SMP", "SMR", "SMRMA", "Special"];
 export const groupColors = [
   "#0070FF",
   "#C500FF",
-  "#98DBF4",
   "#FFFF00",
   "#E60000",
   "#4CE600",
@@ -30,7 +21,6 @@ export const groupColors = [
 export const groupDisplayMapPl: Record<string, string> = {
   SMCA: "State Marine Conservation Area(s)",
   SMCANT: "State Marine Conservation Area(s) (No-Take)",
-  RED: "RED(s)",
   SMP: "State Marine Park(s)",
   SMR: "State Marine Reserve(s)",
   SMRMA: "State Marine Recreation Management Area(s)",
@@ -41,7 +31,6 @@ export const groupDisplayMapPl: Record<string, string> = {
 export const groupDisplayMapSg: Record<string, string> = {
   SMCA: "State Marine Conservation Area",
   SMCANT: "State Marine Conservation Area (No-Take)",
-  RED: "RED",
   SMP: "State Marine Park",
   SMR: "State Marine Reserve",
   SMRMA: "State Marine Recreation Management Area",
@@ -52,7 +41,6 @@ export const groupDisplayMapSg: Record<string, string> = {
 export const groupColorMap: Record<string, string> = {
   SMCA: "#0070FF",
   SMCANT: "#C500FF",
-  RED: "#98DBF4",
   SMP: "#FFFF00",
   SMR: "#E60000",
   SMRMA: "#4CE600",
@@ -61,7 +49,6 @@ export const groupColorMap: Record<string, string> = {
 export const groupColorMapTransparent: Record<string, string> = {
   SMCA: "#0070FF80",
   SMCANT: "#C500FF80",
-  RED: "#98DBF480",
   SMP: "#FFFF0080",
   SMR: "#E6000080",
   SMRMA: "#4CE60080",

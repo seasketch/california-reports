@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SegmentControl, ReportPage } from "@seasketch/geoprocessing/client-ui";
-import ViabilityPage from "../components/ViabilityPage.js";
+import OverviewPage from "../components/OverviewPage.js";
 import RepresentationPage from "../components/RepresentationPage.js";
 import { useTranslation } from "react-i18next";
 import { Translator } from "../components/TranslatorAsync.js";
@@ -9,15 +9,15 @@ const enableAllTabs = false;
 
 const BaseReport = () => {
   const { t } = useTranslation();
-  const viabilityId = "viability";
+  const overviewId = "overview";
   const representationId = "representation";
   const segments = [
-    { id: viabilityId, label: t("Viability") },
+    { id: overviewId, label: t("Overview") },
     { id: representationId, label: t("Representation") },
   ];
-  const [tab, setTab] = useState<string>(viabilityId);
+  const [tab, setTab] = useState<string>(overviewId);
   return (
-    <>
+    <div>
       <div style={{ marginTop: 5 }}>
         <SegmentControl
           value={tab}
@@ -25,13 +25,13 @@ const BaseReport = () => {
           segments={segments}
         />
       </div>
-      <ReportPage hidden={!enableAllTabs && tab !== viabilityId}>
-        <ViabilityPage />
+      <ReportPage hidden={!enableAllTabs && tab !== overviewId}>
+        <OverviewPage />
       </ReportPage>
       <ReportPage hidden={!enableAllTabs && tab !== representationId}>
         <RepresentationPage />
       </ReportPage>
-    </>
+    </div>
   );
 };
 

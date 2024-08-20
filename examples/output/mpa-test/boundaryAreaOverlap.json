@@ -115,17 +115,6 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "RED",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
       "groupId": "SMP",
       "value": 0,
       "extra": {

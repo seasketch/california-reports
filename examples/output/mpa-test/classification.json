@@ -1,92 +1,12 @@
 {
   "metrics": [
     {
-      "geographyId": "central_br",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 9102736.470355,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 9102736.470355,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "north_br",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "south_br",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "south_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 9102736.470355,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
+      "geographyId": null,
+      "metricId": "classification",
+      "classId": "SMR",
+      "sketchId": null,
+      "groupId": "SMR",
+      "value": 1
     }
   ],
   "sketch": {
@@ -305,7 +225,6 @@
         }
       ],
       "proposed_designation": "SMR"
-    },
-    "geometry": null
+    }
   }
 }

@@ -393,8 +393,6 @@ export const HorizontalStackedBar: React.FunctionComponent<
                 return () => titleProp;
               }
             })();
-            console.log("row", row);
-            console.log("blockGroupStyles", blockGroupStyles);
 
             const layerId = rowConfigs[rowNumber].layerId;
             const curTarget = (() => {

@@ -35,7 +35,6 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   // Metrics
   const metricGroup = project.getMetricGroup("eelgrass", t);
   const precalcMetrics = geographies
-    .filter((g) => !g.geographyId?.endsWith("_sr"))
     .map((geography) =>
       project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
     )
@@ -56,7 +55,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
           [data.sketch.properties.id]
-        ).filter((m) => !m.geographyId?.endsWith("_sr"));
+        );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
           idProperty: "geographyId",
@@ -125,6 +124,54 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 },
               ]}
             />
+
+            <Collapse title={t("Show By Planning Region")}>
+              <GeographyTable
+                rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
+                metricGroup={metricGroup}
+                geographies={geographies.filter((g) =>
+                  g.geographyId?.endsWith("_sr")
+                )}
+                objective={objectives}
+                columnConfig={[
+                  {
+                    columnLabel: " ",
+                    type: "class",
+                    width: 30,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (val: string | number) =>
+                      Number.format(
+                        roundDecimal(
+                          squareMeterToMile(
+                            typeof val === "string" ? parseInt(val) : val
+                          ),
+                          2,
+                          { keepSmallValues: true }
+                        )
+                      ),
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 20,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 40,
+                  },
+                ]}
+              />
+            </Collapse>
 
             <Collapse title={t("Show By Bioregion")}>
               <GeographyTable
@@ -205,7 +252,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   file aggregates data from many sources across multiple years.
                 </p>
                 <p>
-                  Eelgrass data has been simplified to a tolerance of 1 meter. 
+                  Eelgrass data has been simplified to a tolerance of 1 meter.
                   MPA habitat replicates must contain 0.04 square miles of
                   eelgrass.
                 </p>

@@ -13,13 +13,13 @@ import {
 import { GeoprocessingHandler } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 
-export async function protection(
+export async function classification(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
-  const mg = project.getMetricGroup("protection");
+  const mg = project.getMetricGroup("classification");
   const sketchFeatures = getSketchFeatures(sketch);
 
-  const protectionLevels = sketchFeatures.reduce<Record<string, number>>(
+  const classificationLevels = sketchFeatures.reduce<Record<string, number>>(
     (levels, sketch) => {
       const designation = getUserAttribute(
         sketch.properties,
@@ -35,12 +35,12 @@ export async function protection(
     {}
   );
 
-  const metrics = Object.keys(protectionLevels).map((level) => {
+  const metrics = Object.keys(classificationLevels).map((level) => {
     return createMetric({
       metricId: mg.metricId,
       groupId: level,
       classId: level,
-      value: protectionLevels[level],
+      value: classificationLevels[level],
     });
   });
 
@@ -50,9 +50,9 @@ export async function protection(
   };
 }
 
-export default new GeoprocessingHandler(protection, {
-  title: "protection",
-  description: "returns area metrics for protection levels for sketch",
+export default new GeoprocessingHandler(classification, {
+  title: "classification",
+  description: "returns area metrics for classification levels for sketch",
   timeout: 60, // seconds
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required

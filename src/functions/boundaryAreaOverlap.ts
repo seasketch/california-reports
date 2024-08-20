@@ -11,10 +11,11 @@ import {
   DefaultExtraParams,
   GeoprocessingRequestModel,
   MultiPolygon,
+  runLambdaWorker,
+  isMetricArray,
+  parseLambdaResponse,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
-import { parseLambdaResponse, runLambdaWorker } from "../util/lambdaHelpers.js";
-import awsSdk from "aws-sdk";
 import { boundaryAreaOverlapWorker } from "./boundaryAreaOverlapWorker.js";
 
 export async function boundaryAreaOverlap(
@@ -39,20 +40,20 @@ export async function boundaryAreaOverlap(
           ? boundaryAreaOverlapWorker(sketch, parameters)
           : runLambdaWorker(
               sketch,
-              parameters,
+              project.package.name,
               "boundaryAreaOverlapWorker",
-              request
+              project.geoprocessing.region,
+              parameters,
+              request!
             );
       })
     )
   ).reduce<Metric[]>(
-    (metrics, lambdaResult) =>
+    (metrics, result) =>
       metrics.concat(
-        process.env.NODE_ENV === "test"
-          ? (lambdaResult as Metric[])
-          : parseLambdaResponse(
-              lambdaResult as awsSdk.Lambda.InvocationResponse
-            )
+        isMetricArray(result)
+          ? result
+          : (parseLambdaResponse(result) as Metric[])
       ),
     []
   );
