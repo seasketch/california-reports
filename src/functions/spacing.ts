@@ -42,16 +42,55 @@ export async function spacing(
   );
 
   // Buffer by 1 meter to ensure overlap with clipped edges
-  const sketches = toSketchArray(sketch).map((sketch) => buffer(sketch, 1));
+  const sketches = toSketchArray(sketch).map(
+    (sketch) => buffer(sketch, 1, { units: "meters" })!
+  );
 
   // Calculate centroids
   const sketchesWithCentroids = sketches.map((sketch) => ({
     sketch,
+    id: sketch.properties!.id as string,
     centroid: centroid(sketch!).geometry.coordinates as [number, number],
   }));
 
-  // Sort sketches by latitude
-  sketchesWithCentroids.sort((a, b) => b.centroid[1] - a.centroid[1]);
+  // Create a graph for the MST
+  const mstGraph = new Graph();
+  sketchesWithCentroids.forEach((sketch) => {
+    console.log("set node", sketch.id);
+    mstGraph.setNode(sketch.id, sketch.centroid);
+  });
+
+  // Build the MST graph by adding edges between each pair of sketches
+  for (let i = 0; i < sketchesWithCentroids.length; i++) {
+    for (let j = i + 1; j < sketchesWithCentroids.length; j++) {
+      const dist = distance(
+        point(sketchesWithCentroids[i].centroid),
+        point(sketchesWithCentroids[j].centroid)
+      );
+      console.log(
+        "set edge",
+        sketchesWithCentroids[i].id,
+        sketchesWithCentroids[j].id,
+        dist
+      );
+      mstGraph.setEdge(
+        sketchesWithCentroids[i].id as string,
+        sketchesWithCentroids[j].id as string,
+        dist
+      );
+      mstGraph.setEdge(
+        sketchesWithCentroids[j].id as string,
+        sketchesWithCentroids[i].id as string,
+        dist
+      );
+    }
+  }
+
+  // Generate the MST using Prim's algorithm
+  const mst = alg.prim(mstGraph, (edge) => mstGraph.edge(edge));
+
+  console.log(mst.edges(), mst.nodes());
+  console.log(mst.edgeCount(), mst.nodeCount());
 
   let allEdges: { source: string; target: string; distance: number }[] = [];
   let sketchNodes: string[] = [];
@@ -59,56 +98,34 @@ export async function spacing(
   let reds = 0;
   let greens = 0;
   const pathColors: { [key: string]: string } = {};
-  const pathPromises = [];
 
-  // Start with northernmost sketch
-  let currentSketch = sketchesWithCentroids[0];
-  let remainingSketches = sketchesWithCentroids.slice(1);
+  console.log("Processing MST edges");
 
-  console.log("Start while loop");
+  // Iterate over the MST edges to find the shortest path for each edge
+  for (const edge of mst.edges()) {
+    const sourceSketch = sketchesWithCentroids.find((s) => s.id === edge.v);
+    const targetSketch = sketchesWithCentroids.find((s) => s.id === edge.w);
 
-  while (remainingSketches.length > 0) {
-    console.log("Finding closest sketch");
-    let start = Date.now();
-    // Find the closest unvisited sketch
-    const closestSketch = remainingSketches.reduce(
-      (closest, sketch) => {
-        const dist = distance(
-          point(currentSketch.centroid),
-          point(sketch.centroid)
-        );
-        return dist < closest.distance ? { sketch, distance: dist } : closest;
-      },
-      { sketch: remainingSketches[0], distance: Infinity }
-    );
-    let end = Date.now();
-    console.log(`Finding closest sketch took ${end - start} ms`);
+    if (sourceSketch && targetSketch) {
+      const { path, edges, totalDistance, possibleNodes } = findShortestPath(
+        graph,
+        nodePoints,
+        sourceSketch.sketch,
+        targetSketch.sketch
+      );
 
-    start = Date.now();
-    const nextSketch = closestSketch.sketch;
-    const { path, edges, totalDistance, possibleNodes } = findShortestPath(
-      graph,
-      nodePoints,
-      currentSketch.sketch,
-      nextSketch.sketch
-    );
+      allEdges = allEdges.concat(
+        edges.map((edge) => ({ ...edge, distance: totalDistance }))
+      );
+      sketchNodes.push(path[0], path[path.length - 1]);
+      allPossibleNodes = [...allPossibleNodes, ...possibleNodes];
 
-    allEdges = allEdges.concat(
-      edges.map((edge) => ({ ...edge, distance: totalDistance }))
-    );
-    sketchNodes.push(path[0], path[path.length - 1]);
-    allPossibleNodes = [...allPossibleNodes, ...possibleNodes];
-
-    const color = totalDistance < 62 ? "green" : "red";
-    totalDistance < 62 ? greens++ : reds++;
-    edges.forEach(
-      (edge) => (pathColors[`${edge.source}-${edge.target}`] = color)
-    );
-
-    currentSketch = nextSketch;
-    remainingSketches = remainingSketches.filter(
-      (sketch) => sketch !== closestSketch.sketch
-    );
+      const color = totalDistance < 62 ? "green" : "red";
+      totalDistance < 62 ? greens++ : reds++;
+      edges.forEach(
+        (edge) => (pathColors[`${edge.source}-${edge.target}`] = color)
+      );
+    }
   }
 
   return { sketch, allEdges, sketchNodes, allPossibleNodes, pathColors };

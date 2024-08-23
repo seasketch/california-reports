@@ -6,12 +6,12 @@ import * as path from "path";
 // Setup directories and paths
 const dataDir = "./data/bin";
 const fullPath = (s: string) => path.join(dataDir, s);
-const watersPath = fullPath("clippingLayer.05.geojson");
+const watersPath = fullPath("clippingLayer.01.geojson");
 const petitionsPath = fullPath("petitions.geojson");
-const landPath = fullPath("land.05.geojson");
-const landShrunkOut = fullPath("landShrunk.05.geojson");
-const jsonOut = fullPath("network.05.json");
-const nodesOut = fullPath("nodes.05.json");
+const landPath = fullPath("land.01.geojson");
+const landShrunkOut = fullPath("landShrunk.01.geojson");
+const jsonOut = fullPath("network.01-3mile.json");
+const nodesOut = fullPath("nodes.01.json");
 
 // Read and process land data
 function loadAndShrinkLandData(landFile: string): any {

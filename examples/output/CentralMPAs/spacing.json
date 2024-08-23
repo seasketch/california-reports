@@ -101144,19 +101144,59 @@
   },
   "allEdges": [
     {
-      "source": "gridnode_6_8657",
-      "target": "node_6_0_77",
-      "distance": 3.2603135751383174
+      "source": "gridnode_6_10611",
+      "target": "gridnode_6_10395",
+      "distance": 9.439345000243097
     },
     {
-      "source": "node_6_0_77",
-      "target": "gridnode_6_8655",
-      "distance": 2.7711616191135153
+      "source": "gridnode_6_10829",
+      "target": "gridnode_6_10830",
+      "distance": 8.999999999999686
     },
     {
-      "source": "gridnode_6_8655",
-      "target": "gridnode_6_9304",
-      "distance": 25.4582164340816
+      "source": "gridnode_6_10828",
+      "target": "gridnode_6_10829",
+      "distance": 8.999999999999686
+    },
+    {
+      "source": "gridnode_6_10827",
+      "target": "gridnode_6_10828",
+      "distance": 8.999999999999686
+    },
+    {
+      "source": "gridnode_6_11045",
+      "target": "gridnode_6_11046",
+      "distance": 5.99999999999979
+    },
+    {
+      "source": "gridnode_6_11044",
+      "target": "gridnode_6_11045",
+      "distance": 5.99999999999979
+    },
+    {
+      "source": "gridnode_6_11263",
+      "target": "gridnode_6_11044",
+      "distance": 2.85675964536272
+    },
+    {
+      "source": "node_6_0_84",
+      "target": "gridnode_6_11263",
+      "distance": 5.250777908717035
+    },
+    {
+      "source": "gridnode_6_10823",
+      "target": "node_6_0_84",
+      "distance": 3.7515592016143
+    },
+    {
+      "source": "node_6_0_79",
+      "target": "gridnode_6_10395",
+      "distance": 10.688648578071119
+    },
+    {
+      "source": "gridnode_6_9740",
+      "target": "node_6_0_79",
+      "distance": 10.688648578071119
     },
     {
       "source": "gridnode_6_9522",
@@ -101164,119 +101204,9 @@
       "distance": 4.130900252952847
     },
     {
-      "source": "gridnode_6_9740",
-      "target": "node_6_0_79",
-      "distance": 8.760073752413506
-    },
-    {
-      "source": "gridnode_6_10395",
-      "target": "gridnode_6_10611",
-      "distance": 9.439345000243097
-    },
-    {
-      "source": "gridnode_6_10828",
-      "target": "gridnode_6_10827",
-      "distance": 8.999999999999686
-    },
-    {
-      "source": "gridnode_6_10829",
-      "target": "gridnode_6_10828",
-      "distance": 8.999999999999686
-    },
-    {
-      "source": "gridnode_6_10830",
-      "target": "gridnode_6_10829",
-      "distance": 8.999999999999686
-    },
-    {
-      "source": "gridnode_6_11045",
-      "target": "gridnode_6_11044",
-      "distance": 5.99999999999979
-    },
-    {
-      "source": "gridnode_6_11046",
-      "target": "gridnode_6_11045",
-      "distance": 5.99999999999979
-    },
-    {
-      "source": "gridnode_6_11044",
-      "target": "gridnode_6_11263",
-      "distance": 2.85675964536272
-    },
-    {
-      "source": "gridnode_6_11263",
-      "target": "node_6_0_84",
-      "distance": 5.250777908717035
-    },
-    {
-      "source": "node_6_0_84",
-      "target": "gridnode_6_10823",
-      "distance": 3.7515592016143
-    },
-    {
-      "source": "gridnode_6_10823",
-      "target": "gridnode_6_11037",
-      "distance": 15.270964888228928
-    },
-    {
-      "source": "gridnode_6_11255",
-      "target": "gridnode_6_12127",
-      "distance": 16.61457557478822
-    },
-    {
-      "source": "gridnode_6_12564",
-      "target": "gridnode_6_13432",
-      "distance": 26.628297278759028
-    },
-    {
-      "source": "gridnode_6_13650",
-      "target": "node_6_0_87",
-      "distance": 2.2955552199133247
-    },
-    {
-      "source": "node_6_0_87",
-      "target": "gridnode_6_14305",
-      "distance": 8.986089234178694
-    },
-    {
-      "source": "gridnode_6_14305",
-      "target": "gridnode_6_14742",
-      "distance": 6.522255337310928
-    },
-    {
-      "source": "gridnode_6_14742",
-      "target": "node_6_0_90",
-      "distance": 16.173830047166415
-    },
-    {
-      "source": "node_6_0_90",
-      "target": "node_6_0_89",
-      "distance": 3.65118672163134
-    },
-    {
-      "source": "node_6_0_90",
-      "target": "node_6_0_91",
-      "distance": 11.708955842064455
-    },
-    {
-      "source": "node_6_0_89",
-      "target": "node_6_0_90",
-      "distance": 11.708955842064455
-    },
-    {
-      "source": "node_6_0_84",
-      "target": "gridnode_6_11705",
-      "distance": 130.09986911722638
-    },
-    {
-      "source": "node_6_0_85",
-      "target": "node_6_0_84",
-      "distance": 130.09986911722638
-    },
-    {
-      "source": "gridnode_6_15392",
-      "target": "node_6_0_85",
-      "distance": 130.09986911722638
+      "source": "node_6_0_81",
+      "target": "gridnode_6_11049",
+      "distance": 8.803422032193808
     },
     {
       "source": "gridnode_6_11705",
@@ -101284,209 +101214,264 @@
       "distance": 1.254064452860619
     },
     {
-      "source": "node_6_0_81",
-      "target": "gridnode_6_11925",
+      "source": "gridnode_6_11925",
+      "target": "node_6_0_81",
       "distance": 3.2745511301328647
+    },
+    {
+      "source": "node_6_0_85",
+      "target": "gridnode_6_10823",
+      "distance": 16.27333579932407
+    },
+    {
+      "source": "gridnode_6_12127",
+      "target": "gridnode_6_11255",
+      "distance": 16.61457557478822
+    },
+    {
+      "source": "gridnode_6_12346",
+      "target": "gridnode_6_12127",
+      "distance": 2.8759459306085833
+    },
+    {
+      "source": "gridnode_6_8655",
+      "target": "node_6_0_78",
+      "distance": 27.101907396569523
+    },
+    {
+      "source": "node_6_0_77",
+      "target": "gridnode_6_8655",
+      "distance": 2.7711616191135153
+    },
+    {
+      "source": "gridnode_6_8657",
+      "target": "node_6_0_77",
+      "distance": 3.2603135751383174
+    },
+    {
+      "source": "gridnode_6_13650",
+      "target": "gridnode_6_12345",
+      "distance": 32.07120686239954
+    },
+    {
+      "source": "node_6_0_87",
+      "target": "gridnode_6_13650",
+      "distance": 2.2955552199133247
+    },
+    {
+      "source": "gridnode_6_14305",
+      "target": "node_6_0_87",
+      "distance": 8.986089234178694
+    },
+    {
+      "source": "gridnode_6_14742",
+      "target": "gridnode_6_14305",
+      "distance": 6.522255337310928
+    },
+    {
+      "source": "node_6_0_90",
+      "target": "gridnode_6_14742",
+      "distance": 16.173830047166415
+    },
+    {
+      "source": "node_6_0_89",
+      "target": "node_6_0_90",
+      "distance": 3.65118672163134
+    },
+    {
+      "source": "node_6_0_90",
+      "target": "node_6_0_89",
+      "distance": 11.708955842064455
+    },
+    {
+      "source": "node_6_0_91",
+      "target": "node_6_0_90",
+      "distance": 11.708955842064455
+    },
+    {
+      "source": "gridnode_6_15392",
+      "target": "node_6_0_91",
+      "distance": 2.1622136317682448
     }
   ],
   "sketchNodes": [
-    "gridnode_6_8657",
-    "node_6_0_77",
-    "node_6_0_77",
-    "gridnode_6_8655",
-    "gridnode_6_8655",
-    "gridnode_6_9304",
+    "gridnode_6_10611",
+    "gridnode_6_10395",
+    "gridnode_6_10827",
+    "gridnode_6_10830",
+    "gridnode_6_11044",
+    "gridnode_6_11046",
+    "gridnode_6_11263",
+    "gridnode_6_11044",
+    "gridnode_6_11263",
+    "gridnode_6_11263",
+    "gridnode_6_11044",
+    "gridnode_6_11044",
+    "node_6_0_84",
+    "gridnode_6_11263",
+    "node_6_0_84",
+    "node_6_0_84",
+    "gridnode_6_10823",
+    "node_6_0_84",
+    "gridnode_6_10823",
+    "gridnode_6_10823",
+    "gridnode_6_9740",
+    "gridnode_6_10395",
     "gridnode_6_9522",
     "gridnode_6_9740",
-    "gridnode_6_9740",
-    "node_6_0_79",
-    "gridnode_6_10395",
-    "gridnode_6_10611",
-    "gridnode_6_10830",
-    "gridnode_6_10827",
-    "gridnode_6_11046",
-    "gridnode_6_11044",
-    "gridnode_6_11044",
-    "gridnode_6_11044",
-    "gridnode_6_11044",
-    "gridnode_6_11263",
-    "gridnode_6_11263",
-    "gridnode_6_11263",
-    "gridnode_6_11263",
-    "node_6_0_84",
-    "node_6_0_84",
-    "node_6_0_84",
-    "node_6_0_84",
+    "node_6_0_81",
+    "gridnode_6_11049",
+    "gridnode_6_11705",
+    "node_6_0_81",
+    "gridnode_6_11925",
+    "node_6_0_81",
+    "node_6_0_85",
     "gridnode_6_10823",
-    "gridnode_6_10823",
-    "gridnode_6_10823",
-    "gridnode_6_10823",
-    "gridnode_6_11037",
-    "gridnode_6_11255",
     "gridnode_6_11255",
     "gridnode_6_11255",
     "gridnode_6_12127",
+    "gridnode_6_11255",
     "gridnode_6_12346",
-    "gridnode_6_12346",
-    "gridnode_6_12564",
-    "gridnode_6_13432",
+    "gridnode_6_12127",
+    "gridnode_6_8655",
+    "node_6_0_78",
+    "node_6_0_77",
+    "gridnode_6_8655",
+    "gridnode_6_8657",
+    "node_6_0_77",
     "gridnode_6_13650",
+    "gridnode_6_12345",
     "node_6_0_87",
+    "gridnode_6_13650",
+    "gridnode_6_14305",
     "node_6_0_87",
-    "gridnode_6_14305",
-    "gridnode_6_14305",
     "gridnode_6_14742",
+    "gridnode_6_14305",
+    "node_6_0_90",
     "gridnode_6_14742",
-    "node_6_0_90",
-    "node_6_0_90",
     "node_6_0_89",
-    "node_6_0_89",
+    "node_6_0_90",
     "node_6_0_91",
-    "gridnode_6_15610",
-    "gridnode_6_15610",
+    "node_6_0_89",
     "gridnode_6_15392",
-    "gridnode_6_11705",
-    "gridnode_6_11705",
-    "node_6_0_81",
-    "node_6_0_81",
-    "gridnode_6_11925"
+    "node_6_0_91"
   ],
   "allPossibleNodes": [
+    "gridnode_6_10611",
+    "gridnode_6_10830",
+    "gridnode_6_11049",
+    "gridnode_6_10395",
+    "gridnode_6_10827",
+    "gridnode_6_11046",
+    "gridnode_6_10611",
+    "gridnode_6_10830",
+    "gridnode_6_11049",
+    "gridnode_6_11044",
+    "gridnode_6_10827",
+    "gridnode_6_11046",
+    "gridnode_6_11263",
+    "gridnode_6_11044",
+    "gridnode_6_11263",
+    "gridnode_6_11263",
+    "gridnode_6_11044",
+    "gridnode_6_11044",
+    "node_6_0_84",
+    "gridnode_6_11263",
+    "node_6_0_84",
+    "node_6_0_84",
+    "gridnode_6_10823",
+    "node_6_0_84",
+    "gridnode_6_10823",
+    "gridnode_6_10823",
+    "gridnode_6_9740",
+    "gridnode_6_10395",
+    "node_6_0_78",
+    "gridnode_6_9522",
+    "gridnode_6_9740",
+    "node_6_0_81",
+    "gridnode_6_10611",
+    "gridnode_6_10830",
+    "gridnode_6_11049",
+    "gridnode_6_11705",
+    "node_6_0_81",
+    "node_6_0_82",
+    "gridnode_6_11925",
+    "node_6_0_81",
+    "node_6_0_85",
+    "gridnode_6_11255",
+    "gridnode_6_10823",
+    "node_6_0_161",
+    "gridnode_6_11255",
+    "node_6_0_85",
+    "gridnode_6_11255",
+    "gridnode_6_12127",
+    "node_6_0_85",
+    "gridnode_6_11255",
+    "gridnode_6_12345",
+    "gridnode_6_12346",
+    "gridnode_6_12127",
+    "gridnode_6_8655",
+    "node_6_0_78",
+    "gridnode_6_9522",
+    "node_6_0_77",
+    "node_6_0_165",
+    "gridnode_6_8437",
+    "gridnode_6_8655",
     "gridnode_6_8657",
     "node_6_0_77",
     "node_6_0_165",
     "gridnode_6_8437",
-    "node_6_0_77",
-    "node_6_0_165",
-    "gridnode_6_8437",
-    "gridnode_6_8655",
-    "gridnode_6_8655",
-    "node_6_0_78",
-    "gridnode_6_9303",
-    "gridnode_6_9304",
-    "gridnode_6_9522",
-    "node_6_0_78",
-    "gridnode_6_9303",
-    "gridnode_6_9304",
-    "gridnode_6_9522",
-    "gridnode_6_9740",
-    "gridnode_6_9740",
-    "node_6_0_79",
-    "gridnode_6_10395",
-    "node_6_0_79",
-    "gridnode_6_10395",
-    "gridnode_6_10611",
-    "gridnode_6_10830",
-    "gridnode_6_11049",
-    "gridnode_6_10611",
-    "gridnode_6_10830",
-    "gridnode_6_11049",
-    "gridnode_6_10827",
-    "gridnode_6_11046",
-    "gridnode_6_10827",
-    "gridnode_6_11046",
-    "gridnode_6_11044",
-    "gridnode_6_11044",
-    "gridnode_6_11044",
-    "gridnode_6_11044",
-    "gridnode_6_11263",
-    "gridnode_6_11263",
-    "gridnode_6_11263",
-    "gridnode_6_11263",
-    "node_6_0_84",
-    "node_6_0_84",
-    "node_6_0_84",
-    "node_6_0_84",
-    "gridnode_6_10823",
-    "gridnode_6_10823",
-    "gridnode_6_10823",
-    "gridnode_6_10823",
-    "node_6_0_161",
-    "gridnode_6_11037",
-    "gridnode_6_11255",
-    "node_6_0_161",
-    "gridnode_6_11037",
-    "gridnode_6_11255",
-    "node_6_0_85",
-    "gridnode_6_11255",
-    "node_6_0_85",
-    "gridnode_6_11255",
-    "gridnode_6_12127",
-    "gridnode_6_12346",
-    "gridnode_6_12127",
-    "gridnode_6_12346",
-    "gridnode_6_12127",
+    "gridnode_6_13650",
     "gridnode_6_12345",
     "gridnode_6_12346",
-    "gridnode_6_12564",
-    "gridnode_6_12127",
-    "gridnode_6_12345",
-    "gridnode_6_12346",
-    "gridnode_6_12564",
-    "gridnode_6_13432",
-    "gridnode_6_13650",
-    "gridnode_6_13432",
-    "gridnode_6_13650",
     "node_6_0_87",
     "gridnode_6_13651",
+    "gridnode_6_13650",
+    "gridnode_6_14305",
     "node_6_0_87",
     "gridnode_6_13651",
-    "gridnode_6_14305",
-    "gridnode_6_14305",
     "gridnode_6_14742",
+    "gridnode_6_14305",
+    "node_6_0_90",
     "gridnode_6_14742",
-    "node_6_0_90",
-    "node_6_0_90",
     "node_6_0_89",
+    "node_6_0_90",
+    "node_6_0_91",
     "node_6_0_89",
-    "node_6_0_91",
-    "gridnode_6_15392",
-    "gridnode_6_15610",
-    "node_6_0_91",
-    "gridnode_6_15392",
-    "gridnode_6_15610",
     "node_6_0_157",
     "gridnode_6_15392",
-    "gridnode_6_15610",
-    "node_6_0_157",
-    "gridnode_6_15392",
-    "gridnode_6_15610",
-    "gridnode_6_11705",
-    "gridnode_6_11705",
-    "node_6_0_81",
-    "node_6_0_81",
-    "node_6_0_82",
-    "gridnode_6_11925"
+    "node_6_0_91"
   ],
   "pathColors": {
-    "gridnode_6_8657-node_6_0_77": "green",
-    "node_6_0_77-gridnode_6_8655": "green",
-    "gridnode_6_8655-gridnode_6_9304": "green",
-    "gridnode_6_9522-gridnode_6_9740": "green",
+    "gridnode_6_10611-gridnode_6_10395": "green",
+    "gridnode_6_10829-gridnode_6_10830": "green",
+    "gridnode_6_10828-gridnode_6_10829": "green",
+    "gridnode_6_10827-gridnode_6_10828": "green",
+    "gridnode_6_11045-gridnode_6_11046": "green",
+    "gridnode_6_11044-gridnode_6_11045": "green",
+    "gridnode_6_11263-gridnode_6_11044": "green",
+    "node_6_0_84-gridnode_6_11263": "green",
+    "gridnode_6_10823-node_6_0_84": "green",
+    "node_6_0_79-gridnode_6_10395": "green",
     "gridnode_6_9740-node_6_0_79": "green",
-    "gridnode_6_10395-gridnode_6_10611": "green",
-    "gridnode_6_10828-gridnode_6_10827": "green",
-    "gridnode_6_10829-gridnode_6_10828": "green",
-    "gridnode_6_10830-gridnode_6_10829": "green",
-    "gridnode_6_11045-gridnode_6_11044": "green",
-    "gridnode_6_11046-gridnode_6_11045": "green",
-    "gridnode_6_11044-gridnode_6_11263": "green",
-    "gridnode_6_11263-node_6_0_84": "green",
-    "node_6_0_84-gridnode_6_10823": "green",
-    "gridnode_6_10823-gridnode_6_11037": "green",
-    "gridnode_6_11255-gridnode_6_12127": "green",
-    "gridnode_6_12564-gridnode_6_13432": "green",
-    "gridnode_6_13650-node_6_0_87": "green",
-    "node_6_0_87-gridnode_6_14305": "green",
-    "gridnode_6_14305-gridnode_6_14742": "green",
-    "gridnode_6_14742-node_6_0_90": "green",
-    "node_6_0_90-node_6_0_89": "green",
-    "node_6_0_90-node_6_0_91": "green",
-    "node_6_0_89-node_6_0_90": "green",
-    "node_6_0_84-gridnode_6_11705": "red",
-    "node_6_0_85-node_6_0_84": "red",
-    "gridnode_6_15392-node_6_0_85": "red",
+    "gridnode_6_9522-gridnode_6_9740": "green",
+    "node_6_0_81-gridnode_6_11049": "green",
     "gridnode_6_11705-node_6_0_81": "green",
-    "node_6_0_81-gridnode_6_11925": "green"
+    "gridnode_6_11925-node_6_0_81": "green",
+    "node_6_0_85-gridnode_6_10823": "green",
+    "gridnode_6_12127-gridnode_6_11255": "green",
+    "gridnode_6_12346-gridnode_6_12127": "green",
+    "gridnode_6_8655-node_6_0_78": "green",
+    "node_6_0_77-gridnode_6_8655": "green",
+    "gridnode_6_8657-node_6_0_77": "green",
+    "gridnode_6_13650-gridnode_6_12345": "green",
+    "node_6_0_87-gridnode_6_13650": "green",
+    "gridnode_6_14305-node_6_0_87": "green",
+    "gridnode_6_14742-gridnode_6_14305": "green",
+    "node_6_0_90-gridnode_6_14742": "green",
+    "node_6_0_89-node_6_0_90": "green",
+    "node_6_0_90-node_6_0_89": "green",
+    "node_6_0_91-node_6_0_90": "green",
+    "gridnode_6_15392-node_6_0_91": "green"
   }
 }

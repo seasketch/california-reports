@@ -99,7 +99,7 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({
             })
             .attr("fill", "none")
             .attr("stroke", "blue")
-            .attr("stroke-width", 1);
+            .attr("stroke-width", 0.5);
         });
 
         // Plot shortest path routes
@@ -130,16 +130,16 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({
         //   .attr("fill", (d) => "black");
 
         // Shortest path nodes
-        overlayGroup
-          .selectAll(".shortest-path-nodes")
-          .data(shortestPaths)
-          .enter()
-          .append("circle")
-          .attr("class", "shortest-path-nodes")
-          .attr("cx", (d) => xScale(graph.node(d.source)[0]))
-          .attr("cy", (d) => yScale(graph.node(d.source)[1]))
-          .attr("r", 2)
-          .attr("fill", (d) => "orange");
+        // overlayGroup
+        //   .selectAll(".shortest-path-nodes")
+        //   .data(shortestPaths)
+        //   .enter()
+        //   .append("circle")
+        //   .attr("class", "shortest-path-nodes")
+        //   .attr("cx", (d) => xScale(graph.node(d.source)[0]))
+        //   .attr("cy", (d) => yScale(graph.node(d.source)[1]))
+        //   .attr("r", 1)
+        //   .attr("fill", (d) => "orange");
 
         // Possible Nodes
         // overlayGroup.selectAll(".possible-node")
@@ -161,7 +161,7 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({
           .attr("class", "important-node")
           .attr("cx", (d) => xScale(graph.node(d)[0]))
           .attr("cy", (d) => yScale(graph.node(d)[1]))
-          .attr("r", 2)
+          .attr("r", 1)
           .attr("fill", (d) => "orange");
       })
       .catch((error) => console.error("Failed to load GeoJSON:", error));
