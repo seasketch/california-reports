@@ -7,11 +7,10 @@ import * as path from "path";
 const dataDir = "./data/bin";
 const fullPath = (s: string) => path.join(dataDir, s);
 const watersPath = fullPath("clippingLayer.01.geojson");
-const petitionsPath = fullPath("petitions.geojson");
 const landPath = fullPath("land.01.geojson");
 const landShrunkOut = fullPath("landShrunk.01.geojson");
-const jsonOut = fullPath("network.01-3mile.json");
-const nodesOut = fullPath("nodes.01.json");
+const jsonOut = fullPath("network.01.nogrid.json");
+const nodesOut = fullPath("nodes.01nogrid.json");
 
 // Read and process land data
 function loadAndShrinkLandData(landFile: string): any {
@@ -22,7 +21,7 @@ function loadAndShrinkLandData(landFile: string): any {
 }
 
 // Extract vertices from polygons
-function extractVerticesFromPolygon(
+export function extractVerticesFromPolygon(
   polygon: any,
   featureIndex: number,
   vertices: Map<string, number[]>
@@ -65,11 +64,11 @@ function createGraph(watersData: any): Graph {
         featureIndex,
         vertices
       );
-      addGridNodes(feature.geometry.coordinates, featureIndex, vertices);
+      //addGridNodes(feature.geometry.coordinates, featureIndex, vertices);
     } else if (feature.geometry.type === "MultiPolygon") {
       feature.geometry.coordinates.forEach((polygon: any) => {
         extractVerticesFromPolygon(polygon, featureIndex, vertices);
-        addGridNodes(polygon, featureIndex, vertices);
+        //addGridNodes(polygon, featureIndex, vertices);
       });
     }
   });
@@ -93,7 +92,7 @@ function createGraph(watersData: any): Graph {
 }
 
 // Check if a line between two coordinates is clear of land
-function isLineClear(
+export function isLineClear(
   coord1: number[],
   coord2: number[],
   landData: any
@@ -189,9 +188,8 @@ async function addOceanEdgesComplete(
 // Main function to generate the graph and save it
 async function main() {
   const watersData = fs.readJsonSync(watersPath);
-  const petitionsData = fs.readJsonSync(petitionsPath);
   const landData = loadAndShrinkLandData(landPath);
-  let graph = createGraph(watersData, petitionsData);
+  let graph = createGraph(watersData);
   graph = await addOceanEdgesComplete(graph, landData, true);
   fs.writeFileSync(jsonOut, JSON.stringify(graph));
 }
