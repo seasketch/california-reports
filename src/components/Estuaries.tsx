@@ -233,7 +233,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { replicate: true }
+                  { replicate: true, replicateMap: { estuaries: 0.12 } }
                 )}
               </Collapse>
             )}
