@@ -8,7 +8,6 @@ import {
   LineString,
   Feature,
   FeatureCollection,
-  cleanCoords,
 } from "@seasketch/geoprocessing";
 import {
   centroid,
@@ -21,12 +20,11 @@ import {
   booleanIntersects,
   multiPolygon,
   geojsonRbush,
-  booleanValid,
   featureCollection,
 } from "@turf/turf";
-import { Graph, alg } from "graphlib";
-import graphData from "../../data/bin/network.01.nogrid.json";
-import landData from "../../data/bin/landShrunk.01.json";
+import { Graph, alg, json } from "graphlib";
+import graphData from "../../data/bin/network.01.nogridJson.json";
+import landData from "../../data/bin/landShrunk.1.json";
 
 const SEARCH_RADIUS_MILES = 75; // Set search radius to 75 miles
 
@@ -44,33 +42,51 @@ export async function spacing(
   let start = Date.now();
 
   const sketchesUnbuffered = toSketchArray(sketch);
-  const sketchGraph = addSketchesToGraph(
-    readGraphFromFile(graphData),
-    sketchesUnbuffered
-  );
-  const graph = sketchGraph.graph;
-  const sketchNodes = sketchGraph.sketchNodes;
+  const { graph, tree } = await readGraphFromFile(graphData);
+  const sketchGraph = addSketchesToGraph(graph, tree, sketchesUnbuffered);
   let end = Date.now();
-  sketchesUnbuffered.forEach((sketch) => {
-    console.log(
-      `Added ${sketchNodes[sketch.properties.id]} nodes from ${sketch.properties.name} to graph`
-    );
-  });
   console.log(`Adding sketches to graph took ${end - start} ms`);
 
   // Buffer by 1 meter to ensure overlap with clipped edges
-  const sketches = sketchesUnbuffered.map((sketch) =>
-    buffer(sketch, 1, { units: "meters" })
+  const sketches = sketchesUnbuffered.map(
+    (sketch) => buffer(sketch, 1, { units: "meters" })!
   );
 
   // Calculate centroids
   const sketchesWithCentroids = sketches.map((sketch) => ({
     sketch,
+    id: sketch.properties!.id as string,
     centroid: centroid(sketch!).geometry.coordinates as [number, number],
   }));
 
-  // Sort sketches by latitude
-  sketchesWithCentroids.sort((a, b) => b.centroid[1] - a.centroid[1]);
+  // Create a graph for the MST
+  const mstGraph = new Graph();
+  sketchesWithCentroids.forEach((sketch) => {
+    mstGraph.setNode(sketch.id, sketch.centroid);
+  });
+
+  // Build the MST graph by adding edges between each pair of sketches
+  for (let i = 0; i < sketchesWithCentroids.length; i++) {
+    for (let j = i + 1; j < sketchesWithCentroids.length; j++) {
+      const dist = distance(
+        point(sketchesWithCentroids[i].centroid),
+        point(sketchesWithCentroids[j].centroid)
+      );
+      mstGraph.setEdge(
+        sketchesWithCentroids[i].id as string,
+        sketchesWithCentroids[j].id as string,
+        dist
+      );
+      mstGraph.setEdge(
+        sketchesWithCentroids[j].id as string,
+        sketchesWithCentroids[i].id as string,
+        dist
+      );
+    }
+  }
+
+  // Generate the MST using Prim's algorithm
+  const mst = alg.prim(mstGraph, (edge) => mstGraph.edge(edge));
 
   const pathsWithColors: {
     path: Feature<LineString>;
@@ -78,48 +94,28 @@ export async function spacing(
   }[] = [];
   let imporantNodes: string[] = [];
 
-  // Start with northernmost sketch
-  let currentSketch = sketchesWithCentroids[0];
-  let remainingSketches = sketchesWithCentroids.slice(1);
+  // Iterate over the MST edges to find the shortest path for each edge
+  for (const edge of mst.edges()) {
+    const sourceSketch = sketchesWithCentroids.find((s) => s.id === edge.v);
+    const targetSketch = sketchesWithCentroids.find((s) => s.id === edge.w);
 
-  while (remainingSketches.length > 0) {
-    let start = Date.now();
-    // Find the closest unvisited sketch
-    const closestSketch = remainingSketches.reduce(
-      (closest, sketch) => {
-        const dist = distance(
-          point(currentSketch.centroid),
-          point(sketch.centroid)
-        );
-        return dist < closest.distance ? { sketch, distance: dist } : closest;
-      },
-      { sketch: remainingSketches[0], distance: Infinity }
-    );
-    let end = Date.now();
-    console.log(`Finding closest sketch took ${end - start} ms`);
+    if (sourceSketch && targetSketch) {
+      const { path, edges, totalDistance } = findShortestPath(
+        sketchGraph.graph,
+        sourceSketch.sketch,
+        targetSketch.sketch,
+        sketchGraph.sketchNodes
+      );
 
-    start = Date.now();
-    const nextSketch = closestSketch.sketch;
-    const { path, edges, totalDistance } = findShortestPath(
-      graph,
-      currentSketch.sketch,
-      nextSketch.sketch,
-      sketchNodes
-    );
+      imporantNodes.push(path[0], path[path.length - 1]);
 
-    imporantNodes.push(path[0], path[path.length - 1]);
-
-    const color = totalDistance < 62 ? "green" : "red";
-    const nodes = path.map((node) => graph.node(node) as [number, number]);
-    pathsWithColors.push({
-      path: lineString(nodes),
-      color,
-    });
-
-    currentSketch = nextSketch;
-    remainingSketches = remainingSketches.filter(
-      (sketch) => sketch !== closestSketch.sketch
-    );
+      const color = totalDistance < 62 ? "green" : "red";
+      const nodes = path.map((node) => graph.node(node) as [number, number]);
+      pathsWithColors.push({
+        path: lineString(nodes),
+        color,
+      });
+    }
   }
 
   // Return the desired structure
@@ -129,7 +125,6 @@ export async function spacing(
   };
 }
 
-// Finds shortest path between two nodes using Dijkstra's algorithm
 function findShortestPath(
   graph: Graph,
   currentSketch: Sketch<Polygon>,
@@ -153,29 +148,18 @@ function findShortestPath(
   );
   let start = Date.now();
 
-  if (nodes0.length === 0 || nodes1.length === 0) {
-    throw new Error("No valid nodes found within one or both sketches.");
-  }
-
   let shortestPath: string[] = [];
   let shortestEdges: { source: string; target: string }[] = [];
   let minTotalDistance = Infinity;
 
-  // Iterate over all combinations of node0[] and node1[]
+  // Iterate over all nodes in nodes0
   nodes0.forEach((node0) => {
-    nodes1.forEach((node1) => {
-      // If sketches are connected/overlapping
-      if (node0 === node1) {
-        shortestPath = [node0];
-        shortestEdges = [];
-        minTotalDistance = 0;
-        return;
-      }
+    // Run Dijkstra's algorithm for node0
+    const pathResults = alg.dijkstra(graph, node0, (edge) => graph.edge(edge));
 
-      // Using Dijkstra's algorithm to find the shortest path
-      const path = alg.dijkstra(graph, node0, (edge) => graph.edge(edge));
-      if (!path[node1].predecessor) {
-        console.warn(`No path from ${node0} to ${node1}`);
+    // Check the distance to each node in nodes1
+    nodes1.forEach((node1) => {
+      if (!pathResults[node1].predecessor) {
         return;
       }
 
@@ -185,18 +169,18 @@ function findShortestPath(
       let totalDistance = 0;
 
       while (currentNode !== node0) {
-        const predecessor = path[currentNode].predecessor;
-        if (!predecessor) {
-          throw new Error(`No path from ${node0} to ${node1}`);
-        }
+        const predecessor = pathResults[currentNode].predecessor;
 
         tempPath.unshift(currentNode);
         tempEdges.push({ source: predecessor, target: currentNode });
 
-        // The weight was already calculated during Dijkstra, so just add it
         totalDistance +=
           graph.edge(predecessor, currentNode) ||
           graph.edge(currentNode, predecessor);
+
+        if (totalDistance > minTotalDistance) {
+          return;
+        }
 
         currentNode = predecessor;
       }
@@ -232,40 +216,29 @@ function findShortestPath(
   };
 }
 
-function readGraphFromFile(graphData: any): Graph {
-  const graph = new Graph();
+async function readGraphFromFile(
+  graphData: any
+): Promise<{ graph: Graph; tree: any }> {
+  const tree = geojsonRbush();
+  const graph = json.read(graphData);
 
-  // Adding nodes
-  for (const node in graphData._nodes) {
-    graph.setNode(node, graphData._nodes[node]);
-  }
+  // Batch insert nodes into R-tree
+  const points = graph
+    .nodes()
+    .map((node) => point(graph.node(node), { id: node }));
+  tree.load(featureCollection(points));
 
-  // Adding edges
-  for (const edge in graphData._in) {
-    const edges = graphData._in[edge];
-    for (const e in edges) {
-      const edgeInfo = edges[e];
-      const weight = graphData._edgeLabels[e];
-      graph.setEdge(edgeInfo.v, edgeInfo.w, weight);
-    }
-  }
-
-  return graph;
+  return { graph, tree };
 }
 
 function addSketchesToGraph(
   graph: Graph,
+  tree: any,
   sketches: Sketch<Polygon>[]
-): { graph: Graph; sketchNodes: Record<string, string[]> } {
+): { graph: Graph; tree: any; sketchNodes: Record<string, string[]> } {
   const sketchesSimplified = sketches.map((sketch) =>
     simplify(sketch, { tolerance: 0.05 })
   );
-
-  const valid = (landData as FeatureCollection).features.every((feature) => {
-    return booleanValid(feature);
-  });
-  console.log(`Land data is valid: ${valid}`);
-
   const landSimplified = buffer(
     simplify(landData as FeatureCollection, {
       tolerance: 0.1,
@@ -274,19 +247,7 @@ function addSketchesToGraph(
     { units: "meters" }
   );
 
-  const isValid = landSimplified.features.every((feature) => {
-    return booleanValid(feature.geometry);
-  });
-  console.log(`Land data is valid: ${isValid}`);
-
   const sketchNodes: Record<string, string[]> = {};
-  const tree = geojsonRbush();
-  graph.nodes().forEach((node) => {
-    const coord = graph.node(node);
-    if (coord) {
-      tree.insert(point(coord, { id: node }));
-    }
-  });
 
   sketchesSimplified.forEach((sketch: any, sketchIndex: number) => {
     let start = Date.now();
@@ -307,7 +268,6 @@ function addSketchesToGraph(
 
     sketchNodes[sketch.properties.id] = Array.from(vertices.keys());
 
-    // Insert the new node into the spatial index
     const searchArea = buffer(centroid(sketch), SEARCH_RADIUS_MILES, {
       units: "miles",
     });
@@ -371,7 +331,7 @@ function addSketchesToGraph(
     );
   });
 
-  return { graph, sketchNodes };
+  return { graph, tree, sketchNodes };
 }
 
 function extractVerticesFromPolygon(

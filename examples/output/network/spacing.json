@@ -105815,6 +105815,26 @@
           "type": "LineString",
           "coordinates": [
             [
+              -120.333693476,
+              34.408543166
+            ],
+            [
+              -119.449628347,
+              34.065010857
+            ]
+          ]
+        }
+      },
+      "color": "green"
+    },
+    {
+      "path": {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
               -121.878468487,
               36.209567616
             ],
@@ -105834,26 +105854,6 @@
         }
       },
       "color": "red"
-    },
-    {
-      "path": {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
-            [
-              -120.333693476,
-              34.408543166
-            ],
-            [
-              -119.449628347,
-              34.065010857
-            ]
-          ]
-        }
-      },
-      "color": "green"
     }
   ]
 }

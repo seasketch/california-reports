@@ -1,5 +1,5 @@
 import * as turf from "@turf/turf";
-import { Graph } from "graphlib";
+import graphlib from "graphlib";
 import fs from "fs-extra";
 import * as path from "path";
 
@@ -9,7 +9,7 @@ const fullPath = (s: string) => path.join(dataDir, s);
 const watersPath = fullPath("clippingLayer.01.geojson");
 const landPath = fullPath("land.01.geojson");
 const landShrunkOut = fullPath("landShrunk.01.geojson");
-const jsonOut = fullPath("network.01.nogrid.json");
+const jsonOut = fullPath("network.01.nogridJson.json");
 const nodesOut = fullPath("nodes.01nogrid.json");
 
 // Read and process land data
@@ -53,8 +53,8 @@ function addGridNodes(
 }
 
 // Create graph with vertices
-function createGraph(watersData: any): Graph {
-  const G = new Graph();
+function createGraph(watersData: any): graphlib.Graph {
+  const G = new graphlib.Graph();
   const vertices: Map<string, number[]> = new Map();
 
   watersData.features.forEach((feature: any, featureIndex: number) => {
@@ -118,10 +118,10 @@ export function isLineClear(
 
 // Add ocean edges to the graph
 async function addOceanEdgesComplete(
-  graph: Graph,
+  graph: graphlib.Graph,
   landData: any,
   verbose: boolean
-): Promise<Graph> {
+): Promise<graphlib.Graph> {
   const t0 = Date.now();
   if (verbose) {
     console.log(
@@ -191,7 +191,7 @@ async function main() {
   const landData = loadAndShrinkLandData(landPath);
   let graph = createGraph(watersData);
   graph = await addOceanEdgesComplete(graph, landData, true);
-  fs.writeFileSync(jsonOut, JSON.stringify(graph));
+  fs.writeFileSync(jsonOut, JSON.stringify(graphlib.json.write(graph)));
 }
 
 main().catch(console.error);
