@@ -21,10 +21,11 @@ import {
   multiPolygon,
   geojsonRbush,
   featureCollection,
+  bbox,
 } from "@turf/turf";
 import { Graph, alg, json } from "graphlib";
 import graphData from "../../data/bin/network.01.nogridJson.json";
-import landData from "../../data/bin/landShrunk.1.json";
+import landData from "../../data/bin/landShrunk.01.json";
 
 const SEARCH_RADIUS_MILES = 75; // Set search radius to 75 miles
 
@@ -90,6 +91,7 @@ export async function spacing(
 
   const pathsWithColors: {
     path: Feature<LineString>;
+    distance: number;
     color: string;
   }[] = [];
   let imporantNodes: string[] = [];
@@ -113,6 +115,7 @@ export async function spacing(
       const nodes = path.map((node) => graph.node(node) as [number, number]);
       pathsWithColors.push({
         path: lineString(nodes),
+        distance: totalDistance,
         color,
       });
     }
@@ -120,7 +123,7 @@ export async function spacing(
 
   // Return the desired structure
   return {
-    sketch: sketches, // Replace with the correct sketch as needed
+    sketch: sketches.map((sketch) => simplify(sketch, { tolerance: 0.01 })),
     paths: pathsWithColors,
   };
 }
@@ -159,6 +162,13 @@ function findShortestPath(
 
     // Check the distance to each node in nodes1
     nodes1.forEach((node1) => {
+      if (node0 === node1) {
+        console.log(`Sketches are touching`);
+        minTotalDistance = 0;
+        shortestPath = [node0];
+        shortestEdges = [];
+      }
+
       if (!pathResults[node1].predecessor) {
         return;
       }
@@ -239,9 +249,25 @@ function addSketchesToGraph(
   const sketchesSimplified = sketches.map((sketch) =>
     simplify(sketch, { tolerance: 0.05 })
   );
+
+  const sketchBox =
+    featureCollection(sketchesSimplified).bbox ||
+    bbox(featureCollection(sketchesSimplified));
+  const filteredFeatures = (landData as FeatureCollection).features.filter(
+    (feature) => {
+      const landBoundingBox = feature.bbox || bbox(feature);
+
+      return (
+        landBoundingBox[0] <= sketchBox[2] && // land minX <= sketch maxX
+        landBoundingBox[2] >= sketchBox[0] && // land maxX >= sketch minX
+        landBoundingBox[1] <= sketchBox[3] && // land minY <= sketch maxY
+        landBoundingBox[3] >= sketchBox[1] // land maxY >= sketch minY
+      );
+    }
+  );
   const landSimplified = buffer(
-    simplify(landData as FeatureCollection, {
-      tolerance: 0.1,
+    simplify(featureCollection(filteredFeatures), {
+      tolerance: 0.01,
     }),
     0.5,
     { units: "meters" }
@@ -303,21 +329,10 @@ function addSketchesToGraph(
           return;
         }
 
+        const dist = distance(nodeCoord, otherNodeCoord, { units: "miles" });
         if (isLineClear(nodeCoord, otherNodeCoord, landSimplified)) {
-          graph.setEdge(
-            node,
-            otherNode,
-            distance(nodeCoord, otherNodeCoord, {
-              units: "miles",
-            })
-          );
-          graph.setEdge(
-            otherNode,
-            node,
-            distance(nodeCoord, otherNodeCoord, {
-              units: "miles",
-            })
-          );
+          graph.setEdge(node, otherNode, dist);
+          graph.setEdge(otherNode, node, dist);
           edgeCount++;
         }
       });

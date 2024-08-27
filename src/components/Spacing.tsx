@@ -9,25 +9,26 @@ import {
   line,
 } from "d3";
 import {
-  ResultsCard,
-  ReportError,
-  useSketchProperties,
-  Card,
-} from "@seasketch/geoprocessing/client-ui";
-import {
   Feature,
   LineString,
   Polygon,
   Sketch,
 } from "@seasketch/geoprocessing/client-core";
-import { useTranslation } from "react-i18next";
 import { featureCollection } from "@turf/turf";
+import {
+  Card,
+  ReportError,
+  ResultsCard,
+  useSketchProperties,
+} from "@seasketch/geoprocessing/client-ui";
+import { useTranslation } from "react-i18next";
 
 // Props for the Replicate Map
 interface ReplicateMapProps {
   sketch: Sketch<Polygon>[];
   paths: {
     path: Feature<LineString>;
+    distance: number;
     color: string;
   }[];
 }
@@ -35,14 +36,27 @@ interface ReplicateMapProps {
 // Plots replicates and shortest paths between them
 const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
   const svgRef = useRef<SVGSVGElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const svg = select(svgRef.current);
     svg.selectAll("*").remove();
 
     const width = 400;
-    const height = 800;
+    const height = 600;
     svg.attr("width", width).attr("height", height);
+
+    // Tooltip setup
+    const tooltip = select(tooltipRef.current)
+      .style("position", "absolute")
+      .style("visibility", "hidden")
+      .style("background", "rgba(255, 255, 255, 0.9)")
+      .style("border", "1px solid #ccc")
+      .style("padding", "5px 10px")
+      .style("border-radius", "8px")
+      .style("box-shadow", "0 0 10px rgba(0, 0, 0, 0.15)")
+      .style("font-size", "12px")
+      .style("color", "#333");
 
     // Scale map to extent of sketch nodes
     const nodes = featureCollection(sketch).features.flatMap((feature) =>
@@ -57,7 +71,7 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
       .range([height, 0]);
 
     // Load and plot background land
-    json("../../data/bin/landShrunk.01.json")
+    json("../../data/bin/land.005.geojson")
       .then((geojson: any) => {
         const projection = geoTransform({
           point: function (x, y) {
@@ -72,10 +86,10 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
           .enter()
           .append("path")
           .attr("d", (d: any) => pathGenerator(d))
-          .attr("fill", "#d3d3d3")
-          .attr("stroke", "#000");
+          .attr("fill", "#e0e0e0")
+          .attr("stroke", "#333");
 
-        // Plot sketch polygons
+        // Plot sketch polygons (MPAs)
         sketch.forEach((s) => {
           svg
             .append("g")
@@ -91,12 +105,13 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
               ]);
               return line()(pathData as [number, number][]);
             })
-            .attr("fill", "none")
-            .attr("stroke", "blue")
-            .attr("stroke-width", 1);
+            .attr("fill", "lightblue")
+            .attr("stroke", "#4682b4")
+            .attr("stroke-width", 1.5)
+            .attr("stroke-linejoin", "round");
         });
 
-        // Plot paths with colors
+        // Plot paths with colors and add hover interaction
         const overlayGroup = svg.append("g");
         paths.forEach((d) => {
           const pathData = d.path.geometry.coordinates.map(([x, y]) => [
@@ -110,25 +125,68 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
             .attr("d", line()(pathData as [number, number][]))
             .attr("stroke", d.color)
             .attr("fill", "none")
-            .attr("stroke-width", 1);
+            .attr("stroke-width", 3)
+            .on("mouseover", (event) => {
+              tooltip
+                .style("visibility", "visible")
+                .text(`${d.distance.toFixed(0)} miles`);
+            })
+            .on("mousemove", (event) => {
+              const svgRect = svgRef.current?.getBoundingClientRect();
+              const tooltipWidth = tooltip
+                .node()
+                ?.getBoundingClientRect().width;
+              const tooltipHeight = tooltip
+                .node()
+                ?.getBoundingClientRect().height;
+
+              // Calculate the position relative to the SVG
+              const left = event.clientX - svgRect!.left + 30;
+              const top = event.clientY - svgRect!.top + 10;
+
+              // Ensure the tooltip stays within the SVG boundaries
+              const finalLeft = Math.min(left, svgRect!.width - tooltipWidth!);
+              const finalTop = Math.min(top, svgRect!.height - tooltipHeight!);
+
+              tooltip
+                .style("top", `${finalTop}px`)
+                .style("left", `${finalLeft}px`);
+            })
+
+            .on("mouseout", (event) => {
+              // Ensure that the mouse is not just passing over another element
+              const e = event.toElement || event.relatedTarget;
+              if (e && e.closest(".path-link")) return;
+
+              setTimeout(() => {
+                tooltip.style("visibility", "hidden");
+              }, 300); // Slight delay to prevent flickering
+            });
         });
 
-        // Plot nodes for paths (optional)
-        overlayGroup
-          .selectAll(".path-node")
-          .data(paths.flatMap((d) => d.path.geometry.coordinates))
-          .enter()
-          .append("circle")
-          .attr("class", "path-node")
-          .attr("cx", (d) => xScale(d[0]))
-          .attr("cy", (d) => yScale(d[1]))
-          .attr("r", 2)
-          .attr("fill", "orange");
+        // // Optional: Plot nodes for paths
+        // overlayGroup
+        //   .selectAll(".path-node")
+        //   .data(paths.flatMap((d) => d.path.geometry.coordinates))
+        //   .enter()
+        //   .append("circle")
+        //   .attr("class", "path-node")
+        //   .attr("cx", (d) => xScale(d[0]))
+        //   .attr("cy", (d) => yScale(d[1]))
+        //   .attr("r", 4)
+        //   .attr("fill", "#fff")
+        //   .attr("stroke", "#000")
+        //   .attr("stroke-width", 1);
       })
       .catch((error) => console.error("Failed to load GeoJSON:", error));
   }, [sketch, paths]);
 
-  return <svg ref={svgRef}></svg>;
+  return (
+    <>
+      <svg ref={svgRef}></svg>
+      <div ref={tooltipRef}></div>
+    </>
+  );
 };
 
 export const Spacing: React.FunctionComponent = (props) => {
