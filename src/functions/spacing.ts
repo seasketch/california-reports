@@ -29,27 +29,23 @@ import landData from "../../data/bin/landShrunk.01.json";
 
 const SEARCH_RADIUS_MILES = 75; // Set search radius to 75 miles
 
-export async function spacing(
-  sketch: Sketch<Polygon> | SketchCollection<Polygon>
-): Promise<{
-  sketch: any;
+export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
   paths: any;
 }> {
-  if (!isSketchCollection(sketch)) {
-    return { sketch, paths: [] };
+  if (sketchArray.length === 1) {
+    return { paths: [] };
   }
 
   console.log("Adding sketches to graph");
   let start = Date.now();
 
-  const sketchesUnbuffered = toSketchArray(sketch);
   const { graph, tree } = await readGraphFromFile(graphData);
-  const sketchGraph = addSketchesToGraph(graph, tree, sketchesUnbuffered);
+  const sketchGraph = addSketchesToGraph(graph, tree, sketchArray);
   let end = Date.now();
   console.log(`Adding sketches to graph took ${end - start} ms`);
 
   // Buffer by 1 meter to ensure overlap with clipped edges
-  const sketches = sketchesUnbuffered.map(
+  const sketches = sketchArray.map(
     (sketch) => buffer(sketch, 1, { units: "meters" })!
   );
 
@@ -123,7 +119,6 @@ export async function spacing(
 
   // Return the desired structure
   return {
-    sketch: sketches.map((sketch) => simplify(sketch, { tolerance: 0.01 })),
     paths: pathsWithColors,
   };
 }
@@ -330,7 +325,10 @@ function addSketchesToGraph(
         }
 
         const dist = distance(nodeCoord, otherNodeCoord, { units: "miles" });
-        if (isLineClear(nodeCoord, otherNodeCoord, landSimplified)) {
+        if (
+          isLineClear(nodeCoord, otherNodeCoord, landSimplified) ||
+          dist < 0.5
+        ) {
           graph.setEdge(node, otherNode, dist);
           graph.setEdge(otherNode, node, dist);
           edgeCount++;

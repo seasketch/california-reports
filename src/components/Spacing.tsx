@@ -17,6 +17,7 @@ import {
 import { featureCollection } from "@turf/turf";
 import {
   Card,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -26,6 +27,7 @@ import { useTranslation } from "react-i18next";
 // Props for the Replicate Map
 interface ReplicateMapProps {
   sketch: Sketch<Polygon>[];
+  replicateIds: string[];
   paths: {
     path: Feature<LineString>;
     distance: number;
@@ -34,7 +36,11 @@ interface ReplicateMapProps {
 }
 
 // Plots replicates and shortest paths between them
-const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
+export const ReplicateMap: React.FC<ReplicateMapProps> = ({
+  sketch,
+  replicateIds,
+  paths,
+}) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -42,21 +48,9 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
     const svg = select(svgRef.current);
     svg.selectAll("*").remove();
 
-    const width = 400;
+    const width = 430;
     const height = 600;
     svg.attr("width", width).attr("height", height);
-
-    // Tooltip setup
-    const tooltip = select(tooltipRef.current)
-      .style("position", "absolute")
-      .style("visibility", "hidden")
-      .style("background", "rgba(255, 255, 255, 0.9)")
-      .style("border", "1px solid #ccc")
-      .style("padding", "5px 10px")
-      .style("border-radius", "8px")
-      .style("box-shadow", "0 0 10px rgba(0, 0, 0, 0.15)")
-      .style("font-size", "12px")
-      .style("color", "#333");
 
     // Scale map to extent of sketch nodes
     const nodes = featureCollection(sketch).features.flatMap((feature) =>
@@ -71,7 +65,7 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
       .range([height, 0]);
 
     // Load and plot background land
-    json("../../data/bin/land.005.geojson")
+    json("../../data/bin/landShrunk.01.json")
       .then((geojson: any) => {
         const projection = geoTransform({
           point: function (x, y) {
@@ -105,10 +99,26 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
               ]);
               return line()(pathData as [number, number][]);
             })
-            .attr("fill", "lightblue")
-            .attr("stroke", "#4682b4")
-            .attr("stroke-width", 1.5)
-            .attr("stroke-linejoin", "round");
+            .attr(
+              "fill",
+              replicateIds.includes(s.properties.id) ? "lightgreen" : "white"
+            )
+            .attr(
+              "stroke",
+              replicateIds.includes(s.properties.id) ? "darkgreen" : "grey"
+            )
+            .attr("stroke-width", 1)
+            .attr("stroke-linejoin", "round")
+            .on("mouseover", (event) => {
+              tooltip.style("visibility", "visible");
+              tooltipDiv.text(s.properties.name);
+            })
+            .on("mouseout", (event) => {
+              // Ensure that the mouse is not just passing over another element
+              const e = event.toElement || event.relatedTarget;
+              if (e && e.closest(".path-link")) return;
+              tooltip.style("visibility", "hidden");
+            });
         });
 
         // Plot paths with colors and add hover interaction
@@ -123,44 +133,15 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
             .append("path")
             .attr("class", "path-link")
             .attr("d", line()(pathData as [number, number][]))
-            .attr("stroke", d.color)
+            .attr("stroke", `${d.color}`)
             .attr("fill", "none")
             .attr("stroke-width", 3)
             .on("mouseover", (event) => {
-              tooltip
-                .style("visibility", "visible")
-                .text(`${d.distance.toFixed(0)} miles`);
+              tooltip.style("visibility", "visible");
+              tooltipDiv.text(`${d.distance.toFixed(0)} miles`);
             })
-            .on("mousemove", (event) => {
-              const svgRect = svgRef.current?.getBoundingClientRect();
-              const tooltipWidth = tooltip
-                .node()
-                ?.getBoundingClientRect().width;
-              const tooltipHeight = tooltip
-                .node()
-                ?.getBoundingClientRect().height;
-
-              // Calculate the position relative to the SVG
-              const left = event.clientX - svgRect!.left + 30;
-              const top = event.clientY - svgRect!.top + 10;
-
-              // Ensure the tooltip stays within the SVG boundaries
-              const finalLeft = Math.min(left, svgRect!.width - tooltipWidth!);
-              const finalTop = Math.min(top, svgRect!.height - tooltipHeight!);
-
-              tooltip
-                .style("top", `${finalTop}px`)
-                .style("left", `${finalLeft}px`);
-            })
-
             .on("mouseout", (event) => {
-              // Ensure that the mouse is not just passing over another element
-              const e = event.toElement || event.relatedTarget;
-              if (e && e.closest(".path-link")) return;
-
-              setTimeout(() => {
-                tooltip.style("visibility", "hidden");
-              }, 300); // Slight delay to prevent flickering
+              tooltip.style("visibility", "hidden");
             });
         });
 
@@ -177,7 +158,27 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
         //   .attr("fill", "#fff")
         //   .attr("stroke", "#000")
         //   .attr("stroke-width", 1);
+
+        const tooltip = svg
+          .append("foreignObject")
+          .attr("id", "svg-tooltip")
+          .attr("x", width - 150)
+          .attr("y", 10)
+          .attr("width", 140)
+          .attr("height", 50)
+          .attr("visibility", "hidden");
+
+        const tooltipDiv = tooltip
+          .append("xhtml:div")
+          .style("background", "rgba(255, 255, 255, 0.9)")
+          .style("border", "1px solid #ccc")
+          .style("padding", "5px 10px")
+          .style("border-radius", "8px")
+          .style("font-size", "12px")
+          .style("text-align", "center")
+          .style("color", "#333");
       })
+
       .catch((error) => console.error("Failed to load GeoJSON:", error));
   }, [sketch, paths]);
 
@@ -185,6 +186,41 @@ const ReplicateMap: React.FC<ReplicateMapProps> = ({ sketch, paths }) => {
     <>
       <svg ref={svgRef}></svg>
       <div ref={tooltipRef}></div>
+    </>
+  );
+};
+
+export const SpacingObjectives = (props: {
+  paths: {
+    path: Feature<LineString>;
+    distance: number;
+    color: string;
+  }[];
+}) => {
+  return (
+    <>
+      {props.paths.filter((p) => p.color === "red").length === 0 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>
+              These habitat replicates meet the spacing guidelines. All
+              replicates have gaps less than 62 statute miles.
+            </>
+          }
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              These habitat replicates do not meet the spacing guidelines. There
+              are {props.paths.filter((p) => p.color === "red").length} gaps
+              greater than 62 statute miles.
+            </>
+          }
+        />
+      )}
     </>
   );
 };

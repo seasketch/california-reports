@@ -3,7 +3,9 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  KeySection,
   LayerToggle,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -12,15 +14,20 @@ import {
 import {
   GeogProp,
   Metric,
-  ReportResult,
+  NullSketch,
+  NullSketchCollection,
+  Polygon,
+  Sketch,
   metricsWithSketchId,
   roundDecimal,
+  sketchToId,
   squareMeterToMile,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { genSketchTable } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
+import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -51,7 +58,13 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="kelpMax">
-      {(data: ReportResult) => {
+      {(data: {
+        metrics: Metric[];
+        sketch: NullSketch | NullSketchCollection;
+        simpleSketches: Sketch<Polygon>[];
+        replicateIds: string[];
+        paths: any;
+      }) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
@@ -238,20 +251,39 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
-                    ),
-                  },
-                  precalcMetrics.filter((m) => m.geographyId === "world"),
-                  metricGroup,
-                  t,
-                  { replicate: true, replicateMap: { kelpMax: 1.1 } }
-                )}
-              </Collapse>
+              <>
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    {
+                      ...data,
+                      metrics: data.metrics.filter(
+                        (m) => m.geographyId === "world"
+                      ),
+                    },
+                    precalcMetrics.filter((m) => m.geographyId === "world"),
+                    metricGroup,
+                    t,
+                    { replicate: true, replicateMap: { kelpMax: 1.1 } }
+                  )}
+                </Collapse>
+                <Collapse title={t("Spacing Analysis")}>
+                  <VerticalSpacer />
+                  <KeySection>
+                    <p>
+                      Of the {data.simpleSketches.length} MPAs analyzed,{" "}
+                      {data.replicateIds.length} qualify as kelp habitat
+                      replicates.
+                    </p>
+                  </KeySection>
+                  <SpacingObjectives paths={data.paths} />
+                  <VerticalSpacer />
+                  <ReplicateMap
+                    sketch={data.simpleSketches}
+                    replicateIds={data.replicateIds}
+                    paths={data.paths}
+                  />
+                </Collapse>
+              </>
             )}
 
             <Collapse title={t("Learn More")}>
