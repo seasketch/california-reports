@@ -315,8 +315,9 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 <Trans i18nKey="SizeCard-learn more">
                   <p>🗺️ Source Data: CDFW</p>
                   <p>
-                    📈 Report: If sketch boundaries within a plan overlap with
-                    each other, the overlap is only counted once.
+                    📈 Report: This report calculates area of the selected
+                    MPA(s). If MPA boundaries overlap, the overlap is only
+                    counted once.
                   </p>
                 </Trans>
               </Collapse>

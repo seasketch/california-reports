@@ -89,8 +89,9 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <p>
               <Trans i18nKey="KelpPersist 1">
-                This report summarizes this plan's overlap with kelp within
-                California's territorial sea.
+                Potential kelp forest is a key habitat. This report summarizes
+                the overlap of the selected MPA(s) with the number of years of
+                kelp canopy coverage between 2002-2016.
               </Trans>
             </p>
 
@@ -106,7 +107,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
               objective={objectives}
               columnConfig={[
                 {
-                  columnLabel: t("Kelp Persistance"),
+                  columnLabel: t("Kelp Persistence"),
                   type: "class",
                   width: 23.21062239466359856,
                 },
@@ -292,31 +293,29 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="KelpPersist - learn more">
                 <p>
-                  ℹ️ Overview: To show the persistence of Kelp Canopy from year
-                  to year as detected in 13 annual surveys conducted by the
-                  California Department of Fish and Wildlife between 2002 and
-                  2016. Yearly California kelp canopy surveys from 2002 - 2006,
-                  2008 - 2010, and 2013 - 2016 were each rasterized at a 5m cell
-                  size using a Boolean raster with presence/absence values (e.g.
-                  1 or 0). The resulting raster grids were added together using
-                  a raster calculator resulting in a raster with counts (value)
-                  of how many yearly instances where kelp was present in that
-                  cell over the period of all the surveys.
-                </p>
-                <p>
-                  Kelp data has been downsampled to a 30m x 30m raster grid for
-                  efficiency, therefore area calculations are estimates. Final
-                  plans should check area totals in GIS tools before publishing
-                  final area statistics.
+                  ℹ️ Overview: This layer shows the persistence of kelp canopy
+                  from year to year as detected in 13 annual surveys conducted
+                  by the California Department of Fish and Wildlife between 2002
+                  and 2016. Yearly California kelp canopy surveys from 2002 -
+                  2006, 2008 - 2010, and 2013 - 2016 were each rasterized at a
+                  5m cell size using a Boolean raster with presence/absence
+                  values (e.g. 1 or 0). The resulting raster grids were added
+                  together using a raster calculator resulting in a raster with
+                  counts (value) of how many yearly instances where kelp was
+                  present in that cell over the period of all the surveys.
                 </p>
                 <p>🎯 Planning Objective: N/A</p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total value of kelp
+                  canopy coverage and number of years present within the
+                  selected MPA(s). This value is divided by the total value of
+                  kelp canopy coverage to obtain the % contained within the
+                  selected MPA(s). If the plan includes multiple areas that
+                  overlap, the overlap is only counted once. Kelp data has been
+                  downsampled to a 30 m x 30 m raster grid for efficiency, so
+                  area calculations are estimates. Final plans should check area
+                  totals in GIS tools before publishing final area statistics.
                 </p>
               </Trans>
             </Collapse>

@@ -573,7 +573,10 @@ export const genAreaGroupLevelTable = (
       <Table
         className="styled"
         columns={columns}
-        data={levelAggs.sort((a, b) => a.groupId.localeCompare(b.groupId))}
+        data={levelAggs.sort(
+          (a, b) =>
+            groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || "")
+        )}
       />
     </AreaSketchTableStyled>
   );
