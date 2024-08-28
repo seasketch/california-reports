@@ -4,22 +4,11 @@
       "geographyId": "central_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "central_br",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 13243957.252159,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -27,44 +16,55 @@
       "geographyId": "central_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
-      "value": 9102736.470355,
+      "value": 0,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "central_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
-      "value": 4141220.781803,
+      "value": 0,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "central_br",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "central_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 13243957.252159,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -72,44 +72,55 @@
       "geographyId": "central_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
-      "value": 9102736.470355,
+      "value": 0,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "central_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
-      "value": 4141220.781803,
+      "value": 0,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "north_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "north_br",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -117,44 +128,55 @@
       "geographyId": "north_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "north_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "north_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -162,44 +184,55 @@
       "geographyId": "north_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "north_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "northcentral_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -207,44 +240,55 @@
       "geographyId": "northcentral_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "northcentral_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
       "value": 0,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "south_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
-      "value": 1008878.168816,
+      "value": 3275259.973029,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "south_br",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 9172926.653098,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -252,44 +296,55 @@
       "geographyId": "south_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
-      "value": 0,
+      "value": 1336996.131515,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "south_br",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
-      "value": 8164048.484282,
+      "value": 1534881.706958,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 345031.259746,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 58350.87481,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "south_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
-      "value": 1008878.168816,
+      "value": 3275259.973029,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "south_sr",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 9172926.653098,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -297,44 +352,55 @@
       "geographyId": "south_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
-      "value": 0,
+      "value": 1336996.131515,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "south_sr",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
-      "value": 8164048.484282,
+      "value": 1534881.706958,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 345031.259746,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 58350.87481,
+      "extra": {
+        "sketchName": "catalina"
       }
     },
     {
       "geographyId": "world",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29481",
+      "sketchId": "37037",
       "groupId": "band-0",
-      "value": 1008878.168816,
+      "value": 3275259.973029,
       "extra": {
-        "sketchName": "anacapa"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "kelpMax",
-      "classId": "kelpMax",
-      "sketchId": "29482",
-      "groupId": "band-0",
-      "value": 22416883.905257,
-      "extra": {
-        "sketchName": "network",
+        "sketchName": "islands",
         "isCollection": true
       }
     },
@@ -342,48 +408,69 @@
       "geographyId": "world",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29483",
+      "sketchId": "37038",
       "groupId": "band-0",
-      "value": 9102736.470355,
+      "value": 1336996.131515,
       "extra": {
-        "sketchName": "mpa-test"
+        "sketchName": "sanmiguel"
       }
     },
     {
       "geographyId": "world",
       "metricId": "kelpMax",
       "classId": "kelpMax",
-      "sketchId": "29484",
+      "sketchId": "37039",
       "groupId": "band-0",
-      "value": 12305269.266084999,
+      "value": 1534881.706958,
       "extra": {
-        "sketchName": "split"
+        "sketchName": "santarosa"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37040",
+      "groupId": "band-0",
+      "value": 345031.259746,
+      "extra": {
+        "sketchName": "santacruz"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "kelpMax",
+      "classId": "kelpMax",
+      "sketchId": "37041",
+      "groupId": "band-0",
+      "value": 58350.87481,
+      "extra": {
+        "sketchName": "catalina"
       }
     }
   ],
   "sketch": {
-    "id": 29482,
+    "id": 37037,
     "type": "FeatureCollection",
     "features": [
       {
-        "id": 29483,
+        "id": 37040,
         "bbox": [
-          -121.962715,
-          36.209553,
-          -121.7673,
-          36.305416
+          -119.65703,
+          34.013054,
+          -119.60915,
+          34.025505
         ],
         "type": "Feature",
         "properties": {
-          "4768": "mpa-test",
+          "4768": "santacruz",
           "4769": "SMCANT",
-          "8340": "SMR",
-          "id": "29483",
+          "8340": "SMCA",
+          "id": "37040",
+          "FID": null,
           "ccr": null,
-          "fid": null,
-          "name": "mpa-test",
+          "name": "santacruz",
           "type": "SMCANT",
-          "AddMPA": null,
           "Method": null,
           "Tribal": null,
           "postId": null,
@@ -394,8 +481,9 @@
           "Petition": null,
           "userSlug": "Abby",
           "Bioregion": null,
-          "createdAt": "2024-05-28T20:04:12.993219+00:00",
-          "updatedAt": "2024-06-03T18:29:40.726829+00:00",
+          "action_id": null,
+          "createdAt": "2024-08-27T18:50:41.570994+00:00",
+          "updatedAt": "2024-08-27T18:50:48.855358+00:00",
           "AffectedMP": null,
           "Change_Cat": null,
           "Descriptio": null,
@@ -403,7 +491,7 @@
           "PetitionLi": null,
           "Study_Regi": null,
           "TakeChange": null,
-          "collectionId": "29482",
+          "collectionId": "37037",
           "isCollection": false,
           "sharedInForum": false,
           "sketchClassId": "492",
@@ -418,6 +506,24 @@
               "alternateLanguages": {}
             },
             {
+              "label": "FID",
+              "value": null,
+              "exportId": "FID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8668,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Action ID",
+              "value": null,
+              "exportId": "action_id",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8670,
+              "alternateLanguages": {}
+            },
+            {
               "label": "CCR",
               "value": null,
               "exportId": "ccr",
@@ -427,7 +533,7 @@
               "alternateLanguages": {}
             },
             {
-              "label": "Study Region",
+              "label": "Planning Region",
               "value": null,
               "exportId": "Study_Regi",
               "fieldType": "ComboBox",
@@ -440,7 +546,7 @@
               "value": "SMCANT",
               "exportId": "type",
               "fieldType": "ComboBox",
-              "valueLabel": "State Marine Conervation Area (No-Take)",
+              "valueLabel": "State Marine Conservation Area (No-Take)",
               "formElementId": 4769,
               "alternateLanguages": {}
             },
@@ -451,15 +557,6 @@
               "fieldType": "ShortText",
               "valueLabel": null,
               "formElementId": 8319,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Add or Remove MPA",
-              "value": null,
-              "exportId": "AddMPA",
-              "fieldType": "ComboBox",
-              "valueLabel": null,
-              "formElementId": 8320,
               "alternateLanguages": {}
             },
             {
@@ -544,12 +641,222 @@
               "alternateLanguages": {}
             },
             {
-              "label": "FID",
+              "label": "Contact",
               "value": null,
-              "exportId": "fid",
+              "exportId": "contact",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8338,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Object ID",
+              "value": null,
+              "exportId": "OBJECTID",
               "fieldType": "Number",
               "valueLabel": null,
-              "formElementId": 8337,
+              "formElementId": 8341,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Proposed Designation (type)",
+              "value": "SMCA",
+              "exportId": "proposed_designation",
+              "fieldType": "ComboBox",
+              "valueLabel": "State Marine Conservation Area",
+              "formElementId": 8340,
+              "alternateLanguages": {}
+            }
+          ],
+          "proposed_designation": "SMCA"
+        },
+        "geometry": null
+      },
+      {
+        "id": 37039,
+        "bbox": [
+          -120.10897,
+          33.88703,
+          -120.059685,
+          33.91255
+        ],
+        "type": "Feature",
+        "properties": {
+          "4768": "santarosa",
+          "4769": "SMCANT",
+          "8340": "SMCANT",
+          "id": "37039",
+          "FID": null,
+          "ccr": null,
+          "name": "santarosa",
+          "type": "SMCANT",
+          "Method": null,
+          "Tribal": null,
+          "postId": null,
+          "userId": "531",
+          "DFG_URL": null,
+          "contact": null,
+          "OBJECTID": null,
+          "Petition": null,
+          "userSlug": "Abby",
+          "Bioregion": null,
+          "action_id": null,
+          "createdAt": "2024-08-27T18:50:24.245601+00:00",
+          "updatedAt": "2024-08-27T18:50:28.754502+00:00",
+          "AffectedMP": null,
+          "Change_Cat": null,
+          "Descriptio": null,
+          "Organizati": null,
+          "PetitionLi": null,
+          "Study_Regi": null,
+          "TakeChange": null,
+          "collectionId": "37037",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "492",
+          "userAttributes": [
+            {
+              "label": "Description",
+              "value": null,
+              "exportId": "Descriptio",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 4770,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "FID",
+              "value": null,
+              "exportId": "FID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8668,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Action ID",
+              "value": null,
+              "exportId": "action_id",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8670,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "CCR",
+              "value": null,
+              "exportId": "ccr",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8317,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Planning Region",
+              "value": null,
+              "exportId": "Study_Regi",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8318,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Current Designation (type)",
+              "value": "SMCANT",
+              "exportId": "type",
+              "fieldType": "ComboBox",
+              "valueLabel": "State Marine Conservation Area (No-Take)",
+              "formElementId": 4769,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "DFG URL",
+              "value": null,
+              "exportId": "DFG_URL",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8319,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Affected MPA",
+              "value": null,
+              "exportId": "AffectedMP",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8321,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Bioregion",
+              "value": null,
+              "exportId": "Bioregion",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8322,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Change Category",
+              "value": null,
+              "exportId": "Change_Cat",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8323,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Method",
+              "value": null,
+              "exportId": "Method",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8324,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Orginization",
+              "value": null,
+              "exportId": "Organizati",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8325,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Take Change",
+              "value": null,
+              "exportId": "TakeChange",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8326,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Tribal?",
+              "value": null,
+              "exportId": "Tribal",
+              "fieldType": "YesNo",
+              "valueLabel": null,
+              "formElementId": 8328,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition",
+              "value": null,
+              "exportId": "Petition",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8329,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition Link (URL)",
+              "value": null,
+              "exportId": "PetitionLi",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8331,
               "alternateLanguages": {}
             },
             {
@@ -559,6 +866,234 @@
               "fieldType": "ShortText",
               "valueLabel": null,
               "formElementId": 8338,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Object ID",
+              "value": null,
+              "exportId": "OBJECTID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8341,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Proposed Designation (type)",
+              "value": "SMCANT",
+              "exportId": "proposed_designation",
+              "fieldType": "ComboBox",
+              "valueLabel": "State Marine Conservation Area (No-Take)",
+              "formElementId": 8340,
+              "alternateLanguages": {}
+            }
+          ],
+          "proposed_designation": "SMCANT"
+        },
+        "geometry": null
+      },
+      {
+        "id": 37038,
+        "bbox": [
+          -120.421074,
+          34.050125,
+          -120.39262,
+          34.070942
+        ],
+        "type": "Feature",
+        "properties": {
+          "4768": "sanmiguel",
+          "4769": "SMCA",
+          "8340": "SMR",
+          "id": "37038",
+          "FID": null,
+          "ccr": null,
+          "name": "sanmiguel",
+          "type": "SMCA",
+          "Method": null,
+          "Tribal": null,
+          "postId": null,
+          "userId": "531",
+          "DFG_URL": null,
+          "contact": null,
+          "OBJECTID": null,
+          "Petition": null,
+          "userSlug": "Abby",
+          "Bioregion": null,
+          "action_id": null,
+          "createdAt": "2024-08-27T18:49:38.008216+00:00",
+          "updatedAt": "2024-08-27T18:49:52.928739+00:00",
+          "AffectedMP": null,
+          "Change_Cat": null,
+          "Descriptio": null,
+          "Organizati": null,
+          "PetitionLi": null,
+          "Study_Regi": null,
+          "TakeChange": null,
+          "collectionId": "37037",
+          "isCollection": false,
+          "sharedInForum": false,
+          "sketchClassId": "492",
+          "userAttributes": [
+            {
+              "label": "Description",
+              "value": null,
+              "exportId": "Descriptio",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 4770,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "FID",
+              "value": null,
+              "exportId": "FID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8668,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Action ID",
+              "value": null,
+              "exportId": "action_id",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8670,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "CCR",
+              "value": null,
+              "exportId": "ccr",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8317,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Planning Region",
+              "value": null,
+              "exportId": "Study_Regi",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8318,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Current Designation (type)",
+              "value": "SMCA",
+              "exportId": "type",
+              "fieldType": "ComboBox",
+              "valueLabel": "State Marine Conservation Area",
+              "formElementId": 4769,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "DFG URL",
+              "value": null,
+              "exportId": "DFG_URL",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8319,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Affected MPA",
+              "value": null,
+              "exportId": "AffectedMP",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8321,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Bioregion",
+              "value": null,
+              "exportId": "Bioregion",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8322,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Change Category",
+              "value": null,
+              "exportId": "Change_Cat",
+              "fieldType": "ComboBox",
+              "valueLabel": null,
+              "formElementId": 8323,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Method",
+              "value": null,
+              "exportId": "Method",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8324,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Orginization",
+              "value": null,
+              "exportId": "Organizati",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8325,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Take Change",
+              "value": null,
+              "exportId": "TakeChange",
+              "fieldType": "TextArea",
+              "valueLabel": null,
+              "formElementId": 8326,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Tribal?",
+              "value": null,
+              "exportId": "Tribal",
+              "fieldType": "YesNo",
+              "valueLabel": null,
+              "formElementId": 8328,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition",
+              "value": null,
+              "exportId": "Petition",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8329,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Petition Link (URL)",
+              "value": null,
+              "exportId": "PetitionLi",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8331,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Contact",
+              "value": null,
+              "exportId": "contact",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8338,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Object ID",
+              "value": null,
+              "exportId": "OBJECTID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8341,
               "alternateLanguages": {}
             },
             {
@@ -569,15 +1104,6 @@
               "valueLabel": "State Marine Reserve",
               "formElementId": 8340,
               "alternateLanguages": {}
-            },
-            {
-              "label": "Object ID",
-              "value": null,
-              "exportId": "OBJECTID",
-              "fieldType": "Number",
-              "valueLabel": null,
-              "formElementId": 8341,
-              "alternateLanguages": {}
             }
           ],
           "proposed_designation": "SMR"
@@ -585,24 +1111,23 @@
         "geometry": null
       },
       {
-        "id": 29484,
+        "id": 37041,
         "bbox": [
-          -120.58906,
-          34.3916,
-          -120.31646,
-          34.53999
+          -118.31064,
+          33.30705,
+          -118.26893,
+          33.34866
         ],
         "type": "Feature",
         "properties": {
-          "4768": "split",
-          "4769": "SMCANT",
-          "8340": "Special",
-          "id": "29484",
+          "4768": "catalina",
+          "4769": "SMR",
+          "8340": "SMCA",
+          "id": "37041",
+          "FID": null,
           "ccr": null,
-          "fid": null,
-          "name": "split",
-          "type": "SMCANT",
-          "AddMPA": null,
+          "name": "catalina",
+          "type": "SMR",
           "Method": null,
           "Tribal": null,
           "postId": null,
@@ -613,8 +1138,9 @@
           "Petition": null,
           "userSlug": "Abby",
           "Bioregion": null,
-          "createdAt": "2024-05-28T20:04:49.549506+00:00",
-          "updatedAt": "2024-06-03T18:29:57.768727+00:00",
+          "action_id": null,
+          "createdAt": "2024-08-27T18:51:02.005902+00:00",
+          "updatedAt": "2024-08-27T18:51:07.839923+00:00",
           "AffectedMP": null,
           "Change_Cat": null,
           "Descriptio": null,
@@ -622,7 +1148,7 @@
           "PetitionLi": null,
           "Study_Regi": null,
           "TakeChange": null,
-          "collectionId": "29482",
+          "collectionId": "37037",
           "isCollection": false,
           "sharedInForum": false,
           "sketchClassId": "492",
@@ -637,6 +1163,24 @@
               "alternateLanguages": {}
             },
             {
+              "label": "FID",
+              "value": null,
+              "exportId": "FID",
+              "fieldType": "Number",
+              "valueLabel": null,
+              "formElementId": 8668,
+              "alternateLanguages": {}
+            },
+            {
+              "label": "Action ID",
+              "value": null,
+              "exportId": "action_id",
+              "fieldType": "ShortText",
+              "valueLabel": null,
+              "formElementId": 8670,
+              "alternateLanguages": {}
+            },
+            {
               "label": "CCR",
               "value": null,
               "exportId": "ccr",
@@ -646,7 +1190,7 @@
               "alternateLanguages": {}
             },
             {
-              "label": "Study Region",
+              "label": "Planning Region",
               "value": null,
               "exportId": "Study_Regi",
               "fieldType": "ComboBox",
@@ -656,10 +1200,10 @@
             },
             {
               "label": "Current Designation (type)",
-              "value": "SMCANT",
+              "value": "SMR",
               "exportId": "type",
               "fieldType": "ComboBox",
-              "valueLabel": "Federal Marine Conservation Area",
+              "valueLabel": "State Marine Reserve",
               "formElementId": 4769,
               "alternateLanguages": {}
             },
@@ -670,15 +1214,6 @@
               "fieldType": "ShortText",
               "valueLabel": null,
               "formElementId": 8319,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Add or Remove MPA",
-              "value": null,
-              "exportId": "AddMPA",
-              "fieldType": "ComboBox",
-              "valueLabel": null,
-              "formElementId": 8320,
               "alternateLanguages": {}
             },
             {
@@ -763,30 +1298,12 @@
               "alternateLanguages": {}
             },
             {
-              "label": "FID",
-              "value": null,
-              "exportId": "fid",
-              "fieldType": "Number",
-              "valueLabel": null,
-              "formElementId": 8337,
-              "alternateLanguages": {}
-            },
-            {
               "label": "Contact",
               "value": null,
               "exportId": "contact",
               "fieldType": "ShortText",
               "valueLabel": null,
               "formElementId": 8338,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Proposed Designation (type)",
-              "value": "Special",
-              "exportId": "proposed_designation",
-              "fieldType": "ComboBox",
-              "valueLabel": "Special Closure",
-              "formElementId": 8340,
               "alternateLanguages": {}
             },
             {
@@ -797,242 +1314,31 @@
               "valueLabel": null,
               "formElementId": 8341,
               "alternateLanguages": {}
-            }
-          ],
-          "proposed_designation": "Special"
-        },
-        "geometry": null
-      },
-      {
-        "id": 29481,
-        "bbox": [
-          -119.488525,
-          33.952343,
-          -119.29513,
-          34.068176
-        ],
-        "type": "Feature",
-        "properties": {
-          "4768": "anacapa",
-          "4769": "SMCANT",
-          "8337": 2,
-          "8340": "SMCANT",
-          "id": "29481",
-          "ccr": null,
-          "fid": 2,
-          "name": "anacapa",
-          "type": "SMCANT",
-          "AddMPA": null,
-          "Method": null,
-          "Tribal": null,
-          "postId": null,
-          "userId": "531",
-          "DFG_URL": null,
-          "contact": null,
-          "OBJECTID": null,
-          "Petition": null,
-          "userSlug": "Abby",
-          "Bioregion": null,
-          "createdAt": "2024-05-28T20:03:43.811482+00:00",
-          "updatedAt": "2024-06-03T18:29:22.893998+00:00",
-          "AffectedMP": null,
-          "Change_Cat": null,
-          "Descriptio": null,
-          "Organizati": null,
-          "PetitionLi": null,
-          "Study_Regi": null,
-          "TakeChange": null,
-          "collectionId": "29482",
-          "isCollection": false,
-          "sharedInForum": false,
-          "sketchClassId": "492",
-          "userAttributes": [
-            {
-              "label": "Description",
-              "value": null,
-              "exportId": "Descriptio",
-              "fieldType": "TextArea",
-              "valueLabel": null,
-              "formElementId": 4770,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "CCR",
-              "value": null,
-              "exportId": "ccr",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8317,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Study Region",
-              "value": null,
-              "exportId": "Study_Regi",
-              "fieldType": "ComboBox",
-              "valueLabel": null,
-              "formElementId": 8318,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Current Designation (type)",
-              "value": "SMCANT",
-              "exportId": "type",
-              "fieldType": "ComboBox",
-              "valueLabel": "Federal Marine Conservation Area",
-              "formElementId": 4769,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "DFG URL",
-              "value": null,
-              "exportId": "DFG_URL",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8319,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Add or Remove MPA",
-              "value": null,
-              "exportId": "AddMPA",
-              "fieldType": "ComboBox",
-              "valueLabel": null,
-              "formElementId": 8320,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Affected MPA",
-              "value": null,
-              "exportId": "AffectedMP",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8321,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Bioregion",
-              "value": null,
-              "exportId": "Bioregion",
-              "fieldType": "ComboBox",
-              "valueLabel": null,
-              "formElementId": 8322,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Change Category",
-              "value": null,
-              "exportId": "Change_Cat",
-              "fieldType": "ComboBox",
-              "valueLabel": null,
-              "formElementId": 8323,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Method",
-              "value": null,
-              "exportId": "Method",
-              "fieldType": "TextArea",
-              "valueLabel": null,
-              "formElementId": 8324,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Orginization",
-              "value": null,
-              "exportId": "Organizati",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8325,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Take Change",
-              "value": null,
-              "exportId": "TakeChange",
-              "fieldType": "TextArea",
-              "valueLabel": null,
-              "formElementId": 8326,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Tribal?",
-              "value": null,
-              "exportId": "Tribal",
-              "fieldType": "YesNo",
-              "valueLabel": null,
-              "formElementId": 8328,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Petition",
-              "value": null,
-              "exportId": "Petition",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8329,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Petition Link (URL)",
-              "value": null,
-              "exportId": "PetitionLi",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8331,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "FID",
-              "value": 2,
-              "exportId": "fid",
-              "fieldType": "Number",
-              "valueLabel": null,
-              "formElementId": 8337,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Contact",
-              "value": null,
-              "exportId": "contact",
-              "fieldType": "ShortText",
-              "valueLabel": null,
-              "formElementId": 8338,
-              "alternateLanguages": {}
             },
             {
               "label": "Proposed Designation (type)",
-              "value": "SMCANT",
+              "value": "SMCA",
               "exportId": "proposed_designation",
               "fieldType": "ComboBox",
-              "valueLabel": "Federal Marine Conservation Area",
+              "valueLabel": "State Marine Conservation Area",
               "formElementId": 8340,
-              "alternateLanguages": {}
-            },
-            {
-              "label": "Object ID",
-              "value": null,
-              "exportId": "OBJECTID",
-              "fieldType": "Number",
-              "valueLabel": null,
-              "formElementId": 8341,
               "alternateLanguages": {}
             }
           ],
-          "proposed_designation": "SMCANT"
+          "proposed_designation": "SMCA"
         },
         "geometry": null
       }
     ],
     "properties": {
-      "4771": "network",
-      "id": "29482",
-      "name": "network",
+      "4771": "islands",
+      "id": "37037",
+      "name": "islands",
       "postId": null,
       "userId": "531",
       "userSlug": "Abby",
-      "createdAt": "2024-05-28T20:04:07.4329+00:00",
-      "updatedAt": "2024-06-03T18:29:57.768727+00:00",
+      "createdAt": "2024-08-27T18:49:12.686182+00:00",
+      "updatedAt": "2024-08-27T18:51:07.839923+00:00",
       "description": null,
       "collectionId": null,
       "isCollection": true,
@@ -1054,23 +1360,22 @@
   "simpleSketches": [
     {
       "type": "Feature",
-      "id": 29483,
+      "id": 37040,
       "bbox": [
-        -121.962715,
-        36.209553,
-        -121.7673,
-        36.305416
+        -119.65703,
+        34.013054,
+        -119.60915,
+        34.025505
       ],
       "properties": {
-        "4768": "mpa-test",
+        "4768": "santacruz",
         "4769": "SMCANT",
-        "8340": "SMR",
-        "id": "29483",
+        "8340": "SMCA",
+        "id": "37040",
+        "FID": null,
         "ccr": null,
-        "fid": null,
-        "name": "mpa-test",
+        "name": "santacruz",
         "type": "SMCANT",
-        "AddMPA": null,
         "Method": null,
         "Tribal": null,
         "postId": null,
@@ -1081,8 +1386,9 @@
         "Petition": null,
         "userSlug": "Abby",
         "Bioregion": null,
-        "createdAt": "2024-05-28T20:04:12.993219+00:00",
-        "updatedAt": "2024-06-03T18:29:40.726829+00:00",
+        "action_id": null,
+        "createdAt": "2024-08-27T18:50:41.570994+00:00",
+        "updatedAt": "2024-08-27T18:50:48.855358+00:00",
         "AffectedMP": null,
         "Change_Cat": null,
         "Descriptio": null,
@@ -1090,7 +1396,7 @@
         "PetitionLi": null,
         "Study_Regi": null,
         "TakeChange": null,
-        "collectionId": "29482",
+        "collectionId": "37037",
         "isCollection": false,
         "sharedInForum": false,
         "sketchClassId": "492",
@@ -1105,6 +1411,24 @@
             "alternateLanguages": {}
           },
           {
+            "label": "FID",
+            "value": null,
+            "exportId": "FID",
+            "fieldType": "Number",
+            "valueLabel": null,
+            "formElementId": 8668,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Action ID",
+            "value": null,
+            "exportId": "action_id",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8670,
+            "alternateLanguages": {}
+          },
+          {
             "label": "CCR",
             "value": null,
             "exportId": "ccr",
@@ -1114,7 +1438,7 @@
             "alternateLanguages": {}
           },
           {
-            "label": "Study Region",
+            "label": "Planning Region",
             "value": null,
             "exportId": "Study_Regi",
             "fieldType": "ComboBox",
@@ -1127,7 +1451,7 @@
             "value": "SMCANT",
             "exportId": "type",
             "fieldType": "ComboBox",
-            "valueLabel": "State Marine Conervation Area (No-Take)",
+            "valueLabel": "State Marine Conservation Area (No-Take)",
             "formElementId": 4769,
             "alternateLanguages": {}
           },
@@ -1138,15 +1462,6 @@
             "fieldType": "ShortText",
             "valueLabel": null,
             "formElementId": 8319,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Add or Remove MPA",
-            "value": null,
-            "exportId": "AddMPA",
-            "fieldType": "ComboBox",
-            "valueLabel": null,
-            "formElementId": 8320,
             "alternateLanguages": {}
           },
           {
@@ -1231,30 +1546,12 @@
             "alternateLanguages": {}
           },
           {
-            "label": "FID",
-            "value": null,
-            "exportId": "fid",
-            "fieldType": "Number",
-            "valueLabel": null,
-            "formElementId": 8337,
-            "alternateLanguages": {}
-          },
-          {
             "label": "Contact",
             "value": null,
             "exportId": "contact",
             "fieldType": "ShortText",
             "valueLabel": null,
             "formElementId": 8338,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Proposed Designation (type)",
-            "value": "SMR",
-            "exportId": "proposed_designation",
-            "fieldType": "ComboBox",
-            "valueLabel": "State Marine Reserve",
-            "formElementId": 8340,
             "alternateLanguages": {}
           },
           {
@@ -1265,330 +1562,38 @@
             "valueLabel": null,
             "formElementId": 8341,
             "alternateLanguages": {}
-          }
-        ],
-        "proposed_designation": "SMR"
-      },
-      "geometry": {
-        "type": "Polygon",
-        "coordinates": [
-          [
-            [
-              -121.962715428,
-              36.290742267
-            ],
-            [
-              -121.929444184,
-              36.24695588
-            ],
-            [
-              -121.901576557,
-              36.23258428
-            ],
-            [
-              -121.882254848,
-              36.212060005
-            ],
-            [
-              -121.767301488,
-              36.221086445
-            ],
-            [
-              -121.82691608,
-              36.243102415
-            ],
-            [
-              -121.853295997,
-              36.278840785
-            ],
-            [
-              -121.889878871,
-              36.303475784
-            ],
-            [
-              -121.962715428,
-              36.290742267
-            ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "id": 29484,
-      "bbox": [
-        -120.58906,
-        34.3916,
-        -120.31646,
-        34.53999
-      ],
-      "properties": {
-        "4768": "split",
-        "4769": "SMCANT",
-        "8340": "Special",
-        "id": "29484",
-        "ccr": null,
-        "fid": null,
-        "name": "split",
-        "type": "SMCANT",
-        "AddMPA": null,
-        "Method": null,
-        "Tribal": null,
-        "postId": null,
-        "userId": "531",
-        "DFG_URL": null,
-        "contact": null,
-        "OBJECTID": null,
-        "Petition": null,
-        "userSlug": "Abby",
-        "Bioregion": null,
-        "createdAt": "2024-05-28T20:04:49.549506+00:00",
-        "updatedAt": "2024-06-03T18:29:57.768727+00:00",
-        "AffectedMP": null,
-        "Change_Cat": null,
-        "Descriptio": null,
-        "Organizati": null,
-        "PetitionLi": null,
-        "Study_Regi": null,
-        "TakeChange": null,
-        "collectionId": "29482",
-        "isCollection": false,
-        "sharedInForum": false,
-        "sketchClassId": "492",
-        "userAttributes": [
-          {
-            "label": "Description",
-            "value": null,
-            "exportId": "Descriptio",
-            "fieldType": "TextArea",
-            "valueLabel": null,
-            "formElementId": 4770,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "CCR",
-            "value": null,
-            "exportId": "ccr",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8317,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Study Region",
-            "value": null,
-            "exportId": "Study_Regi",
-            "fieldType": "ComboBox",
-            "valueLabel": null,
-            "formElementId": 8318,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Current Designation (type)",
-            "value": "SMCANT",
-            "exportId": "type",
-            "fieldType": "ComboBox",
-            "valueLabel": "Federal Marine Conservation Area",
-            "formElementId": 4769,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "DFG URL",
-            "value": null,
-            "exportId": "DFG_URL",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8319,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Add or Remove MPA",
-            "value": null,
-            "exportId": "AddMPA",
-            "fieldType": "ComboBox",
-            "valueLabel": null,
-            "formElementId": 8320,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Affected MPA",
-            "value": null,
-            "exportId": "AffectedMP",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8321,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Bioregion",
-            "value": null,
-            "exportId": "Bioregion",
-            "fieldType": "ComboBox",
-            "valueLabel": null,
-            "formElementId": 8322,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Change Category",
-            "value": null,
-            "exportId": "Change_Cat",
-            "fieldType": "ComboBox",
-            "valueLabel": null,
-            "formElementId": 8323,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Method",
-            "value": null,
-            "exportId": "Method",
-            "fieldType": "TextArea",
-            "valueLabel": null,
-            "formElementId": 8324,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Orginization",
-            "value": null,
-            "exportId": "Organizati",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8325,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Take Change",
-            "value": null,
-            "exportId": "TakeChange",
-            "fieldType": "TextArea",
-            "valueLabel": null,
-            "formElementId": 8326,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Tribal?",
-            "value": null,
-            "exportId": "Tribal",
-            "fieldType": "YesNo",
-            "valueLabel": null,
-            "formElementId": 8328,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Petition",
-            "value": null,
-            "exportId": "Petition",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8329,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Petition Link (URL)",
-            "value": null,
-            "exportId": "PetitionLi",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8331,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "FID",
-            "value": null,
-            "exportId": "fid",
-            "fieldType": "Number",
-            "valueLabel": null,
-            "formElementId": 8337,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Contact",
-            "value": null,
-            "exportId": "contact",
-            "fieldType": "ShortText",
-            "valueLabel": null,
-            "formElementId": 8338,
-            "alternateLanguages": {}
           },
           {
             "label": "Proposed Designation (type)",
-            "value": "Special",
+            "value": "SMCA",
             "exportId": "proposed_designation",
             "fieldType": "ComboBox",
-            "valueLabel": "Special Closure",
+            "valueLabel": "State Marine Conservation Area",
             "formElementId": 8340,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Object ID",
-            "value": null,
-            "exportId": "OBJECTID",
-            "fieldType": "Number",
-            "valueLabel": null,
-            "formElementId": 8341,
             "alternateLanguages": {}
           }
         ],
-        "proposed_designation": "Special"
+        "proposed_designation": "SMCA"
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              -120.589059266,
-              34.499626909
+              -119.657027853,
+              34.01852373
             ],
             [
-              -120.557602914,
-              34.487548687
+              -119.636605266,
+              34.013381882
             ],
             [
-              -120.525089818,
-              34.421681342
+              -119.609287944,
+              34.024074563
             ],
             [
-              -120.494400525,
-              34.399975682
-            ],
-            [
-              -120.448410659,
-              34.391720547
-            ],
-            [
-              -120.317162543,
-              34.411621646
-            ],
-            [
-              -120.330193274,
-              34.462956153
-            ],
-            [
-              -120.444979398,
-              34.450798839
-            ],
-            [
-              -120.452561084,
-              34.443936144
-            ],
-            [
-              -120.471457128,
-              34.448216282
-            ],
-            [
-              -120.477568098,
-              34.477489321
-            ],
-            [
-              -120.507116729,
-              34.517405363
-            ],
-            [
-              -120.542540982,
-              34.539908512
-            ],
-            [
-              -120.589059266,
-              34.499626909
+              -119.657027853,
+              34.01852373
             ]
           ]
         ]
@@ -1596,24 +1601,22 @@
     },
     {
       "type": "Feature",
-      "id": 29481,
+      "id": 37039,
       "bbox": [
-        -119.488525,
-        33.952343,
-        -119.29513,
-        34.068176
+        -120.10897,
+        33.88703,
+        -120.059685,
+        33.91255
       ],
       "properties": {
-        "4768": "anacapa",
+        "4768": "santarosa",
         "4769": "SMCANT",
-        "8337": 2,
         "8340": "SMCANT",
-        "id": "29481",
+        "id": "37039",
+        "FID": null,
         "ccr": null,
-        "fid": 2,
-        "name": "anacapa",
+        "name": "santarosa",
         "type": "SMCANT",
-        "AddMPA": null,
         "Method": null,
         "Tribal": null,
         "postId": null,
@@ -1624,8 +1627,9 @@
         "Petition": null,
         "userSlug": "Abby",
         "Bioregion": null,
-        "createdAt": "2024-05-28T20:03:43.811482+00:00",
-        "updatedAt": "2024-06-03T18:29:22.893998+00:00",
+        "action_id": null,
+        "createdAt": "2024-08-27T18:50:24.245601+00:00",
+        "updatedAt": "2024-08-27T18:50:28.754502+00:00",
         "AffectedMP": null,
         "Change_Cat": null,
         "Descriptio": null,
@@ -1633,7 +1637,7 @@
         "PetitionLi": null,
         "Study_Regi": null,
         "TakeChange": null,
-        "collectionId": "29482",
+        "collectionId": "37037",
         "isCollection": false,
         "sharedInForum": false,
         "sketchClassId": "492",
@@ -1648,6 +1652,24 @@
             "alternateLanguages": {}
           },
           {
+            "label": "FID",
+            "value": null,
+            "exportId": "FID",
+            "fieldType": "Number",
+            "valueLabel": null,
+            "formElementId": 8668,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Action ID",
+            "value": null,
+            "exportId": "action_id",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8670,
+            "alternateLanguages": {}
+          },
+          {
             "label": "CCR",
             "value": null,
             "exportId": "ccr",
@@ -1657,7 +1679,7 @@
             "alternateLanguages": {}
           },
           {
-            "label": "Study Region",
+            "label": "Planning Region",
             "value": null,
             "exportId": "Study_Regi",
             "fieldType": "ComboBox",
@@ -1670,7 +1692,7 @@
             "value": "SMCANT",
             "exportId": "type",
             "fieldType": "ComboBox",
-            "valueLabel": "Federal Marine Conservation Area",
+            "valueLabel": "State Marine Conservation Area (No-Take)",
             "formElementId": 4769,
             "alternateLanguages": {}
           },
@@ -1681,15 +1703,6 @@
             "fieldType": "ShortText",
             "valueLabel": null,
             "formElementId": 8319,
-            "alternateLanguages": {}
-          },
-          {
-            "label": "Add or Remove MPA",
-            "value": null,
-            "exportId": "AddMPA",
-            "fieldType": "ComboBox",
-            "valueLabel": null,
-            "formElementId": 8320,
             "alternateLanguages": {}
           },
           {
@@ -1774,15 +1787,6 @@
             "alternateLanguages": {}
           },
           {
-            "label": "FID",
-            "value": 2,
-            "exportId": "fid",
-            "fieldType": "Number",
-            "valueLabel": null,
-            "formElementId": 8337,
-            "alternateLanguages": {}
-          },
-          {
             "label": "Contact",
             "value": null,
             "exportId": "contact",
@@ -1792,21 +1796,21 @@
             "alternateLanguages": {}
           },
           {
-            "label": "Proposed Designation (type)",
-            "value": "SMCANT",
-            "exportId": "proposed_designation",
-            "fieldType": "ComboBox",
-            "valueLabel": "Federal Marine Conservation Area",
-            "formElementId": 8340,
-            "alternateLanguages": {}
-          },
-          {
             "label": "Object ID",
             "value": null,
             "exportId": "OBJECTID",
             "fieldType": "Number",
             "valueLabel": null,
             "formElementId": 8341,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Proposed Designation (type)",
+            "value": "SMCANT",
+            "exportId": "proposed_designation",
+            "fieldType": "ComboBox",
+            "valueLabel": "State Marine Conservation Area (No-Take)",
+            "formElementId": 8340,
             "alternateLanguages": {}
           }
         ],
@@ -1817,141 +1821,516 @@
         "coordinates": [
           [
             [
-              -119.488526561,
-              33.979371851
+              -120.108972356,
+              33.900185518
             ],
             [
-              -119.436314446,
-              33.955025587
+              -120.09502832,
+              33.887032976
             ],
             [
-              -119.372652632,
-              33.954533725
+              -120.05968476,
+              33.895834537
             ],
             [
-              -119.308882128,
-              33.984407092
+              -120.070424081,
+              33.912545434
             ],
             [
-              -119.296049508,
-              34.007966578
-            ],
-            [
-              -119.296907942,
-              34.028783318
-            ],
-            [
-              -119.311993398,
-              34.051465665
-            ],
-            [
-              -119.340481765,
-              34.065614239
-            ],
-            [
-              -119.465451749,
-              34.061112267
-            ],
-            [
-              -119.474111171,
-              34.066544229
-            ],
-            [
-              -119.488526561,
-              33.979371851
+              -120.108972356,
+              33.900185518
             ]
-          ],
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 37038,
+      "bbox": [
+        -120.421074,
+        34.050125,
+        -120.39262,
+        34.070942
+      ],
+      "properties": {
+        "4768": "sanmiguel",
+        "4769": "SMCA",
+        "8340": "SMR",
+        "id": "37038",
+        "FID": null,
+        "ccr": null,
+        "name": "sanmiguel",
+        "type": "SMCA",
+        "Method": null,
+        "Tribal": null,
+        "postId": null,
+        "userId": "531",
+        "DFG_URL": null,
+        "contact": null,
+        "OBJECTID": null,
+        "Petition": null,
+        "userSlug": "Abby",
+        "Bioregion": null,
+        "action_id": null,
+        "createdAt": "2024-08-27T18:49:38.008216+00:00",
+        "updatedAt": "2024-08-27T18:49:52.928739+00:00",
+        "AffectedMP": null,
+        "Change_Cat": null,
+        "Descriptio": null,
+        "Organizati": null,
+        "PetitionLi": null,
+        "Study_Regi": null,
+        "TakeChange": null,
+        "collectionId": "37037",
+        "isCollection": false,
+        "sharedInForum": false,
+        "sketchClassId": "492",
+        "userAttributes": [
+          {
+            "label": "Description",
+            "value": null,
+            "exportId": "Descriptio",
+            "fieldType": "TextArea",
+            "valueLabel": null,
+            "formElementId": 4770,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "FID",
+            "value": null,
+            "exportId": "FID",
+            "fieldType": "Number",
+            "valueLabel": null,
+            "formElementId": 8668,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Action ID",
+            "value": null,
+            "exportId": "action_id",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8670,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "CCR",
+            "value": null,
+            "exportId": "ccr",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8317,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Planning Region",
+            "value": null,
+            "exportId": "Study_Regi",
+            "fieldType": "ComboBox",
+            "valueLabel": null,
+            "formElementId": 8318,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Current Designation (type)",
+            "value": "SMCA",
+            "exportId": "type",
+            "fieldType": "ComboBox",
+            "valueLabel": "State Marine Conservation Area",
+            "formElementId": 4769,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "DFG URL",
+            "value": null,
+            "exportId": "DFG_URL",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8319,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Affected MPA",
+            "value": null,
+            "exportId": "AffectedMP",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8321,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Bioregion",
+            "value": null,
+            "exportId": "Bioregion",
+            "fieldType": "ComboBox",
+            "valueLabel": null,
+            "formElementId": 8322,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Change Category",
+            "value": null,
+            "exportId": "Change_Cat",
+            "fieldType": "ComboBox",
+            "valueLabel": null,
+            "formElementId": 8323,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Method",
+            "value": null,
+            "exportId": "Method",
+            "fieldType": "TextArea",
+            "valueLabel": null,
+            "formElementId": 8324,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Orginization",
+            "value": null,
+            "exportId": "Organizati",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8325,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Take Change",
+            "value": null,
+            "exportId": "TakeChange",
+            "fieldType": "TextArea",
+            "valueLabel": null,
+            "formElementId": 8326,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Tribal?",
+            "value": null,
+            "exportId": "Tribal",
+            "fieldType": "YesNo",
+            "valueLabel": null,
+            "formElementId": 8328,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Petition",
+            "value": null,
+            "exportId": "Petition",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8329,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Petition Link (URL)",
+            "value": null,
+            "exportId": "PetitionLi",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8331,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "exportId": "contact",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8338,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Object ID",
+            "value": null,
+            "exportId": "OBJECTID",
+            "fieldType": "Number",
+            "valueLabel": null,
+            "formElementId": 8341,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Proposed Designation (type)",
+            "value": "SMR",
+            "exportId": "proposed_designation",
+            "fieldType": "ComboBox",
+            "valueLabel": "State Marine Reserve",
+            "formElementId": 8340,
+            "alternateLanguages": {}
+          }
+        ],
+        "proposed_designation": "SMR"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
             [
-              -119.443913564,
-              34.013802307
+              -120.421072664,
+              34.070942944
             ],
             [
-              -119.42297081,
-              34.015198684
+              -120.39712775,
+              34.05035537
             ],
             [
-              -119.409960671,
-              34.006867504
+              -120.395448583,
+              34.063623467
             ],
             [
-              -119.443913564,
-              34.013802307
+              -120.421072664,
+              34.070942944
             ]
-          ],
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 37041,
+      "bbox": [
+        -118.31064,
+        33.30705,
+        -118.26893,
+        33.34866
+      ],
+      "properties": {
+        "4768": "catalina",
+        "4769": "SMR",
+        "8340": "SMCA",
+        "id": "37041",
+        "FID": null,
+        "ccr": null,
+        "name": "catalina",
+        "type": "SMR",
+        "Method": null,
+        "Tribal": null,
+        "postId": null,
+        "userId": "531",
+        "DFG_URL": null,
+        "contact": null,
+        "OBJECTID": null,
+        "Petition": null,
+        "userSlug": "Abby",
+        "Bioregion": null,
+        "action_id": null,
+        "createdAt": "2024-08-27T18:51:02.005902+00:00",
+        "updatedAt": "2024-08-27T18:51:07.839923+00:00",
+        "AffectedMP": null,
+        "Change_Cat": null,
+        "Descriptio": null,
+        "Organizati": null,
+        "PetitionLi": null,
+        "Study_Regi": null,
+        "TakeChange": null,
+        "collectionId": "37037",
+        "isCollection": false,
+        "sharedInForum": false,
+        "sketchClassId": "492",
+        "userAttributes": [
+          {
+            "label": "Description",
+            "value": null,
+            "exportId": "Descriptio",
+            "fieldType": "TextArea",
+            "valueLabel": null,
+            "formElementId": 4770,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "FID",
+            "value": null,
+            "exportId": "FID",
+            "fieldType": "Number",
+            "valueLabel": null,
+            "formElementId": 8668,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Action ID",
+            "value": null,
+            "exportId": "action_id",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8670,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "CCR",
+            "value": null,
+            "exportId": "ccr",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8317,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Planning Region",
+            "value": null,
+            "exportId": "Study_Regi",
+            "fieldType": "ComboBox",
+            "valueLabel": null,
+            "formElementId": 8318,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Current Designation (type)",
+            "value": "SMR",
+            "exportId": "type",
+            "fieldType": "ComboBox",
+            "valueLabel": "State Marine Reserve",
+            "formElementId": 4769,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "DFG URL",
+            "value": null,
+            "exportId": "DFG_URL",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8319,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Affected MPA",
+            "value": null,
+            "exportId": "AffectedMP",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8321,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Bioregion",
+            "value": null,
+            "exportId": "Bioregion",
+            "fieldType": "ComboBox",
+            "valueLabel": null,
+            "formElementId": 8322,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Change Category",
+            "value": null,
+            "exportId": "Change_Cat",
+            "fieldType": "ComboBox",
+            "valueLabel": null,
+            "formElementId": 8323,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Method",
+            "value": null,
+            "exportId": "Method",
+            "fieldType": "TextArea",
+            "valueLabel": null,
+            "formElementId": 8324,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Orginization",
+            "value": null,
+            "exportId": "Organizati",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8325,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Take Change",
+            "value": null,
+            "exportId": "TakeChange",
+            "fieldType": "TextArea",
+            "valueLabel": null,
+            "formElementId": 8326,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Tribal?",
+            "value": null,
+            "exportId": "Tribal",
+            "fieldType": "YesNo",
+            "valueLabel": null,
+            "formElementId": 8328,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Petition",
+            "value": null,
+            "exportId": "Petition",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8329,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Petition Link (URL)",
+            "value": null,
+            "exportId": "PetitionLi",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8331,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Contact",
+            "value": null,
+            "exportId": "contact",
+            "fieldType": "ShortText",
+            "valueLabel": null,
+            "formElementId": 8338,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Object ID",
+            "value": null,
+            "exportId": "OBJECTID",
+            "fieldType": "Number",
+            "valueLabel": null,
+            "formElementId": 8341,
+            "alternateLanguages": {}
+          },
+          {
+            "label": "Proposed Designation (type)",
+            "value": "SMCA",
+            "exportId": "proposed_designation",
+            "fieldType": "ComboBox",
+            "valueLabel": "State Marine Conservation Area",
+            "formElementId": 8340,
+            "alternateLanguages": {}
+          }
+        ],
+        "proposed_designation": "SMCA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
           [
             [
-              -119.407530676,
-              34.00578037
+              -118.310635443,
+              33.336540338
             ],
             [
-              -119.382696937,
-              34.01115527
+              -118.303573759,
+              33.317640016
             ],
             [
-              -119.389405067,
-              34.003338975
+              -118.268930733,
+              33.307048057
             ],
             [
-              -119.407530676,
-              34.00578037
-            ]
-          ],
-          [
-            [
-              -119.378046806,
-              34.01191066
+              -118.269632194,
+              33.348661104
             ],
             [
-              -119.366591233,
-              34.016785729
-            ],
-            [
-              -119.357733481,
-              34.016141137
-            ],
-            [
-              -119.378046806,
-              34.01191066
+              -118.310635443,
+              33.336540338
             ]
           ]
         ]
       }
     }
   ],
-  "replicateIds": [
-    "29483",
-    "29484"
-  ],
-  "paths": [
-    {
-      "path": {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
-            [
-              -120.589059266,
-              34.499626909
-            ],
-            [
-              -120.65057938783855,
-              34.576935842832896
-            ],
-            [
-              -121.87600883300126,
-              36.20786001355806
-            ],
-            [
-              -121.878468487,
-              36.209567616
-            ]
-          ]
-        }
-      },
-      "distance": 138.70943952819366,
-      "color": "red"
-    }
-  ]
+  "replicateIds": [],
+  "paths": []
 }

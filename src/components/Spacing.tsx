@@ -214,8 +214,8 @@ export const SpacingObjectives = (props: {
           status={"no"}
           msg={
             <>
-              These habitat replicates do not meet the spacing guidelines. There
-              are {props.paths.filter((p) => p.color === "red").length} gaps
+              These habitat replicates do not meet the spacing guidelines, with{" "}
+              {props.paths.filter((p) => p.color === "red").length} gap(s)
               greater than 62 statute miles.
             </>
           }
