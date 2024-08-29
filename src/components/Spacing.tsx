@@ -15,14 +15,7 @@ import {
   Sketch,
 } from "@seasketch/geoprocessing/client-core";
 import { featureCollection } from "@turf/turf";
-import {
-  Card,
-  ObjectiveStatus,
-  ReportError,
-  ResultsCard,
-  useSketchProperties,
-} from "@seasketch/geoprocessing/client-ui";
-import { useTranslation } from "react-i18next";
+import { ObjectiveStatus } from "@seasketch/geoprocessing/client-ui";
 
 // Props for the Replicate Map
 interface ReplicateMapProps {
@@ -222,28 +215,5 @@ export const SpacingObjectives = (props: {
         />
       )}
     </>
-  );
-};
-
-export const Spacing: React.FunctionComponent = (props) => {
-  const [{ isCollection }] = useSketchProperties();
-  const { t } = useTranslation();
-
-  return (
-    <ResultsCard title={t("Spacing Report")} functionName="spacing">
-      {(data: any) => {
-        if (!isCollection) {
-          return <p>This is only available for sketch collections.</p>;
-        }
-
-        return (
-          <ReportError>
-            <Card>
-              <ReplicateMap sketch={data.sketch} paths={data.paths} />
-            </Card>
-          </ReportError>
-        );
-      }}
-    </ResultsCard>
   );
 };

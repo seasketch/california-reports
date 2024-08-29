@@ -1,13 +1,11 @@
 import {
   Sketch,
-  SketchCollection,
   GeoprocessingHandler,
   Polygon,
-  isSketchCollection,
-  toSketchArray,
   LineString,
   Feature,
   FeatureCollection,
+  booleanOverlap,
 } from "@seasketch/geoprocessing";
 import {
   centroid,
@@ -22,6 +20,7 @@ import {
   geojsonRbush,
   featureCollection,
   bbox,
+  bboxPolygon,
 } from "@turf/turf";
 import { Graph, alg, json } from "graphlib";
 import graphData from "../../data/bin/network.01.nogridJson.json";
@@ -36,17 +35,16 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
     return { paths: [] };
   }
 
-  console.log("Adding sketches to graph");
   let start = Date.now();
-
   const { graph, tree } = await readGraphFromFile(graphData);
   const sketchGraph = addSketchesToGraph(graph, tree, sketchArray);
   let end = Date.now();
   console.log(`Adding sketches to graph took ${end - start} ms`);
 
   // Buffer by 1 meter to ensure overlap with clipped edges
+  start = Date.now();
   const sketches = sketchArray.map(
-    (sketch) => buffer(sketch, 1, { units: "meters" })!
+    (sketch) => buffer(sketch, 1, { units: "meters" })! as Sketch<Polygon>
   );
 
   // Calculate centroids
@@ -84,6 +82,8 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
 
   // Generate the MST using Prim's algorithm
   const mst = alg.prim(mstGraph, (edge) => mstGraph.edge(edge));
+  end = Date.now();
+  console.log(`Calculating MST took ${end - start} ms`);
 
   const pathsWithColors: {
     path: Feature<LineString>;
@@ -140,12 +140,7 @@ function findShortestPath(
   if (nodes0.length === 0 || nodes1.length === 0) {
     throw new Error("No valid nodes found within one or both sketches.");
   }
-
-  console.log(
-    `Finding shortest path between ${currentSketch.properties.name} and ${nextSketch.properties.name}`
-  );
   let start = Date.now();
-
   let shortestPath: string[] = [];
   let shortestEdges: { source: string; target: string }[] = [];
   let minTotalDistance = Infinity;
@@ -207,11 +202,10 @@ function findShortestPath(
     );
   }
 
-  console.log(
-    `Total distance from ${currentSketch.properties.name} to ${nextSketch.properties.name} is ${minTotalDistance}`
-  );
   let end = Date.now();
-  console.log(`Finding shortest path took ${end - start} ms`);
+  console.log(
+    `${currentSketch.properties.name} to ${nextSketch.properties.name} is ${minTotalDistance}, took ${end - start} ms`
+  );
 
   return {
     path: shortestPath,
@@ -242,24 +236,25 @@ function addSketchesToGraph(
   sketches: Sketch<Polygon>[]
 ): { graph: Graph; tree: any; sketchNodes: Record<string, string[]> } {
   const sketchesSimplified = sketches.map((sketch) =>
-    simplify(sketch, { tolerance: 0.05 })
+    simplify(sketch, { tolerance: 0.005 })
   );
 
-  const sketchBox =
-    featureCollection(sketchesSimplified).bbox ||
-    bbox(featureCollection(sketchesSimplified));
+  // Get the bounding box of the simplified sketches
+  const sketchBox = bbox(featureCollection(sketchesSimplified));
+
+  // Filter the land features that overlap with the sketch bounding box
   const filteredFeatures = (landData as FeatureCollection).features.filter(
     (feature) => {
-      const landBoundingBox = feature.bbox || bbox(feature);
+      const landBoundingBox = bbox(feature);
 
-      return (
-        landBoundingBox[0] <= sketchBox[2] && // land minX <= sketch maxX
-        landBoundingBox[2] >= sketchBox[0] && // land maxX >= sketch minX
-        landBoundingBox[1] <= sketchBox[3] && // land minY <= sketch maxY
-        landBoundingBox[3] >= sketchBox[1] // land maxY >= sketch minY
+      // Check if the bounding boxes overlap
+      return booleanOverlap(
+        bboxPolygon(sketchBox),
+        bboxPolygon(landBoundingBox)
       );
     }
   );
+
   const landSimplified = buffer(
     simplify(featureCollection(filteredFeatures), {
       tolerance: 0.01,
@@ -293,9 +288,6 @@ function addSketchesToGraph(
       units: "miles",
     });
     const nearbyNodes = tree.search(searchArea!);
-    console.log(
-      `Adding ${vertices.size} nodes from ${sketch.properties.name} and connecting to nearby ${nearbyNodes.features.length}nodes`
-    );
     let edgeCount = 0;
 
     vertices.forEach((coord, node) => {
@@ -337,10 +329,7 @@ function addSketchesToGraph(
     });
     let end = Date.now();
     console.log(
-      `Adding ${vertices.size} nodes from ${sketch.properties.name} took ${end - start} ms`
-    );
-    console.log(
-      `Added ${edgeCount} edges to graph from ${sketch.properties.name}`
+      `Connecting ${vertices.size} nodes to ${nearbyNodes.features.length} nearby nodes, ${edgeCount} edges, from ${sketch.properties.name}, ${end - start} ms`
     );
   });
 
@@ -384,13 +373,3 @@ export function isLineClear(
 
   return true;
 }
-
-export default new GeoprocessingHandler(spacing, {
-  title: "spacing",
-  description: "calculates spacing within given sketch",
-  timeout: 60, // seconds
-  executionMode: "async",
-  // Specify any Sketch Class form attributes that are required
-  requiresProperties: [],
-  memory: 8192,
-});

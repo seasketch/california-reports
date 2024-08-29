@@ -14,13 +14,14 @@ import {
 import {
   GeogProp,
   Metric,
+  MetricGroup,
   NullSketch,
   NullSketchCollection,
   Polygon,
   Sketch,
+  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
-  sketchToId,
   squareMeterToMile,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
@@ -97,6 +98,13 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
               layerId={metricGroup.layerId}
             />
             <VerticalSpacer />
+
+            {!isCollection && (
+              <KelpMaxObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -315,5 +323,60 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+const KelpMaxObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  const { metricGroup, metrics } = props;
+  const replicateMap: Record<string, number> = { kelpMax: 1.1 };
+
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+
+      const value = squareMeterToMile(metric.value);
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] }
+  );
+
+  return (
+    <>
+      {passes.length > 0 && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>
+              This MPA meets the habitat replicate guidelines for kelp forests.
+            </>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for kelp
+              forests.
+            </>
+          }
+        />
+      )}
+    </>
   );
 };
