@@ -16,10 +16,14 @@ import {
   isMetricArray,
   rekeyMetrics,
   sortMetrics,
+  squareMeterToMile,
   toNullSketch,
+  toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { estuariesWorker } from "./estuariesWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
+import { spacing } from "./spacing.js";
+import { simplify } from "@turf/turf";
 
 /**
  * estuaries: A geoprocessing function that calculates overlap metrics
@@ -33,7 +37,7 @@ export async function estuaries(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
-): Promise<ReportResult> {
+): Promise<any> {
   const metricGroup = project.getMetricGroup("estuaries");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world"
@@ -71,14 +75,33 @@ export async function estuaries(
     []
   );
 
+  const worldMetrics = genWorldMetrics(sketch, metrics, metricGroup);
+
+  // Run replication spacing analysis
+  const sketchArray = toSketchArray(sketch);
+  const sketchIds = sketchArray.map((sk) => sk.properties.id);
+  const sketchMetrics = worldMetrics.filter(
+    (m) => m.sketchId && sketchIds.includes(m.sketchId)
+  );
+  const replicateMetrics = sketchMetrics.filter(
+    (m) => squareMeterToMile(m.value) > 0.12
+  );
+  const replicateSketches = sketchArray.filter((sk) =>
+    replicateMetrics.some((m) => m.sketchId === sk.properties.id)
+  ) as Sketch<Polygon>[];
+
+  const { paths } = await spacing(replicateSketches);
+
+  const replicateIds = replicateSketches.map((sk) => sk.properties.id);
+
   return {
-    metrics: sortMetrics(
-      rekeyMetrics([
-        ...metrics,
-        ...genWorldMetrics(sketch, metrics, metricGroup),
-      ])
-    ),
+    metrics: sortMetrics(rekeyMetrics([...metrics, ...worldMetrics])),
     sketch: toNullSketch(sketch, true),
+    simpleSketches: sketchArray.map((sketch) =>
+      simplify(sketch, { tolerance: 0.005 })
+    ),
+    replicateIds,
+    paths,
   };
 }
 
