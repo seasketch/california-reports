@@ -4,6 +4,7 @@ import {
   ClassTable,
   Collapse,
   KeySection,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -12,11 +13,13 @@ import {
 import {
   GeogProp,
   Metric,
+  MetricGroup,
   NullSketch,
   NullSketchCollection,
   Polygon,
   ReportResult,
   Sketch,
+  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -89,6 +92,13 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 California's territorial sea.
               </Trans>
             </p>
+
+            {!isCollection && (
+              <EstuariesObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -255,17 +265,26 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   <KeySection>
                     <p>
                       Of the {data.simpleSketches.length} MPAs analyzed,{" "}
-                      {data.replicateIds.length} qualify as estuary habitat
-                      replicates.
+                      {data.replicateIds.length}{" "}
+                      {data.replicateIds.length === 1
+                        ? "qualifies as an estuary replicate."
+                        : "qualify as estuary replicates."}
                     </p>
                   </KeySection>
-                  <SpacingObjectives paths={data.paths} />
-                  <VerticalSpacer />
-                  <ReplicateMap
-                    sketch={data.simpleSketches}
-                    replicateIds={data.replicateIds}
-                    paths={data.paths}
-                  />
+
+                  {data.replicateIds.length !== 0 && (
+                    <>
+                      {data.replicateIds.length > 1 && (
+                        <SpacingObjectives paths={data.paths} />
+                      )}
+                      <VerticalSpacer />
+                      <ReplicateMap
+                        sketch={data.simpleSketches}
+                        replicateIds={data.replicateIds}
+                        paths={data.paths}
+                      />
+                    </>
+                  )}
                 </Collapse>
               </>
             )}
@@ -306,5 +325,58 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+const EstuariesObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  const { metricGroup, metrics } = props;
+  const replicateMap: Record<string, number> = { estuaries: 0.12 };
+
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+
+      const value = squareMeterToMile(metric.value);
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] }
+  );
+
+  return (
+    <>
+      {passes.length > 0 && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>This MPA meets the habitat replicate guidelines for estuaries.</>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for
+              estuaries.
+            </>
+          }
+        />
+      )}
+    </>
   );
 };

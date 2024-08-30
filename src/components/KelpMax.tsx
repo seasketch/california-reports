@@ -279,17 +279,25 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   <KeySection>
                     <p>
                       Of the {data.simpleSketches.length} MPAs analyzed,{" "}
-                      {data.replicateIds.length} qualify as kelp habitat
-                      replicates.
+                      {data.replicateIds.length}{" "}
+                      {data.replicateIds.length === 1
+                        ? "qualifies as a kelp habitat replicate."
+                        : "qualify as kelp habitat replicates."}
                     </p>
                   </KeySection>
-                  <SpacingObjectives paths={data.paths} />
-                  <VerticalSpacer />
-                  <ReplicateMap
-                    sketch={data.simpleSketches}
-                    replicateIds={data.replicateIds}
-                    paths={data.paths}
-                  />
+                  {data.replicateIds.length !== 0 && (
+                    <>
+                      {data.replicateIds.length > 1 && (
+                        <SpacingObjectives paths={data.paths} />
+                      )}
+                      <VerticalSpacer />
+                      <ReplicateMap
+                        sketch={data.simpleSketches}
+                        replicateIds={data.replicateIds}
+                        paths={data.paths}
+                      />
+                    </>
+                  )}
                 </Collapse>
               </>
             )}
