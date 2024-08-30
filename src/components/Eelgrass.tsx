@@ -3,14 +3,23 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  KeySection,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
   Metric,
+  MetricGroup,
+  NullSketch,
+  NullSketchCollection,
+  Polygon,
   ReportResult,
+  Sketch,
+  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -19,6 +28,7 @@ import {
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { genSketchTable } from "../util/genSketchTable.js";
+import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -49,7 +59,13 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="eelgrass">
-      {(data: ReportResult) => {
+      {(data: {
+        metrics: Metric[];
+        sketch: NullSketch | NullSketchCollection;
+        simpleSketches: Sketch<Polygon>[];
+        replicateIds: string[];
+        paths: any;
+      }) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
@@ -76,6 +92,13 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 California's territorial sea.
               </Trans>
             </p>
+
+            {!isCollection && (
+              <EelgrassObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -222,20 +245,48 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
-                    ),
-                  },
-                  precalcMetrics.filter((m) => m.geographyId === "world"),
-                  metricGroup,
-                  t,
-                  { replicate: true, replicateMap: { eelgrass: 0.04 } }
-                )}
-              </Collapse>
+              <>
+                <Collapse title={t("Show by Sketch")}>
+                  {genSketchTable(
+                    {
+                      ...data,
+                      metrics: data.metrics.filter(
+                        (m) => m.geographyId === "world"
+                      ),
+                    },
+                    precalcMetrics.filter((m) => m.geographyId === "world"),
+                    metricGroup,
+                    t,
+                    { replicate: true, replicateMap: { eelgrass: 0.04 } }
+                  )}
+                </Collapse>
+                <Collapse title={t("Spacing Analysis")}>
+                  <VerticalSpacer />
+                  <KeySection>
+                    <p>
+                      Of the {data.simpleSketches.length} MPAs analyzed,{" "}
+                      {data.replicateIds.length}{" "}
+                      {data.replicateIds.length === 1
+                        ? "qualifies as an eelgrass replicate."
+                        : "qualify as eelgrass replicates."}
+                    </p>
+                  </KeySection>
+
+                  {data.replicateIds.length !== 0 && (
+                    <>
+                      {data.replicateIds.length > 1 && (
+                        <SpacingObjectives paths={data.paths} />
+                      )}
+                      <VerticalSpacer />
+                      <ReplicateMap
+                        sketch={data.simpleSketches}
+                        replicateIds={data.replicateIds}
+                        paths={data.paths}
+                      />
+                    </>
+                  )}
+                </Collapse>
+              </>
             )}
 
             <Collapse title={t("Learn More")}>
@@ -274,5 +325,58 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+const EelgrassObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  const { metricGroup, metrics } = props;
+  const replicateMap: Record<string, number> = { eelgrass: 0.12 };
+
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+
+      const value = squareMeterToMile(metric.value);
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] }
+  );
+
+  return (
+    <>
+      {passes.length > 0 && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>This MPA meets the habitat replicate guidelines for eelgrass.</>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for
+              eelgrass.
+            </>
+          }
+        />
+      )}
+    </>
   );
 };
