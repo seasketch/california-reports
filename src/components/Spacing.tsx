@@ -10,11 +10,12 @@ import {
 } from "d3";
 import {
   Feature,
+  FeatureCollection,
   LineString,
   Polygon,
   Sketch,
 } from "@seasketch/geoprocessing/client-core";
-import { featureCollection } from "@turf/turf";
+import { bbox, featureCollection } from "@turf/turf";
 import { ObjectiveStatus } from "@seasketch/geoprocessing/client-ui";
 
 // Props for the Replicate Map
@@ -26,6 +27,26 @@ interface ReplicateMapProps {
     distance: number;
     color: string;
   }[];
+}
+
+function calculateProportionalHeight(
+  featureCollection: FeatureCollection<Polygon>,
+  fixedWidth: number = 430
+): number {
+  // Calculate the bounding box of the feature collection
+  const [minX, minY, maxX, maxY] = bbox(featureCollection);
+
+  // Calculate the width and height of the bounding box
+  const bboxWidth = maxX - minX;
+  const bboxHeight = maxY - minY;
+
+  // Calculate the aspect ratio
+  const aspectRatio = bboxWidth / bboxHeight;
+
+  // Calculate the proportional height based on the fixed width
+  const proportionalHeight = fixedWidth / aspectRatio;
+
+  return proportionalHeight;
 }
 
 // Plots replicates and shortest paths between them
@@ -42,20 +63,35 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
     svg.selectAll("*").remove();
 
     const width = 430;
-    const height = 600;
+    const height = calculateProportionalHeight(featureCollection(sketch));
     svg.attr("width", width).attr("height", height);
 
-    // Scale map to extent of sketch nodes
+    // Scale map to extent of sketch nodes with padding
     const nodes = featureCollection(sketch).features.flatMap((feature) =>
       feature.geometry.coordinates.flatMap((coords) => coords)
     );
 
-    const xScale = scaleLinear()
-      .domain(extent(nodes, (d) => d[0]) as [number, number])
-      .range([0, width]);
-    const yScale = scaleLinear()
-      .domain(extent(nodes, (d) => d[1]) as [number, number])
-      .range([height, 0]);
+    // Calculate the extent of the nodes
+    const xExtent = extent(nodes, (d) => d[0]) as [number, number];
+    const yExtent = extent(nodes, (d) => d[1]) as [number, number];
+
+    // Apply padding to the extent
+    const paddingFactor = 0.1; // 10% padding
+    const xPadding = (xExtent[1] - xExtent[0]) * paddingFactor;
+    const yPadding = (yExtent[1] - yExtent[0]) * paddingFactor;
+
+    // Adjusted extents
+    const paddedXExtent: [number, number] = [
+      xExtent[0] - xPadding,
+      xExtent[1] + xPadding,
+    ];
+    const paddedYExtent: [number, number] = [
+      yExtent[0] - yPadding,
+      yExtent[1] + yPadding,
+    ];
+
+    const xScale = scaleLinear().domain(paddedXExtent).range([0, width]);
+    const yScale = scaleLinear().domain(paddedYExtent).range([height, 0]);
 
     // Load and plot background land
     json("../../data/bin/landShrunk.01.json")
@@ -75,6 +111,30 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
           .attr("d", (d: any) => pathGenerator(d))
           .attr("fill", "#e0e0e0")
           .attr("stroke", "#333");
+
+        // Plot paths with colors and add hover interaction
+        const overlayGroup = svg.append("g");
+        paths.forEach((d) => {
+          const pathData = d.path.geometry.coordinates.map(([x, y]) => [
+            xScale(x),
+            yScale(y),
+          ]);
+
+          overlayGroup
+            .append("path")
+            .attr("class", "path-link")
+            .attr("d", line()(pathData as [number, number][]))
+            .attr("stroke", `${d.color}`)
+            .attr("fill", "none")
+            .attr("stroke-width", 3)
+            .on("mouseover", (event) => {
+              tooltip.style("visibility", "visible");
+              tooltipDiv.text(`${d.distance.toFixed(0)} miles`);
+            })
+            .on("mouseout", (event) => {
+              tooltip.style("visibility", "hidden");
+            });
+        });
 
         // Plot sketch polygons (MPAs)
         sketch.forEach((s) => {
@@ -110,30 +170,6 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
               // Ensure that the mouse is not just passing over another element
               const e = event.toElement || event.relatedTarget;
               if (e && e.closest(".path-link")) return;
-              tooltip.style("visibility", "hidden");
-            });
-        });
-
-        // Plot paths with colors and add hover interaction
-        const overlayGroup = svg.append("g");
-        paths.forEach((d) => {
-          const pathData = d.path.geometry.coordinates.map(([x, y]) => [
-            xScale(x),
-            yScale(y),
-          ]);
-
-          overlayGroup
-            .append("path")
-            .attr("class", "path-link")
-            .attr("d", line()(pathData as [number, number][]))
-            .attr("stroke", `${d.color}`)
-            .attr("fill", "none")
-            .attr("stroke-width", 3)
-            .on("mouseover", (event) => {
-              tooltip.style("visibility", "visible");
-              tooltipDiv.text(`${d.distance.toFixed(0)} miles`);
-            })
-            .on("mouseout", (event) => {
               tooltip.style("visibility", "hidden");
             });
         });

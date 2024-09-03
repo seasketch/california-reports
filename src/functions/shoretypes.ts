@@ -16,10 +16,14 @@ import {
   isMetricArray,
   rekeyMetrics,
   sortMetrics,
+  squareMeterToMile,
   toNullSketch,
+  toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { shoretypesWorker } from "./shoretypesWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
+import { simplify } from "@turf/turf";
+import { spacing } from "./spacing.js";
 
 /**
  * shoretypes: A geoprocessing function that calculates overlap metrics
@@ -33,7 +37,7 @@ export async function shoretypes(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
-): Promise<ReportResult> {
+): Promise<any> {
   const metricGroup = project.getMetricGroup("shoretypes");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world"
@@ -78,14 +82,54 @@ export async function shoretypes(
 
     const metrics = allMetrics.flat();
 
+    const worldMetrics = genWorldMetrics(sketch, metrics, metricGroup);
+
+    // Run replication spacing analysis
+    const sketchArray = toSketchArray(sketch);
+    const sketchIds = sketchArray.map((sk) => sk.properties.id);
+    const sketchMetrics = worldMetrics.filter(
+      (m) => m.sketchId && sketchIds.includes(m.sketchId)
+    );
+
+    const replicateMap: Record<string, number> = {
+      beaches: 1.1,
+      rocky_shores: 0.55,
+      rock_islands: 0.55,
+      coastal_marsh: 0.04,
+    };
+
+    const replicateSpacingResults: Record<string, any> = {};
+
+    await Promise.all(
+      Object.entries(replicateMap).map(
+        async ([ecosystem, spacingThreshold]: [string, number]) => {
+          const replicateMetrics = sketchMetrics.filter(
+            (m) => m.classId === ecosystem && m.value / 1609 > spacingThreshold
+          );
+
+          const replicateSketches = sketchArray.filter((sk) =>
+            replicateMetrics.some((m) => m.sketchId === sk.properties.id)
+          ) as Sketch<Polygon>[];
+
+          const { paths } = await spacing(replicateSketches);
+
+          const replicateIds = replicateSketches.map((sk) => sk.properties.id);
+
+          replicateSpacingResults[ecosystem] = {
+            replicateIds,
+            paths,
+          };
+        }
+      )
+    );
+
     return {
-      metrics: sortMetrics(
-        rekeyMetrics([
-          ...metrics,
-          ...genWorldMetrics(sketch, metrics, metricGroup),
-        ])
-      ),
+      metrics: sortMetrics(rekeyMetrics([...metrics, ...worldMetrics])),
       sketch: toNullSketch(sketch, true),
+      simpleSketches: sketchArray.map((sketch) =>
+        simplify(sketch, { tolerance: 0.005 })
+      ),
+      replicateSpacingResults,
     };
   } catch (error) {
     console.error("Error fetching metrics:", error);

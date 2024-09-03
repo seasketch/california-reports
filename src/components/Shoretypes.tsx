@@ -4,6 +4,7 @@ import {
   ClassTable,
   Collapse,
   Column,
+  KeySection,
   LayerToggle,
   ObjectiveStatus,
   ReportError,
@@ -30,6 +31,7 @@ import project from "../../project/projectClient.js";
 import { ReplicateAreaSketchTableStyled } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
+import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -55,7 +57,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="shoretypes">
-      {(data: ReportResult) => {
+      {(data: any) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         let valueMetrics: Metric[] = [];
@@ -260,19 +262,56 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <Collapse title={t("Show by Sketch")}>
-                {genLengthSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
-                    ),
-                  },
-                  precalcMetrics.filter((m) => m.geographyId === "world"),
-                  metricGroup,
-                  t
+              <>
+                <Collapse title={t("Show by Sketch")}>
+                  {genLengthSketchTable(
+                    {
+                      ...data,
+                      metrics: data.metrics.filter(
+                        (m) => m.geographyId === "world"
+                      ),
+                    },
+                    precalcMetrics.filter((m) => m.geographyId === "world"),
+                    metricGroup,
+                    t
+                  )}
+                </Collapse>
+                {Object.entries(data.replicateSpacingResults).map(
+                  ([ecosystem, result]) => (
+                    <Collapse
+                      key={ecosystem}
+                      title={t(
+                        `${metricGroup.classes.find((m) => m.classId === ecosystem)!.display} Spacing Analysis`
+                      )}
+                    >
+                      <VerticalSpacer />
+                      <KeySection>
+                        <p>
+                          Of the {data.simpleSketches.length} MPAs analyzed,{" "}
+                          {result.replicateIds.length}{" "}
+                          {result.replicateIds.length === 1
+                            ? `qualifies as a ${ecosystem.replace("_", " ")} replicate.`
+                            : `qualify as ${ecosystem.replace("_", " ")} replicates.`}
+                        </p>
+                      </KeySection>
+
+                      {result.replicateIds.length !== 0 && (
+                        <>
+                          {result.replicateIds.length > 1 && (
+                            <SpacingObjectives paths={result.paths} />
+                          )}
+                          <VerticalSpacer />
+                          <ReplicateMap
+                            sketch={data.simpleSketches}
+                            replicateIds={result.replicateIds}
+                            paths={result.paths}
+                          />
+                        </>
+                      )}
+                    </Collapse>
+                  )
                 )}
-              </Collapse>
+              </>
             )}
 
             <Collapse title={t("Learn More")}>
@@ -373,12 +412,16 @@ export const genLengthSketchTable = (
         style: { color: "#777" },
         columns: [
           {
-            Header: t("Replicate") + " ".repeat(index),
+            Header:
+              (!replicateMap[curClass.classId] ? " " : t("Replicate")) +
+              " ".repeat(index),
             accessor: (row) => {
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value / 1609;
+
+              if (!replicateMap[curClass.classId]) return " ";
 
               return value > replicateMap[curClass.classId] ||
                 (!replicateMap[curClass.classId] && value) ? (

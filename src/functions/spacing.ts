@@ -31,7 +31,7 @@ const SEARCH_RADIUS_MILES = 75; // Set search radius to 75 miles
 export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
   paths: any;
 }> {
-  if (sketchArray.length === 1) {
+  if (sketchArray.length < 2) {
     return { paths: [] };
   }
 
