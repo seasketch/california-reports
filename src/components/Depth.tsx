@@ -22,7 +22,7 @@ const formatDepth = (val: number) => {
   return `-${baseVal}ft`;
 };
 
-export const Bathymetry: React.FunctionComponent = () => {
+export const Depth: React.FunctionComponent = () => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const mg = project.getMetricGroup("bathymetry", t);
@@ -38,14 +38,24 @@ export const Bathymetry: React.FunctionComponent = () => {
 
           return (
             <ToolbarCard
-              title={t("Bathymetry")}
+              title={t("Depth")}
               items={
                 <>
                   <LayerToggle label={mapLabel} layerId={mg.layerId} simple />
                 </>
               }
             >
-              <VerticalSpacer />
+              <p>
+                MPAs can potentially protect a large number of species which may
+                occur at a wide variety of depth ranges.
+              </p>
+              <p>
+                For an objective of protecting the diversity of species that
+                live at different depths and to accommodate the ontogenetic
+                movement of individuals to and from nursery or spawning grounds
+                to adult habitats, MPAs should extend from the intertidal zone
+                to deep waters offshore.
+              </p>
               <KeySection
                 style={{ display: "flex", justifyContent: "space-around" }}
               >
@@ -69,17 +79,11 @@ export const Bathymetry: React.FunctionComponent = () => {
               )}
 
               <Collapse title={t("Learn More")}>
-                <Trans i18nKey="Bathymetry Card - Learn more">
-                  <p>
-                    ℹ️ Overview: Ocean depth is useful in determining where fish
-                    and other marine life feed, live, and breed. Plans should
-                    consider protecting a wide range of water depths.
-                  </p>
-                  <p>🎯 Planning Objective: None</p>
+                <Trans i18nKey="Depth Card - Learn more">
                   <p>🗺️ Source Data: NOAA NCEI</p>
                   <p>
                     📈 Report: Calculates the minimum, average, and maximum
-                    ocean depth within the plan.
+                    ocean depth within the selected MPA(s).
                   </p>
                 </Trans>
               </Collapse>

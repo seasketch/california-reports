@@ -26,7 +26,7 @@ export const SketchAttributesCard = ({
   const [properties] = useSketchProperties();
   const { t, i18n } = useTranslation();
 
-  const attributesLabel = t("Attributes");
+  const attributesLabel = t("More Info");
 
   const propertiesToDisplay = [
     "type",

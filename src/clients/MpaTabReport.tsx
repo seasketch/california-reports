@@ -13,7 +13,7 @@ const BaseReport = () => {
   const representationId = "representation";
   const segments = [
     { id: overviewId, label: t("Overview") },
-    { id: representationId, label: t("Representation") },
+    { id: representationId, label: t("Habitat Representation/Replication") },
   ];
   const [tab, setTab] = useState<string>(overviewId);
   return (

@@ -54,9 +54,9 @@
   },
   "dependencies": {
     "@aws-sdk/util-stream": "^3.374.0",
-    "@babel/cli": "^7.24.8",
-    "@babel/plugin-syntax-import-attributes": "^7.24.7",
-    "@seasketch/geoprocessing": "7.0.0-experimental-lambdaWorkerHelpers.10",
+    "@babel/cli": "^7.25.6",
+    "@babel/plugin-syntax-import-attributes": "^7.25.6",
+    "@seasketch/geoprocessing": "7.0.0-experimental-restabilize-3.32",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -72,19 +72,18 @@
     "babel-plugin-i18next-extract": "0.10.0",
     "d3": "^7.9.0",
     "geoblaze": "2.8.0",
-    "geobuf": "^3.0.2",
     "geojson-antimeridian-cut": "^0.1.0",
     "globby": "^14.0.2",
     "graphlib": "^2.1.8",
     "i18next-browser-languagedetector": "^8.0.0",
-    "pbf": "^4.0.1",
     "prop-types": "^15.8.1",
     "react-i18next": "^15.0.1",
     "simple-statistics": "^7.8.3",
     "storybook": "^8.2.9",
     "union-subdivided-polygons": "^0.9.1",
-    "vite": "^5.4.0",
+    "vite": "^5.4.2",
     "vitest": "^2.0.5",
-    "zx": "^8.1.4"
-  }
+    "zx": "^8.1.5"
+  },
+  "devDependencies": {}
 }

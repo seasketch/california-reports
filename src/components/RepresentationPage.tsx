@@ -5,12 +5,12 @@ import { Estuaries } from "./Estuaries.js";
 import { Substrate } from "./Substrate.js";
 import { Eelgrass } from "./Eelgrass.js";
 import { KelpPersist } from "./KelpPersist.js";
-import { Bathymetry } from "./Bathymetry.js";
+import { Depth } from "./Depth.js";
 
 const ReportPage = () => {
   return (
     <>
-      <Bathymetry />
+      <Depth />
       <KelpMax />
       <KelpPersist />
       <Shoretypes />

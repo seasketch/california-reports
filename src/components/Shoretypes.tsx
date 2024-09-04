@@ -432,7 +432,7 @@ export const genLengthSketchTable = (
             },
           },
           {
-            Header: t("Area") + " ".repeat(index),
+            Header: t("Length") + " ".repeat(index),
             accessor: (row) => {
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
@@ -449,7 +449,7 @@ export const genLengthSketchTable = (
             },
           },
           {
-            Header: t("% Area") + " ".repeat(index),
+            Header: t("% Length") + " ".repeat(index),
             accessor: (row) => {
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
