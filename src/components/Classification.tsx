@@ -23,6 +23,7 @@ import {
 import { styled } from "styled-components";
 import { Trans, useTranslation } from "react-i18next";
 import {
+  groups,
   groupColorMap,
   groupColorMapTransparent,
   groupDisplayMapPl,
@@ -121,6 +122,10 @@ const sketchCollectionReport = (
   t: any
 ) => {
   const sketches = toNullSketchArray(sketch);
+  const sortedMetrics = metrics.sort(
+    (a, b) => groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || "")
+  );
+
   const columns: Column<Metric>[] = [
     {
       Header: " ",
@@ -138,7 +143,7 @@ const sketchCollectionReport = (
 
   return (
     <>
-      <Table className="styled" columns={columns} data={metrics} />
+      <Table className="styled" columns={columns} data={sortedMetrics} />
 
       <Collapse title={t("Show by MPA")}>
         {genMpaSketchTable(sketches, t)}
@@ -204,7 +209,9 @@ export const ClassificationLearnMore: React.FunctionComponent<
   return (
     <>
       <Trans i18nKey="Classification Card - Learn more">
-        <p>📈 Report: Totals number of areas in each classification.</p>
+        <p>
+          📈 Report: This report totals number of areas in each classification.
+        </p>
       </Trans>
     </>
   );
