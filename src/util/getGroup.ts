@@ -7,13 +7,13 @@ import {
   getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
 
-export const groups = ["SMR", "SMCANT", "SMCA", "SMP", "SMRMA", "Special"];
+export const groups = ["SMR", "SMCANT", "SMCA", "SMRMA", "SMP", "Special"];
 export const groupColors = [
   "#E60000",
   "#C500FF",
   "#0070FF",
-  "#FFFF00",
   "#4CE600",
+  "#FFFF00",
   "#FF00C5",
 ];
 
@@ -22,8 +22,8 @@ export const groupDisplayMapPl: Record<string, string> = {
   SMR: "State Marine Reserve(s)",
   SMCANT: "State Marine Conservation Area(s) (No-Take)",
   SMCA: "State Marine Conservation Area(s)",
-  SMP: "State Marine Park(s)",
   SMRMA: "State Marine Recreation Management Area(s)",
+  SMP: "State Marine Park(s)",
   Special: "Special Closure(s)",
 };
 
@@ -32,8 +32,8 @@ export const groupDisplayMapSg: Record<string, string> = {
   SMR: "State Marine Reserve",
   SMCANT: "State Marine Conservation Area (No-Take)",
   SMCA: "State Marine Conservation Area",
-  SMP: "State Marine Park",
   SMRMA: "State Marine Recreation Management Area",
+  SMP: "State Marine Park",
   Special: "Special Closure",
 };
 

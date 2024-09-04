@@ -29,6 +29,7 @@ import {
   groupColorMapTransparent,
   groupColors,
   groupDisplayMapPl,
+  groupDisplayMapSg,
   groups,
 } from "./getGroup.js";
 import { InfoCircleFill } from "@styled-icons/bootstrap";
@@ -201,7 +202,7 @@ export const genClassTableGrouped = (
     ...options,
   };
   // Coloring and styling for horizontal bars;
-  const blockGroupNames = groups.map((level) => t(level));
+  const blockGroupNames = groups.map((level) => t(groupDisplayMapSg[level]));
   const blockGroupStyles = groupColors.map((curBlue) => ({
     backgroundColor: curBlue,
   }));
