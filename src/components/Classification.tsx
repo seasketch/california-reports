@@ -211,6 +211,8 @@ export const ClassificationLearnMore: React.FunctionComponent<
       <Trans i18nKey="Classification Card - Learn more">
         <p>
           📈 Report: This report totals number of areas in each classification.
+          See the Glossary for more detailed explanations of the classification
+          levels.
         </p>
       </Trans>
     </>

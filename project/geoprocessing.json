@@ -35,6 +35,8 @@
     "src/functions/substrateWorker.ts",
     "src/functions/eelgrass.ts",
     "src/functions/eelgrassWorker.ts",
-    "src/functions/bathymetry.ts"
+    "src/functions/bathymetry.ts",
+    "src/functions/spanWorker.ts",
+    "src/functions/span.ts"
   ]
 }
