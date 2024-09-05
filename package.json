@@ -32,16 +32,20 @@
     "create:report": "geoprocessing create:report",
     "deploy": "geoprocessing deploy",
     "destroy": "geoprocessing destroy",
+    "extract:translation": "npx tsx scripts/translationExtract.ts",
     "import:data": "geoprocessing import:data",
+    "import:translation": "npx tsx src/i18n/bin/importTerms.ts",
     "precalc:data": "start-server-and-test 'http-server data/dist -c-1 -p 8001' http://localhost:8001 precalc:data_",
     "precalc:data:clean": "geoprocessing precalc:data:clean",
     "precalc:data_": "geoprocessing precalc:data",
     "publish:data": "geoprocessing publish:data",
+    "publish:translation": "npx tsx src/i18n/bin/publishTerms.ts",
     "reimport:data": "geoprocessing reimport:data",
     "start-data": "http-server data/dist -c-1",
     "start:client": "geoprocessing start:client",
     "storybook": "PROJECT_PATH=$(pwd) npx tsx .storybook/genReportStories.ts && storybook dev -p 6006",
     "storybook:install": "npx tsx scripts/storybookInstall.ts",
+    "sync:translation": "npm run extract:translation && npm run publish:translation && npm run import:translation",
     "synth": "geoprocessing synth",
     "test": "start-server-and-test start-data 8080 'npm run __test'",
     "test:matching": "npm run __test -- -t",
@@ -56,7 +60,7 @@
     "@aws-sdk/util-stream": "^3.374.0",
     "@babel/cli": "^7.25.6",
     "@babel/plugin-syntax-import-attributes": "^7.25.6",
-    "@seasketch/geoprocessing": "7.0.0-experimental-restabilize-3.32",
+    "@seasketch/geoprocessing": "7.0.0-experimental-child-properties.7",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -80,5 +84,7 @@
     "vitest": "^2.0.5",
     "zx": "^8.1.5"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.5.0"
+  }
 }
