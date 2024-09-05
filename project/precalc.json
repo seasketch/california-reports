@@ -66,6 +66,14 @@
   {
     "geographyId": "central_br",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1506019.4458332392
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -190,6 +198,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1643
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 301
   },
   {
     "geographyId": "central_br",
@@ -514,6 +530,14 @@
   {
     "geographyId": "central_sr",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 726841.2831742229
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -638,6 +662,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1449
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 208
   },
   {
     "geographyId": "central_sr",
@@ -962,6 +994,14 @@
   {
     "geographyId": "north_br",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1603598.7416570194
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -1086,6 +1126,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1779
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 440
   },
   {
     "geographyId": "north_br",
@@ -1410,6 +1458,14 @@
   {
     "geographyId": "north_sr",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 874475.7682059973
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -1534,6 +1590,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 918
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 337
   },
   {
     "geographyId": "north_sr",
@@ -1858,6 +1922,14 @@
   {
     "geographyId": "northcentral_sr",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 611442.9699790468
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -1982,6 +2054,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1041
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 143
   },
   {
     "geographyId": "northcentral_sr",
@@ -2306,6 +2386,14 @@
   {
     "geographyId": "south_br",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1847504.574495682
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -2430,6 +2518,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1718
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 728
   },
   {
     "geographyId": "south_br",
@@ -2754,6 +2850,14 @@
   {
     "geographyId": "south_sr",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1834688.8633540915
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -2878,6 +2982,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 1714
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 728
   },
   {
     "geographyId": "south_sr",
@@ -3202,6 +3314,14 @@
   {
     "geographyId": "world",
     "metricId": "area",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 6263064.031679678
+  },
+  {
+    "geographyId": "world",
+    "metricId": "area",
     "classId": "study_regions-Central Coast",
     "sketchId": null,
     "groupId": null,
@@ -3326,6 +3446,14 @@
     "sketchId": null,
     "groupId": null,
     "value": 5223
+  },
+  {
+    "geographyId": "world",
+    "metricId": "count",
+    "classId": "shoretypes-total",
+    "sketchId": null,
+    "groupId": null,
+    "value": 1746
   },
   {
     "geographyId": "world",

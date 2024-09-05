@@ -3,40 +3,43 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  LayerToggle,
+  Column,
   ReportError,
   ResultsCard,
+  Table,
   useSketchProperties,
-  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
   Metric,
+  MetricGroup,
   ReportResult,
+  keyBy,
   metricsWithSketchId,
+  nestMetrics,
+  percentWithEdge,
   roundDecimal,
-  squareMeterToMile,
+  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { genSketchTable } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-
+import { AreaSketchTableStyled } from "../util/genSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * KelpMax component
+ * Span component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
+export const Span: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
-  const metricGroup = project.getMetricGroup("kelpMax", t);
+  const metricGroup = project.getMetricGroup("span", t);
   const precalcMetrics = geographies
     .map((geography) =>
       project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
@@ -44,13 +47,14 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
   // Labels
-  const titleLabel = t("Kelp (Maximum)");
+  const titleLabel = t("Span");
+  const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("mi²");
+  const unitsLabel = t("mi");
 
   return (
-    <ResultsCard title={titleLabel} functionName="kelpMax">
+    <ResultsCard title={titleLabel} functionName="span">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -72,29 +76,17 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <Trans i18nKey="KelpMax 1">
-              <p>
-                Potential kelp forest is a key habitat. This report summarizes
-                the overlap of the selected MPA(s) with the maximum kelp canopy
-                coverage over the years 2002-2016.
-              </p>
-              <p>
-                The minimum extent of nearshore rocky reef within an MPA
-                necessary to encompass 90% of local biodiversity in a kelp
-                forest is 1.1 linear miles, as determined from biological
-                surveys.
-              </p>
-            </Trans>
-
-            <LayerToggle
-              label={t("Show Kelp Layer On Map")}
-              layerId={metricGroup.layerId}
-            />
-            <VerticalSpacer />
+            <p>
+              <Trans i18nKey="Span 1">
+                This report summarizes the total length and proportion of
+                shoreline contained within the selected MPA(s).
+              </Trans>
+            </p>
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
               metricGroup={metricGroup}
+              objective={objectives}
               columnConfig={[
                 {
                   columnLabel: " ",
@@ -108,9 +100,9 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        squareMeterToMile(
-                          typeof val === "string" ? parseInt(val) : val
-                        ),
+                        typeof val === "string"
+                          ? parseInt(val) / 1609
+                          : val / 1609,
                         2,
                         { keepSmallValues: true }
                       )
@@ -131,18 +123,15 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   },
                   width: 40,
                 },
+                {
+                  columnLabel: mapLabel,
+                  type: "layerToggle",
+                  width: 10,
+                },
               ]}
             />
 
             <Collapse title={t("Show By Planning Region")}>
-              <p>
-                <Trans i18nKey="Kelp Planning Region">
-                  The following is a breakdown of this plan's overlap with kelp
-                  forests by <i>planning region</i>. The San Francisco Bay
-                  planning region is excluded due to not containing any kelp
-                  forests per the data provided.
-                </Trans>
-              </p>
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
                 metricGroup={metricGroup}
@@ -152,9 +141,9 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Kelp (Maximum)",
+                    columnLabel: " ",
                     type: "class",
-                    width: 35,
+                    width: 30,
                   },
                   {
                     columnLabel: withinLabel,
@@ -163,9 +152,9 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
-                          ),
+                          typeof val === "string"
+                            ? parseInt(val) / 1609
+                            : val / 1609,
                           2,
                           { keepSmallValues: true }
                         )
@@ -184,19 +173,13 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 35,
+                    width: 40,
                   },
                 ]}
               />
             </Collapse>
 
             <Collapse title={t("Show By Bioregion")}>
-              <p>
-                <Trans i18nKey="Kelp Bioregion">
-                  The following is a breakdown of this plan's overlap with kelp
-                  forests by <i>bioregion</i>.
-                </Trans>
-              </p>
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
@@ -206,9 +189,9 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Kelp (Maximum)",
+                    columnLabel: " ",
                     type: "class",
-                    width: 35,
+                    width: 30,
                   },
                   {
                     columnLabel: withinLabel,
@@ -217,9 +200,9 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
-                          ),
+                          typeof val === "string"
+                            ? parseInt(val) / 1609
+                            : val / 1609,
                           2,
                           { keepSmallValues: true }
                         )
@@ -238,7 +221,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 35,
+                    width: 40,
                   },
                 ]}
               />
@@ -246,7 +229,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by Sketch")}>
-                {genSketchTable(
+                {genLengthSketchTable(
                   {
                     ...data,
                     metrics: data.metrics.filter(
@@ -255,30 +238,20 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
-                  t,
-                  { replicate: true, replicateMap: { kelpMax: 1.1 } }
+                  t
                 )}
               </Collapse>
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="KelpMax - learn more">
-                <p>
-                  ℹ️ Overview: Overview: This layer shows the maximum extent of
-                  kelp canopy based on 13 years of aerial surveys conducted
-                  between 2002 and 2016.
-                </p>
+              <Trans i18nKey="Span - learn more">
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of kelp
-                  canopy coverage within the selected MPA(s). This value is
-                  divided by the total value of kelp canopy coverage to obtain
-                  the % contained within the selected MPA(s). If the selected
-                  areaincludes multiple areas that overlap, the overlap is only
-                  counted once. Kelp data has been downsampled to a 30m x 30m
-                  raster grid for efficiency, so area calculations are
-                  estimates. Final plans should check area totals in GIS tools
-                  before publishing final area statistics.
+                  📈 Report: This report calculates the alongshore span of the
+                  selected MPA(s). This value is divided by the total alongshore
+                  span of the California coastline to obtain the % contained
+                  within the plan. If the plan includes multiple areas that
+                  overlap, the overlap is only counted once.
                 </p>
               </Trans>
             </Collapse>
@@ -286,5 +259,96 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+/**
+ * Creates "Show by Zone" report, with area + percentages
+ * @param data data returned from lambda
+ * @param precalcMetrics metrics from precalc.json
+ * @param metricGroup metric group to get stats for
+ * @param t TFunction
+ */
+export const genLengthSketchTable = (
+  data: ReportResult,
+  precalcMetrics: Metric[],
+  mg: MetricGroup,
+  t: any
+) => {
+  const sketches = toNullSketchArray(data.sketch);
+  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
+  const sketchIds = sketches.map((sk) => sk.properties.id);
+  const sketchMetrics = data.metrics.filter(
+    (m) => m.sketchId && sketchIds.includes(m.sketchId)
+  );
+  const finalMetrics = [
+    ...sketchMetrics,
+    ...toPercentMetric(sketchMetrics, precalcMetrics, {
+      metricIdOverride: project.getMetricGroupPercId(mg),
+    }),
+  ];
+
+  const aggMetrics = nestMetrics(finalMetrics, [
+    "sketchId",
+    "classId",
+    "metricId",
+  ]);
+  // Use sketch ID for each table row, index into aggMetrics
+  const rows = Object.keys(aggMetrics).map((sketchId) => ({
+    sketchId,
+  }));
+
+  const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
+    (curClass, index) => {
+      /* i18next-extract-disable-next-line */
+      const transString = t(curClass.display);
+      return {
+        Header: transString,
+        style: { color: "#777" },
+        columns: [
+          {
+            Header: t("Length") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+              const miVal = value / 1609;
+
+              // If value is nonzero but would be rounded to zero, replace with < 0.1
+              const valDisplay =
+                miVal && miVal < 0.1
+                  ? "< 0.1"
+                  : Number.format(roundDecimal(miVal));
+              return valDisplay + " " + t("mi");
+            },
+          },
+          {
+            Header: t("% Length") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  project.getMetricGroupPercId(mg)
+                ][0].value;
+              return percentWithEdge(isNaN(value) ? 0 : value);
+            },
+          },
+        ],
+      };
+    }
+  );
+
+  const columns: Column<{ sketchId: string }>[] = [
+    {
+      Header: "MPA",
+      accessor: (row) => sketchesById[row.sketchId].properties.name,
+    },
+    ...classColumns,
+  ];
+
+  return (
+    <AreaSketchTableStyled>
+      <Table columns={columns} data={rows} />
+    </AreaSketchTableStyled>
   );
 };

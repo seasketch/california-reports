@@ -5,7 +5,6 @@ import {
   Collapse,
   ToolbarCard,
   LayerToggle,
-  VerticalSpacer,
   useSketchProperties,
   Column,
   Table,
@@ -14,7 +13,7 @@ import {
 import { BathymetryResults } from "../functions/bathymetry.js";
 import { Trans, useTranslation } from "react-i18next";
 import project from "../../project/index.js";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 const formatDepth = (val: number) => {
   if (!val || val > 0) return "0ft";

@@ -29,6 +29,7 @@ import {
   groupColorMapTransparent,
   groupColors,
   groupDisplayMapPl,
+  groupDisplayMapSg,
   groups,
 } from "./getGroup.js";
 import { InfoCircleFill } from "@styled-icons/bootstrap";
@@ -201,7 +202,7 @@ export const genClassTableGrouped = (
     ...options,
   };
   // Coloring and styling for horizontal bars;
-  const blockGroupNames = groups.map((level) => t(level));
+  const blockGroupNames = groups.map((level) => t(groupDisplayMapSg[level]));
   const blockGroupStyles = groupColors.map((curBlue) => ({
     backgroundColor: curBlue,
   }));
@@ -573,7 +574,10 @@ export const genAreaGroupLevelTable = (
       <Table
         className="styled"
         columns={columns}
-        data={levelAggs.sort((a, b) => a.groupId.localeCompare(b.groupId))}
+        data={levelAggs.sort(
+          (a, b) =>
+            groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || "")
+        )}
       />
     </AreaSketchTableStyled>
   );
