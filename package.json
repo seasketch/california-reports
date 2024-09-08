@@ -60,7 +60,7 @@
     "@aws-sdk/util-stream": "^3.374.0",
     "@babel/cli": "^7.25.6",
     "@babel/plugin-syntax-import-attributes": "^7.25.6",
-    "@seasketch/geoprocessing": "7.0.0-experimental-worker-cache.13",
+    "@seasketch/geoprocessing": "7.0.0-experimental-db-retry.10",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
