@@ -367,11 +367,11 @@
       "fgb"
     ],
     "precalc": true,
-    "layerName": "eelgrass_simplified",
+    "layerName": "eelgrass_simplified5M_20mRemoved",
     "classKeys": [],
     "created": "2024-06-25T16:22:19.705Z",
-    "lastUpdated": "2024-07-09T18:39:16.252Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_simplified.fgb",
+    "lastUpdated": "2024-09-09T17:43:12.815Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_simplified5m_20mRemoved.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
   },

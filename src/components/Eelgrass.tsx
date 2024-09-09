@@ -70,12 +70,21 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="Eelgrass 1">
-                This report summarizes this plan's overlap with eelgrass within
-                California's territorial sea.
-              </Trans>
-            </p>
+            <Trans i18nKey="Eelgrass 1">
+              <p>
+                Eelgrass helps prevent erosion and maintain stability near shore
+                by anchoring sediment with its spreading rhizomes and slowing
+                water flow. Eelgrass beds also provide foraging, breeding,and
+                nursery areas for many species of invertebrates, fish, and
+                birds. This report summarizes the overlap of the selected MPA(s)
+                with eelgrass extent.
+              </p>
+              <p>
+                The minimum area of eelgrass within an MPA necessary to
+                encompass 90% of local biodiversity and count as a replicate is
+                0.04 square miles, as determined from biological surveys.
+              </p>
+            </Trans>
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -240,33 +249,14 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="eelgrass - learn more">
-                <p>
-                  ℹ️ Overview: Zostera marina, or eelgrass, grows intertidally
-                  and in the shallow subtidal of estuaries, bays, and other
-                  protected coastal areas of the ecoregion. It is a flowering
-                  plant, not an alga, and often occurs in dense beds. It helps
-                  prevent erosion and maintain stability near shore by anchoring
-                  sediment with its spreading rhizomes and slowing water flow.
-                  Eelgrass beds also provide foraging, breeding, and nursery
-                  areas for many species of invertebrates, fish, and birds. This
-                  file aggregates data from many sources across multiple years.
-                </p>
-                <p>
-                  Eelgrass data has been simplified to a tolerance of 1 meter.
-                  MPA habitat replicates must contain 0.04 square miles of
-                  eelgrass.
-                </p>
-                <p>
-                  🎯 Planning Objective: Habitat replication across state
-                  waters.
-                </p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total area of eelgrass
+                  within the selected MPA(s). This value is divided by the total
+                  area of eelgrass to obtain the % contained within the selected
+                  MPA(s). If the selected area includes multiple areas that
+                  overlap, the overlap is only counted once. Eelgrass data has
+                  been simplified to a tolerance of 5 meters.
                 </p>
               </Trans>
             </Collapse>
