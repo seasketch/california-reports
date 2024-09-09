@@ -2,7 +2,9 @@
   {
     "datasourceId": "global-clipping-osm-land",
     "geo_type": "vector",
-    "formats": ["subdivided"],
+    "formats": [
+      "subdivided"
+    ],
     "precalc": false,
     "idProperty": "gid",
     "nameProperty": "gid",
@@ -12,7 +14,9 @@
   {
     "datasourceId": "global-clipping-eez-land-union",
     "geo_type": "vector",
-    "formats": ["subdivided"],
+    "formats": [
+      "subdivided"
+    ],
     "precalc": false,
     "idProperty": "UNION",
     "nameProperty": "UNION",
@@ -22,7 +26,10 @@
   {
     "datasourceId": "global-eez-mr-v12",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "metadata": {
       "name": "World EEZ v11",
@@ -36,10 +43,14 @@
     "nameProperty": "GEONAME",
     "propertyFilter": {
       "property": "GEONAME",
-      "values": ["United States Exclusive Economic Zone"]
+      "values": [
+        "United States Exclusive Economic Zone"
+      ]
     },
     "bboxFilter": [
-      -129.23482665059146, 23.833333333167218, -65.69971857933155,
+      -129.23482665059146,
+      23.833333333167218,
+      -65.69971857933155,
       49.00226354612636
     ],
     "classKeys": [],
@@ -48,7 +59,9 @@
   {
     "datasourceId": "bo-present-surface-ph",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": false,
     "metadata": {
       "name": "BioOracle Present Day Surface pH",
@@ -60,7 +73,7 @@
     },
     "measurementType": "quantitative",
     "band": 1,
-    "noDataValue": -3.3999999521443642e38,
+    "noDataValue": -3.3999999521443642e+38,
     "created": "2023-12-11T11:55:31.053Z",
     "lastUpdated": "2023-12-11T12:52:22.966Z",
     "src": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-ph.tif"
@@ -68,7 +81,9 @@
   {
     "datasourceId": "bo-present-surface-temp-max",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": false,
     "metadata": {
       "name": "BioOracle Present Day Surface Temperature Maximum",
@@ -80,13 +95,15 @@
     },
     "measurementType": "quantitative",
     "band": 1,
-    "noDataValue": -1.7e308,
+    "noDataValue": -1.7e+308,
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-temp-max.tif"
   },
   {
     "datasourceId": "bo-present-surface-temp-min",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": false,
     "metadata": {
       "name": "BioOracle Present Day Surface Temperature Minimum",
@@ -98,13 +115,15 @@
     },
     "measurementType": "quantitative",
     "band": 1,
-    "noDataValue": -1.7e308,
+    "noDataValue": -1.7e+308,
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-temp-min.tif"
   },
   {
     "datasourceId": "meow-ecos",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": false,
     "metadata": {
       "name": "Marine Ecoregions of the World",
@@ -123,33 +142,47 @@
   {
     "datasourceId": "study_regions",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "MAN_CA_MLPA_StudyRegionBoundaries",
-    "classKeys": ["NAME"],
+    "classKeys": [
+      "NAME"
+    ],
     "created": "2024-05-21T22:23:21.520Z",
     "lastUpdated": "2024-06-10T20:13:56.859Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/MAN_CA_MLPA_StudyRegionBoundaries.shp",
-    "propertiesToKeep": ["NAME"],
+    "propertiesToKeep": [
+      "NAME"
+    ],
     "explodeMulti": true
   },
   {
     "datasourceId": "bioregions",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": false,
     "layerName": "MAN_CA_MPA_BioRegions",
-    "classKeys": ["NAME"],
+    "classKeys": [
+      "NAME"
+    ],
     "created": "2024-05-28T18:42:44.795Z",
     "lastUpdated": "2024-06-10T20:14:20.948Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/MAN_CA_MPA_BioRegions.shp",
-    "propertiesToKeep": ["NAME"],
+    "propertiesToKeep": [
+      "NAME"
+    ],
     "explodeMulti": true
   },
   {
     "datasourceId": "world",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": false,
     "layerName": "world",
     "classKeys": [],
@@ -162,7 +195,9 @@
   {
     "datasourceId": "rock_islands",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "rock_islands_buffered",
     "classKeys": [],
@@ -175,7 +210,9 @@
   {
     "datasourceId": "beaches",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "beaches_buffered",
     "classKeys": [],
@@ -188,7 +225,9 @@
   {
     "datasourceId": "coastal_marsh",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "coastalmarsh_buffered",
     "classKeys": [],
@@ -201,7 +240,9 @@
   {
     "datasourceId": "rocky_shores",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "rockyshores_buffered",
     "classKeys": [],
@@ -214,7 +255,9 @@
   {
     "datasourceId": "tidal_flats",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "tidalflats_buffered",
     "classKeys": [],
@@ -227,7 +270,9 @@
   {
     "datasourceId": "unclassified",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "unclassified_buffered",
     "classKeys": [],
@@ -240,7 +285,9 @@
   {
     "datasourceId": "clipLayer",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "MPA_Petitions_bioregions_nofed_PairwiseDisso selection",
     "classKeys": [],
@@ -253,7 +300,9 @@
   {
     "datasourceId": "estuaries",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
     "layerName": "estuaries_clipped",
     "classKeys": [],
@@ -266,7 +315,10 @@
   {
     "datasourceId": "central_br",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "central_br_extent",
     "classKeys": [],
@@ -279,7 +331,10 @@
   {
     "datasourceId": "north_br",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "north_br_extent",
     "classKeys": [],
@@ -292,7 +347,10 @@
   {
     "datasourceId": "south_br",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "south_br_extent",
     "classKeys": [],
@@ -305,20 +363,25 @@
   {
     "datasourceId": "eelgrass",
     "geo_type": "vector",
-    "formats": ["fgb"],
+    "formats": [
+      "fgb"
+    ],
     "precalc": true,
-    "layerName": "eelgrass_simplified",
+    "layerName": "eelgrass_simplified5M_20mRemoved",
     "classKeys": [],
     "created": "2024-06-25T16:22:19.705Z",
-    "lastUpdated": "2024-07-09T18:39:16.252Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_simplified.fgb",
+    "lastUpdated": "2024-09-09T17:43:12.815Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_simplified5m_20mRemoved.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
   },
   {
     "datasourceId": "north_sr",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "north_sr_extent",
     "classKeys": [],
@@ -331,7 +394,10 @@
   {
     "datasourceId": "northcentral_sr",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "northcentral_sr_extent",
     "classKeys": [],
@@ -344,7 +410,10 @@
   {
     "datasourceId": "central_sr",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "central_sr_extent",
     "classKeys": [],
@@ -357,7 +426,10 @@
   {
     "datasourceId": "south_sr",
     "geo_type": "vector",
-    "formats": ["fgb", "json"],
+    "formats": [
+      "fgb",
+      "json"
+    ],
     "precalc": false,
     "layerName": "south_sr_extent",
     "classKeys": [],
@@ -370,7 +442,9 @@
   {
     "datasourceId": "depth",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": false,
     "measurementType": "quantitative",
     "band": 1,
@@ -382,7 +456,9 @@
   {
     "datasourceId": "substrate",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "categorical",
     "band": 1,
@@ -394,7 +470,9 @@
   {
     "datasourceId": "kelpPersist",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "categorical",
     "band": 1,
@@ -406,7 +484,9 @@
   {
     "datasourceId": "hab_ca",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "categorical",
     "band": 1,
@@ -418,7 +498,9 @@
   {
     "datasourceId": "kelpMax",
     "geo_type": "raster",
-    "formats": ["tif"],
+    "formats": [
+      "tif"
+    ],
     "precalc": true,
     "measurementType": "quantitative",
     "band": 1,
@@ -426,5 +508,35 @@
     "created": "2024-08-12T20:59:52.498Z",
     "lastUpdated": "2024-08-12T20:59:52.498Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/kelpMax.tif"
+  },
+  {
+    "datasourceId": "test",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "rockyshores",
+    "classKeys": [],
+    "created": "2024-09-04T19:12:05.432Z",
+    "lastUpdated": "2024-09-04T19:12:05.432Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rockyshores.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "shoretypes",
+    "geo_type": "vector",
+    "formats": [
+      "fgb"
+    ],
+    "precalc": true,
+    "layerName": "shoretypes5m",
+    "classKeys": [],
+    "created": "2024-09-04T19:57:56.137Z",
+    "lastUpdated": "2024-09-06T22:46:39.799Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/shoretypes5m.fgb",
+    "propertiesToKeep": [],
+    "explodeMulti": true
   }
 ]

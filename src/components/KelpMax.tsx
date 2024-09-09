@@ -86,12 +86,19 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="KelpMax 1">
-                This report summarizes this plan's overlap with the maximum kelp
-                distribution over the years 2002-2016.
-              </Trans>
-            </p>
+            <Trans i18nKey="KelpMax 1">
+              <p>
+                Potential kelp forest is a key habitat. This report summarizes
+                the overlap of the selected MPA(s) with the maximum kelp canopy
+                coverage over the years 2002-2016.
+              </p>
+              <p>
+                The minimum extent of nearshore rocky reef within an MPA
+                necessary to encompass 90% of local biodiversity in a kelp
+                forest is 1.1 linear miles, as determined from biological
+                surveys.
+              </p>
+            </Trans>
 
             <LayerToggle
               label={t("Show Kelp Layer On Map")}
@@ -305,25 +312,21 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="KelpMax - learn more">
                 <p>
-                  ℹ️ Overview: The maximum area of kelp across the years
-                  2002-2016 is used in this report. The area and % area of kelp
-                  protected by this plan is shown. Kelp data has been rasterized
-                  to a 30m x 30m raster grid for efficiency, so area
-                  calculations are estimates. Final plans should check area
-                  totals in GIS tools before publishing final area statistics.
+                  ℹ️ Overview: Overview: This layer shows the maximum extent of
+                  kelp canopy based on 13 years of aerial surveys conducted
+                  between 2002 and 2016.
                 </p>
-                <p>
-                  An MPA is counted as a replicate if it contains at least 1.1
-                  mi² of kelp forest.
-                </p>
-                <p>🎯 Planning Objective: None</p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total value of kelp
+                  canopy coverage within the selected MPA(s). This value is
+                  divided by the total value of kelp canopy coverage to obtain
+                  the % contained within the selected MPA(s). If the selected
+                  areaincludes multiple areas that overlap, the overlap is only
+                  counted once. Kelp data has been downsampled to a 30m x 30m
+                  raster grid for efficiency, so area calculations are
+                  estimates. Final plans should check area totals in GIS tools
+                  before publishing final area statistics.
                 </p>
               </Trans>
             </Collapse>

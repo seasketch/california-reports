@@ -7,50 +7,50 @@ import {
   getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
 
-export const groups = ["SMCA", "SMCANT", "SMP", "SMR", "SMRMA", "Special"];
+export const groups = ["SMR", "SMCANT", "SMCA", "SMRMA", "SMP", "Special"];
 export const groupColors = [
-  "#0070FF",
-  "#C500FF",
-  "#FFFF00",
   "#E60000",
+  "#C500FF",
+  "#0070FF",
   "#4CE600",
+  "#FFFF00",
   "#FF00C5",
 ];
 
 // Display values for groups (plural)
 export const groupDisplayMapPl: Record<string, string> = {
-  SMCA: "State Marine Conservation Area(s)",
-  SMCANT: "State Marine Conservation Area(s) (No-Take)",
-  SMP: "State Marine Park(s)",
   SMR: "State Marine Reserve(s)",
+  SMCANT: "State Marine Conservation Area(s) (No-Take)",
+  SMCA: "State Marine Conservation Area(s)",
   SMRMA: "State Marine Recreation Management Area(s)",
+  SMP: "State Marine Park(s)",
   Special: "Special Closure(s)",
 };
 
 // Display values for groups (singular)
 export const groupDisplayMapSg: Record<string, string> = {
-  SMCA: "State Marine Conservation Area",
-  SMCANT: "State Marine Conservation Area (No-Take)",
-  SMP: "State Marine Park",
   SMR: "State Marine Reserve",
+  SMCANT: "State Marine Conservation Area (No-Take)",
+  SMCA: "State Marine Conservation Area",
   SMRMA: "State Marine Recreation Management Area",
+  SMP: "State Marine Park",
   Special: "Special Closure",
 };
 
 // Mapping groupIds to colors
 export const groupColorMap: Record<string, string> = {
-  SMCA: "#0070FF",
-  SMCANT: "#C500FF",
-  SMP: "#FFFF00",
   SMR: "#E60000",
+  SMCANT: "#C500FF",
+  SMCA: "#0070FF",
+  SMP: "#FFFF00",
   SMRMA: "#4CE600",
   Special: "#FF00C5",
 };
 export const groupColorMapTransparent: Record<string, string> = {
-  SMCA: "#0070FF80",
-  SMCANT: "#C500FF80",
-  SMP: "#FFFF0080",
   SMR: "#E6000080",
+  SMCANT: "#C500FF80",
+  SMCA: "#0070FF80",
+  SMP: "#FFFF0080",
   SMRMA: "#4CE60080",
   Special: "#FF00C580",
 };

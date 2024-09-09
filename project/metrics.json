@@ -12,6 +12,18 @@
     ]
   },
   {
+    "metricId": "span",
+    "type": "areaOverlap",
+    "datasourceId": "shoretypes",
+    "layerId": "wI8i1rqAm",
+    "classes": [
+      {
+        "classId": "span",
+        "display": "Alongshore Span"
+      }
+    ]
+  },
+  {
     "metricId": "kelpMax",
     "type": "areaOverlap",
     "datasourceId": "kelpMax",

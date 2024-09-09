@@ -3,47 +3,43 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  KeySection,
-  ObjectiveStatus,
+  Column,
   ReportError,
   ResultsCard,
+  Table,
   useSketchProperties,
-  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
   Metric,
   MetricGroup,
-  NullSketch,
-  NullSketchCollection,
-  Polygon,
   ReportResult,
-  Sketch,
-  firstMatchingMetric,
+  keyBy,
   metricsWithSketchId,
+  nestMetrics,
+  percentWithEdge,
   roundDecimal,
-  squareMeterToMile,
+  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-import { genSketchTable } from "../util/genSketchTable.js";
-import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
+import { AreaSketchTableStyled } from "../util/genSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * Eelgrass component
+ * Span component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
+export const Span: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
-  const metricGroup = project.getMetricGroup("eelgrass", t);
+  const metricGroup = project.getMetricGroup("span", t);
   const precalcMetrics = geographies
     .map((geography) =>
       project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
@@ -51,21 +47,15 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
   // Labels
-  const titleLabel = t("Eelgrass");
+  const titleLabel = t("Span");
   const mapLabel = t("Map");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const unitsLabel = t("mi");
 
   return (
-    <ResultsCard title={titleLabel} functionName="eelgrass">
-      {(data: {
-        metrics: Metric[];
-        sketch: NullSketch | NullSketchCollection;
-        simpleSketches: Sketch<Polygon>[];
-        replicateIds: string[];
-        paths: any;
-      }) => {
+    <ResultsCard title={titleLabel} functionName="span">
+      {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
@@ -86,28 +76,12 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <Trans i18nKey="Eelgrass 1">
-              <p>
-                Eelgrass helps prevent erosion and maintain stability near shore
-                by anchoring sediment with its spreading rhizomes and slowing
-                water flow. Eelgrass beds also provide foraging, breeding,and
-                nursery areas for many species of invertebrates, fish, and
-                birds. This report summarizes the overlap of the selected MPA(s)
-                with eelgrass extent.
-              </p>
-              <p>
-                The minimum area of eelgrass within an MPA necessary to
-                encompass 90% of local biodiversity and count as a replicate is
-                0.04 square miles, as determined from biological surveys.
-              </p>
-            </Trans>
-
-            {!isCollection && (
-              <EelgrassObjectives
-                metricGroup={metricGroup}
-                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
-              />
-            )}
+            <p>
+              <Trans i18nKey="Span 1">
+                This report summarizes the total length and proportion of
+                shoreline contained within the selected MPA(s).
+              </Trans>
+            </p>
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -126,9 +100,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        squareMeterToMile(
-                          typeof val === "string" ? parseInt(val) : val
-                        ),
+                        typeof val === "string"
+                          ? parseInt(val) / 1609
+                          : val / 1609,
                         2,
                         { keepSmallValues: true }
                       )
@@ -178,9 +152,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
-                          ),
+                          typeof val === "string"
+                            ? parseInt(val) / 1609
+                            : val / 1609,
                           2,
                           { keepSmallValues: true }
                         )
@@ -215,7 +189,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Eelgrass",
+                    columnLabel: " ",
                     type: "class",
                     width: 30,
                   },
@@ -226,9 +200,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
-                          ),
+                          typeof val === "string"
+                            ? parseInt(val) / 1609
+                            : val / 1609,
                           2,
                           { keepSmallValues: true }
                         )
@@ -254,60 +228,30 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <>
-                <Collapse title={t("Show by Sketch")}>
-                  {genSketchTable(
-                    {
-                      ...data,
-                      metrics: data.metrics.filter(
-                        (m) => m.geographyId === "world"
-                      ),
-                    },
-                    precalcMetrics.filter((m) => m.geographyId === "world"),
-                    metricGroup,
-                    t,
-                    { replicate: true, replicateMap: { eelgrass: 0.04 } }
-                  )}
-                </Collapse>
-                <Collapse title={t("Spacing Analysis")}>
-                  <VerticalSpacer />
-                  <KeySection>
-                    <p>
-                      Of the {data.simpleSketches.length} MPAs analyzed,{" "}
-                      {data.replicateIds.length}{" "}
-                      {data.replicateIds.length === 1
-                        ? "qualifies as an eelgrass replicate."
-                        : "qualify as eelgrass replicates."}
-                    </p>
-                  </KeySection>
-
-                  {data.replicateIds.length !== 0 && (
-                    <>
-                      {data.replicateIds.length > 1 && (
-                        <SpacingObjectives paths={data.paths} />
-                      )}
-                      <VerticalSpacer />
-                      <ReplicateMap
-                        sketch={data.simpleSketches}
-                        replicateIds={data.replicateIds}
-                        paths={data.paths}
-                      />
-                    </>
-                  )}
-                </Collapse>
-              </>
+              <Collapse title={t("Show by Sketch")}>
+                {genLengthSketchTable(
+                  {
+                    ...data,
+                    metrics: data.metrics.filter(
+                      (m) => m.geographyId === "world"
+                    ),
+                  },
+                  precalcMetrics.filter((m) => m.geographyId === "world"),
+                  metricGroup,
+                  t
+                )}
+              </Collapse>
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="eelgrass - learn more">
+              <Trans i18nKey="Span - learn more">
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total area of eelgrass
-                  within the selected MPA(s). This value is divided by the total
-                  area of eelgrass to obtain the % contained within the selected
-                  MPA(s). If the selected area includes multiple areas that
-                  overlap, the overlap is only counted once. Eelgrass data has
-                  been simplified to a tolerance of 5 meters.
+                  📈 Report: This report calculates the alongshore span of the
+                  selected MPA(s). This value is divided by the total alongshore
+                  span of the California coastline to obtain the % contained
+                  within the plan. If the plan includes multiple areas that
+                  overlap, the overlap is only counted once.
                 </p>
               </Trans>
             </Collapse>
@@ -318,55 +262,93 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   );
 };
 
-const EelgrassObjectives = (props: {
-  metricGroup: MetricGroup;
-  metrics: Metric[];
-}) => {
-  const { metricGroup, metrics } = props;
-  const replicateMap: Record<string, number> = { eelgrass: 0.12 };
+/**
+ * Creates "Show by Zone" report, with area + percentages
+ * @param data data returned from lambda
+ * @param precalcMetrics metrics from precalc.json
+ * @param metricGroup metric group to get stats for
+ * @param t TFunction
+ */
+export const genLengthSketchTable = (
+  data: ReportResult,
+  precalcMetrics: Metric[],
+  mg: MetricGroup,
+  t: any
+) => {
+  const sketches = toNullSketchArray(data.sketch);
+  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
+  const sketchIds = sketches.map((sk) => sk.properties.id);
+  const sketchMetrics = data.metrics.filter(
+    (m) => m.sketchId && sketchIds.includes(m.sketchId)
+  );
+  const finalMetrics = [
+    ...sketchMetrics,
+    ...toPercentMetric(sketchMetrics, precalcMetrics, {
+      metricIdOverride: project.getMetricGroupPercId(mg),
+    }),
+  ];
 
-  // Get habitat replicates passes and fails for this MPA
-  const { passes, fails } = metricGroup.classes.reduce(
-    (acc: { passes: string[]; fails: string[] }, curClass) => {
-      const metric = firstMatchingMetric(
-        metrics,
-        (m) => m.classId === curClass.classId
-      );
-      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+  const aggMetrics = nestMetrics(finalMetrics, [
+    "sketchId",
+    "classId",
+    "metricId",
+  ]);
+  // Use sketch ID for each table row, index into aggMetrics
+  const rows = Object.keys(aggMetrics).map((sketchId) => ({
+    sketchId,
+  }));
 
-      const value = squareMeterToMile(metric.value);
-      const replicateValue = replicateMap[curClass.classId];
+  const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
+    (curClass, index) => {
+      /* i18next-extract-disable-next-line */
+      const transString = t(curClass.display);
+      return {
+        Header: transString,
+        style: { color: "#777" },
+        columns: [
+          {
+            Header: t("Length") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+              const miVal = value / 1609;
 
-      value > replicateValue || (!replicateValue && value)
-        ? acc.passes.push(curClass.display)
-        : acc.fails.push(curClass.display);
-
-      return acc;
-    },
-    { passes: [], fails: [] }
+              // If value is nonzero but would be rounded to zero, replace with < 0.1
+              const valDisplay =
+                miVal && miVal < 0.1
+                  ? "< 0.1"
+                  : Number.format(roundDecimal(miVal));
+              return valDisplay + " " + t("mi");
+            },
+          },
+          {
+            Header: t("% Length") + " ".repeat(index),
+            accessor: (row) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  project.getMetricGroupPercId(mg)
+                ][0].value;
+              return percentWithEdge(isNaN(value) ? 0 : value);
+            },
+          },
+        ],
+      };
+    }
   );
 
+  const columns: Column<{ sketchId: string }>[] = [
+    {
+      Header: "MPA",
+      accessor: (row) => sketchesById[row.sketchId].properties.name,
+    },
+    ...classColumns,
+  ];
+
   return (
-    <>
-      {passes.length > 0 && (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={
-            <>This MPA meets the habitat replicate guidelines for eelgrass.</>
-          }
-        />
-      )}
-      {fails.length > 0 && (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              This MPA does not meet the habitat replicate guidelines for
-              eelgrass.
-            </>
-          }
-        />
-      )}
-    </>
+    <AreaSketchTableStyled>
+      <Table columns={columns} data={rows} />
+    </AreaSketchTableStyled>
   );
 };

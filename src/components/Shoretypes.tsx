@@ -50,7 +50,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
   // Labels
   const titleLabel = t("Shoreline Habitats");
-  const classLabel = t("Shoretype");
+  const classLabel = t("Shoreline Habitat");
   const withinLabel = t("Within Plan");
   const percWithinLabel = t("% Within Plan");
   const unitsLabel = t("mi");
@@ -96,7 +96,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
             <p>
               <Trans i18nKey="Shoretypes 1">
                 This report summarizes this plan's protection of California's
-                shoretypes.
+                shoreline habitats.
               </Trans>
             </p>
 
