@@ -3,12 +3,10 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  KeySection,
   ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
-  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
@@ -28,7 +26,6 @@ import {
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { genSketchTable } from "../util/genSketchTable.js";
-import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -59,13 +56,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="estuaries">
-      {(data: {
-        metrics: Metric[];
-        sketch: NullSketch | NullSketchCollection;
-        simpleSketches: Sketch<Polygon>[];
-        replicateIds: string[];
-        paths: any;
-      }) => {
+      {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
@@ -245,48 +236,20 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <>
-                <Collapse title={t("Show by Sketch")}>
-                  {genSketchTable(
-                    {
-                      ...data,
-                      metrics: data.metrics.filter(
-                        (m) => m.geographyId === "world"
-                      ),
-                    },
-                    precalcMetrics.filter((m) => m.geographyId === "world"),
-                    metricGroup,
-                    t,
-                    { replicate: true, replicateMap: { estuaries: 0.12 } }
-                  )}
-                </Collapse>
-                <Collapse title={t("Spacing Analysis")}>
-                  <VerticalSpacer />
-                  <KeySection>
-                    <p>
-                      Of the {data.simpleSketches.length} MPAs analyzed,{" "}
-                      {data.replicateIds.length}{" "}
-                      {data.replicateIds.length === 1
-                        ? "qualifies as an estuary replicate."
-                        : "qualify as estuary replicates."}
-                    </p>
-                  </KeySection>
-
-                  {data.replicateIds.length !== 0 && (
-                    <>
-                      {data.replicateIds.length > 1 && (
-                        <SpacingObjectives paths={data.paths} />
-                      )}
-                      <VerticalSpacer />
-                      <ReplicateMap
-                        sketch={data.simpleSketches}
-                        replicateIds={data.replicateIds}
-                        paths={data.paths}
-                      />
-                    </>
-                  )}
-                </Collapse>
-              </>
+              <Collapse title={t("Show by Sketch")}>
+                {genSketchTable(
+                  {
+                    ...data,
+                    metrics: data.metrics.filter(
+                      (m) => m.geographyId === "world"
+                    ),
+                  },
+                  precalcMetrics.filter((m) => m.geographyId === "world"),
+                  metricGroup,
+                  t,
+                  { replicate: true, replicateMap: { estuaries: 0.12 } }
+                )}
+              </Collapse>
             )}
 
             <Collapse title={t("Learn More")}>

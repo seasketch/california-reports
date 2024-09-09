@@ -220,36 +220,52 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
 };
 
 export const SpacingObjectives = (props: {
-  paths: {
-    path: Feature<LineString>;
-    distance: number;
-    color: string;
-  }[];
-}) => {
-  return (
-    <>
-      {props.paths.filter((p) => p.color === "red").length === 0 ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={
-            <>
-              These habitat replicates meet the spacing guidelines. All
-              replicates have gaps less than 62 statute miles.
-            </>
-          }
-        />
-      ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              These habitat replicates do not meet the spacing guidelines, with{" "}
-              {props.paths.filter((p) => p.color === "red").length} gap(s)
-              greater than 62 statute miles.
-            </>
-          }
-        />
-      )}
-    </>
-  );
-};
+  data: {
+    title: string;
+    sketch: Sketch<Polygon>[];
+    replicateIds: string[];
+    paths: {
+      path: Feature<LineString>;
+      distance: number;
+      color: string;
+    }[];
+  };
+}) => (
+  <>
+    {props.data.replicateIds.length === 1 ? (
+      <ObjectiveStatus
+        status={"maybe"}
+        msg={
+          <>
+            The selected MPAs contain only one{" "}
+            {props.data.title.toLocaleLowerCase()} habitat replicate. Spacing
+            analyses require 2+ replicates.
+          </>
+        }
+      />
+    ) : props.data.paths.filter((p) => p.color === "red").length === 0 ? (
+      <ObjectiveStatus
+        status={"yes"}
+        msg={
+          <>
+            These {props.data.title.toLocaleLowerCase()} habitat replicates meet
+            the spacing guidelines. All replicates have gaps less than 62
+            statute miles.
+          </>
+        }
+      />
+    ) : (
+      <ObjectiveStatus
+        status={"no"}
+        msg={
+          <>
+            These {props.data.title.toLocaleLowerCase()} habitat replicates do
+            not meet the spacing guidelines, with{" "}
+            {props.data.paths.filter((p) => p.color === "red").length} gap(s)
+            greater than 62 statute miles.
+          </>
+        }
+      />
+    )}
+  </>
+);
