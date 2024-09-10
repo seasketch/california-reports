@@ -454,7 +454,7 @@ const sketch: Sketch<Polygon> = genSampleSketch<Polygon>(
       ],
     ],
   },
-  "foo"
+  "foo",
 );
 
 describe("clipToGeography", () => {

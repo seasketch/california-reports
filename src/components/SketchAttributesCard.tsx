@@ -50,7 +50,7 @@ export const SketchAttributesCard = ({
               let valueLabel; // valueLabel: "Fully Protected",
 
               const attr = properties.userAttributes.find(
-                (attr) => attr.exportId === prop
+                (attr) => attr.exportId === prop,
               );
 
               if (!attr)

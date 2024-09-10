@@ -57,23 +57,23 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
             data.metrics.filter(
               (m) =>
                 m.metricId === metricGroup.metricId &&
-                m.geographyId === g.geographyId
+                m.geographyId === g.geographyId,
             ),
-            [data.sketch.properties.id]
+            [data.sketch.properties.id],
           );
           valueMetrics = valueMetrics.concat(vMetrics);
 
           const preMetrics = project.getPrecalcMetrics(
             metricGroup,
             "valid",
-            g.geographyId
+            g.geographyId,
           );
           precalcMetrics = precalcMetrics.concat(preMetrics);
 
           percMetrics = percMetrics.concat(
             toPercentMetric(vMetrics, preMetrics, {
               metricIdOverride: percMetricIdName,
-            })
+            }),
           );
         });
 
@@ -123,11 +123,11 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                             ? parseInt(val) *
                                 23.21062239466359856 *
                                 23.21062239466359856
-                            : val * 23.21062239466359856 * 23.21062239466359856
+                            : val * 23.21062239466359856 * 23.21062239466359856,
                         ),
                         2,
-                        { keepSmallValues: true }
-                      )
+                        { keepSmallValues: true },
+                      ),
                     ),
                   valueLabel: unitsLabel,
                   chartOptions: {
@@ -155,11 +155,11 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   rows={metrics.filter(
                     (m) =>
                       m.geographyId?.endsWith("_sr") &&
-                      m.classId === curClass.classId
+                      m.classId === curClass.classId,
                   )}
                   metricGroup={metricGroup}
                   geographies={geographies.filter((g) =>
-                    g.geographyId.endsWith("_sr")
+                    g.geographyId.endsWith("_sr"),
                   )}
                   objective={objectives}
                   columnConfig={[
@@ -182,11 +182,11 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                                     23.21062239466359856
                                 : val *
                                     23.21062239466359856 *
-                                    23.21062239466359856
+                                    23.21062239466359856,
                             ),
                             2,
-                            { keepSmallValues: true }
-                          )
+                            { keepSmallValues: true },
+                          ),
                         ),
                       valueLabel: unitsLabel,
                       chartOptions: {
@@ -216,11 +216,11 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   rows={metrics.filter(
                     (m) =>
                       m.geographyId?.endsWith("_br") &&
-                      m.classId === curClass.classId
+                      m.classId === curClass.classId,
                   )}
                   metricGroup={metricGroup}
                   geographies={geographies.filter((g) =>
-                    g.geographyId.endsWith("_br")
+                    g.geographyId.endsWith("_br"),
                   )}
                   objective={objectives}
                   columnConfig={[
@@ -243,11 +243,11 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                                     23.21062239466359856
                                 : val *
                                     23.21062239466359856 *
-                                    23.21062239466359856
+                                    23.21062239466359856,
                             ),
                             2,
-                            { keepSmallValues: true }
-                          )
+                            { keepSmallValues: true },
+                          ),
                         ),
                       valueLabel: unitsLabel,
                       chartOptions: {
@@ -276,7 +276,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     ...data,
                     metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
@@ -285,7 +285,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     valueFormatter: (val) =>
                       val * 23.21062239466359856 * 23.21062239466359856,
-                  }
+                  },
                 )}
               </Collapse>
             )}

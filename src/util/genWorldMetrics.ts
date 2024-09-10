@@ -11,7 +11,7 @@ import {
 export function genWorldMetrics(
   sketch: Sketch | SketchCollection,
   metrics: Metric[],
-  metricGroup: MetricGroup
+  metricGroup: MetricGroup,
 ) {
   const brMetrics = metrics.filter((m) => m.geographyId?.endsWith("_br"));
   const sketchIds = isSketchCollection(sketch)
@@ -24,7 +24,7 @@ export function genWorldMetrics(
   sketchIds.forEach((sketchId) => {
     metricGroup.classes.forEach((curClass) => {
       const metrics = brMetrics.filter(
-        (m) => m.classId === curClass.classId && m.sketchId === sketchId
+        (m) => m.classId === curClass.classId && m.sketchId === sketchId,
       );
       const sum = metrics.reduce((acc, cur) => acc + cur.value, 0);
       worldMetrics.push(
@@ -32,7 +32,7 @@ export function genWorldMetrics(
           ...metrics[0],
           geographyId: "world",
           value: sum,
-        })
+        }),
       );
     });
   });

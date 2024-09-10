@@ -61,7 +61,7 @@ export const groupColorMapTransparent: Record<string, string> = {
  * @returns <string, string> mapping of sketchId to protection level
  */
 export function getGroup(
-  sketch: Sketch | SketchCollection | NullSketchCollection | NullSketch
+  sketch: Sketch | SketchCollection | NullSketchCollection | NullSketch,
 ): Record<string, string> {
   const sketchFeatures = getSketchFeatures(sketch);
   const protectionLevels = sketchFeatures.reduce<Record<string, string>>(
@@ -69,19 +69,19 @@ export function getGroup(
       const designation = getUserAttribute(
         sketch.properties,
         "proposed_designation",
-        ""
+        "",
       ).toString();
 
       if (!designation)
         throw new Error(
-          `${sketch.properties.name} has no proposed designation.`
+          `${sketch.properties.name} has no proposed designation.`,
         );
 
       levels[sketch.properties.id] = designation;
 
       return levels;
     },
-    {}
+    {},
   );
 
   return protectionLevels;

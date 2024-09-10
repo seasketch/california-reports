@@ -56,23 +56,23 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
             data.metrics.filter(
               (m) =>
                 m.metricId === metricGroup.metricId &&
-                m.geographyId === g.geographyId
+                m.geographyId === g.geographyId,
             ),
-            [data.sketch.properties.id]
+            [data.sketch.properties.id],
           );
           valueMetrics = valueMetrics.concat(vMetrics);
 
           const preMetrics = project.getPrecalcMetrics(
             metricGroup,
             "valid",
-            g.geographyId
+            g.geographyId,
           );
           precalcMetrics = precalcMetrics.concat(preMetrics);
 
           percMetrics = percMetrics.concat(
             toPercentMetric(vMetrics, preMetrics, {
               metricIdOverride: percMetricIdName,
-            })
+            }),
           );
         });
 
@@ -112,12 +112,14 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                       roundDecimal(
                         squareMeterToMile(
                           typeof val === "string"
-                            ? parseInt(val) * 9.709749513740293381 * 9.709749513740293381
-                            : val * 9.709749513740293381 * 9.709749513740293381
+                            ? parseInt(val) *
+                                9.709749513740293381 *
+                                9.709749513740293381
+                            : val * 9.709749513740293381 * 9.709749513740293381,
                         ),
                         2,
-                        { keepSmallValues: true }
-                      )
+                        { keepSmallValues: true },
+                      ),
                     ),
                   valueLabel: unitsLabel,
                   chartOptions: {
@@ -150,11 +152,11 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                   rows={metrics.filter(
                     (m) =>
                       m.geographyId?.endsWith("_sr") &&
-                      m.classId === curClass.classId
+                      m.classId === curClass.classId,
                   )}
                   metricGroup={metricGroup}
                   geographies={geographies.filter((g) =>
-                    g.geographyId.endsWith("_sr")
+                    g.geographyId.endsWith("_sr"),
                   )}
                   objective={objectives}
                   columnConfig={[
@@ -172,12 +174,16 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 9.709749513740293381 * 9.709749513740293381
-                                : val * 9.709749513740293381 * 9.709749513740293381
+                                ? parseInt(val) *
+                                    9.709749513740293381 *
+                                    9.709749513740293381
+                                : val *
+                                    9.709749513740293381 *
+                                    9.709749513740293381,
                             ),
                             2,
-                            { keepSmallValues: true }
-                          )
+                            { keepSmallValues: true },
+                          ),
                         ),
                       valueLabel: unitsLabel,
                       chartOptions: {
@@ -207,11 +213,11 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                   rows={metrics.filter(
                     (m) =>
                       m.geographyId?.endsWith("_br") &&
-                      m.classId === curClass.classId
+                      m.classId === curClass.classId,
                   )}
                   metricGroup={metricGroup}
                   geographies={geographies.filter((g) =>
-                    g.geographyId.endsWith("_br")
+                    g.geographyId.endsWith("_br"),
                   )}
                   objective={objectives}
                   columnConfig={[
@@ -229,12 +235,16 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                           roundDecimal(
                             squareMeterToMile(
                               typeof val === "string"
-                                ? parseInt(val) * 9.709749513740293381 * 9.709749513740293381
-                                : val * 9.709749513740293381 * 9.709749513740293381
+                                ? parseInt(val) *
+                                    9.709749513740293381 *
+                                    9.709749513740293381
+                                : val *
+                                    9.709749513740293381 *
+                                    9.709749513740293381,
                             ),
                             2,
-                            { keepSmallValues: true }
-                          )
+                            { keepSmallValues: true },
+                          ),
                         ),
                       valueLabel: unitsLabel,
                       chartOptions: {
@@ -263,13 +273,17 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     ...data,
                     metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { valueFormatter: (val) => val * 9.709749513740293381 * 9.709749513740293381, replicate: true }
+                  {
+                    valueFormatter: (val) =>
+                      val * 9.709749513740293381 * 9.709749513740293381,
+                    replicate: true,
+                  },
                 )}
               </Collapse>
             )}
@@ -278,7 +292,7 @@ export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
               <Trans i18nKey="Substrate - learn more">
                 <p>
                   ℹ️ Overview: California's waters were modelled into two
-                  substrate classes: soft and hard. 
+                  substrate classes: soft and hard.
                 </p>
                 <p>🎯 Planning Objective: N/A</p>
                 <p>🗺️ Source Data: CDFW</p>

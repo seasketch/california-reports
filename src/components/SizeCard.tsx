@@ -48,7 +48,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
       (metric): Metric => ({
         ...metric,
         classId: "state_waters",
-      })
+      }),
     );
 
   const withinLabel = t("Within Plan");
@@ -71,19 +71,19 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
           (m) =>
             m.sketchId === data.sketch.properties.id &&
             m.groupId === null &&
-            m.geographyId === "world"
+            m.geographyId === "world",
         );
 
         // Grab overall size precalc metric
         const totalAreaMetric = firstMatchingMetric(
           boundaryTotalMetrics,
-          (m) => m.groupId === null && m.geographyId === "world"
+          (m) => m.groupId === null && m.geographyId === "world",
         );
 
         // Format area metrics for key section display
         const areaDisplay = roundLower(squareMeterToMile(areaMetric.value));
         const percDisplay = percentWithEdge(
-          areaMetric.value / totalAreaMetric.value
+          areaMetric.value / totalAreaMetric.value,
         );
         const areaUnitDisplay = t("mi²");
         const mapLabel = t("Show Map Layer");
@@ -91,7 +91,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id]
+          [data.sketch.properties.id],
         );
         const percentMetrics = toPercentMetric(
           valueMetrics,
@@ -99,7 +99,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
           {
             metricIdOverride: percMetricIdName,
             idProperty: "geographyId",
-          }
+          },
         );
         const metrics = [...valueMetrics, ...percentMetrics];
 
@@ -145,12 +145,12 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     ...data,
                     metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                   },
                   boundaryTotalMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
-                  t
+                  t,
                 )
               ) : (
                 <>
@@ -159,14 +159,14 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       ...data,
                       metrics: data.metrics.filter(
-                        (m) => m.geographyId === "world"
+                        (m) => m.geographyId === "world",
                       ),
                     },
                     boundaryTotalMetrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                     metricGroup,
-                    t
+                    t,
                   )}
                 </>
               )}
@@ -181,24 +181,24 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                       {
                         ...data,
                         metrics: data.metrics.filter(
-                          (m) => m.geographyId === "world"
+                          (m) => m.geographyId === "world",
                         ),
                       },
                       boundaryTotalMetrics.filter(
-                        (m) => m.geographyId === "world"
+                        (m) => m.geographyId === "world",
                       ),
                       metricGroup,
-                      t
+                      t,
                     )}
                   </Collapse>
                   <Collapse title={t("Show By Planning Region")}>
                     <GeographyTable
                       rows={metrics.filter((m) =>
-                        m.geographyId?.endsWith("_sr")
+                        m.geographyId?.endsWith("_sr"),
                       )}
                       metricGroup={metricGroup}
                       geographies={geographies.filter((g) =>
-                        g.geographyId?.endsWith("_sr")
+                        g.geographyId?.endsWith("_sr"),
                       )}
                       columnConfig={[
                         {
@@ -214,11 +214,11 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                             Number.format(
                               roundDecimal(
                                 squareMeterToMile(
-                                  typeof val === "string" ? parseInt(val) : val
+                                  typeof val === "string" ? parseInt(val) : val,
                                 ),
                                 2,
-                                { keepSmallValues: true }
-                              )
+                                { keepSmallValues: true },
+                              ),
                             ),
                           valueLabel: unitsLabel,
                           chartOptions: {
@@ -243,11 +243,11 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                   <Collapse title={t("Show By Bioregion")}>
                     <GeographyTable
                       rows={metrics.filter((m) =>
-                        m.geographyId?.endsWith("_br")
+                        m.geographyId?.endsWith("_br"),
                       )}
                       metricGroup={metricGroup}
                       geographies={geographies.filter((g) =>
-                        g.geographyId?.endsWith("_br")
+                        g.geographyId?.endsWith("_br"),
                       )}
                       columnConfig={[
                         {
@@ -263,11 +263,11 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                             Number.format(
                               roundDecimal(
                                 squareMeterToMile(
-                                  typeof val === "string" ? parseInt(val) : val
+                                  typeof val === "string" ? parseInt(val) : val,
                                 ),
                                 2,
-                                { keepSmallValues: true }
-                              )
+                                { keepSmallValues: true },
+                              ),
                             ),
                           valueLabel: unitsLabel,
                           chartOptions: {
@@ -299,13 +299,13 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                       {
                         ...data,
                         metrics: data.metrics.filter(
-                          (m) => m.geographyId === "world"
+                          (m) => m.geographyId === "world",
                         ),
                       },
                       boundaryTotalMetrics,
                       metricGroup,
                       t,
-                      { size: true }
+                      { size: true },
                     )}
                   </Collapse>
                 </>

@@ -191,7 +191,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
           display: flex;
           align-items: center;
         }
-    `
+    `,
     )}
 
   // CHANGE: Adds handling for multi-objective report
@@ -224,7 +224,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
             border-radius: 2px;
           }
       `
-            : ""
+            : "",
         )
       : `
     .marker-label {
@@ -258,7 +258,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
       .legend li:nth-of-type(${index + 1}):before {
         background-color: ${blockGroupColor};
       }
-    `
+    `,
     )}
 
   @media screen and (min-width: 768px) {
@@ -364,7 +364,7 @@ export const HorizontalStackedBar: React.FunctionComponent<
     const rem = max - rowTotal;
     if (rem < -0.001)
       console.warn(
-        `Row sum of ${rowTotal} is greater than max: ${max}. Check your input data`
+        `Row sum of ${rowTotal} is greater than max: ${max}. Check your input data`,
       );
   });
 
@@ -441,7 +441,7 @@ export const HorizontalStackedBar: React.FunctionComponent<
                         }}
                         className={`block-group-${blockGroupNumber} block-${blockNumber} block`}
                       ></span>
-                    ))
+                    )),
                   )}
                   <div className="zero-marker" />
                   {curTarget && (
@@ -499,7 +499,7 @@ export const HorizontalStackedBar: React.FunctionComponent<
 const sumRow = (row: HorizontalStackedBarRow): number =>
   row.reduce(
     (rowSumSoFar, blockGroup) => rowSumSoFar + sumBlockGroup(blockGroup),
-    0
+    0,
   );
 
 /** Sum block group values */

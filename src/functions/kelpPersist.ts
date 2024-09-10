@@ -32,11 +32,11 @@ export async function kelpPersist(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
-  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
+  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("kelpPersist");
   const geographies = project.geographies.filter(
-    (g) => g.geographyId !== "world"
+    (g) => g.geographyId !== "world",
   );
 
   const metrics = (
@@ -56,18 +56,18 @@ export async function kelpPersist(
               "kelpPersistWorker",
               project.geoprocessing.region,
               parameters,
-              request!
+              request!,
             );
-      })
+      }),
     )
   ).reduce<Metric[]>(
     (metrics, result) =>
       metrics.concat(
         isMetricArray(result)
           ? result
-          : (parseLambdaResponse(result) as Metric[])
+          : (parseLambdaResponse(result) as Metric[]),
       ),
-    []
+    [],
   );
 
   return {
@@ -75,7 +75,7 @@ export async function kelpPersist(
       rekeyMetrics([
         ...metrics,
         ...genWorldMetrics(sketch, metrics, metricGroup),
-      ])
+      ]),
     ),
     sketch: toNullSketch(sketch, true),
   };

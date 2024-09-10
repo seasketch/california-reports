@@ -59,7 +59,7 @@ export const groupedSketchReport = (
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
   t: any,
-  options?: ClassTableGroupedProps
+  options?: ClassTableGroupedProps,
 ) => {
   // Get total precalc areas
   const totalAreas = metricGroup.classes.reduce<Record<string, number>>(
@@ -68,23 +68,23 @@ export const groupedSketchReport = (
         ...acc,
         [curClass.classId]: firstMatchingMetric(
           precalcMetrics,
-          (m) => m.groupId === null && m.classId === curClass.classId
+          (m) => m.groupId === null && m.classId === curClass.classId,
         ).value,
       };
     },
-    {}
+    {},
   );
 
   // Filter down to metrics which have groupIds
   const levelMetrics = data.metrics.filter(
-    (m) => m.groupId && groups.includes(m.groupId)
+    (m) => m.groupId && groups.includes(m.groupId),
   );
 
   // Filter down grouped metrics to ones that count for each class
   const totalsByClass = metricGroup.classes.reduce<Record<string, number[]>>(
     (acc, curClass) => {
       const classMetrics = levelMetrics.filter(
-        (m) => m.classId === curClass.classId
+        (m) => m.classId === curClass.classId,
       );
       const objective = curClass.objectiveId;
       const percValues = objective
@@ -98,7 +98,7 @@ export const groupedSketchReport = (
             })
             .map((yesAgg) => yesAgg.value / totalAreas[curClass.classId])
         : classMetrics.map(
-            (group) => group.value / totalAreas[curClass.classId]
+            (group) => group.value / totalAreas[curClass.classId],
           );
       const values = classMetrics.map((group) => group.value);
 
@@ -108,7 +108,7 @@ export const groupedSketchReport = (
         [curClass.classId]: values,
       };
     },
-    {}
+    {},
   );
 
   return genClassTableGrouped(metricGroup, totalsByClass, t, options);
@@ -126,19 +126,19 @@ export const groupedCollectionReport = (
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
   t: any,
-  options?: ClassTableGroupedProps
+  options?: ClassTableGroupedProps,
 ) => {
   if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
 
   // Filter down to metrics which have groupIds
   const levelMetrics = data.metrics.filter(
-    (m) => m.groupId && groups.includes(m.groupId)
+    (m) => m.groupId && groups.includes(m.groupId),
   );
 
   const groupLevelAggs: GroupMetricAgg[] = flattenByGroup(
     data.sketch,
     levelMetrics,
-    precalcMetrics
+    precalcMetrics,
   );
 
   // Filter down grouped metrics to ones that count for each class
@@ -156,7 +156,7 @@ export const groupedCollectionReport = (
             })
             .map((yesAgg) => yesAgg[curClass.classId + "Perc"] as number)
         : groupLevelAggs.map(
-            (group) => group[curClass.classId + "Perc"] as number
+            (group) => group[curClass.classId + "Perc"] as number,
           );
       const values = objective
         ? groupLevelAggs
@@ -176,7 +176,7 @@ export const groupedCollectionReport = (
         [curClass.classId]: values,
       };
     },
-    {}
+    {},
   );
 
   return <>{genClassTableGrouped(metricGroup, totalsByClass, t, options)}</>;
@@ -192,7 +192,7 @@ export const genClassTableGrouped = (
   metricGroup: MetricGroup,
   totalsByClass: Record<string, number[]>,
   t: any,
-  options?: ClassTableGroupedProps
+  options?: ClassTableGroupedProps,
 ) => {
   const finalOptions = {
     showDetailedObjectives: true,
@@ -242,15 +242,15 @@ export const genClassTableGrouped = (
 
   const config = {
     rows: metricGroup.classes.map((curClass) =>
-      totalsByClass[curClass.classId + "Perc"].map((value) => [value * 100])
+      totalsByClass[curClass.classId + "Perc"].map((value) => [value * 100]),
     ),
     values: metricGroup.classes.map((curClass) =>
-      totalsByClass[curClass.classId].map((value) => [value])
+      totalsByClass[curClass.classId].map((value) => [value]),
     ),
     target: metricGroup.classes.map((curClass) =>
       curClass.objectiveId
         ? project.getObjectiveById(curClass.objectiveId).target * 100
-        : undefined
+        : undefined,
     ),
     rowConfigs: rowConfig,
     max: 100,
@@ -268,7 +268,7 @@ export const genClassTableGrouped = (
             // Get total percentage within sketch
             const percSum = totalsByClass[curClass.classId].reduce(
               (sum, value) => sum + value,
-              0
+              0,
             );
 
             // Checks if the objective is met
@@ -286,7 +286,7 @@ export const genClassTableGrouped = (
                       ? collectionMsgs[objective.objectiveId](
                           objective,
                           isMet,
-                          t
+                          t,
                         )
                       : collectionMsgs["default"](objective, isMet, t)
                   }
@@ -363,7 +363,7 @@ export const collectionMsgs: Record<string, any> = {
   ocean_space_protected: (
     objective: Objective,
     objectiveMet: ObjectiveAnswer,
-    t: any
+    t: any,
   ) => {
     if (objectiveMet === OBJECTIVE_YES) {
       return (
@@ -386,7 +386,7 @@ export const collectionMsgs: Record<string, any> = {
   ocean_space_highly_protected: (
     objective: Objective,
     objectiveMet: ObjectiveAnswer,
-    t: any
+    t: any,
   ) => {
     if (objectiveMet === OBJECTIVE_YES) {
       return (
@@ -419,19 +419,19 @@ export const genPercGroupLevelTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
-  t: any
+  t: any,
 ) => {
   if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
 
   // Filter down to metrics which have groupIds
   const levelMetrics = data.metrics.filter(
-    (m) => m.groupId && groups.includes(m.groupId)
+    (m) => m.groupId && groups.includes(m.groupId),
   );
 
   const levelAggs: GroupMetricAgg[] = flattenByGroup(
     data.sketch,
     levelMetrics,
-    precalcMetrics
+    precalcMetrics,
   );
 
   const classColumns: Column<Record<string, string | number>>[] =
@@ -446,7 +446,7 @@ export const genPercGroupLevelTable = (
             {percentWithEdge(
               isNaN(row[curClass.classId + "Perc"] as number)
                 ? 0
-                : (row[curClass.classId + "Perc"] as number)
+                : (row[curClass.classId + "Perc"] as number),
             )}
           </GroupPill>
         );
@@ -489,19 +489,19 @@ export const genAreaGroupLevelTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
-  t: any
+  t: any,
 ) => {
   if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
 
   // Filter down to metrics which have groupIds
   const levelMetrics = data.metrics.filter(
-    (m) => m.groupId && groups.includes(m.groupId)
+    (m) => m.groupId && groups.includes(m.groupId),
   );
 
   const levelAggs: GroupMetricAgg[] = flattenByGroup(
     data.sketch,
     levelMetrics,
-    precalcMetrics
+    precalcMetrics,
   );
 
   const classColumns: Column<Record<string, string | number>>[] =
@@ -544,7 +544,7 @@ export const genAreaGroupLevelTable = (
                 {percentWithEdge(
                   isNaN(row[curClass.classId + "Perc"] as number)
                     ? 0
-                    : (row[curClass.classId + "Perc"] as number)
+                    : (row[curClass.classId + "Perc"] as number),
                 )}
               </GroupPill>
             ),
@@ -576,7 +576,7 @@ export const genAreaGroupLevelTable = (
         columns={columns}
         data={levelAggs.sort(
           (a, b) =>
-            groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || "")
+            groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || ""),
         )}
       />
     </AreaSketchTableStyled>

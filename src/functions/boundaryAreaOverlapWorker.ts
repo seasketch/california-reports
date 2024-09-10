@@ -27,12 +27,12 @@ export async function boundaryAreaOverlapWorker(
     geography: Geography;
     metricGroup: MetricGroup;
     classId: string;
-  }
+  },
 ) {
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
   const curClass = metricGroup.classes.find(
-    (c) => c.classId === extraParams.classId
+    (c) => c.classId === extraParams.classId,
   );
 
   // Support sketches crossing antimeridian
@@ -69,7 +69,7 @@ export async function boundaryAreaOverlapWorker(
       ...metric,
       classId: curClass.classId,
       geographyId: geography.geographyId,
-    })
+    }),
   );
 
   if (geography.geographyId === "world") {
@@ -97,7 +97,7 @@ export async function boundaryAreaOverlapWorker(
       (metric): Metric => ({
         ...metric,
         geographyId: geography.geographyId,
-      })
+      }),
     );
 
     return [...metrics, ...levelMetrics];

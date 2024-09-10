@@ -9,11 +9,11 @@ $.verbose = true;
 
 const installedGpPath = path.join(
   import.meta.dirname,
-  "../node_modules/@seasketch/geoprocessing"
+  "../node_modules/@seasketch/geoprocessing",
 );
 const monoGpPath = path.join(
   import.meta.dirname,
-  "../../../node_modules/@seasketch/geoprocessing"
+  "../../../node_modules/@seasketch/geoprocessing",
 );
 
 const gpPath = (() => {
@@ -25,7 +25,7 @@ const gpPath = (() => {
     return monoGpPath;
   }
   throw new Error(
-    `Could not find path to geoprocessing library, tried ${installedGpPath} and ${monoGpPath}`
+    `Could not find path to geoprocessing library, tried ${installedGpPath} and ${monoGpPath}`,
   );
 })();
 

@@ -32,7 +32,7 @@ export async function spanWorker(
   extraParams: {
     geography: Geography;
     metricGroup: MetricGroup;
-  }
+  },
 ) {
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
@@ -59,7 +59,7 @@ export async function spanWorker(
   // Fetch features overlapping with sketch, pull from cache if already fetched
   const features = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
     url,
-    sketchBox
+    sketchBox,
   );
 
   // If this is a sub-class, filter by class name
@@ -77,7 +77,7 @@ export async function spanWorker(
   const overlapResult = await overlapFeatures(
     metricGroup.metricId,
     finalFeatures,
-    clippedSketch
+    clippedSketch,
   );
 
   return overlapResult.map(
@@ -85,7 +85,7 @@ export async function spanWorker(
       ...metric,
       classId: curClass.classId,
       geographyId: geography.geographyId,
-    })
+    }),
   );
 }
 

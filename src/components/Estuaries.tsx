@@ -36,7 +36,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
   const metricGroup = project.getMetricGroup("estuaries", t);
   const precalcMetrics = geographies
     .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
+      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId),
     )
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
@@ -54,7 +54,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id]
+          [data.sketch.properties.id],
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
@@ -95,11 +95,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                     Number.format(
                       roundDecimal(
                         squareMeterToMile(
-                          typeof val === "string" ? parseInt(val) : val
+                          typeof val === "string" ? parseInt(val) : val,
                         ),
                         2,
-                        { keepSmallValues: true }
-                      )
+                        { keepSmallValues: true },
+                      ),
                     ),
                   valueLabel: unitsLabel,
                   chartOptions: {
@@ -130,7 +130,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
                 metricGroup={metricGroup}
                 geographies={geographies.filter((g) =>
-                  g.geographyId?.endsWith("_sr")
+                  g.geographyId?.endsWith("_sr"),
                 )}
                 objective={objectives}
                 columnConfig={[
@@ -147,11 +147,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                       Number.format(
                         roundDecimal(
                           squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
+                            typeof val === "string" ? parseInt(val) : val,
                           ),
                           2,
-                          { keepSmallValues: true }
-                        )
+                          { keepSmallValues: true },
+                        ),
                       ),
                     valueLabel: unitsLabel,
                     chartOptions: {
@@ -178,7 +178,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
                 geographies={geographies.filter((g) =>
-                  g.geographyId?.endsWith("_br")
+                  g.geographyId?.endsWith("_br"),
                 )}
                 objective={objectives}
                 columnConfig={[
@@ -195,11 +195,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                       Number.format(
                         roundDecimal(
                           squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
+                            typeof val === "string" ? parseInt(val) : val,
                           ),
                           2,
-                          { keepSmallValues: true }
-                        )
+                          { keepSmallValues: true },
+                        ),
                       ),
                     valueLabel: unitsLabel,
                     chartOptions: {
@@ -227,13 +227,13 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     ...data,
                     metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { replicate: true, replicateMap: { estuaries: 0.12 } }
+                  { replicate: true, replicateMap: { estuaries: 0.12 } },
                 )}
               </Collapse>
             )}

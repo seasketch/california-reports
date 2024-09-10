@@ -42,7 +42,7 @@ export const GeographyTableStyled = styled(ReportTableStyled)`
 export type TargetFormatter = (
   value: number,
   row: number,
-  numRows: number
+  numRows: number,
 ) => (value: number) => string | JSX.Element;
 
 export interface GeographyTableColumnConfig {
@@ -96,7 +96,7 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
   const { t } = useTranslation();
   const geographyByName = keyBy(
     geographies,
-    (geography: Geography) => geography.geographyId
+    (geography: Geography) => geography.geographyId,
   );
 
   // group metrics by class ID, then metric ID, for easy lookup
@@ -109,13 +109,13 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
   const tableRows = Object.keys(metricsByGeographyByMetric).map(
     (geographyId) => ({
       geographyId,
-    })
+    }),
   );
 
   type GeographyTableColumn = Column<{ geographyId: string }>;
 
   const genColumns = (
-    colConfigs: GeographyTableColumnConfig[]
+    colConfigs: GeographyTableColumnConfig[],
   ): GeographyTableColumn[] => {
     const defaultWidth = 100 / colConfigs.length;
 
@@ -137,7 +137,7 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
           accessor: (row) => {
             /* i18next-extract-disable-next-line */
             const transString = t(
-              geographyByName[row.geographyId || "missing"]?.display
+              geographyByName[row.geographyId || "missing"]?.display,
             );
             return transString || "missing";
           },
@@ -319,7 +319,7 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
         };
       } else {
         throw new Error(
-          `Unexpected GeographyTableColumnConfig type ${colConfig.type}`
+          `Unexpected GeographyTableColumnConfig type ${colConfig.type}`,
         );
       }
     });

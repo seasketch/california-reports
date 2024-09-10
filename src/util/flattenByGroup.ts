@@ -23,7 +23,7 @@ import { groups } from "./getGroup.js";
 export const flattenByGroup = (
   collection: SketchCollection | NullSketchCollection,
   groupMetrics: Metric[],
-  totalMetrics: Metric[]
+  totalMetrics: Metric[],
 ): {
   value: number;
   groupId: string;
@@ -33,11 +33,12 @@ export const flattenByGroup = (
   const metricsByGroup = groupBy(groupMetrics, (m) => m.groupId || "undefined");
   return groups.map((curGroupId) => {
     const collGroupMetrics = metricsByGroup[curGroupId].filter(
-      (m) => m.sketchId === collection.properties.id && m.groupId === curGroupId
+      (m) =>
+        m.sketchId === collection.properties.id && m.groupId === curGroupId,
     );
     const collGroupMetricsByClass = keyBy(
       collGroupMetrics,
-      (m) => m.classId || "undefined"
+      (m) => m.classId || "undefined",
     );
 
     const classAgg = Object.keys(collGroupMetricsByClass).reduce(
@@ -46,14 +47,14 @@ export const flattenByGroup = (
           (m) =>
             m.sketchId !== collection.properties.id &&
             m.groupId === curGroupId &&
-            m.classId === curClassId
+            m.classId === curClassId,
         );
 
         const curValue = collGroupMetricsByClass[curClassId]?.value;
 
         const classTotal = firstMatchingMetric(
           totalMetrics,
-          (totalMetric) => totalMetric.classId === curClassId
+          (totalMetric) => totalMetric.classId === curClassId,
         ).value;
 
         return {
@@ -64,12 +65,12 @@ export const flattenByGroup = (
           value: rowsSoFar.value + curValue,
         };
       },
-      { value: 0 }
+      { value: 0 },
     );
 
     const groupTotal = firstMatchingMetric(
       totalMetrics,
-      (m) => !m.groupId // null groupId identifies group total metric
+      (m) => !m.groupId, // null groupId identifies group total metric
     ).value;
     return {
       groupId: curGroupId,
