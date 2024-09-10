@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { CheckCircleFill, InfoCircleFill } from "@styled-icons/bootstrap";
+import { InfoCircleFill } from "@styled-icons/bootstrap";
 import {
   Column,
   HorizontalStackedBar,
@@ -91,7 +91,6 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
   columnConfig,
   metricGroup,
   geographies,
-  objective,
 }) => {
   const { t } = useTranslation();
   const geographyByName = keyBy(
@@ -121,8 +120,6 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
 
     const defaultClassLabel = t("Class");
     const defaultMapLabel = t("Map");
-    const defaultTargetLabel = t("Target");
-    const defaultGoalLabel = t("Goal");
     const defaultValueLabel = t("Value");
 
     // Transform column configs into Columns
@@ -206,7 +203,7 @@ export const GeographyTable: React.FunctionComponent<GeographyTableProps> = ({
         return {
           Header: colConfig.columnLabel || " ",
           style: { textAlign: "center", ...style },
-          accessor: (row, rowIndex) => {
+          accessor: (row) => {
             if (!colConfig.metricId)
               throw new Error("Missing metricId in column config");
             // Return 0 when faced with a 'missing' metric

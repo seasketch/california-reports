@@ -1,7 +1,6 @@
-import { isSketch } from "@seasketch/geoprocessing";
 import { Card, useSketchProperties } from "@seasketch/geoprocessing/client-ui";
 import React from "react";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export interface SketchAttributesCardProps {
   title?: string;
@@ -13,7 +12,6 @@ export interface SketchAttributesCardProps {
 export const SketchAttributesCard = ({
   title,
   autoHide,
-  mappings,
 }: SketchAttributesCardProps) => {
   const [{ isCollection }] = useSketchProperties();
   const titleStyle: React.CSSProperties = {
@@ -111,7 +109,10 @@ export const SketchAttributesCard = ({
                       paddingLeft: 6,
                     }}
                   >
-                    {t(valueLabel) /* i18next-extract-disable-line */}
+                    {
+                      /* @ts-expect-error type mismatch */
+                      t(valueLabel)
+                    }
                   </td>
                   {/* <span>{attr.label}</span>=<span>{attr.value}</span> */}
                 </tr>

@@ -4,7 +4,6 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
   splitSketchAntimeridian,
   isRasterDatasource,
   rasterMetrics,

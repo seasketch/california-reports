@@ -27,7 +27,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const Substrate: React.FunctionComponent<GeogProp> = (props) => {
+export const Substrate: React.FunctionComponent<GeogProp> = () => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
   const geographies = project.geographies;

@@ -10,10 +10,10 @@ import {
 } from "@seasketch/geoprocessing";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import { bbox } from "@turf/turf";
-import { min, max, mean } from "simple-statistics";
+import { min, max } from "simple-statistics";
 import project from "../../project/projectClient.js";
 
-// @ts-ignore
+// @ts-expect-error no types
 import geoblaze, { Georaster } from "geoblaze";
 
 export interface BathymetryResults {
@@ -69,7 +69,6 @@ export async function bathyStats(
           sketchName: finalFeat.properties.name,
         };
       try {
-        // @ts-ignore
         const stats = (
           await geoblaze.stats(raster, finalFeat, {
             calcMax: true,

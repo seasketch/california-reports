@@ -17,7 +17,7 @@ import {
   MetricGroup,
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
-import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 /**
  * spanWorker: A geoprocessing function that calculates overlap metrics

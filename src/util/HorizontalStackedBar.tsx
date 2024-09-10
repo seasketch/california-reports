@@ -26,6 +26,7 @@ export interface StyledHorizontalStackedBarProps {
   titleWidth?: number;
   targetLabelPosition?: "top" | "bottom";
   targetLabelStyle?: "normal" | "tight";
+  valueTotals?: number[];
 }
 
 // CHANGE - added 0.25em padding-rop to .row

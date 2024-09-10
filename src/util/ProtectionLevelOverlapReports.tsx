@@ -25,7 +25,6 @@ import {
   roundLower,
 } from "@seasketch/geoprocessing/client-core";
 import {
-  groupColorMap,
   groupColorMapTransparent,
   groupColors,
   groupDisplayMapPl,

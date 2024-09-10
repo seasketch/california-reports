@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import fs from "fs-extra";
 import * as path from "path";
 import languages from "../supported.js";
@@ -239,7 +238,7 @@ async function publishEnglish() {
       },
     );
 
-    let addTermsResult = await addTermsResponse.json();
+    const addTermsResult = await addTermsResponse.json();
     if (addTermsResult.response.status !== "success") {
       throw new Error(`API response was ${addTermsResult.response.status}`);
     } else {
