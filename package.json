@@ -54,7 +54,8 @@
     "translation:publish": "npx tsx src/i18n/bin/publishTerms.ts",
     "translation:sync": "npm run translation:extract && npm run translation:publish && npm run translation:import",
     "upgrade": "geoprocessing upgrade",
-    "url": "geoprocessing url"
+    "url": "geoprocessing url",
+    "prepare": "husky"
   },
   "lint-staged": {
     "**/*.{js,mjs,cjs,ts,jsx,tsx}": [
@@ -66,7 +67,7 @@
     "@aws-sdk/util-stream": "^3.374.0",
     "@babel/cli": "^7.25.6",
     "@babel/plugin-syntax-import-attributes": "^7.25.6",
-    "@seasketch/geoprocessing": "7.0.0-experimental-tooling-bug.14",
+    "@seasketch/geoprocessing": "7.0.0-experimental-tooling.14",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -74,6 +75,7 @@
     "@storybook/react": "^8.2.9",
     "@storybook/react-vite": "^8.2.9",
     "@storybook/test": "^8.2.9",
+    "@testing-library/jest-dom": "^6.5.0",
     "@turf/turf": "7.1.0",
     "@types/request": "^2.48.12",
     "babel-plugin-i18next-extract": "0.10.0",
@@ -85,6 +87,7 @@
     "geoblaze": "2.8.0",
     "geojson-antimeridian-cut": "^0.1.0",
     "globby": "^14.0.2",
+    "husky": "^9.1.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "prettier": "^3.3.3",
     "prop-types": "^15.8.1",
@@ -97,7 +100,5 @@
     "vitest": "^2.0.5",
     "zx": "^8.1.5"
   },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^6.5.0"
-  }
+  "devDependencies": {}
 }
