@@ -58,9 +58,6 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{js,mjs,cjs,ts,jsx,tsx}": [
-      "eslint --fix"
-    ],
     "*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
@@ -79,11 +76,6 @@
     "@turf/turf": "7.1.0",
     "@types/request": "^2.48.12",
     "babel-plugin-i18next-extract": "0.10.0",
-    "eslint": "^9.9.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-i18next": "^6.0.9",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.2",
     "geoblaze": "2.8.0",
     "geojson-antimeridian-cut": "^0.1.0",
     "globals": "^15.9.0",
@@ -95,7 +87,6 @@
     "react-i18next": "^15.0.1",
     "simple-statistics": "^7.8.3",
     "storybook": "^8.2.9",
-    "typescript-eslint": "^8.4.0",
     "union-subdivided-polygons": "^0.9.1",
     "vite": "^5.4.2",
     "vitest": "^2.0.5",
