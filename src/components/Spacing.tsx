@@ -249,8 +249,7 @@ export const SpacingObjectives = (props: {
         msg={
           <>
             These {props.data.title.toLocaleLowerCase()} habitat replicates meet
-            the spacing guidelines. All replicates have gaps less than 62
-            statute miles.
+            the spacing guidelines. All replicates have gaps less than 62 miles.
           </>
         }
       />
@@ -262,7 +261,7 @@ export const SpacingObjectives = (props: {
             These {props.data.title.toLocaleLowerCase()} habitat replicates do
             not meet the spacing guidelines, with{" "}
             {props.data.paths.filter((p) => p.color === "red").length} gap(s)
-            greater than 62 statute miles.
+            greater than 62 miles.
           </>
         }
       />

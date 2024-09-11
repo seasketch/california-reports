@@ -21,19 +21,19 @@ import { bbox, simplify } from "@turf/turf";
 import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
 
 /**
- * spacingEstuaries: A geoprocessing function that calculates overlap metrics
+ * spacingEelgrass: A geoprocessing function that calculates overlap metrics
  * @param sketch - A sketch or collection of sketches
  * @param extraParams
  * @returns Calculated metrics and a null sketch
  */
-export async function spacingEstuaries(
+export async function spacingEelgrass(
   sketch:
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<any> {
-  const metricGroup = project.getMetricGroup("estuaries");
+  const metricGroup = project.getMetricGroup("eelgrass");
 
   if (!metricGroup.classes[0].datasourceId)
     throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
@@ -65,7 +65,7 @@ export async function spacingEstuaries(
     (m) => m.sketchId && sketchIds.includes(m.sketchId)
   );
   const replicateMetrics = sketchMetrics.filter(
-    (m) => squareMeterToMile(m.value) > 0.12
+    (m) => squareMeterToMile(m.value) > 0.04
   );
   const replicateSketches = sketches.filter((sk) =>
     replicateMetrics.some((m) => m.sketchId === sk.properties.id)
@@ -82,9 +82,9 @@ export async function spacingEstuaries(
   };
 }
 
-export default new GeoprocessingHandler(spacingEstuaries, {
-  title: "spacingEstuaries",
-  description: "spacingEstuaries",
+export default new GeoprocessingHandler(spacingEelgrass, {
+  title: "spacingEelgrass",
+  description: "spacingEelgrass",
   timeout: 500, // seconds
   memory: 1024, // megabytes
   executionMode: "async",

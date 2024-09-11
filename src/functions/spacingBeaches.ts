@@ -13,32 +13,26 @@ import {
   GeoprocessingRequestModel,
   Metric,
   isVectorDatasource,
-  squareMeterToMile,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { spacing } from "./spacing.js";
 import { bbox, simplify } from "@turf/turf";
-import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 /**
- * spacingEstuaries: A geoprocessing function that calculates overlap metrics
+ * spacingBeaches: A geoprocessing function that calculates overlap metrics
  * @param sketch - A sketch or collection of sketches
  * @param extraParams
  * @returns Calculated metrics and a null sketch
  */
-export async function spacingEstuaries(
+export async function spacingBeaches(
   sketch:
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<any> {
-  const metricGroup = project.getMetricGroup("estuaries");
-
-  if (!metricGroup.classes[0].datasourceId)
-    throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
-
-  const ds = project.getDatasourceById(metricGroup.classes[0].datasourceId);
+  const ds = project.getDatasourceById("beaches");
   if (!isVectorDatasource(ds))
     throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
 
@@ -53,8 +47,7 @@ export async function spacingEstuaries(
           url,
           sketch.bbox || bbox(sketch)
         );
-
-        return overlapFeatures(metricGroup.metricId, features, sketch);
+        return overlapFeatures("beaches", features, sketch);
       })
     )
   ).reduce<Metric[]>((acc, val) => acc.concat(val), []);
@@ -64,9 +57,7 @@ export async function spacingEstuaries(
   const sketchMetrics = metrics.filter(
     (m) => m.sketchId && sketchIds.includes(m.sketchId)
   );
-  const replicateMetrics = sketchMetrics.filter(
-    (m) => squareMeterToMile(m.value) > 0.12
-  );
+  const replicateMetrics = sketchMetrics.filter((m) => m.value / 1609 > 1.1);
   const replicateSketches = sketches.filter((sk) =>
     replicateMetrics.some((m) => m.sketchId === sk.properties.id)
   ) as Sketch<Polygon>[];
@@ -82,9 +73,9 @@ export async function spacingEstuaries(
   };
 }
 
-export default new GeoprocessingHandler(spacingEstuaries, {
-  title: "spacingEstuaries",
-  description: "spacingEstuaries",
+export default new GeoprocessingHandler(spacingBeaches, {
+  title: "spacingBeaches",
+  description: "spacingBeaches",
   timeout: 500, // seconds
   memory: 1024, // megabytes
   executionMode: "async",

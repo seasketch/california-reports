@@ -37,6 +37,12 @@
     "src/functions/eelgrassWorker.ts",
     "src/functions/bathymetry.ts",
     "src/functions/spanWorker.ts",
-    "src/functions/span.ts"
+    "src/functions/span.ts",
+    "src/functions/spacingEstuaries.ts",
+    "src/functions/spacingEelgrass.ts",
+    "src/functions/spacingRockIslands.ts",
+    "src/functions/spacingRockyShores.ts",
+    "src/functions/spacingBeaches.ts",
+    "src/functions/spacingKelp.ts"
   ]
 }

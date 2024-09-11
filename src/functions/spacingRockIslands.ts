@@ -17,7 +17,7 @@ import {
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { spacing } from "./spacing.js";
-import { simplify } from "@turf/turf";
+import { bbox, simplify } from "@turf/turf";
 import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
 
 /**
@@ -41,17 +41,15 @@ export async function spacingRockIslands(
 
   const url = project.getDatasourceUrl(ds);
 
-  // Fetch features overlapping with sketch, pull from cache if already fetched
-  const features = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
-    url,
-    sketch.bbox
-  );
-
   const metrics = (
     await Promise.all(
-      sketches.map(async (sketch) =>
-        overlapFeatures("rock_islands", features, sketch)
-      )
+      sketches.map(async (sketch) => {
+        const features = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
+          url,
+          sketch.bbox || bbox(sketch)
+        );
+        return overlapFeatures("rock_islands", features, sketch);
+      })
     )
   ).reduce<Metric[]>((acc, val) => acc.concat(val), []);
 

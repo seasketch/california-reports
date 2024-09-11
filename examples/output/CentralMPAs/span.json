@@ -2,11 +2,11 @@
   "metrics": [
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
-      "value": 498870579.326689,
+      "value": 179517.260073,
       "extra": {
         "sketchName": "CentralMPAs",
         "isCollection": true
@@ -14,352 +14,352 @@
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
-      "value": 658241.387945,
+      "value": 8558.326612,
       "extra": {
         "sketchName": "Natural Bridges SMR - existing (46, 69)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
-      "value": 1371727.264173,
+      "value": 0,
       "extra": {
         "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
-      "value": 14251156.385412,
+      "value": 22771.756307,
       "extra": {
         "sketchName": "Point Lobos SMR - existing (128, 81)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
-      "value": 30574610.793828,
+      "value": 6322.702505,
       "extra": {
         "sketchName": "Montara SMR - existing, no change (119,65)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
-      "value": 526338.400614,
+      "value": 0,
       "extra": {
         "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
-      "value": 7965101.546641,
+      "value": 23877.822044,
       "extra": {
         "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
-      "value": 25508126.287376,
+      "value": 11240.558986,
       "extra": {
         "sketchName": "Point Sur SMR - existing, no change (129, 83)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
-      "value": 3896906.917238,
+      "value": 4422.030999,
       "extra": {
         "sketchName": "Asilomar SMR - existing, no change (126, 78)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
-      "value": 28859433.624513,
+      "value": 16114.629601,
       "extra": {
         "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
-      "value": 31079887.358967,
+      "value": 6246.316152,
       "extra": {
         "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
-      "value": 59467702.080341,
+      "value": 0,
       "extra": {
         "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
-      "value": 7056153.600281,
+      "value": 16536.614245,
       "extra": {
         "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
-      "value": 27538494.722055,
+      "value": 0,
       "extra": {
         "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
-      "value": 21945492.606033,
+      "value": 0,
       "extra": {
         "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
-      "value": 31582676.485902,
+      "value": 0,
       "extra": {
         "sketchName": "Point Buchon SMCA - existing (135, 151)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
-      "value": 17351561.837611,
+      "value": 602.636445,
       "extra": {
         "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
-      "value": 22977967.346916,
+      "value": 0,
       "extra": {
         "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
-      "value": 2545062.463214,
+      "value": 3526.298167,
       "extra": {
         "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
-      "value": 2287868.65901,
+      "value": 6766.982015,
       "extra": {
         "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
-      "value": 764543.782371,
+      "value": 1957.46003,
       "extra": {
         "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
-      "value": 7549718.359955,
+      "value": 856.107492,
       "extra": {
         "sketchName": "White Rock SMCA - existing, no change (134, 90)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
-      "value": 27606379.533766,
+      "value": 0,
       "extra": {
         "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
-      "value": 20414769.851523,
+      "value": 0,
       "extra": {
         "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
-      "value": 17291964.744999,
+      "value": 5732.629732,
       "extra": {
         "sketchName": "Point Buchon SMR - existing (136, 150)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
-      "value": 5705111.513133,
+      "value": 7992.713924,
       "extra": {
         "sketchName": "Carmel Bay SMCA - existing (127, 80)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
-      "value": 37600826.877579,
+      "value": 11115.891653,
       "extra": {
         "sketchName": "Big Creek SMR - existing, no change (131, 85)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
-      "value": 16332826.213382,
+      "value": 10358.180136,
       "extra": {
         "sketchName": "Cambria SMCA - existing, no change (133, 89)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
-      "value": 27093996.674006,
+      "value": 9450.175632,
       "extra": {
         "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
-      "value": 561189.975062,
+      "value": 2754.760719,
       "extra": {
         "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
-      "value": 130294.434676,
+      "value": 562.747302,
       "extra": {
         "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
       }
     },
     {
       "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
-      "value": 591752.846202,
+      "value": 1792.465133,
       "extra": {
         "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
-      "value": 450814112.260573,
+      "value": 172029.173823,
       "extra": {
         "sketchName": "CentralMPAs",
         "isCollection": true
@@ -367,41 +367,41 @@
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
-      "value": 658241.387945,
+      "value": 8558.326612,
       "extra": {
         "sketchName": "Natural Bridges SMR - existing (46, 69)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
-      "value": 1371727.264173,
+      "value": 0,
       "extra": {
         "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
-      "value": 14251156.385412,
+      "value": 22771.756307,
       "extra": {
         "sketchName": "Point Lobos SMR - existing (128, 81)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
       "value": 0,
@@ -411,129 +411,129 @@
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
-      "value": 526338.400614,
+      "value": 0,
       "extra": {
         "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
-      "value": 7965101.546641,
+      "value": 23877.822044,
       "extra": {
         "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
-      "value": 25508126.287376,
+      "value": 11240.558986,
       "extra": {
         "sketchName": "Point Sur SMR - existing, no change (129, 83)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
-      "value": 3896906.917238,
+      "value": 4422.030999,
       "extra": {
         "sketchName": "Asilomar SMR - existing, no change (126, 78)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
-      "value": 28859433.624513,
+      "value": 16114.629601,
       "extra": {
         "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
-      "value": 31079887.358967,
+      "value": 6246.316152,
       "extra": {
         "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
-      "value": 59467702.080341,
+      "value": 0,
       "extra": {
         "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
-      "value": 7056153.600281,
+      "value": 16536.614245,
       "extra": {
         "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
-      "value": 27538494.722055,
+      "value": 0,
       "extra": {
         "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
-      "value": 21945492.606033,
+      "value": 0,
       "extra": {
         "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
-      "value": 31582676.485902,
+      "value": 0,
       "extra": {
         "sketchName": "Point Buchon SMCA - existing (135, 151)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
       "value": 0,
@@ -543,151 +543,151 @@
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
-      "value": 22977967.346916,
+      "value": 0,
       "extra": {
         "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
-      "value": 2545062.463214,
+      "value": 3526.298167,
       "extra": {
         "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
-      "value": 2287868.65901,
+      "value": 6766.982015,
       "extra": {
         "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
-      "value": 764543.782371,
+      "value": 1957.46003,
       "extra": {
         "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
-      "value": 7549718.359955,
+      "value": 856.107492,
       "extra": {
         "sketchName": "White Rock SMCA - existing, no change (134, 90)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
-      "value": 27606379.533766,
+      "value": 0,
       "extra": {
         "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
-      "value": 20414769.851523,
+      "value": 0,
       "extra": {
         "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
-      "value": 17291964.744999,
+      "value": 5732.629732,
       "extra": {
         "sketchName": "Point Buchon SMR - existing (136, 150)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
-      "value": 5705111.513133,
+      "value": 7992.713924,
       "extra": {
         "sketchName": "Carmel Bay SMCA - existing (127, 80)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
-      "value": 37600826.877579,
+      "value": 11115.891653,
       "extra": {
         "sketchName": "Big Creek SMR - existing, no change (131, 85)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
-      "value": 16332826.213382,
+      "value": 10358.180136,
       "extra": {
         "sketchName": "Cambria SMCA - existing, no change (133, 89)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
-      "value": 27093996.674006,
+      "value": 9450.175632,
       "extra": {
         "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
-      "value": 561189.975062,
+      "value": 2754.760719,
       "extra": {
         "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
       }
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
       "value": 0,
@@ -697,19 +697,19 @@
     },
     {
       "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
-      "value": 591752.846202,
+      "value": 1792.465133,
       "extra": {
         "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
       }
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
       "value": 0,
@@ -720,8 +720,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
       "value": 0,
@@ -731,8 +731,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
       "value": 0,
@@ -742,8 +742,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
       "value": 0,
@@ -753,8 +753,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
       "value": 0,
@@ -764,8 +764,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
       "value": 0,
@@ -775,8 +775,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
       "value": 0,
@@ -786,8 +786,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
       "value": 0,
@@ -797,8 +797,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
       "value": 0,
@@ -808,8 +808,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
       "value": 0,
@@ -819,8 +819,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
       "value": 0,
@@ -830,8 +830,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
       "value": 0,
@@ -841,8 +841,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
       "value": 0,
@@ -852,8 +852,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
       "value": 0,
@@ -863,8 +863,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
       "value": 0,
@@ -874,8 +874,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
       "value": 0,
@@ -885,8 +885,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
       "value": 0,
@@ -896,8 +896,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
       "value": 0,
@@ -907,8 +907,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
       "value": 0,
@@ -918,8 +918,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
       "value": 0,
@@ -929,8 +929,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
       "value": 0,
@@ -940,8 +940,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
       "value": 0,
@@ -951,8 +951,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
       "value": 0,
@@ -962,8 +962,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
       "value": 0,
@@ -973,8 +973,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
       "value": 0,
@@ -984,8 +984,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
       "value": 0,
@@ -995,8 +995,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
       "value": 0,
@@ -1006,8 +1006,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
       "value": 0,
@@ -1017,8 +1017,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
       "value": 0,
@@ -1028,8 +1028,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
       "value": 0,
@@ -1039,8 +1039,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
       "value": 0,
@@ -1050,361 +1050,8 @@
     },
     {
       "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35291",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35261",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Natural Bridges SMR - existing (46, 69)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35262",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35263",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Point Lobos SMR - existing (128, 81)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35264",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Montara SMR - existing, no change (119,65)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35265",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35266",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35267",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Point Sur SMR - existing, no change (129, 83)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35268",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Asilomar SMR - existing, no change (126, 78)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35269",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35270",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35271",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35272",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35273",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35274",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35275",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Point Buchon SMCA - existing (135, 151)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35276",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35277",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35278",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35279",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35280",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35281",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "White Rock SMCA - existing, no change (134, 90)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35282",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35283",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35284",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Point Buchon SMR - existing (136, 150)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35285",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Carmel Bay SMCA - existing (127, 80)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35286",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Big Creek SMR - existing, no change (131, 85)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35287",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Cambria SMCA - existing, no change (133, 89)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35288",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35289",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35290",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
       "value": 0,
@@ -1413,12 +1060,365 @@
       }
     },
     {
-      "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
-      "value": 48056467.066115,
+      "value": 0,
+      "extra": {
+        "sketchName": "CentralMPAs",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35261",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Natural Bridges SMR - existing (46, 69)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35262",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35263",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Point Lobos SMR - existing (128, 81)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35264",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Montara SMR - existing, no change (119,65)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35265",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35266",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35267",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Point Sur SMR - existing, no change (129, 83)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35268",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Asilomar SMR - existing, no change (126, 78)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35269",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35270",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35271",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35272",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35273",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35274",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35275",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Point Buchon SMCA - existing (135, 151)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35276",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35277",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35278",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35279",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35280",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35281",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "White Rock SMCA - existing, no change (134, 90)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35282",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35283",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35284",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Point Buchon SMR - existing (136, 150)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35285",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Carmel Bay SMCA - existing (127, 80)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35286",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Big Creek SMR - existing, no change (131, 85)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35287",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Cambria SMCA - existing, no change (133, 89)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35288",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35289",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35290",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
+      }
+    },
+    {
+      "geographyId": "north_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35291",
+      "groupId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "span",
+      "classId": "span",
+      "sketchId": "35260",
+      "groupId": null,
+      "value": 7488.086249,
       "extra": {
         "sketchName": "CentralMPAs",
         "isCollection": true
@@ -1426,8 +1426,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
       "value": 0,
@@ -1437,8 +1437,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
       "value": 0,
@@ -1448,8 +1448,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
       "value": 0,
@@ -1459,19 +1459,19 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
-      "value": 30574610.793828,
+      "value": 6322.702505,
       "extra": {
         "sketchName": "Montara SMR - existing, no change (119,65)"
       }
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
       "value": 0,
@@ -1481,8 +1481,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
       "value": 0,
@@ -1492,8 +1492,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
       "value": 0,
@@ -1503,8 +1503,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
       "value": 0,
@@ -1514,8 +1514,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
       "value": 0,
@@ -1525,8 +1525,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
       "value": 0,
@@ -1536,8 +1536,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
       "value": 0,
@@ -1547,8 +1547,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
       "value": 0,
@@ -1558,8 +1558,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
       "value": 0,
@@ -1569,8 +1569,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
       "value": 0,
@@ -1580,8 +1580,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
       "value": 0,
@@ -1591,19 +1591,19 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
-      "value": 17351561.837611,
+      "value": 602.636445,
       "extra": {
         "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
       }
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
       "value": 0,
@@ -1613,8 +1613,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
       "value": 0,
@@ -1624,8 +1624,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
       "value": 0,
@@ -1635,8 +1635,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
       "value": 0,
@@ -1646,8 +1646,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
       "value": 0,
@@ -1657,8 +1657,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
       "value": 0,
@@ -1668,8 +1668,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
       "value": 0,
@@ -1679,8 +1679,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
       "value": 0,
@@ -1690,8 +1690,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
       "value": 0,
@@ -1701,8 +1701,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
       "value": 0,
@@ -1712,8 +1712,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
       "value": 0,
@@ -1723,8 +1723,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
       "value": 0,
@@ -1734,8 +1734,8 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
       "value": 0,
@@ -1745,19 +1745,19 @@
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
-      "value": 130294.434676,
+      "value": 562.747302,
       "extra": {
         "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
       }
     },
     {
       "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
       "value": 0,
@@ -1767,8 +1767,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
       "value": 0,
@@ -1779,8 +1779,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
       "value": 0,
@@ -1790,8 +1790,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
       "value": 0,
@@ -1801,8 +1801,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
       "value": 0,
@@ -1812,8 +1812,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
       "value": 0,
@@ -1823,8 +1823,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
       "value": 0,
@@ -1834,8 +1834,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
       "value": 0,
@@ -1845,8 +1845,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
       "value": 0,
@@ -1856,8 +1856,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
       "value": 0,
@@ -1867,8 +1867,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
       "value": 0,
@@ -1878,8 +1878,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
       "value": 0,
@@ -1889,8 +1889,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
       "value": 0,
@@ -1900,8 +1900,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
       "value": 0,
@@ -1911,8 +1911,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
       "value": 0,
@@ -1922,8 +1922,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
       "value": 0,
@@ -1933,8 +1933,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
       "value": 0,
@@ -1944,8 +1944,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
       "value": 0,
@@ -1955,8 +1955,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
       "value": 0,
@@ -1966,8 +1966,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
       "value": 0,
@@ -1977,8 +1977,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
       "value": 0,
@@ -1988,8 +1988,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
       "value": 0,
@@ -1999,8 +1999,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
       "value": 0,
@@ -2010,8 +2010,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
       "value": 0,
@@ -2021,8 +2021,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
       "value": 0,
@@ -2032,8 +2032,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
       "value": 0,
@@ -2043,8 +2043,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
       "value": 0,
@@ -2054,8 +2054,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
       "value": 0,
@@ -2065,8 +2065,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
       "value": 0,
@@ -2076,8 +2076,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
       "value": 0,
@@ -2087,8 +2087,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
       "value": 0,
@@ -2098,8 +2098,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
       "value": 0,
@@ -2109,8 +2109,8 @@
     },
     {
       "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
       "value": 0,
@@ -2120,8 +2120,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
       "value": 0,
@@ -2132,8 +2132,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
       "value": 0,
@@ -2143,8 +2143,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
       "value": 0,
@@ -2154,8 +2154,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
       "value": 0,
@@ -2165,8 +2165,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
       "value": 0,
@@ -2176,8 +2176,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
       "value": 0,
@@ -2187,8 +2187,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
       "value": 0,
@@ -2198,8 +2198,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
       "value": 0,
@@ -2209,8 +2209,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
       "value": 0,
@@ -2220,8 +2220,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
       "value": 0,
@@ -2231,8 +2231,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
       "value": 0,
@@ -2242,8 +2242,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
       "value": 0,
@@ -2253,8 +2253,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
       "value": 0,
@@ -2264,8 +2264,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
       "value": 0,
@@ -2275,8 +2275,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
       "value": 0,
@@ -2286,8 +2286,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
       "value": 0,
@@ -2297,8 +2297,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
       "value": 0,
@@ -2308,8 +2308,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
       "value": 0,
@@ -2319,8 +2319,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
       "value": 0,
@@ -2330,8 +2330,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
       "value": 0,
@@ -2341,8 +2341,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
       "value": 0,
@@ -2352,8 +2352,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
       "value": 0,
@@ -2363,8 +2363,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
       "value": 0,
@@ -2374,8 +2374,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
       "value": 0,
@@ -2385,8 +2385,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
       "value": 0,
@@ -2396,8 +2396,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
       "value": 0,
@@ -2407,8 +2407,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
       "value": 0,
@@ -2418,8 +2418,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
       "value": 0,
@@ -2429,8 +2429,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
       "value": 0,
@@ -2440,8 +2440,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
       "value": 0,
@@ -2451,8 +2451,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
       "value": 0,
@@ -2462,8 +2462,8 @@
     },
     {
       "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
       "value": 0,
@@ -2473,11 +2473,11 @@
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35260",
       "groupId": null,
-      "value": 498870579.326689,
+      "value": 179517.260073,
       "extra": {
         "sketchName": "CentralMPAs",
         "isCollection": true
@@ -2485,754 +2485,341 @@
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": "SMR",
-      "value": 197742027.63775072,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": "SMCANT",
-      "value": 0,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": "SMCA",
-      "value": 293044224.10767686,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": "SMRMA",
-      "value": 7954072.917351255,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": "SMP",
-      "value": 0,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35260",
-      "groupId": "Special",
-      "value": 130295.65675943738,
-      "extra": {
-        "sketchName": "CentralMPAs",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35261",
       "groupId": null,
-      "value": 658241.387945,
+      "value": 8558.326612,
       "extra": {
         "sketchName": "Natural Bridges SMR - existing (46, 69)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35261",
-      "groupId": "SMR",
-      "value": 658241.387945,
-      "extra": {
-        "sketchName": "Natural Bridges SMR - existing (46, 69)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35262",
       "groupId": null,
-      "value": 1371727.264173,
+      "value": 0,
       "extra": {
         "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35262",
-      "groupId": "SMR",
-      "value": 1371727.264173,
-      "extra": {
-        "sketchName": "Carmel Pinnacles SMR - existing, no change (52, 79)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35263",
       "groupId": null,
-      "value": 14251156.385412,
+      "value": 22771.756307,
       "extra": {
         "sketchName": "Point Lobos SMR - existing (128, 81)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35263",
-      "groupId": "SMR",
-      "value": 14251156.385412,
-      "extra": {
-        "sketchName": "Point Lobos SMR - existing (128, 81)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35264",
       "groupId": null,
-      "value": 30574610.793828,
+      "value": 6322.702505,
       "extra": {
         "sketchName": "Montara SMR - existing, no change (119,65)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35264",
-      "groupId": "SMR",
-      "value": 30574610.793828,
-      "extra": {
-        "sketchName": "Montara SMR - existing, no change (119,65)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35265",
       "groupId": null,
-      "value": 526338.400614,
+      "value": 0,
       "extra": {
         "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35265",
-      "groupId": "SMR",
-      "value": 526338.400614,
-      "extra": {
-        "sketchName": "Moro Cojo Slough SMR - existing, no change (49, 72)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35266",
       "groupId": null,
-      "value": 7965101.546641,
+      "value": 23877.822044,
       "extra": {
         "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35266",
-      "groupId": "SMRMA",
-      "value": 7965101.546641,
-      "extra": {
-        "sketchName": "Morro Bay SMRMA - existing, no change (56, 91)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35267",
       "groupId": null,
-      "value": 25508126.287376,
+      "value": 11240.558986,
       "extra": {
         "sketchName": "Point Sur SMR - existing, no change (129, 83)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35267",
-      "groupId": "SMR",
-      "value": 25508126.287376,
-      "extra": {
-        "sketchName": "Point Sur SMR - existing, no change (129, 83)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35268",
       "groupId": null,
-      "value": 3896906.917238,
+      "value": 4422.030999,
       "extra": {
         "sketchName": "Asilomar SMR - existing, no change (126, 78)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35268",
-      "groupId": "SMR",
-      "value": 3896906.917238,
-      "extra": {
-        "sketchName": "Asilomar SMR - existing, no change (126, 78)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35269",
       "groupId": null,
-      "value": 28859433.624513,
+      "value": 16114.629601,
       "extra": {
         "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35269",
-      "groupId": "SMR",
-      "value": 28859433.624513,
-      "extra": {
-        "sketchName": "Año Nuevo SMR - existing, no change (122,67)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35270",
       "groupId": null,
-      "value": 31079887.358967,
+      "value": 6246.316152,
       "extra": {
         "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35270",
-      "groupId": "SMCA",
-      "value": 31079887.358967,
-      "extra": {
-        "sketchName": "Greyhound Rock SMCA - existing, no change (121,68)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35271",
       "groupId": null,
-      "value": 59467702.080341,
+      "value": 0,
       "extra": {
         "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35271",
-      "groupId": "SMCA",
-      "value": 59467702.080341,
-      "extra": {
-        "sketchName": "Soquel Canyon SMCA - existing, no change (50, 73)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35272",
       "groupId": null,
-      "value": 7056153.600281,
+      "value": 16536.614245,
       "extra": {
         "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35272",
-      "groupId": "SMR",
-      "value": 7056153.600281,
-      "extra": {
-        "sketchName": "Elkhorn Slough SMR - existing, no change (47, 70)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35273",
       "groupId": null,
-      "value": 27538494.722055,
+      "value": 0,
       "extra": {
         "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35273",
-      "groupId": "SMCA",
-      "value": 27538494.722055,
-      "extra": {
-        "sketchName": "Portuguese Ledge SMCA - existing, no change (51, 74)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35274",
       "groupId": null,
-      "value": 21945492.606033,
+      "value": 0,
       "extra": {
         "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35274",
-      "groupId": "SMCA",
-      "value": 21945492.606033,
-      "extra": {
-        "sketchName": "Point Lobos SMCA - existing, no change (53, 82)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35275",
       "groupId": null,
-      "value": 31582676.485902,
+      "value": 0,
       "extra": {
         "sketchName": "Point Buchon SMCA - existing (135, 151)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35275",
-      "groupId": "SMCA",
-      "value": 31582676.485902,
-      "extra": {
-        "sketchName": "Point Buchon SMCA - existing (135, 151)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35276",
       "groupId": null,
-      "value": 17351561.837611,
+      "value": 602.636445,
       "extra": {
         "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35276",
-      "groupId": "SMCA",
-      "value": 17351561.837611,
-      "extra": {
-        "sketchName": "Pillar Point SMCA - existing, no change (118,66)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35277",
       "groupId": null,
-      "value": 22977967.346916,
+      "value": 0,
       "extra": {
         "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35277",
-      "groupId": "SMCA",
-      "value": 22977967.346916,
-      "extra": {
-        "sketchName": "Piedras Blancas SMCA - existing, no change (55, 88)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35278",
       "groupId": null,
-      "value": 2545062.463214,
+      "value": 3526.298167,
       "extra": {
         "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35278",
-      "groupId": "SMCA",
-      "value": 2545062.463214,
-      "extra": {
-        "sketchName": "Pacific Grove Marine Gardens SMCA - existing (125, 77)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35279",
       "groupId": null,
-      "value": 2287868.65901,
+      "value": 6766.982015,
       "extra": {
         "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35279",
-      "groupId": "SMR",
-      "value": 2287868.65901,
-      "extra": {
-        "sketchName": "Morro Bay SMR - existing, no change (57, 92)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35280",
       "groupId": null,
-      "value": 764543.782371,
+      "value": 1957.46003,
       "extra": {
         "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35280",
-      "groupId": "SMR",
-      "value": 764543.782371,
-      "extra": {
-        "sketchName": "Lovers Point - Julia Platt SMR - existing, no change (124, 76)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35281",
       "groupId": null,
-      "value": 7549718.359955,
+      "value": 856.107492,
       "extra": {
         "sketchName": "White Rock SMCA - existing, no change (134, 90)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35281",
-      "groupId": "SMCA",
-      "value": 7549718.359955,
-      "extra": {
-        "sketchName": "White Rock SMCA - existing, no change (134, 90)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35282",
       "groupId": null,
-      "value": 27606379.533766,
+      "value": 0,
       "extra": {
         "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35282",
-      "groupId": "SMCA",
-      "value": 27606379.533766,
-      "extra": {
-        "sketchName": "Point Sur SMCA - existing, no change (54, 84)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35283",
       "groupId": null,
-      "value": 20414769.851523,
+      "value": 0,
       "extra": {
         "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35283",
-      "groupId": "SMCA",
-      "value": 20414769.851523,
-      "extra": {
-        "sketchName": "Big Creek SMCA - existing, no change (130, 86)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35284",
       "groupId": null,
-      "value": 17291964.744999,
+      "value": 5732.629732,
       "extra": {
         "sketchName": "Point Buchon SMR - existing (136, 150)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35284",
-      "groupId": "SMR",
-      "value": 17291964.744999,
-      "extra": {
-        "sketchName": "Point Buchon SMR - existing (136, 150)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35285",
       "groupId": null,
-      "value": 5705111.513133,
+      "value": 7992.713924,
       "extra": {
         "sketchName": "Carmel Bay SMCA - existing (127, 80)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35285",
-      "groupId": "SMCA",
-      "value": 5705111.513133,
-      "extra": {
-        "sketchName": "Carmel Bay SMCA - existing (127, 80)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35286",
       "groupId": null,
-      "value": 37600826.877579,
+      "value": 11115.891653,
       "extra": {
         "sketchName": "Big Creek SMR - existing, no change (131, 85)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35286",
-      "groupId": "SMR",
-      "value": 37600826.877579,
-      "extra": {
-        "sketchName": "Big Creek SMR - existing, no change (131, 85)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35287",
       "groupId": null,
-      "value": 16332826.213382,
+      "value": 10358.180136,
       "extra": {
         "sketchName": "Cambria SMCA - existing, no change (133, 89)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35287",
-      "groupId": "SMCA",
-      "value": 16332826.213382,
-      "extra": {
-        "sketchName": "Cambria SMCA - existing, no change (133, 89)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35288",
       "groupId": null,
-      "value": 27093996.674006,
+      "value": 9450.175632,
       "extra": {
         "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35288",
-      "groupId": "SMR",
-      "value": 27093996.674006,
-      "extra": {
-        "sketchName": "Piedras Blancas SMR - existing, no change (132, 87)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35289",
       "groupId": null,
-      "value": 561189.975062,
+      "value": 2754.760719,
       "extra": {
         "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35289",
-      "groupId": "SMCA",
-      "value": 561189.975062,
-      "extra": {
-        "sketchName": "Elkhorn Slough SMCA - existing, no change (48, 71)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35290",
       "groupId": null,
-      "value": 130294.434676,
+      "value": 562.747302,
       "extra": {
         "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
       }
     },
     {
       "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35290",
-      "groupId": "Special",
-      "value": 130294.434676,
-      "extra": {
-        "sketchName": "Egg (Devil's Slide) Rock to Devil's Slide Special Closure (45,64)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
+      "metricId": "span",
+      "classId": "span",
       "sketchId": "35291",
       "groupId": null,
-      "value": 591752.846202,
-      "extra": {
-        "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "35291",
-      "groupId": "SMCA",
-      "value": 591752.846202,
+      "value": 1792.465133,
       "extra": {
         "sketchName": "Edward F. Ricketts SMCA - existing (123, 75)"
       }

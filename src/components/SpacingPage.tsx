@@ -28,6 +28,9 @@ const ReportPage = () => {
     { title: "Kelp", functionName: "spacingKelp" },
     { title: "Estuary", functionName: "spacingEstuaries" },
     { title: "Rock Island", functionName: "spacingRockIslands" },
+    { title: "Rocky Shore", functionName: "spacingRockyShores" },
+    { title: "Beach", functionName: "spacingBeaches" },
+    { title: "Eelgrass", functionName: "spacingEelgrass" },
   ];
 
   if (!isCollection)

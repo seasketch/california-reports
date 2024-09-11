@@ -14,18 +14,12 @@ import {
   Metric,
   ReportResult,
   isMetricArray,
-  keyBy,
   rekeyMetrics,
   sortMetrics,
-  squareMeterToMile,
   toNullSketch,
-  toNullSketchArray,
-  toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { kelpMaxWorker } from "./kelpMaxWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
-import { spacing } from "./spacing.js";
-import { simplify } from "@turf/turf";
 
 /**
  * kelpMax: A geoprocessing function that calculates overlap metrics
@@ -39,7 +33,7 @@ export async function kelpMax(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
-): Promise<any> {
+): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("kelpMax");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world"
