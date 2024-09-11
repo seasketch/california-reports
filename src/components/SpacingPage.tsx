@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { SpacingKelp } from "./SpacingKelp.js";
-import { SpacingEstuaries } from "./SpacingEstuaries.js";
-import { SpacingRockIslands } from "./SpacingRockIslands.js";
 import {
   Card,
   InfoStatus,
