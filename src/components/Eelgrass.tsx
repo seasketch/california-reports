@@ -26,7 +26,6 @@ import {
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { genSketchTable } from "../util/genSketchTable.js";
-import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**

@@ -1,6 +1,5 @@
 import {
   Sketch,
-  GeoprocessingHandler,
   Polygon,
   LineString,
   Feature,
@@ -22,7 +21,7 @@ import {
   bbox,
   bboxPolygon,
 } from "@turf/turf";
-import { Graph, alg, json } from "graphlib";
+import graphlib from "graphlib";
 import graphData from "../../data/bin/network.01.nogridJson.json";
 import landData from "../../data/bin/landShrunk.01.json";
 
@@ -55,7 +54,7 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
   }));
 
   // Create a graph for the MST
-  const mstGraph = new Graph();
+  const mstGraph = new graphlib.Graph();
   sketchesWithCentroids.forEach((sketch) => {
     mstGraph.setNode(sketch.id, sketch.centroid);
   });
@@ -81,7 +80,7 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
   }
 
   // Generate the MST using Prim's algorithm
-  const mst = alg.prim(mstGraph, (edge) => mstGraph.edge(edge));
+  const mst = graphlib.alg.prim(mstGraph, (edge) => mstGraph.edge(edge));
   end = Date.now();
   console.log(`Calculating MST took ${end - start} ms`);
 
@@ -124,7 +123,7 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
 }
 
 function findShortestPath(
-  graph: Graph,
+  graph: graphlib.Graph,
   currentSketch: Sketch<Polygon>,
   nextSketch: Sketch<Polygon>,
   sketchNodes: Record<string, string[]>
@@ -148,7 +147,9 @@ function findShortestPath(
   // Iterate over all nodes in nodes0
   nodes0.forEach((node0) => {
     // Run Dijkstra's algorithm for node0
-    const pathResults = alg.dijkstra(graph, node0, (edge) => graph.edge(edge));
+    const pathResults = graphlib.alg.dijkstra(graph, node0, (edge) =>
+      graph.edge(edge)
+    );
 
     // Check the distance to each node in nodes1
     nodes1.forEach((node1) => {
@@ -204,7 +205,9 @@ function findShortestPath(
 
   let end = Date.now();
   console.log(
-    `${currentSketch.properties.name} to ${nextSketch.properties.name} is ${minTotalDistance}, took ${end - start} ms`
+    `${currentSketch.properties.name} to ${
+      nextSketch.properties.name
+    } is ${minTotalDistance}, took ${end - start} ms`
   );
 
   return {
@@ -217,9 +220,9 @@ function findShortestPath(
 
 async function readGraphFromFile(
   graphData: any
-): Promise<{ graph: Graph; tree: any }> {
+): Promise<{ graph: graphlib.Graph; tree: any }> {
   const tree = geojsonRbush();
-  const graph = json.read(graphData);
+  const graph = graphlib.json.read(graphData);
 
   // Batch insert nodes into R-tree
   const points = graph
@@ -231,10 +234,10 @@ async function readGraphFromFile(
 }
 
 function addSketchesToGraph(
-  graph: Graph,
+  graph: graphlib.Graph,
   tree: any,
   sketches: Sketch<Polygon>[]
-): { graph: Graph; tree: any; sketchNodes: Record<string, string[]> } {
+): { graph: graphlib.Graph; tree: any; sketchNodes: Record<string, string[]> } {
   const sketchesSimplified = sketches.map((sketch) =>
     simplify(sketch, { tolerance: 0.005 })
   );
@@ -329,7 +332,11 @@ function addSketchesToGraph(
     });
     let end = Date.now();
     console.log(
-      `Connecting ${vertices.size} nodes to ${nearbyNodes.features.length} nearby nodes, ${edgeCount} edges, from ${sketch.properties.name}, ${end - start} ms`
+      `Connecting ${vertices.size} nodes to ${
+        nearbyNodes.features.length
+      } nearby nodes, ${edgeCount} edges, from ${sketch.properties.name}, ${
+        end - start
+      } ms`
     );
   });
 
@@ -350,7 +357,7 @@ function extractVerticesFromPolygon(
 }
 
 // Check if a line between two coordinates is clear of land
-export function isLineClear(
+function isLineClear(
   coord1: number[],
   coord2: number[],
   landData: any

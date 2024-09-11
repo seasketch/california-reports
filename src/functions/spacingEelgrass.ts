@@ -16,9 +16,9 @@ import {
   squareMeterToMile,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
-import { spacing } from "./spacing.js";
+import { spacing } from "../util/spacing.js";
 import { bbox, simplify } from "@turf/turf";
-import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 /**
  * spacingEelgrass: A geoprocessing function that calculates overlap metrics

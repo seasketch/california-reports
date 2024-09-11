@@ -18,7 +18,7 @@ import {
   toNullSketch,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
-import { spacing } from "./spacing.js";
+import { spacing } from "../util/spacing.js";
 import { simplify } from "@turf/turf";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 

@@ -10,7 +10,7 @@ import {
   Skeleton,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
-import { ReplicateMap, SpacingObjectives } from "./Spacing.js";
+import { ReplicateMap, SpacingObjectives } from "../util/Spacing.js";
 import { Polygon, Sketch } from "@seasketch/geoprocessing";
 
 const ReportPage = () => {
@@ -65,13 +65,7 @@ const ReportPage = () => {
             <ResultsCard
               title={report.title}
               useChildCard
-              skeleton={
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  {report.title} <Skeleton style={{ width: "50%" }} />
-                </div>
-              }
+              skeleton={<Skeleton />}
               functionName={report.functionName}
             >
               {(data: {

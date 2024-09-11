@@ -4,21 +4,19 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  DefaultExtraParams,
   overlapFeatures,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
   Feature,
-  GeoprocessingRequestModel,
   Metric,
   isVectorDatasource,
   squareMeterToMile,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
-import { spacing } from "./spacing.js";
+import { spacing } from "../util/spacing.js";
 import { bbox, simplify } from "@turf/turf";
-import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 
 /**
  * spacingEstuaries: A geoprocessing function that calculates overlap metrics
@@ -29,16 +27,9 @@ import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
 export async function spacingEstuaries(
   sketch:
     | Sketch<Polygon | MultiPolygon>
-    | SketchCollection<Polygon | MultiPolygon>,
-  extraParams: DefaultExtraParams = {},
-  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
+    | SketchCollection<Polygon | MultiPolygon>
 ): Promise<any> {
-  const metricGroup = project.getMetricGroup("estuaries");
-
-  if (!metricGroup.classes[0].datasourceId)
-    throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
-
-  const ds = project.getDatasourceById(metricGroup.classes[0].datasourceId);
+  const ds = project.getDatasourceById("spacingEstuaries");
   if (!isVectorDatasource(ds))
     throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
 
@@ -54,7 +45,7 @@ export async function spacingEstuaries(
           sketch.bbox || bbox(sketch)
         );
 
-        return overlapFeatures(metricGroup.metricId, features, sketch);
+        return overlapFeatures("spacingEstuaries", features, sketch);
       })
     )
   ).reduce<Metric[]>((acc, val) => acc.concat(val), []);
@@ -84,7 +75,7 @@ export async function spacingEstuaries(
 
 export default new GeoprocessingHandler(spacingEstuaries, {
   title: "spacingEstuaries",
-  description: "spacingEstuaries",
+  description: "",
   timeout: 500, // seconds
   memory: 1024, // megabytes
   executionMode: "async",

@@ -20,7 +20,7 @@ import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import { bbox } from "@turf/turf";
 
 /**
- * estuaries: A geoprocessing function that calculates overlap metrics
+ * estuariesWorker: A geoprocessing function that calculates overlap metrics
  * @param sketch - A sketch or collection of sketches
  * @param extraParams
  * @returns Calculated metrics and a null sketch

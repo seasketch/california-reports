@@ -15,7 +15,7 @@ import {
   isVectorDatasource,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
-import { spacing } from "./spacing.js";
+import { spacing } from "../util/spacing.js";
 import { bbox, simplify } from "@turf/turf";
 import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 

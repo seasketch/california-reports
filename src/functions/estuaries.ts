@@ -16,14 +16,10 @@ import {
   isMetricArray,
   rekeyMetrics,
   sortMetrics,
-  squareMeterToMile,
   toNullSketch,
-  toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { estuariesWorker } from "./estuariesWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
-import { spacing } from "./spacing.js";
-import { simplify } from "@turf/turf";
 
 /**
  * estuaries: A geoprocessing function that calculates overlap metrics
@@ -37,7 +33,7 @@ export async function estuaries(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
-): Promise<any> {
+): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("estuaries");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world"
@@ -58,7 +54,7 @@ export async function estuaries(
           : runLambdaWorker(
               sketch,
               project.package.name,
-              "estuariesWorker",
+              "estuaryWorker",
               project.geoprocessing.region,
               parameters,
               request!
