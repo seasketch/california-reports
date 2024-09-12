@@ -10,10 +10,10 @@ import {
 } from "@seasketch/geoprocessing";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import { bbox } from "@turf/turf";
-import { min, max, mean } from "simple-statistics";
+import { min, max } from "simple-statistics";
 import project from "../../project/projectClient.js";
 
-// @ts-ignore
+// @ts-expect-error no types
 import geoblaze, { Georaster } from "geoblaze";
 
 export interface BathymetryResults {
@@ -29,14 +29,14 @@ export interface BathymetryResults {
 }
 
 export async function bathymetry(
-  sketch: Sketch<Polygon> | SketchCollection<Polygon>
+  sketch: Sketch<Polygon> | SketchCollection<Polygon>,
 ): Promise<BathymetryResults[]> {
   const mg = project.getMetricGroup("bathymetry");
   const box = sketch.bbox || bbox(sketch);
   if (!mg.classes[0].datasourceId)
     throw new Error(`Expected datasourceId for ${mg.classes[0]}`);
   const url = `${project.dataBucketUrl()}${getCogFilename(
-    project.getInternalRasterDatasourceById(mg.classes[0].datasourceId)
+    project.getInternalRasterDatasourceById(mg.classes[0].datasourceId),
   )}`;
   const raster = await loadCog(url);
   const stats = await bathyStats(sketch, raster);
@@ -52,7 +52,7 @@ export async function bathyStats(
   /** Polygons to filter for */
   sketch: Sketch<Polygon> | SketchCollection<Polygon>,
   /** bathymetry raster to search */
-  raster: Georaster
+  raster: Georaster,
 ): Promise<BathymetryResults[]> {
   const features = toSketchArray(sketch);
 
@@ -69,7 +69,6 @@ export async function bathyStats(
           sketchName: finalFeat.properties.name,
         };
       try {
-        // @ts-ignore
         const stats = (
           await geoblaze.stats(raster, finalFeat, {
             calcMax: true,
@@ -97,7 +96,7 @@ export async function bathyStats(
           throw err;
         }
       }
-    })
+    }),
   );
 
   if (isSketchCollection(sketch)) {

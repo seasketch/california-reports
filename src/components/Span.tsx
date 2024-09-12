@@ -42,7 +42,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
   const metricGroup = project.getMetricGroup("span", t);
   const precalcMetrics = geographies
     .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
+      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId),
     )
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
@@ -60,7 +60,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
 
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id]
+          [data.sketch.properties.id],
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
@@ -104,8 +104,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                           ? parseInt(val) / 1609
                           : val / 1609,
                         2,
-                        { keepSmallValues: true }
-                      )
+                        { keepSmallValues: true },
+                      ),
                     ),
                   valueLabel: unitsLabel,
                   chartOptions: {
@@ -136,7 +136,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
                 metricGroup={metricGroup}
                 geographies={geographies.filter((g) =>
-                  g.geographyId?.endsWith("_sr")
+                  g.geographyId?.endsWith("_sr"),
                 )}
                 objective={objectives}
                 columnConfig={[
@@ -156,8 +156,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                             ? parseInt(val) / 1609
                             : val / 1609,
                           2,
-                          { keepSmallValues: true }
-                        )
+                          { keepSmallValues: true },
+                        ),
                       ),
                     valueLabel: unitsLabel,
                     chartOptions: {
@@ -184,7 +184,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
                 geographies={geographies.filter((g) =>
-                  g.geographyId?.endsWith("_br")
+                  g.geographyId?.endsWith("_br"),
                 )}
                 objective={objectives}
                 columnConfig={[
@@ -204,8 +204,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                             ? parseInt(val) / 1609
                             : val / 1609,
                           2,
-                          { keepSmallValues: true }
-                        )
+                          { keepSmallValues: true },
+                        ),
                       ),
                     valueLabel: unitsLabel,
                     chartOptions: {
@@ -233,12 +233,12 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     ...data,
                     metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
-                  t
+                  t,
                 )}
               </Collapse>
             )}
@@ -273,13 +273,13 @@ export const genLengthSketchTable = (
   data: ReportResult,
   precalcMetrics: Metric[],
   mg: MetricGroup,
-  t: any
+  t: any,
 ) => {
   const sketches = toNullSketchArray(data.sketch);
   const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
   const sketchIds = sketches.map((sk) => sk.properties.id);
   const sketchMetrics = data.metrics.filter(
-    (m) => m.sketchId && sketchIds.includes(m.sketchId)
+    (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
   const finalMetrics = [
     ...sketchMetrics,
@@ -335,7 +335,7 @@ export const genLengthSketchTable = (
           },
         ],
       };
-    }
+    },
   );
 
   const columns: Column<{ sketchId: string }>[] = [

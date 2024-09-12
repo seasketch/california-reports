@@ -21,7 +21,7 @@ import { boundaryAreaOverlapWorker } from "./boundaryAreaOverlapWorker.js";
 export async function boundaryAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>,
   extraParams: DefaultExtraParams = {},
-  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
+  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap");
   const geographies = project.geographies;
@@ -44,18 +44,18 @@ export async function boundaryAreaOverlap(
               "boundaryAreaOverlapWorker",
               project.geoprocessing.region,
               parameters,
-              request!
+              request!,
             );
-      })
+      }),
     )
   ).reduce<Metric[]>(
     (metrics, result) =>
       metrics.concat(
         isMetricArray(result)
           ? result
-          : (parseLambdaResponse(result) as Metric[])
+          : (parseLambdaResponse(result) as Metric[]),
       ),
-    []
+    [],
   );
 
   return {

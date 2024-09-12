@@ -32,11 +32,11 @@ export async function shoretypes(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
-  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
+  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("shoretypes");
   const geographies = project.geographies.filter(
-    (g) => g.geographyId !== "world"
+    (g) => g.geographyId !== "world",
   );
 
   try {
@@ -59,9 +59,9 @@ export async function shoretypes(
                   "shoretypesWorker",
                   project.geoprocessing.region,
                   parameters,
-                  request!
+                  request!,
                 );
-          })
+          }),
         );
 
         return classMetrics.reduce<Metric[]>(
@@ -69,11 +69,11 @@ export async function shoretypes(
             metrics.concat(
               isMetricArray(result)
                 ? result
-                : (parseLambdaResponse(result) as Metric[])
+                : (parseLambdaResponse(result) as Metric[]),
             ),
-          []
+          [],
         );
-      })
+      }),
     );
 
     const metrics = allMetrics.flat();
@@ -83,7 +83,7 @@ export async function shoretypes(
         rekeyMetrics([
           ...metrics,
           ...genWorldMetrics(sketch, metrics, metricGroup),
-        ])
+        ]),
       ),
       sketch: toNullSketch(sketch, true),
     };
