@@ -54,7 +54,7 @@ export async function estuaries(
           : runLambdaWorker(
               sketch,
               project.package.name,
-              "estuaryWorker",
+              "estuariesWorker",
               project.geoprocessing.region,
               parameters,
               request!
