@@ -290,18 +290,14 @@ export const Substrate: React.FunctionComponent<GeogProp> = () => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Substrate - learn more">
-                <p>
-                  ℹ️ Overview: California's waters were modelled into two
-                  substrate classes: soft and hard.
-                </p>
-                <p>🎯 Planning Objective: N/A</p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total area of each
+                  habitat class within the selected MPA(s). This value is
+                  divided by the total area of each habitat class to obtain the
+                  % contained within the selected MPA(s). If the selected area
+                  includes multiple areas that overlap, the overlap is only
+                  counted once.
                 </p>
               </Trans>
             </Collapse>

@@ -91,12 +91,20 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="Shoretypes 1">
-                This report summarizes this plan's protection of California's
-                shoreline habitats.
-              </Trans>
-            </p>
+            <Trans i18nKey="Shoretypes 1">
+              <p>
+                This report summarizes the overlap of the selected MPA(s) with
+                sandy beach and rocky intertidal habitat. Data are included for
+                both landward and seaward shoreline, so a single segment of
+                shoreline may be counted towards more than one type of habitat.
+              </p>
+              <p>
+                The minimum length of habitat within an MPA necessary to
+                encompass 90% of local biodiversity and count as a replicate, as
+                determined from biological surveys, is 1.1 linear miles for
+                beach habitats and 0.55 linear miles for rocky shore habitats.
+              </p>
+            </Trans>
 
             {!isCollection && (
               <ShoretypesObjectives
@@ -277,41 +285,15 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Shoretypes - learn more">
-                <p>
-                  ℹ️ Overview: Shoretype data has been categorized into five
-                  types: beaches, coastal marsh, rocky shores, tidal flats, and
-                  unclassified if qualifiying ESI codes were present in the
-                  landward or seaward fields for that stretch of coastline.
-                  Therefore, the same shoreline can count for multiple
-                  shoretypes. More specific shoreline types can be viewed by
-                  turning on the matching map layers and hovering.
-                </p>
-                <p>Tidal flats = ESI 7, 9, 9A, and 9C.</p>
-                <p>Beaches = ESI 3, 3A, 4, 5, 6A.</p>
-                <p>Rocky shores = ESI 1A, 1C, 2, 2A, 8, and 8A.</p>
-                <p>Coastal marsh = ESI 10 and 10A.</p>
-                <p>
-                  Unclassified = ESI 0, 1B, 3B, 6B, 6D, 8B, 8C, 9B, 10B, 10C,
-                  and 10D.
-                </p>
-                <p>
-                  MPA replicates must meet certain size standards for certain
-                  habitats: 1.1 linear miles of beaches, 0.55 linear miles of
-                  rocky shores, 0.55 linear miles of rock islands. Coastal
-                  marsh, tidal flats, and unclassified are considered replicates
-                  if area is above 0.
-                </p>
-                <p>
-                  🎯 Planning Objective: Habitat replication throughout state
-                  waters.
-                </p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total length of each
+                  shoretype within the selected MPA(s). This value is divided by
+                  the total length of each shoretype to obtain the % contained
+                  within the selected MPA(s). If the selected area includes
+                  multiple areas that overlap, the overlap is only counted once.
+                  Selected MPA(s) were buffered by 200 meters to ensure overlap
+                  with shoreline habitats data layer.
                 </p>
               </Trans>
             </Collapse>
@@ -325,7 +307,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 const replicateMap: Record<string, number> = {
   beaches: 1.1,
   rocky_shores: 0.55,
-  rock_islands: 0.55,
 };
 
 /**
@@ -373,14 +354,18 @@ export const genLengthSketchTable = (
         style: { color: "#777" },
         columns: [
           {
-            Header: t("Replicate") + " ".repeat(index),
+            Header:
+              (replicateMap[curClass.classId] ? t("Replicate") : "") +
+              " ".repeat(index),
             accessor: (row) => {
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value / 1609;
 
-              return value > replicateMap[curClass.classId] ||
+              return !replicateMap[curClass.classId] ? (
+                " "
+              ) : value > replicateMap[curClass.classId] ||
                 (!replicateMap[curClass.classId] && value) ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
               ) : (
