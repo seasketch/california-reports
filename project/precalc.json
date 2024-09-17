@@ -37,7 +37,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 32379158.534678705
+    "value": 32380849.09541042
   },
   {
     "geographyId": "central_br",
@@ -501,7 +501,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 22242788.736811884
+    "value": 22244300.83400114
   },
   {
     "geographyId": "central_sr",
@@ -965,7 +965,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 171356490.03948864
+    "value": 171358850.05279723
   },
   {
     "geographyId": "north_br",
@@ -1429,7 +1429,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 112675903.13265741
+    "value": 112679113.67814481
   },
   {
     "geographyId": "north_sr",
@@ -1893,7 +1893,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 68816972.98794925
+    "value": 68816439.76940642
   },
   {
     "geographyId": "northcentral_sr",
@@ -2357,7 +2357,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 151197271.3148939
+    "value": 151208389.35119057
   },
   {
     "geographyId": "south_br",
@@ -2821,7 +2821,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 151196519.86757436
+    "value": 151187878.95549974
   },
   {
     "geographyId": "south_sr",
@@ -2957,7 +2957,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 92
+    "value": 90
   },
   {
     "geographyId": "south_sr",
@@ -3285,7 +3285,7 @@
     "classId": "estuaries-total",
     "sketchId": null,
     "groupId": null,
-    "value": 354932934.62728155
+    "value": 354948205.4962811
   },
   {
     "geographyId": "world",
