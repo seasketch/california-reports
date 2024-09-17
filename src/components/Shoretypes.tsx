@@ -106,13 +106,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
               </p>
             </Trans>
 
-            {!isCollection && (
-              <ShoretypesObjectives
-                metricGroup={metricGroup}
-                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
-              />
-            )}
-
             <LayerToggle
               label={t("Show Landward Shoretypes")}
               layerId={metricGroup.classes[0].layerId}
@@ -122,6 +115,14 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
               label={t("Show Seaward Shoretypes")}
               layerId={metricGroup.classes[1].layerId}
             />
+
+            <VerticalSpacer />
+            {!isCollection && (
+              <ShoretypesObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -310,7 +311,7 @@ const replicateMap: Record<string, number> = {
 };
 
 /**
- * Creates "Show by Zone" report, with area + percentages
+ * Creates "Show by Zone" report, with length + percent length
  * @param data data returned from lambda
  * @param precalcMetrics metrics from precalc.json
  * @param metricGroup metric group to get stats for
@@ -426,49 +427,55 @@ const ShoretypesObjectives = (props: {
 }) => {
   const { metricGroup, metrics } = props;
 
-  // Get habitat replicates passes and fails for this MPA
-  const { passes, fails } = metricGroup.classes.reduce(
-    (acc: { passes: string[]; fails: string[] }, curClass) => {
-      const metric = firstMatchingMetric(
-        metrics,
-        (m) => m.classId === curClass.classId,
-      );
-      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+  const beachesReplicate = (() => {
+    const metric = firstMatchingMetric(metrics, (m) => m.classId === "beaches");
+    if (!metric) throw new Error(`Expected metric for beaches`);
+    return metric.value / 1609 > replicateMap["beaches"];
+  })();
 
-      const value = metric.value / 1609;
-      const replicateValue = replicateMap[curClass.classId];
-
-      value > replicateValue || (!replicateValue && value)
-        ? acc.passes.push(curClass.display)
-        : acc.fails.push(curClass.display);
-
-      return acc;
-    },
-    { passes: [], fails: [] },
-  );
+  const rockyShoresReplicate = (() => {
+    const metric = firstMatchingMetric(
+      metrics,
+      (m) => m.classId === "rocky_shores",
+    );
+    if (!metric) throw new Error(`Expected metric for rocky_shores`);
+    return metric.value / 1609 > replicateMap["rocky_shores"];
+  })();
 
   return (
     <>
-      {passes.length > 0 && (
+      {beachesReplicate ? (
         <ObjectiveStatus
           status={"yes"}
           msg={
-            <>
-              This MPA meets the habitat replicate guidelines for:{" "}
-              {passes.join(", ")}
-            </>
+            <div style={{ paddingTop: "7px" }}>
+              This MPA counts as a beach habitat replicate.
+            </div>
           }
         />
-      )}
-      {fails.length > 0 && (
+      ) : (
         <ObjectiveStatus
           status={"no"}
           msg={
-            <>
-              This MPA does not meet the habitat replicate guidelines for:{" "}
-              {fails.join(", ")}
-            </>
+            <div style={{ paddingTop: "7px" }}>
+              This MPA does not count as a beach habitat replicate.
+            </div>
           }
+        />
+      )}
+      {rockyShoresReplicate ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <div style={{ paddingTop: "7px" }}>
+              This MPA counts as a rocky shore habitat replicate.
+            </div>
+          }
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={<>This MPA does not count as a rocky shore habitat replicate.</>}
         />
       )}
     </>
