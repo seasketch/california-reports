@@ -101,4 +101,5 @@ export default new GeoprocessingHandler(shoretypes, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["shoretypesWorker"],
 });

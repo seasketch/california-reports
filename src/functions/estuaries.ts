@@ -87,4 +87,5 @@ export default new GeoprocessingHandler(estuaries, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["estuariesWorker"],
 });

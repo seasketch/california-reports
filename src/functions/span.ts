@@ -89,4 +89,5 @@ export default new GeoprocessingHandler(span, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["spanWorker"],
 });
