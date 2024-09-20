@@ -29,7 +29,7 @@ export async function spacingEstuaries(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>
 ): Promise<any> {
-  const ds = project.getDatasourceById("spacingEstuaries");
+  const ds = project.getDatasourceById("estuaries");
   if (!isVectorDatasource(ds))
     throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
 
