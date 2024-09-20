@@ -17,7 +17,7 @@
       "classId": "estuaries",
       "sketchId": "29482",
       "groupId": null,
-      "value": 7950.434219,
+      "value": 7945.471599,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -29,7 +29,7 @@
       "classId": "estuaries",
       "sketchId": "29483",
       "groupId": null,
-      "value": 7650.371709,
+      "value": 7640.412706,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -40,7 +40,7 @@
       "classId": "estuaries",
       "sketchId": "29484",
       "groupId": null,
-      "value": 300.06251,
+      "value": 305.058893,
       "extra": {
         "sketchName": "split"
       }
@@ -62,7 +62,7 @@
       "classId": "estuaries",
       "sketchId": "29482",
       "groupId": null,
-      "value": 7950.434219,
+      "value": 7945.471599,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -74,7 +74,7 @@
       "classId": "estuaries",
       "sketchId": "29483",
       "groupId": null,
-      "value": 7650.371709,
+      "value": 7640.412706,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -85,7 +85,7 @@
       "classId": "estuaries",
       "sketchId": "29484",
       "groupId": null,
-      "value": 300.06251,
+      "value": 305.058893,
       "extra": {
         "sketchName": "split"
       }
@@ -332,7 +332,7 @@
       "classId": "estuaries",
       "sketchId": "29482",
       "groupId": null,
-      "value": 7950.434219,
+      "value": 7945.471599,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -344,7 +344,7 @@
       "classId": "estuaries",
       "sketchId": "29483",
       "groupId": null,
-      "value": 7650.371709,
+      "value": 7640.412706,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -355,7 +355,7 @@
       "classId": "estuaries",
       "sketchId": "29484",
       "groupId": null,
-      "value": 300.06251,
+      "value": 305.058893,
       "extra": {
         "sketchName": "split"
       }

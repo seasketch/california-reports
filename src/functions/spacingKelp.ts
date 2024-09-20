@@ -35,12 +35,7 @@ export async function spacingKelp(
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
 ): Promise<any> {
-  const metricGroup = project.getMetricGroup("kelpMax");
-
-  if (!metricGroup.datasourceId)
-    throw new Error(`Expected datasourceId for ${metricGroup.metricId}`);
-
-  const ds = project.getDatasourceById(metricGroup.datasourceId);
+  const ds = project.getDatasourceById("kelpMax");
   if (!isRasterDatasource(ds))
     throw new Error(`Expected raster datasource for ${ds.datasourceId}`);
 
@@ -55,12 +50,12 @@ export async function spacingKelp(
     await Promise.all(
       sketches.map(async (sketch) =>
         rasterMetrics(raster, {
-          metricId: metricGroup.metricId,
+          metricId: "kelp",
           feature: sketch,
           ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
           ...(ds.measurementType === "categorical" && {
             categorical: true,
-            categoryMetricValues: metricGroup.classes.map((c) => c.classId),
+            categoryMetricValues: ["kelpMax"],
           }),
         })
       )
