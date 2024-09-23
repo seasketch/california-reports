@@ -4,7 +4,6 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  getFirstFromParam,
   splitSketchAntimeridian,
   isRasterDatasource,
   rasterMetrics,
@@ -32,7 +31,7 @@ export async function kelpMaxWorker(
   extraParams: {
     geography: Geography;
     metricGroup: MetricGroup;
-  }
+  },
 ) {
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
@@ -74,7 +73,7 @@ export async function kelpMaxWorker(
       ...metrics,
       classId: "kelpMax",
       geographyId: geography.geographyId,
-    })
+    }),
   );
 }
 

@@ -6,6 +6,7 @@ import {
   GeoprocessingHandler,
   runLambdaWorker,
   parseLambdaResponse,
+  genFeatureCollection,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -13,13 +14,18 @@ import {
   GeoprocessingRequestModel,
   Metric,
   ReportResult,
+  genSketchCollection,
   isMetricArray,
+  isSketch,
+  isSketchCollection,
   rekeyMetrics,
   sortMetrics,
   toNullSketch,
+  toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { shoretypesWorker } from "./shoretypesWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
+import { bbox, buffer } from "@turf/turf";
 
 /**
  * shoretypes: A geoprocessing function that calculates overlap metrics
@@ -32,12 +38,30 @@ export async function shoretypes(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
-  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
+  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("shoretypes");
   const geographies = project.geographies.filter(
-    (g) => g.geographyId !== "world"
+    (g) => g.geographyId !== "world",
   );
+
+  const sketches = toSketchArray(sketch);
+  const finalSketches: Sketch<Polygon | MultiPolygon>[] = [];
+  sketches.forEach((sketch) => {
+    sketch.geometry = buffer(sketch, 200, { units: "meters" })!.geometry;
+    finalSketches.push(sketch);
+  });
+
+  const bufferedSketch:
+    | Sketch<Polygon | MultiPolygon>
+    | SketchCollection<Polygon | MultiPolygon> = isSketchCollection(sketch)
+    ? {
+        properties: sketch.properties,
+        bbox: bbox(genFeatureCollection(finalSketches)),
+        type: "FeatureCollection",
+        features: finalSketches,
+      }
+    : finalSketches[0];
 
   try {
     const allMetrics = await Promise.all(
@@ -52,16 +76,16 @@ export async function shoretypes(
             };
 
             return process.env.NODE_ENV === "test"
-              ? shoretypesWorker(sketch, parameters)
+              ? shoretypesWorker(bufferedSketch, parameters)
               : runLambdaWorker(
-                  sketch,
+                  bufferedSketch,
                   project.package.name,
                   "shoretypesWorker",
                   project.geoprocessing.region,
                   parameters,
-                  request!
+                  request!,
                 );
-          })
+          }),
         );
 
         return classMetrics.reduce<Metric[]>(
@@ -69,11 +93,11 @@ export async function shoretypes(
             metrics.concat(
               isMetricArray(result)
                 ? result
-                : (parseLambdaResponse(result) as Metric[])
+                : (parseLambdaResponse(result) as Metric[]),
             ),
-          []
+          [],
         );
-      })
+      }),
     );
 
     const metrics = allMetrics.flat();
@@ -82,10 +106,10 @@ export async function shoretypes(
       metrics: sortMetrics(
         rekeyMetrics([
           ...metrics,
-          ...genWorldMetrics(sketch, metrics, metricGroup),
-        ])
+          ...genWorldMetrics(bufferedSketch, metrics, metricGroup),
+        ]),
       ),
-      sketch: toNullSketch(sketch, true),
+      sketch: toNullSketch(bufferedSketch, true),
     };
   } catch (error) {
     console.error("Error fetching metrics:", error);

@@ -80,7 +80,7 @@ const sketchReport = (metrics: Metric[], t: any) => {
   // Should only have only a single metric
   if (metrics.length !== 1)
     throw new Error(
-      "In single sketch classification report, and getting !=1 metric"
+      "In single sketch classification report, and getting !=1 metric",
     );
 
   return (
@@ -119,11 +119,11 @@ const sketchReport = (metrics: Metric[], t: any) => {
 const sketchCollectionReport = (
   sketch: NullSketchCollection | NullSketch,
   metrics: Metric[],
-  t: any
+  t: any,
 ) => {
   const sketches = toNullSketchArray(sketch);
   const sortedMetrics = metrics.sort(
-    (a, b) => groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || "")
+    (a, b) => groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || ""),
   );
 
   const columns: Column<Metric>[] = [
@@ -175,7 +175,7 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
           {t(
             groupDisplayMapSg[
               getUserAttribute(row.properties, "proposed_designation", "")
-            ]
+            ],
           )}
         </GroupPill>
       ),
@@ -188,7 +188,7 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
         className="styled"
         columns={columns}
         data={sketches.sort((a, b) =>
-          a.properties.name.localeCompare(b.properties.name)
+          a.properties.name.localeCompare(b.properties.name),
         )}
       />
     </SmallReportTableStyled>

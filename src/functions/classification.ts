@@ -14,7 +14,7 @@ import { GeoprocessingHandler } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 
 export async function classification(
-  sketch: Sketch<Polygon> | SketchCollection<Polygon>
+  sketch: Sketch<Polygon> | SketchCollection<Polygon>,
 ): Promise<ReportResult> {
   const mg = project.getMetricGroup("classification");
   const sketchFeatures = getSketchFeatures(sketch);
@@ -24,7 +24,7 @@ export async function classification(
       const designation = getUserAttribute(
         sketch.properties,
         "proposed_designation",
-        ""
+        "",
       );
       if (!designation)
         throw new Error("Malformed sketch, no proposed designation level");
@@ -32,7 +32,7 @@ export async function classification(
       levels[designation] = 1 + (levels[designation] || 0);
       return levels;
     },
-    {}
+    {},
   );
 
   const metrics = Object.keys(classificationLevels).map((level) => {

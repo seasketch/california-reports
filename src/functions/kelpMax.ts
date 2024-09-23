@@ -32,11 +32,11 @@ export async function kelpMax(
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
-  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>
+  request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<ReportResult> {
   const metricGroup = project.getMetricGroup("kelpMax");
   const geographies = project.geographies.filter(
-    (g) => g.geographyId !== "world"
+    (g) => g.geographyId !== "world",
   );
 
   const metrics = (
@@ -56,24 +56,29 @@ export async function kelpMax(
               "kelpMaxWorker",
               project.geoprocessing.region,
               parameters,
-              request!
+              request!,
             );
-      })
+      }),
     )
   ).reduce<Metric[]>(
     (metrics, result) =>
       metrics.concat(
         isMetricArray(result)
           ? result
-          : (parseLambdaResponse(result) as Metric[])
+          : (parseLambdaResponse(result) as Metric[]),
       ),
-    []
+    [],
   );
 
   const worldMetrics = genWorldMetrics(sketch, metrics, metricGroup);
 
   return {
-    metrics: sortMetrics(rekeyMetrics([...metrics, ...worldMetrics])),
+    metrics: sortMetrics(
+      rekeyMetrics([
+        ...metrics,
+        ...genWorldMetrics(sketch, metrics, metricGroup),
+      ]),
+    ),
     sketch: toNullSketch(sketch, true),
   };
 }

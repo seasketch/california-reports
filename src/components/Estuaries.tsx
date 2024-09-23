@@ -43,7 +43,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
   const metricGroup = project.getMetricGroup("estuaries", t);
   const precalcMetrics = geographies
     .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId)
+      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId),
     )
     .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
@@ -61,7 +61,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id]
+          [data.sketch.properties.id],
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
@@ -77,12 +77,17 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <p>
-              <Trans i18nKey="Estuaries 1">
-                This report summarizes this plan's overlap with estuaries within
-                California's territorial sea.
-              </Trans>
-            </p>
+            <Trans i18nKey="Estuaries 1">
+              <p>
+                Estuaries are a key habitat. This report summarizes the overlap
+                of the selected MPA(s) with estuaries.
+              </p>
+              <p>
+                The minimum area of estuarine habitat within an MPA necessary to
+                encompass 90% of local biodiversity and count as a replicate is
+                0.12 square miles, as determined from biological surveys.
+              </p>
+            </Trans>
 
             {!isCollection && (
               <EstuariesObjectives
@@ -109,11 +114,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                     Number.format(
                       roundDecimal(
                         squareMeterToMile(
-                          typeof val === "string" ? parseInt(val) : val
+                          typeof val === "string" ? parseInt(val) : val,
                         ),
                         2,
-                        { keepSmallValues: true }
-                      )
+                        { keepSmallValues: true },
+                      ),
                     ),
                   valueLabel: unitsLabel,
                   chartOptions: {
@@ -144,7 +149,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
                 metricGroup={metricGroup}
                 geographies={geographies.filter((g) =>
-                  g.geographyId?.endsWith("_sr")
+                  g.geographyId?.endsWith("_sr"),
                 )}
                 objective={objectives}
                 columnConfig={[
@@ -161,11 +166,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                       Number.format(
                         roundDecimal(
                           squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
+                            typeof val === "string" ? parseInt(val) : val,
                           ),
                           2,
-                          { keepSmallValues: true }
-                        )
+                          { keepSmallValues: true },
+                        ),
                       ),
                     valueLabel: unitsLabel,
                     chartOptions: {
@@ -192,7 +197,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
                 geographies={geographies.filter((g) =>
-                  g.geographyId?.endsWith("_br")
+                  g.geographyId?.endsWith("_br"),
                 )}
                 objective={objectives}
                 columnConfig={[
@@ -209,11 +214,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                       Number.format(
                         roundDecimal(
                           squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val
+                            typeof val === "string" ? parseInt(val) : val,
                           ),
                           2,
-                          { keepSmallValues: true }
-                        )
+                          { keepSmallValues: true },
+                        ),
                       ),
                     valueLabel: unitsLabel,
                     chartOptions: {
@@ -241,46 +246,26 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     ...data,
                     metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world"
+                      (m) => m.geographyId === "world",
                     ),
                   },
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { replicate: true, replicateMap: { estuaries: 0.12 } }
+                  { replicate: true, replicateMap: { estuaries: 0.12 } },
                 )}
               </Collapse>
             )}
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Estuaries - learn more">
-                <p>
-                  ℹ️ Overview:Accurate mapping of tidal wetlands is vital for
-                  effective conservation and restoration of these valued
-                  habitats, and good mapping is key to strategic planning for
-                  coastal resilience. Tidal wetlands are defined by regular
-                  inundation by the tides; therefore, mapping of tidal wetlands
-                  should be based on knowledge of tidal water levels and the
-                  land areas inundated by the tides. We developed this tidal
-                  wetland mapping following that principle.
-                </p>
-                <p>
-                  This mapping includes areas currently inundated by the tides
-                  -- current tidal wetlands -- from ocean to head of tide,
-                  including the freshwater tidal zone. To assist restoration
-                  planning, our mapping also includes historical tidal wetlands
-                  -- areas that were historically inundated by the tides, but
-                  are no longer inundated by the tides due to human alterations
-                  to the landscape such as dikes and tide gates.
-                </p>
-                <p>🎯 Planning Objective: None.</p>
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of each
-                  feature within the plan. This value is divided by the total
-                  value of each feature to obtain the % contained within the
-                  plan. If the plan includes multiple areas that overlap, the
-                  overlap is only counted once.
+                  📈 Report: This report calculates the total area of each
+                  estuaries within the selected MPA(s). This value is divided by
+                  the total area of estuaries to obtain the % contained within
+                  the selected MPA(s). If the selected area includes multiple
+                  areas that overlap, the overlap is only counted once.
                 </p>
               </Trans>
             </Collapse>
@@ -303,7 +288,7 @@ const EstuariesObjectives = (props: {
     (acc: { passes: string[]; fails: string[] }, curClass) => {
       const metric = firstMatchingMetric(
         metrics,
-        (m) => m.classId === curClass.classId
+        (m) => m.classId === curClass.classId,
       );
       if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
 
@@ -316,7 +301,7 @@ const EstuariesObjectives = (props: {
 
       return acc;
     },
-    { passes: [], fails: [] }
+    { passes: [], fails: [] },
   );
 
   return (

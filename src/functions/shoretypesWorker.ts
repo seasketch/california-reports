@@ -33,12 +33,12 @@ export async function shoretypesWorker(
     metricGroup: MetricGroup;
     classId: string;
     geography: Geography;
-  }
+  },
 ) {
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
   const curClass = metricGroup.classes.find(
-    (c) => c.classId === extraParams.classId
+    (c) => c.classId === extraParams.classId,
   );
 
   // Support sketches crossing antimeridian
@@ -62,7 +62,7 @@ export async function shoretypesWorker(
   // Fetch features overlapping with sketch, pull from cache if already fetched
   const features = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
     url,
-    sketchBox
+    sketchBox,
   );
 
   // If this is a sub-class, filter by class name
@@ -80,7 +80,7 @@ export async function shoretypesWorker(
   const overlapResult = await overlapFeatures(
     metricGroup.metricId,
     finalFeatures,
-    clippedSketch
+    clippedSketch,
   );
 
   return overlapResult.map(
@@ -88,7 +88,7 @@ export async function shoretypesWorker(
       ...metric,
       classId: curClass.classId,
       geographyId: geography.geographyId,
-    })
+    }),
   );
 }
 

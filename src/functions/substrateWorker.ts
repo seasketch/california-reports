@@ -31,7 +31,7 @@ export async function substrateWorker(
   extraParams: {
     geography: Geography;
     metricGroup: MetricGroup;
-  }
+  },
 ) {
   const geography = extraParams.geography;
   const metricGroup = extraParams.metricGroup;
@@ -72,7 +72,7 @@ export async function substrateWorker(
     (metrics): Metric => ({
       ...metrics,
       geographyId: geography.geographyId,
-    })
+    }),
   );
 }
 

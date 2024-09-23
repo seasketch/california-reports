@@ -94,7 +94,7 @@ export const genSketchTable = (
     size?: boolean;
     replicate?: boolean;
     replicateMap?: Record<string, number>;
-  }
+  },
 ) => {
   const {
     valueFormatter = (val: any) => val,
@@ -107,7 +107,7 @@ export const genSketchTable = (
   const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
   const sketchIds = sketches.map((sk) => sk.properties.id);
   const sketchMetrics = data.metrics.filter(
-    (m) => m.sketchId && sketchIds.includes(m.sketchId)
+    (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
   const finalMetrics = [
     ...sketchMetrics,
@@ -137,11 +137,12 @@ export const genSketchTable = (
         columns.push({
           Header: t("Replicate") + " ".repeat(index),
           accessor: (row: { sketchId: string }) => {
-            const val = aggMetrics[row.sketchId][curClass.classId as string][
+            const val =
+              aggMetrics[row.sketchId][curClass.classId as string][
                 mg.metricId
               ][0].value;
             const value = squareMeterToMile(
-              valueFormatter ? valueFormatter(val) : val
+              valueFormatter ? valueFormatter(val) : val,
             );
 
             return (replicateMap && value > replicateMap[curClass.classId]) ||
@@ -161,7 +162,7 @@ export const genSketchTable = (
             const value = squareMeterToMile(
               aggMetrics[row.sketchId][curClass.classId as string][
                 mg.metricId
-              ][0].value
+              ][0].value,
             );
             return value > 9 ? (
               <CheckCircleFill size={15} style={{ color: "#78c679" }} />
@@ -176,7 +177,7 @@ export const genSketchTable = (
             const value = squareMeterToMile(
               aggMetrics[row.sketchId][curClass.classId as string][
                 mg.metricId
-              ][0].value
+              ][0].value,
             );
             return value > 18 ? (
               <CheckCircleFill size={15} style={{ color: "#78c679" }} />
@@ -194,7 +195,7 @@ export const genSketchTable = (
             aggMetrics[row.sketchId][curClass.classId as string][mg.metricId][0]
               .value;
           const miVal = squareMeterToMile(
-            valueFormatter ? valueFormatter(value) : value
+            valueFormatter ? valueFormatter(value) : value,
           );
           const valDisplay =
             miVal && miVal < 0.1 ? "< 0.1" : Number.format(roundDecimal(miVal));
@@ -217,7 +218,7 @@ export const genSketchTable = (
         style: { color: "#777" },
         columns: columns,
       };
-    }
+    },
   );
 
   const columns: Column<{ sketchId: string }>[] = [

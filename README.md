@@ -10,4 +10,4 @@ This project uses data management [option ?](https://github.com/seasketch/geopro
 
 Data is sourced from the following locations:
 
-* ?
+- ?
