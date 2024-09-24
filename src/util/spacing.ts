@@ -43,7 +43,7 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
   // Buffer by 1 meter to ensure overlap with clipped edges
   start = Date.now();
   const sketches = sketchArray.map(
-    (sketch) => buffer(sketch, 1, { units: "meters" })! as Sketch<Polygon>
+    (sketch) => buffer(sketch, 1, { units: "meters" })! as Sketch<Polygon>,
   );
 
   // Calculate centroids
@@ -64,17 +64,17 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
     for (let j = i + 1; j < sketchesWithCentroids.length; j++) {
       const dist = distance(
         point(sketchesWithCentroids[i].centroid),
-        point(sketchesWithCentroids[j].centroid)
+        point(sketchesWithCentroids[j].centroid),
       );
       mstGraph.setEdge(
         sketchesWithCentroids[i].id as string,
         sketchesWithCentroids[j].id as string,
-        dist
+        dist,
       );
       mstGraph.setEdge(
         sketchesWithCentroids[j].id as string,
         sketchesWithCentroids[i].id as string,
-        dist
+        dist,
       );
     }
   }
@@ -101,7 +101,7 @@ export async function spacing(sketchArray: Sketch<Polygon>[]): Promise<{
         sketchGraph.graph,
         sourceSketch.sketch,
         targetSketch.sketch,
-        sketchGraph.sketchNodes
+        sketchGraph.sketchNodes,
       );
 
       imporantNodes.push(path[0], path[path.length - 1]);
@@ -126,7 +126,7 @@ function findShortestPath(
   graph: graphlib.Graph,
   currentSketch: Sketch<Polygon>,
   nextSketch: Sketch<Polygon>,
-  sketchNodes: Record<string, string[]>
+  sketchNodes: Record<string, string[]>,
 ): {
   path: string[];
   edges: { source: string; target: string }[];
@@ -148,7 +148,7 @@ function findShortestPath(
   nodes0.forEach((node0) => {
     // Run Dijkstra's algorithm for node0
     const pathResults = graphlib.alg.dijkstra(graph, node0, (edge) =>
-      graph.edge(edge)
+      graph.edge(edge),
     );
 
     // Check the distance to each node in nodes1
@@ -199,7 +199,7 @@ function findShortestPath(
 
   if (minTotalDistance === Infinity) {
     throw new Error(
-      `No path found between any nodes of the currentSketch and nextSketch`
+      `No path found between any nodes of the currentSketch and nextSketch`,
     );
   }
 
@@ -207,7 +207,7 @@ function findShortestPath(
   console.log(
     `${currentSketch.properties.name} to ${
       nextSketch.properties.name
-    } is ${minTotalDistance}, took ${end - start} ms`
+    } is ${minTotalDistance}, took ${end - start} ms`,
   );
 
   return {
@@ -219,7 +219,7 @@ function findShortestPath(
 }
 
 async function readGraphFromFile(
-  graphData: any
+  graphData: any,
 ): Promise<{ graph: graphlib.Graph; tree: any }> {
   const tree = geojsonRbush();
   const graph = graphlib.json.read(graphData);
@@ -236,10 +236,10 @@ async function readGraphFromFile(
 function addSketchesToGraph(
   graph: graphlib.Graph,
   tree: any,
-  sketches: Sketch<Polygon>[]
+  sketches: Sketch<Polygon>[],
 ): { graph: graphlib.Graph; tree: any; sketchNodes: Record<string, string[]> } {
   const sketchesSimplified = sketches.map((sketch) =>
-    simplify(sketch, { tolerance: 0.005 })
+    simplify(sketch, { tolerance: 0.005 }),
   );
 
   // Get the bounding box of the simplified sketches
@@ -253,9 +253,9 @@ function addSketchesToGraph(
       // Check if the bounding boxes overlap
       return booleanOverlap(
         bboxPolygon(sketchBox),
-        bboxPolygon(landBoundingBox)
+        bboxPolygon(landBoundingBox),
       );
-    }
+    },
   );
 
   const landSimplified = buffer(
@@ -263,7 +263,7 @@ function addSketchesToGraph(
       tolerance: 0.01,
     }),
     0.5,
-    { units: "meters" }
+    { units: "meters" },
   );
 
   const sketchNodes: Record<string, string[]> = {};
@@ -277,7 +277,7 @@ function addSketchesToGraph(
       extractVerticesFromPolygon(
         sketch.geometry.coordinates,
         sketchIndex,
-        vertices
+        vertices,
       );
     } else if (sketch.geometry.type === "MultiPolygon") {
       sketch.geometry.coordinates.forEach((polygon: any) => {
@@ -304,7 +304,7 @@ function addSketchesToGraph(
 
       if (nearbyNodes.features.length === 0) {
         console.warn(
-          `No nearby nodes found within ${SEARCH_RADIUS_MILES} miles for node ${node}`
+          `No nearby nodes found within ${SEARCH_RADIUS_MILES} miles for node ${node}`,
         );
         return;
       }
@@ -336,7 +336,7 @@ function addSketchesToGraph(
         nearbyNodes.features.length
       } nearby nodes, ${edgeCount} edges, from ${sketch.properties.name}, ${
         end - start
-      } ms`
+      } ms`,
     );
   });
 
@@ -346,13 +346,13 @@ function addSketchesToGraph(
 function extractVerticesFromPolygon(
   polygon: any,
   featureIndex: number,
-  vertices: Map<string, number[]>
+  vertices: Map<string, number[]>,
 ): void {
-  polygon.forEach((ring: any, ringIndex: number) => {
-    ring.forEach((coord: [number, number], vertexIndex: number) => {
-      const id = `polynode_${featureIndex}_${ringIndex}_${vertexIndex}`;
-      vertices.set(id, coord);
-    });
+  // Only take the perimeter of the polygon
+  const exteriorRing = polygon[0];
+  exteriorRing.forEach((coord: [number, number], vertexIndex: number) => {
+    const id = `polynode_${featureIndex}_0_${vertexIndex}`;
+    vertices.set(id, coord);
   });
 }
 
@@ -360,7 +360,7 @@ function extractVerticesFromPolygon(
 function isLineClear(
   coord1: number[],
   coord2: number[],
-  landData: any
+  landData: any,
 ): boolean {
   const line = lineString([coord1, coord2]);
 
