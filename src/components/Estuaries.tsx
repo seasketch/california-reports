@@ -266,6 +266,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   the total area of estuaries to obtain the % contained within
                   the selected MPA(s). If the selected area includes multiple
                   areas that overlap, the overlap is only counted once.
+                  Estuaries data has been simplified to a tolerance of 1 meter.
                 </p>
               </Trans>
             </Collapse>
