@@ -262,7 +262,7 @@ function addSketchesToGraph(
     simplify(featureCollection(filteredFeatures), {
       tolerance: 0.01,
     }),
-    0.5,
+    -250,
     { units: "meters" },
   );
 
