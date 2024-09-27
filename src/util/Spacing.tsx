@@ -23,7 +23,7 @@ import landData from "../../data/bin/landShrunk.01.json";
 // Props for the Replicate Map
 interface ReplicateMapProps {
   sketch: Sketch<Polygon>[];
-  replicateIds: string[];
+  replicates: string[];
   paths: {
     path: Feature<LineString>;
     distance: number;
@@ -33,7 +33,7 @@ interface ReplicateMapProps {
 
 function calculateProportionalHeight(
   featureCollection: FeatureCollection<Polygon>,
-  fixedWidth: number = 430
+  fixedWidth: number = 430,
 ): number {
   // Calculate the bounding box of the feature collection
   const [minX, minY, maxX, maxY] = bbox(featureCollection);
@@ -54,7 +54,7 @@ function calculateProportionalHeight(
 // Plots replicates and shortest paths between them
 export const ReplicateMap: React.FC<ReplicateMapProps> = ({
   sketch,
-  replicateIds,
+  replicates,
   paths,
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -70,7 +70,7 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
 
     // Scale map to extent of sketch nodes with padding
     const nodes = featureCollection(sketch).features.flatMap((feature) =>
-      feature.geometry.coordinates.flatMap((coords) => coords)
+      feature.geometry.coordinates.flatMap((coords) => coords),
     );
 
     // Calculate the extent of the nodes
@@ -155,11 +155,11 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
         })
         .attr(
           "fill",
-          replicateIds.includes(s.properties.id) ? "lightgreen" : "white"
+          replicates.includes(s.properties.id) ? "lightgreen" : "white",
         )
         .attr(
           "stroke",
-          replicateIds.includes(s.properties.id) ? "darkgreen" : "grey"
+          replicates.includes(s.properties.id) ? "darkgreen" : "grey",
         )
         .attr("stroke-width", 1)
         .attr("stroke-linejoin", "round")
@@ -221,48 +221,52 @@ export const SpacingObjectives = (props: {
   data: {
     title: string;
     sketch: Sketch<Polygon>[];
-    replicateIds: string[];
+    replicates: string[];
     paths: {
       path: Feature<LineString>;
       distance: number;
       color: string;
     }[];
   };
-}) => (
-  <>
-    {props.data.replicateIds.length === 1 ? (
-      <ObjectiveStatus
-        status={"maybe"}
-        msg={
-          <>
-            The selected MPAs contain only one{" "}
-            {props.data.title.toLocaleLowerCase()} habitat replicate. Spacing
-            analyses require 2+ replicates.
-          </>
-        }
-      />
-    ) : props.data.paths.filter((p) => p.color === "red").length === 0 ? (
-      <ObjectiveStatus
-        status={"yes"}
-        msg={
-          <>
-            These {props.data.title.toLocaleLowerCase()} habitat replicates meet
-            the spacing guidelines. All replicates have gaps less than 62 miles.
-          </>
-        }
-      />
-    ) : (
-      <ObjectiveStatus
-        status={"no"}
-        msg={
-          <>
-            These {props.data.title.toLocaleLowerCase()} habitat replicates do
-            not meet the spacing guidelines, with{" "}
-            {props.data.paths.filter((p) => p.color === "red").length} gap(s)
-            greater than 62 miles.
-          </>
-        }
-      />
-    )}
-  </>
-);
+}) => {
+  if (props.data.replicates.length === 0) return <></>;
+  return (
+    <>
+      {props.data.replicates.length === 1 ? (
+        <ObjectiveStatus
+          status={"maybe"}
+          msg={
+            <>
+              The selected MPAs contain only one{" "}
+              {props.data.title.toLocaleLowerCase()} habitat replicate. Spacing
+              analyses require 2+ replicates.
+            </>
+          }
+        />
+      ) : props.data.paths.filter((p) => p.color === "red").length === 0 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>
+              These {props.data.title.toLocaleLowerCase()} habitat replicates
+              meet the spacing guidelines. All replicates have gaps less than 62
+              miles.
+            </>
+          }
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              These {props.data.title.toLocaleLowerCase()} habitat replicates do
+              not meet the spacing guidelines, with{" "}
+              {props.data.paths.filter((p) => p.color === "red").length} gap(s)
+              greater than 62 miles.
+            </>
+          }
+        />
+      )}
+    </>
+  );
+};

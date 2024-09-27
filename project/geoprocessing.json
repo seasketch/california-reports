@@ -20,6 +20,9 @@
     "src/functions/clipToOcean.ts"
   ],
   "geoprocessingFunctions": [
+    "src/functions/spacing.ts",
+    "src/functions/spacingWorker.ts",
+    "src/functions/spacingGraphWorker.ts",
     "src/functions/boundaryAreaOverlap.ts",
     "src/functions/boundaryAreaOverlapWorker.ts",
     "src/functions/classification.ts",
@@ -37,11 +40,6 @@
     "src/functions/eelgrassWorker.ts",
     "src/functions/bathymetry.ts",
     "src/functions/spanWorker.ts",
-    "src/functions/span.ts",
-    "src/functions/spacingEstuaries.ts",
-    "src/functions/spacingEelgrass.ts",
-    "src/functions/spacingRockyShores.ts",
-    "src/functions/spacingBeaches.ts",
-    "src/functions/spacingKelp.ts"
+    "src/functions/span.ts"
   ]
 }
