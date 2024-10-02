@@ -12,11 +12,7 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  NullSketch,
-  NullSketchCollection,
-  Polygon,
   ReportResult,
-  Sketch,
   firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
@@ -50,9 +46,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   // Labels
   const titleLabel = t("Eelgrass");
   const mapLabel = t("Map");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const withinLabel = t("Area Within MPA(s)");
+  const percWithinLabel = t("% Total Eelgrass Area");
+  const unitsLabel = t("mi²");
 
   return (
     <ResultsCard title={titleLabel} functionName="eelgrass">
@@ -108,7 +104,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: " ",
                   type: "class",
-                  width: 30,
+                  width: 20,
                 },
                 {
                   columnLabel: withinLabel,
@@ -128,7 +124,8 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  colStyle: { textAlign: "center" },
+                  width: 30,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -158,9 +155,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: titleLabel,
                     type: "class",
-                    width: 30,
+                    width: 40,
                   },
                   {
                     columnLabel: withinLabel,
@@ -176,6 +173,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
@@ -190,7 +188,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 40,
+                    width: 30,
                   },
                 ]}
               />
@@ -208,7 +206,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     columnLabel: "Eelgrass",
                     type: "class",
-                    width: 30,
+                    width: 25,
                   },
                   {
                     columnLabel: withinLabel,
@@ -224,11 +222,12 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 20,
+                    width: 30,
                   },
                   {
                     columnLabel: percWithinLabel,

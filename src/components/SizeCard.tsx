@@ -51,9 +51,9 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
       }),
     );
 
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const withinLabel = t("Area");
+  const percWithinLabel = t("% Total Area");
+  const unitsLabel = t("mi²");
 
   const notFoundString = t("Results not found");
   return (
@@ -128,7 +128,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 </Trans>
               </p>
               <KeySection>
-                {t("This plan is")}{" "}
+                {t("The selected MPA(s) are")}{" "}
                 <b>
                   {areaDisplay} {areaUnitDisplay}
                 </b>
@@ -204,7 +204,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                         {
                           columnLabel: " ",
                           type: "class",
-                          width: 30,
+                          width: 40,
                         },
                         {
                           columnLabel: withinLabel,
@@ -220,6 +220,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                                 { keepSmallValues: true },
                               ),
                             ),
+                          colStyle: { textAlign: "center" },
                           valueLabel: unitsLabel,
                           chartOptions: {
                             showTitle: true,
@@ -234,7 +235,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                           chartOptions: {
                             showTitle: true,
                           },
-                          width: 40,
+                          width: 30,
                         },
                       ]}
                     />
@@ -269,6 +270,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                                 { keepSmallValues: true },
                               ),
                             ),
+                          colStyle: { textAlign: "center" },
                           valueLabel: unitsLabel,
                           chartOptions: {
                             showTitle: true,

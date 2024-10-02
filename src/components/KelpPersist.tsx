@@ -39,8 +39,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
 
   // Labels
   const titleLabel = t("Kelp (Persistence)");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
+  const withinLabel = t("Area Within MPA(s)");
+  const percWithinLabel = t("% Total Kelp Area");
   const unitsLabel = t("mi²");
 
   return (
@@ -109,7 +109,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: t("Kelp Persistence"),
                   type: "class",
-                  width: 23.21062239466359856,
+                  width: 30,
                 },
                 {
                   columnLabel: withinLabel,
@@ -129,11 +129,12 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                         { keepSmallValues: true },
                       ),
                     ),
+                  colStyle: { textAlign: "center" },
                   valueLabel: unitsLabel,
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  width: 30,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -166,7 +167,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       columnLabel: t("Kelp (" + curClass.display + ")"),
                       type: "class",
-                      width: 23.21062239466359856,
+                      width: 40,
                     },
                     {
                       columnLabel: withinLabel,
@@ -188,6 +189,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                             { keepSmallValues: true },
                           ),
                         ),
+                      colStyle: { textAlign: "center" },
                       valueLabel: unitsLabel,
                       chartOptions: {
                         showTitle: true,
@@ -202,7 +204,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 40,
+                      width: 30,
                     },
                   ]}
                 />
@@ -227,7 +229,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       columnLabel: t("Kelp (" + curClass.display + ")"),
                       type: "class",
-                      width: 23.21062239466359856,
+                      width: 25,
                     },
                     {
                       columnLabel: withinLabel,
@@ -249,11 +251,12 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                             { keepSmallValues: true },
                           ),
                         ),
+                      colStyle: { textAlign: "center" },
                       valueLabel: unitsLabel,
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 20,
+                      width: 30,
                     },
                     {
                       columnLabel: percWithinLabel,
@@ -263,7 +266,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 40,
+                      width: 30,
                     },
                   ]}
                 />
@@ -301,9 +304,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   selected MPA(s). If the selected area includes multiple areas
                   that overlap, the overlap is only counted once. Kelp data has
                   been downsampled to a 30 m x 30 m raster grid for efficiency,
-                  so area calculations are estimates. Final plans should check
-                  area totals in GIS tools before publishing final area
-                  statistics.
+                  so area calculations are estimates. Final statistics should be
+                  calculated in desktop GIS tools.
                 </p>
               </Trans>
             </Collapse>

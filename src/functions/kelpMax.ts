@@ -70,8 +70,6 @@ export async function kelpMax(
     [],
   );
 
-  const worldMetrics = genWorldMetrics(sketch, metrics, metricGroup);
-
   return {
     metrics: sortMetrics(
       rekeyMetrics([

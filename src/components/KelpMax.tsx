@@ -14,11 +14,7 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  NullSketch,
-  NullSketchCollection,
-  Polygon,
   ReportResult,
-  Sketch,
   firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
@@ -52,8 +48,8 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
   // Labels
   const titleLabel = t("Kelp (Maximum)");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
+  const withinLabel = t("Area Within MPA(s)");
+  const percWithinLabel = t("% Total Kelp Area");
   const unitsLabel = t("mi²");
 
   return (
@@ -85,12 +81,12 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 the overlap of the selected MPA(s) with the maximum kelp canopy
                 coverage over the years 2002-2016.
               </p>
-              <p>
+              {/* <p>
                 The minimum extent of nearshore rocky reef within an MPA
                 necessary to encompass 90% of local biodiversity in a kelp
                 forest is 1.1 linear miles, as determined from biological
                 surveys.
-              </p>
+              </p> */}
             </Trans>
 
             <LayerToggle
@@ -99,12 +95,12 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
             />
             <VerticalSpacer />
 
-            {!isCollection && (
+            {/* {!isCollection && (
               <KelpMaxObjectives
                 metricGroup={metricGroup}
                 metrics={valueMetrics.filter((m) => m.geographyId === "world")}
               />
-            )}
+            )} */}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -113,7 +109,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: " ",
                   type: "class",
-                  width: 30,
+                  width: 20,
                 },
                 {
                   columnLabel: withinLabel,
@@ -129,11 +125,12 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                         { keepSmallValues: true },
                       ),
                     ),
+                  colStyle: { textAlign: "center" },
                   valueLabel: unitsLabel,
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  width: 30,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -143,20 +140,12 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 40,
+                  width: 30,
                 },
               ]}
             />
 
             <Collapse title={t("Show By Planning Region")}>
-              <p>
-                <Trans i18nKey="Kelp Planning Region">
-                  The following is a breakdown of this plan's overlap with kelp
-                  forests by <i>planning region</i>. The San Francisco Bay
-                  planning region is excluded due to not containing any kelp
-                  forests per the data provided.
-                </Trans>
-              </p>
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
                 metricGroup={metricGroup}
@@ -168,7 +157,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     columnLabel: "Kelp (Maximum)",
                     type: "class",
-                    width: 35,
+                    width: 40,
                   },
                   {
                     columnLabel: withinLabel,
@@ -184,6 +173,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
@@ -198,19 +188,13 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 35,
+                    width: 30,
                   },
                 ]}
               />
             </Collapse>
 
             <Collapse title={t("Show By Bioregion")}>
-              <p>
-                <Trans i18nKey="Kelp Bioregion">
-                  The following is a breakdown of this plan's overlap with kelp
-                  forests by <i>bioregion</i>.
-                </Trans>
-              </p>
               <GeographyTable
                 rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
                 metricGroup={metricGroup}
@@ -222,7 +206,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     columnLabel: "Kelp (Maximum)",
                     type: "class",
-                    width: 35,
+                    width: 30,
                   },
                   {
                     columnLabel: withinLabel,
@@ -238,11 +222,12 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 20,
+                    width: 30,
                   },
                   {
                     columnLabel: percWithinLabel,
@@ -288,11 +273,11 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   canopy coverage within the selected MPA(s). This value is
                   divided by the total value of kelp canopy coverage to obtain
                   the % contained within the selected MPA(s). If the selected
-                  areaincludes multiple areas that overlap, the overlap is only
+                  area includes multiple areas that overlap, the overlap is only
                   counted once. Kelp data has been downsampled to a 30m x 30m
                   raster grid for efficiency, so area calculations are
-                  estimates. Final plans should check area totals in GIS tools
-                  before publishing final area statistics.
+                  estimates. Final reported statistics should be calculated in
+                  Desktop GIS tools.
                 </p>
               </Trans>
             </Collapse>

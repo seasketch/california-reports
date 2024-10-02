@@ -49,8 +49,8 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   // Labels
   const titleLabel = t("Shoreline Habitats");
   const classLabel = t("Shoreline Habitat");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
+  const withinLabel = t("Length Within MPA(s)");
+  const percWithinLabel = t("% Total Habitat Length");
   const unitsLabel = t("mi");
 
   return (
@@ -131,7 +131,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: classLabel,
                   type: "class",
-                  width: 30,
+                  width: 25,
                 },
                 {
                   columnLabel: withinLabel,
@@ -145,11 +145,12 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                           : val / 1609,
                       ),
                     ),
+                  colStyle: { textAlign: "center" },
                   valueLabel: unitsLabel,
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  width: 30,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -159,7 +160,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 40,
+                  width: 30,
                 },
               ]}
             />
@@ -181,7 +182,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       columnLabel: t(curClass.display),
                       type: "class",
-                      width: 30,
+                      width: 40,
                     },
                     {
                       columnLabel: withinLabel,
@@ -195,6 +196,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                               : val / 1609,
                           ),
                         ),
+                      colStyle: { textAlign: "center" },
                       valueLabel: unitsLabel,
                       chartOptions: {
                         showTitle: true,
@@ -209,7 +211,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 40,
+                      width: 30,
                     },
                   ]}
                 />
@@ -233,7 +235,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                     {
                       columnLabel: t(curClass.display),
                       type: "class",
-                      width: 30,
+                      width: 25,
                     },
                     {
                       columnLabel: withinLabel,
@@ -247,11 +249,12 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                               : val / 1609,
                           ),
                         ),
+                      colStyle: { textAlign: "center" },
                       valueLabel: unitsLabel,
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 20,
+                      width: 30,
                     },
                     {
                       columnLabel: percWithinLabel,
@@ -261,7 +264,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 40,
+                      width: 30,
                     },
                   ]}
                 />
