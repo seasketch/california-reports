@@ -69,7 +69,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 797552.4636353996
+    "value": 811914.2386349274
   },
   {
     "geographyId": "central_br",
@@ -205,7 +205,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 279
+    "value": 259
   },
   {
     "geographyId": "central_br",
@@ -533,7 +533,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 685284.3579077267
+    "value": 698201.4891087401
   },
   {
     "geographyId": "central_sr",
@@ -669,7 +669,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 231
+    "value": 216
   },
   {
     "geographyId": "central_sr",
@@ -997,7 +997,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1327903.767012858
+    "value": 1349772.3721284326
   },
   {
     "geographyId": "north_br",
@@ -1133,7 +1133,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 426
+    "value": 427
   },
   {
     "geographyId": "north_br",
@@ -1461,7 +1461,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 852308.5377562133
+    "value": 866005.3998181198
   },
   {
     "geographyId": "north_sr",
@@ -1925,7 +1925,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 587994.3260233471
+    "value": 597138.609960411
   },
   {
     "geographyId": "northcentral_sr",
@@ -2061,7 +2061,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 134
+    "value": 130
   },
   {
     "geographyId": "northcentral_sr",
@@ -2389,7 +2389,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1748707.2073585466
+    "value": 1773794.5914702471
   },
   {
     "geographyId": "south_br",
@@ -2525,7 +2525,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 755
+    "value": 746
   },
   {
     "geographyId": "south_br",
@@ -2853,7 +2853,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1736927.3848733767
+    "value": 1761467.751610564
   },
   {
     "geographyId": "south_sr",
@@ -2989,7 +2989,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 755
+    "value": 746
   },
   {
     "geographyId": "south_sr",
@@ -3317,7 +3317,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 3874233.564030542
+    "value": 3935653.5846232576
   },
   {
     "geographyId": "world",
@@ -3453,7 +3453,7 @@
     "classId": "shoretypes-total",
     "sketchId": null,
     "groupId": null,
-    "value": 1458
+    "value": 1430
   },
   {
     "geographyId": "world",
