@@ -296,7 +296,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   the total length of each shoretype to obtain the % contained
                   within the selected MPA(s). If the selected area includes
                   multiple areas that overlap, the overlap is only counted once.
-                  Selected MPA(s) were buffered by 200 meters to ensure overlap
+                  Selected MPA(s) were buffered by 250 meters to ensure overlap
                   with shoreline habitats data layer.
                 </p>
               </Trans>
