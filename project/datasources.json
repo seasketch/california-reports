@@ -445,11 +445,11 @@
     "geo_type": "vector",
     "formats": ["fgb"],
     "precalc": true,
-    "layerName": "shoretypes1m",
+    "layerName": "shoretypes2m",
     "classKeys": [],
     "created": "2024-09-04T19:57:56.137Z",
-    "lastUpdated": "2024-10-03T18:17:05.919Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/shoretypes1m.fgb",
+    "lastUpdated": "2024-10-03T20:33:51.999Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/shoretypes2m.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
   }
