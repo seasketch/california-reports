@@ -27,7 +27,7 @@ const projectPath = (() => {
 })();
 
 // read project languages
-let projectLanguages: string[] | undefined = undefined;
+let projectLanguages: string[] | undefined;
 if (fs.existsSync(`${projectPath}/basic.json`)) {
   const basic = fs.readJsonSync(`${projectPath}/basic.json`);
   if (basic.languages && Array.isArray(basic.languages)) {
