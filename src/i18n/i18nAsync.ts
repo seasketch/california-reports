@@ -1,7 +1,7 @@
 import { createInstance } from "i18next";
 import { initReactI18next } from "react-i18next";
 import extraTerms from "./extraTerms.json" with { type: "json" };
-import languages from "./supported.js";
+import languages from "./languages.json" with { type: "json" };
 
 const defaultLang = "en";
 
@@ -77,14 +77,14 @@ export function createI18nAsyncInstance(
           let langResources = {};
           if (langPath !== undefined) {
             try {
-              if (!isDefault) {
+              if (isDefault) {
+                langResources = {};
+              } else {
                 const langToLoadPath = `${langPath}/${langToLoad}/${namespace}.json`;
                 const curModule = langModules[langToLoadPath];
                 langResources = JSON.parse(
                   ((await curModule()) as unknown as any).default,
                 );
-              } else {
-                langResources = {};
               }
             } catch {
               console.info(`Warning: failed to find lang resource.`);

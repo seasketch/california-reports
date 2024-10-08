@@ -6,5 +6,6 @@
   "planningAreaType": "eez",
   "planningAreaId": "United States Exclusive Economic Zone",
   "planningAreaName": "United States Exclusive Economic Zone",
-  "externalLinks": {}
+  "externalLinks": {},
+  "languages": ["EN", "es"]
 }
