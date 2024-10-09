@@ -354,6 +354,30 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29482",
+      "groupId": "SMR",
+      "value": 85265862.640884,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
+      "groupId": "SMCANT",
+      "value": 186595173.08780485,
+      "extra": {
+        "sketchName": "network",
+        "isCollection": true
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "boundaryAreaOverlap",
+      "classId": "state_waters",
+      "sketchId": "29482",
       "groupId": "SMCA",
       "value": 0,
       "extra": {
@@ -366,19 +390,7 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29482",
-      "groupId": "SMCANT",
-      "value": 186595109.415119,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29482",
-      "groupId": "SMP",
+      "groupId": "SMRMA",
       "value": 0,
       "extra": {
         "sketchName": "network",
@@ -390,19 +402,7 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29482",
-      "groupId": "SMR",
-      "value": 85265605.47556068,
-      "extra": {
-        "sketchName": "network",
-        "isCollection": true
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29482",
-      "groupId": "SMRMA",
+      "groupId": "SMP",
       "value": 0,
       "extra": {
         "sketchName": "network",

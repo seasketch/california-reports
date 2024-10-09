@@ -93,8 +93,8 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "SMCA",
-      "value": 0,
+      "groupId": "SMR",
+      "value": 85265862.640884,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -115,7 +115,7 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "SMP",
+      "groupId": "SMCA",
       "value": 0,
       "extra": {
         "sketchName": "mpa-test"
@@ -126,8 +126,8 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "SMR",
-      "value": 85265862.640884,
+      "groupId": "SMRMA",
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -137,7 +137,7 @@
       "metricId": "boundaryAreaOverlap",
       "classId": "state_waters",
       "sketchId": "29784",
-      "groupId": "SMRMA",
+      "groupId": "SMP",
       "value": 0,
       "extra": {
         "sketchName": "mpa-test"

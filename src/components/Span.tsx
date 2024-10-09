@@ -49,8 +49,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
   // Labels
   const titleLabel = t("Span");
   const mapLabel = t("Map");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
+  const withinLabel = t("Shoreline within MPA(s)");
+  const percWithinLabel = t("% Total Shoreline");
   const unitsLabel = t("mi");
 
   return (
@@ -91,7 +91,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: " ",
                   type: "class",
-                  width: 30,
+                  width: 25,
                 },
                 {
                   columnLabel: withinLabel,
@@ -107,11 +107,12 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                         { keepSmallValues: true },
                       ),
                     ),
+                  colStyle: { textAlign: "center" },
                   valueLabel: unitsLabel,
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  width: 25,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -121,7 +122,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 40,
+                  width: 30,
                 },
                 {
                   columnLabel: mapLabel,
@@ -143,7 +144,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     columnLabel: " ",
                     type: "class",
-                    width: 30,
+                    width: 40,
                   },
                   {
                     columnLabel: withinLabel,
@@ -159,6 +160,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
@@ -173,7 +175,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 40,
+                    width: 30,
                   },
                 ]}
               />
@@ -189,9 +191,9 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: "Alongshore Span",
                     type: "class",
-                    width: 30,
+                    width: 25,
                   },
                   {
                     columnLabel: withinLabel,
@@ -207,11 +209,12 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 20,
+                    width: 35,
                   },
                   {
                     columnLabel: percWithinLabel,
@@ -221,7 +224,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 40,
+                    width: 30,
                   },
                 ]}
               />
@@ -250,8 +253,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   📈 Report: This report calculates the alongshore span of the
                   selected MPA(s). This value is divided by the total alongshore
                   span of the California coastline to obtain the % contained
-                  within the plan. If the plan includes multiple areas that
-                  overlap, the overlap is only counted once.
+                  within the selected MPA(s). If the selected MPA(s) include
+                  multiple areas that overlap, the overlap is only counted once.
                 </p>
               </Trans>
             </Collapse>

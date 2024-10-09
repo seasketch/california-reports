@@ -20,6 +20,9 @@
     "src/functions/clipToOcean.ts"
   ],
   "geoprocessingFunctions": [
+    "src/functions/spacing.ts",
+    "src/functions/spacingWorker.ts",
+    "src/functions/spacingGraphWorker.ts",
     "src/functions/boundaryAreaOverlap.ts",
     "src/functions/boundaryAreaOverlapWorker.ts",
     "src/functions/classification.ts",

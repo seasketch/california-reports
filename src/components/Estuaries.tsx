@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -10,7 +11,9 @@ import {
 import {
   GeogProp,
   Metric,
+  MetricGroup,
   ReportResult,
+  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -43,9 +46,9 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
   // Labels
   const titleLabel = t("Estuaries");
   const mapLabel = t("Map");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const withinLabel = t("Area Within MPA(s)");
+  const percWithinLabel = t("% Total Estuary Area");
+  const unitsLabel = t("mi²");
 
   return (
     <ResultsCard title={titleLabel} functionName="estuaries">
@@ -82,6 +85,13 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
               </p>
             </Trans>
 
+            {!isCollection && (
+              <EstuariesObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
+
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
               metricGroup={metricGroup}
@@ -90,7 +100,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: " ",
                   type: "class",
-                  width: 30,
+                  width: 20,
                 },
                 {
                   columnLabel: withinLabel,
@@ -107,10 +117,11 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                       ),
                     ),
                   valueLabel: unitsLabel,
+                  colStyle: { textAlign: "center" },
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  width: 30,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -140,9 +151,9 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: titleLabel,
                     type: "class",
-                    width: 30,
+                    width: 40,
                   },
                   {
                     columnLabel: withinLabel,
@@ -158,6 +169,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
@@ -172,7 +184,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 40,
+                    width: 30,
                   },
                 ]}
               />
@@ -188,7 +200,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: titleLabel,
                     type: "class",
                     width: 30,
                   },
@@ -206,11 +218,12 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 20,
+                    width: 30,
                   },
                   {
                     columnLabel: percWithinLabel,
@@ -220,7 +233,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 40,
+                    width: 35,
                   },
                 ]}
               />
@@ -252,6 +265,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   the total area of estuaries to obtain the % contained within
                   the selected MPA(s). If the selected area includes multiple
                   areas that overlap, the overlap is only counted once.
+                  Estuaries data has been simplified to a tolerance of 1 meter.
                 </p>
               </Trans>
             </Collapse>
@@ -259,5 +273,58 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+const EstuariesObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  const { metricGroup, metrics } = props;
+  const replicateMap: Record<string, number> = { estuaries: 0.12 };
+
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId,
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+
+      const value = squareMeterToMile(metric.value);
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] },
+  );
+
+  return (
+    <>
+      {passes.length > 0 && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>This MPA meets the habitat replicate guidelines for estuaries.</>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for
+              estuaries.
+            </>
+          }
+        />
+      )}
+    </>
   );
 };

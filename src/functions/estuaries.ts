@@ -71,6 +71,8 @@ export async function estuaries(
     [],
   );
 
+  const worldMetrics = genWorldMetrics(sketch, metrics, metricGroup);
+
   return {
     metrics: sortMetrics(
       rekeyMetrics([
@@ -90,4 +92,5 @@ export default new GeoprocessingHandler(estuaries, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["estuariesWorker"],
 });
