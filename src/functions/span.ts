@@ -7,6 +7,7 @@ import {
   DefaultExtraParams,
   runLambdaWorker,
   parseLambdaResponse,
+  genFeatureCollection,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -14,12 +15,15 @@ import {
   Metric,
   ReportResult,
   isMetricArray,
+  isSketchCollection,
   rekeyMetrics,
   sortMetrics,
   toNullSketch,
+  toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { spanWorker } from "./spanWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
+import { bbox, buffer } from "@turf/turf";
 
 /**
  * span: A geoprocessing function that calculates overlap metrics
@@ -39,6 +43,24 @@ export async function span(
     (g) => g.geographyId !== "world",
   );
 
+  const sketches = toSketchArray(sketch);
+  const finalSketches: Sketch<Polygon | MultiPolygon>[] = [];
+  sketches.forEach((sketch) => {
+    sketch.geometry = buffer(sketch, 250, { units: "meters" })!.geometry;
+    finalSketches.push(sketch);
+  });
+
+  const bufferedSketch:
+    | Sketch<Polygon | MultiPolygon>
+    | SketchCollection<Polygon | MultiPolygon> = isSketchCollection(sketch)
+    ? {
+        properties: sketch.properties,
+        bbox: bbox(genFeatureCollection(finalSketches)),
+        type: "FeatureCollection",
+        features: finalSketches,
+      }
+    : finalSketches[0];
+
   const metrics = (
     await Promise.all(
       geographies.map(async (geography) => {
@@ -49,9 +71,9 @@ export async function span(
         };
 
         return process.env.NODE_ENV === "test"
-          ? spanWorker(sketch, parameters)
+          ? spanWorker(bufferedSketch, parameters)
           : runLambdaWorker(
-              sketch,
+              bufferedSketch,
               project.package.name,
               "spanWorker",
               project.geoprocessing.region,
@@ -74,10 +96,10 @@ export async function span(
     metrics: sortMetrics(
       rekeyMetrics([
         ...metrics,
-        ...genWorldMetrics(sketch, metrics, metricGroup),
+        ...genWorldMetrics(bufferedSketch, metrics, metricGroup),
       ]),
     ),
-    sketch: toNullSketch(sketch, true),
+    sketch: toNullSketch(bufferedSketch, true),
   };
 }
 
@@ -89,4 +111,5 @@ export default new GeoprocessingHandler(span, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["spanWorker"],
 });

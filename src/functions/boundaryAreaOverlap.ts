@@ -71,4 +71,5 @@ export default new GeoprocessingHandler(boundaryAreaOverlap, {
   timeout: 500,
   requiresProperties: [],
   memory: 10240,
+  workers: ["boundaryAreaOverlapWorker"],
 });

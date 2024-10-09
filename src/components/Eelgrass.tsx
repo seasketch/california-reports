@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -10,7 +11,9 @@ import {
 import {
   GeogProp,
   Metric,
+  MetricGroup,
   ReportResult,
+  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -43,9 +46,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
   // Labels
   const titleLabel = t("Eelgrass");
   const mapLabel = t("Map");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
-  const unitsLabel = t("sq. mi.");
+  const withinLabel = t("Area Within MPA(s)");
+  const percWithinLabel = t("% Total Eelgrass Area");
+  const unitsLabel = t("mi²");
 
   return (
     <ResultsCard title={titleLabel} functionName="eelgrass">
@@ -86,6 +89,13 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
               </p>
             </Trans>
 
+            {!isCollection && (
+              <EelgrassObjectives
+                metricGroup={metricGroup}
+                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
+              />
+            )}
+
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
               metricGroup={metricGroup}
@@ -94,7 +104,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 {
                   columnLabel: " ",
                   type: "class",
-                  width: 30,
+                  width: 20,
                 },
                 {
                   columnLabel: withinLabel,
@@ -114,7 +124,8 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   chartOptions: {
                     showTitle: true,
                   },
-                  width: 20,
+                  colStyle: { textAlign: "center" },
+                  width: 30,
                 },
                 {
                   columnLabel: percWithinLabel,
@@ -144,9 +155,9 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: titleLabel,
                     type: "class",
-                    width: 30,
+                    width: 40,
                   },
                   {
                     columnLabel: withinLabel,
@@ -162,6 +173,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
@@ -176,7 +188,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 40,
+                    width: 30,
                   },
                 ]}
               />
@@ -194,7 +206,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     columnLabel: "Eelgrass",
                     type: "class",
-                    width: 30,
+                    width: 25,
                   },
                   {
                     columnLabel: withinLabel,
@@ -210,11 +222,12 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                           { keepSmallValues: true },
                         ),
                       ),
+                    colStyle: { textAlign: "center" },
                     valueLabel: unitsLabel,
                     chartOptions: {
                       showTitle: true,
                     },
-                    width: 20,
+                    width: 30,
                   },
                   {
                     columnLabel: percWithinLabel,
@@ -264,5 +277,58 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
+  );
+};
+
+const EelgrassObjectives = (props: {
+  metricGroup: MetricGroup;
+  metrics: Metric[];
+}) => {
+  const { metricGroup, metrics } = props;
+  const replicateMap: Record<string, number> = { eelgrass: 0.12 };
+
+  // Get habitat replicates passes and fails for this MPA
+  const { passes, fails } = metricGroup.classes.reduce(
+    (acc: { passes: string[]; fails: string[] }, curClass) => {
+      const metric = firstMatchingMetric(
+        metrics,
+        (m) => m.classId === curClass.classId,
+      );
+      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
+
+      const value = squareMeterToMile(metric.value);
+      const replicateValue = replicateMap[curClass.classId];
+
+      value > replicateValue || (!replicateValue && value)
+        ? acc.passes.push(curClass.display)
+        : acc.fails.push(curClass.display);
+
+      return acc;
+    },
+    { passes: [], fails: [] },
+  );
+
+  return (
+    <>
+      {passes.length > 0 && (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={
+            <>This MPA meets the habitat replicate guidelines for eelgrass.</>
+          }
+        />
+      )}
+      {fails.length > 0 && (
+        <ObjectiveStatus
+          status={"no"}
+          msg={
+            <>
+              This MPA does not meet the habitat replicate guidelines for
+              eelgrass.
+            </>
+          }
+        />
+      )}
+    </>
   );
 };

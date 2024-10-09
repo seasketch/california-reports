@@ -33,6 +33,7 @@ export const SketchAttributesCard = ({
     "Bioregion",
     "Petition",
     "Change_Cat",
+    "PetitionLi",
   ];
 
   if (autoHide === true && properties.userAttributes.length === 0) {
@@ -84,6 +85,19 @@ export const SketchAttributesCard = ({
                   valueLabel =
                     attr.alternateLanguages[i18n.language].valueLabel;
                 }
+              } else if (attr.value) {
+                valueLabel = attr.value;
+
+                // If language not english, override with translation if available
+                if (
+                  i18n.language !== "en" &&
+                  attr.alternateLanguages &&
+                  Object.keys(attr.alternateLanguages).includes(i18n.language)
+                ) {
+                  // Swap in translation
+                  valueLabel =
+                    attr.alternateLanguages[i18n.language].valueLabel;
+                }
               } else {
                 valueLabel = t("N/A");
               }
@@ -109,10 +123,19 @@ export const SketchAttributesCard = ({
                       paddingLeft: 6,
                     }}
                   >
-                    {
+                    {typeof valueLabel === "string" &&
+                    valueLabel.startsWith("http") ? (
+                      <a
+                        href={valueLabel}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t(valueLabel)}
+                      </a>
+                    ) : (
                       /* @ts-expect-error type mismatch */
                       t(valueLabel)
-                    }
+                    )}
                   </td>
                   {/* <span>{attr.label}</span>=<span>{attr.value}</span> */}
                 </tr>
@@ -189,7 +212,10 @@ export const SketchAttributesCard = ({
                       paddingLeft: 6,
                     }}
                   >
-                    {t(valueLabel) /* i18next-extract-disable-line */}
+                    {
+                      /* @ts-expect-error type mismatch */
+                      t(valueLabel)
+                    }
                   </td>
                   {/* <span>{attr.label}</span>=<span>{attr.value}</span> */}
                 </tr>

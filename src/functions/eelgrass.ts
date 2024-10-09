@@ -90,4 +90,5 @@ export default new GeoprocessingHandler(eelgrass, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["eelgrassWorker"],
 });

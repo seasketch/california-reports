@@ -265,5 +265,31 @@
         "datasourceId": "depth"
       }
     ]
+  },
+  {
+    "metricId": "spacing",
+    "type": "valueOverlap",
+    "classes": [
+      {
+        "classId": "beaches",
+        "display": "Beach",
+        "datasourceId": "beaches"
+      },
+      {
+        "classId": "rocky_shores",
+        "display": "Rocky Shores",
+        "datasourceId": "rocky_shores"
+      },
+      {
+        "classId": "eelgrass",
+        "display": "Eelgrass",
+        "datasourceId": "eelgrass"
+      },
+      {
+        "classId": "estuaries",
+        "display": "Estuaries",
+        "datasourceId": "estuaries"
+      }
+    ]
   }
 ]

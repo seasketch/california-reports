@@ -48,7 +48,7 @@ export async function shoretypes(
   const sketches = toSketchArray(sketch);
   const finalSketches: Sketch<Polygon | MultiPolygon>[] = [];
   sketches.forEach((sketch) => {
-    sketch.geometry = buffer(sketch, 200, { units: "meters" })!.geometry;
+    sketch.geometry = buffer(sketch, 250, { units: "meters" })!.geometry;
     finalSketches.push(sketch);
   });
 
@@ -125,4 +125,5 @@ export default new GeoprocessingHandler(shoretypes, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  workers: ["shoretypesWorker"],
 });
