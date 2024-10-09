@@ -1,7 +1,8 @@
 import fs from "fs-extra";
-import * as path from "path";
-import languages from "../supported.js";
+import path from "node:path";
+import languages from "../languages.json" with { type: "json" };
 import extraTerms from "../extraTerms.json" with { type: "json" };
+import { LangDetails } from "../languages.js";
 
 export type Translations = Record<string, string>;
 
@@ -28,6 +29,34 @@ const projectPath = (() => {
   );
 })();
 
+// read project languages
+let projectLanguages: LangDetails[] = languages;
+if (fs.existsSync(`${projectPath}/basic.json`)) {
+  const basic = fs.readJsonSync(`${projectPath}/basic.json`);
+  if (basic.languages && Array.isArray(basic.languages)) {
+    projectLanguages = languages.filter((l) =>
+      basic.languages.includes(l.code),
+    );
+  } else {
+    console.error(
+      `Missing language codes in ${projectPath}/basic.json, run upgrade command to add`,
+    );
+    process.exit(1);
+  }
+
+  if (!basic.languages.includes("EN")) {
+    console.error(
+      'Expected "EN" to be included in the languages array in basic.json',
+    );
+    process.exit(1);
+  }
+
+  if (basic.languages.length < 1) {
+    console.log(`No languages found to publish in ${projectPath}/basic.json`);
+    process.exit(1);
+  }
+}
+
 const config = await fs.readJSON(`${projectPath}/i18n.json`);
 
 /**
@@ -35,10 +64,17 @@ const config = await fs.readJSON(`${projectPath}/i18n.json`);
  * If you make local changes to the translation files, make sure you run this after importTerms.ts
  * so that POEditor is the source of truth.
  */
-(async () => {
-  const localEnglishTerms = await publishEnglish();
-  await publishNonEnglish(localEnglishTerms);
-})();
+
+const numLanguages = projectLanguages.length;
+console.log(
+  `Publishing terms with context '${config.remoteContext}' to namespace '${config.localNamespace}' ${
+    projectLanguages ? "for " + numLanguages + " languages" : ""
+  } `,
+);
+console.log();
+
+const localEnglishTerms = await publishEnglish();
+await publishNonEnglish(localEnglishTerms);
 
 /**
  * Publishes terms and english translations extracted from source code to POEditor,
@@ -144,7 +180,7 @@ async function publishEnglish() {
       termsToUpdate.push(publishedTerm);
     } else if (
       publishedTerm.obsolete === false &&
-      publishedTerm.tags.indexOf("obsolete") !== -1
+      publishedTerm.tags.includes("obsolete")
     ) {
       publishedTerm.tags = publishedTerm.tags.filter((t) => t !== "obsolete");
       termsToUpdate.push(publishedTerm);
@@ -167,12 +203,12 @@ async function publishEnglish() {
     );
 
     const enTermsUpdatedResult = await enTermsUpdateResponse.json();
-    if (enTermsUpdatedResult.response.status !== "success") {
+    if (enTermsUpdatedResult.response.status === "success") {
+      console.log(`en: updated ${termsToUpdate.length} terms in POEditor`);
+    } else {
       throw new Error(
         `API response was ${enTermsUpdatedResult.response.status}`,
       );
-    } else {
-      console.log(`en: updated ${termsToUpdate.length} terms in POEditor`);
     }
 
     // Update their english translations
@@ -209,14 +245,14 @@ async function publishEnglish() {
 
       const updatedTranslationsResult =
         await updatedTranslationsResponse.json();
-      if (updatedTranslationsResult.response.status !== "success") {
+      if (updatedTranslationsResult.response.status === "success") {
+        console.log(
+          `en: updated translations for ${updatedTranslationsResult.result.translations.updated} terms`,
+        );
+      } else {
         console.log(JSON.stringify(updatedTranslationsResult.response));
         throw new Error(
           `API response was ${updatedTranslationsResult.response.status}`,
-        );
-      } else {
-        console.log(
-          `en: updated translations for ${updatedTranslationsResult.result.translations.updated} terms`,
         );
       }
     }
@@ -239,12 +275,12 @@ async function publishEnglish() {
     );
 
     const addTermsResult = await addTermsResponse.json();
-    if (addTermsResult.response.status !== "success") {
-      throw new Error(`API response was ${addTermsResult.response.status}`);
-    } else {
+    if (addTermsResult.response.status === "success") {
       console.log(
         `en: published ${addTermsResult.result.terms.added} terms to POEditor`,
       );
+    } else {
+      throw new Error(`API response was ${addTermsResult.response.status}`);
     }
 
     // Add their english translations
@@ -277,13 +313,13 @@ async function publishEnglish() {
 
     const addTranslationsResult = await addTranslationsResponse.json();
 
-    if (addTranslationsResult.response.status !== "success") {
-      throw new Error(
-        `API response was ${addTranslationsResult.response.status}`,
-      );
-    } else {
+    if (addTranslationsResult.response.status === "success") {
       console.log(
         `en: published translations for ${addTranslationsResult.result.translations.added} terms to POEditor`,
+      );
+    } else {
+      throw new Error(
+        `API response was ${addTranslationsResult.response.status}`,
       );
     }
   }
@@ -303,7 +339,7 @@ async function publishEnglish() {
  */
 async function publishNonEnglish(localEnglishTerms?: Translations) {
   if (!localEnglishTerms) return;
-  for (const curLang of languages) {
+  for (const curLang of projectLanguages) {
     if (curLang.code === "EN") continue;
 
     const curLangTermsForm = new FormData();
@@ -470,13 +506,13 @@ async function publishNonEnglish(localEnglishTerms?: Translations) {
 
       const addTranslationsResult = await addTranslationsResponse.json();
 
-      if (addTranslationsResult.response.status !== "success") {
-        throw new Error(
-          `API response was ${JSON.stringify(addTranslationsResult.response)}`,
-        );
-      } else {
+      if (addTranslationsResult.response.status === "success") {
         console.log(
           `${curLang.code}: published ${addTranslationsResult.result.translations.added} ${curLang.name} translations to POEditor`,
+        );
+      } else {
+        throw new Error(
+          `API response was ${JSON.stringify(addTranslationsResult.response)}`,
         );
       }
     } else {
