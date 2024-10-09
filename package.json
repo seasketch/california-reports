@@ -1,13 +1,13 @@
 {
-  "name": "@seasketch/base-project",
-  "version": "7.0.0-beta.8",
-  "description": "initial user-installed project",
-  "private": true,
+  "name": "california-reports-stack",
+  "version": "7.0.0-beta.1",
+  "description": "",
+  "private": false,
   "type": "module",
   "keywords": [
     "@seasketch/geoprocessing"
   ],
-  "repositoryUrl": "",
+  "repositoryUrl": "https://github.com/seasketch/california-reports",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/seasketch/california-reports.git"
@@ -16,8 +16,8 @@
     "url": "https://github.com/seasketch/california-reports/issues"
   },
   "homepage": "https://github.com/seasketch/california-reports#readme",
-  "author": "",
-  "license": "",
+  "author": "Abby Vath Meyer",
+  "license": "BSD-3-Clause",
   "scripts": {
     "__test": "TEST_ROOT=$(pwd) geoprocessing test",
     "add:template": "geoprocessing add:template",
@@ -67,7 +67,7 @@
     "@aws-sdk/util-stream": "^3.374.0",
     "@babel/cli": "^7.25.6",
     "@babel/plugin-syntax-import-attributes": "^7.25.6",
-    "@seasketch/geoprocessing": "7.0.0-experimental-language-choice.14+de6941d8",
+    "@seasketch/geoprocessing": "7.0.0-experimental-language-choice.17",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
