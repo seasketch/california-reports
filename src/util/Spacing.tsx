@@ -1,13 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {
-  select,
-  scaleLinear,
-  extent,
-  json,
-  geoTransform,
-  geoPath,
-  line,
-} from "d3";
+import { select, scaleLinear, extent, geoTransform, geoPath, line } from "d3";
 import {
   Feature,
   FeatureCollection,
@@ -17,7 +9,6 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import { bbox, featureCollection } from "@turf/turf";
 import { ObjectiveStatus } from "@seasketch/geoprocessing/client-ui";
-import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import landData from "../../data/bin/landShrunk.01.json";
 
 // Props for the Replicate Map
@@ -35,23 +26,13 @@ function calculateProportionalHeight(
   featureCollection: FeatureCollection<Polygon>,
   fixedWidth: number = 430,
 ): number {
-  // Calculate the bounding box of the feature collection
   const [minX, minY, maxX, maxY] = bbox(featureCollection);
-
-  // Calculate the width and height of the bounding box
   const bboxWidth = maxX - minX;
   const bboxHeight = maxY - minY;
-
-  // Calculate the aspect ratio
   const aspectRatio = bboxWidth / bboxHeight;
-
-  // Calculate the proportional height based on the fixed width
-  const proportionalHeight = fixedWidth / aspectRatio;
-
-  return proportionalHeight;
+  return fixedWidth / aspectRatio;
 }
 
-// Plots replicates and shortest paths between them
 export const ReplicateMap: React.FC<ReplicateMapProps> = ({
   sketch,
   replicates,
@@ -65,24 +46,23 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
     svg.selectAll("*").remove();
 
     const width = 430;
-    const height = calculateProportionalHeight(featureCollection(sketch));
+    const height = calculateProportionalHeight(
+      featureCollection(sketch),
+      width,
+    );
     svg.attr("width", width).attr("height", height);
 
-    // Scale map to extent of sketch nodes with padding
     const nodes = featureCollection(sketch).features.flatMap((feature) =>
       feature.geometry.coordinates.flatMap((coords) => coords),
     );
 
-    // Calculate the extent of the nodes
     const xExtent = extent(nodes, (d) => d[0]) as [number, number];
     const yExtent = extent(nodes, (d) => d[1]) as [number, number];
 
-    // Apply padding to the extent
-    const paddingFactor = 0.1; // 10% padding
+    const paddingFactor = 0.1;
     const xPadding = (xExtent[1] - xExtent[0]) * paddingFactor;
     const yPadding = (yExtent[1] - yExtent[0]) * paddingFactor;
 
-    // Adjusted extents
     const paddedXExtent: [number, number] = [
       xExtent[0] - xPadding,
       xExtent[1] + xPadding,
@@ -95,31 +75,46 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
     const xScale = scaleLinear().domain(paddedXExtent).range([0, width]);
     const yScale = scaleLinear().domain(paddedYExtent).range([height, 0]);
 
-    // Load and plot background land
-    const geojson = landData as FeatureCollection<Polygon>;
     const projection = geoTransform({
       point: function (x, y) {
         this.stream.point(xScale(x), yScale(y));
       },
     });
     const pathGenerator = geoPath().projection(projection);
+
+    // Background land rendering
     svg
       .append("g")
       .selectAll("path")
-      .data(geojson.features)
+      .data(landData.features)
       .enter()
       .append("path")
       .attr("d", (d: any) => pathGenerator(d))
-      .attr("fill", "#e0e0e0")
-      .attr("stroke", "#333");
+      .attr("fill", "#f2f2f2")
+      .attr("stroke", "#aaa")
+      .attr("stroke-width", 1);
 
-    // Plot paths with colors and add hover interaction
     const overlayGroup = svg.append("g");
+
+    // Render paths with smooth transitions
     paths.forEach((d) => {
       const pathData = d.path.geometry.coordinates.map(([x, y]) => [
         xScale(x),
         yScale(y),
       ]);
+
+      // Create tooltip element
+      const tooltip = select(tooltipRef.current)
+        .style("position", "absolute")
+        .style("visibility", "hidden")
+        .style("background", "rgba(255, 255, 255, 0.9)")
+        .style("border", "1px solid #ccc")
+        .style("padding", "5px 10px")
+        .style("border-radius", "8px")
+        .style("font-size", "12px")
+        .style("text-align", "center")
+        .style("color", "#333")
+        .style("pointer-events", "none");
 
       overlayGroup
         .append("path")
@@ -130,15 +125,38 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
         .attr("stroke-width", 3)
         .on("mouseover", (event) => {
           tooltip.style("visibility", "visible");
-          tooltipDiv.text(`${d.distance.toFixed(0)} miles`);
+          tooltip.text(`${d.distance.toFixed(0)} miles`);
         })
-        .on("mouseout", (event) => {
+        .on("mousemove", (event) => {
+          const svgRect = svgRef.current!.getBoundingClientRect(); // Get the bounding box of the SVG
+          const offsetX = event.clientX - svgRect.left; // Mouse X relative to the SVG
+          const offsetY = event.clientY - svgRect.top; // Mouse Y relative to the SVG
+
+          // Position the tooltip near the cursor, relative to the SVG
+          tooltip
+            .style("top", `${offsetY + 10}px`)
+            .style("left", `${offsetX + 10}px`);
+        })
+        .on("mouseout", () => {
           tooltip.style("visibility", "hidden");
         });
     });
 
-    // Plot sketch polygons (MPAs)
-    sketch.forEach((s) => {
+    // Render sketch polygons (MPAs) with refined styles
+    featureCollection(sketch).features.forEach((s) => {
+      // Create tooltip element
+      const tooltip = select(tooltipRef.current)
+        .style("position", "absolute")
+        .style("visibility", "hidden")
+        .style("background", "rgba(255, 255, 255, 0.9)")
+        .style("border", "1px solid #ccc")
+        .style("padding", "5px 10px")
+        .style("border-radius", "8px")
+        .style("font-size", "12px")
+        .style("text-align", "center")
+        .style("color", "#333")
+        .style("pointer-events", "none");
+
       svg
         .append("g")
         .selectAll(".sketch-path")
@@ -147,73 +165,57 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
         .append("path")
         .attr("class", "sketch-path")
         .attr("d", (d) => {
-          const pathData = d.map(([x, y]) => [
-            xScale(x as number),
-            yScale(y as number),
-          ]);
+          const pathData = d.map(([x, y]) => [xScale(x), yScale(y)]);
           return line()(pathData as [number, number][]);
         })
-        .attr(
-          "fill",
-          replicates.includes(s.properties.id) ? "lightgreen" : "white",
-        )
+        .attr("fill", replicates.includes(s.properties.id) ? "#a8e6cf" : "#fff")
         .attr(
           "stroke",
-          replicates.includes(s.properties.id) ? "darkgreen" : "grey",
+          replicates.includes(s.properties.id) ? "#56ab2f" : "#888",
         )
-        .attr("stroke-width", 1)
+        .attr("stroke-width", 1.5)
         .attr("stroke-linejoin", "round")
         .on("mouseover", (event) => {
           tooltip.style("visibility", "visible");
-          tooltipDiv.text(s.properties.name);
+          tooltip.text(s.properties.name);
+        })
+        .on("mousemove", (event) => {
+          const svgRect = svgRef.current!.getBoundingClientRect();
+          const offsetX = event.clientX - svgRect.left;
+          const offsetY = event.clientY - svgRect.top;
+
+          tooltip
+            .style("top", `${offsetY + 10}px`)
+            .style("left", `${offsetX + 10}px`);
         })
         .on("mouseout", (event) => {
-          // Ensure that the mouse is not just passing over another element
           const e = event.toElement || event.relatedTarget;
           if (e && e.closest(".path-link")) return;
           tooltip.style("visibility", "hidden");
         });
     });
-
-    // // Optional: Plot nodes for paths
-    // overlayGroup
-    //   .selectAll(".path-node")
-    //   .data(paths.flatMap((d) => d.path.geometry.coordinates))
-    //   .enter()
-    //   .append("circle")
-    //   .attr("class", "path-node")
-    //   .attr("cx", (d) => xScale(d[0]))
-    //   .attr("cy", (d) => yScale(d[1]))
-    //   .attr("r", 4)
-    //   .attr("fill", "#fff")
-    //   .attr("stroke", "#000")
-    //   .attr("stroke-width", 1);
-
-    const tooltip = svg
-      .append("foreignObject")
-      .attr("id", "svg-tooltip")
-      .attr("x", width - 150)
-      .attr("y", 10)
-      .attr("width", 140)
-      .attr("height", 50)
-      .attr("visibility", "hidden");
-
-    const tooltipDiv = tooltip
-      .append("xhtml:div")
-      .style("background", "rgba(255, 255, 255, 0.9)")
-      .style("border", "1px solid #ccc")
-      .style("padding", "5px 10px")
-      .style("border-radius", "8px")
-      .style("font-size", "12px")
-      .style("text-align", "center")
-      .style("color", "#333");
-  }, [sketch, paths]);
+  }, [sketch, paths, landData, replicates]);
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <svg ref={svgRef}></svg>
-      <div ref={tooltipRef}></div>
-    </>
+      <div
+        ref={tooltipRef}
+        style={{
+          position: "absolute",
+          background: "#fff",
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          padding: "5px 10px",
+          fontSize: "12px",
+          color: "#333",
+          pointerEvents: "none",
+          visibility: "hidden",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          transition: "visibility 0.2s, top 0.2s, left 0.2s",
+        }}
+      ></div>
+    </div>
   );
 };
 
