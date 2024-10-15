@@ -36,6 +36,8 @@
     "src/functions/estuariesWorker.ts",
     "src/functions/substrate.ts",
     "src/functions/substrateWorker.ts",
+    "src/functions/habitat.ts",
+    "src/functions/habitatWorker.ts",
     "src/functions/eelgrass.ts",
     "src/functions/eelgrassWorker.ts",
     "src/functions/bathymetry.ts",
