@@ -544,22 +544,6 @@
     "value": 1850384
   },
   {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 4001318
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 29868495
-  },
-  {
     "geographyId": "central_sr",
     "metricId": "area",
     "classId": "beaches-total",
@@ -1102,22 +1086,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1683508
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 3432966
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 26062915
   },
   {
     "geographyId": "north_br",
@@ -1664,22 +1632,6 @@
     "value": 2602701
   },
   {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 4549060
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 35987400
-  },
-  {
     "geographyId": "north_sr",
     "metricId": "area",
     "classId": "beaches-total",
@@ -2222,22 +2174,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 1461810
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2538392
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 22806226
   },
   {
     "geographyId": "northcentral_sr",
@@ -2784,22 +2720,6 @@
     "value": 1307800
   },
   {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2579020
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 16986712
-  },
-  {
     "geographyId": "south_br",
     "metricId": "area",
     "classId": "beaches-total",
@@ -3342,22 +3262,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 2325491
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 3849749
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 45261701
   },
   {
     "geographyId": "south_sr",
@@ -3904,22 +3808,6 @@
     "value": 2325486
   },
   {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 3849749
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 45261701
-  },
-  {
     "geographyId": "world",
     "metricId": "area",
     "classId": "beaches-total",
@@ -4462,21 +4350,5 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 6778576
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "substrate-1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 12400127
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "substrate-2",
-    "sketchId": null,
-    "groupId": "19045282",
-    "value": 111117596
   }
 ]

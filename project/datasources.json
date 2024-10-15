@@ -380,18 +380,6 @@
     "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif"
   },
   {
-    "datasourceId": "substrate",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "categorical",
-    "band": 1,
-    "noDataValue": -9999,
-    "created": "2024-07-22T18:55:43.392Z",
-    "lastUpdated": "2024-08-13T18:08:51.607Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate_clipped.tif"
-  },
-  {
     "datasourceId": "kelpPersist",
     "geo_type": "raster",
     "formats": ["tif"],
