@@ -33,6 +33,10 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
     rocky_shores: "Rocky Shore",
     beaches: "Beach",
     eelgrass: "Eelgrass",
+    substrate31: "Hard Substrate 30-100m",
+    substrate32: "Soft Substrate 30-100m",
+    substrate101: "Hard Substrate >100m",
+    substrate102: "Soft Substrate >100m",
   };
 
   if (!isCollection)

@@ -3,10 +3,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "0",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 9447,
+      "value": 52,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -14,10 +14,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "1",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 9791,
+      "value": 9489,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -25,10 +25,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "100",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 115,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -36,10 +36,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "101",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 6800,
+      "value": 126,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -47,10 +47,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-201",
+      "classId": "102",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 11,
+      "value": 9947,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -58,10 +58,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-30",
+      "classId": "2",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 50520,
+      "value": 15539,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -69,10 +69,10 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-31",
+      "classId": "200",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 5983,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -80,87 +80,54 @@
     {
       "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "0",
+      "classId": "201",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 17772,
+      "value": 15,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "central_sr",
+      "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "202",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 9447,
+      "value": 6360,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "central_sr",
+      "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "30",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 9791,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "central_sr",
+      "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "31",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 115,
+      "value": 6352,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "central_sr",
+      "geographyId": "central_br",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "32",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 6800,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "habitat",
-      "classId": "-201",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 11,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "habitat",
-      "classId": "-30",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 50520,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "habitat",
-      "classId": "-31",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 5983,
+      "value": 50649,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -171,7 +138,128 @@
       "classId": "0",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 17772,
+      "value": 52,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "1",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 9489,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "100",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "101",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 126,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "102",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 9947,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "2",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 15539,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "200",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "201",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 15,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "202",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 6360,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "30",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "31",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 6352,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "central_sr",
+      "metricId": "habitat",
+      "classId": "32",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 50649,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -179,7 +267,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "0",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -190,7 +278,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "1",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -201,7 +289,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "100",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -212,7 +300,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "101",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -223,7 +311,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-201",
+      "classId": "102",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -234,7 +322,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-30",
+      "classId": "2",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -245,7 +333,7 @@
     {
       "geographyId": "north_br",
       "metricId": "habitat",
-      "classId": "-31",
+      "classId": "200",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -255,6 +343,61 @@
     },
     {
       "geographyId": "north_br",
+      "metricId": "habitat",
+      "classId": "201",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "habitat",
+      "classId": "202",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "habitat",
+      "classId": "30",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "habitat",
+      "classId": "31",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_br",
+      "metricId": "habitat",
+      "classId": "32",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "north_sr",
       "metricId": "habitat",
       "classId": "0",
       "sketchId": "29784",
@@ -267,7 +410,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "1",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -278,7 +421,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "100",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -289,7 +432,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "101",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -300,7 +443,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "102",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -311,7 +454,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-201",
+      "classId": "2",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -322,7 +465,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-30",
+      "classId": "200",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -333,7 +476,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-31",
+      "classId": "201",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -344,7 +487,7 @@
     {
       "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "0",
+      "classId": "202",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -353,9 +496,9 @@
       }
     },
     {
-      "geographyId": "northcentral_sr",
+      "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "30",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -364,9 +507,9 @@
       }
     },
     {
-      "geographyId": "northcentral_sr",
+      "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "31",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -375,53 +518,9 @@
       }
     },
     {
-      "geographyId": "northcentral_sr",
+      "geographyId": "north_sr",
       "metricId": "habitat",
-      "classId": "-101",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "habitat",
-      "classId": "-200",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "habitat",
-      "classId": "-201",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "habitat",
-      "classId": "-30",
-      "sketchId": "29784",
-      "groupId": "band-0",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "habitat",
-      "classId": "-31",
+      "classId": "32",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -441,9 +540,9 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "1",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -452,9 +551,9 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "100",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -463,9 +562,9 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "101",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -474,9 +573,9 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "102",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -485,9 +584,9 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-201",
+      "classId": "2",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -496,9 +595,9 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-30",
+      "classId": "200",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -507,9 +606,53 @@
       }
     },
     {
-      "geographyId": "south_br",
+      "geographyId": "northcentral_sr",
       "metricId": "habitat",
-      "classId": "-31",
+      "classId": "201",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "habitat",
+      "classId": "202",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "habitat",
+      "classId": "30",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "habitat",
+      "classId": "31",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "northcentral_sr",
+      "metricId": "habitat",
+      "classId": "32",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -529,9 +672,9 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "1",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -540,9 +683,9 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "100",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -551,9 +694,9 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "101",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -562,9 +705,9 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "102",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -573,9 +716,9 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-201",
+      "classId": "2",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -584,9 +727,9 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-30",
+      "classId": "200",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -595,9 +738,53 @@
       }
     },
     {
-      "geographyId": "south_sr",
+      "geographyId": "south_br",
       "metricId": "habitat",
-      "classId": "-31",
+      "classId": "201",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "habitat",
+      "classId": "202",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "habitat",
+      "classId": "30",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "habitat",
+      "classId": "31",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_br",
+      "metricId": "habitat",
+      "classId": "32",
       "sketchId": "29784",
       "groupId": "band-0",
       "value": 0,
@@ -617,78 +804,122 @@
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-1",
+      "classId": "1",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 9447,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-100",
+      "classId": "100",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 9791,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-101",
+      "classId": "101",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 115,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-200",
+      "classId": "102",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 6800,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-201",
+      "classId": "2",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 11,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-30",
+      "classId": "200",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 50520,
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
     },
     {
-      "geographyId": "world",
+      "geographyId": "south_sr",
       "metricId": "habitat",
-      "classId": "-31",
+      "classId": "201",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 5983,
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "habitat",
+      "classId": "202",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "habitat",
+      "classId": "30",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "habitat",
+      "classId": "31",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "south_sr",
+      "metricId": "habitat",
+      "classId": "32",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -699,7 +930,128 @@
       "classId": "0",
       "sketchId": "29784",
       "groupId": "band-0",
-      "value": 17772,
+      "value": 52,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "1",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 9489,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "100",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "101",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 126,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "102",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 9947,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "2",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 15539,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "200",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "201",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 15,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "202",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 6360,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "30",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 0,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "31",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 6352,
+      "extra": {
+        "sketchName": "mpa-test"
+      }
+    },
+    {
+      "geographyId": "world",
+      "metricId": "habitat",
+      "classId": "32",
+      "sketchId": "29784",
+      "groupId": "band-0",
+      "value": 50649,
       "extra": {
         "sketchName": "mpa-test"
       }

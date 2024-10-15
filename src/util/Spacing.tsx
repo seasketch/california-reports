@@ -1,5 +1,13 @@
 import React, { useEffect, useRef } from "react";
-import { select, scaleLinear, extent, geoTransform, geoPath, line } from "d3";
+import {
+  select,
+  scaleLinear,
+  extent,
+  geoTransform,
+  geoPath,
+  line,
+  color,
+} from "d3";
 import {
   Feature,
   FeatureCollection,
@@ -124,7 +132,9 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
         .attr("fill", "none")
         .attr("stroke-width", 3)
         .on("mouseover", (event) => {
-          tooltip.style("visibility", "visible");
+          tooltip
+            .style("visibility", "visible")
+            .style("border", `2px solid ${d.color}`);
           tooltip.text(`${d.distance.toFixed(0)} miles`);
         })
         .on("mousemove", (event) => {
@@ -177,6 +187,10 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
         .attr("stroke-linejoin", "round")
         .on("mouseover", (event) => {
           tooltip.style("visibility", "visible");
+          tooltip.style(
+            "border",
+            `2px solid ${replicates.includes(s.properties.id) ? "#56ab2f" : "#888"}`,
+          );
           tooltip.text(s.properties.name);
         })
         .on("mousemove", (event) => {

@@ -135,17 +135,41 @@ export const genSketchTable = (
 
       if (replicate) {
         columns.push({
-          Header: t("Replicate") + " ".repeat(index),
+          Header:
+            (replicateMap[curClass.classId] ? t("Replicate") : " ") +
+            " ".repeat(index),
           accessor: (row: { sketchId: string }) => {
-            const val =
+            let val =
               aggMetrics[row.sketchId][curClass.classId as string][
                 mg.metricId
               ][0].value;
-            const value = squareMeterToMile(
+            let value = squareMeterToMile(
               valueFormatter ? valueFormatter(val) : val,
             );
 
-            return (replicateMap && value > replicateMap[curClass.classId]) ||
+            // Case for habitat report
+            if (curClass.classId === "102" || curClass.classId === "202") {
+              val =
+                aggMetrics[row.sketchId]["102"][mg.metricId][0].value +
+                aggMetrics[row.sketchId]["202"][mg.metricId][0].value;
+              value = squareMeterToMile(
+                valueFormatter ? valueFormatter(val) : val,
+              );
+            } else if (
+              curClass.classId === "101" ||
+              curClass.classId === "201"
+            ) {
+              val =
+                aggMetrics[row.sketchId]["101"][mg.metricId][0].value +
+                aggMetrics[row.sketchId]["201"][mg.metricId][0].value;
+              value = squareMeterToMile(
+                valueFormatter ? valueFormatter(val) : val,
+              );
+            }
+
+            return !replicateMap[curClass.classId] ? (
+              " "
+            ) : (replicateMap && value > replicateMap[curClass.classId]) ||
               (!replicateMap[curClass.classId] && value) ? (
               <CheckCircleFill size={15} style={{ color: "#78c679" }} />
             ) : (

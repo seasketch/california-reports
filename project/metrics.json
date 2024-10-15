@@ -86,48 +86,68 @@
   {
     "metricId": "habitat",
     "type": "areaOverlap",
-    "datasourceId": "hab_ca",
-    "layerId": "caliHab30",
+    "datasourceId": "substrate_depth",
+    "layerId": "XBnYIuaJc",
     "classes": [
       {
         "classId": "0",
         "classKey": "0",
-        "display": "Sediment 0-30m"
+        "display": "Unknown 0-30m"
       },
       {
-        "classId": "-1",
-        "classKey": "-1",
-        "display": "Rock 0-30m"
+        "classId": "1",
+        "classKey": "1",
+        "display": "Hard 0-30m"
       },
       {
-        "classId": "-30",
-        "classKey": "-30",
-        "display": "Sediment 30-100m"
+        "classId": "2",
+        "classKey": "2",
+        "display": "Soft 0-30m"
       },
       {
-        "classId": "-31",
-        "classKey": "-31",
-        "display": "Rock 30-100m"
+        "classId": "30",
+        "classKey": "30",
+        "display": "Unknown 30-100m"
       },
       {
-        "classId": "-100",
-        "classKey": "-100",
-        "display": "Sediment 100-200m"
+        "classId": "31",
+        "classKey": "31",
+        "display": "Hard 30-100m"
       },
       {
-        "classId": "-101",
-        "classKey": "-101",
-        "display": "Rock 100-200m"
+        "classId": "32",
+        "classKey": "32",
+        "display": "Soft 30-100m"
       },
       {
-        "classId": "-200",
-        "classKey": "-200",
-        "display": "Sediment >200m"
+        "classId": "100",
+        "classKey": "100",
+        "display": "Unknown 100-200m"
       },
       {
-        "classId": "-201",
-        "classKey": "-201",
-        "display": "Rock >200m"
+        "classId": "101",
+        "classKey": "101",
+        "display": "Hard 100-200m"
+      },
+      {
+        "classId": "102",
+        "classKey": "102",
+        "display": "Soft 100-200m"
+      },
+      {
+        "classId": "200",
+        "classKey": "200",
+        "display": "Unknown >200m"
+      },
+      {
+        "classId": "201",
+        "classKey": "201",
+        "display": "Hard >200m"
+      },
+      {
+        "classId": "202",
+        "classKey": "202",
+        "display": "Soft >200m"
       }
     ]
   },
@@ -289,6 +309,26 @@
         "classId": "estuaries",
         "display": "Estuaries",
         "datasourceId": "estuaries"
+      },
+      {
+        "classId": "substrate31",
+        "display": "Hard Substrate (30-100m)",
+        "datasourceId": "substrate31"
+      },
+      {
+        "classId": "substrate32",
+        "display": "Soft Substrate (30-100m)",
+        "datasourceId": "substrate32"
+      },
+      {
+        "classId": "substrate101",
+        "display": "Hard Substrate (>100m)",
+        "datasourceId": "substrate101"
+      },
+      {
+        "classId": "substrate102",
+        "display": "Soft Substrate (>100m)",
+        "datasourceId": "substrate102"
       }
     ]
   }

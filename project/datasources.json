@@ -452,5 +452,17 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/shoretypes2m.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate_depth_hires_30m.tif",
+    "band": 1,
+    "geo_type": "raster",
+    "datasourceId": "substrate_depth",
+    "formats": ["tif"],
+    "created": "2024-10-15T16:10:31.893Z",
+    "lastUpdated": "2024-10-15T16:10:31.893Z",
+    "noDataValue": -9999,
+    "measurementType": "categorical",
+    "precalc": true
   }
 ]

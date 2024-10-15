@@ -2,10 +2,10 @@ import React from "react";
 import { KelpMax } from "./KelpMax.js";
 import { Shoretypes } from "./Shoretypes.js";
 import { Estuaries } from "./Estuaries.js";
-import { Substrate } from "./Substrate.js";
 import { Eelgrass } from "./Eelgrass.js";
 import { KelpPersist } from "./KelpPersist.js";
 import { Depth } from "./Depth.js";
+import { Habitat } from "./Habitat.js";
 
 const ReportPage = () => {
   return (
@@ -16,7 +16,7 @@ const ReportPage = () => {
       <Shoretypes />
       <Estuaries />
       <Eelgrass />
-      <Substrate />
+      <Habitat />
     </>
   );
 };
