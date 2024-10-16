@@ -155,11 +155,7 @@ export async function spacingWorker(
                 .filter((skm) => skm.sketchId === m.sketchId)
                 .reduce((acc, val) => acc + val.value, 0),
             );
-            console.log(
-              extraParams.datasourceId,
-              value,
-              replicateTest[extraParams.datasourceId].replicateVal,
-            );
+
             return value > replicateTest[extraParams.datasourceId].replicateVal;
           });
 

@@ -8,9 +8,8 @@ const dataDir = "./data/bin";
 const fullPath = (s: string) => path.join(dataDir, s);
 const watersPath = fullPath("clippingLayer.01.geojson");
 const landPath = fullPath("land.01.geojson");
-const landShrunkOut = fullPath("landShrunk.01.geojson");
-const jsonOut = fullPath("network.01.nogridJson.json");
-const nodesOut = fullPath("nodes.01nogrid.json");
+const landShrunkOut = fullPath("landShrunk.01.json");
+const jsonOut = fullPath("network.01.json");
 
 // Read and process land data
 function loadAndShrinkLandData(landFile: string): any {
@@ -34,24 +33,6 @@ export function extractVerticesFromPolygon(
   });
 }
 
-// Add grid nodes within polygons
-function addGridNodes(
-  polygon: any,
-  featureIndex: number,
-  vertices: Map<string, number[]>
-): void {
-  const bbox = turf.bbox(turf.polygon(polygon));
-  const grid = turf.pointGrid(bbox, 3, { units: "miles" });
-
-  grid.features.forEach((point: any, gridIndex: number) => {
-    const [x, y] = point.geometry.coordinates;
-    if (turf.booleanPointInPolygon(point, turf.polygon(polygon))) {
-      const id = `gridnode_${featureIndex}_${gridIndex}`;
-      vertices.set(id, [x, y]);
-    }
-  });
-}
-
 // Create graph with vertices
 function createGraph(watersData: any): graphlib.Graph {
   const G = new graphlib.Graph();
@@ -64,25 +45,12 @@ function createGraph(watersData: any): graphlib.Graph {
         featureIndex,
         vertices
       );
-      //addGridNodes(feature.geometry.coordinates, featureIndex, vertices);
     } else if (feature.geometry.type === "MultiPolygon") {
       feature.geometry.coordinates.forEach((polygon: any) => {
         extractVerticesFromPolygon(polygon, featureIndex, vertices);
-        //addGridNodes(polygon, featureIndex, vertices);
       });
     }
   });
-
-  fs.writeFileSync(
-    nodesOut,
-    JSON.stringify(
-      turf.featureCollection(
-        Array.from(vertices.values()).map((coord, id) =>
-          turf.point(coord, { id })
-        )
-      )
-    )
-  );
 
   vertices.forEach((coord, id) => {
     G.setNode(id, coord);

@@ -20,7 +20,7 @@ import {
 import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { spacingWorker } from "./spacingWorker.js";
 import graphlib from "graphlib";
-import graphData from "../../data/bin/network.01.nogridJson.json";
+import graphData from "../../data/bin/network.01.json";
 import landData from "../../data/bin/landShrunk.01.json";
 import {
   bboxPolygon,
@@ -52,7 +52,6 @@ export async function spacing(
   const metricGroup = project.getMetricGroup("spacing");
 
   // First, start the spacing workers to calculate metrics
-  console.log("Starting spacing workers");
   const metricPromises: Promise<
     { id: string; replicateIds: string[] } | InvocationResponse
   >[] = [];
@@ -74,15 +73,9 @@ export async function spacing(
 
   // Then add the sketches to the graph
   const sketchArray = toSketchArray(sketch);
-  let addSketchStart = Date.now();
   const finalGraph = await addSketchesToGraph(sketch, request);
-  let addSketchEnd = Date.now();
-  console.log(
-    `Adding sketches to graph took ${addSketchEnd - addSketchStart} ms`,
-  );
 
   // Await the replicate metrics
-  let start = Date.now();
   const replicates: Record<string, string[]> = {};
   (await Promise.all(metricPromises)).forEach((result) => {
     const finalResult =
@@ -94,11 +87,8 @@ export async function spacing(
           });
     replicates[finalResult.id] = finalResult.replicateIds;
   });
-  let end = Date.now();
-  console.log(`Waited an additional ${end - start} ms for metrics`);
 
   // Generate MST
-  let mstStart = Date.now();
   const result = await Promise.all(
     metricGroup.classes.map(async (curClass) => {
       const classReplicateIds = replicates[curClass.datasourceId!];
@@ -184,9 +174,6 @@ export async function spacing(
       };
     }),
   );
-
-  let mstEnd = Date.now();
-  console.log(`Generating all paths: ${mstEnd - mstStart} ms`);
 
   return {
     sketch: sketchArray.map((sketch) => simplify(sketch, { tolerance: 0.005 })),
@@ -352,8 +339,6 @@ function findShortestPath(
   let minTotalDistance = Infinity;
 
   // Iterate over all nodes in nodes0
-  let start = Date.now();
-
   nodes0.forEach((node0) => {
     // Run Dijkstra's algorithm for node0
     const pathResults = graphlib.alg.dijkstra(graph, node0, (edge) =>
@@ -400,8 +385,6 @@ function findShortestPath(
       }
     });
   });
-  let end = Date.now();
-  console.log(`Checking distances took ${end - start} ms`);
 
   if (minTotalDistance === Infinity) {
     throw new Error(
