@@ -282,62 +282,6 @@
   {
     "geographyId": "central_br",
     "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 283975
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 207149
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 4217
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 370436
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1023
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1743886
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 125614
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "valid",
     "classId": "hab_ca-0",
     "sketchId": null,
     "groupId": "band-0",
@@ -822,62 +766,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 25303955
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 234061
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 207149
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 4217
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 370436
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1023
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1587761
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 114499
   },
   {
     "geographyId": "central_sr",
@@ -1370,62 +1258,6 @@
   {
     "geographyId": "north_br",
     "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 310759
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 176302
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1970
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 21856
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 203
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 2379480
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 188751
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "valid",
     "classId": "hab_ca-0",
     "sketchId": null,
     "groupId": "band-0",
@@ -1910,62 +1742,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 6116599
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 172152
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 165112
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1924
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 218569
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 203
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1347782
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 110166
   },
   {
     "geographyId": "north_sr",
@@ -2458,62 +2234,6 @@
   {
     "geographyId": "northcentral_sr",
     "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 188521
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 11190
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 46
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 0
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 0
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1187823
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 89700
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "valid",
     "classId": "hab_ca-0",
     "sketchId": null,
     "groupId": "band-0",
@@ -2998,62 +2718,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 19050312
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 187000
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 448987
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 14704
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 900821
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 22904
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1895839
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 124988
   },
   {
     "geographyId": "south_br",
@@ -3546,62 +3210,6 @@
   {
     "geographyId": "south_sr",
     "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 187000
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 448987
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 14704
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 900821
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 22904
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1895839
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 124988
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "valid",
     "classId": "hab_ca-0",
     "sketchId": null,
     "groupId": "band-0",
@@ -4086,62 +3694,6 @@
     "sketchId": null,
     "groupId": "band-0",
     "value": 60187807
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--1",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 781734
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--100",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 832438
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--101",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 20891
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--200",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 1293113
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--201",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 24130
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--30",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 6019205
-  },
-  {
-    "geographyId": "world",
-    "metricId": "valid",
-    "classId": "hab_ca--31",
-    "sketchId": null,
-    "groupId": "band-0",
-    "value": 439353
   },
   {
     "geographyId": "world",
