@@ -86,7 +86,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
           areaMetric.value / totalAreaMetric.value,
         );
         const areaUnitDisplay = t("mi²");
-        const mapLabel = t("Show Map Layer");
+        const mapLabel = t("Show California State Waters On Map");
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
@@ -321,6 +321,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     MPA(s). If MPA boundaries overlap, the overlap is only
                     counted once.
                   </p>
+                  <p>Last updated: October 29, 2024.</p>
                 </Trans>
               </Collapse>
             </ToolbarCard>

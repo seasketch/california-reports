@@ -307,6 +307,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
                   so area calculations are estimates. Final statistics should be
                   calculated in desktop GIS tools.
                 </p>
+                <p>Last updated: October 29, 2024.</p>
               </Trans>
             </Collapse>
           </ReportError>

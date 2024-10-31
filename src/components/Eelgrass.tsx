@@ -271,6 +271,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   overlap, the overlap is only counted once. Eelgrass data has
                   been simplified to a tolerance of 5 meters.
                 </p>
+                <p>Last updated: October 29, 2024.</p>
               </Trans>
             </Collapse>
           </ReportError>

@@ -299,6 +299,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   Selected MPA(s) were buffered by 250 meters to ensure overlap
                   with shoreline habitats data layer.
                 </p>
+                <p>Last updated: October 29, 2024.</p>
               </Trans>
             </Collapse>
           </ReportError>

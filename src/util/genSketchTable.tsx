@@ -181,7 +181,7 @@ export const genSketchTable = (
 
       if (size) {
         columns.push({
-          Header: t("Min. Size") + " ".repeat(index),
+          Header: t("Minimum") + " ".repeat(index),
           accessor: (row: { sketchId: string }) => {
             const value = squareMeterToMile(
               aggMetrics[row.sketchId][curClass.classId as string][
@@ -196,7 +196,7 @@ export const genSketchTable = (
           },
         });
         columns.push({
-          Header: t("Preferred Size") + " ".repeat(index),
+          Header: t("Preferred") + " ".repeat(index),
           accessor: (row: { sketchId: string }) => {
             const value = squareMeterToMile(
               aggMetrics[row.sketchId][curClass.classId as string][

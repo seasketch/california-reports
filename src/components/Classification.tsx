@@ -35,6 +35,9 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
   .styled {
     font-size: 13px;
   }
+  .styled td:nth-child(2) {
+    line-height: 1.5;
+  }
 `;
 
 /**
@@ -54,12 +57,20 @@ export const ClassificationCard: React.FunctionComponent = () => {
           <ReportError>
             <p>
               The following classifications are used for designating managed
-              marine and estuarine areas in California: State Marine Reserve
-              (SMR), State Marine Conservation Area (SMCA), SMCA no-take, State
-              Marine Recreational Management Area (SMRMA), and Special Closure.
+              marine and estuarine areas in California:
+            </p>
+            <p>
+              • State Marine Reserve (SMR)
+              <br />• State Marine Conservation Area (SMCA)
+              <br />• State Marine Conservation Area No-Take (SMCA No-Take)
+              <br />• State Marine Recreational Management Area (SMRMA)
+              <br />• Special Closure{" "}
+            </p>
+            <p>
               In addition, the classification State Marine Park (SMP) is used by
               the California Department of Parks and Recreation.
             </p>
+
             {isCollection
               ? sketchCollectionReport(data.sketch, data.metrics, t)
               : sketchReport(data.metrics, t)}
@@ -179,6 +190,7 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
           )}
         </GroupPill>
       ),
+      style: { textAlign: "center", width: "50%" },
     },
   ];
 
@@ -214,6 +226,7 @@ export const ClassificationLearnMore: React.FunctionComponent<
           See the Glossary for more detailed explanations of the classification
           levels.
         </p>
+        <p>Last updated: October 29, 2024.</p>
       </Trans>
     </>
   );

@@ -90,11 +90,6 @@
     "layerId": "K2Adf5dT_",
     "classes": [
       {
-        "classId": "0",
-        "classKey": "0",
-        "display": "Unknown 0-30m"
-      },
-      {
         "classId": "1",
         "classKey": "1",
         "display": "Hard 0-30m"
@@ -103,11 +98,6 @@
         "classId": "2",
         "classKey": "2",
         "display": "Soft 0-30m"
-      },
-      {
-        "classId": "30",
-        "classKey": "30",
-        "display": "Unknown 30-100m"
       },
       {
         "classId": "31",
@@ -120,11 +110,6 @@
         "display": "Soft 30-100m"
       },
       {
-        "classId": "100",
-        "classKey": "100",
-        "display": "Unknown 100-200m"
-      },
-      {
         "classId": "101",
         "classKey": "101",
         "display": "Hard 100-200m"
@@ -133,11 +118,6 @@
         "classId": "102",
         "classKey": "102",
         "display": "Soft 100-200m"
-      },
-      {
-        "classId": "200",
-        "classKey": "200",
-        "display": "Unknown >200m"
       },
       {
         "classId": "201",

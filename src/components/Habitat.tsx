@@ -28,11 +28,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-import { CheckCircleFill, Table, XCircleFill } from "@styled-icons/bootstrap";
-import {
-  genSketchTable,
-  ReplicateAreaSketchTableStyled,
-} from "../util/genSketchTable.js";
+import { genSketchTable } from "../util/genSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -58,6 +54,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
   return (
     <ResultsCard title={titleLabel} functionName="habitat">
       {(data: ReportResult) => {
+        console.log("Habitat data");
+        console.log(data);
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         let valueMetrics: Metric[] = [];
@@ -90,6 +88,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
         });
 
         const metrics = [...valueMetrics, ...percMetrics];
+
+        console.log(metrics);
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
@@ -150,9 +150,9 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                         squareMeterToMile(
                           typeof val === "string"
                             ? parseInt(val) *
-                                29.27436410518505738 *
-                                29.27436410518505738
-                            : val * 29.27436410518505738 * 29.27436410518505738,
+                                9.710648864705849093 *
+                                9.710648864705849093
+                            : val * 9.710648864705849093 * 9.710648864705849093,
                         ),
                         2,
                         { keepSmallValues: true },
@@ -207,11 +207,11 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                             squareMeterToMile(
                               typeof val === "string"
                                 ? parseInt(val) *
-                                    29.27436410518505738 *
-                                    29.27436410518505738
+                                    9.710648864705849093 *
+                                    9.710648864705849093
                                 : val *
-                                    29.27436410518505738 *
-                                    29.27436410518505738,
+                                    9.710648864705849093 *
+                                    9.710648864705849093,
                             ),
                             2,
                             { keepSmallValues: true },
@@ -268,11 +268,11 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                             squareMeterToMile(
                               typeof val === "string"
                                 ? parseInt(val) *
-                                    29.27436410518505738 *
-                                    29.27436410518505738
+                                    9.710648864705849093 *
+                                    9.710648864705849093
                                 : val *
-                                    29.27436410518505738 *
-                                    29.27436410518505738,
+                                    9.710648864705849093 *
+                                    9.710648864705849093,
                             ),
                             2,
                             { keepSmallValues: true },
@@ -313,7 +313,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   t,
                   {
                     valueFormatter: (val) =>
-                      val * 29.27436410518505738 * 29.27436410518505738,
+                      val * 9.710648864705849093 * 9.710648864705849093,
                     replicate: true,
                     replicateMap: {
                       32: 7,
@@ -340,6 +340,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   counted once. Habitat data has been downscaled to 30x30 meter
                   resolution.
                 </p>
+                <p>Last updated: October 29, 2024.</p>
               </Trans>
             </Collapse>
           </ReportError>
@@ -366,7 +367,7 @@ const SubstrateObjectives = (props: {
     if (!metric) throw new Error(`Expected metric for substrate31`);
     return (
       squareMeterToMile(
-        metric.value * 29.27436410518505738 * 29.27436410518505738,
+        metric.value * 9.710648864705849093 * 9.710648864705849093,
       ) > replicateMap["31"]
     );
   })();
@@ -375,7 +376,7 @@ const SubstrateObjectives = (props: {
     if (!metric) throw new Error(`Expected metric for substrate32`);
     return (
       squareMeterToMile(
-        metric.value * 29.27436410518505738 * 29.27436410518505738,
+        metric.value * 9.710648864705849093 * 9.710648864705849093,
       ) > replicateMap["32"]
     );
   })();
@@ -388,8 +389,8 @@ const SubstrateObjectives = (props: {
     return (
       squareMeterToMile(
         (metric101.value + metric201.value) *
-          29.27436410518505738 *
-          29.27436410518505738,
+          9.710648864705849093 *
+          9.710648864705849093,
       ) > replicateMap["101"]
     );
   })();
@@ -401,8 +402,8 @@ const SubstrateObjectives = (props: {
     return (
       squareMeterToMile(
         (metric102.value + metric202.value) *
-          29.27436410518505738 *
-          29.27436410518505738,
+          9.710648864705849093 *
+          9.710648864705849093,
       ) > replicateMap["102"]
     );
   })();

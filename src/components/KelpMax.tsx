@@ -255,7 +255,6 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { replicate: true, replicateMap: { kelpMax: 1.1 } },
                 )}
               </Collapse>
             )}
@@ -279,6 +278,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   estimates. Final reported statistics should be calculated in
                   Desktop GIS tools.
                 </p>
+                <p>Last updated: October 29, 2024.</p>
               </Trans>
             </Collapse>
           </ReportError>

@@ -442,15 +442,15 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/substrate/substrate_depth_hires_30m.tif",
-    "band": 1,
-    "geo_type": "raster",
     "datasourceId": "substrate_depth",
+    "geo_type": "raster",
     "formats": ["tif"],
-    "created": "2024-10-15T16:10:31.893Z",
-    "lastUpdated": "2024-10-15T16:10:31.893Z",
-    "noDataValue": -9999,
+    "precalc": true,
     "measurementType": "categorical",
-    "precalc": true
+    "band": 1,
+    "noDataValue": -9999,
+    "created": "2024-10-15T16:10:31.893Z",
+    "lastUpdated": "2024-10-29T21:15:31.933Z",
+    "src": "data/src/California MPAs 2024/Plus_Depth_Substrate.tif"
   }
 ]

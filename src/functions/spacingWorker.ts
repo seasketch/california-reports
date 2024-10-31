@@ -45,22 +45,22 @@ const replicateTest: Record<
   },
   substrate31: {
     valueFormatter: (val: number) =>
-      squareMeterToMile(val * 29.27436410518505738 * 29.27436410518505738),
+      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
     replicateVal: 0.13,
   },
   substrate101: {
     valueFormatter: (val: number) =>
-      squareMeterToMile(val * 29.27436410518505738 * 29.27436410518505738),
+      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
     replicateVal: 0.13,
   },
   substrate32: {
     valueFormatter: (val: number) =>
-      squareMeterToMile(val * 29.27436410518505738 * 29.27436410518505738),
+      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
     replicateVal: 7,
   },
   substrate102: {
     valueFormatter: (val: number) =>
-      squareMeterToMile(val * 29.27436410518505738 * 29.27436410518505738),
+      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
     replicateVal: 17,
   },
 };

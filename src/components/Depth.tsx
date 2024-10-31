@@ -84,6 +84,7 @@ export const Depth: React.FunctionComponent = () => {
                     📈 Report: Calculates the minimum, average, and maximum
                     ocean depth within the selected MPA(s).
                   </p>
+                  <p>Last updated: October 29, 2024.</p>
                 </Trans>
               </Collapse>
             </ToolbarCard>
