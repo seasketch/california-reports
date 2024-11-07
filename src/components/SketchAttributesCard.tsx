@@ -27,7 +27,6 @@ export const SketchAttributesCard = ({
   const attributesLabel = t("More Info");
 
   const propertiesToDisplay = [
-    "type",
     "proposed_designation",
     "Study_Regi",
     "Bioregion",
@@ -113,7 +112,9 @@ export const SketchAttributesCard = ({
                       paddingTop: 6,
                     }}
                   >
-                    {label}
+                    {label === "Proposed Designation (type)"
+                      ? "Designation"
+                      : label}
                   </td>
                   <td
                     style={{
@@ -202,7 +203,9 @@ export const SketchAttributesCard = ({
                       paddingTop: 6,
                     }}
                   >
-                    {label}
+                    {label === "Proposed Designation (type)"
+                      ? "Designation"
+                      : label}
                   </td>
                   <td
                     style={{
