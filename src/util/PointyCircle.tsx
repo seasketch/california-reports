@@ -17,15 +17,21 @@ const StyledClassCircle = styled(StyledCircle)`
   font-weight: bold;
 `;
 
+const StyledFullCircle = styled(StyledClassCircle)`
+  background-color: ${(props) => `${props.color}`};
+`;
+
 /** Circle with pointy top right corner */
 export const PointyCircle: React.FunctionComponent<CircleProps> = ({
   children,
   color,
   size,
 }) => {
-  return (
+  return children ? (
     <StyledClassCircle color={color} size={size}>
       {children}
     </StyledClassCircle>
+  ) : (
+    <StyledFullCircle color={color} size={size} />
   );
 };
