@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  LayerToggle,
   ObjectiveStatus,
   ReportError,
   ResultsCard,
@@ -24,6 +23,7 @@ import {
 import project from "../../project/projectClient.js";
 import { genSketchTable } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
+import { LayerToggle } from "../util/LayerToggle.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
