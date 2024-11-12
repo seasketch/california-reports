@@ -6,7 +6,6 @@ import {
   Column,
   Table,
   ReportTableStyled,
-  PointyCircle,
   RbcsMpaClassPanelProps,
   RbcsIcon,
   GroupPill,
@@ -29,6 +28,7 @@ import {
   groupDisplayMapPl,
   groupDisplayMapSg,
 } from "../util/getGroup.js";
+import { PointyCircle } from "../util/PointyCircle.js";
 
 // Table styling for Show by MPA table
 export const SmallReportTableStyled = styled(ReportTableStyled)`
