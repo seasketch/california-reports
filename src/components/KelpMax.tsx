@@ -8,6 +8,7 @@ import {
   ResultsCard,
   useSketchProperties,
   VerticalSpacer,
+  LayerToggle,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   GeogProp,
@@ -23,7 +24,6 @@ import {
 import project from "../../project/projectClient.js";
 import { genSketchTable } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-import { LayerToggle } from "../util/LayerToggle.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
