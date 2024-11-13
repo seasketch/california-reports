@@ -449,38 +449,17 @@ const ShoretypesObjectives = (props: {
   return (
     <>
       {beachesReplicate ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={
-            <div style={{ paddingTop: "7px" }}>
-              This MPA counts as a beach habitat replicate.
-            </div>
-          }
-        />
+        <ObjectiveStatus status={"yes"} msg={<>Beach habitat replicate</>} />
       ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <div style={{ paddingTop: "7px" }}>
-              This MPA does not count as a beach habitat replicate.
-            </div>
-          }
-        />
+        <></>
       )}
       {rockyShoresReplicate ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={
-            <div style={{ paddingTop: "7px" }}>
-              This MPA counts as a rocky shore habitat replicate.
-            </div>
-          }
+          msg={<>Rocky shore habitat replicate</>}
         />
       ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={<>This MPA does not count as a rocky shore habitat replicate.</>}
-        />
+        <></>
       )}
     </>
   );

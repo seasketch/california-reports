@@ -308,24 +308,9 @@ const EstuariesObjectives = (props: {
   return (
     <>
       {passes.length > 0 && (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={
-            <>This MPA meets the habitat replicate guidelines for estuaries.</>
-          }
-        />
+        <ObjectiveStatus status={"yes"} msg={<>Estuaries replicate</>} />
       )}
-      {fails.length > 0 && (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              This MPA does not meet the habitat replicate guidelines for
-              estuaries.
-            </>
-          }
-        />
-      )}
+      {fails.length > 0 && <></>}
     </>
   );
 };

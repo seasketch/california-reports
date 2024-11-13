@@ -3,6 +3,7 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
+  KeySection,
   ObjectiveStatus,
   ReportError,
   ResultsCard,
@@ -312,24 +313,9 @@ const EelgrassObjectives = (props: {
   return (
     <>
       {passes.length > 0 && (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={
-            <>This MPA meets the habitat replicate guidelines for eelgrass.</>
-          }
-        />
+        <ObjectiveStatus status={"yes"} msg={<>Eelgrass replicate</>} />
       )}
-      {fails.length > 0 && (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              This MPA does not meet the habitat replicate guidelines for
-              eelgrass.
-            </>
-          }
-        />
-      )}
+      {fails.length > 0 && <></>}
     </>
   );
 };

@@ -413,74 +413,34 @@ const SubstrateObjectives = (props: {
       {substrate31Replicate ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={
-            <div style={{ paddingTop: "7px" }}>
-              This MPA counts as a hard substrate (30-100m) replicate.
-            </div>
-          }
+          msg={<>Hard substrate (30-100m) replicate</>}
         />
       ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <div style={{ paddingTop: "7px" }}>
-              This MPA does not count as a hard substrate (30-100m) replicate.
-            </div>
-          }
-        />
+        <></>
       )}
       {substrate32Replicate ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={
-            <div style={{ paddingTop: "7px" }}>
-              This MPA counts as a soft substrate (30-100m) replicate.
-            </div>
-          }
+          msg={<>Soft substrate (30-100m) replicate</>}
         />
       ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              This MPA does not count as a soft substrate (30-100m) replicate.
-            </>
-          }
-        />
+        <></>
       )}
       {substrate101Replicate ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={
-            <div>This MPA counts as a hard substrate (&gt;100m) replicate.</div>
-          }
+          msg={<>Hard substrate (&gt;100m) replicate</>}
         />
       ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              This MPA does not count as a hard substrate (&gt;100m) replicate.
-            </>
-          }
-        />
+        <></>
       )}
       {substrate102Replicate ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={
-            <div>This MPA counts as a soft substrate (&gt;100m) replicate.</div>
-          }
+          msg={<>Soft substrate (&gt;100m) replicate</>}
         />
       ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              This MPA does not count as a soft substrate (&gt;100m) replicate.
-            </>
-          }
-        />
+        <></>
       )}
     </>
   );
