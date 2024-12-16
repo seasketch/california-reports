@@ -245,7 +245,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <Collapse title={t("Show by Sketch")}>
+              <Collapse title={t("Show by MPA")}>
                 {genSketchTable(
                   {
                     ...data,

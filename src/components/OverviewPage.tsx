@@ -36,14 +36,59 @@ const Glossary = () => {
   return (
     <>
       <p>
-        <b>Adaptive management</b>: an approach that seeks to improve management
-        by viewing program actions as tools for learning. Actions are designed
-        such that, even if they fail, they provide useful information for future
-        actions
+        <b>Adaptive management</b>: A management policy that seeks to improve
+        management of biological resources, particularly in areas of scientific
+        uncertainty, by viewing program actions as tools for learning. Actions
+        shall be designed so that, even if they fail, they will provide useful
+        information for future actions, and monitoring and evaluation shall be
+        emphasized so that the interaction of different elements within marine
+        systems may be better understood. [FGC 2852(a)]
       </p>
       <p>
-        <b>Baseline/Shoreline:</b> For California, the shoreward boundary is the
-        mean high tide line.
+        <b>Baseline/Shoreline</b>: For California's MPAs, the shoreward boundary
+        is the mean high tide line.
+      </p>
+      <p>
+        <b>Bioregions:</b>: Refers to the following oceanic or near shore areas,
+        seaward from the mean high tide line or the mouth of coastal rivers,
+        with distinctive biological characteristics, unless the master plan team
+        establishes an alternative set of boundaries: (1) The area extending
+        south from Point Conception. (2) The area between Point Conception and
+        Point Arena. (3) The area extending north from Point Arena. [FGC
+        2852(b)]
+      </p>
+      <p>
+        <b>Deep</b>: Greater than 100 meters (330 feet)
+      </p>
+      <p>
+        <b>Habitat</b>: The environment in which an organism or community lives,
+        characterized by its physical or biotic properties.
+      </p>
+      <p>
+        <b>Marine Protected Area (MPA)</b>: A named, discrete geographic marine
+        or estuarine area seaward of the mean high tide line or the mouth of a
+        coastal river, including any area of intertidal or subtidal terrain,
+        together with its overlying water and associated flora and fauna that
+        has been designated by law, administrative action, or voter initiative
+        to protect or conserve marine life and habitat. [FGC 2852(c)]
+      </p>
+      <p>
+        <b>Petitions</b>: Mode by which a person or agency can recommend to the
+        California Fish and Game Commission that a regulation be added, amended,
+        or repealed.
+      </p>
+      <p>
+        <b>Planning/Study Regions</b>: Coastal regions along the state's
+        1100-mile coast in which MPAs were designed and implemented in a
+        stepwise fashion: (1) Central Coast Study Region, Pigeon Point to Point
+        Conception, (2) North Central Coast Study Region, Alder Creek near Point
+        Arena to Pigeon Point, including the Farallon Islands, (3) South Coast
+        Study Region, Point Conception to California/Mexico border, (4) North
+        Coast Study Region, California/Oregon border to Alder Creek near Point
+        Arena.
+      </p>
+      <p>
+        <b>Shallow</b>: 100 meters (330 feet) or less
       </p>
       <p>
         <b>Special Closure</b>: A special closure is an area designated by the
@@ -93,7 +138,7 @@ const Glossary = () => {
         consistent with protecting resource values.
       </p>
       <p>
-        <b>State waters:</b> Generally zero to three nautical miles off the
+        <b>State Waters</b>: Generally zero to three nautical miles off the
         mainland coast and around offshore islands, and within bays and
         estuaries.
       </p>

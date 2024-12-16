@@ -72,7 +72,7 @@ export const Depth: React.FunctionComponent = () => {
               </KeySection>
 
               {isCollection && (
-                <Collapse title={t("Show by Sketch")}>
+                <Collapse title={t("Show by MPA")}>
                   {genBathymetryTable(data)}
                 </Collapse>
               )}

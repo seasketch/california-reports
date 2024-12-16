@@ -509,7 +509,7 @@ export const genAreaGroupLevelTable = (
       const transString = t(curClass.display);
 
       return {
-        Header: transString,
+        Header: " ",
         style: { color: "#777" },
         columns: [
           {
@@ -534,7 +534,7 @@ export const genAreaGroupLevelTable = (
             },
           },
           {
-            Header: t("% Area") + " ".repeat(index),
+            Header: t("% State Waters") + " ".repeat(index),
             accessor: (row) => (
               <GroupPill
                 groupColorMap={groupColorMapTransparent}

@@ -25,6 +25,7 @@ import {
 import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { AreaSketchTableStyled } from "../util/genSketchTable.js";
+import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -50,7 +51,6 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
   const titleLabel = t("Span");
   const mapLabel = t("Map");
   const withinLabel = t("Shoreline within MPA(s)");
-  const percWithinLabel = t("% Total Shoreline");
   const unitsLabel = t("mi");
 
   return (
@@ -115,7 +115,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   width: 25,
                 },
                 {
-                  columnLabel: percWithinLabel,
+                  columnLabel: t("% Total Shoreline"),
                   type: "metricChart",
                   metricId: percMetricIdName,
                   valueFormatter: "percent",
@@ -142,7 +142,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: "Planning Region",
                     type: "class",
                     width: 40,
                   },
@@ -168,7 +168,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     width: 20,
                   },
                   {
-                    columnLabel: percWithinLabel,
+                    columnLabel: t("% Planning Region Shoreline"),
                     type: "metricChart",
                     metricId: percMetricIdName,
                     valueFormatter: "percent",
@@ -191,7 +191,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Alongshore Span",
+                    columnLabel: "Bioregion",
                     type: "class",
                     width: 25,
                   },
@@ -217,7 +217,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     width: 35,
                   },
                   {
-                    columnLabel: percWithinLabel,
+                    columnLabel: t("% Bioregion Shoreline"),
                     type: "metricChart",
                     metricId: percMetricIdName,
                     valueFormatter: "percent",
@@ -231,18 +231,26 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
             </Collapse>
 
             {isCollection && (
-              <Collapse title={t("Show by Sketch")}>
-                {genLengthSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world",
-                    ),
-                  },
-                  precalcMetrics.filter((m) => m.geographyId === "world"),
-                  metricGroup,
-                  t,
-                )}
+              <Collapse title={t("Show by MPA")}>
+                <>
+                  <p>
+                    During the planning process to establish California’s
+                    Network of MPAs, the Science Advisory Team recommended a
+                    minimum alongshore span of 5-10 km (3-6 mi) of coastline,
+                    and preferably 10-20 km (6-12.5 mi).
+                  </p>
+                  {genLengthSketchTable(
+                    {
+                      ...data,
+                      metrics: data.metrics.filter(
+                        (m) => m.geographyId === "world",
+                      ),
+                    },
+                    precalcMetrics.filter((m) => m.geographyId === "world"),
+                    metricGroup,
+                    t,
+                  )}
+                </>
               </Collapse>
             )}
 
@@ -310,6 +318,38 @@ export const genLengthSketchTable = (
         Header: transString,
         style: { color: "#777" },
         columns: [
+          {
+            Header: t("Minimum") + " ".repeat(index),
+            accessor: (row: { sketchId: string }) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+              const miVal = value / 1609;
+
+              return miVal > 3 ? (
+                <CheckCircleFill size={15} style={{ color: "#78c679" }} />
+              ) : (
+                <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
+              );
+            },
+          },
+          {
+            Header: t("Preferred") + " ".repeat(index),
+            accessor: (row: { sketchId: string }) => {
+              const value =
+                aggMetrics[row.sketchId][curClass.classId as string][
+                  mg.metricId
+                ][0].value;
+              const miVal = value / 1609;
+
+              return miVal > 6 ? (
+                <CheckCircleFill size={15} style={{ color: "#78c679" }} />
+              ) : (
+                <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
+              );
+            },
+          },
           {
             Header: t("Length") + " ".repeat(index),
             accessor: (row) => {

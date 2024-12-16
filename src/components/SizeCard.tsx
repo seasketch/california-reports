@@ -52,7 +52,6 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
     );
 
   const withinLabel = t("Area");
-  const percWithinLabel = t("% Total Area");
   const unitsLabel = t("mi²");
 
   const notFoundString = t("Results not found");
@@ -228,7 +227,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                           width: 20,
                         },
                         {
-                          columnLabel: percWithinLabel,
+                          columnLabel: t("% Planning Region"),
                           type: "metricChart",
                           metricId: percMetricIdName,
                           valueFormatter: "percent",
@@ -278,7 +277,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                           width: 20,
                         },
                         {
-                          columnLabel: percWithinLabel,
+                          columnLabel: t("% Bioregion"),
                           type: "metricChart",
                           metricId: percMetricIdName,
                           valueFormatter: "percent",
@@ -321,7 +320,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     MPA(s). If MPA boundaries overlap, the overlap is only
                     counted once.
                   </p>
-                  <p>Last updated: October 29, 2024.</p>
+                  <p>Last updated: December 12, 2024</p>
                 </Trans>
               </Collapse>
             </ToolbarCard>
