@@ -4,6 +4,7 @@ import {
   ClassTable,
   Collapse,
   Column,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   Table,
@@ -14,6 +15,7 @@ import {
   Metric,
   MetricGroup,
   ReportResult,
+  firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
@@ -57,6 +59,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
     <ResultsCard title={titleLabel} functionName="span">
       {(data: ReportResult) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
+        if (!data.sketch) throw new Error("No sketch found in report data");
 
         const valueMetrics = metricsWithSketchId(
           data.metrics.filter((m) => m.metricId === metricGroup.metricId),
@@ -67,6 +70,15 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
           idProperty: "geographyId",
         });
         const metrics = [...valueMetrics, ...percentMetrics];
+
+        // Get overall length of sketch metric
+        const lengthMetric = firstMatchingMetric(
+          data.metrics,
+          (m) =>
+            m.sketchId === data.sketch!.properties.id &&
+            m.groupId === null &&
+            m.geographyId === "world",
+        );
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
@@ -82,6 +94,10 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 shoreline contained within the selected MPA(s).
               </Trans>
             </p>
+
+            {!isCollection && (
+              <SpanObjectives value={lengthMetric.value / 1609} />
+            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -234,7 +250,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
               <Collapse title={t("Show by MPA")}>
                 <>
                   <p>
-                    During the planning process to establish California’s
+                    During the planning process to establish California's
                     Network of MPAs, the Science Advisory Team recommended a
                     minimum alongshore span of 5-10 km (3-6 mi) of coastline,
                     and preferably 10-20 km (6-12.5 mi).
@@ -287,6 +303,7 @@ export const genLengthSketchTable = (
   mg: MetricGroup,
   t: any,
 ) => {
+  if (!data.sketch) return null;
   const sketches = toNullSketchArray(data.sketch);
   const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
   const sketchIds = sketches.map((sk) => sk.properties.id);
@@ -394,5 +411,39 @@ export const genLengthSketchTable = (
     <AreaSketchTableStyled>
       <Table columns={columns} data={rows} />
     </AreaSketchTableStyled>
+  );
+};
+
+const SpanObjectives = (props: { value: number }) => {
+  return (
+    <>
+      <p>
+        During the planning process to establish California's Network of MPAs,
+        the Science Advisory Team recommended a minimum alongshore span of 5-10
+        km (3-6 mi) of coastline, and preferably 10-20 km (6-12.5 mi).
+      </p>
+      {props.value > 3 && props.value < 6 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          style={{ color: "#EBB414" }}
+          msg={
+            <>
+              This MPA meets the 3-6 mile minimum span guideline, but does not
+              meet the {">"} 6 mile preferred span guideline.
+            </>
+          }
+        />
+      ) : props.value > 6 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={<>This MPA meets the {">"} 6 mile preferred span guideline</>}
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={<>This MPA does not meet the 3 mile minimum span guideline</>}
+        />
+      )}
+    </>
   );
 };

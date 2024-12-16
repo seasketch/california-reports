@@ -17,7 +17,7 @@
       "classId": "beaches",
       "sketchId": "29482",
       "groupId": null,
-      "value": 28095.05024,
+      "value": 28013.670836,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -29,7 +29,7 @@
       "classId": "beaches",
       "sketchId": "29483",
       "groupId": null,
-      "value": 15001.336528,
+      "value": 14919.957124,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -107,7 +107,7 @@
       "classId": "rock_islands",
       "sketchId": "29482",
       "groupId": null,
-      "value": 19383.190671,
+      "value": 18949.354716,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -119,7 +119,7 @@
       "classId": "rock_islands",
       "sketchId": "29483",
       "groupId": null,
-      "value": 19060.056216,
+      "value": 18626.220261,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -152,7 +152,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 19789.031034,
+      "value": 19357.408782,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -164,7 +164,7 @@
       "classId": "rocky_shores",
       "sketchId": "29483",
       "groupId": null,
-      "value": 12641.863918,
+      "value": 12210.241665,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -287,7 +287,7 @@
       "classId": "beaches",
       "sketchId": "29482",
       "groupId": null,
-      "value": 28095.05024,
+      "value": 28013.670836,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -299,7 +299,7 @@
       "classId": "beaches",
       "sketchId": "29483",
       "groupId": null,
-      "value": 15001.336528,
+      "value": 14919.957124,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -377,7 +377,7 @@
       "classId": "rock_islands",
       "sketchId": "29482",
       "groupId": null,
-      "value": 19383.190671,
+      "value": 18949.354716,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -389,7 +389,7 @@
       "classId": "rock_islands",
       "sketchId": "29483",
       "groupId": null,
-      "value": 19060.056216,
+      "value": 18626.220261,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -422,7 +422,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 19789.031034,
+      "value": 19357.408782,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -434,7 +434,7 @@
       "classId": "rocky_shores",
       "sketchId": "29483",
       "groupId": null,
-      "value": 12641.863918,
+      "value": 12210.241665,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -1907,7 +1907,7 @@
       "classId": "beaches",
       "sketchId": "29482",
       "groupId": null,
-      "value": 44242.246136,
+      "value": 44160.866732,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -1919,7 +1919,7 @@
       "classId": "beaches",
       "sketchId": "29483",
       "groupId": null,
-      "value": 15001.336528,
+      "value": 14919.957124,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -1997,7 +1997,7 @@
       "classId": "rock_islands",
       "sketchId": "29482",
       "groupId": null,
-      "value": 19383.190671,
+      "value": 18949.354716,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -2009,7 +2009,7 @@
       "classId": "rock_islands",
       "sketchId": "29483",
       "groupId": null,
-      "value": 19060.056216,
+      "value": 18626.220261,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -2042,7 +2042,7 @@
       "classId": "rocky_shores",
       "sketchId": "29482",
       "groupId": null,
-      "value": 62743.510109,
+      "value": 62311.887857,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -2054,7 +2054,7 @@
       "classId": "rocky_shores",
       "sketchId": "29483",
       "groupId": null,
-      "value": 12641.863918,
+      "value": 12210.241665,
       "extra": {
         "sketchName": "mpa-test"
       }
