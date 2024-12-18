@@ -250,7 +250,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
               <Collapse title={t("Show by MPA")}>
                 <>
                   <p>
-                    During the planning process to establish California's
+                    During the planning process to establish California’s
                     Network of MPAs, the Science Advisory Team recommended a
                     minimum alongshore span of 5-10 km (3-6 mi) of coastline,
                     and preferably 10-20 km (6-12.5 mi).
