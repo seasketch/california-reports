@@ -121,7 +121,7 @@ export const OverlapCard: React.FunctionComponent<GeogProp> = (props) => {
             />
 
             {isCollection && (
-              <Collapse title={t("Show by Sketch")}>
+              <Collapse title={t("Show by MPA")}>
                 {genSketchTable(data, metricGroup, precalcMetrics)}
               </Collapse>
             )}

@@ -33,9 +33,10 @@ export const SketchAttributesCard = ({
     "Petition",
     "Change_Cat",
     "PetitionLi",
+    "storymap_url",
   ];
 
-  if (autoHide === true && properties.userAttributes.length === 0) {
+  if (autoHide === true && isCollection) {
     return null;
   }
   if (!isCollection) {
@@ -49,7 +50,19 @@ export const SketchAttributesCard = ({
 
               const attr = properties.userAttributes.find(
                 (attr) => attr.exportId === prop,
-              );
+              )
+                ? properties.userAttributes.find(
+                    (attr) => attr.exportId === prop,
+                  )
+                : prop === "storymap_url"
+                  ? {
+                      label: "StoryMap (URL)",
+                      value: "N/A",
+                      valueLabel: "N/A",
+                      exportId: "storymap_url",
+                      alternateLanguages: null,
+                    }
+                  : null;
 
               if (!attr)
                 throw Error(`Attribute ${prop} not found in userAttributes`);

@@ -227,7 +227,7 @@ export const genSketchTable = (
         },
       });
       columns.push({
-        Header: t("% Area") + " ".repeat(index),
+        Header: t("% State Waters") + " ".repeat(index),
         accessor: (row: { sketchId: string }) => {
           const value =
             aggMetrics[row.sketchId][curClass.classId as string][
