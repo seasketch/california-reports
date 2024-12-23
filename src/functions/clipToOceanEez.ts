@@ -1,12 +1,14 @@
 import {
   Feature,
   FeatureClipOperation,
+  MultiPolygon,
+  Polygon,
   PreprocessingHandler,
   Sketch,
-  VectorDataSource,
   clipToPolygonFeatures,
   ensureValidPolygon,
   isVectorDatasource,
+  loadFgb,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import { bbox } from "@turf/turf";
@@ -34,12 +36,14 @@ export async function clipToOceanEez(
   const url = project.getDatasourceUrl(ds);
 
   // Keep portion of sketch within EEZ
-  const clipLayer = new VectorDataSource(url);
-  const eezFC = await clipLayer.fetchUnion(featureBox, "UNION");
+  const features: Feature<Polygon | MultiPolygon>[] = await loadFgb(
+    url,
+    featureBox,
+  );
 
   const keepInsideEez: FeatureClipOperation = {
     operation: "intersection",
-    clipFeatures: eezFC.features,
+    clipFeatures: features,
   };
 
   return clipToPolygonFeatures(feature, [keepInsideEez], {

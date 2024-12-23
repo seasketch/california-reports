@@ -17,7 +17,7 @@
       "classId": "span",
       "sketchId": "29482",
       "groupId": null,
-      "value": 37510.583294,
+      "value": 37080.156158,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -29,7 +29,7 @@
       "classId": "span",
       "sketchId": "29483",
       "groupId": null,
-      "value": 23417.098562,
+      "value": 22997.57514,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -40,7 +40,7 @@
       "classId": "span",
       "sketchId": "29484",
       "groupId": null,
-      "value": 14093.484732,
+      "value": 14082.581018,
       "extra": {
         "sketchName": "split"
       }
@@ -62,7 +62,7 @@
       "classId": "span",
       "sketchId": "29482",
       "groupId": null,
-      "value": 37510.583294,
+      "value": 37080.156158,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -74,7 +74,7 @@
       "classId": "span",
       "sketchId": "29483",
       "groupId": null,
-      "value": 23417.098562,
+      "value": 22997.57514,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -85,7 +85,7 @@
       "classId": "span",
       "sketchId": "29484",
       "groupId": null,
-      "value": 14093.484732,
+      "value": 14082.581018,
       "extra": {
         "sketchName": "split"
       }
@@ -231,7 +231,7 @@
       "classId": "span",
       "sketchId": "29481",
       "groupId": null,
-      "value": 37019.026849,
+      "value": 35950.439549,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -242,7 +242,7 @@
       "classId": "span",
       "sketchId": "29482",
       "groupId": null,
-      "value": 53068.809122,
+      "value": 52002.525529,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -265,7 +265,7 @@
       "classId": "span",
       "sketchId": "29484",
       "groupId": null,
-      "value": 16049.782273,
+      "value": 16052.085981,
       "extra": {
         "sketchName": "split"
       }
@@ -276,7 +276,7 @@
       "classId": "span",
       "sketchId": "29481",
       "groupId": null,
-      "value": 37019.026849,
+      "value": 35950.439549,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -287,7 +287,7 @@
       "classId": "span",
       "sketchId": "29482",
       "groupId": null,
-      "value": 53068.809122,
+      "value": 52002.525529,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -310,7 +310,7 @@
       "classId": "span",
       "sketchId": "29484",
       "groupId": null,
-      "value": 16049.782273,
+      "value": 16052.085981,
       "extra": {
         "sketchName": "split"
       }
@@ -321,7 +321,7 @@
       "classId": "span",
       "sketchId": "29481",
       "groupId": null,
-      "value": 37019.026849,
+      "value": 35950.439549,
       "extra": {
         "sketchName": "anacapa"
       }
@@ -332,7 +332,7 @@
       "classId": "span",
       "sketchId": "29482",
       "groupId": null,
-      "value": 90579.39241599999,
+      "value": 89082.681687,
       "extra": {
         "sketchName": "network",
         "isCollection": true
@@ -344,7 +344,7 @@
       "classId": "span",
       "sketchId": "29483",
       "groupId": null,
-      "value": 23417.098562,
+      "value": 22997.57514,
       "extra": {
         "sketchName": "mpa-test"
       }
@@ -355,7 +355,7 @@
       "classId": "span",
       "sketchId": "29484",
       "groupId": null,
-      "value": 30143.267005,
+      "value": 30134.666999,
       "extra": {
         "sketchName": "split"
       }
