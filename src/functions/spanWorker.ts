@@ -59,7 +59,7 @@ export async function spanWorker(
   const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
     ds,
     url,
-    { sketch },
+    { sketch: clippedSketch },
   );
 
   // If this is a sub-class, filter by class name

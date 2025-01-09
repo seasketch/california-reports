@@ -56,7 +56,7 @@ export async function boundaryAreaOverlapWorker(
   // Fetch datasource features overlapping with sketch remainder
   const url = project.getDatasourceUrl(ds);
   const polys = await getDatasourceFeatures<Polygon | MultiPolygon>(ds, url, {
-    sketch,
+    sketch: clippedSketch,
   });
   if (!isPolygonFeatureArray(polys)) {
     throw new Error("Expected array of Polygon features");

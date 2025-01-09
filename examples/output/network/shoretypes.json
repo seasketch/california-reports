@@ -5,7 +5,7 @@
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 28013.670836,
+    "value": 28095.05024,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -17,7 +17,7 @@
     "classId": "beaches",
     "sketchId": "34589",
     "groupId": null,
-    "value": 14919.957124,
+    "value": 15001.336528,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -95,7 +95,7 @@
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
-    "value": 18949.354716,
+    "value": 19383.190671,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -107,7 +107,7 @@
     "classId": "rock_islands",
     "sketchId": "34589",
     "groupId": null,
-    "value": 18626.220261,
+    "value": 19060.056216,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -140,7 +140,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19357.408782,
+    "value": 19789.031034,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -152,7 +152,7 @@
     "classId": "rocky_shores",
     "sketchId": "34589",
     "groupId": null,
-    "value": 12210.241665,
+    "value": 12641.863918,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -275,7 +275,7 @@
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 28013.670836,
+    "value": 28095.05024,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -287,7 +287,7 @@
     "classId": "beaches",
     "sketchId": "34589",
     "groupId": null,
-    "value": 14919.957124,
+    "value": 15001.336528,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -365,7 +365,7 @@
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
-    "value": 18949.354716,
+    "value": 19383.190671,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -377,7 +377,7 @@
     "classId": "rock_islands",
     "sketchId": "34589",
     "groupId": null,
-    "value": 18626.220261,
+    "value": 19060.056216,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -410,7 +410,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19357.408782,
+    "value": 19789.031034,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -422,7 +422,7 @@
     "classId": "rocky_shores",
     "sketchId": "34589",
     "groupId": null,
-    "value": 12210.241665,
+    "value": 12641.863918,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -1895,7 +1895,7 @@
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 44160.866732,
+    "value": 44242.246136,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1907,7 +1907,7 @@
     "classId": "beaches",
     "sketchId": "34589",
     "groupId": null,
-    "value": 14919.957124,
+    "value": 15001.336528,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -1985,7 +1985,7 @@
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
-    "value": 18949.354716,
+    "value": 19383.190671,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1997,7 +1997,7 @@
     "classId": "rock_islands",
     "sketchId": "34589",
     "groupId": null,
-    "value": 18626.220261,
+    "value": 19060.056216,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -2030,7 +2030,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 62311.887857,
+    "value": 62743.510109,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -2042,7 +2042,7 @@
     "classId": "rocky_shores",
     "sketchId": "34589",
     "groupId": null,
-    "value": 12210.241665,
+    "value": 12641.863918,
     "extra": {
       "sketchName": "mpa-test"
     }
