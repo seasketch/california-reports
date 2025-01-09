@@ -13,12 +13,10 @@ import project from "../../project/projectClient.js";
 import {
   GeoprocessingRequestModel,
   Metric,
-  ReportResult,
   isMetricArray,
   isSketchCollection,
   rekeyMetrics,
   sortMetrics,
-  toNullSketch,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { spanWorker } from "./spanWorker.js";
@@ -37,7 +35,7 @@ export async function span(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
-): Promise<ReportResult> {
+): Promise<Metric[]> {
   const metricGroup = project.getMetricGroup("span");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world",
@@ -92,15 +90,12 @@ export async function span(
     [],
   );
 
-  return {
-    metrics: sortMetrics(
-      rekeyMetrics([
-        ...metrics,
-        ...genWorldMetrics(bufferedSketch, metrics, metricGroup),
-      ]),
-    ),
-    sketch: toNullSketch(bufferedSketch, true),
-  };
+  return sortMetrics(
+    rekeyMetrics([
+      ...metrics,
+      ...genWorldMetrics(bufferedSketch, metrics, metricGroup),
+    ]),
+  );
 }
 
 export default new GeoprocessingHandler(span, {

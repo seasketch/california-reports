@@ -54,7 +54,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  * @param t TFunction
  */
 export const groupedSketchReport = (
-  data: ReportResult,
+  metrics: Metric[],
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
   t: any,
@@ -75,7 +75,7 @@ export const groupedSketchReport = (
   );
 
   // Filter down to metrics which have groupIds
-  const levelMetrics = data.metrics.filter(
+  const levelMetrics = metrics.filter(
     (m) => m.groupId && groups.includes(m.groupId),
   );
 
@@ -121,21 +121,20 @@ export const groupedSketchReport = (
  * @param t TFunction
  */
 export const groupedCollectionReport = (
-  data: ReportResult,
+  sketchId: string,
+  metrics: Metric[],
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
   t: any,
   options?: ClassTableGroupedProps,
 ) => {
-  if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
-
   // Filter down to metrics which have groupIds
-  const levelMetrics = data.metrics.filter(
+  const levelMetrics = metrics.filter(
     (m) => m.groupId && groups.includes(m.groupId),
   );
 
   const groupLevelAggs: GroupMetricAgg[] = flattenByGroup(
-    data.sketch,
+    sketchId,
     levelMetrics,
     precalcMetrics,
   );
@@ -408,76 +407,6 @@ export const collectionMsgs: Record<string, any> = {
 };
 
 /**
- * Creates "Show by Zone Type" report with percentages
- * @param data data returned from lambda
- * @param precalcMetrics metrics from precalc.json
- * @param metricGroup metric group to get stats for
- * @param t TFunction
- */
-export const genPercGroupLevelTable = (
-  data: ReportResult,
-  precalcMetrics: Metric[],
-  metricGroup: MetricGroup,
-  t: any,
-) => {
-  if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
-
-  // Filter down to metrics which have groupIds
-  const levelMetrics = data.metrics.filter(
-    (m) => m.groupId && groups.includes(m.groupId),
-  );
-
-  const levelAggs: GroupMetricAgg[] = flattenByGroup(
-    data.sketch,
-    levelMetrics,
-    precalcMetrics,
-  );
-
-  const classColumns: Column<Record<string, string | number>>[] =
-    metricGroup.classes.map((curClass) => ({
-      Header: curClass.display,
-      accessor: (row) => {
-        return (
-          <GroupPill
-            groupColorMap={groupColorMapTransparent}
-            group={row.groupId.toString()}
-          >
-            {percentWithEdge(
-              isNaN(row[curClass.classId + "Perc"] as number)
-                ? 0
-                : (row[curClass.classId + "Perc"] as number),
-            )}
-          </GroupPill>
-        );
-      },
-    }));
-
-  const columns: Column<Record<string, string | number>>[] = [
-    {
-      Header: t("This plan contains") + ":",
-      accessor: (row) => (
-        <GroupCircleRow
-          group={row.groupId.toString()}
-          groupColorMap={groupColorMapTransparent}
-          circleText={`${row.numSketches}`}
-          rowText={t(groupDisplayMapPl[row.groupId])}
-        />
-      ),
-    },
-    ...classColumns,
-  ];
-  return (
-    <AreaSketchTableStyled>
-      <Table
-        className="styled"
-        columns={columns}
-        data={levelAggs.sort((a, b) => a.groupId.localeCompare(b.groupId))}
-      />
-    </AreaSketchTableStyled>
-  );
-};
-
-/**
  * Creates "Show by Protection Level" report with area + percentages
  * @param data data returned from lambda
  * @param precalcMetrics metrics from precalc.json
@@ -485,20 +414,19 @@ export const genPercGroupLevelTable = (
  * @param t TFunction
  */
 export const genAreaGroupLevelTable = (
-  data: ReportResult,
+  sketchId: string,
+  metrics: Metric[],
   precalcMetrics: Metric[],
   metricGroup: MetricGroup,
   t: any,
 ) => {
-  if (!isSketchCollection(data.sketch)) throw new Error("NullSketch");
-
   // Filter down to metrics which have groupIds
-  const levelMetrics = data.metrics.filter(
+  const levelMetrics = metrics.filter(
     (m) => m.groupId && groups.includes(m.groupId),
   );
 
   const levelAggs: GroupMetricAgg[] = flattenByGroup(
-    data.sketch,
+    sketchId,
     levelMetrics,
     precalcMetrics,
   );

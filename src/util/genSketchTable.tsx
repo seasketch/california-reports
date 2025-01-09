@@ -5,8 +5,6 @@ import {
   Table,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  ReportResult,
-  toNullSketchArray,
   Metric,
   MetricGroup,
   toPercentMetric,
@@ -15,6 +13,7 @@ import {
   nestMetrics,
   roundDecimal,
   squareMeterToMile,
+  SketchProperties,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
 import { styled } from "styled-components";
@@ -85,7 +84,8 @@ export const AreaSizeSketchTableStyled = styled(BaseSketchTableStyled)`
 `;
 
 export const genSketchTable = (
-  data: ReportResult,
+  childProperties: SketchProperties[],
+  metrics: Metric[],
   precalcMetrics: Metric[],
   mg: MetricGroup,
   t: any,
@@ -103,10 +103,9 @@ export const genSketchTable = (
     replicateMap = {},
   } = options || {};
 
-  const sketches = toNullSketchArray(data.sketch);
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
-  const sketchMetrics = data.metrics.filter(
+  const sketchesById = keyBy(childProperties, (sk) => sk.id);
+  const sketchIds = childProperties.map((sk) => sk.id);
+  const sketchMetrics = metrics.filter(
     (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
   const finalMetrics = [
@@ -248,7 +247,7 @@ export const genSketchTable = (
   const columns: Column<{ sketchId: string }>[] = [
     {
       Header: "MPA",
-      accessor: (row) => sketchesById[row.sketchId].properties.name,
+      accessor: (row) => sketchesById[row.sketchId].name,
     },
     ...classColumns,
   ];

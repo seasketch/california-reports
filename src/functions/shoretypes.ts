@@ -13,14 +13,10 @@ import {
   DefaultExtraParams,
   GeoprocessingRequestModel,
   Metric,
-  ReportResult,
-  genSketchCollection,
   isMetricArray,
-  isSketch,
   isSketchCollection,
   rekeyMetrics,
   sortMetrics,
-  toNullSketch,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { shoretypesWorker } from "./shoretypesWorker.js";
@@ -39,7 +35,7 @@ export async function shoretypes(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
-): Promise<ReportResult> {
+): Promise<Metric[]> {
   const metricGroup = project.getMetricGroup("shoretypes");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world",
@@ -102,15 +98,12 @@ export async function shoretypes(
 
     const metrics = allMetrics.flat();
 
-    return {
-      metrics: sortMetrics(
-        rekeyMetrics([
-          ...metrics,
-          ...genWorldMetrics(bufferedSketch, metrics, metricGroup),
-        ]),
-      ),
-      sketch: toNullSketch(bufferedSketch, true),
-    };
+    return sortMetrics(
+      rekeyMetrics([
+        ...metrics,
+        ...genWorldMetrics(bufferedSketch, metrics, metricGroup),
+      ]),
+    );
   } catch (error) {
     console.error("Error fetching metrics:", error);
     throw error;

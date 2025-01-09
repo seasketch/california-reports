@@ -12,11 +12,9 @@ import project from "../../project/projectClient.js";
 import {
   GeoprocessingRequestModel,
   Metric,
-  ReportResult,
   isMetricArray,
   rekeyMetrics,
   sortMetrics,
-  toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
 import { estuariesWorker } from "./estuariesWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
@@ -33,7 +31,7 @@ export async function estuaries(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
-): Promise<ReportResult> {
+): Promise<Metric[]> {
   const metricGroup = project.getMetricGroup("estuaries");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world",
@@ -71,17 +69,12 @@ export async function estuaries(
     [],
   );
 
-  const worldMetrics = genWorldMetrics(sketch, metrics, metricGroup);
-
-  return {
-    metrics: sortMetrics(
-      rekeyMetrics([
-        ...metrics,
-        ...genWorldMetrics(sketch, metrics, metricGroup),
-      ]),
-    ),
-    sketch: toNullSketch(sketch, true),
-  };
+  return sortMetrics(
+    rekeyMetrics([
+      ...metrics,
+      ...genWorldMetrics(sketch, metrics, metricGroup),
+    ]),
+  );
 }
 
 export default new GeoprocessingHandler(estuaries, {

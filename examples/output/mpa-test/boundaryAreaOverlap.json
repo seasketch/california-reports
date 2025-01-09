@@ -1,415 +1,156 @@
-{
-  "metrics": [
-    {
-      "geographyId": "central_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "central_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "north_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "north_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "northcentral_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "south_br",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "south_sr",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": null,
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMR",
-      "value": 85265862.640884,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMCANT",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMCA",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMRMA",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "SMP",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
-    },
-    {
-      "geographyId": "world",
-      "metricId": "boundaryAreaOverlap",
-      "classId": "state_waters",
-      "sketchId": "29784",
-      "groupId": "Special",
-      "value": 0,
-      "extra": {
-        "sketchName": "mpa-test"
-      }
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 85265862.640884,
+    "extra": {
+      "sketchName": "mpa-test"
     }
-  ],
-  "sketch": {
-    "id": 29784,
-    "bbox": [
-      -121.962715,
-      36.209553,
-      -121.7673,
-      36.305416
-    ],
-    "type": "Feature",
-    "properties": {
-      "4768": "mpa-test",
-      "4769": "SMCANT",
-      "8340": "SMR",
-      "10451": [
-        "B"
-      ],
-      "10452": [
-        "B"
-      ],
-      "id": "29784",
-      "FID": null,
-      "bin": null,
-      "ccr": null,
-      "name": "mpa-test",
-      "type": "SMCANT",
-      "postId": null,
-      "userId": "531",
-      "DFG_URL": null,
-      "contact": null,
-      "OBJECTID": null,
-      "Petition": null,
-      "userSlug": "Abby",
-      "Bioregion": null,
-      "action_id": null,
-      "createdAt": "2024-06-03T18:34:07.702841+00:00",
-      "updatedAt": "2025-01-08T23:07:45.78505+00:00",
-      "AffectedMP": null,
-      "Change_Cat": null,
-      "Descriptio": null,
-      "Organizati": null,
-      "PetitionLi": null,
-      "Study_Regi": null,
-      "collectionId": null,
-      "existing_lop": [
-        "B"
-      ],
-      "isCollection": false,
-      "proposed_lop": [
-        "B"
-      ],
-      "storymap_url": null,
-      "sharedInForum": false,
-      "sketchClassId": "492",
-      "userAttributes": [
-        {
-          "label": "Description",
-          "value": null,
-          "exportId": "Descriptio",
-          "fieldType": "TextArea",
-          "valueLabel": null,
-          "formElementId": 4770,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "FID",
-          "value": null,
-          "exportId": "FID",
-          "fieldType": "Number",
-          "valueLabel": null,
-          "formElementId": 8668,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Action ID",
-          "value": null,
-          "exportId": "action_id",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8670,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "CCR",
-          "value": null,
-          "exportId": "ccr",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8317,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Planning Region",
-          "value": null,
-          "exportId": "Study_Regi",
-          "fieldType": "ComboBox",
-          "valueLabel": null,
-          "formElementId": 8318,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Current Designation (type)",
-          "value": "SMCANT",
-          "exportId": "type",
-          "fieldType": "ComboBox",
-          "valueLabel": "State Marine Conservation Area (No-Take)",
-          "formElementId": 4769,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "DFG URL",
-          "value": null,
-          "exportId": "DFG_URL",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8319,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Affected MPA",
-          "value": null,
-          "exportId": "AffectedMP",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8321,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Bioregion",
-          "value": null,
-          "exportId": "Bioregion",
-          "fieldType": "ComboBox",
-          "valueLabel": null,
-          "formElementId": 8322,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Change Category",
-          "value": null,
-          "exportId": "Change_Cat",
-          "fieldType": "ComboBox",
-          "valueLabel": null,
-          "formElementId": 8323,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Organization",
-          "value": null,
-          "exportId": "Organizati",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8325,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Petition",
-          "value": null,
-          "exportId": "Petition",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8329,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Petition Link (URL)",
-          "value": null,
-          "exportId": "PetitionLi",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8331,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Contact",
-          "value": null,
-          "exportId": "contact",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 8338,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Object ID",
-          "value": null,
-          "exportId": "OBJECTID",
-          "fieldType": "Number",
-          "valueLabel": null,
-          "formElementId": 8341,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Proposed Designation (type)",
-          "value": "SMR",
-          "exportId": "proposed_designation",
-          "fieldType": "ComboBox",
-          "valueLabel": "State Marine Reserve",
-          "formElementId": 8340,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "StoryMap URL",
-          "value": null,
-          "exportId": "storymap_url",
-          "fieldType": "ShortText",
-          "valueLabel": null,
-          "formElementId": 9938,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Existing LOP",
-          "value": [
-            "B"
-          ],
-          "exportId": "existing_lop",
-          "fieldType": "MultipleChoice",
-          "valueLabel": [
-            "High"
-          ],
-          "formElementId": 10451,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Proposed LOP",
-          "value": [
-            "B"
-          ],
-          "exportId": "proposed_lop",
-          "fieldType": "MultipleChoice",
-          "valueLabel": [
-            "High"
-          ],
-          "formElementId": 10452,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Commission Determination",
-          "value": null,
-          "exportId": "commission_determination",
-          "fieldType": "TextArea",
-          "valueLabel": null,
-          "formElementId": 10455,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Bin",
-          "value": null,
-          "exportId": "bin",
-          "fieldType": "MultipleChoice",
-          "valueLabel": null,
-          "formElementId": 10456,
-          "alternateLanguages": {}
-        }
-      ],
-      "proposed_designation": "SMR",
-      "commission_determination": null
-    },
-    "geometry": null
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 85265862.640884,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 85265862.640884,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": "SMR",
+    "value": 85265862.640884,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": "SMCANT",
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": "SMCA",
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": "SMRMA",
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": "SMP",
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "boundaryAreaOverlap",
+    "classId": "state_waters",
+    "sketchId": "29784",
+    "groupId": "Special",
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
   }
-}
+]

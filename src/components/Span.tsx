@@ -14,14 +14,13 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  ReportResult,
+  SketchProperties,
   firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
   percentWithEdge,
   roundDecimal,
-  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
@@ -38,7 +37,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  */
 export const Span: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
@@ -57,13 +56,12 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="span">
-      {(data: ReportResult) => {
+      {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
-        if (!data.sketch) throw new Error("No sketch found in report data");
 
         const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id],
+          metricResults.filter((m) => m.metricId === metricGroup.metricId),
+          [id],
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
@@ -73,9 +71,9 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
 
         // Get overall length of sketch metric
         const lengthMetric = firstMatchingMetric(
-          data.metrics,
+          metrics,
           (m) =>
-            m.sketchId === data.sketch!.properties.id &&
+            m.sketchId === id &&
             m.groupId === null &&
             m.geographyId === "world",
         );
@@ -256,12 +254,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     and preferably 10-20 km (6-12.5 mi).
                   </p>
                   {genLengthSketchTable(
-                    {
-                      ...data,
-                      metrics: data.metrics.filter(
-                        (m) => m.geographyId === "world",
-                      ),
-                    },
+                    childProperties || [],
+                    metricResults.filter((m) => m.geographyId === "world"),
                     precalcMetrics.filter((m) => m.geographyId === "world"),
                     metricGroup,
                     t,
@@ -298,24 +292,26 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
  * @param t TFunction
  */
 export const genLengthSketchTable = (
-  data: ReportResult,
+  childProperties: SketchProperties[],
+  metrics: Metric[],
   precalcMetrics: Metric[],
   mg: MetricGroup,
   t: any,
 ) => {
-  if (!data.sketch) return null;
-  const sketches = toNullSketchArray(data.sketch);
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
-  const sketchMetrics = data.metrics.filter(
+  console.log(metrics);
+  const sketchesById = keyBy(childProperties, (sk) => sk.id);
+  const sketchIds = childProperties.map((sk) => sk.id);
+  const sketchMetrics = metrics.filter(
     (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
+  console.log(sketchMetrics);
   const finalMetrics = [
     ...sketchMetrics,
     ...toPercentMetric(sketchMetrics, precalcMetrics, {
       metricIdOverride: project.getMetricGroupPercId(mg),
     }),
   ];
+  console.log(finalMetrics);
 
   const aggMetrics = nestMetrics(finalMetrics, [
     "sketchId",
@@ -402,7 +398,7 @@ export const genLengthSketchTable = (
   const columns: Column<{ sketchId: string }>[] = [
     {
       Header: "MPA",
-      accessor: (row) => sketchesById[row.sketchId].properties.name,
+      accessor: (row) => sketchesById[row.sketchId].name,
     },
     ...classColumns,
   ];

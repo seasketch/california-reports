@@ -17,7 +17,6 @@ export const SketchAttributesCard = ({
   title,
   autoHide,
 }: SketchAttributesCardProps) => {
-  const [{ isCollection }] = useSketchProperties();
   const titleStyle: React.CSSProperties = {
     fontSize: "1em",
     fontWeight: 500,
@@ -40,10 +39,10 @@ export const SketchAttributesCard = ({
     "storymap_url",
   ];
 
-  if (autoHide === true && isCollection) {
+  if (autoHide === true && properties.isCollection) {
     return null;
   }
-  if (!isCollection) {
+  if (!properties.isCollection) {
     return (
       <Card titleStyle={titleStyle} title={title || attributesLabel}>
         <ReportError>
