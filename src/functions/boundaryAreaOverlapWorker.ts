@@ -12,8 +12,8 @@ import {
   MultiPolygon,
   Geography,
   MetricGroup,
+  getDatasourceFeatures,
 } from "@seasketch/geoprocessing";
-import { getFeatures } from "@seasketch/geoprocessing/dataproviders";
 import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
 import { clipToGeography } from "../util/clipToGeography.js";
@@ -55,8 +55,8 @@ export async function boundaryAreaOverlapWorker(
 
   // Fetch datasource features overlapping with sketch remainder
   const url = project.getDatasourceUrl(ds);
-  const polys = await getFeatures(ds, url, {
-    bbox: sketchBox,
+  const polys = await getDatasourceFeatures<Polygon | MultiPolygon>(ds, url, {
+    sketch,
   });
   if (!isPolygonFeatureArray(polys)) {
     throw new Error("Expected array of Polygon features");

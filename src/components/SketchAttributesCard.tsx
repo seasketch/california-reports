@@ -1,4 +1,8 @@
-import { Card, useSketchProperties } from "@seasketch/geoprocessing/client-ui";
+import {
+  Card,
+  ReportError,
+  useSketchProperties,
+} from "@seasketch/geoprocessing/client-ui";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -13,7 +17,6 @@ export const SketchAttributesCard = ({
   title,
   autoHide,
 }: SketchAttributesCardProps) => {
-  const [{ isCollection }] = useSketchProperties();
   const titleStyle: React.CSSProperties = {
     fontSize: "1em",
     fontWeight: 500,
@@ -36,127 +39,137 @@ export const SketchAttributesCard = ({
     "storymap_url",
   ];
 
-  if (autoHide === true && isCollection) {
+  if (autoHide === true && properties.isCollection) {
     return null;
   }
-  if (!isCollection) {
+  if (!properties.isCollection) {
     return (
       <Card titleStyle={titleStyle} title={title || attributesLabel}>
-        <table style={{ width: "100%" }}>
-          <tbody>
-            {propertiesToDisplay.map((prop) => {
-              let label; // label: "Designation"
-              let valueLabel; // valueLabel: "Fully Protected",
+        <ReportError>
+          <table style={{ width: "100%" }}>
+            <tbody>
+              {propertiesToDisplay.map((prop) => {
+                let label; // label: "Designation"
+                let valueLabel; // valueLabel: "Fully Protected",
 
-              const attr = properties.userAttributes.find(
-                (attr) => attr.exportId === prop,
-              )
-                ? properties.userAttributes.find(
-                    (attr) => attr.exportId === prop,
-                  )
-                : prop === "storymap_url"
-                  ? {
-                      label: "StoryMap (URL)",
-                      value: "N/A",
-                      valueLabel: "N/A",
-                      exportId: "storymap_url",
-                      alternateLanguages: null,
-                    }
-                  : null;
+                const attr = properties.userAttributes.find(
+                  (attr) => attr.exportId === prop,
+                )
+                  ? properties.userAttributes.find(
+                      (attr) => attr.exportId === prop,
+                    )
+                  : prop === "storymap_url"
+                    ? {
+                        label: "StoryMap (URL)",
+                        value: "N/A",
+                        valueLabel: "N/A",
+                        exportId: "storymap_url",
+                        alternateLanguages: null,
+                      }
+                    : prop === "PetitionLi"
+                      ? {
+                          label: "Petition (URL)",
+                          value: "N/A",
+                          valueLabel: "N/A",
+                          exportId: "PetitionLi",
+                          alternateLanguages: null,
+                        }
+                      : null;
 
-              if (!attr)
-                throw Error(`Attribute ${prop} not found in userAttributes`);
+                if (!attr)
+                  throw Error(`Attribute ${prop} not found in userAttributes`);
 
-              // seasketch next - has label and optional translation
-              if (attr.label) {
-                label = attr.label;
-
-                // If language not english, override with translation if available
-                if (i18n.language === "en") {
+                // seasketch next - has label and optional translation
+                if (attr.label) {
                   label = attr.label;
-                } else if (
-                  attr.alternateLanguages &&
-                  Object.keys(attr.alternateLanguages).includes(i18n.language)
-                ) {
-                  // Swap in translation
-                  label = attr.alternateLanguages[i18n.language].label;
+
+                  // If language not english, override with translation if available
+                  if (i18n.language === "en") {
+                    label = attr.label;
+                  } else if (
+                    attr.alternateLanguages &&
+                    Object.keys(attr.alternateLanguages).includes(i18n.language)
+                  ) {
+                    // Swap in translation
+                    label = attr.alternateLanguages[i18n.language].label;
+                  }
                 }
-              }
 
-              // seasketch next - has valueLabel and optional translation
-              if (attr.valueLabel) {
-                valueLabel = attr.valueLabel;
+                // seasketch next - has valueLabel and optional translation
+                if (attr.valueLabel) {
+                  valueLabel = attr.valueLabel;
 
-                // If language not english, override with translation if available
-                if (
-                  i18n.language !== "en" &&
-                  attr.alternateLanguages &&
-                  Object.keys(attr.alternateLanguages).includes(i18n.language)
-                ) {
-                  // Swap in translation
-                  valueLabel =
-                    attr.alternateLanguages[i18n.language].valueLabel;
+                  // If language not english, override with translation if available
+                  if (
+                    i18n.language !== "en" &&
+                    attr.alternateLanguages &&
+                    Object.keys(attr.alternateLanguages).includes(i18n.language)
+                  ) {
+                    // Swap in translation
+                    valueLabel =
+                      attr.alternateLanguages[i18n.language].valueLabel;
+                  }
+                } else if (attr.value) {
+                  valueLabel = attr.value;
+
+                  // If language not english, override with translation if available
+                  if (
+                    i18n.language !== "en" &&
+                    attr.alternateLanguages &&
+                    Object.keys(attr.alternateLanguages).includes(i18n.language)
+                  ) {
+                    // Swap in translation
+                    valueLabel =
+                      attr.alternateLanguages[i18n.language].valueLabel;
+                  }
+                } else {
+                  valueLabel = t("N/A");
                 }
-              } else if (attr.value) {
-                valueLabel = attr.value;
 
-                // If language not english, override with translation if available
-                if (
-                  i18n.language !== "en" &&
-                  attr.alternateLanguages &&
-                  Object.keys(attr.alternateLanguages).includes(i18n.language)
-                ) {
-                  // Swap in translation
-                  valueLabel =
-                    attr.alternateLanguages[i18n.language].valueLabel;
-                }
-              } else {
-                valueLabel = t("N/A");
-              }
-
-              return (
-                <tr key={attr.exportId} style={{ verticalAlign: "top" }}>
-                  <td
-                    style={{
-                      padding: 0,
-                      paddingRight: 4,
-                      borderBottom: "1px solid #f5f5f5",
-                      paddingBottom: 6,
-                      paddingTop: 6,
-                    }}
-                  >
-                    {label === "Proposed Designation (type)"
-                      ? "Designation"
-                      : label}
-                  </td>
-                  <td
-                    style={{
-                      borderBottom: "1px solid #f5f5f5",
-                      paddingBottom: 6,
-                      paddingTop: 6,
-                      paddingLeft: 6,
-                    }}
-                  >
-                    {typeof valueLabel === "string" &&
-                    valueLabel.startsWith("http") ? (
-                      <a
-                        href={valueLabel}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {t(valueLabel)}
-                      </a>
-                    ) : (
-                      /* @ts-expect-error type mismatch */
-                      t(valueLabel)
-                    )}
-                  </td>
-                  {/* <span>{attr.label}</span>=<span>{attr.value}</span> */}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                return (
+                  <tr key={attr.exportId} style={{ verticalAlign: "top" }}>
+                    <td
+                      style={{
+                        padding: 0,
+                        paddingRight: 4,
+                        borderBottom: "1px solid #f5f5f5",
+                        paddingBottom: 6,
+                        paddingTop: 6,
+                      }}
+                    >
+                      {label === "Proposed Designation (type)"
+                        ? "Designation"
+                        : label}
+                    </td>
+                    <td
+                      style={{
+                        borderBottom: "1px solid #f5f5f5",
+                        paddingBottom: 6,
+                        paddingTop: 6,
+                        paddingLeft: 6,
+                      }}
+                    >
+                      {typeof valueLabel === "string" &&
+                      valueLabel.startsWith("http") ? (
+                        <a
+                          href={valueLabel}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {t(valueLabel)}
+                        </a>
+                      ) : (
+                        /* @ts-expect-error type mismatch */
+                        t(valueLabel)
+                      )}
+                    </td>
+                    {/* <span>{attr.label}</span>=<span>{attr.value}</span> */}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </ReportError>
       </Card>
     );
   } else {

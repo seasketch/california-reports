@@ -33,7 +33,7 @@ export async function kelpMax(
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
-): Promise<ReportResult> {
+): Promise<Metric[]> {
   const metricGroup = project.getMetricGroup("kelpMax");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world",
@@ -70,15 +70,12 @@ export async function kelpMax(
     [],
   );
 
-  return {
-    metrics: sortMetrics(
-      rekeyMetrics([
-        ...metrics,
-        ...genWorldMetrics(sketch, metrics, metricGroup),
-      ]),
-    ),
-    sketch: toNullSketch(sketch, true),
-  };
+  return sortMetrics(
+    rekeyMetrics([
+      ...metrics,
+      ...genWorldMetrics(sketch, metrics, metricGroup),
+    ]),
+  );
 }
 
 export default new GeoprocessingHandler(kelpMax, {

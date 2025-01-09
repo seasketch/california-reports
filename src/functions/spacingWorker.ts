@@ -6,18 +6,17 @@ import {
   GeoprocessingHandler,
   overlapFeatures,
   rasterMetrics,
+  getDatasourceFeatures,
 } from "@seasketch/geoprocessing";
-import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
 import {
-  Feature,
   isRasterDatasource,
   isVectorDatasource,
   Metric,
   squareMeterToMile,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
-import { fgbFetchAll, loadCog } from "@seasketch/geoprocessing/dataproviders";
+import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 
 const replicateTest: Record<
   string,
@@ -91,9 +90,10 @@ export async function spacingWorker(
     await Promise.all(
       sketches.map(async (sketch: Sketch<Polygon | MultiPolygon>) => {
         if (isVectorDatasource(ds)) {
-          const features = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
+          const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
+            ds,
             url,
-            sketch.bbox || bbox(sketch),
+            { sketch },
           );
           return overlapFeatures(extraParams.datasourceId, features, sketch);
         } else if (isRasterDatasource(ds)) {

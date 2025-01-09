@@ -12,7 +12,6 @@ import {
 import {
   GeogProp,
   Metric,
-  ReportResult,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -31,7 +30,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  */
 export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
@@ -45,7 +44,7 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="kelpPersist">
-      {(data: ReportResult) => {
+      {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         let valueMetrics: Metric[] = [];
@@ -54,12 +53,12 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
 
         geographies.forEach((g) => {
           const vMetrics = metricsWithSketchId(
-            data.metrics.filter(
+            metricResults.filter(
               (m) =>
                 m.metricId === metricGroup.metricId &&
                 m.geographyId === g.geographyId,
             ),
-            [data.sketch.properties.id],
+            [id],
           );
           valueMetrics = valueMetrics.concat(vMetrics);
 
@@ -276,12 +275,8 @@ export const KelpPersist: React.FunctionComponent<GeogProp> = (props) => {
             {isCollection && (
               <Collapse title={t("Show by MPA")}>
                 {genSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world",
-                    ),
-                  },
+                  childProperties || [],
+                  metricResults.filter((m) => m.geographyId === "world"),
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,

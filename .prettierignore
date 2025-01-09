@@ -2,5 +2,6 @@
 **/.svn
 **/.hg
 node_modules
+examples
 examples/output
 data/bin

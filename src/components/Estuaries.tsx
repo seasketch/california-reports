@@ -12,7 +12,6 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  ReportResult,
   firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
@@ -32,7 +31,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  */
 export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
@@ -52,12 +51,12 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="estuaries">
-      {(data: ReportResult) => {
+      {(metricsResult: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id],
+          metricsResult.filter((m) => m.metricId === metricGroup.metricId),
+          [id],
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
@@ -242,12 +241,8 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
             {isCollection && (
               <Collapse title={t("Show by MPA")}>
                 {genSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world",
-                    ),
-                  },
+                  childProperties || [],
+                  metricsResult.filter((m) => m.geographyId === "world"),
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,

@@ -21,7 +21,7 @@ import { groups } from "./getGroup.js";
  * [percValue] - given sum value across all classIds, contains ratio of total sum across all class IDs
  */
 export const flattenByGroup = (
-  collection: SketchCollection | NullSketchCollection,
+  sketchId: string,
   groupMetrics: Metric[],
   totalMetrics: Metric[],
 ): {
@@ -33,8 +33,7 @@ export const flattenByGroup = (
   const metricsByGroup = groupBy(groupMetrics, (m) => m.groupId || "undefined");
   return groups.map((curGroupId) => {
     const collGroupMetrics = metricsByGroup[curGroupId].filter(
-      (m) =>
-        m.sketchId === collection.properties.id && m.groupId === curGroupId,
+      (m) => m.sketchId === sketchId && m.groupId === curGroupId,
     );
     const collGroupMetricsByClass = keyBy(
       collGroupMetrics,
@@ -45,7 +44,7 @@ export const flattenByGroup = (
       (rowsSoFar, curClassId) => {
         const groupClassSketchMetrics = groupMetrics.filter(
           (m) =>
-            m.sketchId !== collection.properties.id &&
+            m.sketchId !== sketchId &&
             m.groupId === curGroupId &&
             m.classId === curClassId,
         );

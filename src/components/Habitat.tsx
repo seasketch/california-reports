@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  Column,
   LayerToggle,
   ObjectiveStatus,
   ReportError,
@@ -15,15 +14,10 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  ReportResult,
   firstMatchingMetric,
-  keyBy,
   metricsWithSketchId,
-  nestMetrics,
-  percentWithEdge,
   roundDecimal,
   squareMeterToMile,
-  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
@@ -39,7 +33,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  */
 export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
@@ -53,9 +47,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="habitat">
-      {(data: ReportResult) => {
-        console.log("Habitat data");
-        console.log(data);
+      {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         let valueMetrics: Metric[] = [];
@@ -64,12 +56,12 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
 
         geographies.forEach((g) => {
           const vMetrics = metricsWithSketchId(
-            data.metrics.filter(
+            metricResults.filter(
               (m) =>
                 m.metricId === metricGroup.metricId &&
                 m.geographyId === g.geographyId,
             ),
-            [data.sketch.properties.id],
+            [id],
           );
           valueMetrics = valueMetrics.concat(vMetrics);
 
@@ -110,10 +102,12 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                 As determined by the Marine Life Protection Act Initiative
                 Science Advisory Team, the minimum area within an MPA necessary
                 to encompass 90% of local biodiversity and count as a replicate
-                in each habitat and depth is soft substrate 30-100m: 7 square
-                miles, soft substrate &gt;100m: 17 square miles, hard substrate
-                30-100m: 0.13 square miles, and hard substrate &gt;100m: 0.13
-                square miles.
+                in each habitat and depth is:
+                <br />
+                <br>• soft substrate 30-100m: 7 square miles</br>
+                <br>• soft substrate &gt;100m: 17 square miles</br>
+                <br>• hard substrate 30-100m: 0.13 square miles</br>
+                <br>• hard substrate &gt;100m: 0.13 square miles</br>
               </p>
             </Trans>
 
@@ -302,12 +296,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
             {isCollection && (
               <Collapse title={t("Show by MPA")}>
                 {genSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world",
-                    ),
-                  },
+                  childProperties || [],
+                  metricResults.filter((m) => m.geographyId === "world"),
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,

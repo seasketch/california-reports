@@ -16,14 +16,13 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  ReportResult,
+  SketchProperties,
   firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
   percentWithEdge,
   roundDecimal,
-  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
@@ -40,7 +39,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  */
 export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
@@ -55,7 +54,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="shoretypes">
-      {(data: ReportResult) => {
+      {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         let valueMetrics: Metric[] = [];
@@ -64,12 +63,12 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
         geographies.forEach((g) => {
           const vMetrics = metricsWithSketchId(
-            data.metrics.filter(
+            metricResults.filter(
               (m) =>
                 m.metricId === metricGroup.metricId &&
                 m.geographyId === g.geographyId,
             ),
-            [data.sketch.properties.id],
+            [id],
           );
           valueMetrics = valueMetrics.concat(vMetrics);
 
@@ -274,12 +273,8 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
             {isCollection && (
               <Collapse title={t("Show by MPA")}>
                 {genLengthSketchTable(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world",
-                    ),
-                  },
+                  childProperties || [],
+                  metricResults.filter((m) => m.geographyId === "world"),
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
@@ -322,15 +317,15 @@ const replicateMap: Record<string, number> = {
  * @param t TFunction
  */
 export const genLengthSketchTable = (
-  data: ReportResult,
+  childProperties: SketchProperties[],
+  metrics: Metric[],
   precalcMetrics: Metric[],
   mg: MetricGroup,
   t: any,
 ) => {
-  const sketches = toNullSketchArray(data.sketch);
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
-  const sketchMetrics = data.metrics.filter(
+  const sketchesById = keyBy(childProperties, (sk) => sk.id);
+  const sketchIds = childProperties.map((sk) => sk.id);
+  const sketchMetrics = metrics.filter(
     (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
   const finalMetrics = [
@@ -413,7 +408,7 @@ export const genLengthSketchTable = (
   const columns: Column<{ sketchId: string }>[] = [
     {
       Header: "MPA",
-      accessor: (row) => sketchesById[row.sketchId].properties.name,
+      accessor: (row) => sketchesById[row.sketchId].name,
     },
     ...classColumns,
   ];

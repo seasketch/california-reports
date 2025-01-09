@@ -47,7 +47,7 @@
     "start-data": "http-server data/dist -c-1",
     "start:client": "geoprocessing start:client",
     "start:data": "http-server data/dist -c-1",
-    "storybook": "PROJECT_PATH=$(pwd) npx tsx .storybook/genReportStories.ts && storybook dev -p 6006",
+    "storybook": "PROJECT_PATH=$(pwd) npx tsx .storybook/genReportStories.ts && storybook dev -p 6006 --no-open",
     "storybook:install": "npx tsx scripts/storybookInstall.ts",
     "sync:translation": "npm run extract:translation && npm run publish:translation && npm run import:translation",
     "synth": "geoprocessing synth",
@@ -66,7 +66,7 @@
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@seasketch/geoprocessing": "7.0.0-experimental-ada.13",
+    "@seasketch/geoprocessing": "7.0.2-experimental-socketError.3",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
@@ -97,6 +97,7 @@
     "union-subdivided-polygons": "^0.9.1",
     "vite": "^5.4.2",
     "vitest": "^2.0.5",
+    "vitest-fetch-mock": "^0.4.2",
     "zx": "^8.1.5"
   }
 }

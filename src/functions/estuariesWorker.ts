@@ -8,6 +8,7 @@ import {
   Feature,
   isVectorDatasource,
   overlapFeatures,
+  getDatasourceFeatures,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -16,7 +17,6 @@ import {
   MetricGroup,
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
-import { fgbFetchAll } from "@seasketch/geoprocessing/dataproviders";
 import { bbox } from "@turf/turf";
 
 /**
@@ -60,9 +60,10 @@ export async function estuariesWorker(
   const url = project.getDatasourceUrl(ds);
 
   // Fetch features overlapping with sketch, pull from cache if already fetched
-  const features = await fgbFetchAll<Feature<Polygon | MultiPolygon>>(
+  const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
+    ds,
     url,
-    sketchBox,
+    { sketch },
   );
 
   // If this is a sub-class, filter by class name

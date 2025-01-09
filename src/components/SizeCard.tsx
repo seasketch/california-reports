@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ReportResult,
   GeogProp,
   squareMeterToMile,
   firstMatchingMetric,
@@ -36,7 +35,7 @@ import { GeographyTable } from "../util/GeographyTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const { t } = useTranslation();
   const geographies = project.geographies;
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
@@ -54,21 +53,18 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
   const withinLabel = t("Area");
   const unitsLabel = t("mi²");
 
-  const notFoundString = t("Results not found");
   return (
     <ResultsCard
       title={t("Size")}
       functionName="boundaryAreaOverlap"
       useChildCard
     >
-      {(data: ReportResult) => {
-        if (Object.keys(data).length === 0) throw new Error(notFoundString);
-
+      {(metricResults: Metric[]) => {
         // Get overall area of sketch metric
         const areaMetric = firstMatchingMetric(
-          data.metrics,
+          metricResults,
           (m) =>
-            m.sketchId === data.sketch.properties.id &&
+            m.sketchId === id &&
             m.groupId === null &&
             m.geographyId === "world",
         );
@@ -89,8 +85,8 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id],
+          metricResults.filter((m) => m.metricId === metricGroup.metricId),
+          [id],
         );
         const percentMetrics = toPercentMetric(
           valueMetrics,
@@ -110,7 +106,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 <>
                   <DataDownload
                     filename="size"
-                    data={data.metrics}
+                    data={metricResults}
                     formats={["csv", "json"]}
                     placement="left-end"
                   />
@@ -141,12 +137,8 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 
               {isCollection ? (
                 groupedCollectionReport(
-                  {
-                    ...data,
-                    metrics: data.metrics.filter(
-                      (m) => m.geographyId === "world",
-                    ),
-                  },
+                  id,
+                  metricResults.filter((m) => m.geographyId === "world"),
                   boundaryTotalMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
@@ -155,12 +147,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 <>
                   <SizeObjectives value={squareMeterToMile(areaMetric.value)} />
                   {groupedSketchReport(
-                    {
-                      ...data,
-                      metrics: data.metrics.filter(
-                        (m) => m.geographyId === "world",
-                      ),
-                    },
+                    metricResults.filter((m) => m.geographyId === "world"),
                     boundaryTotalMetrics.filter(
                       (m) => m.geographyId === "world",
                     ),
@@ -177,12 +164,8 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     key={"Protection"}
                   >
                     {genAreaGroupLevelTable(
-                      {
-                        ...data,
-                        metrics: data.metrics.filter(
-                          (m) => m.geographyId === "world",
-                        ),
-                      },
+                      id,
+                      metricResults.filter((m) => m.geographyId === "world"),
                       boundaryTotalMetrics.filter(
                         (m) => m.geographyId === "world",
                       ),
@@ -297,12 +280,8 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                       and preferably 18-36 square statute miles.
                     </p>
                     {genSketchTable(
-                      {
-                        ...data,
-                        metrics: data.metrics.filter(
-                          (m) => m.geographyId === "world",
-                        ),
-                      },
+                      childProperties || [],
+                      metricResults.filter((m) => m.geographyId === "world"),
                       boundaryTotalMetrics,
                       metricGroup,
                       t,

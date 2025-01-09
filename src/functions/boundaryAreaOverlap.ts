@@ -3,9 +3,7 @@ import {
   GeoprocessingHandler,
   Metric,
   Polygon,
-  ReportResult,
   SketchCollection,
-  toNullSketch,
   rekeyMetrics,
   sortMetrics,
   DefaultExtraParams,
@@ -22,7 +20,7 @@ export async function boundaryAreaOverlap(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
-): Promise<ReportResult> {
+): Promise<Metric[]> {
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap");
   const geographies = project.geographies;
 
@@ -58,10 +56,7 @@ export async function boundaryAreaOverlap(
     [],
   );
 
-  return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
-    sketch: toNullSketch(sketch, true),
-  };
+  return sortMetrics(rekeyMetrics(metrics));
 }
 
 export default new GeoprocessingHandler(boundaryAreaOverlap, {

@@ -22,14 +22,18 @@
       "4768": "mpa-test",
       "4769": "SMCANT",
       "8340": "SMR",
+      "10451": [
+        "B"
+      ],
+      "10452": [
+        "B"
+      ],
       "id": "29784",
+      "FID": null,
+      "bin": null,
       "ccr": null,
-      "fid": null,
       "name": "mpa-test",
       "type": "SMCANT",
-      "AddMPA": null,
-      "Method": null,
-      "Tribal": null,
       "postId": null,
       "userId": "531",
       "DFG_URL": null,
@@ -38,17 +42,24 @@
       "Petition": null,
       "userSlug": "Abby",
       "Bioregion": null,
+      "action_id": null,
       "createdAt": "2024-06-03T18:34:07.702841+00:00",
-      "updatedAt": "2024-06-03T18:34:19.686888+00:00",
+      "updatedAt": "2025-01-08T23:07:45.78505+00:00",
       "AffectedMP": null,
       "Change_Cat": null,
       "Descriptio": null,
       "Organizati": null,
       "PetitionLi": null,
       "Study_Regi": null,
-      "TakeChange": null,
       "collectionId": null,
+      "existing_lop": [
+        "B"
+      ],
       "isCollection": false,
+      "proposed_lop": [
+        "B"
+      ],
+      "storymap_url": null,
       "sharedInForum": false,
       "sketchClassId": "492",
       "userAttributes": [
@@ -62,6 +73,24 @@
           "alternateLanguages": {}
         },
         {
+          "label": "FID",
+          "value": null,
+          "exportId": "FID",
+          "fieldType": "Number",
+          "valueLabel": null,
+          "formElementId": 8668,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Action ID",
+          "value": null,
+          "exportId": "action_id",
+          "fieldType": "ShortText",
+          "valueLabel": null,
+          "formElementId": 8670,
+          "alternateLanguages": {}
+        },
+        {
           "label": "CCR",
           "value": null,
           "exportId": "ccr",
@@ -71,7 +100,7 @@
           "alternateLanguages": {}
         },
         {
-          "label": "Study Region",
+          "label": "Planning Region",
           "value": null,
           "exportId": "Study_Regi",
           "fieldType": "ComboBox",
@@ -84,7 +113,7 @@
           "value": "SMCANT",
           "exportId": "type",
           "fieldType": "ComboBox",
-          "valueLabel": "State Marine Conervation Area (No-Take)",
+          "valueLabel": "State Marine Conservation Area (No-Take)",
           "formElementId": 4769,
           "alternateLanguages": {}
         },
@@ -95,15 +124,6 @@
           "fieldType": "ShortText",
           "valueLabel": null,
           "formElementId": 8319,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Add or Remove MPA",
-          "value": null,
-          "exportId": "AddMPA",
-          "fieldType": "ComboBox",
-          "valueLabel": null,
-          "formElementId": 8320,
           "alternateLanguages": {}
         },
         {
@@ -134,39 +154,12 @@
           "alternateLanguages": {}
         },
         {
-          "label": "Method",
-          "value": null,
-          "exportId": "Method",
-          "fieldType": "TextArea",
-          "valueLabel": null,
-          "formElementId": 8324,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Orginization",
+          "label": "Organization",
           "value": null,
           "exportId": "Organizati",
           "fieldType": "ShortText",
           "valueLabel": null,
           "formElementId": 8325,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Take Change",
-          "value": null,
-          "exportId": "TakeChange",
-          "fieldType": "TextArea",
-          "valueLabel": null,
-          "formElementId": 8326,
-          "alternateLanguages": {}
-        },
-        {
-          "label": "Tribal?",
-          "value": null,
-          "exportId": "Tribal",
-          "fieldType": "YesNo",
-          "valueLabel": null,
-          "formElementId": 8328,
           "alternateLanguages": {}
         },
         {
@@ -188,21 +181,21 @@
           "alternateLanguages": {}
         },
         {
-          "label": "FID",
-          "value": null,
-          "exportId": "fid",
-          "fieldType": "Number",
-          "valueLabel": null,
-          "formElementId": 8337,
-          "alternateLanguages": {}
-        },
-        {
           "label": "Contact",
           "value": null,
           "exportId": "contact",
           "fieldType": "ShortText",
           "valueLabel": null,
           "formElementId": 8338,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Object ID",
+          "value": null,
+          "exportId": "OBJECTID",
+          "fieldType": "Number",
+          "valueLabel": null,
+          "formElementId": 8341,
           "alternateLanguages": {}
         },
         {
@@ -215,16 +208,61 @@
           "alternateLanguages": {}
         },
         {
-          "label": "Object ID",
+          "label": "StoryMap URL",
           "value": null,
-          "exportId": "OBJECTID",
-          "fieldType": "Number",
+          "exportId": "storymap_url",
+          "fieldType": "ShortText",
           "valueLabel": null,
-          "formElementId": 8341,
+          "formElementId": 9938,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Existing LOP",
+          "value": [
+            "B"
+          ],
+          "exportId": "existing_lop",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "High"
+          ],
+          "formElementId": 10451,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Proposed LOP",
+          "value": [
+            "B"
+          ],
+          "exportId": "proposed_lop",
+          "fieldType": "MultipleChoice",
+          "valueLabel": [
+            "High"
+          ],
+          "formElementId": 10452,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Commission Determination",
+          "value": null,
+          "exportId": "commission_determination",
+          "fieldType": "TextArea",
+          "valueLabel": null,
+          "formElementId": 10455,
+          "alternateLanguages": {}
+        },
+        {
+          "label": "Bin",
+          "value": null,
+          "exportId": "bin",
+          "fieldType": "MultipleChoice",
+          "valueLabel": null,
+          "formElementId": 10456,
           "alternateLanguages": {}
         }
       ],
-      "proposed_designation": "SMR"
+      "proposed_designation": "SMR",
+      "commission_determination": null
     }
   }
 }

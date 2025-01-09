@@ -4,6 +4,7 @@ import {
   ClassTable,
   Collapse,
   Column,
+  ObjectiveStatus,
   ReportError,
   ResultsCard,
   Table,
@@ -13,13 +14,13 @@ import {
   GeogProp,
   Metric,
   MetricGroup,
-  ReportResult,
+  SketchProperties,
+  firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
   percentWithEdge,
   roundDecimal,
-  toNullSketchArray,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
@@ -36,7 +37,7 @@ const Number = new Intl.NumberFormat("en", { style: "decimal" });
  */
 export const Span: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
-  const [{ isCollection }] = useSketchProperties();
+  const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
@@ -55,18 +56,27 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
 
   return (
     <ResultsCard title={titleLabel} functionName="span">
-      {(data: ReportResult) => {
+      {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
         const valueMetrics = metricsWithSketchId(
-          data.metrics.filter((m) => m.metricId === metricGroup.metricId),
-          [data.sketch.properties.id],
+          metricResults.filter((m) => m.metricId === metricGroup.metricId),
+          [id],
         );
         const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
           metricIdOverride: percMetricIdName,
           idProperty: "geographyId",
         });
         const metrics = [...valueMetrics, ...percentMetrics];
+
+        // Get overall length of sketch metric
+        const lengthMetric = firstMatchingMetric(
+          metrics,
+          (m) =>
+            m.sketchId === id &&
+            m.groupId === null &&
+            m.geographyId === "world",
+        );
 
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
@@ -82,6 +92,10 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 shoreline contained within the selected MPA(s).
               </Trans>
             </p>
+
+            {!isCollection && (
+              <SpanObjectives value={lengthMetric.value / 1609} />
+            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -240,12 +254,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     and preferably 10-20 km (6-12.5 mi).
                   </p>
                   {genLengthSketchTable(
-                    {
-                      ...data,
-                      metrics: data.metrics.filter(
-                        (m) => m.geographyId === "world",
-                      ),
-                    },
+                    childProperties || [],
+                    metricResults.filter((m) => m.geographyId === "world"),
                     precalcMetrics.filter((m) => m.geographyId === "world"),
                     metricGroup,
                     t,
@@ -282,23 +292,26 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
  * @param t TFunction
  */
 export const genLengthSketchTable = (
-  data: ReportResult,
+  childProperties: SketchProperties[],
+  metrics: Metric[],
   precalcMetrics: Metric[],
   mg: MetricGroup,
   t: any,
 ) => {
-  const sketches = toNullSketchArray(data.sketch);
-  const sketchesById = keyBy(sketches, (sk) => sk.properties.id);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
-  const sketchMetrics = data.metrics.filter(
+  console.log(metrics);
+  const sketchesById = keyBy(childProperties, (sk) => sk.id);
+  const sketchIds = childProperties.map((sk) => sk.id);
+  const sketchMetrics = metrics.filter(
     (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
+  console.log(sketchMetrics);
   const finalMetrics = [
     ...sketchMetrics,
     ...toPercentMetric(sketchMetrics, precalcMetrics, {
       metricIdOverride: project.getMetricGroupPercId(mg),
     }),
   ];
+  console.log(finalMetrics);
 
   const aggMetrics = nestMetrics(finalMetrics, [
     "sketchId",
@@ -385,7 +398,7 @@ export const genLengthSketchTable = (
   const columns: Column<{ sketchId: string }>[] = [
     {
       Header: "MPA",
-      accessor: (row) => sketchesById[row.sketchId].properties.name,
+      accessor: (row) => sketchesById[row.sketchId].name,
     },
     ...classColumns,
   ];
@@ -394,5 +407,39 @@ export const genLengthSketchTable = (
     <AreaSketchTableStyled>
       <Table columns={columns} data={rows} />
     </AreaSketchTableStyled>
+  );
+};
+
+const SpanObjectives = (props: { value: number }) => {
+  return (
+    <>
+      <p>
+        During the planning process to establish California's Network of MPAs,
+        the Science Advisory Team recommended a minimum alongshore span of 5-10
+        km (3-6 mi) of coastline, and preferably 10-20 km (6-12.5 mi).
+      </p>
+      {props.value > 3 && props.value < 6 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          style={{ color: "#EBB414" }}
+          msg={
+            <>
+              This MPA meets the 3-6 mile minimum span guideline, but does not
+              meet the {">"} 6 mile preferred span guideline.
+            </>
+          }
+        />
+      ) : props.value > 6 ? (
+        <ObjectiveStatus
+          status={"yes"}
+          msg={<>This MPA meets the {">"} 6 mile preferred span guideline</>}
+        />
+      ) : (
+        <ObjectiveStatus
+          status={"no"}
+          msg={<>This MPA does not meet the 3 mile minimum span guideline</>}
+        />
+      )}
+    </>
   );
 };
