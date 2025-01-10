@@ -984,122 +984,16 @@
     {
       "id": "beaches",
       "replicates": [
-        "34589",
-        "34591",
-        "34590"
+        "34589"
       ],
-      "paths": [
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -120.589059266,
-                  34.499626909
-                ],
-                [
-                  -120.65057938783855,
-                  34.576935842832896
-                ],
-                [
-                  -121.87600883300126,
-                  36.20786001355806
-                ],
-                [
-                  -121.882254848,
-                  36.212060005
-                ]
-              ]
-            }
-          },
-          "distance": 138.98181935357417,
-          "color": "red"
-        },
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -119.474111171,
-                  34.066544229
-                ],
-                [
-                  -120.317162543,
-                  34.411621646
-                ]
-              ]
-            }
-          },
-          "distance": 53.73356976830497,
-          "color": "green"
-        }
-      ]
+      "paths": []
     },
     {
       "id": "rocky_shores",
       "replicates": [
-        "34589",
-        "34591",
-        "34590"
+        "34589"
       ],
-      "paths": [
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -120.589059266,
-                  34.499626909
-                ],
-                [
-                  -120.65057938783855,
-                  34.576935842832896
-                ],
-                [
-                  -121.87600883300126,
-                  36.20786001355806
-                ],
-                [
-                  -121.882254848,
-                  36.212060005
-                ]
-              ]
-            }
-          },
-          "distance": 138.98181935357417,
-          "color": "red"
-        },
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -119.474111171,
-                  34.066544229
-                ],
-                [
-                  -120.317162543,
-                  34.411621646
-                ]
-              ]
-            }
-          },
-          "distance": 53.73356976830497,
-          "color": "green"
-        }
-      ]
+      "paths": []
     },
     {
       "id": "eelgrass",
@@ -1114,135 +1008,25 @@
     {
       "id": "substrate31",
       "replicates": [
-        "34589",
-        "34591",
-        "34590"
-      ],
-      "paths": [
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -120.589059266,
-                  34.499626909
-                ],
-                [
-                  -120.65057938783855,
-                  34.576935842832896
-                ],
-                [
-                  -121.87600883300126,
-                  36.20786001355806
-                ],
-                [
-                  -121.882254848,
-                  36.212060005
-                ]
-              ]
-            }
-          },
-          "distance": 138.98181935357417,
-          "color": "red"
-        },
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -119.474111171,
-                  34.066544229
-                ],
-                [
-                  -120.317162543,
-                  34.411621646
-                ]
-              ]
-            }
-          },
-          "distance": 53.73356976830497,
-          "color": "green"
-        }
-      ]
-    },
-    {
-      "id": "substrate32",
-      "replicates": [
-        "34589",
-        "34591",
-        "34590"
-      ],
-      "paths": [
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -120.589059266,
-                  34.499626909
-                ],
-                [
-                  -120.65057938783855,
-                  34.576935842832896
-                ],
-                [
-                  -121.87600883300126,
-                  36.20786001355806
-                ],
-                [
-                  -121.882254848,
-                  36.212060005
-                ]
-              ]
-            }
-          },
-          "distance": 138.98181935357417,
-          "color": "red"
-        },
-        {
-          "path": {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "LineString",
-              "coordinates": [
-                [
-                  -119.474111171,
-                  34.066544229
-                ],
-                [
-                  -120.317162543,
-                  34.411621646
-                ]
-              ]
-            }
-          },
-          "distance": 53.73356976830497,
-          "color": "green"
-        }
-      ]
-    },
-    {
-      "id": "substrate101",
-      "replicates": [
-        "34591"
+        "34589"
       ],
       "paths": []
     },
     {
-      "id": "substrate102",
+      "id": "substrate32",
       "replicates": [
-        "34591"
+        "34589"
       ],
+      "paths": []
+    },
+    {
+      "id": "substrate101",
+      "replicates": [],
+      "paths": []
+    },
+    {
+      "id": "substrate102",
+      "replicates": [],
       "paths": []
     }
   ]

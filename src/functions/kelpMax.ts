@@ -12,11 +12,9 @@ import project from "../../project/projectClient.js";
 import {
   GeoprocessingRequestModel,
   Metric,
-  ReportResult,
   isMetricArray,
   rekeyMetrics,
   sortMetrics,
-  toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
 import { kelpMaxWorker } from "./kelpMaxWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";

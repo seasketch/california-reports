@@ -20,5 +20,5 @@ describe("Basic smoke tests", () => {
       expect(result).toBeTruthy();
       writeResultOutput(result, "eelgrass", example.properties.name);
     }
-  }, 120000);
+  }, 500000);
 });

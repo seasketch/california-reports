@@ -165,11 +165,11 @@ export const genSketchTable = (
                 valueFormatter ? valueFormatter(val) : val,
               );
             }
+            const lop = sketchesById[row.sketchId]["proposed_lop"];
+            if (!replicateMap[curClass.classId] || !lop) return " ";
 
-            return !replicateMap[curClass.classId] ? (
-              " "
-            ) : (replicateMap && value > replicateMap[curClass.classId]) ||
-              (!replicateMap[curClass.classId] && value) ? (
+            return value > replicateMap[curClass.classId] &&
+              ["A", "B", "C"].includes(lop[0]) ? (
               <CheckCircleFill size={15} style={{ color: "#78c679" }} />
             ) : (
               <XCircleFill size={15} style={{ color: "#ED2C7C" }} />

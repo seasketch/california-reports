@@ -20,8 +20,8 @@ import {
 import { InvocationResponse } from "@aws-sdk/client-lambda";
 import { spacingWorker } from "./spacingWorker.js";
 import graphlib from "graphlib";
-import graphData from "../../data/bin/network.01.json";
-import landData from "../../data/bin/landShrunk.01.json";
+import graphData from "../../data/bin/network.01.json" with { type: "json" };
+import landData from "../../data/bin/landShrunk.01.json" with { type: "json" };
 import {
   bboxPolygon,
   bbox,

@@ -118,7 +118,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
             <VerticalSpacer />
             {!isCollection && (
               <ShoretypesObjectives
-                metricGroup={metricGroup}
                 metrics={valueMetrics.filter((m) => m.geographyId === "world")}
               />
             )}
@@ -363,10 +362,11 @@ export const genLengthSketchTable = (
                   mg.metricId
                 ][0].value / 1609;
 
-              return !replicateMap[curClass.classId] ? (
-                " "
-              ) : value > replicateMap[curClass.classId] ||
-                (!replicateMap[curClass.classId] && value) ? (
+              const lop = sketchesById[row.sketchId]["proposed_lop"];
+              if (!replicateMap[curClass.classId] || !lop) return " ";
+
+              return value > replicateMap[curClass.classId] &&
+                ["A", "B", "C"].includes(lop[0]) ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
               ) : (
                 <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
@@ -420,11 +420,12 @@ export const genLengthSketchTable = (
   );
 };
 
-const ShoretypesObjectives = (props: {
-  metricGroup: MetricGroup;
-  metrics: Metric[];
-}) => {
-  const { metricGroup, metrics } = props;
+const ShoretypesObjectives = (props: { metrics: Metric[] }) => {
+  const { metrics } = props;
+  const [{ proposed_lop }] = useSketchProperties();
+
+  // If level of protection is not defined, or if it's too low
+  if (!proposed_lop || !["A", "B", "C"].includes(proposed_lop[0])) return null;
 
   const beachesReplicate = (() => {
     const metric = firstMatchingMetric(metrics, (m) => m.classId === "beaches");
@@ -443,18 +444,17 @@ const ShoretypesObjectives = (props: {
 
   return (
     <>
-      {beachesReplicate ? (
-        <ObjectiveStatus status={"yes"} msg={<>Beach habitat replicate</>} />
-      ) : (
-        <></>
+      {beachesReplicate && (
+        <>
+          <ObjectiveStatus status={"yes"} msg={<>Beach habitat replicate</>} />
+          <VerticalSpacer />
+        </>
       )}
-      {rockyShoresReplicate ? (
+      {rockyShoresReplicate && (
         <ObjectiveStatus
           status={"yes"}
           msg={<>Rocky shore habitat replicate</>}
         />
-      ) : (
-        <></>
       )}
     </>
   );
