@@ -29,11 +29,11 @@ const replicateTest: Record<
     replicateVal: 1.1,
   },
   beaches: {
-    valueFormatter: (val: number) => val / 1609,
+    valueFormatter: (val: number) => val,
     replicateVal: 1.1,
   },
   rocky_shores: {
-    valueFormatter: (val: number) => val / 1609,
+    valueFormatter: (val: number) => val,
     replicateVal: 0.55,
   },
   eelgrass: {

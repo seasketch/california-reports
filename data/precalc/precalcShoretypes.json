@@ -1,0 +1,386 @@
+[
+  {
+    "metricId": "metric",
+    "value": 246.25287007491485,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 188.5147177492073,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 226.37395400140798,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 434.589833416611,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 389.55975857443144,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 271.58178325109895,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 441.21649276311996,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 1102.358034588651,
+    "classId": "beaches",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 98.01565110413993,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 54.50708572922138,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 39.21696365662073,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 116.64029578822692,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 147.80852985500863,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 43.80403668942797,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 116.90220398079478,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 308.51477052523063,
+    "classId": "coastal_marsh",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 39.71058426055872,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 19.499024588976877,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 52.93136014171695,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 357.99047090510135,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 49.6670560986376,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 62.92221240197081,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 358.7054223434683,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 471.2946908440768,
+    "classId": "hardened_shores",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 140.5896745126209,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 98.33505808640379,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 140.68416929311365,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 4.54764880952961,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 223.87318441321824,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 155.75973424550136,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 4.54764880952961,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 384.18056746824925,
+    "classId": "rock_islands",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 159.19786816636562,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 167.11560140089728,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 211.4283035539159,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 281.4142477020414,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 301.00251815162255,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 236.72664095046918,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 284.8983947276373,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 822.627553829728,
+    "classId": "rocky_shores",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 106.4977788211957,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 59.90078071883438,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 36.12962603983051,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 81.51102179600271,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 162.82377901425454,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 39.61216797931772,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 81.5776720990353,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 284.1209042983819,
+    "classId": "tidal_flats",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  }
+]

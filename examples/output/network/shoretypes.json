@@ -5,7 +5,7 @@
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 28095.05024,
+    "value": 17.463218,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -17,7 +17,7 @@
     "classId": "beaches",
     "sketchId": "34589",
     "groupId": null,
-    "value": 15001.336528,
+    "value": 9.321464,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -28,7 +28,7 @@
     "classId": "beaches",
     "sketchId": "34590",
     "groupId": null,
-    "value": 13093.713712,
+    "value": 8.141754,
     "extra": {
       "sketchName": "split"
     }
@@ -50,7 +50,7 @@
     "classId": "coastal_marsh",
     "sketchId": "34588",
     "groupId": null,
-    "value": 227.56412,
+    "value": 0.140976,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -62,7 +62,7 @@
     "classId": "coastal_marsh",
     "sketchId": "34589",
     "groupId": null,
-    "value": 227.56412,
+    "value": 0.140976,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -92,10 +92,55 @@
   {
     "geographyId": "central_br",
     "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 1.570253,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0.996604,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0.573648,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19383.190671,
+    "value": 12.079271,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -107,7 +152,7 @@
     "classId": "rock_islands",
     "sketchId": "34589",
     "groupId": null,
-    "value": 19060.056216,
+    "value": 11.876757,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -118,7 +163,7 @@
     "classId": "rock_islands",
     "sketchId": "34590",
     "groupId": null,
-    "value": 323.134455,
+    "value": 0.202514,
     "extra": {
       "sketchName": "split"
     }
@@ -140,7 +185,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19789.031034,
+    "value": 12.03093,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -152,7 +197,7 @@
     "classId": "rocky_shores",
     "sketchId": "34589",
     "groupId": null,
-    "value": 12641.863918,
+    "value": 7.855021,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -163,7 +208,7 @@
     "classId": "rocky_shores",
     "sketchId": "34590",
     "groupId": null,
-    "value": 7147.167116,
+    "value": 4.110041,
     "extra": {
       "sketchName": "split"
     }
@@ -185,7 +230,7 @@
     "classId": "tidal_flats",
     "sketchId": "34588",
     "groupId": null,
-    "value": 354.403057,
+    "value": 0.220559,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -197,7 +242,7 @@
     "classId": "tidal_flats",
     "sketchId": "34589",
     "groupId": null,
-    "value": 354.403057,
+    "value": 0.220559,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -225,57 +270,12 @@
     }
   },
   {
-    "geographyId": "central_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 2536.462503,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 1608.07832,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 928.384183,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "central_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
     "geographyId": "central_sr",
     "metricId": "shoretypes",
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 28095.05024,
+    "value": 17.463218,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -287,7 +287,7 @@
     "classId": "beaches",
     "sketchId": "34589",
     "groupId": null,
-    "value": 15001.336528,
+    "value": 9.321464,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -298,7 +298,7 @@
     "classId": "beaches",
     "sketchId": "34590",
     "groupId": null,
-    "value": 13093.713712,
+    "value": 8.141754,
     "extra": {
       "sketchName": "split"
     }
@@ -320,7 +320,7 @@
     "classId": "coastal_marsh",
     "sketchId": "34588",
     "groupId": null,
-    "value": 227.56412,
+    "value": 0.140976,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -332,7 +332,7 @@
     "classId": "coastal_marsh",
     "sketchId": "34589",
     "groupId": null,
-    "value": 227.56412,
+    "value": 0.140976,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -362,10 +362,55 @@
   {
     "geographyId": "central_sr",
     "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 1.570253,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0.996604,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0.573648,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19383.190671,
+    "value": 12.079271,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -377,7 +422,7 @@
     "classId": "rock_islands",
     "sketchId": "34589",
     "groupId": null,
-    "value": 19060.056216,
+    "value": 11.876757,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -388,7 +433,7 @@
     "classId": "rock_islands",
     "sketchId": "34590",
     "groupId": null,
-    "value": 323.134455,
+    "value": 0.202514,
     "extra": {
       "sketchName": "split"
     }
@@ -410,7 +455,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19789.031034,
+    "value": 12.03093,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -422,7 +467,7 @@
     "classId": "rocky_shores",
     "sketchId": "34589",
     "groupId": null,
-    "value": 12641.863918,
+    "value": 7.855021,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -433,7 +478,7 @@
     "classId": "rocky_shores",
     "sketchId": "34590",
     "groupId": null,
-    "value": 7147.167116,
+    "value": 4.110041,
     "extra": {
       "sketchName": "split"
     }
@@ -455,7 +500,7 @@
     "classId": "tidal_flats",
     "sketchId": "34588",
     "groupId": null,
-    "value": 354.403057,
+    "value": 0.220559,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -467,7 +512,7 @@
     "classId": "tidal_flats",
     "sketchId": "34589",
     "groupId": null,
-    "value": 354.403057,
+    "value": 0.220559,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -487,51 +532,6 @@
     "geographyId": "central_sr",
     "metricId": "shoretypes",
     "classId": "tidal_flats",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 2536.462503,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 1608.07832,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 928.384183,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "central_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
     "sketchId": "34591",
     "groupId": null,
     "value": 0,
@@ -632,6 +632,51 @@
   {
     "geographyId": "north_br",
     "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
@@ -765,51 +810,6 @@
     }
   },
   {
-    "geographyId": "north_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "north_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
     "geographyId": "north_sr",
     "metricId": "shoretypes",
     "classId": "beaches",
@@ -892,6 +892,51 @@
     "geographyId": "north_sr",
     "metricId": "shoretypes",
     "classId": "coastal_marsh",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
     "sketchId": "34591",
     "groupId": null,
     "value": 0,
@@ -1035,51 +1080,6 @@
     }
   },
   {
-    "geographyId": "north_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "north_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
     "geographyId": "northcentral_sr",
     "metricId": "shoretypes",
     "classId": "beaches",
@@ -1162,6 +1162,51 @@
     "geographyId": "northcentral_sr",
     "metricId": "shoretypes",
     "classId": "coastal_marsh",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
     "sketchId": "34591",
     "groupId": null,
     "value": 0,
@@ -1305,57 +1350,12 @@
     }
   },
   {
-    "geographyId": "northcentral_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "northcentral_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
     "geographyId": "south_br",
     "metricId": "shoretypes",
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 16147.195896,
+    "value": 10.005592,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1378,7 +1378,7 @@
     "classId": "beaches",
     "sketchId": "34590",
     "groupId": null,
-    "value": 10793.96804,
+    "value": 6.69313,
     "extra": {
       "sketchName": "split"
     }
@@ -1389,7 +1389,7 @@
     "classId": "beaches",
     "sketchId": "34591",
     "groupId": null,
-    "value": 5353.227856,
+    "value": 3.312462,
     "extra": {
       "sketchName": "anacapa"
     }
@@ -1432,6 +1432,51 @@
     "geographyId": "south_br",
     "metricId": "shoretypes",
     "classId": "coastal_marsh",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
     "sketchId": "34591",
     "groupId": null,
     "value": 0,
@@ -1490,7 +1535,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 42954.479075,
+    "value": 26.725891,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1513,7 +1558,7 @@
     "classId": "rocky_shores",
     "sketchId": "34590",
     "groupId": null,
-    "value": 10589.234461,
+    "value": 6.569552,
     "extra": {
       "sketchName": "split"
     }
@@ -1524,7 +1569,7 @@
     "classId": "rocky_shores",
     "sketchId": "34591",
     "groupId": null,
-    "value": 32365.244615,
+    "value": 20.156339,
     "extra": {
       "sketchName": "anacapa"
     }
@@ -1575,57 +1620,12 @@
     }
   },
   {
-    "geographyId": "south_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "south_br",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
     "geographyId": "south_sr",
     "metricId": "shoretypes",
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 16147.195896,
+    "value": 10.005592,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1648,7 +1648,7 @@
     "classId": "beaches",
     "sketchId": "34590",
     "groupId": null,
-    "value": 10793.96804,
+    "value": 6.69313,
     "extra": {
       "sketchName": "split"
     }
@@ -1659,7 +1659,7 @@
     "classId": "beaches",
     "sketchId": "34591",
     "groupId": null,
-    "value": 5353.227856,
+    "value": 3.312462,
     "extra": {
       "sketchName": "anacapa"
     }
@@ -1702,6 +1702,51 @@
     "geographyId": "south_sr",
     "metricId": "shoretypes",
     "classId": "coastal_marsh",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
     "sketchId": "34591",
     "groupId": null,
     "value": 0,
@@ -1760,7 +1805,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 42954.479075,
+    "value": 26.725891,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1783,7 +1828,7 @@
     "classId": "rocky_shores",
     "sketchId": "34590",
     "groupId": null,
-    "value": 10589.234461,
+    "value": 6.569552,
     "extra": {
       "sketchName": "split"
     }
@@ -1794,7 +1839,7 @@
     "classId": "rocky_shores",
     "sketchId": "34591",
     "groupId": null,
-    "value": 32365.244615,
+    "value": 20.156339,
     "extra": {
       "sketchName": "anacapa"
     }
@@ -1845,57 +1890,12 @@
     }
   },
   {
-    "geographyId": "south_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "south_sr",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
     "geographyId": "world",
     "metricId": "shoretypes",
     "classId": "beaches",
     "sketchId": "34588",
     "groupId": null,
-    "value": 44242.246136,
+    "value": 27.46881,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1907,7 +1907,7 @@
     "classId": "beaches",
     "sketchId": "34589",
     "groupId": null,
-    "value": 15001.336528,
+    "value": 9.321464,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -1918,7 +1918,7 @@
     "classId": "beaches",
     "sketchId": "34590",
     "groupId": null,
-    "value": 23887.681752,
+    "value": 14.834884,
     "extra": {
       "sketchName": "split"
     }
@@ -1929,7 +1929,7 @@
     "classId": "beaches",
     "sketchId": "34591",
     "groupId": null,
-    "value": 5353.227856,
+    "value": 3.312462,
     "extra": {
       "sketchName": "anacapa"
     }
@@ -1940,7 +1940,7 @@
     "classId": "coastal_marsh",
     "sketchId": "34588",
     "groupId": null,
-    "value": 227.56412,
+    "value": 0.140976,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1952,7 +1952,7 @@
     "classId": "coastal_marsh",
     "sketchId": "34589",
     "groupId": null,
-    "value": 227.56412,
+    "value": 0.140976,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -1982,10 +1982,55 @@
   {
     "geographyId": "world",
     "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34588",
+    "groupId": null,
+    "value": 1.570253,
+    "extra": {
+      "sketchName": "network",
+      "isCollection": true
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34589",
+    "groupId": null,
+    "value": 0.996604,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34590",
+    "groupId": null,
+    "value": 0.573648,
+    "extra": {
+      "sketchName": "split"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "34591",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
     "classId": "rock_islands",
     "sketchId": "34588",
     "groupId": null,
-    "value": 19383.190671,
+    "value": 12.079271,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -1997,7 +2042,7 @@
     "classId": "rock_islands",
     "sketchId": "34589",
     "groupId": null,
-    "value": 19060.056216,
+    "value": 11.876757,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -2008,7 +2053,7 @@
     "classId": "rock_islands",
     "sketchId": "34590",
     "groupId": null,
-    "value": 323.134455,
+    "value": 0.202514,
     "extra": {
       "sketchName": "split"
     }
@@ -2030,7 +2075,7 @@
     "classId": "rocky_shores",
     "sketchId": "34588",
     "groupId": null,
-    "value": 62743.510109,
+    "value": 38.756821,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -2042,7 +2087,7 @@
     "classId": "rocky_shores",
     "sketchId": "34589",
     "groupId": null,
-    "value": 12641.863918,
+    "value": 7.855021,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -2053,7 +2098,7 @@
     "classId": "rocky_shores",
     "sketchId": "34590",
     "groupId": null,
-    "value": 17736.401577,
+    "value": 10.679593,
     "extra": {
       "sketchName": "split"
     }
@@ -2064,7 +2109,7 @@
     "classId": "rocky_shores",
     "sketchId": "34591",
     "groupId": null,
-    "value": 32365.244615,
+    "value": 20.156339,
     "extra": {
       "sketchName": "anacapa"
     }
@@ -2075,7 +2120,7 @@
     "classId": "tidal_flats",
     "sketchId": "34588",
     "groupId": null,
-    "value": 354.403057,
+    "value": 0.220559,
     "extra": {
       "sketchName": "network",
       "isCollection": true
@@ -2087,7 +2132,7 @@
     "classId": "tidal_flats",
     "sketchId": "34589",
     "groupId": null,
-    "value": 354.403057,
+    "value": 0.220559,
     "extra": {
       "sketchName": "mpa-test"
     }
@@ -2107,51 +2152,6 @@
     "geographyId": "world",
     "metricId": "shoretypes",
     "classId": "tidal_flats",
-    "sketchId": "34591",
-    "groupId": null,
-    "value": 0,
-    "extra": {
-      "sketchName": "anacapa"
-    }
-  },
-  {
-    "geographyId": "world",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34588",
-    "groupId": null,
-    "value": 2536.462503,
-    "extra": {
-      "sketchName": "network",
-      "isCollection": true
-    }
-  },
-  {
-    "geographyId": "world",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34589",
-    "groupId": null,
-    "value": 1608.07832,
-    "extra": {
-      "sketchName": "mpa-test"
-    }
-  },
-  {
-    "geographyId": "world",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
-    "sketchId": "34590",
-    "groupId": null,
-    "value": 928.384183,
-    "extra": {
-      "sketchName": "split"
-    }
-  },
-  {
-    "geographyId": "world",
-    "metricId": "shoretypes",
-    "classId": "unclassified",
     "sketchId": "34591",
     "groupId": null,
     "value": 0,

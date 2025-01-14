@@ -14,10 +14,12 @@ import { bbox } from "@turf/turf";
 import project from "../../project/projectClient.js";
 import {
   Geography,
+  LineString,
   Metric,
   MetricGroup,
 } from "@seasketch/geoprocessing/client-core";
 import { clipToGeography } from "../util/clipToGeography.js";
+import { overlapLineLength } from "../util/overlapLineLength.js";
 
 /**
  * shoretypesWorker: A geoprocessing function that calculates overlap metrics
@@ -60,11 +62,9 @@ export async function shoretypesWorker(
   const url = project.getDatasourceUrl(ds);
 
   // Fetch features overlapping with sketch, pull from cache if already fetched
-  const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
-    ds,
-    url,
-    { sketch: clippedSketch },
-  );
+  const features = await getDatasourceFeatures<LineString>(ds, url, {
+    sketch: clippedSketch,
+  });
 
   // If this is a sub-class, filter by class name
   const finalFeatures =
@@ -78,10 +78,13 @@ export async function shoretypesWorker(
       : features;
 
   // Calculate overlap metrics
-  const overlapResult = await overlapFeatures(
+  const overlapResult = await overlapLineLength(
     metricGroup.metricId,
     finalFeatures,
     clippedSketch,
+    {
+      units: "miles",
+    },
   );
 
   return overlapResult.map(

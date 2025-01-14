@@ -29,6 +29,7 @@ import project from "../../project/projectClient.js";
 import { ReplicateAreaSketchTableStyled } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
+import precalc from "../../data/precalc/precalcShoretypes.json";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -72,10 +73,8 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
           );
           valueMetrics = valueMetrics.concat(vMetrics);
 
-          const preMetrics = project.getPrecalcMetrics(
-            metricGroup,
-            "area",
-            g.geographyId,
+          const preMetrics = precalc.filter(
+            (m) => m.geographyId === g.geographyId,
           );
           precalcMetrics = precalcMetrics.concat(preMetrics);
 
@@ -138,9 +137,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        typeof val === "string"
-                          ? parseInt(val) / 1609
-                          : val / 1609,
+                        typeof val === "string" ? parseInt(val) : val,
                       ),
                     ),
                   colStyle: { textAlign: "center" },
@@ -189,9 +186,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                       valueFormatter: (val: string | number) =>
                         Number.format(
                           roundDecimal(
-                            typeof val === "string"
-                              ? parseInt(val) / 1609
-                              : val / 1609,
+                            typeof val === "string" ? parseInt(val) : val,
                           ),
                         ),
                       colStyle: { textAlign: "center" },
@@ -242,9 +237,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                       valueFormatter: (val: string | number) =>
                         Number.format(
                           roundDecimal(
-                            typeof val === "string"
-                              ? parseInt(val) / 1609
-                              : val / 1609,
+                            typeof val === "string" ? parseInt(val) : val,
                           ),
                         ),
                       colStyle: { textAlign: "center" },
@@ -360,7 +353,7 @@ export const genLengthSketchTable = (
               const value =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
-                ][0].value / 1609;
+                ][0].value;
 
               const lop = sketchesById[row.sketchId]["proposed_lop"];
               if (!replicateMap[curClass.classId] || !lop) return " ";
@@ -380,7 +373,7 @@ export const genLengthSketchTable = (
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = value / 1609;
+              const miVal = value;
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =
@@ -430,7 +423,7 @@ const ShoretypesObjectives = (props: { metrics: Metric[] }) => {
   const beachesReplicate = (() => {
     const metric = firstMatchingMetric(metrics, (m) => m.classId === "beaches");
     if (!metric) throw new Error(`Expected metric for beaches`);
-    return metric.value / 1609 > replicateMap["beaches"];
+    return metric.value > replicateMap["beaches"];
   })();
 
   const rockyShoresReplicate = (() => {
@@ -439,7 +432,7 @@ const ShoretypesObjectives = (props: { metrics: Metric[] }) => {
       (m) => m.classId === "rocky_shores",
     );
     if (!metric) throw new Error(`Expected metric for rocky_shores`);
-    return metric.value / 1609 > replicateMap["rocky_shores"];
+    return metric.value > replicateMap["rocky_shores"];
   })();
 
   return (

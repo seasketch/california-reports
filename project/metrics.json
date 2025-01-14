@@ -52,6 +52,12 @@
         "layerId": "wI8i1rqAm"
       },
       {
+        "classId": "hardened_shores",
+        "display": "Hardened Shores",
+        "datasourceId": "hardened_shores",
+        "layerId": "wI8i1rqAm"
+      },
+      {
         "classId": "rock_islands",
         "display": "Rock Islands",
         "datasourceId": "rock_islands"
@@ -65,11 +71,6 @@
         "classId": "tidal_flats",
         "display": "Tidal Flats",
         "datasourceId": "tidal_flats"
-      },
-      {
-        "classId": "unclassified",
-        "display": "Unclassified",
-        "datasourceId": "unclassified"
       }
     ]
   },
@@ -289,6 +290,18 @@
         "classId": "substrate102",
         "display": "Soft Substrate (>100m)",
         "datasourceId": "substrate102"
+      }
+    ]
+  },
+  {
+    "metricId": "beaches",
+    "type": "areaOverlap",
+    "classes": [
+      {
+        "classId": "beaches_line",
+        "display": "Beaches",
+        "datasourceId": "beaches_line",
+        "layerId": ""
       }
     ]
   }

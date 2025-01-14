@@ -27,6 +27,7 @@ import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { AreaSketchTableStyled } from "../util/genSketchTable.js";
 import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
+import precalcMetrics from "../../data/precalc/precalcSpan.json";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -42,11 +43,6 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
 
   // Metrics
   const metricGroup = project.getMetricGroup("span", t);
-  const precalcMetrics = geographies
-    .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId),
-    )
-    .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
 
   // Labels
   const titleLabel = t("Span");
@@ -93,9 +89,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
               </Trans>
             </p>
 
-            {!isCollection && (
-              <SpanObjectives value={lengthMetric.value / 1609} />
-            )}
+            {!isCollection && <SpanObjectives value={lengthMetric.value} />}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -114,9 +108,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        typeof val === "string"
-                          ? parseInt(val) / 1609
-                          : val / 1609,
+                        typeof val === "string" ? parseInt(val) : val,
                         2,
                         { keepSmallValues: true },
                       ),
@@ -167,9 +159,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          typeof val === "string"
-                            ? parseInt(val) / 1609
-                            : val / 1609,
+                          typeof val === "string" ? parseInt(val) : val,
                           2,
                           { keepSmallValues: true },
                         ),
@@ -216,9 +206,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          typeof val === "string"
-                            ? parseInt(val) / 1609
-                            : val / 1609,
+                          typeof val === "string" ? parseInt(val) : val,
                           2,
                           { keepSmallValues: true },
                         ),
@@ -334,11 +322,10 @@ export const genLengthSketchTable = (
           {
             Header: t("Minimum") + " ".repeat(index),
             accessor: (row: { sketchId: string }) => {
-              const value =
+              const miVal =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = value / 1609;
 
               return miVal > 3 ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
@@ -350,11 +337,10 @@ export const genLengthSketchTable = (
           {
             Header: t("Preferred") + " ".repeat(index),
             accessor: (row: { sketchId: string }) => {
-              const value =
+              const miVal =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = value / 1609;
 
               return miVal > 6 ? (
                 <CheckCircleFill size={15} style={{ color: "#78c679" }} />
@@ -366,11 +352,10 @@ export const genLengthSketchTable = (
           {
             Header: t("Length") + " ".repeat(index),
             accessor: (row) => {
-              const value =
+              const miVal =
                 aggMetrics[row.sketchId][curClass.classId as string][
                   mg.metricId
                 ][0].value;
-              const miVal = value / 1609;
 
               // If value is nonzero but would be rounded to zero, replace with < 0.1
               const valDisplay =

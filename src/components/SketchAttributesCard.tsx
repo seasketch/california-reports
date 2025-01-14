@@ -37,6 +37,9 @@ export const SketchAttributesCard = ({
     "Change_Cat",
     "PetitionLi",
     "storymap_url",
+    "proposed_lop",
+    "bin",
+    "commission_determination",
   ];
 
   if (autoHide === true && properties.isCollection) {
