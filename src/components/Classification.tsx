@@ -10,6 +10,8 @@ import {
   RbcsIcon,
   GroupPill,
   useSketchProperties,
+  Pill,
+  VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -39,6 +41,16 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
     line-height: 1.5;
   }
 `;
+
+const lopMap: Record<string, string> = {
+  A: "Very High",
+  B: "High",
+  C: "Moderate-High",
+  D: "Moderate",
+  E: "Moderate-Low",
+  F: "Low",
+  G: "N/A",
+};
 
 /**
  * Top level Classification report - JSX.Element
@@ -72,7 +84,7 @@ export const ClassificationCard: React.FunctionComponent = () => {
             </p>
 
             {isCollection
-              ? sketchCollectionReport(data.sketch, data.metrics, t)
+              ? sketchCollectionReport(data.sketch!, data.metrics, t)
               : sketchReport(data.metrics, t)}
           </ReportError>
         );
@@ -94,6 +106,8 @@ const sketchReport = (metrics: Metric[], t: any) => {
       "In single sketch classification report, and getting !=1 metric",
     );
 
+  const [{ proposed_lop }] = useSketchProperties();
+
   return (
     <>
       <div
@@ -112,7 +126,9 @@ const sketchReport = (metrics: Metric[], t: any) => {
           groupColorMap={groupColorMap}
         />
       </div>
-
+      <VerticalSpacer />
+      This MPA's level of protection is: <Pill>{lopMap[proposed_lop]}</Pill>
+      <VerticalSpacer />
       <Collapse title={t("Learn More")}>
         <ClassificationLearnMore t={t} />
       </Collapse>
@@ -178,19 +194,25 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
     },
     {
       Header: t("Classification Level"),
-      accessor: (row) => (
-        <GroupPill
-          groupColorMap={groupColorMapTransparent}
-          group={getUserAttribute(row.properties, "proposed_designation", "")}
-        >
-          {t(
-            groupDisplayMapSg[
-              getUserAttribute(row.properties, "proposed_designation", "")
-            ],
-          )}
-        </GroupPill>
-      ),
-      style: { textAlign: "center", width: "50%" },
+      accessor: (row) => {
+        const designation = row.properties.proposed_designation;
+        if (!designation) return "N/A";
+
+        return (
+          <GroupPill
+            groupColorMap={groupColorMapTransparent}
+            group={designation}
+          >
+            {designation === "Special" ? "Special Closure" : designation}
+          </GroupPill>
+        );
+      },
+      style: { textAlign: "center" },
+    },
+    {
+      Header: t("Level of Protection"),
+      accessor: (row) => lopMap[row.properties.proposed_lop] || "N/A",
+      style: { textAlign: "center" },
     },
   ];
 
@@ -222,9 +244,9 @@ export const ClassificationLearnMore: React.FunctionComponent<
     <>
       <Trans i18nKey="Classification Card - Learn more">
         <p>
-          📈 Report: This report totals number of areas in each classification.
-          See the Glossary for more detailed explanations of the classification
-          levels.
+          📈 Report: This report totals the number of MPAs in each
+          classification. See the Glossary for more detailed explanations of the
+          classification levels.
         </p>
         <p>Last updated: October 29, 2024.</p>
       </Trans>

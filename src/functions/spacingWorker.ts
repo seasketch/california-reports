@@ -4,21 +4,22 @@ import {
   Polygon,
   MultiPolygon,
   GeoprocessingHandler,
-  overlapFeatures,
   rasterMetrics,
   getDatasourceFeatures,
+  overlapPolygonArea,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
   createMetric,
   isRasterDatasource,
   isVectorDatasource,
+  LineString,
   Metric,
   squareMeterToMile,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
-import { useSketchProperties } from "@seasketch/geoprocessing/client-ui";
+import { overlapLineLength } from "../util/overlapLineLength.js";
 
 const replicateTest: Record<
   string,
@@ -103,12 +104,29 @@ export async function spacingWorker(
               }),
             ];
 
+          if (
+            extraParams.datasourceId === "beaches" ||
+            extraParams.datasourceId === "rocky_shores"
+          ) {
+            const features = await getDatasourceFeatures<LineString>(ds, url, {
+              sketch,
+            });
+            return overlapLineLength(
+              extraParams.datasourceId,
+              features,
+              sketch,
+              {
+                units: "miles",
+              },
+            );
+          }
           const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
             ds,
             url,
             { sketch },
           );
-          return overlapFeatures(extraParams.datasourceId, features, sketch);
+
+          return overlapPolygonArea(extraParams.datasourceId, features, sketch);
         } else if (isRasterDatasource(ds)) {
           if (!lop || !["A", "B", "C"].includes(lop[0])) {
             if (ds.measurementType === "quantitative") {

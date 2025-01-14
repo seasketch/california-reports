@@ -7,8 +7,8 @@ import {
   splitSketchAntimeridian,
   Feature,
   isVectorDatasource,
-  overlapFeatures,
   getDatasourceFeatures,
+  overlapPolygonArea,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -78,7 +78,7 @@ export async function estuariesWorker(
       : features;
 
   // Calculate overlap metrics
-  const overlapResult = await overlapFeatures(
+  const overlapResult = await overlapPolygonArea(
     metricGroup.metricId,
     finalFeatures,
     clippedSketch,
