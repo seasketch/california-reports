@@ -3,7 +3,6 @@ import { Trans, useTranslation } from "react-i18next";
 import {
   ClassTable,
   Collapse,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -11,8 +10,6 @@ import {
 import {
   GeogProp,
   Metric,
-  MetricGroup,
-  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -87,13 +84,6 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 0.04 square miles, as determined from biological surveys.
               </p>
             </Trans>
-
-            {!isCollection && (
-              <EelgrassObjectives
-                metricGroup={metricGroup}
-                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
-              />
-            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -250,7 +240,6 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   precalcMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                  { replicate: true, replicateMap: { eelgrass: 0.04 } },
                 )}
               </Collapse>
             )}
@@ -273,43 +262,5 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
-  );
-};
-
-const EelgrassObjectives = (props: {
-  metricGroup: MetricGroup;
-  metrics: Metric[];
-}) => {
-  const { metricGroup, metrics } = props;
-  const replicateMap: Record<string, number> = { eelgrass: 0.12 };
-
-  // Get habitat replicates passes and fails for this MPA
-  const { passes, fails } = metricGroup.classes.reduce(
-    (acc: { passes: string[]; fails: string[] }, curClass) => {
-      const metric = firstMatchingMetric(
-        metrics,
-        (m) => m.classId === curClass.classId,
-      );
-      if (!metric) throw new Error(`Expected metric for ${curClass.classId}`);
-
-      const value = squareMeterToMile(metric.value);
-      const replicateValue = replicateMap[curClass.classId];
-
-      value > replicateValue || (!replicateValue && value)
-        ? acc.passes.push(curClass.display)
-        : acc.fails.push(curClass.display);
-
-      return acc;
-    },
-    { passes: [], fails: [] },
-  );
-
-  return (
-    <>
-      {passes.length > 0 && (
-        <ObjectiveStatus status={"yes"} msg={<>Eelgrass replicate</>} />
-      )}
-      {fails.length > 0 && <></>}
-    </>
   );
 };

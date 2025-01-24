@@ -4,7 +4,6 @@ import {
   ClassTable,
   Collapse,
   LayerToggle,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   useSketchProperties,
@@ -13,8 +12,6 @@ import {
 import {
   GeogProp,
   Metric,
-  MetricGroup,
-  firstMatchingMetric,
   metricsWithSketchId,
   roundDecimal,
   squareMeterToMile,
@@ -81,8 +78,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
 
         const metrics = [...valueMetrics, ...percMetrics];
 
-        console.log(metrics);
-
         const objectives = (() => {
           const objectives = project.getMetricGroupObjectives(metricGroup, t);
           if (!objectives.length) return undefined;
@@ -116,13 +111,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
               layerId={metricGroup.layerId}
             />
             <VerticalSpacer />
-
-            {!isCollection && (
-              <SubstrateObjectives
-                metricGroup={metricGroup}
-                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
-              />
-            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -304,15 +292,6 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   {
                     valueFormatter: (val) =>
                       val * 9.710648864705849093 * 9.710648864705849093,
-                    replicate: true,
-                    replicateMap: {
-                      32: 7,
-                      102: 17,
-                      202: 17,
-                      31: 0.13,
-                      101: 0.13,
-                      201: 0.13,
-                    },
                   },
                 )}
               </Collapse>
@@ -337,101 +316,5 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
         );
       }}
     </ResultsCard>
-  );
-};
-
-const SubstrateObjectives = (props: {
-  metricGroup: MetricGroup;
-  metrics: Metric[];
-}) => {
-  const replicateMap = {
-    32: 7,
-    102: 17,
-    31: 0.13,
-    101: 0.13,
-  };
-  const { metricGroup, metrics } = props;
-
-  const substrate31Replicate = (() => {
-    const metric = firstMatchingMetric(metrics, (m) => m.classId === "31");
-    if (!metric) throw new Error(`Expected metric for substrate31`);
-    return (
-      squareMeterToMile(
-        metric.value * 9.710648864705849093 * 9.710648864705849093,
-      ) > replicateMap["31"]
-    );
-  })();
-  const substrate32Replicate = (() => {
-    const metric = firstMatchingMetric(metrics, (m) => m.classId === "32");
-    if (!metric) throw new Error(`Expected metric for substrate32`);
-    return (
-      squareMeterToMile(
-        metric.value * 9.710648864705849093 * 9.710648864705849093,
-      ) > replicateMap["32"]
-    );
-  })();
-
-  const substrate101Replicate = (() => {
-    const metric101 = firstMatchingMetric(metrics, (m) => m.classId === "101");
-    const metric201 = firstMatchingMetric(metrics, (m) => m.classId === "201");
-    if (!metric101 || !metric201)
-      throw new Error(`Expected metric for substrate31`);
-    return (
-      squareMeterToMile(
-        (metric101.value + metric201.value) *
-          9.710648864705849093 *
-          9.710648864705849093,
-      ) > replicateMap["101"]
-    );
-  })();
-  const substrate102Replicate = (() => {
-    const metric102 = firstMatchingMetric(metrics, (m) => m.classId === "102");
-    const metric202 = firstMatchingMetric(metrics, (m) => m.classId === "202");
-    if (!metric102 || !metric202)
-      throw new Error(`Expected metric for substrate31`);
-    return (
-      squareMeterToMile(
-        (metric102.value + metric202.value) *
-          9.710648864705849093 *
-          9.710648864705849093,
-      ) > replicateMap["102"]
-    );
-  })();
-
-  return (
-    <>
-      {substrate31Replicate ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={<>Hard substrate (30-100m) replicate</>}
-        />
-      ) : (
-        <></>
-      )}
-      {substrate32Replicate ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={<>Soft substrate (30-100m) replicate</>}
-        />
-      ) : (
-        <></>
-      )}
-      {substrate101Replicate ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={<>Hard substrate (&gt;100m) replicate</>}
-        />
-      ) : (
-        <></>
-      )}
-      {substrate102Replicate ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={<>Soft substrate (&gt;100m) replicate</>}
-        />
-      ) : (
-        <></>
-      )}
-    </>
   );
 };

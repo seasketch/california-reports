@@ -92,16 +92,9 @@ export const genSketchTable = (
   options?: {
     valueFormatter?: (val: number) => number;
     size?: boolean;
-    replicate?: boolean;
-    replicateMap?: Record<string, number>;
   },
 ) => {
-  const {
-    valueFormatter = (val: any) => val,
-    size = false,
-    replicate = false,
-    replicateMap = {},
-  } = options || {};
+  const { valueFormatter = (val: any) => val, size = false } = options || {};
 
   const sketchesById = keyBy(childProperties, (sk) => sk.id);
   const sketchIds = childProperties.map((sk) => sk.id);
@@ -131,52 +124,6 @@ export const genSketchTable = (
     (curClass, index) => {
       const transString = t(curClass.display);
       const columns = [];
-
-      if (replicate) {
-        columns.push({
-          Header:
-            (replicateMap[curClass.classId] ? t("Replicate") : " ") +
-            " ".repeat(index),
-          accessor: (row: { sketchId: string }) => {
-            let val =
-              aggMetrics[row.sketchId][curClass.classId as string][
-                mg.metricId
-              ][0].value;
-            let value = squareMeterToMile(
-              valueFormatter ? valueFormatter(val) : val,
-            );
-
-            // Case for habitat report
-            if (curClass.classId === "102" || curClass.classId === "202") {
-              val =
-                aggMetrics[row.sketchId]["102"][mg.metricId][0].value +
-                aggMetrics[row.sketchId]["202"][mg.metricId][0].value;
-              value = squareMeterToMile(
-                valueFormatter ? valueFormatter(val) : val,
-              );
-            } else if (
-              curClass.classId === "101" ||
-              curClass.classId === "201"
-            ) {
-              val =
-                aggMetrics[row.sketchId]["101"][mg.metricId][0].value +
-                aggMetrics[row.sketchId]["201"][mg.metricId][0].value;
-              value = squareMeterToMile(
-                valueFormatter ? valueFormatter(val) : val,
-              );
-            }
-            const lop = sketchesById[row.sketchId]["proposed_lop"];
-            if (!replicateMap[curClass.classId] || !lop) return " ";
-
-            return value > replicateMap[curClass.classId] &&
-              ["A", "B", "C"].includes(lop[0]) ? (
-              <CheckCircleFill size={15} style={{ color: "#78c679" }} />
-            ) : (
-              <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
-            );
-          },
-        });
-      }
 
       if (size) {
         columns.push({
@@ -252,11 +199,7 @@ export const genSketchTable = (
     ...classColumns,
   ];
 
-  return replicate ? (
-    <ReplicateAreaSketchTableStyled>
-      <Table columns={columns} data={rows} />
-    </ReplicateAreaSketchTableStyled>
-  ) : size ? (
+  return size ? (
     <AreaSizeSketchTableStyled>
       <Table columns={columns} data={rows} />
     </AreaSizeSketchTableStyled>

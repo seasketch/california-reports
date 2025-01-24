@@ -10,7 +10,6 @@ import {
   RbcsIcon,
   GroupPill,
   useSketchProperties,
-  Pill,
   VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -19,7 +18,6 @@ import {
   NullSketchCollection,
   Metric,
   toNullSketchArray,
-  getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
 import { styled } from "styled-components";
 import { Trans, useTranslation } from "react-i18next";
@@ -106,8 +104,6 @@ const sketchReport = (metrics: Metric[], t: any) => {
       "In single sketch classification report, and getting !=1 metric",
     );
 
-  const [{ proposed_lop }] = useSketchProperties();
-
   return (
     <>
       <div
@@ -126,8 +122,6 @@ const sketchReport = (metrics: Metric[], t: any) => {
           groupColorMap={groupColorMap}
         />
       </div>
-      <VerticalSpacer />
-      This MPA's level of protection is: <Pill>{lopMap[proposed_lop]}</Pill>
       <VerticalSpacer />
       <Collapse title={t("Learn More")}>
         <ClassificationLearnMore t={t} />
@@ -203,7 +197,11 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
             groupColorMap={groupColorMapTransparent}
             group={designation}
           >
-            {designation === "Special" ? "Special Closure" : designation}
+            {designation === "Special"
+              ? "Special Closure"
+              : designation === "SMCANT"
+                ? "SMCA No-Take"
+                : designation}
           </GroupPill>
         );
       },

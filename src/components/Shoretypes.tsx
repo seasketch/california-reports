@@ -5,7 +5,6 @@ import {
   Collapse,
   Column,
   LayerToggle,
-  ObjectiveStatus,
   ReportError,
   ResultsCard,
   Table,
@@ -17,7 +16,6 @@ import {
   Metric,
   MetricGroup,
   SketchProperties,
-  firstMatchingMetric,
   keyBy,
   metricsWithSketchId,
   nestMetrics,
@@ -26,9 +24,8 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { ReplicateAreaSketchTableStyled } from "../util/genSketchTable.js";
+import { AreaSketchTableStyled } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
 import precalc from "../../data/precalc/precalcShoretypes.json";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -113,13 +110,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
               label={t("Show Seaward Shoretypes")}
               layerId={metricGroup.classes[1].layerId}
             />
-
             <VerticalSpacer />
-            {!isCollection && (
-              <ShoretypesObjectives
-                metrics={valueMetrics.filter((m) => m.geographyId === "world")}
-              />
-            )}
 
             <ClassTable
               rows={metrics.filter((m) => m.geographyId === "world")}
@@ -346,27 +337,6 @@ export const genLengthSketchTable = (
         style: { color: "#777" },
         columns: [
           {
-            Header:
-              (replicateMap[curClass.classId] ? t("Replicate") : "") +
-              " ".repeat(index),
-            accessor: (row) => {
-              const value =
-                aggMetrics[row.sketchId][curClass.classId as string][
-                  mg.metricId
-                ][0].value;
-
-              const lop = sketchesById[row.sketchId]["proposed_lop"];
-              if (!replicateMap[curClass.classId] || !lop) return " ";
-
-              return value > replicateMap[curClass.classId] &&
-                ["A", "B", "C"].includes(lop[0]) ? (
-                <CheckCircleFill size={15} style={{ color: "#78c679" }} />
-              ) : (
-                <XCircleFill size={15} style={{ color: "#ED2C7C" }} />
-              );
-            },
-          },
-          {
             Header: t("Length") + " ".repeat(index),
             accessor: (row) => {
               const value =
@@ -407,48 +377,8 @@ export const genLengthSketchTable = (
   ];
 
   return (
-    <ReplicateAreaSketchTableStyled>
+    <AreaSketchTableStyled>
       <Table columns={columns} data={rows} />
-    </ReplicateAreaSketchTableStyled>
-  );
-};
-
-const ShoretypesObjectives = (props: { metrics: Metric[] }) => {
-  const { metrics } = props;
-  const [{ proposed_lop }] = useSketchProperties();
-
-  // If level of protection is not defined, or if it's too low
-  if (!proposed_lop || !["A", "B", "C"].includes(proposed_lop[0])) return null;
-
-  const beachesReplicate = (() => {
-    const metric = firstMatchingMetric(metrics, (m) => m.classId === "beaches");
-    if (!metric) throw new Error(`Expected metric for beaches`);
-    return metric.value > replicateMap["beaches"];
-  })();
-
-  const rockyShoresReplicate = (() => {
-    const metric = firstMatchingMetric(
-      metrics,
-      (m) => m.classId === "rocky_shores",
-    );
-    if (!metric) throw new Error(`Expected metric for rocky_shores`);
-    return metric.value > replicateMap["rocky_shores"];
-  })();
-
-  return (
-    <>
-      {beachesReplicate && (
-        <>
-          <ObjectiveStatus status={"yes"} msg={<>Beach habitat replicate</>} />
-          <VerticalSpacer />
-        </>
-      )}
-      {rockyShoresReplicate && (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={<>Rocky shore habitat replicate</>}
-        />
-      )}
-    </>
+    </AreaSketchTableStyled>
   );
 };
