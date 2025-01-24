@@ -254,7 +254,7 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   areas that overlap, the overlap is only counted once.
                   Estuaries data has been simplified to a tolerance of 1 meter.
                 </p>
-                <p>Last updated: October 29, 2024.</p>
+                <p>Last updated: January 24, 2025.</p>
               </Trans>
             </Collapse>
           </ReportError>

@@ -257,7 +257,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   estimates. Final reported statistics should be calculated in
                   Desktop GIS tools.
                 </p>
-                <p>Last updated: October 29, 2024.</p>
+                <p>Last updated: January 24, 2025.</p>
               </Trans>
             </Collapse>
           </ReportError>

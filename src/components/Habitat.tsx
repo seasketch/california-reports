@@ -309,7 +309,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   counted once. Habitat data has been downscaled to 30x30 meter
                   resolution.
                 </p>
-                <p>Last updated: October 29, 2024.</p>
+                <p>Last updated: January 24, 2025.</p>
               </Trans>
             </Collapse>
           </ReportError>

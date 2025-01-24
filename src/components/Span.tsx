@@ -262,7 +262,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   within the selected MPA(s). If the selected MPA(s) include
                   multiple areas that overlap, the overlap is only counted once.
                 </p>
-                <p>Last updated: October 29, 2024.</p>
+                <p>Last updated: January 15, 2025.</p>
               </Trans>
             </Collapse>
           </ReportError>

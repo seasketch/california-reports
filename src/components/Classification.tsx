@@ -246,7 +246,7 @@ export const ClassificationLearnMore: React.FunctionComponent<
           classification. See the Glossary for more detailed explanations of the
           classification levels.
         </p>
-        <p>Last updated: October 29, 2024.</p>
+        <p>Last updated: January 24, 2025.</p>
       </Trans>
     </>
   );
