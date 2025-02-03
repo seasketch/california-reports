@@ -287,11 +287,6 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   );
 };
 
-const replicateMap: Record<string, number> = {
-  beaches: 1.1,
-  rocky_shores: 0.55,
-};
-
 /**
  * Creates "Show by Zone" report, with length + percent length
  * @param data data returned from lambda

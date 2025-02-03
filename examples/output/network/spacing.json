@@ -996,6 +996,13 @@
       "paths": []
     },
     {
+      "id": "kelp",
+      "replicates": [
+        "34589"
+      ],
+      "paths": []
+    },
+    {
       "id": "eelgrass",
       "replicates": [],
       "paths": []

@@ -25,8 +25,8 @@ const replicateTest: Record<
   string,
   { valueFormatter: (val: number) => number; replicateVal: number }
 > = {
-  kelpMax: {
-    valueFormatter: (val: number) => squareMeterToMile(val),
+  kelp: {
+    valueFormatter: (val: number) => val,
     replicateVal: 1.1,
   },
   beaches: {
@@ -104,9 +104,11 @@ export async function spacingWorker(
               }),
             ];
 
+          // Overlap lines
           if (
             extraParams.datasourceId === "beaches" ||
-            extraParams.datasourceId === "rocky_shores"
+            extraParams.datasourceId === "rocky_shores" ||
+            extraParams.datasourceId === "kelp"
           ) {
             const features = await getDatasourceFeatures<LineString>(ds, url, {
               sketch,
@@ -120,6 +122,8 @@ export async function spacingWorker(
               },
             );
           }
+
+          // Overlap polygons
           const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
             ds,
             url,

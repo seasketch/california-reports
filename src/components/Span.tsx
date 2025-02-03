@@ -286,20 +286,17 @@ export const genLengthSketchTable = (
   mg: MetricGroup,
   t: any,
 ) => {
-  console.log(metrics);
   const sketchesById = keyBy(childProperties, (sk) => sk.id);
   const sketchIds = childProperties.map((sk) => sk.id);
   const sketchMetrics = metrics.filter(
     (m) => m.sketchId && sketchIds.includes(m.sketchId),
   );
-  console.log(sketchMetrics);
   const finalMetrics = [
     ...sketchMetrics,
     ...toPercentMetric(sketchMetrics, precalcMetrics, {
       metricIdOverride: project.getMetricGroupPercId(mg),
     }),
   ];
-  console.log(finalMetrics);
 
   const aggMetrics = nestMetrics(finalMetrics, [
     "sketchId",

@@ -12,29 +12,27 @@ import project from "../../project/projectClient.js";
 import {
   GeoprocessingRequestModel,
   Metric,
-  ReportResult,
   isMetricArray,
   rekeyMetrics,
   sortMetrics,
-  toNullSketch,
 } from "@seasketch/geoprocessing/client-core";
-import { kelpPersistWorker } from "./kelpPersistWorker.js";
 import { genWorldMetrics } from "../util/genWorldMetrics.js";
+import { kelpWorker } from "./kelpWorker.js";
 
 /**
- * kelpPersist: A geoprocessing function that calculates overlap metrics
+ * kelp: A geoprocessing function that calculates overlap metrics
  * @param sketch - A sketch or collection of sketches
  * @param extraParams
  * @returns Calculated metrics and a null sketch
  */
-export async function kelpPersist(
+export async function kelp(
   sketch:
     | Sketch<Polygon | MultiPolygon>
     | SketchCollection<Polygon | MultiPolygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<Metric[]> {
-  const metricGroup = project.getMetricGroup("kelpPersist");
+  const metricGroup = project.getMetricGroup("kelp");
   const geographies = project.geographies.filter(
     (g) => g.geographyId !== "world",
   );
@@ -49,11 +47,11 @@ export async function kelpPersist(
         };
 
         return process.env.NODE_ENV === "test"
-          ? kelpPersistWorker(sketch, parameters)
+          ? kelpWorker(sketch, parameters)
           : runLambdaWorker(
               sketch,
               project.package.name,
-              "kelpPersistWorker",
+              "kelpWorker",
               project.geoprocessing.region,
               parameters,
               request!,
@@ -78,13 +76,13 @@ export async function kelpPersist(
   );
 }
 
-export default new GeoprocessingHandler(kelpPersist, {
-  title: "kelpPersist",
-  description: "kelpPersist overlap",
+export default new GeoprocessingHandler(kelp, {
+  title: "kelp",
+  description: "kelp overlap",
   timeout: 500, // seconds
   memory: 1024, // megabytes
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
-  workers: ["kelpPersistWorker"],
+  workers: ["kelpWorker"],
 });

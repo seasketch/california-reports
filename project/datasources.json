@@ -46,81 +46,6 @@
     "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/global-eez-mr-v12.fgb"
   },
   {
-    "datasourceId": "bo-present-surface-ph",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": false,
-    "metadata": {
-      "name": "BioOracle Present Day Surface pH",
-      "description": "BioOracle Present Day Surface pH global raster",
-      "version": "2.2",
-      "publisher": "BioOracle",
-      "publishDate": "2021-09-24",
-      "publishLink": "https://www.bio-oracle.org/"
-    },
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": -3.3999999521443642e38,
-    "created": "2023-12-11T11:55:31.053Z",
-    "lastUpdated": "2023-12-11T12:52:22.966Z",
-    "src": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-ph.tif"
-  },
-  {
-    "datasourceId": "bo-present-surface-temp-max",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": false,
-    "metadata": {
-      "name": "BioOracle Present Day Surface Temperature Maximum",
-      "description": "BioOracle Present Day Surface Temperature Maximum global raster",
-      "version": "2.2",
-      "publisher": "BioOracle",
-      "publishDate": "2021-09-24",
-      "publishLink": "https://www.bio-oracle.org/"
-    },
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": -1.7e308,
-    "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-temp-max.tif"
-  },
-  {
-    "datasourceId": "bo-present-surface-temp-min",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": false,
-    "metadata": {
-      "name": "BioOracle Present Day Surface Temperature Minimum",
-      "description": "BioOracle Present Day Surface Temperature Minimum global raster",
-      "version": "2.2",
-      "publisher": "BioOracle",
-      "publishDate": "2021-09-24",
-      "publishLink": "https://www.bio-oracle.org/"
-    },
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": -1.7e308,
-    "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/bo-present-surface-temp-min.tif"
-  },
-  {
-    "datasourceId": "meow-ecos",
-    "geo_type": "vector",
-    "formats": ["fgb"],
-    "precalc": false,
-    "metadata": {
-      "name": "Marine Ecoregions of the World",
-      "description": "A biogeographic classification of the world's coastal and continental shelf waters following a nested hierarchy of realms, provinces and ecoregions",
-      "version": "20190911",
-      "publisher": "The Nature Conservancy",
-      "publishDate": "20190911",
-      "publishLink": "https://tnc.maps.arcgis.com/home/item.html?id=ed2be4cf8b7a451f84fd093c2e7660e3"
-    },
-    "idProperty": "ECOREGION",
-    "nameProperty": "ECOREGION",
-    "layerName": "meow_ecos",
-    "classKeys": [],
-    "url": "https://gp-global-datasources-datasets.s3.us-west-1.amazonaws.com/meow-ecos.fgb"
-  },
-  {
     "datasourceId": "study_regions",
     "geo_type": "vector",
     "formats": ["fgb"],
@@ -128,7 +53,7 @@
     "layerName": "MAN_CA_MLPA_StudyRegionBoundaries",
     "classKeys": ["NAME"],
     "created": "2024-05-21T22:23:21.520Z",
-    "lastUpdated": "2024-06-10T20:13:56.859Z",
+    "lastUpdated": "2025-02-03T18:42:42.989Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/MAN_CA_MLPA_StudyRegionBoundaries.shp",
     "propertiesToKeep": ["NAME"],
     "explodeMulti": true
@@ -141,7 +66,7 @@
     "layerName": "MAN_CA_MPA_BioRegions",
     "classKeys": ["NAME"],
     "created": "2024-05-28T18:42:44.795Z",
-    "lastUpdated": "2024-06-10T20:14:20.948Z",
+    "lastUpdated": "2025-02-03T18:42:43.353Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/MAN_CA_MPA_BioRegions.shp",
     "propertiesToKeep": ["NAME"],
     "explodeMulti": true
@@ -154,7 +79,7 @@
     "layerName": "world",
     "classKeys": [],
     "created": "2024-05-31T20:58:18.854Z",
-    "lastUpdated": "2024-06-04T18:07:38.320Z",
+    "lastUpdated": "2025-02-03T18:42:43.391Z",
     "src": "data/bin/world.json",
     "propertiesToKeep": [],
     "explodeMulti": false
@@ -167,7 +92,7 @@
     "layerName": "clipped_offshorerock",
     "classKeys": [],
     "created": "2024-06-05T22:34:23.307Z",
-    "lastUpdated": "2025-01-13T22:06:58.887Z",
+    "lastUpdated": "2025-02-03T18:42:43.550Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_offshorerock.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -180,7 +105,7 @@
     "layerName": "clipped_beaches",
     "classKeys": [],
     "created": "2024-06-06T17:12:11.406Z",
-    "lastUpdated": "2025-01-13T22:05:27.049Z",
+    "lastUpdated": "2025-02-03T18:42:43.697Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_beaches.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -193,7 +118,7 @@
     "layerName": "clipped_coastalmarsh",
     "classKeys": [],
     "created": "2024-06-06T17:12:34.817Z",
-    "lastUpdated": "2025-01-13T22:05:27.114Z",
+    "lastUpdated": "2025-02-03T18:42:43.762Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_coastalmarsh.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -206,7 +131,7 @@
     "layerName": "clipped_hardenedshores",
     "classKeys": [],
     "created": "2024-06-06T17:12:34.817Z",
-    "lastUpdated": "2025-01-13T22:05:27.223Z",
+    "lastUpdated": "2025-02-03T18:42:43.824Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_hardenedshores.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -219,7 +144,7 @@
     "layerName": "clipped_rockyshores",
     "classKeys": [],
     "created": "2024-06-06T17:12:49.625Z",
-    "lastUpdated": "2025-01-13T22:05:27.467Z",
+    "lastUpdated": "2025-02-03T18:42:43.938Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_rockyshores.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -232,7 +157,7 @@
     "layerName": "clipped_tidalflats",
     "classKeys": [],
     "created": "2024-06-06T17:13:03.351Z",
-    "lastUpdated": "2025-01-13T22:05:59.989Z",
+    "lastUpdated": "2025-02-03T18:42:44.001Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_tidalflats.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -245,7 +170,7 @@
     "layerName": "clipped_unclassified",
     "classKeys": [],
     "created": "2024-06-06T17:13:15.110Z",
-    "lastUpdated": "2025-01-13T22:05:27.583Z",
+    "lastUpdated": "2025-02-03T18:42:44.042Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_unclassified.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -258,7 +183,7 @@
     "layerName": "MPA_Petitions_bioregions_nofed_PairwiseDisso selection",
     "classKeys": [],
     "created": "2024-06-14T19:10:34.383Z",
-    "lastUpdated": "2024-07-08T21:33:40.610Z",
+    "lastUpdated": "2025-02-03T18:42:44.343Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/ClippingLayer/MPA_Petitions_bioregions_nofed_PairwiseDisso selection.shp",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -271,7 +196,7 @@
     "layerName": "estuaries_clipped",
     "classKeys": [],
     "created": "2024-06-17T20:49:40.597Z",
-    "lastUpdated": "2024-10-07T18:17:39.455Z",
+    "lastUpdated": "2025-02-03T18:42:44.480Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/estuaries/estuaries_clipped.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -284,7 +209,7 @@
     "layerName": "central_br_extent",
     "classKeys": [],
     "created": "2024-06-17T21:27:54.623Z",
-    "lastUpdated": "2024-06-18T16:38:37.516Z",
+    "lastUpdated": "2025-02-03T18:42:44.530Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/central_br_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -297,7 +222,7 @@
     "layerName": "north_br_extent",
     "classKeys": [],
     "created": "2024-06-17T21:42:36.167Z",
-    "lastUpdated": "2024-06-18T16:38:37.584Z",
+    "lastUpdated": "2025-02-03T18:42:44.573Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/north_br_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -310,7 +235,7 @@
     "layerName": "south_br_extent",
     "classKeys": [],
     "created": "2024-06-17T22:04:50.182Z",
-    "lastUpdated": "2024-06-18T16:38:37.676Z",
+    "lastUpdated": "2025-02-03T18:42:44.614Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MPA_BioRegions/south_br_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -323,7 +248,7 @@
     "layerName": "eelgrass_simplified5m_1mRemoved",
     "classKeys": [],
     "created": "2024-06-25T16:22:19.705Z",
-    "lastUpdated": "2024-09-19T20:07:47.782Z",
+    "lastUpdated": "2025-02-03T18:42:45.688Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/eelgrass/eelgrass_simplified5m_1mRemoved.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -336,7 +261,7 @@
     "layerName": "north_sr_extent",
     "classKeys": [],
     "created": "2024-06-27T18:42:26.181Z",
-    "lastUpdated": "2024-06-27T18:42:26.181Z",
+    "lastUpdated": "2025-02-03T18:42:45.769Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/north_sr_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -349,7 +274,7 @@
     "layerName": "northcentral_sr_extent",
     "classKeys": [],
     "created": "2024-06-27T18:43:48.206Z",
-    "lastUpdated": "2024-06-27T18:43:48.206Z",
+    "lastUpdated": "2025-02-03T18:42:45.886Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/northcentral_sr_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -362,7 +287,7 @@
     "layerName": "central_sr_extent",
     "classKeys": [],
     "created": "2024-06-27T18:44:12.053Z",
-    "lastUpdated": "2024-06-27T18:44:12.053Z",
+    "lastUpdated": "2025-02-03T18:42:45.979Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/central_sr_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -375,7 +300,7 @@
     "layerName": "south_sr_extent",
     "classKeys": [],
     "created": "2024-06-27T18:44:33.505Z",
-    "lastUpdated": "2024-08-12T18:18:34.820Z",
+    "lastUpdated": "2025-02-03T18:42:46.067Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/MAN_CA_MLPA_StudyRegionBoundaries/south_sr_extent.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -389,20 +314,8 @@
     "band": 1,
     "noDataValue": -9999,
     "created": "2024-06-28T18:37:50.902Z",
-    "lastUpdated": "2024-06-28T18:37:50.902Z",
+    "lastUpdated": "2025-02-03T18:42:50.836Z",
     "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif"
-  },
-  {
-    "datasourceId": "kelpPersist",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "categorical",
-    "band": 1,
-    "noDataValue": 15,
-    "created": "2024-07-24T16:15:49.909Z",
-    "lastUpdated": "2024-07-24T16:15:49.909Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/KelpPersistence/lookup/lookup30.tif"
   },
   {
     "datasourceId": "hab_ca",
@@ -413,33 +326,8 @@
     "band": 1,
     "noDataValue": -32768,
     "created": "2024-08-05T16:20:51.668Z",
-    "lastUpdated": "2024-08-05T16:20:51.668Z",
+    "lastUpdated": "2025-02-03T18:43:46.492Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca/hab_ca30.tif"
-  },
-  {
-    "datasourceId": "kelpMax",
-    "geo_type": "raster",
-    "formats": ["tif"],
-    "precalc": true,
-    "measurementType": "quantitative",
-    "band": 1,
-    "noDataValue": 65535,
-    "created": "2024-08-12T20:59:52.498Z",
-    "lastUpdated": "2024-08-12T20:59:52.498Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Bio_ca_kelp_max_cdfw/kelpMax.tif"
-  },
-  {
-    "datasourceId": "test",
-    "geo_type": "vector",
-    "formats": ["fgb"],
-    "precalc": true,
-    "layerName": "rockyshores",
-    "classKeys": [],
-    "created": "2024-09-04T19:12:05.432Z",
-    "lastUpdated": "2024-09-04T19:12:05.432Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/rockyshores.fgb",
-    "propertiesToKeep": [],
-    "explodeMulti": true
   },
   {
     "datasourceId": "shoretypes",
@@ -449,7 +337,7 @@
     "layerName": "clipped_shoretypes",
     "classKeys": [],
     "created": "2024-09-04T19:57:56.137Z",
-    "lastUpdated": "2025-01-14T18:26:11.047Z",
+    "lastUpdated": "2025-02-03T18:44:05.229Z",
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_shoretypes.fgb",
     "propertiesToKeep": [],
     "explodeMulti": true
@@ -463,19 +351,19 @@
     "band": 1,
     "noDataValue": -9999,
     "created": "2024-10-15T16:10:31.893Z",
-    "lastUpdated": "2024-10-29T21:15:31.933Z",
+    "lastUpdated": "2025-02-03T18:47:57.990Z",
     "src": "data/src/California MPAs 2024/Plus_Depth_Substrate.tif"
   },
   {
-    "datasourceId": "beaches_line",
+    "datasourceId": "kelp",
     "geo_type": "vector",
     "formats": ["fgb"],
     "precalc": true,
-    "layerName": "beaches",
+    "layerName": "LinearKelp_Maximum_1984_2023",
     "classKeys": [],
-    "created": "2025-01-10T20:16:17.566Z",
-    "lastUpdated": "2025-01-10T20:16:17.566Z",
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/hab_ca_shoretypes_2010_update_rockislands_proj/beaches.fgb",
+    "created": "2025-02-03T18:29:25.981Z",
+    "lastUpdated": "2025-02-03T18:47:58.328Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/LinearKelp_Maximum_1984_2023.shp",
     "propertiesToKeep": [],
     "explodeMulti": true
   }

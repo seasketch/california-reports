@@ -18,38 +18,34 @@ import {
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import { genSketchTable } from "../util/genSketchTable.js";
+import precalc from "../../data/precalc/precalcKelp.json";
 import { GeographyTable } from "../util/GeographyTable.js";
+import { genLengthSketchTable } from "./Shoretypes.js";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
- * KelpMax component
+ * Kelp component
  *
  * @param props - geographyId
  * @returns A react component which displays an overlap report
  */
-export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
+export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
 
   // Metrics
-  const metricGroup = project.getMetricGroup("kelpMax", t);
-  const precalcMetrics = geographies
-    .map((geography) =>
-      project.getPrecalcMetrics(metricGroup, "area", geography.geographyId),
-    )
-    .reduce<Metric[]>((metrics, curMetrics) => metrics.concat(curMetrics), []);
+  const metricGroup = project.getMetricGroup("kelp", t);
 
   // Labels
-  const titleLabel = t("Kelp (Maximum)");
-  const withinLabel = t("Area Within MPA(s)");
-  const percWithinLabel = t("% Total Kelp Area");
-  const unitsLabel = t("mi²");
+  const titleLabel = t("Kelp");
+  const withinLabel = t("Length Within MPA(s)");
+  const percWithinLabel = t("% Total Kelp Length");
+  const unitsLabel = t("mi");
 
   return (
-    <ResultsCard title={titleLabel} functionName="kelpMax">
+    <ResultsCard title={titleLabel} functionName="kelp">
       {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -57,25 +53,24 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
           metricResults.filter((m) => m.metricId === metricGroup.metricId),
           [id],
         );
-        const percentMetrics = toPercentMetric(valueMetrics, precalcMetrics, {
+        const percentMetrics = toPercentMetric(valueMetrics, precalc, {
           metricIdOverride: percMetricIdName,
           idProperty: "geographyId",
         });
         const metrics = [...valueMetrics, ...percentMetrics];
 
-        const objectives = (() => {
-          const objectives = project.getMetricGroupObjectives(metricGroup, t);
-          if (!objectives.length) return undefined;
-          else return objectives;
-        })();
-
         return (
           <ReportError>
-            <Trans i18nKey="KelpMax 1">
+            <Trans i18nKey="Kelp 1">
               <p>
                 Potential kelp forest is a key habitat. This report summarizes
-                the overlap of the selected MPA(s) with the maximum kelp canopy
-                coverage over the years 2002-2016.
+                the overlap of the selected MPA(s) with the maximum extent of
+                kelp canopy between 1984 and 2023.
+              </p>
+              <p>
+                The minimum extent necessary to encompass 90% of local
+                biodiversity in a kelp forest is 1.1 linear miles, as determined
+                from biological surveys.
               </p>
             </Trans>
 
@@ -101,11 +96,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                   valueFormatter: (val: string | number) =>
                     Number.format(
                       roundDecimal(
-                        squareMeterToMile(
-                          typeof val === "string" ? parseInt(val) : val,
-                        ),
-                        2,
-                        { keepSmallValues: true },
+                        typeof val === "string" ? parseInt(val) : val,
                       ),
                     ),
                   colStyle: { textAlign: "center" },
@@ -135,7 +126,6 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 geographies={geographies.filter((g) =>
                   g.geographyId?.endsWith("_sr"),
                 )}
-                objective={objectives}
                 columnConfig={[
                   {
                     columnLabel: "Kelp (Maximum)",
@@ -149,11 +139,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val,
-                          ),
-                          2,
-                          { keepSmallValues: true },
+                          typeof val === "string" ? parseInt(val) : val,
                         ),
                       ),
                     colStyle: { textAlign: "center" },
@@ -184,7 +170,6 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                 geographies={geographies.filter((g) =>
                   g.geographyId?.endsWith("_br"),
                 )}
-                objective={objectives}
                 columnConfig={[
                   {
                     columnLabel: "Kelp (Maximum)",
@@ -198,11 +183,7 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
                     valueFormatter: (val: string | number) =>
                       Number.format(
                         roundDecimal(
-                          squareMeterToMile(
-                            typeof val === "string" ? parseInt(val) : val,
-                          ),
-                          2,
-                          { keepSmallValues: true },
+                          typeof val === "string" ? parseInt(val) : val,
                         ),
                       ),
                     colStyle: { textAlign: "center" },
@@ -228,10 +209,10 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
 
             {isCollection && (
               <Collapse title={t("Show by MPA")}>
-                {genSketchTable(
+                {genLengthSketchTable(
                   childProperties || [],
                   metricResults.filter((m) => m.geographyId === "world"),
-                  precalcMetrics.filter((m) => m.geographyId === "world"),
+                  precalc.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
                 )}
@@ -239,25 +220,18 @@ export const KelpMax: React.FunctionComponent<GeogProp> = (props) => {
             )}
 
             <Collapse title={t("Learn More")}>
-              <Trans i18nKey="KelpMax - learn more">
-                <p>
-                  ℹ️ Overview: Overview: This layer shows the maximum extent of
-                  kelp canopy based on 13 years of aerial surveys conducted
-                  between 2002 and 2016.
-                </p>
+              <Trans i18nKey="Kelp - learn more">
                 <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total value of kelp
-                  canopy coverage within the selected MPA(s). This value is
-                  divided by the total value of kelp canopy coverage to obtain
+                  📈 Report: This report calculates the total length of maximum
+                  linear kelp canopy within the selected MPA(s). This value is
+                  divided by the total length of linear kelp canopy to obtain
                   the % contained within the selected MPA(s). If the selected
-                  area includes multiple areas that overlap, the overlap is only
-                  counted once. Kelp data has been downsampled to a 30m x 30m
-                  raster grid for efficiency, so area calculations are
-                  estimates. Final reported statistics should be calculated in
-                  Desktop GIS tools.
+                  MPA(s) includes multiple areas that overlap, the overlap is
+                  only counted once. Final plans should check area totals in GIS
+                  tools before publishing final area statistics.
                 </p>
-                <p>Last updated: January 24, 2025.</p>
+                <p>Last updated: February 3, 2025.</p>
               </Trans>
             </Collapse>
           </ReportError>

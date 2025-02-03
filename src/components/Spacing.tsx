@@ -28,7 +28,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
   });
 
   const spacingTitle: Record<string, string> = {
-    kelpMax: "Kelp",
+    kelp: "Kelp",
     estuaries: "Estuary",
     rocky_shores: "Rocky Shore",
     beaches: "Beach",

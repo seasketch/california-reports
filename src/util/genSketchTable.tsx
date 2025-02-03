@@ -124,7 +124,6 @@ export const genSketchTable = (
     (curClass, index) => {
       const transString = t(curClass.display);
       const columns = [];
-
       if (size) {
         columns.push({
           Header: t("Minimum") + " ".repeat(index),
@@ -184,7 +183,7 @@ export const genSketchTable = (
       });
 
       return {
-        Header: transString,
+        Header: size ? " " : transString,
         style: { color: "#777" },
         columns: columns,
       };
