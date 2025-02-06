@@ -74,8 +74,9 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <Trans i18nKey="Estuaries 1">
               <p>
-                Estuaries are a key habitat. This report summarizes the overlap
-                of the selected MPA(s) with estuaries.
+                Estuaries and coastal marsh habitats act as connections between
+                the open coast and nearshore watersheds. This report summarizes
+                the overlap of the selected MPA(s) with estuaries.
               </p>
               <p>
                 The minimum area of estuarine habitat within an MPA necessary to
@@ -245,14 +246,16 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Estuaries - learn more">
-                <p>🗺️ Source Data: CDFW</p>
                 <p>
-                  📈 Report: This report calculates the total area of each
-                  estuaries within the selected MPA(s). This value is divided by
-                  the total area of estuaries to obtain the % contained within
-                  the selected MPA(s). If the selected area includes multiple
-                  areas that overlap, the overlap is only counted once.
-                  Estuaries data has been simplified to a tolerance of 1 meter.
+                  🗺️ Source Data: Pacific Marine and Estuarine Fish Habitat
+                  Partnership
+                </p>
+                <p>
+                  📈 Report: This report calculates the total area of estuaries
+                  within the selected MPA(s). This value is divided by the total
+                  area of estuaries to obtain the % contained within the
+                  selected MPA(s). If the selected area includes multiple areas
+                  that overlap, the overlap is only counted once.
                 </p>
                 <p>Last updated: January 24, 2025.</p>
               </Trans>

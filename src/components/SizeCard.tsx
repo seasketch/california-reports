@@ -129,7 +129,7 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                 </b>
                 {", "}
                 {t("which is")} <b>{percDisplay}</b> {t("of")}{" "}
-                {t("Californian state waters")}.
+                {t("California state waters")}.
               </KeySection>
 
               <LayerToggle label={mapLabel} layerId={metricGroup.layerId} />

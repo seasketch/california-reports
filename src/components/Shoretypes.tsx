@@ -88,10 +88,13 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <Trans i18nKey="Shoretypes 1">
               <p>
-                This report summarizes the overlap of the selected MPA(s) with
-                sandy beach and rocky intertidal habitat. Data are included for
-                both landward and seaward shoreline, so a single segment of
-                shoreline may be counted towards more than one type of habitat.
+                Alongshore habitats, such as sandy beach and rocky intertidal,
+                provide an important connection between land and sea for marine
+                species and humans alike. This report summarizes the overlap of
+                the selected MPA(s) with sandy beach and rocky intertidal
+                habitat. Data are included for both landward and seaward
+                shoreline, so a single segment of shoreline may be counted
+                towards more than one type of habitat.
               </p>
               <p>
                 The minimum length of habitat within an MPA necessary to
@@ -267,7 +270,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Shoretypes - learn more">
-                <p>🗺️ Source Data: CDFW</p>
+                <p>🗺️ Source Data: NOAA</p>
                 <p>
                   📈 Report: This report calculates the total length of each
                   shoretype within the selected MPA(s). This value is divided by

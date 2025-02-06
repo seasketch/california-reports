@@ -73,7 +73,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
               <p>
                 Eelgrass helps prevent erosion and maintain stability near shore
                 by anchoring sediment with its spreading rhizomes and slowing
-                water flow. Eelgrass beds also provide foraging, breeding,and
+                water flow. Eelgrass beds also provide foraging, breeding, and
                 nursery areas for many species of invertebrates, fish, and
                 birds. This report summarizes the overlap of the selected MPA(s)
                 with eelgrass extent.

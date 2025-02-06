@@ -63,9 +63,12 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <Trans i18nKey="Kelp 1">
               <p>
-                Potential kelp forest is a key habitat. This report summarizes
-                the overlap of the selected MPA(s) with the maximum extent of
-                kelp canopy between 1984 and 2023.
+                Kelp forests are found in nearshore waters along much of
+                California's coastline and boost biodiversity, enhance
+                recreational opportunities, and support important fisheries.
+                This report summarizes the overlap of the selected MPA(s) with a
+                linear representation of the maximum extent of kelp canopy
+                between 1984 and 2023.
               </p>
               <p>
                 The minimum extent necessary to encompass 90% of local
@@ -221,7 +224,14 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Kelp - learn more">
-                <p>🗺️ Source Data: CDFW</p>
+                <p>
+                  🗺️ Source Data: Bell, T, K. Cavanaugh, D. Siegel. 2024. SBC
+                  LTER: Time series of quarterly NetCDF files of kelp biomass in
+                  the canopy from Landsat 5, 7 and 8, since 1984 (ongoing) ver
+                  26. Environmental Data Initiative.
+                  https://doi.org/10.6073/pasta/a9071a2ce1b78242c2ad1dda5854ec78.
+                  Accessed 2025-01-21.
+                </p>
                 <p>
                   📈 Report: This report calculates the total length of maximum
                   linear kelp canopy within the selected MPA(s). This value is

@@ -30,6 +30,7 @@ export const SketchAttributesCard = ({
   const attributesLabel = t("More Info");
 
   const propertiesToDisplay = [
+    "type",
     "proposed_designation",
     "Study_Regi",
     "Bioregion",
@@ -37,6 +38,7 @@ export const SketchAttributesCard = ({
     "Change_Cat",
     "PetitionLi",
     "storymap_url",
+    "existing_lop",
     "proposed_lop",
     "bin",
     "commission_determination",
@@ -140,9 +142,11 @@ export const SketchAttributesCard = ({
                         paddingTop: 6,
                       }}
                     >
-                      {label === "Proposed Designation (type)"
-                        ? "Designation"
-                        : label}
+                      {label === "Current Designation (type)"
+                        ? "Existing Designation"
+                        : label === "Proposed Designation (type)"
+                          ? "Proposed Designation"
+                          : label}
                     </td>
                     <td
                       style={{
@@ -159,7 +163,7 @@ export const SketchAttributesCard = ({
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {t(valueLabel)}
+                          {t("Link")}
                         </a>
                       ) : (
                         /* @ts-expect-error type mismatch */

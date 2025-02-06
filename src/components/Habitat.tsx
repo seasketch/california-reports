@@ -88,16 +88,16 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
           <ReportError>
             <Trans i18nKey="Habitat 1">
               <p>
-                Hard and soft bottom areas at a range of depths are key
-                habitats. This report summarizes the overlap of the selected
-                MPA(s) with hard and soft substrate classes at four depth
-                ranges: 0-30 m, 30-100 m, 100-200 m, and &gt;200 m.
+                Hard and soft bottom areas at a range of depths provide habitat
+                for many species of commercial and recreational importance. This
+                report summarizes the overlap of the selected MPA(s) with hard
+                and soft substrate classes at four depth ranges: 0-30 m, 30-100
+                m, 100-200 m, and &gt;200 m.
               </p>
               <p>
-                As determined by the Marine Life Protection Act Initiative
-                Science Advisory Team, the minimum area within an MPA necessary
-                to encompass 90% of local biodiversity and count as a replicate
-                in each habitat and depth is:
+                The minimum area within an MPA necessary to encompass 90% of
+                local biodiversity and count as a replicate in each depth zone
+                is:
                 <br />
                 <br>• soft substrate 30-100m: 7 square miles</br>
                 <br>• soft substrate &gt;100m: 17 square miles</br>
@@ -299,7 +299,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
 
             <Collapse title={t("Learn More")}>
               <Trans i18nKey="Habitat - learn more">
-                <p>🗺️ Source Data: CDFW</p>
+                <p>🗺️ Source Data: CDFW, NOAA</p>
                 <p>
                   📈 Report: This report calculates the total area of each
                   habitat class within the selected MPA(s). This value is
