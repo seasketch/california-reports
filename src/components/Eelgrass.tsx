@@ -193,7 +193,7 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Eelgrass",
+                    columnLabel: t("Eelgrass"),
                     type: "class",
                     width: 25,
                   },
@@ -255,8 +255,8 @@ export const Eelgrass: React.FunctionComponent<GeogProp> = (props) => {
                   overlap, the overlap is only counted once. Eelgrass data has
                   been simplified to a tolerance of 5 meters.
                 </p>
-                <p>Last updated: January 24, 2025.</p>
               </Trans>
+              <p>{t("Last updated")}: January 24, 2025.</p>
             </Collapse>
           </ReportError>
         );

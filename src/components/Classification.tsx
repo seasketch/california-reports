@@ -25,8 +25,6 @@ import {
   groups,
   groupColorMap,
   groupColorMapTransparent,
-  groupDisplayMapPl,
-  groupDisplayMapSg,
 } from "../util/getGroup.js";
 import { PointyCircle } from "../util/PointyCircle.js";
 
@@ -39,16 +37,6 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
     line-height: 1.5;
   }
 `;
-
-const lopMap: Record<string, string> = {
-  A: "Very High",
-  B: "High",
-  C: "Moderate-High",
-  D: "Moderate",
-  E: "Moderate-Low",
-  F: "Low",
-  G: "N/A",
-};
 
 /**
  * Top level Classification report - JSX.Element
@@ -65,21 +53,23 @@ export const ClassificationCard: React.FunctionComponent = () => {
       {(data: ReportResult) => {
         return (
           <ReportError>
-            <p>
-              The following classifications are used for designating managed
-              marine and estuarine areas in California:
-            </p>
-            <p>
-              • State Marine Reserve (SMR)
-              <br />• State Marine Conservation Area (SMCA)
-              <br />• State Marine Conservation Area No-Take (SMCA No-Take)
-              <br />• State Marine Recreational Management Area (SMRMA)
-              <br />• Special Closure{" "}
-            </p>
-            <p>
-              In addition, the classification State Marine Park (SMP) is used by
-              the California Department of Parks and Recreation.
-            </p>
+            <Trans i18nKey="Classification Card 1">
+              <p>
+                The following classifications are used for designating managed
+                marine and estuarine areas in California:
+              </p>
+              <p>
+                • State Marine Reserve (SMR)
+                <br />• State Marine Conservation Area (SMCA)
+                <br />• State Marine Conservation Area No-Take (SMCA No-Take)
+                <br />• State Marine Recreational Management Area (SMRMA)
+                <br />• Special Closure{" "}
+              </p>
+              <p>
+                In addition, the classification State Marine Park (SMP) is used
+                by the California Department of Parks and Recreation.
+              </p>
+            </Trans>
 
             {isCollection
               ? sketchCollectionReport(data.sketch!, data.metrics, t)
@@ -104,6 +94,16 @@ const sketchReport = (metrics: Metric[], t: any) => {
       "In single sketch classification report, and getting !=1 metric",
     );
 
+  // Display values for groups
+  const groupDisplayMapSg: Record<string, string> = {
+    SMR: t("State Marine Reserve"),
+    SMCANT: t("State Marine Conservation Area (No-Take)"),
+    SMCA: t("State Marine Conservation Area"),
+    SMRMA: t("State Marine Recreation Management Area"),
+    SMP: t("State Marine Park"),
+    Special: t("Special Closure"),
+  };
+
   return (
     <>
       <div
@@ -116,6 +116,7 @@ const sketchReport = (metrics: Metric[], t: any) => {
         <MpaClassPanel
           value={metrics[0].value}
           size={18}
+          /* i18next-extract-disable-next-line */
           displayName={t(groupDisplayMapSg[metrics[0].groupId || "none"])}
           displayValue={false}
           group={metrics[0].groupId as string | undefined}
@@ -147,6 +148,15 @@ const sketchCollectionReport = (
     (a, b) => groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || ""),
   );
 
+  const groupDisplayMapPl: Record<string, string> = {
+    SMR: t("State Marine Reserve(s)"),
+    SMCANT: t("State Marine Conservation Area(s) (No-Take)"),
+    SMCA: t("State Marine Conservation Area(s)"),
+    SMRMA: t("State Marine Recreation Management Area(s)"),
+    SMP: t("State Marine Park(s)"),
+    Special: t("Special Closure(s)"),
+  };
+
   const columns: Column<Metric>[] = [
     {
       Header: " ",
@@ -154,6 +164,7 @@ const sketchCollectionReport = (
         <MpaClassPanel
           value={row.value}
           size={18}
+          /* i18next-extract-disable-next-line */
           displayName={t(groupDisplayMapPl[row.groupId || "none"])}
           group={row.groupId as string | undefined}
           groupColorMap={groupColorMap}
@@ -181,6 +192,16 @@ const sketchCollectionReport = (
  * Show by MPA sketch table for sketch collection
  */
 const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
+  const lopMap: Record<string, string> = {
+    A: t("Very High"),
+    B: t("High"),
+    C: t("Moderate-High"),
+    D: t("Moderate"),
+    E: t("Moderate-Low"),
+    F: t("Low"),
+    G: t("N/A"),
+  };
+
   const columns: Column<NullSketch>[] = [
     {
       Header: t("MPA"),
@@ -246,8 +267,8 @@ export const ClassificationLearnMore: React.FunctionComponent<
           classification. See the Glossary for more detailed explanations of the
           classification levels.
         </p>
-        <p>Last updated: January 24, 2025.</p>
       </Trans>
+      <p>{t("Last updated")}: January 24, 2025.</p>
     </>
   );
 };

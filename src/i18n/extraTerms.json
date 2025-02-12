@@ -52,5 +52,19 @@
   "South Planning Region": "South Planning Region",
   "North Bioregion": "North Bioregion",
   "Central Bioregion": "Central Bioregion",
-  "South Bioregion": "South Bioregion"
+  "South Bioregion": "South Bioregion",
+  "Hardened Shores": "Hardened Shores",
+  "Hard 0-30m": "Hard 0-30m",
+  "Soft 0-30m": "Soft 0-30m",
+  "Hard 30-100m": "Hard 30-100m",
+  "Soft 30-100m": "Soft 30-100m",
+  "Hard 100-200m": "Hard 100-200m",
+  "Soft 100-200m": "Soft 100-200m",
+  "Hard >200m": "Hard >200m",
+  "Soft >200m": "Soft >200m",
+  "Beach": "Beach",
+  "Hard Substrate (30-100m)": "Hard Substrate (30-100m)",
+  "Soft Substrate (30-100m)": "Soft Substrate (30-100m)",
+  "Hard Substrate (>100m)": "Hard Substrate (>100m)",
+  "Soft Substrate (>100m)": "Soft Substrate (>100m)"
 }

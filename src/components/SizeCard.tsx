@@ -274,10 +274,12 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                   </Collapse>
                   <Collapse title={t("Show by MPA")} key={"MPA"}>
                     <p>
-                      During the planning process to establish California’s
-                      Network of MPAs, the Science Advisory Team recommended a
-                      minimum size of 9-18 square statute miles for each MPA,
-                      and preferably 18-36 square statute miles.
+                      <Trans i18nKey="SizeCard - MPA">
+                        During the planning process to establish California's
+                        Network of MPAs, the Science Advisory Team recommended a
+                        minimum size of 9-18 square statute miles for each MPA,
+                        and preferably 18-36 square statute miles.
+                      </Trans>
                     </p>
                     {genSketchTable(
                       childProperties || [],
@@ -299,8 +301,8 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     MPA(s). If MPA boundaries overlap, the overlap is only
                     counted once.
                   </p>
-                  <p>Last updated: December 12, 2024</p>
                 </Trans>
+                <p>{t("Last updated")}: December 12, 2024</p>
               </Collapse>
             </ToolbarCard>
           </>
@@ -314,38 +316,40 @@ const SizeObjectives = (props: { value: number }) => {
   return (
     <>
       <p>
-        During the planning process to establish California’s Network of MPAs,
-        the Science Advisory Team recommended a minimum size of 9-18 square
-        statute miles for each MPA, and preferably 18-36 square statute miles.
+        <Trans i18nKey="SizeCard - objectives">
+          During the planning process to establish California’s Network of MPAs,
+          the Science Advisory Team recommended a minimum size of 9-18 square
+          statute miles for each MPA, and preferably 18-36 square statute miles.
+        </Trans>
       </p>
       {props.value > 9 && props.value < 18 ? (
         <ObjectiveStatus
           status={"yes"}
           style={{ color: "#EBB414" }}
           msg={
-            <>
+            <Trans i18nKey="SizeCard - objectiveMed">
               This MPA meets the 9-18 mi² minimum size guideline, but does not
               meet the {">"}18 mi² preferred size guideline.
-            </>
+            </Trans>
           }
         />
       ) : props.value > 18 ? (
         <ObjectiveStatus
           status={"yes"}
           msg={
-            <>
+            <Trans i18nKey="SizeCard - objectiveYes">
               This MPA meets the {">"}18 square mile preferred size guideline.
-            </>
+            </Trans>
           }
         />
       ) : (
         <ObjectiveStatus
           status={"no"}
           msg={
-            <>
+            <Trans i18nKey="SizeCard - objectiveNo">
               This MPA does not meet the 9-18 square mile minimum size
               guideline.
-            </>
+            </Trans>
           }
         />
       )}

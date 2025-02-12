@@ -26,7 +26,7 @@ import {
 import project from "../../project/projectClient.js";
 import { AreaSketchTableStyled } from "../util/genSketchTable.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-import precalc from "../../data/precalc/precalcShoretypes.json";
+import precalc from "../../data/precalc/precalcShoretypes.json" with { type: "json" };
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -169,7 +169,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   )}
                   columnConfig={[
                     {
-                      columnLabel: t(curClass.display),
+                      columnLabel: curClass.display,
                       type: "class",
                       width: 40,
                     },
@@ -220,7 +220,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   )}
                   columnConfig={[
                     {
-                      columnLabel: t(curClass.display),
+                      columnLabel: curClass.display,
                       type: "class",
                       width: 25,
                     },
@@ -280,8 +280,8 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
                   Selected MPA(s) were buffered by 250 meters to ensure overlap
                   with shoreline habitats data layer.
                 </p>
-                <p>Last updated: January 15, 2025.</p>
               </Trans>
+              <p>{t("Last updated")}: January 15, 2025.</p>
             </Collapse>
           </ReportError>
         );

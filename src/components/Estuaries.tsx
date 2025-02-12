@@ -257,8 +257,8 @@ export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
                   selected MPA(s). If the selected area includes multiple areas
                   that overlap, the overlap is only counted once.
                 </p>
-                <p>Last updated: January 24, 2025.</p>
               </Trans>
+              <p>{t("Last updated")}: January 24, 2025.</p>
             </Collapse>
           </ReportError>
         );

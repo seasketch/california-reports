@@ -17,26 +17,6 @@ export const groupColors = [
   "#FF00C5",
 ];
 
-// Display values for groups (plural)
-export const groupDisplayMapPl: Record<string, string> = {
-  SMR: "State Marine Reserve(s)",
-  SMCANT: "State Marine Conservation Area(s) (No-Take)",
-  SMCA: "State Marine Conservation Area(s)",
-  SMRMA: "State Marine Recreation Management Area(s)",
-  SMP: "State Marine Park(s)",
-  Special: "Special Closure(s)",
-};
-
-// Display values for groups (singular)
-export const groupDisplayMapSg: Record<string, string> = {
-  SMR: "State Marine Reserve",
-  SMCANT: "State Marine Conservation Area (No-Take)",
-  SMCA: "State Marine Conservation Area",
-  SMRMA: "State Marine Recreation Management Area",
-  SMP: "State Marine Park",
-  Special: "Special Closure",
-};
-
 // Mapping groupIds to colors
 export const groupColorMap: Record<string, string> = {
   SMR: "#E60000",

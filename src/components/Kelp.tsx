@@ -14,11 +14,10 @@ import {
   Metric,
   metricsWithSketchId,
   roundDecimal,
-  squareMeterToMile,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import project from "../../project/projectClient.js";
-import precalc from "../../data/precalc/precalcKelp.json";
+import precalc from "../../data/precalc/precalcKelp.json" with { type: "json" };
 import { GeographyTable } from "../util/GeographyTable.js";
 import { genLengthSketchTable } from "./Shoretypes.js";
 
@@ -131,7 +130,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                 )}
                 columnConfig={[
                   {
-                    columnLabel: "Kelp (Maximum)",
+                    columnLabel: t("Kelp (Maximum)"),
                     type: "class",
                     width: 40,
                   },
@@ -175,7 +174,7 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                 )}
                 columnConfig={[
                   {
-                    columnLabel: "Kelp (Maximum)",
+                    columnLabel: t("Kelp (Maximum)"),
                     type: "class",
                     width: 30,
                   },
@@ -241,8 +240,8 @@ export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
                   only counted once. Final plans should check area totals in GIS
                   tools before publishing final area statistics.
                 </p>
-                <p>Last updated: February 3, 2025.</p>
               </Trans>
+              <p>{t("Last updated")}: February 3, 2025.</p>
             </Collapse>
           </ReportError>
         );

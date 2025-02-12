@@ -16,7 +16,7 @@ import {
   polygon,
 } from "@turf/turf";
 import { FeatureCollection } from "@seasketch/geoprocessing/client-core";
-import graphData from "../../data/bin/network.01.json" assert { type: "json" };
+import graphData from "../../data/bin/network.01.json" with { type: "json" };
 import { readGraphFromFile } from "./spacing.js";
 const SEARCH_RADIUS_MILES = 75; // Set search radius to 75 miles
 

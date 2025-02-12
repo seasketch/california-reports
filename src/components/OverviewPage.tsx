@@ -3,7 +3,7 @@ import { SizeCard } from "./SizeCard.js";
 import { Card, Collapse, InfoStatus } from "@seasketch/geoprocessing/client-ui";
 import { ClassificationCard } from "./Classification.js";
 import SketchAttributesCard from "./SketchAttributesCard.js";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { Span } from "./Span.js";
 
 const ReportPage = () => {
@@ -13,11 +13,11 @@ const ReportPage = () => {
       <Card>
         <InfoStatus
           msg={
-            <>
+            <Trans i18nKey="Overview info status">
               SeaSketch is a real-time sketch evaluation tool. Analyses are
               often conducted on <b>simplified</b> data. Final metrics must be
               calculated using desktop GIS software.
-            </>
+            </Trans>
           }
         />
         <Collapse title={t("Glossary")} key={"Glossary"}>
@@ -34,7 +34,7 @@ const ReportPage = () => {
 
 const Glossary = () => {
   return (
-    <>
+    <Trans i18nKey="GlossaryPage">
       <p>
         <b>Adaptive management</b>: A management policy that seeks to improve
         management of biological resources, particularly in areas of scientific
@@ -142,7 +142,7 @@ const Glossary = () => {
         mainland coast and around offshore islands, and within bays and
         estuaries.
       </p>
-    </>
+    </Trans>
   );
 };
 

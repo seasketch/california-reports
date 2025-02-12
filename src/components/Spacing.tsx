@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import {
   Card,
   InfoStatus,
@@ -28,15 +28,15 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
   });
 
   const spacingTitle: Record<string, string> = {
-    kelp: "Kelp",
-    estuaries: "Estuary",
-    rocky_shores: "Rocky Shore",
-    beaches: "Beach",
-    eelgrass: "Eelgrass",
-    substrate31: "Hard Substrate 30-100m",
-    substrate32: "Soft Substrate 30-100m",
-    substrate101: "Hard Substrate >100m",
-    substrate102: "Soft Substrate >100m",
+    kelp: t("Kelp"),
+    estuaries: t("Estuary"),
+    rocky_shores: t("Rocky Shore"),
+    beaches: t("Beach"),
+    eelgrass: t("Eelgrass"),
+    substrate31: t("Hard Substrate 30-100m"),
+    substrate32: t("Soft Substrate 30-100m"),
+    substrate101: t("Hard Substrate >100m"),
+    substrate102: t("Soft Substrate >100m"),
   };
 
   if (!isCollection)
@@ -44,10 +44,10 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
       <Card>
         <InfoStatus
           msg={
-            <>
+            <Trans i18nKey="Spacing Info">
               Spacing analysis is available only for collections of multiple
               MPAs.
-            </>
+            </Trans>
           }
         />
       </Card>
@@ -56,7 +56,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
   return (
     <ReportError>
       <ResultsCard
-        title={mapData.title + " Spacing Report"}
+        title={mapData.title + " " + t("Spacing Report")}
         functionName="spacing"
       >
         {(data: {
@@ -92,7 +92,12 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
               {data.result.map((report) => (
                 <p>
                   <Pill>{report.replicates.length}</Pill>{" "}
-                  {spacingTitle[report.id]} habitat replicate(s).
+                  {
+                    /* i18next-extract-disable-line */ t(
+                      spacingTitle[report.id],
+                    )
+                  }{" "}
+                  {t("habitat replicate(s)")}.
                   {report.replicates.length !== 0 && (
                     <SimpleButton
                       onClick={() =>
@@ -103,7 +108,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                         })
                       }
                     >
-                      Show on Map
+                      {t("Show on Map")}
                     </SimpleButton>
                   )}
                 </p>

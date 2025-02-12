@@ -122,6 +122,7 @@ export const genSketchTable = (
 
   const classColumns: Column<{ sketchId: string }>[] = mg.classes.map(
     (curClass, index) => {
+      /* i18next-extract-disable-next-line */
       const transString = t(curClass.display);
       const columns = [];
       if (size) {

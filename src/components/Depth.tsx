@@ -39,22 +39,22 @@ export const Depth: React.FunctionComponent = () => {
             <ToolbarCard
               title={t("Depth")}
               items={
-                <>
-                  <LayerToggle label={mapLabel} layerId={mg.layerId} simple />
-                </>
+                <LayerToggle label={mapLabel} layerId={mg.layerId} simple />
               }
             >
-              <p>
-                MPAs can potentially protect a large number of species which may
-                occur at a wide variety of depth ranges.
-              </p>
-              <p>
-                For an objective of protecting the diversity of species that
-                live at different depths and to accommodate the ontogenetic
-                movement of individuals to and from nursery or spawning grounds
-                to adult habitats, MPAs should extend from the intertidal zone
-                to deep waters offshore.
-              </p>
+              <Trans i18nKey="Depth Card">
+                <p>
+                  MPAs can potentially protect a large number of species which
+                  may occur at a wide variety of depth ranges.
+                </p>
+                <p>
+                  For an objective of protecting the diversity of species that
+                  live at different depths and to accommodate the ontogenetic
+                  movement of individuals to and from nursery or spawning
+                  grounds to adult habitats, MPAs should extend from the
+                  intertidal zone to deep waters offshore.
+                </p>
+              </Trans>
               <KeySection
                 style={{ display: "flex", justifyContent: "space-around" }}
               >
@@ -84,8 +84,8 @@ export const Depth: React.FunctionComponent = () => {
                     📈 Report: Calculates the minimum, average, and maximum
                     ocean depth within the selected MPA(s).
                   </p>
-                  <p>Last updated: October 29, 2024.</p>
                 </Trans>
+                <p>{t("Last updated")}: October 29, 2024.</p>
               </Collapse>
             </ToolbarCard>
           );

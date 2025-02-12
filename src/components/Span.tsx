@@ -27,7 +27,7 @@ import project from "../../project/projectClient.js";
 import { GeographyTable } from "../util/GeographyTable.js";
 import { AreaSketchTableStyled } from "../util/genSketchTable.js";
 import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
-import precalcMetrics from "../../data/precalc/precalcSpan.json";
+import precalcMetrics from "../../data/precalc/precalcSpan.json" with { type: "json" };
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 /**
@@ -195,7 +195,7 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                 objective={objectives}
                 columnConfig={[
                   {
-                    columnLabel: "Bioregion",
+                    columnLabel: t("Bioregion"),
                     type: "class",
                     width: 25,
                   },
@@ -236,10 +236,12 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
               <Collapse title={t("Show by MPA")}>
                 <>
                   <p>
-                    During the planning process to establish California’s
-                    Network of MPAs, the Science Advisory Team recommended a
-                    minimum alongshore span of 5-10 km (3-6 mi) of coastline,
-                    and preferably 10-20 km (6-12.5 mi).
+                    <Trans i18nKey="SpanCard - mpa">
+                      During the planning process to establish California’s
+                      Network of MPAs, the Science Advisory Team recommended a
+                      minimum alongshore span of 5-10 km (3-6 mi) of coastline,
+                      and preferably 10-20 km (6-12.5 mi).
+                    </Trans>
                   </p>
                   {genLengthSketchTable(
                     childProperties || [],
@@ -262,8 +264,8 @@ export const Span: React.FunctionComponent<GeogProp> = (props) => {
                   within the selected MPA(s). If the selected MPA(s) include
                   multiple areas that overlap, the overlap is only counted once.
                 </p>
-                <p>Last updated: January 15, 2025.</p>
               </Trans>
+              <p>{t("Last updated")}: January 15, 2025.</p>
             </Collapse>
           </ReportError>
         );
@@ -396,30 +398,40 @@ const SpanObjectives = (props: { value: number }) => {
   return (
     <>
       <p>
-        During the planning process to establish California's Network of MPAs,
-        the Science Advisory Team recommended a minimum alongshore span of 5-10
-        km (3-6 mi) of coastline, and preferably 10-20 km (6-12.5 mi).
+        <Trans i18nKey="SizeCard - objectives">
+          During the planning process to establish California's Network of MPAs,
+          the Science Advisory Team recommended a minimum alongshore span of
+          5-10 km (3-6 mi) of coastline, and preferably 10-20 km (6-12.5 mi).
+        </Trans>
       </p>
       {props.value > 3 && props.value < 6 ? (
         <ObjectiveStatus
           status={"yes"}
           style={{ color: "#EBB414" }}
           msg={
-            <>
+            <Trans i18nKey="SizeCard - objectiveMaybe">
               This MPA meets the 3-6 mile minimum span guideline, but does not
               meet the {">"} 6 mile preferred span guideline.
-            </>
+            </Trans>
           }
         />
       ) : props.value > 6 ? (
         <ObjectiveStatus
           status={"yes"}
-          msg={<>This MPA meets the {">"} 6 mile preferred span guideline</>}
+          msg={
+            <Trans i18nKey="SizeCard - objectiveYes">
+              This MPA meets the {">"} 6 mile preferred span guideline
+            </Trans>
+          }
         />
       ) : (
         <ObjectiveStatus
           status={"no"}
-          msg={<>This MPA does not meet the 3 mile minimum span guideline</>}
+          msg={
+            <Trans i18nKey="SizeCard - objectiveNo">
+              This MPA does not meet the 3 mile minimum span guideline
+            </Trans>
+          }
         />
       )}
     </>

@@ -9,12 +9,10 @@ import {
   Tooltip,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  ReportResult,
   Metric,
   MetricGroup,
   GroupMetricAgg,
   firstMatchingMetric,
-  isSketchCollection,
   percentWithEdge,
   OBJECTIVE_YES,
   OBJECTIVE_NO,
@@ -24,13 +22,7 @@ import {
   roundDecimal,
   roundLower,
 } from "@seasketch/geoprocessing/client-core";
-import {
-  groupColorMapTransparent,
-  groupColors,
-  groupDisplayMapPl,
-  groupDisplayMapSg,
-  groups,
-} from "./getGroup.js";
+import { groupColorMapTransparent, groupColors, groups } from "./getGroup.js";
 import { InfoCircleFill } from "@styled-icons/bootstrap";
 import project from "../../project/index.js";
 import { HorizontalStackedBar, RowConfig } from "./HorizontalStackedBar.js";
@@ -200,6 +192,18 @@ export const genClassTableGrouped = (
     ...options,
   };
   // Coloring and styling for horizontal bars;
+
+  // Display values for groups
+  const groupDisplayMapSg: Record<string, string> = {
+    SMR: t("State Marine Reserve"),
+    SMCANT: t("State Marine Conservation Area (No-Take)"),
+    SMCA: t("State Marine Conservation Area"),
+    SMRMA: t("State Marine Recreation Management Area"),
+    SMP: t("State Marine Park"),
+    Special: t("Special Closure"),
+  };
+
+  /* i18next-extract-disable-next-line */
   const blockGroupNames = groups.map((level) => t(groupDisplayMapSg[level]));
   const blockGroupStyles = groupColors.map((curBlue) => ({
     backgroundColor: curBlue,
@@ -346,14 +350,16 @@ export const collectionMsgs: Record<string, any> = {
       return (
         <>
           {t("This plan meets the objective of protecting")}{" "}
-          <b>{percentWithEdge(objective.target)}</b> {t(objective.shortDesc)}
+          <b>{percentWithEdge(objective.target)}</b>{" "}
+          {/* i18next-extract-disable-line */ t(objective.shortDesc)}
         </>
       );
     } else if (objectiveMet === OBJECTIVE_NO) {
       return (
         <>
           {t("This plan does not meet the objective of protecting")}{" "}
-          <b>{percentWithEdge(objective.target)}</b> {t(objective.shortDesc)}
+          <b>{percentWithEdge(objective.target)}</b>
+          {/* i18next-extract-disable-line */ t(objective.shortDesc)}
         </>
       );
     }
@@ -480,6 +486,15 @@ export const genAreaGroupLevelTable = (
       };
     });
 
+  const groupDisplayMapPl: Record<string, string> = {
+    SMR: t("State Marine Reserve(s)"),
+    SMCANT: t("State Marine Conservation Area(s) (No-Take)"),
+    SMCA: t("State Marine Conservation Area(s)"),
+    SMRMA: t("State Marine Recreation Management Area(s)"),
+    SMP: t("State Marine Park(s)"),
+    Special: t("Special Closure(s)"),
+  };
+
   const columns: Column<Record<string, string | number>>[] = [
     {
       Header: t("This plan contains") + ":",
@@ -488,7 +503,9 @@ export const genAreaGroupLevelTable = (
           group={row.groupId.toString()}
           groupColorMap={groupColorMapTransparent}
           circleText={`${row.numSketches}`}
-          rowText={t(groupDisplayMapPl[row.groupId])}
+          rowText={
+            /* i18next-extract-disable-line */ t(groupDisplayMapPl[row.groupId])
+          }
         />
       ),
     },

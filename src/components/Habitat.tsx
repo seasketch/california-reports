@@ -175,7 +175,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   objective={objectives}
                   columnConfig={[
                     {
-                      columnLabel: t(curClass.display),
+                      columnLabel: curClass.display,
                       type: "class",
                       width: 30,
                     },
@@ -236,7 +236,7 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   objective={objectives}
                   columnConfig={[
                     {
-                      columnLabel: t(curClass.display),
+                      columnLabel: curClass.display,
                       type: "class",
                       width: 30,
                     },
@@ -309,8 +309,8 @@ export const Habitat: React.FunctionComponent<GeogProp> = (props) => {
                   counted once. Habitat data has been downscaled to 30x30 meter
                   resolution.
                 </p>
-                <p>Last updated: January 24, 2025.</p>
               </Trans>
+              <p>{t("Last updated")}: January 24, 2025.</p>
             </Collapse>
           </ReportError>
         );
