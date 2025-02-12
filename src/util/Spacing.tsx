@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useTransition } from "react";
 import {
   select,
   scaleLinear,
@@ -18,6 +18,7 @@ import {
 import { bbox, featureCollection } from "@turf/turf";
 import { ObjectiveStatus } from "@seasketch/geoprocessing/client-ui";
 import landData from "../../data/bin/landShrunk.01.json";
+import { useTranslation } from "react-i18next";
 
 // Props for the Replicate Map
 interface ReplicateMapProps {
@@ -245,6 +246,7 @@ export const SpacingObjectives = (props: {
     }[];
   };
 }) => {
+  const { t } = useTranslation();
   if (props.data.replicates.length === 0) return <></>;
   return (
     <>
@@ -253,9 +255,9 @@ export const SpacingObjectives = (props: {
           status={"maybe"}
           msg={
             <>
-              The selected MPAs contain only one{" "}
-              {props.data.title.toLocaleLowerCase()} habitat replicate. Spacing
-              analyses require 2+ replicates.
+              {t("The selected MPAs contain only one")}{" "}
+              {props.data.title.toLocaleLowerCase()}{" "}
+              {t("habitat replicate. Spacing analyses require 2+ replicates.")}
             </>
           }
         />
@@ -264,9 +266,10 @@ export const SpacingObjectives = (props: {
           status={"yes"}
           msg={
             <>
-              These {props.data.title.toLocaleLowerCase()} habitat replicates
-              meet the spacing guidelines. All replicates have gaps less than 62
-              miles.
+              {t("These")} {props.data.title.toLocaleLowerCase()}{" "}
+              {t(
+                "habitat replicates meet the spacing guidelines. All replicates have gaps less than 62 miles.",
+              )}
             </>
           }
         />
@@ -275,10 +278,10 @@ export const SpacingObjectives = (props: {
           status={"no"}
           msg={
             <>
-              These {props.data.title.toLocaleLowerCase()} habitat replicates do
-              not meet the spacing guidelines, with{" "}
-              {props.data.paths.filter((p) => p.color === "red").length} gap(s)
-              greater than 62 miles.
+              {t("These")} {props.data.title.toLocaleLowerCase()}{" "}
+              {t("habitat replicates do not meet the spacing guidelines, with")}{" "}
+              {props.data.paths.filter((p) => p.color === "red").length}{" "}
+              {t("gap(s) greater than 62 miles.")}
             </>
           }
         />
