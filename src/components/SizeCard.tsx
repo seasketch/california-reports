@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  GeogProp,
   squareMeterToMile,
   firstMatchingMetric,
   roundLower,
@@ -31,14 +30,14 @@ import {
   groupedSketchReport,
 } from "../util/ProtectionLevelOverlapReports.js";
 import { GeographyTable } from "../util/GeographyTable.js";
-
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
+export const SizeCard: React.FunctionComponent = () => {
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const { t } = useTranslation();
   const geographies = project.geographies;
   const metricGroup = project.getMetricGroup("boundaryAreaOverlap", t);
+
   // Planning regions total area
   const boundaryTotalMetrics = project
     .getPrecalcMetrics()

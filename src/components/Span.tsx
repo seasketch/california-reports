@@ -13,7 +13,6 @@ import {
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  GeogProp,
   Metric,
   MetricGroup,
   SketchProperties,
@@ -32,13 +31,8 @@ import { CheckCircleFill, XCircleFill } from "@styled-icons/bootstrap";
 import precalcMetrics from "../../data/precalc/precalcSpan.json" with { type: "json" };
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-/**
- * Span component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
- */
-export const Span: React.FunctionComponent<GeogProp> = (props) => {
+// Reports on alongshore span within MPAs
+export const Span: React.FunctionComponent = () => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;

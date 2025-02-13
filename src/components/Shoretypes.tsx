@@ -14,7 +14,6 @@ import {
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  GeogProp,
   Metric,
   MetricGroup,
   SketchProperties,
@@ -31,13 +30,8 @@ import { GeographyTable } from "../util/GeographyTable.js";
 import precalc from "../../data/precalc/precalcShoretypes.json" with { type: "json" };
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-/**
- * Shoretypes component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
- */
-export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
+// Reports on shoretypes overlap
+export const Shoretypes: React.FunctionComponent = () => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;

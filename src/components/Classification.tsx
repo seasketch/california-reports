@@ -6,11 +6,9 @@ import {
   Column,
   Table,
   ReportTableStyled,
-  RbcsMpaClassPanelProps,
   RbcsIcon,
   GroupPill,
   useSketchProperties,
-  VerticalSpacer,
   ToolbarCard,
   DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
@@ -56,14 +54,12 @@ export const ClassificationCard: React.FunctionComponent = () => {
             <ToolbarCard
               title={title}
               items={
-                <>
-                  <DataDownload
-                    filename="classification"
-                    data={data.metrics}
-                    formats={["csv", "json"]}
-                    placement="left-end"
-                  />
-                </>
+                <DataDownload
+                  filename="classification"
+                  data={data.metrics}
+                  formats={["csv", "json"]}
+                  placement="left-end"
+                />
               }
             >
               <Trans i18nKey="Classification Card 1">
@@ -86,7 +82,24 @@ export const ClassificationCard: React.FunctionComponent = () => {
 
               {isCollection
                 ? sketchCollectionReport(data.sketch!, data.metrics, t)
-                : sketchReport(data.metrics, t)}
+                : sketchReport(data.metrics[0], t)}
+
+              {isCollection && (
+                <Collapse title={t("Show by MPA")}>
+                  {genMpaSketchTable(toNullSketchArray(data.sketch!), t)}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="Classification Card - Learn more">
+                  <p>
+                    📈 Report: This report totals the number of MPAs in each
+                    classification. See the Glossary for more detailed
+                    explanations of the classification levels.
+                  </p>
+                </Trans>
+                <p>{t("Last updated")}: January 24, 2025.</p>
+              </Collapse>
             </ToolbarCard>
           </ReportError>
         );
@@ -95,20 +108,14 @@ export const ClassificationCard: React.FunctionComponent = () => {
   );
 };
 
-/**
- * Report classification level for single sketch
- * @param metrics Metric[] passed from ReportResult
- * @param mg MetricGroup
- * @param t TFunction for translation
- */
-const sketchReport = (metrics: Metric[], t: any) => {
-  // Should only have only a single metric
-  if (metrics.length !== 1)
+// Reports classification level for single MPA
+const sketchReport = (metric: Metric, t: any) => {
+  if (!metric)
     throw new Error(
       "In single sketch classification report, and getting !=1 metric",
     );
 
-  // Display values for groups
+  const group = metric.groupId || "Unknown";
   const groupDisplayMapSg: Record<string, string> = {
     SMR: t("State Marine Reserve"),
     SMCANT: t("State Marine Conservation Area (No-Take)"),
@@ -116,48 +123,32 @@ const sketchReport = (metrics: Metric[], t: any) => {
     SMRMA: t("State Marine Recreation Management Area"),
     SMP: t("State Marine Park"),
     Special: t("Special Closure"),
+    Unknown: t("Unknown"),
   };
 
   return (
-    <>
-      <div
-        style={{
-          padding: "10px 10px 10px 0px",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <MpaClassPanel
-          value={metrics[0].value}
-          size={18}
-          /* i18next-extract-disable-next-line */
-          displayName={t(groupDisplayMapSg[metrics[0].groupId || "none"])}
-          displayValue={false}
-          group={metrics[0].groupId as string | undefined}
-          groupColorMap={groupColorMap}
-        />
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ paddingRight: 10 }}>
+        <PointyCircle color={groupColorMap[group]} size={18}>
+          {null}
+        </PointyCircle>
       </div>
-      <VerticalSpacer />
-      <Collapse title={t("Learn More")}>
-        <ClassificationLearnMore t={t} />
-      </Collapse>
-    </>
+      <div style={{ fontSize: 18 }}>{groupDisplayMapSg[group]}</div>
+    </div>
   );
 };
 
-/**
- * Report classification level for sketch collection
- * @param sketch NullSketchCollection | NullSketch passed from ReportResult
- * @param metrics Metric[] passed from ReportResult
- * @param mg MetricGroup
- * @param t TFunction for translation
- */
+// Reports classification level for MPA network
 const sketchCollectionReport = (
   sketch: NullSketchCollection | NullSketch,
   metrics: Metric[],
   t: any,
 ) => {
-  const sketches = toNullSketchArray(sketch);
   const sortedMetrics = metrics.sort(
     (a, b) => groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || ""),
   );
@@ -175,36 +166,33 @@ const sketchCollectionReport = (
     {
       Header: " ",
       accessor: (row) => (
-        <MpaClassPanel
-          value={row.value}
-          size={18}
-          /* i18next-extract-disable-next-line */
-          displayName={t(groupDisplayMapPl[row.groupId || "none"])}
-          group={row.groupId as string | undefined}
-          groupColorMap={groupColorMap}
-        />
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ paddingRight: 10 }}>
+            {row.groupId && groupColorMap ? (
+              <PointyCircle size={18} color={groupColorMap[row.groupId]}>
+                {row.value}
+              </PointyCircle>
+            ) : (
+              <RbcsIcon value={row.value} size={18} displayValue={true} />
+            )}
+          </div>
+          <div style={{ fontSize: 18 }}>
+            {groupDisplayMapPl[row.groupId || "none"]}
+          </div>
+        </div>
       ),
     },
   ];
 
-  return (
-    <>
-      <Table className="styled" columns={columns} data={sortedMetrics} />
-
-      <Collapse title={t("Show by MPA")}>
-        {genMpaSketchTable(sketches, t)}
-      </Collapse>
-
-      <Collapse title={t("Learn More")}>
-        <ClassificationLearnMore t={t} />
-      </Collapse>
-    </>
-  );
+  return <Table className="styled" columns={columns} data={sortedMetrics} />;
 };
 
-/**
- * Show by MPA sketch table for sketch collection
- */
+// Generates table of MPAs with classification level and level of protection
 const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
   const lopMap: Record<string, string> = {
     A: t("Very High"),
@@ -259,62 +247,5 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
         )}
       />
     </SmallReportTableStyled>
-  );
-};
-
-/**
- * Interface for Learn More function component
- */
-interface LearnMoreProps {
-  t: any;
-}
-
-/** Classification level learn more */
-export const ClassificationLearnMore: React.FunctionComponent<
-  LearnMoreProps
-> = ({ t }) => {
-  return (
-    <>
-      <Trans i18nKey="Classification Card - Learn more">
-        <p>
-          📈 Report: This report totals the number of MPAs in each
-          classification. See the Glossary for more detailed explanations of the
-          classification levels.
-        </p>
-      </Trans>
-      <p>{t("Last updated")}: January 24, 2025.</p>
-    </>
-  );
-};
-
-/**
- * Sketch collection status panel for MPA classification
- */
-const MpaClassPanel: React.FunctionComponent<RbcsMpaClassPanelProps> = ({
-  value,
-  displayName,
-  size,
-  displayValue = true,
-  group,
-  groupColorMap,
-}) => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ paddingRight: 10 }}>
-        {group && groupColorMap ? (
-          <PointyCircle size={size} color={groupColorMap[group]}>
-            {displayValue ? value : null}
-          </PointyCircle>
-        ) : (
-          <RbcsIcon value={value} size={size} displayValue={displayValue} />
-        )}
-      </div>
-      <div style={{ fontSize: 18 }}>{displayName}</div>
-    </div>
   );
 };

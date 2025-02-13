@@ -10,7 +10,6 @@ import {
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  GeogProp,
   Metric,
   metricsWithSketchId,
   roundDecimal,
@@ -22,13 +21,8 @@ import { GeographyTable } from "../util/GeographyTable.js";
 import { genSketchTable } from "../util/genSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-/**
- * Estuaries component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
- */
-export const Estuaries: React.FunctionComponent<GeogProp> = (props) => {
+// Reports on estuary overlap
+export const Estuaries: React.FunctionComponent = () => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;

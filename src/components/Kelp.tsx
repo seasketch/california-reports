@@ -12,7 +12,6 @@ import {
   DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
 import {
-  GeogProp,
   Metric,
   metricsWithSketchId,
   roundDecimal,
@@ -22,16 +21,10 @@ import project from "../../project/projectClient.js";
 import precalc from "../../data/precalc/precalcKelp.json" with { type: "json" };
 import { GeographyTable } from "../util/GeographyTable.js";
 import { genLengthSketchTable } from "./Shoretypes.js";
-
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
-/**
- * Kelp component
- *
- * @param props - geographyId
- * @returns A react component which displays an overlap report
- */
-export const Kelp: React.FunctionComponent<GeogProp> = (props) => {
+// Reports on kelp overlap
+export const Kelp: React.FunctionComponent = () => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
