@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import {
   Card,
+  DataDownload,
   InfoStatus,
   Pill,
   ReportError,
   ResultsCard,
   SimpleButton,
+  ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import { ReplicateMap, SpacingObjectives } from "../util/Spacing.js";
@@ -15,6 +17,7 @@ import { Feature, LineString, Polygon, Sketch } from "@seasketch/geoprocessing";
 export const Spacing: React.FunctionComponent<any> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection }] = useSketchProperties();
+  const titleLabel = t("Spacing");
 
   const [mapData, setData] = useState({
     title: "",
@@ -58,6 +61,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
       <ResultsCard
         title={mapData.title + " " + t("Spacing Report")}
         functionName="spacing"
+        useChildCard
       >
         {(data: {
           sketch: any;
@@ -82,7 +86,17 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
           }
 
           return (
-            <>
+            <ToolbarCard
+              title={mapData.title + " " + t("Spacing Report")}
+              items={
+                <DataDownload
+                  filename={titleLabel}
+                  data={data.result}
+                  formats={["csv", "json"]}
+                  placement="left-end"
+                />
+              }
+            >
               <SpacingObjectives data={mapData} />
               <ReplicateMap
                 sketch={mapData.sketch}
@@ -113,7 +127,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                   )}
                 </p>
               ))}
-            </>
+            </ToolbarCard>
           );
         }}
       </ResultsCard>

@@ -52,10 +52,11 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
 
   const withinLabel = t("Area");
   const unitsLabel = t("mi²");
+  const titleLabel = t("Size");
 
   return (
     <ResultsCard
-      title={t("Size")}
+      title={titleLabel}
       functionName="boundaryAreaOverlap"
       useChildCard
     >
@@ -99,54 +100,69 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
         const metrics = [...valueMetrics, ...percentMetrics];
 
         return (
-          <>
-            <ToolbarCard
-              title={t("Size")}
-              items={
-                <>
-                  <DataDownload
-                    filename="size"
-                    data={metricResults}
-                    formats={["csv", "json"]}
-                    placement="left-end"
-                  />
-                </>
-              }
-            >
-              <p>
-                <Trans i18nKey="SizeCard - intro">
-                  California state waters extend to 3 nautical miles from shore,
-                  covering about 5,285 square miles (excluding the 473 square
-                  miles of state waters in San Francisco Bay). This report
-                  summarizes the total area and the proportion of state waters
-                  contained within the selected MPA(s).
-                </Trans>
-              </p>
-              <KeySection>
-                {t("The selected MPA(s) are")}{" "}
-                <b>
-                  {areaDisplay} {areaUnitDisplay}
-                </b>
-                {", "}
-                {t("which is")} <b>{percDisplay}</b> {t("of")}{" "}
-                {t("California state waters")}.
-              </KeySection>
+          <ToolbarCard
+            title={titleLabel}
+            items={
+              <>
+                <DataDownload
+                  filename={titleLabel}
+                  data={metricResults}
+                  formats={["csv", "json"]}
+                  placement="left-end"
+                />
+              </>
+            }
+          >
+            <p>
+              <Trans i18nKey="SizeCard - intro">
+                California state waters extend to 3 nautical miles from shore,
+                covering about 5,285 square miles (excluding the 473 square
+                miles of state waters in San Francisco Bay). This report
+                summarizes the total area and the proportion of state waters
+                contained within the selected MPA(s).
+              </Trans>
+            </p>
+            <KeySection>
+              {t("The selected MPA(s) are")}{" "}
+              <b>
+                {areaDisplay} {areaUnitDisplay}
+              </b>
+              {", "}
+              {t("which is")} <b>{percDisplay}</b> {t("of")}{" "}
+              {t("California state waters")}.
+            </KeySection>
 
-              <LayerToggle label={mapLabel} layerId={metricGroup.layerId} />
-              <VerticalSpacer />
+            <LayerToggle label={mapLabel} layerId={metricGroup.layerId} />
+            <VerticalSpacer />
 
-              {isCollection ? (
-                groupedCollectionReport(
-                  id,
+            {isCollection ? (
+              groupedCollectionReport(
+                id,
+                metricResults.filter((m) => m.geographyId === "world"),
+                boundaryTotalMetrics.filter((m) => m.geographyId === "world"),
+                metricGroup,
+                t,
+              )
+            ) : (
+              <>
+                <SizeObjectives value={squareMeterToMile(areaMetric.value)} />
+                {groupedSketchReport(
                   metricResults.filter((m) => m.geographyId === "world"),
                   boundaryTotalMetrics.filter((m) => m.geographyId === "world"),
                   metricGroup,
                   t,
-                )
-              ) : (
-                <>
-                  <SizeObjectives value={squareMeterToMile(areaMetric.value)} />
-                  {groupedSketchReport(
+                )}
+              </>
+            )}
+
+            {isCollection && (
+              <>
+                <Collapse
+                  title={t("Show by Protection Level")}
+                  key={"Protection"}
+                >
+                  {genAreaGroupLevelTable(
+                    id,
                     metricResults.filter((m) => m.geographyId === "world"),
                     boundaryTotalMetrics.filter(
                       (m) => m.geographyId === "world",
@@ -154,158 +170,134 @@ export const SizeCard: React.FunctionComponent<GeogProp> = (props) => {
                     metricGroup,
                     t,
                   )}
-                </>
-              )}
-
-              {isCollection && (
-                <>
-                  <Collapse
-                    title={t("Show by Protection Level")}
-                    key={"Protection"}
-                  >
-                    {genAreaGroupLevelTable(
-                      id,
-                      metricResults.filter((m) => m.geographyId === "world"),
-                      boundaryTotalMetrics.filter(
-                        (m) => m.geographyId === "world",
-                      ),
-                      metricGroup,
-                      t,
+                </Collapse>
+                <Collapse title={t("Show By Planning Region")}>
+                  <GeographyTable
+                    rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId?.endsWith("_sr"),
                     )}
-                  </Collapse>
-                  <Collapse title={t("Show By Planning Region")}>
-                    <GeographyTable
-                      rows={metrics.filter((m) =>
-                        m.geographyId?.endsWith("_sr"),
-                      )}
-                      metricGroup={metricGroup}
-                      geographies={geographies.filter((g) =>
-                        g.geographyId?.endsWith("_sr"),
-                      )}
-                      columnConfig={[
-                        {
-                          columnLabel: " ",
-                          type: "class",
-                          width: 40,
-                        },
-                        {
-                          columnLabel: withinLabel,
-                          type: "metricValue",
-                          metricId: metricGroup.metricId,
-                          valueFormatter: (val: string | number) =>
-                            Number.format(
-                              roundDecimal(
-                                squareMeterToMile(
-                                  typeof val === "string" ? parseInt(val) : val,
-                                ),
-                                2,
-                                { keepSmallValues: true },
+                    columnConfig={[
+                      {
+                        columnLabel: " ",
+                        type: "class",
+                        width: 40,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              squareMeterToMile(
+                                typeof val === "string" ? parseInt(val) : val,
                               ),
+                              2,
+                              { keepSmallValues: true },
                             ),
-                          colStyle: { textAlign: "center" },
-                          valueLabel: unitsLabel,
-                          chartOptions: {
-                            showTitle: true,
-                          },
-                          width: 20,
+                          ),
+                        colStyle: { textAlign: "center" },
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
                         },
-                        {
-                          columnLabel: t("% Planning Region"),
-                          type: "metricChart",
-                          metricId: percMetricIdName,
-                          valueFormatter: "percent",
-                          chartOptions: {
-                            showTitle: true,
-                          },
-                          width: 30,
+                        width: 20,
+                      },
+                      {
+                        columnLabel: t("% Planning Region"),
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
                         },
-                      ]}
-                    />
-                  </Collapse>
+                        width: 30,
+                      },
+                    ]}
+                  />
+                </Collapse>
 
-                  <Collapse title={t("Show By Bioregion")}>
-                    <GeographyTable
-                      rows={metrics.filter((m) =>
-                        m.geographyId?.endsWith("_br"),
-                      )}
-                      metricGroup={metricGroup}
-                      geographies={geographies.filter((g) =>
-                        g.geographyId?.endsWith("_br"),
-                      )}
-                      columnConfig={[
-                        {
-                          columnLabel: " ",
-                          type: "class",
-                          width: 30,
-                        },
-                        {
-                          columnLabel: withinLabel,
-                          type: "metricValue",
-                          metricId: metricGroup.metricId,
-                          valueFormatter: (val: string | number) =>
-                            Number.format(
-                              roundDecimal(
-                                squareMeterToMile(
-                                  typeof val === "string" ? parseInt(val) : val,
-                                ),
-                                2,
-                                { keepSmallValues: true },
-                              ),
-                            ),
-                          colStyle: { textAlign: "center" },
-                          valueLabel: unitsLabel,
-                          chartOptions: {
-                            showTitle: true,
-                          },
-                          width: 20,
-                        },
-                        {
-                          columnLabel: t("% Bioregion"),
-                          type: "metricChart",
-                          metricId: percMetricIdName,
-                          valueFormatter: "percent",
-                          chartOptions: {
-                            showTitle: true,
-                          },
-                          width: 40,
-                        },
-                      ]}
-                    />
-                  </Collapse>
-                  <Collapse title={t("Show by MPA")} key={"MPA"}>
-                    <p>
-                      <Trans i18nKey="SizeCard - MPA">
-                        During the planning process to establish California's
-                        Network of MPAs, the Science Advisory Team recommended a
-                        minimum size of 9-18 square statute miles for each MPA,
-                        and preferably 18-36 square statute miles.
-                      </Trans>
-                    </p>
-                    {genSketchTable(
-                      childProperties || [],
-                      metricResults.filter((m) => m.geographyId === "world"),
-                      boundaryTotalMetrics,
-                      metricGroup,
-                      t,
-                      { size: true },
+                <Collapse title={t("Show By Bioregion")}>
+                  <GeographyTable
+                    rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId?.endsWith("_br"),
                     )}
-                  </Collapse>
-                </>
-              )}
-
-              <Collapse title={t("Learn more")}>
-                <Trans i18nKey="SizeCard-learn more">
-                  <p>🗺️ Source Data: CDFW</p>
+                    columnConfig={[
+                      {
+                        columnLabel: " ",
+                        type: "class",
+                        width: 30,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              squareMeterToMile(
+                                typeof val === "string" ? parseInt(val) : val,
+                              ),
+                              2,
+                              { keepSmallValues: true },
+                            ),
+                          ),
+                        colStyle: { textAlign: "center" },
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 20,
+                      },
+                      {
+                        columnLabel: t("% Bioregion"),
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 40,
+                      },
+                    ]}
+                  />
+                </Collapse>
+                <Collapse title={t("Show by MPA")} key={"MPA"}>
                   <p>
-                    📈 Report: This report calculates area of the selected
-                    MPA(s). If MPA boundaries overlap, the overlap is only
-                    counted once.
+                    <Trans i18nKey="SizeCard - MPA">
+                      During the planning process to establish California's
+                      Network of MPAs, the Science Advisory Team recommended a
+                      minimum size of 9-18 square statute miles for each MPA,
+                      and preferably 18-36 square statute miles.
+                    </Trans>
                   </p>
-                </Trans>
-                <p>{t("Last updated")}: December 12, 2024</p>
-              </Collapse>
-            </ToolbarCard>
-          </>
+                  {genSketchTable(
+                    childProperties || [],
+                    metricResults.filter((m) => m.geographyId === "world"),
+                    boundaryTotalMetrics,
+                    metricGroup,
+                    t,
+                    { size: true },
+                  )}
+                </Collapse>
+              </>
+            )}
+
+            <Collapse title={t("Learn more")}>
+              <Trans i18nKey="SizeCard-learn more">
+                <p>🗺️ Source Data: CDFW</p>
+                <p>
+                  📈 Report: This report calculates area of the selected MPA(s).
+                  If MPA boundaries overlap, the overlap is only counted once.
+                </p>
+              </Trans>
+              <p>{t("Last updated")}: December 12, 2024</p>
+            </Collapse>
+          </ToolbarCard>
         );
       }}
     </ResultsCard>

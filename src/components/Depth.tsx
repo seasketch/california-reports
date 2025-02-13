@@ -9,6 +9,7 @@ import {
   Table,
   ReportTableStyled,
   LayerToggle,
+  DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
 import { BathymetryResults } from "../functions/bathymetry.js";
 import { Trans, useTranslation } from "react-i18next";
@@ -26,10 +27,11 @@ export const Depth: React.FunctionComponent = () => {
   const [{ isCollection }] = useSketchProperties();
   const mg = project.getMetricGroup("bathymetry", t);
   const mapLabel = t("Map");
+  const title = t("Depth");
 
   return (
     <div style={{ breakInside: "avoid" }}>
-      <ResultsCard title={t("Depth")} functionName="bathymetry" useChildCard>
+      <ResultsCard title={title} functionName="bathymetry" useChildCard>
         {(data: BathymetryResults[]) => {
           const overallStats = isCollection
             ? data.find((s) => s.isCollection)
@@ -37,9 +39,17 @@ export const Depth: React.FunctionComponent = () => {
 
           return (
             <ToolbarCard
-              title={t("Depth")}
+              title={title}
               items={
-                <LayerToggle label={mapLabel} layerId={mg.layerId} simple />
+                <>
+                  <LayerToggle label={mapLabel} layerId={mg.layerId} simple />
+                  <DataDownload
+                    filename={title}
+                    data={data}
+                    formats={["csv", "json"]}
+                    placement="left-end"
+                  />
+                </>
               }
             >
               <Trans i18nKey="Depth Card">

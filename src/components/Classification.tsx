@@ -11,6 +11,8 @@ import {
   GroupPill,
   useSketchProperties,
   VerticalSpacer,
+  ToolbarCard,
+  DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -44,36 +46,48 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
 export const ClassificationCard: React.FunctionComponent = () => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
+  const title = t("Classification Overview");
 
   return (
-    <ResultsCard
-      title={t("Classification Overview")}
-      functionName="classification"
-    >
+    <ResultsCard title={title} functionName="classification" useChildCard>
       {(data: ReportResult) => {
         return (
           <ReportError>
-            <Trans i18nKey="Classification Card 1">
-              <p>
-                The following classifications are used for designating managed
-                marine and estuarine areas in California:
-              </p>
-              <p>
-                • State Marine Reserve (SMR)
-                <br />• State Marine Conservation Area (SMCA)
-                <br />• State Marine Conservation Area No-Take (SMCA No-Take)
-                <br />• State Marine Recreational Management Area (SMRMA)
-                <br />• Special Closure{" "}
-              </p>
-              <p>
-                In addition, the classification State Marine Park (SMP) is used
-                by the California Department of Parks and Recreation.
-              </p>
-            </Trans>
+            <ToolbarCard
+              title={title}
+              items={
+                <>
+                  <DataDownload
+                    filename="classification"
+                    data={data.metrics}
+                    formats={["csv", "json"]}
+                    placement="left-end"
+                  />
+                </>
+              }
+            >
+              <Trans i18nKey="Classification Card 1">
+                <p>
+                  The following classifications are used for designating managed
+                  marine and estuarine areas in California:
+                </p>
+                <p>
+                  • State Marine Reserve (SMR)
+                  <br />• State Marine Conservation Area (SMCA)
+                  <br />• State Marine Conservation Area No-Take (SMCA No-Take)
+                  <br />• State Marine Recreational Management Area (SMRMA)
+                  <br />• Special Closure{" "}
+                </p>
+                <p>
+                  In addition, the classification State Marine Park (SMP) is
+                  used by the California Department of Parks and Recreation.
+                </p>
+              </Trans>
 
-            {isCollection
-              ? sketchCollectionReport(data.sketch!, data.metrics, t)
-              : sketchReport(data.metrics, t)}
+              {isCollection
+                ? sketchCollectionReport(data.sketch!, data.metrics, t)
+                : sketchReport(data.metrics, t)}
+            </ToolbarCard>
           </ReportError>
         );
       }}

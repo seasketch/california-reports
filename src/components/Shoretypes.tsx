@@ -4,10 +4,12 @@ import {
   ClassTable,
   Collapse,
   Column,
+  DataDownload,
   LayerToggle,
   ReportError,
   ResultsCard,
   Table,
+  ToolbarCard,
   VerticalSpacer,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
@@ -51,7 +53,7 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
   const unitsLabel = t("mi");
 
   return (
-    <ResultsCard title={titleLabel} functionName="shoretypes">
+    <ResultsCard title={titleLabel} functionName="shoretypes" useChildCard>
       {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
@@ -86,203 +88,215 @@ export const Shoretypes: React.FunctionComponent<GeogProp> = (props) => {
 
         return (
           <ReportError>
-            <Trans i18nKey="Shoretypes 1">
-              <p>
-                Alongshore habitats, such as sandy beach and rocky intertidal,
-                provide an important connection between land and sea for marine
-                species and humans alike. This report summarizes the overlap of
-                the selected MPA(s) with sandy beach and rocky intertidal
-                habitat. Data are included for both landward and seaward
-                shoreline, so a single segment of shoreline may be counted
-                towards more than one type of habitat.
-              </p>
-              <p>
-                The minimum length of habitat within an MPA necessary to
-                encompass 90% of local biodiversity and count as a replicate, as
-                determined from biological surveys, is 1.1 linear miles for
-                beach habitats and 0.55 linear miles for rocky shore habitats.
-              </p>
-            </Trans>
-
-            <LayerToggle
-              label={t("Show Landward Shoretypes")}
-              layerId={metricGroup.classes[0].layerId}
-            />
-            <VerticalSpacer />
-            <LayerToggle
-              label={t("Show Seaward Shoretypes")}
-              layerId={metricGroup.classes[1].layerId}
-            />
-            <VerticalSpacer />
-
-            <ClassTable
-              rows={metrics.filter((m) => m.geographyId === "world")}
-              metricGroup={metricGroup}
-              columnConfig={[
-                {
-                  columnLabel: classLabel,
-                  type: "class",
-                  width: 25,
-                },
-                {
-                  columnLabel: withinLabel,
-                  type: "metricValue",
-                  metricId: metricGroup.metricId,
-                  valueFormatter: (val: string | number) =>
-                    Number.format(
-                      roundDecimal(
-                        typeof val === "string" ? parseInt(val) : val,
-                      ),
-                    ),
-                  colStyle: { textAlign: "center" },
-                  valueLabel: unitsLabel,
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 30,
-                },
-                {
-                  columnLabel: percWithinLabel,
-                  type: "metricChart",
-                  metricId: percMetricIdName,
-                  valueFormatter: "percent",
-                  chartOptions: {
-                    showTitle: true,
-                  },
-                  width: 30,
-                },
-              ]}
-            />
-
-            <Collapse title={t("Show By Planning Region")}>
-              {metricGroup.classes.map((curClass) => (
-                <GeographyTable
-                  key={curClass.classId}
-                  rows={metrics.filter(
-                    (m) =>
-                      m.geographyId?.endsWith("_sr") &&
-                      m.classId === curClass.classId,
-                  )}
-                  metricGroup={metricGroup}
-                  geographies={geographies.filter((g) =>
-                    g.geographyId.endsWith("_sr"),
-                  )}
-                  columnConfig={[
-                    {
-                      columnLabel: curClass.display,
-                      type: "class",
-                      width: 40,
-                    },
-                    {
-                      columnLabel: withinLabel,
-                      type: "metricValue",
-                      metricId: metricGroup.metricId,
-                      valueFormatter: (val: string | number) =>
-                        Number.format(
-                          roundDecimal(
-                            typeof val === "string" ? parseInt(val) : val,
-                          ),
-                        ),
-                      colStyle: { textAlign: "center" },
-                      valueLabel: unitsLabel,
-                      chartOptions: {
-                        showTitle: true,
-                      },
-                      width: 20,
-                    },
-                    {
-                      columnLabel: percWithinLabel,
-                      type: "metricChart",
-                      metricId: percMetricIdName,
-                      valueFormatter: "percent",
-                      chartOptions: {
-                        showTitle: true,
-                      },
-                      width: 30,
-                    },
-                  ]}
+            <ToolbarCard
+              title={titleLabel}
+              items={
+                <DataDownload
+                  filename={titleLabel}
+                  data={metricResults}
+                  formats={["csv", "json"]}
+                  placement="left-end"
                 />
-              ))}
-            </Collapse>
-
-            <Collapse title={t("Show By Bioregion")}>
-              {metricGroup.classes.map((curClass) => (
-                <GeographyTable
-                  key={curClass.classId}
-                  rows={metrics.filter(
-                    (m) =>
-                      m.geographyId?.endsWith("_br") &&
-                      m.classId === curClass.classId,
-                  )}
-                  metricGroup={metricGroup}
-                  geographies={geographies.filter((g) =>
-                    g.geographyId.endsWith("_br"),
-                  )}
-                  columnConfig={[
-                    {
-                      columnLabel: curClass.display,
-                      type: "class",
-                      width: 25,
-                    },
-                    {
-                      columnLabel: withinLabel,
-                      type: "metricValue",
-                      metricId: metricGroup.metricId,
-                      valueFormatter: (val: string | number) =>
-                        Number.format(
-                          roundDecimal(
-                            typeof val === "string" ? parseInt(val) : val,
-                          ),
-                        ),
-                      colStyle: { textAlign: "center" },
-                      valueLabel: unitsLabel,
-                      chartOptions: {
-                        showTitle: true,
-                      },
-                      width: 30,
-                    },
-                    {
-                      columnLabel: percWithinLabel,
-                      type: "metricChart",
-                      metricId: percMetricIdName,
-                      valueFormatter: "percent",
-                      chartOptions: {
-                        showTitle: true,
-                      },
-                      width: 30,
-                    },
-                  ]}
-                />
-              ))}
-            </Collapse>
-
-            {isCollection && (
-              <Collapse title={t("Show by MPA")}>
-                {genLengthSketchTable(
-                  childProperties || [],
-                  metricResults.filter((m) => m.geographyId === "world"),
-                  precalcMetrics.filter((m) => m.geographyId === "world"),
-                  metricGroup,
-                  t,
-                )}
-              </Collapse>
-            )}
-
-            <Collapse title={t("Learn More")}>
-              <Trans i18nKey="Shoretypes - learn more">
-                <p>🗺️ Source Data: NOAA</p>
+              }
+            >
+              <Trans i18nKey="Shoretypes 1">
                 <p>
-                  📈 Report: This report calculates the total length of each
-                  shoretype within the selected MPA(s). This value is divided by
-                  the total length of each shoretype to obtain the % contained
-                  within the selected MPA(s). If the selected area includes
-                  multiple areas that overlap, the overlap is only counted once.
-                  Selected MPA(s) were buffered by 250 meters to ensure overlap
-                  with shoreline habitats data layer.
+                  Alongshore habitats, such as sandy beach and rocky intertidal,
+                  provide an important connection between land and sea for
+                  marine species and humans alike. This report summarizes the
+                  overlap of the selected MPA(s) with sandy beach and rocky
+                  intertidal habitat. Data are included for both landward and
+                  seaward shoreline, so a single segment of shoreline may be
+                  counted towards more than one type of habitat.
+                </p>
+                <p>
+                  The minimum length of habitat within an MPA necessary to
+                  encompass 90% of local biodiversity and count as a replicate,
+                  as determined from biological surveys, is 1.1 linear miles for
+                  beach habitats and 0.55 linear miles for rocky shore habitats.
                 </p>
               </Trans>
-              <p>{t("Last updated")}: January 15, 2025.</p>
-            </Collapse>
+
+              <LayerToggle
+                label={t("Show Landward Shoretypes")}
+                layerId={metricGroup.classes[0].layerId}
+              />
+              <VerticalSpacer />
+              <LayerToggle
+                label={t("Show Seaward Shoretypes")}
+                layerId={metricGroup.classes[1].layerId}
+              />
+              <VerticalSpacer />
+
+              <ClassTable
+                rows={metrics.filter((m) => m.geographyId === "world")}
+                metricGroup={metricGroup}
+                columnConfig={[
+                  {
+                    columnLabel: classLabel,
+                    type: "class",
+                    width: 25,
+                  },
+                  {
+                    columnLabel: withinLabel,
+                    type: "metricValue",
+                    metricId: metricGroup.metricId,
+                    valueFormatter: (val: string | number) =>
+                      Number.format(
+                        roundDecimal(
+                          typeof val === "string" ? parseInt(val) : val,
+                        ),
+                      ),
+                    colStyle: { textAlign: "center" },
+                    valueLabel: unitsLabel,
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 30,
+                  },
+                  {
+                    columnLabel: percWithinLabel,
+                    type: "metricChart",
+                    metricId: percMetricIdName,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: true,
+                    },
+                    width: 30,
+                  },
+                ]}
+              />
+
+              <Collapse title={t("Show By Planning Region")}>
+                {metricGroup.classes.map((curClass) => (
+                  <GeographyTable
+                    key={curClass.classId}
+                    rows={metrics.filter(
+                      (m) =>
+                        m.geographyId?.endsWith("_sr") &&
+                        m.classId === curClass.classId,
+                    )}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId.endsWith("_sr"),
+                    )}
+                    columnConfig={[
+                      {
+                        columnLabel: curClass.display,
+                        type: "class",
+                        width: 40,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              typeof val === "string" ? parseInt(val) : val,
+                            ),
+                          ),
+                        colStyle: { textAlign: "center" },
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 20,
+                      },
+                      {
+                        columnLabel: percWithinLabel,
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 30,
+                      },
+                    ]}
+                  />
+                ))}
+              </Collapse>
+
+              <Collapse title={t("Show By Bioregion")}>
+                {metricGroup.classes.map((curClass) => (
+                  <GeographyTable
+                    key={curClass.classId}
+                    rows={metrics.filter(
+                      (m) =>
+                        m.geographyId?.endsWith("_br") &&
+                        m.classId === curClass.classId,
+                    )}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId.endsWith("_br"),
+                    )}
+                    columnConfig={[
+                      {
+                        columnLabel: curClass.display,
+                        type: "class",
+                        width: 25,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              typeof val === "string" ? parseInt(val) : val,
+                            ),
+                          ),
+                        colStyle: { textAlign: "center" },
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 30,
+                      },
+                      {
+                        columnLabel: percWithinLabel,
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 30,
+                      },
+                    ]}
+                  />
+                ))}
+              </Collapse>
+
+              {isCollection && (
+                <Collapse title={t("Show by MPA")}>
+                  {genLengthSketchTable(
+                    childProperties || [],
+                    metricResults.filter((m) => m.geographyId === "world"),
+                    precalcMetrics.filter((m) => m.geographyId === "world"),
+                    metricGroup,
+                    t,
+                  )}
+                </Collapse>
+              )}
+
+              <Collapse title={t("Learn More")}>
+                <Trans i18nKey="Shoretypes - learn more">
+                  <p>🗺️ Source Data: NOAA</p>
+                  <p>
+                    📈 Report: This report calculates the total length of each
+                    shoretype within the selected MPA(s). This value is divided
+                    by the total length of each shoretype to obtain the %
+                    contained within the selected MPA(s). If the selected area
+                    includes multiple areas that overlap, the overlap is only
+                    counted once. Selected MPA(s) were buffered by 250 meters to
+                    ensure overlap with shoreline habitats data layer.
+                  </p>
+                </Trans>
+                <p>{t("Last updated")}: January 15, 2025.</p>
+              </Collapse>
+            </ToolbarCard>
           </ReportError>
         );
       }}
