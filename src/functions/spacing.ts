@@ -8,6 +8,7 @@ import {
   runLambdaWorker,
   parseLambdaResponse,
   booleanOverlap,
+  squareMeterToMile,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -33,6 +34,9 @@ import {
   centroid,
   distance,
   lineString,
+  union,
+  area,
+  booleanOverlap as turfBooleanOverlap,
 } from "@turf/turf";
 import { spacingGraphWorker } from "./spacingGraphWorker.js";
 
@@ -43,25 +47,112 @@ import { spacingGraphWorker } from "./spacingGraphWorker.js";
  * @returns Calculated metrics and a null sketch
  */
 export async function spacing(
-  sketch:
-    | Sketch<Polygon | MultiPolygon>
-    | SketchCollection<Polygon | MultiPolygon>,
+  sketch: Sketch<Polygon> | SketchCollection<Polygon>,
   extraParams: DefaultExtraParams = {},
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<any> {
+  const start = Date.now();
   const metricGroup = project.getMetricGroup("spacing");
 
-  // First, start the spacing workers to calculate metrics
+  // Narrow sketches down to only those that meet LOP of moderate-high, high, or very high
+  const sketchArray = toSketchArray(sketch).filter((sk) => {
+    const lop = sk.properties.proposed_lop;
+    return lop && ["A", "B", "C"].includes(lop[0]);
+  });
+  console.log(`Found ${sketchArray.length} sketches with high LOP`);
+
+  // Simplify sketches to use for clustering
+  const simplifiedSketches = Object.fromEntries(
+    sketchArray.map((sketch) => [
+      sketch.properties.id,
+      simplify(sketch, { tolerance: 0.001 }),
+    ]),
+  );
+
+  // Combine contiguous sketches into clusters
+  const sketchClusters: Sketch<Polygon | MultiPolygon>[] = [];
+  const addedMap: Record<string, boolean> = {};
+  sketchArray.forEach((sk) => {
+    // Skip if already added to a cluster
+    if (addedMap[sk.properties.id]) return;
+
+    // Find all sketches that abut this sketch
+    const simpleSketch = simplifiedSketches[sk.properties.id];
+    const buffered = buffer(simpleSketch, 100, { units: "meters" });
+    const cluster = sketchArray.filter((potentialCluster) => {
+      if (addedMap[potentialCluster.properties.id]) return false;
+      if (potentialCluster.properties.id === sk.properties.id) return false;
+      return turfBooleanOverlap(
+        simplifiedSketches[potentialCluster.properties.id].geometry,
+        buffered!.geometry,
+      );
+    });
+
+    // Add the sketch to the cluster (Use buffered to ensure overlap dissolve succeeds)
+    cluster.push(cluster.length === 0 ? sk : (buffered! as Sketch<Polygon>));
+
+    // Mark all sketches as added
+    cluster.forEach((clusterSk) => (addedMap[clusterSk.properties.id] = true));
+
+    // If the cluster is only one sketch, add it to the final array, else union before adding
+    console.log(cluster.length);
+    sketchClusters.push(
+      cluster.length === 1
+        ? cluster[0]
+        : ({
+            ...union(featureCollection(cluster))!,
+            properties: {
+              id: sk.properties.id,
+              name: `Cluster: ${cluster.map((sk) => sk.properties.name).join(", ")}`,
+            },
+          } as Sketch<Polygon | MultiPolygon>),
+    );
+  });
+
+  console.log(`${sketchClusters.length} clusters`, Date.now() - start);
+
+  // Filter to clusters that meet 9 sq mi minimum size
+  const largeClusters = sketchClusters.filter(
+    (sk) => squareMeterToMile(area(sk)) > 9,
+  );
+
+  console.log(`${largeClusters.length} large clusters`, Date.now() - start);
+
+  // Start the spacing workers to calculate metrics
+  console.log("Running workers", Date.now() - start);
   const metricPromises: Promise<
     { id: string; replicateIds: string[] } | InvocationResponse
   >[] = [];
   metricGroup.classes.forEach((curClass) => {
-    const parameters = { datasourceId: curClass.datasourceId! };
+    // Use the large clusters for all except estuaries, which can be any size
+    const finalSketches =
+      curClass.datasourceId === "estuaries" ? sketchClusters : largeClusters;
+
+    // Create sketch collection that gp worker accepts
+    const finalSketch = {
+      ...featureCollection(finalSketches),
+      properties: {
+        name: `sketchCollection`,
+        isCollection: true,
+        id: "0",
+        userAttributes: [],
+        sketchClassId: "0",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      },
+      bbox: bbox(featureCollection(finalSketches)),
+    };
+
+    const parameters = {
+      datasourceId: curClass.datasourceId!,
+    };
+
+    // Run worker to find replicates
     metricPromises.push(
       process.env.NODE_ENV === "test"
-        ? spacingWorker(sketch, parameters)
+        ? spacingWorker(finalSketch, parameters)
         : runLambdaWorker(
-            sketch,
+            finalSketch,
             project.package.name,
             "spacingWorker",
             project.geoprocessing.region,
@@ -71,9 +162,9 @@ export async function spacing(
     );
   });
 
-  // Then add the sketches to the graph
-  const sketchArray = toSketchArray(sketch);
-  const finalGraph = await addSketchesToGraph(sketch, request);
+  // Add all possible sketches to the graph
+  const finalGraph = await addSketchesToGraph(sketchClusters, request);
+  console.log("Added sketches to graph:", Date.now() - start);
 
   // Await the replicate metrics
   const replicates: Record<string, string[]> = {};
@@ -87,6 +178,7 @@ export async function spacing(
           });
     replicates[finalResult.id] = finalResult.replicateIds;
   });
+  console.log("Got replicate metrics", Date.now() - start);
 
   // Generate MST
   const result = await Promise.all(
@@ -174,9 +266,18 @@ export async function spacing(
       };
     }),
   );
+  console.log("Generated MST", Date.now() - start);
+
+  // Strictly for viewing on the map, add in the original sketches
+  const skArrayLowProtection = toSketchArray(sketch).filter((sk) => {
+    const lop = sk.properties.proposed_lop;
+    return !lop || !["A", "B", "C"].includes(lop[0]);
+  });
 
   return {
-    sketch: sketchArray.map((sketch) => simplify(sketch, { tolerance: 0.005 })),
+    sketch: sketchClusters
+      .concat(skArrayLowProtection)
+      .map((sketch) => simplify(sketch, { tolerance: 0.005 })),
     result,
   };
 }
@@ -197,9 +298,7 @@ export async function readGraphFromFile(
 }
 
 async function addSketchesToGraph(
-  sketch:
-    | Sketch<Polygon | MultiPolygon>
-    | SketchCollection<Polygon | MultiPolygon>,
+  sketch: Sketch<Polygon | MultiPolygon>[],
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
 ): Promise<{
   graph: graphlib.Graph;
@@ -208,8 +307,8 @@ async function addSketchesToGraph(
 }> {
   const { graph, tree } = await readGraphFromFile(graphData);
 
-  const sketchesSimplified = toSketchArray(sketch).map((sketch) =>
-    simplify(sketch, { tolerance: 0.005 }),
+  const sketchesSimplified = sketch.map((sk) =>
+    simplify(sk, { tolerance: 0.005 }),
   );
 
   // Get the bounding box of the simplified sketches

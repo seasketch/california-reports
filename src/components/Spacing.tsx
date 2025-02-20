@@ -59,7 +59,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
   return (
     <ReportError>
       <ResultsCard
-        title={mapData.title + " " + t("Spacing Report")}
+        title={t("Spacing Report")}
         functionName="spacing"
         useChildCard
       >
@@ -97,7 +97,6 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                 />
               }
             >
-              <SpacingObjectives data={mapData} />
               <ReplicateMap
                 sketch={mapData.sketch}
                 replicates={mapData.replicates}

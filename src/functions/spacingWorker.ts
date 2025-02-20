@@ -10,7 +10,6 @@ import {
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
-  createMetric,
   isRasterDatasource,
   isVectorDatasource,
   LineString,
@@ -95,15 +94,6 @@ export async function spacingWorker(
       sketches.map(async (sketch: Sketch<Polygon | MultiPolygon>) => {
         const lop = sketch.properties.proposed_lop;
         if (isVectorDatasource(ds)) {
-          if (!lop || !["A", "B", "C"].includes(lop[0]))
-            return [
-              createMetric({
-                metricId: extraParams.datasourceId,
-                sketchId: sketch.properties.id,
-                value: 0,
-              }),
-            ];
-
           // Overlap lines
           if (
             extraParams.datasourceId === "beaches" ||
@@ -132,24 +122,6 @@ export async function spacingWorker(
 
           return overlapPolygonArea(extraParams.datasourceId, features, sketch);
         } else if (isRasterDatasource(ds)) {
-          if (!lop || !["A", "B", "C"].includes(lop[0])) {
-            if (ds.measurementType === "quantitative") {
-              return createMetric({
-                metricId: extraParams.datasourceId,
-                sketchId: sketch.properties.id,
-                value: 0,
-              });
-            } else
-              return ["31", "32", "101", "102", "201", "202"].map((classId) =>
-                createMetric({
-                  metricId: extraParams.datasourceId,
-                  sketchId: sketch.properties.id,
-                  classId: classId,
-                  value: 0,
-                }),
-              );
-          }
-
           return rasterMetrics(raster, {
             metricId: extraParams.datasourceId,
             feature: sketch,
