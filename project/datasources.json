@@ -366,5 +366,18 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/LinearKelp_Maximum_1984_2023.shp",
     "propertiesToKeep": [],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/Updated_ShoreTypes_01092025/clipped_rocks.fgb",
+    "layerName": "clipped_rocks",
+    "geo_type": "vector",
+    "datasourceId": "rocks",
+    "formats": ["fgb"],
+    "classKeys": [],
+    "created": "2025-02-21T19:29:02.773Z",
+    "lastUpdated": "2025-02-21T19:29:02.773Z",
+    "propertiesToKeep": [],
+    "explodeMulti": true,
+    "precalc": true
   }
 ]

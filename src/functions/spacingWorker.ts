@@ -32,7 +32,7 @@ const replicateTest: Record<
     valueFormatter: (val: number) => val,
     replicateVal: 1.1,
   },
-  rocky_shores: {
+  rocks: {
     valueFormatter: (val: number) => val,
     replicateVal: 0.55,
   },
@@ -97,7 +97,7 @@ export async function spacingWorker(
           // Overlap lines
           if (
             extraParams.datasourceId === "beaches" ||
-            extraParams.datasourceId === "rocky_shores" ||
+            extraParams.datasourceId === "rocks" ||
             extraParams.datasourceId === "kelp"
           ) {
             const features = await getDatasourceFeatures<LineString>(ds, url, {

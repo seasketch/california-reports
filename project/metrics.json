@@ -179,8 +179,8 @@
       },
       {
         "classId": "rocky_shores",
-        "display": "Rocky Shores",
-        "datasourceId": "rocky_shores"
+        "display": "Rocky Shores and Offshore Rocks",
+        "datasourceId": "rocks"
       },
       {
         "classId": "kelp",

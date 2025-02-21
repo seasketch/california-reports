@@ -33,7 +33,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
   const spacingTitle: Record<string, string> = {
     kelp: t("Kelp"),
     estuaries: t("Estuary"),
-    rocky_shores: t("Rocky Shore"),
+    rocks: t("Rock"),
     beaches: t("Beach"),
     eelgrass: t("Eelgrass"),
     substrate31: t("Hard Substrate 30-100m"),
