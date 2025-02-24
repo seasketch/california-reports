@@ -7,6 +7,7 @@ import {
   getCogFilename,
   toRasterProjection,
   isSketchCollection,
+  MultiPolygon,
 } from "@seasketch/geoprocessing";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import { bbox } from "@turf/turf";
@@ -50,7 +51,9 @@ export async function bathymetry(
  */
 export async function bathyStats(
   /** Polygons to filter for */
-  sketch: Sketch<Polygon> | SketchCollection<Polygon>,
+  sketch:
+    | Sketch<Polygon | MultiPolygon>
+    | SketchCollection<Polygon | MultiPolygon>,
   /** bathymetry raster to search */
   raster: Georaster,
 ): Promise<BathymetryResults[]> {

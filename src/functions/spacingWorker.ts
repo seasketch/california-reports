@@ -7,6 +7,7 @@ import {
   rasterMetrics,
   getDatasourceFeatures,
   overlapPolygonArea,
+  getCogFilename,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
@@ -19,6 +20,7 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import { overlapLineLength } from "../util/overlapLineLength.js";
+import { bathyStats } from "./bathymetry.js";
 
 const replicateTest: Record<
   string,
@@ -92,7 +94,28 @@ export async function spacingWorker(
   const metrics = (
     await Promise.all(
       sketches.map(async (sketch: Sketch<Polygon | MultiPolygon>) => {
-        const lop = sketch.properties.proposed_lop;
+        if (extraParams.datasourceId === "kelp") {
+          const url = `${project.dataBucketUrl()}${getCogFilename(
+            project.getInternalRasterDatasourceById("depth"),
+          )}`;
+          const raster = await loadCog(url);
+          const stats = await bathyStats(sketch, raster);
+
+          if (stats[0].min > -30 || stats[0].max < 0) {
+            console.log("stats[0].min > -30 || stats[0].max < 0");
+            return [
+              {
+                metricId: extraParams.datasourceId,
+                value: 0,
+                sketchId: sketch.properties.id,
+                extra: {
+                  sketchName: sketch.properties.name,
+                },
+              },
+            ];
+          }
+        }
+
         if (isVectorDatasource(ds)) {
           // Overlap lines
           if (

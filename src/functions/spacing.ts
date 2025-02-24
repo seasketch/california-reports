@@ -95,7 +95,6 @@ export async function spacing(
     cluster.forEach((clusterSk) => (addedMap[clusterSk.properties.id] = true));
 
     // If the cluster is only one sketch, add it to the final array, else union before adding
-    console.log(cluster.length);
     sketchClusters.push(
       cluster.length === 1
         ? cluster[0]
