@@ -5,16 +5,13 @@ import {
   MultiPolygon,
   GeoprocessingHandler,
   rasterMetrics,
-  getDatasourceFeatures,
   overlapPolygonArea,
   getCogFilename,
+  getFeaturesForSketchBBoxes,
 } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 import {
-  isRasterDatasource,
-  isVectorDatasource,
   LineString,
-  Metric,
   squareMeterToMile,
   toSketchArray,
 } from "@seasketch/geoprocessing/client-core";
@@ -22,50 +19,16 @@ import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import { overlapLineLength } from "../util/overlapLineLength.js";
 import { bathyStats } from "./bathymetry.js";
 
-const replicateTest: Record<
-  string,
-  { valueFormatter: (val: number) => number; replicateVal: number }
-> = {
-  kelp: {
-    valueFormatter: (val: number) => val,
-    replicateVal: 1.1,
-  },
-  beaches: {
-    valueFormatter: (val: number) => val,
-    replicateVal: 1.1,
-  },
-  rocks: {
-    valueFormatter: (val: number) => val,
-    replicateVal: 0.55,
-  },
-  eelgrass: {
-    valueFormatter: (val: number) => squareMeterToMile(val),
-    replicateVal: 0.04,
-  },
-  estuaries: {
-    valueFormatter: (val: number) => squareMeterToMile(val),
-    replicateVal: 0.12,
-  },
-  substrate31: {
-    valueFormatter: (val: number) =>
-      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
-    replicateVal: 0.13,
-  },
-  substrate101: {
-    valueFormatter: (val: number) =>
-      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
-    replicateVal: 0.13,
-  },
-  substrate32: {
-    valueFormatter: (val: number) =>
-      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
-    replicateVal: 7,
-  },
-  substrate102: {
-    valueFormatter: (val: number) =>
-      squareMeterToMile(val * 9.710648864705849093 * 9.710648864705849093),
-    replicateVal: 17,
-  },
+const replicateMap = {
+  kelp: 1.1,
+  beaches: 1.1,
+  rocks: 0.55,
+  eelgrass: 0.04,
+  estuaries: 0.12,
+  substrate31: 0.13,
+  substrate32: 7,
+  substrate101: 0.13,
+  substrate102: 17,
 };
 
 /**
@@ -82,151 +45,129 @@ export async function spacingWorker(
     datasourceId: string;
   },
 ) {
-  const ds = extraParams.datasourceId.startsWith("substrate")
+  const dsId = extraParams.datasourceId;
+  const ds = dsId.startsWith("substrate")
     ? project.getDatasourceById("substrate_depth")
-    : project.getDatasourceById(extraParams.datasourceId);
+    : project.getDatasourceById(dsId);
   const url = project.getDatasourceUrl(ds);
   const sketches = toSketchArray(sketch);
-  const sketchIds = sketches.map((sk) => sk.properties.id);
 
-  const raster = isRasterDatasource(ds) ? await loadCog(url) : null;
+  const replicateIds: string[] = [];
 
-  const metrics = (
-    await Promise.all(
-      sketches.map(async (sketch: Sketch<Polygon | MultiPolygon>) => {
-        if (extraParams.datasourceId === "kelp") {
-          const url = `${project.dataBucketUrl()}${getCogFilename(
-            project.getInternalRasterDatasourceById("depth"),
-          )}`;
+  await Promise.all(
+    sketches.map(async (sketch: Sketch<Polygon | MultiPolygon>) => {
+      // Check depth for kelp and hard/soft substrate 0-30m
+      if (dsId === "kelp" && !(await depthCheck(sketch))) return;
+
+      switch (dsId) {
+        // Line feature datasources
+        case "kelp":
+        case "beaches":
+        case "rocks": {
+          const features = await getFeaturesForSketchBBoxes<LineString>(
+            sketch,
+            url,
+          );
+          const [metric] = await overlapLineLength(
+            ds.datasourceId,
+            features,
+            sketch,
+            {
+              units: "miles",
+            },
+          );
+          if (metric?.value >= replicateMap[dsId])
+            replicateIds.push(sketch.properties.id);
+          break;
+        }
+        // Polygon feature datasources
+        case "eelgrass":
+        case "estuaries": {
+          const features = await getFeaturesForSketchBBoxes<
+            Polygon | MultiPolygon
+          >(sketch, url);
+          const [metric] = await overlapPolygonArea(
+            ds.datasourceId,
+            features,
+            sketch,
+          );
+          if (squareMeterToMile(metric?.value) >= replicateMap[dsId])
+            replicateIds.push(sketch.properties.id);
+          break;
+        }
+        // Categorical raster datasources
+        case "substrate31":
+        case "substrate32": {
           const raster = await loadCog(url);
-          const stats = await bathyStats(sketch, raster);
+          const category = dsId.slice(-2);
+          const [metric] = await rasterMetrics(raster, {
+            metricId: dsId,
+            feature: sketch,
+            categorical: true,
+            categoryMetricValues: [category],
+          });
 
-          if (stats[0].min > -30 || stats[0].max < 0) {
-            console.log("stats[0].min > -30 || stats[0].max < 0");
-            return [
-              {
-                metricId: extraParams.datasourceId,
-                value: 0,
-                sketchId: sketch.properties.id,
-                extra: {
-                  sketchName: sketch.properties.name,
-                },
-              },
-            ];
-          }
+          if (
+            squareMeterToMile(metric?.value * 9.71 * 9.71) >= replicateMap[dsId]
+          )
+            replicateIds.push(sketch.properties.id);
+          break;
+        }
+        case "substrate101":
+        case "substrate102": {
+          const raster = await loadCog(url);
+          const category = dsId.slice(-3);
+          const metrics = await rasterMetrics(raster, {
+            metricId: dsId,
+            feature: sketch,
+            categorical: true,
+            categoryMetricValues: [category, String(parseInt(category) + 100)],
+          });
+
+          if (metrics.length !== 2) throw new Error("Expected two metrics");
+
+          if (
+            squareMeterToMile(
+              metrics.reduce((acc, val) => acc + val.value, 0) * 9.71 * 9.71,
+            ) >= replicateMap[dsId]
+          )
+            replicateIds.push(sketch.properties.id);
+          break;
         }
 
-        if (isVectorDatasource(ds)) {
-          // Overlap lines
-          if (
-            extraParams.datasourceId === "beaches" ||
-            extraParams.datasourceId === "rocks" ||
-            extraParams.datasourceId === "kelp"
-          ) {
-            const features = await getDatasourceFeatures<LineString>(ds, url, {
-              sketch,
-            });
-            return overlapLineLength(
-              extraParams.datasourceId,
-              features,
-              sketch,
-              {
-                units: "miles",
-              },
-            );
-          }
+        // Soft Substrate 0-30m replicate, must cover 0-30m depth range and contain >1.1 miles
+        // TO DO
 
-          // Overlap polygons
-          const features = await getDatasourceFeatures<Polygon | MultiPolygon>(
-            ds,
-            url,
-            { sketch },
-          );
+        // Hard Substrate 0-30m replicate, must cover 0-30m depth range and contain >1.1 miles
+        // TO DO
 
-          return overlapPolygonArea(extraParams.datasourceId, features, sketch);
-        } else if (isRasterDatasource(ds)) {
-          return rasterMetrics(raster, {
-            metricId: extraParams.datasourceId,
-            feature: sketch,
-            ...(ds.measurementType === "quantitative" && { stats: ["area"] }),
-            ...(ds.measurementType === "categorical" && {
-              categorical: true,
-              categoryMetricValues: ["31", "32", "101", "102", "201", "202"],
-            }),
-          });
-        } else
-          throw new Error(
-            `Unsupported datasource type: ${extraParams.datasourceId}`,
-          );
-      }),
-    )
-  ).reduce<Metric[]>((acc, val) => acc.concat(val), []);
+        // Soft Substrate 0-100m replicate, must contain >7 sq. miles total w/
+        // >1.1 miles 0-30m and >5 sq. miles 30-100m
+        // TO DO
 
-  // Substrate handled differently
-  if (extraParams.datasourceId.startsWith("substrate")) {
-    const sketchMetrics = metrics.filter(
-      (m) => m.sketchId && sketchIds.includes(m.sketchId),
-    );
-    const sketchClassMetrics =
-      extraParams.datasourceId === "substrate31"
-        ? sketchMetrics.filter((m) => m.classId === "31")
-        : extraParams.datasourceId === "substrate32"
-          ? sketchMetrics.filter((m) => m.classId === "32")
-          : extraParams.datasourceId === "substrate101"
-            ? sketchMetrics.filter(
-                (m) => m.classId === "101" || m.classId === "201",
-              )
-            : extraParams.datasourceId === "substrate102"
-              ? sketchMetrics.filter(
-                  (m) => m.classId === "102" || m.classId === "202",
-                )
-              : [];
+        // Soft Substrate 0-3000m replicate, must contain >10 sq. miles total w/
+        // >1.1 miles 0-30m, >5 sq. miles 30-100m, and >1 sq. miles >100m
+        // TO DO
 
-    if (sketchClassMetrics.length === 0) throw new Error("No metrics found");
-
-    const replicateMetrics =
-      extraParams.datasourceId === "substrate31" ||
-      extraParams.datasourceId === "substrate32"
-        ? sketchClassMetrics.filter(
-            (m) =>
-              replicateTest[extraParams.datasourceId].valueFormatter(m.value) >
-              replicateTest[extraParams.datasourceId].replicateVal,
-          )
-        : // For substrate101 and substrate102, sum the two classes
-          sketchClassMetrics.filter((m) => {
-            const value = replicateTest[
-              extraParams.datasourceId
-            ].valueFormatter(
-              sketchClassMetrics
-                .filter((skm) => skm.sketchId === m.sketchId)
-                .reduce((acc, val) => acc + val.value, 0),
-            );
-
-            return value > replicateTest[extraParams.datasourceId].replicateVal;
-          });
-
-    const replicateSketches = sketches.filter((sk) =>
-      replicateMetrics.some((m) => m.sketchId === sk.properties.id),
-    ) as Sketch<Polygon>[];
-    const replicateIds = replicateSketches.map((sk) => sk.properties.id);
-    return { id: extraParams.datasourceId, replicateIds };
-  }
-
-  // Get sketchIds of replicates
-  const sketchMetrics = metrics.filter(
-    (m) => m.sketchId && sketchIds.includes(m.sketchId),
+        default:
+          throw new Error(`Unsupported datasource type: ${ds.datasourceId}`);
+      }
+    }),
   );
-  const replicateMetrics = sketchMetrics.filter(
-    (m) =>
-      replicateTest[extraParams.datasourceId].valueFormatter(m.value) >
-      replicateTest[extraParams.datasourceId].replicateVal,
-  );
-  const replicateSketches = sketches.filter((sk) =>
-    replicateMetrics.some((m) => m.sketchId === sk.properties.id),
-  ) as Sketch<Polygon>[];
-  const replicateIds = replicateSketches.map((sk) => sk.properties.id);
 
-  return { id: extraParams.datasourceId, replicateIds };
+  return { id: extraParams.datasourceId, replicateIds: replicateIds.sort() };
+}
+
+// Check if sketch covers entire depth range 0-30m
+async function depthCheck(sketch: Sketch<Polygon | MultiPolygon>) {
+  const url = `${project.dataBucketUrl()}${getCogFilename(
+    project.getInternalRasterDatasourceById("depth"),
+  )}`;
+  const raster = await loadCog(url);
+  const stats = await bathyStats(sketch, raster);
+
+  if (stats[0].min > -30 || stats[0].max < 0) return false;
+  return true;
 }
 
 export default new GeoprocessingHandler(spacingWorker, {
