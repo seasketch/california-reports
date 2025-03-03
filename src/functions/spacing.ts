@@ -127,6 +127,13 @@ export async function spacing(
     const finalSketches =
       curClass.datasourceId === "estuaries" ? sketchClusters : largeClusters;
 
+    if (finalSketches.length === 0) {
+      metricPromises.push(
+        Promise.resolve({ id: curClass.datasourceId!, replicateIds: [] }),
+      );
+      return;
+    }
+
     // Create sketch collection that gp worker accepts
     const finalSketch = {
       ...featureCollection(finalSketches),
@@ -169,7 +176,8 @@ export async function spacing(
   const replicates: Record<string, string[]> = {};
   (await Promise.all(metricPromises)).forEach((result) => {
     const finalResult =
-      process.env.NODE_ENV === "test"
+      process.env.NODE_ENV === "test" ||
+      ((result as any).id && (result as any).replicateIds)
         ? (result as { id: string; replicateIds: string[] })
         : (parseLambdaResponse(result as InvocationResponse) as {
             id: string;
