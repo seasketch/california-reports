@@ -16,9 +16,7 @@ import {
   Sketch,
 } from "@seasketch/geoprocessing/client-core";
 import { bbox, featureCollection } from "@turf/turf";
-import { ObjectiveStatus } from "@seasketch/geoprocessing/client-ui";
-import landData from "../../data/bin/landShrunk.01.json";
-import { useTranslation } from "react-i18next";
+import landData from "../../data/bin/landShrunk.01.json" with { type: "json" };
 
 // Props for the Replicate Map
 interface ReplicateMapProps {
@@ -231,61 +229,5 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
         }}
       ></div>
     </div>
-  );
-};
-
-export const SpacingObjectives = (props: {
-  data: {
-    title: string;
-    sketch: Sketch<Polygon>[];
-    replicates: string[];
-    paths: {
-      path: Feature<LineString>;
-      distance: number;
-      color: string;
-    }[];
-  };
-}) => {
-  const { t } = useTranslation();
-  if (props.data.replicates.length === 0) return <></>;
-  return (
-    <>
-      {props.data.replicates.length === 1 ? (
-        <ObjectiveStatus
-          status={"maybe"}
-          msg={
-            <>
-              {t("The selected MPAs contain only one")}{" "}
-              {props.data.title.toLocaleLowerCase()}{" "}
-              {t("habitat replicate. Spacing analyses require 2+ replicates.")}
-            </>
-          }
-        />
-      ) : props.data.paths.filter((p) => p.color === "red").length === 0 ? (
-        <ObjectiveStatus
-          status={"yes"}
-          msg={
-            <>
-              {t("These")} {props.data.title.toLocaleLowerCase()}{" "}
-              {t(
-                "habitat replicates meet the spacing guidelines. All replicates have gaps less than 62 miles.",
-              )}
-            </>
-          }
-        />
-      ) : (
-        <ObjectiveStatus
-          status={"no"}
-          msg={
-            <>
-              {t("These")} {props.data.title.toLocaleLowerCase()}{" "}
-              {t("habitat replicates do not meet the spacing guidelines, with")}{" "}
-              {props.data.paths.filter((p) => p.color === "red").length}{" "}
-              {t("gap(s) greater than 62 miles.")}
-            </>
-          }
-        />
-      )}
-    </>
   );
 };

@@ -1,0 +1,178 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 3.150245,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 6.234515,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 3.150245,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 6.234515,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 3.150245,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "29784",
+    "groupId": null,
+    "value": 6.234515,
+    "extra": {
+      "sketchName": "mpa-test"
+    }
+  }
+]

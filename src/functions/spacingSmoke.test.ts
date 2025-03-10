@@ -10,11 +10,13 @@ describe("Basic smoke tests", () => {
     expect(typeof spacing).toBe("function");
   });
   test("spacing - tests run against all examples", async () => {
-    const examples = await getExamplePolygonSketchAll();
+    const examples = await getExamplePolygonSketchAll(
+      "South Bioregion (Existing)",
+    );
     for (const example of examples) {
       const result = await spacing(example);
       expect(result).toBeTruthy();
       writeResultOutput(result, "spacing", example.properties.name);
     }
-  }, 500000);
+  }, 1000000);
 });

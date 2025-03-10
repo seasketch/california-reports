@@ -1,0 +1,130 @@
+[
+  {
+    "metricId": "metric",
+    "value": 179.5318697521494,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 113.56076113531769,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 175.15790488714504,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 401.9186538184758,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 259.9266552414475,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 208.32388053313485,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 402.1905832544051,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 870.4411190289602,
+    "classId": "Soft 0 - 30m",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 60.4769688680796,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "north_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 73.79754816399415,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "northcentral_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 101.02695256691106,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "central_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 137.3499576977883,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "south_sr",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 118.93436197871053,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "north_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 116.36710762027339,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "central_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 137.91173685769485,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "south_br",
+    "sketchId": null
+  },
+  {
+    "metricId": "metric",
+    "value": 373.21320645667834,
+    "classId": "Hard 0 - 30m",
+    "groupId": null,
+    "geographyId": "world",
+    "sketchId": null
+  }
+]

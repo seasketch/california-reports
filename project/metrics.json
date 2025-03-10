@@ -26,7 +26,7 @@
   {
     "metricId": "kelp",
     "type": "areaOverlap",
-    "layerId": "kx7B7uIAa",
+    "layerId": "N6W6lmsue",
     "classes": [
       {
         "classId": "kelp",
@@ -133,6 +133,23 @@
     ]
   },
   {
+    "metricId": "substrate_nearshore",
+    "type": "areaOverlap",
+    "datasourceId": "substrate_nearshore",
+    "classKey": "Sub_depth",
+    "layerId": "Liw9qDpex",
+    "classes": [
+      {
+        "classId": "Soft 0 - 30m",
+        "display": "Soft 0-30m"
+      },
+      {
+        "classId": "Hard 0 - 30m",
+        "display": "Hard 0-30m"
+      }
+    ]
+  },
+  {
     "metricId": "estuaries",
     "type": "areaOverlap",
     "classes": [
@@ -179,7 +196,7 @@
       },
       {
         "classId": "rocky_shores",
-        "display": "Rocky Shores and Offshore Rocks",
+        "display": "Rock",
         "datasourceId": "rocks"
       },
       {
@@ -198,36 +215,34 @@
         "datasourceId": "estuaries"
       },
       {
+        "classId": "linearSubstrate_hard",
+        "display": "Hard Substrate 0-30m",
+        "datasourceId": "linearSubstrate_hard"
+      },
+      {
+        "classId": "linearSubstrate_soft",
+        "display": "Soft Substrate 0-30m",
+        "datasourceId": "linearSubstrate_soft"
+      },
+      {
         "classId": "substrate31",
-        "display": "Hard Substrate (30-100m)",
+        "display": "Hard Substrate 30-100m",
         "datasourceId": "substrate31"
       },
       {
         "classId": "substrate32",
-        "display": "Soft Substrate (30-100m)",
+        "display": "Soft Substrate 30-100m",
         "datasourceId": "substrate32"
       },
       {
         "classId": "substrate101",
-        "display": "Hard Substrate (>100m)",
+        "display": "Hard Substrate >100m",
         "datasourceId": "substrate101"
       },
       {
         "classId": "substrate102",
-        "display": "Soft Substrate (>100m)",
+        "display": "Soft Substrate >100m",
         "datasourceId": "substrate102"
-      }
-    ]
-  },
-  {
-    "metricId": "beaches",
-    "type": "areaOverlap",
-    "classes": [
-      {
-        "classId": "beaches_line",
-        "display": "Beaches",
-        "datasourceId": "beaches_line",
-        "layerId": ""
       }
     ]
   }

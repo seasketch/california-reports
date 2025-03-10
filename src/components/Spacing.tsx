@@ -11,8 +11,9 @@ import {
   ToolbarCard,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
-import { ReplicateMap, SpacingObjectives } from "../util/Spacing.js";
+import { ReplicateMap } from "../util/Spacing.js";
 import { Feature, LineString, Polygon, Sketch } from "@seasketch/geoprocessing";
+import project from "../../project/index.js";
 
 export const Spacing: React.FunctionComponent<any> = (props) => {
   const { t } = useTranslation();
@@ -29,18 +30,6 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
       color: string;
     }[],
   });
-
-  const spacingTitle: Record<string, string> = {
-    kelp: t("Kelp"),
-    estuaries: t("Estuary"),
-    rocks: t("Rock"),
-    beaches: t("Beach"),
-    eelgrass: t("Eelgrass"),
-    substrate31: t("Hard Substrate 30-100m"),
-    substrate32: t("Soft Substrate 30-100m"),
-    substrate101: t("Hard Substrate >100m"),
-    substrate102: t("Soft Substrate >100m"),
-  };
 
   if (!isCollection)
     return (
@@ -85,6 +74,8 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
             });
           }
 
+          const metricGroup = project.getMetricGroup("spacing", t);
+
           return (
             <ToolbarCard
               title={mapData.title + " " + t("Spacing Report")}
@@ -102,30 +93,32 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                 replicates={mapData.replicates}
                 paths={mapData.paths}
               />
-              {data.result.map((report) => (
-                <p>
-                  <Pill>{report.replicates.length}</Pill>{" "}
-                  {
-                    /* i18next-extract-disable-line */ t(
-                      spacingTitle[report.id],
-                    )
-                  }{" "}
-                  {t("habitat replicate(s)")}.
-                  {report.replicates.length !== 0 && (
-                    <SimpleButton
-                      onClick={() =>
-                        setData({
-                          ...report,
-                          title: spacingTitle[report.id],
-                          sketch: data.sketch,
-                        })
-                      }
-                    >
-                      {t("Show on Map")}
-                    </SimpleButton>
-                  )}
-                </p>
-              ))}
+              {data.result.map((report) => {
+                const curClass = metricGroup.classes.find(
+                  (c) => c.datasourceId === report.id,
+                );
+                if (!curClass) throw new Error("Class not found in Spacing");
+                return (
+                  <p>
+                    <Pill>{report.replicates.length}</Pill>{" "}
+                    {/* i18next-extract-disable-line */ t(curClass.display)}{" "}
+                    {t("habitat replicate(s)")}.
+                    {report.replicates.length !== 0 && (
+                      <SimpleButton
+                        onClick={() =>
+                          setData({
+                            ...report,
+                            title: t(curClass.display),
+                            sketch: data.sketch,
+                          })
+                        }
+                      >
+                        {t("Show on Map")}
+                      </SimpleButton>
+                    )}
+                  </p>
+                );
+              })}
             </ToolbarCard>
           );
         }}

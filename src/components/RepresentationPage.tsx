@@ -5,6 +5,7 @@ import { Estuaries } from "./Estuaries.js";
 import { Eelgrass } from "./Eelgrass.js";
 import { Depth } from "./Depth.js";
 import { Habitat } from "./Habitat.js";
+import { HabitatNearshore } from "./HabitatNearshoreCard.js";
 
 const ReportPage = () => {
   return (
@@ -15,6 +16,7 @@ const ReportPage = () => {
       <Estuaries />
       <Eelgrass />
       <Habitat />
+      <HabitatNearshore />
     </>
   );
 };

@@ -25,6 +25,8 @@ const replicateMap = {
   rocks: 0.55,
   eelgrass: 0.04,
   estuaries: 0.12,
+  linearSubstrate_hard: 1.1,
+  linearSubstrate_soft: 1.1,
   substrate31: 0.13,
   substrate32: 7,
   substrate101: 0.13,
@@ -48,7 +50,9 @@ export async function spacingWorker(
   const dsId = extraParams.datasourceId;
   const ds = dsId.startsWith("substrate")
     ? project.getDatasourceById("substrate_depth")
-    : project.getDatasourceById(dsId);
+    : dsId.startsWith("linearSubstrate")
+      ? project.getDatasourceById("substrate_nearshore")
+      : project.getDatasourceById(dsId);
   const url = project.getDatasourceUrl(ds);
   const sketches = toSketchArray(sketch);
 
@@ -57,20 +61,40 @@ export async function spacingWorker(
   await Promise.all(
     sketches.map(async (sketch: Sketch<Polygon | MultiPolygon>) => {
       // Check depth for kelp and hard/soft substrate 0-30m
-      if (dsId === "kelp" && !(await depthCheck(sketch))) return;
+      if (
+        ["kelp", "linearSubstrate_hard", "linearSubstrate_soft"].includes(
+          dsId,
+        ) &&
+        !(await depthCheck(sketch))
+      )
+        return;
 
       switch (dsId) {
         // Line feature datasources
         case "kelp":
         case "beaches":
-        case "rocks": {
+        case "rocks":
+        case "linearSubstrate_hard":
+        case "linearSubstrate_soft": {
           const features = await getFeaturesForSketchBBoxes<LineString>(
             sketch,
             url,
           );
+
+          const finalFeatures = features.filter((feat) => {
+            if (!feat.geometry) return false;
+            if (dsId === "linearSubstrate_hard") {
+              return feat.properties!["Sub_depth"] === "Hard 0 - 30m";
+            }
+            if (dsId === "linearSubstrate_soft") {
+              return feat.properties!["Sub_depth"] === "Soft 0 - 30m";
+            }
+            return true;
+          });
+
           const [metric] = await overlapLineLength(
-            ds.datasourceId,
-            features,
+            dsId,
+            finalFeatures,
             sketch,
             {
               units: "miles",
@@ -134,20 +158,6 @@ export async function spacingWorker(
             replicateIds.push(sketch.properties.id);
           break;
         }
-
-        // Soft Substrate 0-30m replicate, must cover 0-30m depth range and contain >1.1 miles
-        // TO DO
-
-        // Hard Substrate 0-30m replicate, must cover 0-30m depth range and contain >1.1 miles
-        // TO DO
-
-        // Soft Substrate 0-100m replicate, must contain >7 sq. miles total w/
-        // >1.1 miles 0-30m and >5 sq. miles 30-100m
-        // TO DO
-
-        // Soft Substrate 0-3000m replicate, must contain >10 sq. miles total w/
-        // >1.1 miles 0-30m, >5 sq. miles 30-100m, and >1 sq. miles >100m
-        // TO DO
 
         default:
           throw new Error(`Unsupported datasource type: ${ds.datasourceId}`);
