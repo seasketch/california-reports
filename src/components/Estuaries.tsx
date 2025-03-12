@@ -175,7 +175,7 @@ export const Estuaries: React.FunctionComponent = () => {
                       width: 20,
                     },
                     {
-                      columnLabel: percWithinLabel,
+                      columnLabel: t("% Planning Region Estuaries"),
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",
@@ -224,7 +224,7 @@ export const Estuaries: React.FunctionComponent = () => {
                       width: 30,
                     },
                     {
-                      columnLabel: percWithinLabel,
+                      columnLabel: t("% Bioregion Estuaries"),
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",

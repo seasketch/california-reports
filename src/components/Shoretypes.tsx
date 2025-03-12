@@ -198,7 +198,8 @@ export const Shoretypes: React.FunctionComponent = () => {
                         width: 20,
                       },
                       {
-                        columnLabel: percWithinLabel,
+                        columnLabel:
+                          t("% Planning Region") + " " + t(curClass.display),
                         type: "metricChart",
                         metricId: percMetricIdName,
                         valueFormatter: "percent",
@@ -249,7 +250,8 @@ export const Shoretypes: React.FunctionComponent = () => {
                         width: 30,
                       },
                       {
-                        columnLabel: percWithinLabel,
+                        columnLabel:
+                          t("% Bioregion") + " " + t(curClass.display),
                         type: "metricChart",
                         metricId: percMetricIdName,
                         valueFormatter: "percent",

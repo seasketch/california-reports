@@ -47,15 +47,34 @@ export const HabitatNearshore: React.FunctionComponent = () => {
       {(metricResults: Metric[]) => {
         const percMetricIdName = `${metricGroup.metricId}Perc`;
 
-        const valueMetrics = metricsWithSketchId(
-          metricResults.filter((m) => m.metricId === metricGroup.metricId),
-          [id],
-        );
-        const percentMetrics = toPercentMetric(valueMetrics, precalc, {
-          metricIdOverride: percMetricIdName,
-          idProperty: "geographyId",
+        let valueMetrics: Metric[] = [];
+        let precalcMetrics: Metric[] = [];
+        let percMetrics: Metric[] = [];
+
+        geographies.forEach((g) => {
+          const vMetrics = metricsWithSketchId(
+            metricResults.filter(
+              (m) =>
+                m.metricId === metricGroup.metricId &&
+                m.geographyId === g.geographyId,
+            ),
+            [id],
+          );
+          valueMetrics = valueMetrics.concat(vMetrics);
+
+          const preMetrics = precalc.filter(
+            (m) => m.geographyId === g.geographyId,
+          );
+          precalcMetrics = precalcMetrics.concat(preMetrics);
+
+          percMetrics = percMetrics.concat(
+            toPercentMetric(vMetrics, preMetrics, {
+              metricIdOverride: percMetricIdName,
+            }),
+          );
         });
-        const metrics = [...valueMetrics, ...percentMetrics];
+
+        const metrics = [...valueMetrics, ...percMetrics];
 
         return (
           <ReportError>
@@ -81,7 +100,8 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                 <p>
                   The minimum extent necessary to encompass 90% of local
                   biodiversity in nearshore substrate is 1.1 linear miles, as
-                  determined from biological surveys.
+                  determined from biological surveys. The MPA must encompass the
+                  entire 0-30 m depth zone to count as a replicate.
                 </p>
               </Trans>
 
@@ -96,9 +116,9 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                 metricGroup={metricGroup}
                 columnConfig={[
                   {
-                    columnLabel: " ",
+                    columnLabel: t("Predicted Substrate"),
                     type: "class",
-                    width: 20,
+                    width: 25,
                   },
                   {
                     columnLabel: withinLabel,
@@ -145,6 +165,7 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                     )}
                     columnConfig={[
                       {
+                        /* i18next-extract-disable-next-line */
                         columnLabel: t(curClass.display),
                         type: "class",
                         width: 40,
@@ -167,7 +188,7 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                         width: 20,
                       },
                       {
-                        columnLabel: percWithinLabel,
+                        columnLabel: t("% Planning Region Length"),
                         type: "metricChart",
                         metricId: percMetricIdName,
                         valueFormatter: "percent",
@@ -196,6 +217,7 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                     )}
                     columnConfig={[
                       {
+                        /* i18next-extract-disable-next-line */
                         columnLabel: t(curClass.display),
                         type: "class",
                         width: 30,
@@ -218,7 +240,7 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                         width: 30,
                       },
                       {
-                        columnLabel: percWithinLabel,
+                        columnLabel: t("% Bioregion Length"),
                         type: "metricChart",
                         metricId: percMetricIdName,
                         valueFormatter: "percent",
@@ -258,7 +280,7 @@ export const HabitatNearshore: React.FunctionComponent = () => {
                     final area statistics.
                   </p>
                 </Trans>
-                <p>{t("Last updated")}: March 7, 2025.</p>
+                <p>{t("Last updated")}: March 11, 2025.</p>
               </Collapse>
             </ToolbarCard>
           </ReportError>

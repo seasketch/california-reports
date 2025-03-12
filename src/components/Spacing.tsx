@@ -88,6 +88,37 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                 />
               }
             >
+              <Trans i18nKey="Spacing - intro">
+                <p>
+                  To evaluate habitat spacing:
+                  <ul>
+                    <li>
+                      Only MPAs with a level of protection (LOP) of very high,
+                      high, or moderate-high are considered.
+                    </li>
+                    <li>
+                      Only MPAs or MPA clusters (i.e., adjacent MPAs that both
+                      meet the LOP guideline) that meet the minimum size
+                      guideline of 9 square miles are considered (with the
+                      exception of estuarine habitat - analyses for this habitat
+                      may consider MPAs of any size).
+                    </li>
+                    <li>
+                      Spacing for each habitat is considered separately. Only
+                      MPAs that contain sufficient extent of habitat to be
+                      counted as a replicate are considered. Please note that
+                      the analysis on SeaSketch follows the habitat guidelines
+                      developed for the South Coast planning region; other
+                      regions may use slightly different metrics.
+                    </li>
+                    <li>
+                      Maximum gaps between MPAs containing a given habitat are
+                      tabulated. Spacing guidelines advise gaps of 31-62 statute
+                      miles between replicates.
+                    </li>
+                  </ul>
+                </p>
+              </Trans>
               <ReplicateMap
                 sketch={mapData.sketch}
                 replicates={mapData.replicates}
@@ -108,6 +139,7 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                         onClick={() =>
                           setData({
                             ...report,
+                            /* i18next-extract-disable-next-line */
                             title: t(curClass.display),
                             sketch: data.sketch,
                           })

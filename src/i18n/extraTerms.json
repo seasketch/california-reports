@@ -66,5 +66,12 @@
   "Hard Substrate (30-100m)": "Hard Substrate (30-100m)",
   "Soft Substrate (30-100m)": "Soft Substrate (30-100m)",
   "Hard Substrate (>100m)": "Hard Substrate (>100m)",
-  "Soft Substrate (>100m)": "Soft Substrate (>100m)"
+  "Soft Substrate (>100m)": "Soft Substrate (>100m)",
+  "Rock": "Rock",
+  "Hard Substrate 0-30m": "Hard Substrate 0-30m",
+  "Soft Substrate 0-30m": "Soft Substrate 0-30m",
+  "Hard Substrate 30-100m": "Hard Substrate 30-100m",
+  "Soft Substrate 30-100m": "Soft Substrate 30-100m",
+  "Hard Substrate >100m": "Hard Substrate >100m",
+  "Soft Substrate >100m": "Soft Substrate >100m"
 }

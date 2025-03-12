@@ -34,8 +34,8 @@ export const Habitat: React.FunctionComponent = () => {
 
   // Labels
   const titleLabel = t("Predicted Substrate");
-  const withinLabel = t("Within Plan");
-  const percWithinLabel = t("% Within Plan");
+  const withinLabel = t("Area Within MPA(s)");
+  const percWithinLabel = t("% Total Area Within MPA(s)");
   const unitsLabel = t("mi²");
 
   return (
@@ -106,10 +106,19 @@ export const Habitat: React.FunctionComponent = () => {
                   local biodiversity and count as a replicate in each depth zone
                   is:
                   <br />
-                  <br>• soft substrate 30-100m: 7 square miles</br>
-                  <br>• soft substrate &gt;100m: 17 square miles</br>
+                  <br>
+                    • soft substrate 30-100m (not combined with other depth
+                    zones): 7 square miles
+                  </br>
+                  <br>
+                    • soft substrate &gt;100m (100-200 m + &gt;200 m; not
+                    combined with shallower depth zones): 17 square miles
+                  </br>
                   <br>• hard substrate 30-100m: 0.13 square miles</br>
-                  <br>• hard substrate &gt;100m: 0.13 square miles</br>
+                  <br>
+                    • hard substrate &gt;100m (100-200 m + &gt;200 m): 0.13
+                    square miles
+                  </br>
                 </p>
               </Trans>
 
@@ -184,7 +193,7 @@ export const Habitat: React.FunctionComponent = () => {
                     objective={objectives}
                     columnConfig={[
                       {
-                        columnLabel: curClass.display,
+                        columnLabel: t(curClass.display),
                         type: "class",
                         width: 30,
                       },
@@ -215,7 +224,7 @@ export const Habitat: React.FunctionComponent = () => {
                         width: 20,
                       },
                       {
-                        columnLabel: percWithinLabel,
+                        columnLabel: t("% Bioregion Substrate"),
                         type: "metricChart",
                         metricId: percMetricIdName,
                         valueFormatter: "percent",
@@ -247,7 +256,7 @@ export const Habitat: React.FunctionComponent = () => {
                       {
                         columnLabel: curClass.display,
                         type: "class",
-                        width: 30,
+                        width: 45,
                       },
                       {
                         columnLabel: withinLabel,
@@ -276,7 +285,7 @@ export const Habitat: React.FunctionComponent = () => {
                         width: 20,
                       },
                       {
-                        columnLabel: percWithinLabel,
+                        columnLabel: t("% Planning Region Substrate"),
                         type: "metricChart",
                         metricId: percMetricIdName,
                         valueFormatter: "percent",

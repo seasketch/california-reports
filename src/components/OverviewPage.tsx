@@ -15,7 +15,8 @@ const ReportPage = () => {
           msg={
             <Trans i18nKey="Overview info status">
               SeaSketch is a real-time sketch evaluation tool. Analyses are
-              often conducted on <b>simplified</b> data. Final metrics must be
+              often conducted on <b>simplified</b> data, and are intended for
+              informational and exploratory purposes only. Final metrics must be
               calculated using desktop GIS software.
             </Trans>
           }

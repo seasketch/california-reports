@@ -78,7 +78,8 @@ export const Kelp: React.FunctionComponent = () => {
                 <p>
                   The minimum extent necessary to encompass 90% of local
                   biodiversity in a kelp forest is 1.1 linear miles, as
-                  determined from biological surveys.
+                  determined from biological surveys. The MPA must encompass the
+                  entire 0-30 m depth zone to count as a replicate.
                 </p>
               </Trans>
 
@@ -158,7 +159,7 @@ export const Kelp: React.FunctionComponent = () => {
                       width: 20,
                     },
                     {
-                      columnLabel: percWithinLabel,
+                      columnLabel: t("% Planning Region Kelp"),
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",
@@ -202,7 +203,7 @@ export const Kelp: React.FunctionComponent = () => {
                       width: 30,
                     },
                     {
-                      columnLabel: percWithinLabel,
+                      columnLabel: t("% Bioregion Kelp"),
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",

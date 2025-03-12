@@ -177,7 +177,7 @@ export const Eelgrass: React.FunctionComponent = () => {
                       width: 20,
                     },
                     {
-                      columnLabel: percWithinLabel,
+                      columnLabel: t("% Planning Region") + " " + titleLabel,
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",
@@ -226,7 +226,7 @@ export const Eelgrass: React.FunctionComponent = () => {
                       width: 30,
                     },
                     {
-                      columnLabel: percWithinLabel,
+                      columnLabel: t("% Bioregion") + " " + titleLabel,
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",
