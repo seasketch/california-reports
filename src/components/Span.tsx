@@ -32,7 +32,9 @@ import precalcMetrics from "../../data/precalc/precalcSpan.json" with { type: "j
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
 // Reports on alongshore span within MPAs
-export const Span: React.FunctionComponent = () => {
+export const Span: React.FunctionComponent<{
+  printing: boolean;
+}> = (props) => {
   const { t } = useTranslation();
   const [{ isCollection, id, childProperties }] = useSketchProperties();
   const geographies = project.geographies;
@@ -77,132 +79,35 @@ export const Span: React.FunctionComponent = () => {
         })();
 
         return (
-          <ReportError>
-            <ToolbarCard
-              title={titleLabel}
-              items={
-                <DataDownload
-                  filename={titleLabel}
-                  data={metricResults}
-                  formats={["csv", "json"]}
-                  placement="left-end"
-                />
-              }
-            >
-              <p>
-                <Trans i18nKey="Span 1">
-                  This report summarizes the total length and proportion of
-                  shoreline contained within the selected MPA(s).
-                </Trans>
-              </p>
+          <div style={{ breakInside: "avoid" }}>
+            <ReportError>
+              <ToolbarCard
+                title={titleLabel}
+                items={
+                  <DataDownload
+                    filename={titleLabel}
+                    data={metricResults}
+                    formats={["csv", "json"]}
+                    placement="left-end"
+                  />
+                }
+              >
+                <p>
+                  <Trans i18nKey="Span 1">
+                    This report summarizes the total length and proportion of
+                    shoreline contained within the selected MPA(s).
+                  </Trans>
+                </p>
 
-              {!isCollection && <SpanObjectives value={lengthMetric.value} />}
+                {!isCollection && <SpanObjectives value={lengthMetric.value} />}
 
-              <ClassTable
-                rows={metrics.filter((m) => m.geographyId === "world")}
-                metricGroup={metricGroup}
-                objective={objectives}
-                columnConfig={[
-                  {
-                    columnLabel: " ",
-                    type: "class",
-                    width: 25,
-                  },
-                  {
-                    columnLabel: withinLabel,
-                    type: "metricValue",
-                    metricId: metricGroup.metricId,
-                    valueFormatter: (val: string | number) =>
-                      Number.format(
-                        roundDecimal(
-                          typeof val === "string" ? parseInt(val) : val,
-                          2,
-                          { keepSmallValues: true },
-                        ),
-                      ),
-                    colStyle: { textAlign: "center" },
-                    valueLabel: unitsLabel,
-                    chartOptions: {
-                      showTitle: true,
-                    },
-                    width: 25,
-                  },
-                  {
-                    columnLabel: t("% Total Shoreline"),
-                    type: "metricChart",
-                    metricId: percMetricIdName,
-                    valueFormatter: "percent",
-                    chartOptions: {
-                      showTitle: true,
-                    },
-                    width: 30,
-                  },
-                  {
-                    columnLabel: mapLabel,
-                    type: "layerToggle",
-                    width: 10,
-                  },
-                ]}
-              />
-
-              <Collapse title={t("Show By Planning Region")}>
-                <GeographyTable
-                  rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
+                <ClassTable
+                  rows={metrics.filter((m) => m.geographyId === "world")}
                   metricGroup={metricGroup}
-                  geographies={geographies.filter((g) =>
-                    g.geographyId?.endsWith("_sr"),
-                  )}
                   objective={objectives}
                   columnConfig={[
                     {
-                      columnLabel: "Planning Region",
-                      type: "class",
-                      width: 40,
-                    },
-                    {
-                      columnLabel: withinLabel,
-                      type: "metricValue",
-                      metricId: metricGroup.metricId,
-                      valueFormatter: (val: string | number) =>
-                        Number.format(
-                          roundDecimal(
-                            typeof val === "string" ? parseInt(val) : val,
-                            2,
-                            { keepSmallValues: true },
-                          ),
-                        ),
-                      colStyle: { textAlign: "center" },
-                      valueLabel: unitsLabel,
-                      chartOptions: {
-                        showTitle: true,
-                      },
-                      width: 20,
-                    },
-                    {
-                      columnLabel: t("% Planning Region Shoreline"),
-                      type: "metricChart",
-                      metricId: percMetricIdName,
-                      valueFormatter: "percent",
-                      chartOptions: {
-                        showTitle: true,
-                      },
-                      width: 30,
-                    },
-                  ]}
-                />
-              </Collapse>
-
-              <Collapse title={t("Show By Bioregion")}>
-                <GeographyTable
-                  rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
-                  metricGroup={metricGroup}
-                  geographies={geographies.filter((g) =>
-                    g.geographyId?.endsWith("_br"),
-                  )}
-                  objective={objectives}
-                  columnConfig={[
-                    {
-                      columnLabel: t("Bioregion"),
+                      columnLabel: " ",
                       type: "class",
                       width: 25,
                     },
@@ -223,10 +128,10 @@ export const Span: React.FunctionComponent = () => {
                       chartOptions: {
                         showTitle: true,
                       },
-                      width: 35,
+                      width: 25,
                     },
                     {
-                      columnLabel: t("% Bioregion Shoreline"),
+                      columnLabel: t("% Total Shoreline"),
                       type: "metricChart",
                       metricId: percMetricIdName,
                       valueFormatter: "percent",
@@ -235,48 +140,164 @@ export const Span: React.FunctionComponent = () => {
                       },
                       width: 30,
                     },
+                    {
+                      columnLabel: mapLabel,
+                      type: "layerToggle",
+                      width: 10,
+                    },
                   ]}
                 />
-              </Collapse>
 
-              {isCollection && (
-                <Collapse title={t("Show by MPA")}>
-                  <>
-                    <p>
-                      <Trans i18nKey="SpanCard - mpa">
-                        During the planning process to establish California’s
-                        Network of MPAs, the Science Advisory Team recommended a
-                        minimum alongshore span of 5-10 km (3-6 mi) of
-                        coastline, and preferably 10-20 km (6-12.5 mi).
-                      </Trans>
-                    </p>
-                    {genLengthSketchTable(
-                      childProperties || [],
-                      metricResults.filter((m) => m.geographyId === "world"),
-                      precalcMetrics.filter((m) => m.geographyId === "world"),
-                      metricGroup,
-                      t,
+                <Collapse
+                  title={t("Show By Planning Region")}
+                  key={props.printing + "Span Planning Region"}
+                  collapsed={!props.printing}
+                >
+                  <GeographyTable
+                    rows={metrics.filter((m) => m.geographyId?.endsWith("_sr"))}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId?.endsWith("_sr"),
                     )}
-                  </>
+                    objective={objectives}
+                    columnConfig={[
+                      {
+                        columnLabel: "Planning Region",
+                        type: "class",
+                        width: 40,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              typeof val === "string" ? parseInt(val) : val,
+                              2,
+                              { keepSmallValues: true },
+                            ),
+                          ),
+                        colStyle: { textAlign: "center" },
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 20,
+                      },
+                      {
+                        columnLabel: t("% Planning Region Shoreline"),
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 30,
+                      },
+                    ]}
+                  />
                 </Collapse>
-              )}
 
-              <Collapse title={t("Learn More")}>
-                <Trans i18nKey="Span - learn more">
-                  <p>🗺️ Source Data: CDFW</p>
-                  <p>
-                    📈 Report: This report calculates the alongshore span of the
-                    selected MPA(s). This value is divided by the total
-                    alongshore span of the California coastline to obtain the %
-                    contained within the selected MPA(s). If the selected MPA(s)
-                    include multiple areas that overlap, the overlap is only
-                    counted once.
-                  </p>
-                </Trans>
-                <p>{t("Last updated")}: January 15, 2025.</p>
-              </Collapse>
-            </ToolbarCard>
-          </ReportError>
+                <Collapse
+                  title={t("Show By Bioregion")}
+                  key={props.printing + "Span Bioregion"}
+                  collapsed={!props.printing}
+                >
+                  <GeographyTable
+                    rows={metrics.filter((m) => m.geographyId?.endsWith("_br"))}
+                    metricGroup={metricGroup}
+                    geographies={geographies.filter((g) =>
+                      g.geographyId?.endsWith("_br"),
+                    )}
+                    objective={objectives}
+                    columnConfig={[
+                      {
+                        columnLabel: t("Bioregion"),
+                        type: "class",
+                        width: 25,
+                      },
+                      {
+                        columnLabel: withinLabel,
+                        type: "metricValue",
+                        metricId: metricGroup.metricId,
+                        valueFormatter: (val: string | number) =>
+                          Number.format(
+                            roundDecimal(
+                              typeof val === "string" ? parseInt(val) : val,
+                              2,
+                              { keepSmallValues: true },
+                            ),
+                          ),
+                        colStyle: { textAlign: "center" },
+                        valueLabel: unitsLabel,
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 35,
+                      },
+                      {
+                        columnLabel: t("% Bioregion Shoreline"),
+                        type: "metricChart",
+                        metricId: percMetricIdName,
+                        valueFormatter: "percent",
+                        chartOptions: {
+                          showTitle: true,
+                        },
+                        width: 30,
+                      },
+                    ]}
+                  />
+                </Collapse>
+
+                {isCollection && (
+                  <Collapse
+                    title={t("Show by MPA")}
+                    key={props.printing + "Span MPA"}
+                    collapsed={!props.printing}
+                  >
+                    <>
+                      <p>
+                        <Trans i18nKey="SpanCard - mpa">
+                          During the planning process to establish California’s
+                          Network of MPAs, the Science Advisory Team recommended
+                          a minimum alongshore span of 5-10 km (3-6 mi) of
+                          coastline, and preferably 10-20 km (6-12.5 mi).
+                        </Trans>
+                      </p>
+                      {genLengthSketchTable(
+                        childProperties || [],
+                        metricResults.filter((m) => m.geographyId === "world"),
+                        precalcMetrics.filter((m) => m.geographyId === "world"),
+                        metricGroup,
+                        t,
+                        props.printing,
+                      )}
+                    </>
+                  </Collapse>
+                )}
+
+                <Collapse
+                  title={t("Learn More")}
+                  key={props.printing + "Span Learn More"}
+                  collapsed={!props.printing}
+                >
+                  <Trans i18nKey="Span - learn more">
+                    <p>🗺️ Source Data: CDFW</p>
+                    <p>
+                      📈 Report: This report calculates the alongshore span of
+                      the selected MPA(s). This value is divided by the total
+                      alongshore span of the California coastline to obtain the
+                      % contained within the selected MPA(s). If the selected
+                      MPA(s) include multiple areas that overlap, the overlap is
+                      only counted once.
+                    </p>
+                  </Trans>
+                  <p>{t("Last updated")}: January 15, 2025.</p>
+                </Collapse>
+              </ToolbarCard>
+            </ReportError>
+          </div>
         );
       }}
     </ResultsCard>
@@ -296,6 +317,7 @@ export const genLengthSketchTable = (
   precalcMetrics: Metric[],
   mg: MetricGroup,
   t: any,
+  printing: boolean = false,
 ) => {
   const sketchesById = keyBy(childProperties, (sk) => sk.id);
   const sketchIds = childProperties.map((sk) => sk.id);
@@ -396,8 +418,36 @@ export const genLengthSketchTable = (
     ...classColumns,
   ];
 
+  if (printing) {
+    const tables: JSX.Element[] = [];
+    const totalClasses = mg.classes.length;
+    const numTables = Math.ceil(totalClasses / 5);
+
+    for (let i = 0; i < numTables; i++) {
+      const startIndex = i * 5;
+      const endIndex = Math.min((i + 1) * 5, totalClasses);
+
+      const tableColumns: Column<{ sketchId: string }>[] = [
+        columns[0], // "This plan contains" column
+        ...classColumns.slice(startIndex, endIndex),
+      ];
+
+      tables.push(
+        <AreaSketchTableStyled printing={printing}>
+          <Table
+            columns={tableColumns}
+            data={rows}
+            manualPagination={printing}
+          />
+        </AreaSketchTableStyled>,
+      );
+    }
+
+    return tables;
+  }
+
   return (
-    <AreaSketchTableStyled>
+    <AreaSketchTableStyled printing={printing}>
       <Table columns={columns} data={rows} />
     </AreaSketchTableStyled>
   );

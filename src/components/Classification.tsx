@@ -41,7 +41,9 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
 /**
  * Top level Classification report - JSX.Element
  */
-export const ClassificationCard: React.FunctionComponent = () => {
+export const ClassificationCard: React.FunctionComponent<{
+  printing: boolean;
+}> = (props) => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
   const title = t("Classification Overview");
@@ -50,58 +52,73 @@ export const ClassificationCard: React.FunctionComponent = () => {
     <ResultsCard title={title} functionName="classification" useChildCard>
       {(data: ReportResult) => {
         return (
-          <ReportError>
-            <ToolbarCard
-              title={title}
-              items={
-                <DataDownload
-                  filename="classification"
-                  data={data.metrics}
-                  formats={["csv", "json"]}
-                  placement="left-end"
-                />
-              }
-            >
-              <Trans i18nKey="Classification Card 1">
-                <p>
-                  The following classifications are used for designating managed
-                  marine and estuarine areas in California:
-                </p>
-                <p>
-                  • State Marine Reserve (SMR)
-                  <br />• State Marine Conservation Area (SMCA)
-                  <br />• State Marine Conservation Area No-Take (SMCA No-Take)
-                  <br />• State Marine Recreational Management Area (SMRMA)
-                  <br />• Special Closure{" "}
-                </p>
-                <p>
-                  In addition, the classification State Marine Park (SMP) is
-                  used by the California Department of Parks and Recreation.
-                </p>
-              </Trans>
-
-              {isCollection
-                ? sketchCollectionReport(data.sketch!, data.metrics, t)
-                : sketchReport(data.metrics[0], t)}
-
-              {isCollection && (
-                <Collapse title={t("Show by MPA")}>
-                  {genMpaSketchTable(toNullSketchArray(data.sketch!), t)}
-                </Collapse>
-              )}
-
-              <Collapse title={t("Learn More")}>
-                <Trans i18nKey="Classification Card - Learn more">
+          <div style={{ breakInside: "avoid" }}>
+            <ReportError>
+              <ToolbarCard
+                title={title}
+                items={
+                  <DataDownload
+                    filename="classification"
+                    formats={["csv", "json"]}
+                    placement="left-end"
+                    data={data.metrics}
+                  />
+                }
+              >
+                <Trans i18nKey="Classification Card 1">
                   <p>
-                    📈 Report: This report totals the number of MPAs in each
-                    classification. See the Glossary for more detailed
-                    explanations of the classification levels.
+                    The following classifications are used for designating
+                    managed marine and estuarine areas in California:
+                  </p>
+                  <p>
+                    • State Marine Reserve (SMR)
+                    <br />• State Marine Conservation Area (SMCA)
+                    <br />• State Marine Conservation Area No-Take (SMCA
+                    No-Take)
+                    <br />• State Marine Recreational Management Area (SMRMA)
+                    <br />• Special Closure{" "}
+                  </p>
+                  <p>
+                    In addition, the classification State Marine Park (SMP) is
+                    used by the California Department of Parks and Recreation.
                   </p>
                 </Trans>
-                <p>{t("Last updated")}: January 24, 2025.</p>
-              </Collapse>
-            </ToolbarCard>
-          </ReportError>
+
+                {isCollection
+                  ? sketchCollectionReport(data.sketch!, data.metrics, t)
+                  : sketchReport(data.metrics[0], t)}
+
+                {isCollection && (
+                  <Collapse
+                    title={t("Show by MPA")}
+                    key={props.printing + "Classification MPA"}
+                    collapsed={!props.printing}
+                  >
+                    {genMpaSketchTable(
+                      toNullSketchArray(data.sketch!),
+                      t,
+                      props.printing,
+                    )}
+                  </Collapse>
+                )}
+
+                <Collapse
+                  title={t("Learn More")}
+                  key={props.printing + "Classification Learn More"}
+                  collapsed={!props.printing}
+                >
+                  <Trans i18nKey="Classification Card - Learn more">
+                    <p>
+                      📈 Report: This report totals the number of MPAs in each
+                      classification. See the Glossary for more detailed
+                      explanations of the classification levels.
+                    </p>
+                  </Trans>
+                  <p>{t("Last updated")}: January 24, 2025.</p>
+                </Collapse>
+              </ToolbarCard>
+            </ReportError>
+          </div>
         );
       }}
     </ResultsCard>
@@ -193,7 +210,11 @@ const sketchCollectionReport = (
 };
 
 // Generates table of MPAs with classification level and level of protection
-const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
+const genMpaSketchTable = (
+  sketches: NullSketch[],
+  t: any,
+  printing: boolean,
+) => {
   const lopMap: Record<string, string> = {
     A: t("Very High"),
     B: t("High"),
@@ -245,6 +266,7 @@ const genMpaSketchTable = (sketches: NullSketch[], t: any) => {
         data={sketches.sort((a, b) =>
           a.properties.name.localeCompare(b.properties.name),
         )}
+        manualPagination={printing}
       />
     </SmallReportTableStyled>
   );

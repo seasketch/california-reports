@@ -6,7 +6,7 @@ import SketchAttributesCard from "./SketchAttributesCard.js";
 import { Trans, useTranslation } from "react-i18next";
 import { Span } from "./Span.js";
 
-const ReportPage = () => {
+const ReportPage: React.FunctionComponent<{ printing: boolean }> = (props) => {
   const { t } = useTranslation();
   return (
     <>
@@ -21,14 +21,18 @@ const ReportPage = () => {
             </Trans>
           }
         />
-        <Collapse title={t("Glossary")} key={"Glossary"}>
+        <Collapse
+          title={t("Glossary")}
+          key={props.printing + "Glossary"}
+          collapsed={!props.printing}
+        >
           <Glossary />
         </Collapse>
       </Card>
-      <ClassificationCard />
-      <SizeCard />
-      <Span />
-      <SketchAttributesCard autoHide />
+      <ClassificationCard printing={props.printing} />
+      <SizeCard printing={props.printing} />
+      <Span printing={props.printing} />
+      {!props.printing && <SketchAttributesCard autoHide />}
     </>
   );
 };

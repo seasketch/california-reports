@@ -43,7 +43,6 @@ export const SketchAttributesCard = ({
     "commission_determination",
   ];
 
-  console.log(sketchProperties);
   if (autoHide === true && sketchProperties.isCollection) {
     return null;
   }

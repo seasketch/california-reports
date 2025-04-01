@@ -53,7 +53,13 @@ const BaseSketchTableStyled = styled(ReportTableStyled)`
   }
 `;
 
-export const AreaSketchTableStyled = styled(BaseSketchTableStyled)`
+export const AreaSketchTableStyled = styled(BaseSketchTableStyled)<{
+  printing: boolean;
+}>`
+  & {
+    overflow-x: ${(props) => (props.printing ? "visible" : "scroll")};
+  }
+
   tr:nth-child(2) > th:nth-child(2n - 1):not(:last-child) {
     border-right: 2px solid #efefef;
   }
@@ -63,7 +69,13 @@ export const AreaSketchTableStyled = styled(BaseSketchTableStyled)`
   }
 `;
 
-export const ReplicateAreaSketchTableStyled = styled(BaseSketchTableStyled)`
+export const ReplicateAreaSketchTableStyled = styled(BaseSketchTableStyled)<{
+  printing: boolean;
+}>`
+  & {
+    overflow-x: ${(props) => (props.printing ? "visible" : "scroll")};
+  }
+
   tr:nth-child(2) > th:nth-child(3n + 1):not(:last-child) {
     border-right: 2px solid #efefef;
   }
@@ -73,7 +85,13 @@ export const ReplicateAreaSketchTableStyled = styled(BaseSketchTableStyled)`
   }
 `;
 
-export const AreaSizeSketchTableStyled = styled(BaseSketchTableStyled)`
+export const AreaSizeSketchTableStyled = styled(BaseSketchTableStyled)<{
+  printing: boolean;
+}>`
+  & {
+    overflow-x: ${(props) => (props.printing ? "visible" : "scroll")};
+  }
+
   tr:nth-child(2) > th:nth-child(4n + 1):not(:last-child) {
     border-right: 2px solid #efefef;
   }
@@ -92,6 +110,7 @@ export const genSketchTable = (
   options?: {
     valueFormatter?: (val: number) => number;
     size?: boolean;
+    printing?: boolean;
   },
 ) => {
   const { valueFormatter = (val: any) => val, size = false } = options || {};
@@ -201,12 +220,50 @@ export const genSketchTable = (
     ...classColumns,
   ];
 
+  if (options && options.printing) {
+    const tables: JSX.Element[] = [];
+    const totalClasses = mg.classes.length;
+    const numTables = Math.ceil(totalClasses / 5);
+
+    for (let i = 0; i < numTables; i++) {
+      const startIndex = i * 5;
+      const endIndex = Math.min((i + 1) * 5, totalClasses);
+
+      const tableColumns: Column<{ sketchId: string }>[] = [
+        columns[0], // "This plan contains" column
+        ...classColumns.slice(startIndex, endIndex),
+      ];
+
+      tables.push(
+        size ? (
+          <AreaSizeSketchTableStyled printing={!!options?.printing}>
+            <Table
+              columns={tableColumns}
+              data={rows}
+              manualPagination={!!options?.printing}
+            />
+          </AreaSizeSketchTableStyled>
+        ) : (
+          <AreaSketchTableStyled printing={!!options?.printing}>
+            <Table
+              columns={tableColumns}
+              data={rows}
+              manualPagination={!!options?.printing}
+            />
+          </AreaSketchTableStyled>
+        ),
+      );
+    }
+
+    return tables;
+  }
+
   return size ? (
-    <AreaSizeSketchTableStyled>
+    <AreaSizeSketchTableStyled printing={!!options?.printing}>
       <Table columns={columns} data={rows} />
     </AreaSizeSketchTableStyled>
   ) : (
-    <AreaSketchTableStyled>
+    <AreaSketchTableStyled printing={!!options?.printing}>
       <Table columns={columns} data={rows} />
     </AreaSketchTableStyled>
   );
