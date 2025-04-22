@@ -93,8 +93,14 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                   To evaluate habitat spacing:
                   <ul>
                     <li>
-                      Only MPAs with a level of protection (LOP) of very high,
-                      high, or moderate-high are considered.
+                      Only MPAs with a{" "}
+                      <a
+                        href="https://nrm.dfg.ca.gov/FileHandler.ashx?DocumentID=231169"
+                        target="_blank"
+                      >
+                        level of protection (LOP)
+                      </a>{" "}
+                      of very high, high, or moderate-high are considered.
                     </li>
                     <li>
                       Only MPAs or MPA clusters (i.e., adjacent MPAs that both
