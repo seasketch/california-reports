@@ -123,7 +123,7 @@ const BaseReport = () => {
           <RepresentationPage printing={isPrinting} />
         </ReportPage>
         {isCollection && (
-          <ReportPage hidden={isPrinting && tab !== spacingId}>
+          <ReportPage hidden={!isPrinting && tab !== spacingId}>
             <SpacingPage />
           </ReportPage>
         )}
