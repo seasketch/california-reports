@@ -314,8 +314,8 @@
     "band": 1,
     "noDataValue": -9999,
     "created": "2024-06-28T18:37:50.902Z",
-    "lastUpdated": "2025-02-03T18:42:50.836Z",
-    "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClipped.tif"
+    "lastUpdated": "2025-04-24T20:07:17.788Z",
+    "src": "data/src/California MPAs 2024/Data_Received/NOAA_NCEI/CAbathyClippedClean.tif"
   },
   {
     "datasourceId": "hab_ca",
@@ -381,16 +381,16 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/LinearSubstrate_Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE/Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE.shp",
-    "layerName": "Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE",
-    "geo_type": "vector",
     "datasourceId": "substrate_nearshore",
+    "geo_type": "vector",
     "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE",
     "classKeys": ["Sub_depth"],
     "created": "2025-03-07T19:13:33.167Z",
     "lastUpdated": "2025-03-07T19:13:33.167Z",
+    "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/LinearSubstrate_Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE/Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE.shp",
     "propertiesToKeep": ["Sub_depth"],
-    "explodeMulti": true,
-    "precalc": true
+    "explodeMulti": true
   }
 ]
