@@ -375,14 +375,3 @@ const SizeObjectives = (props: { value: number }) => {
     </>
   );
 };
-
-/**
- * SizeCard as a top-level report client
- */
-export const SizeCardReportClient = () => {
-  return (
-    <Translator>
-      <SizeCard printing={false} />
-    </Translator>
-  );
-};

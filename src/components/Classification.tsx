@@ -12,13 +12,7 @@ import {
   ToolbarCard,
   DataDownload,
 } from "@seasketch/geoprocessing/client-ui";
-import {
-  ReportResult,
-  NullSketch,
-  NullSketchCollection,
-  Metric,
-  toNullSketchArray,
-} from "@seasketch/geoprocessing/client-core";
+import { Metric, SketchProperties } from "@seasketch/geoprocessing/client-core";
 import { styled } from "styled-components";
 import { Trans, useTranslation } from "react-i18next";
 import {
@@ -46,11 +40,12 @@ export const ClassificationCard: React.FunctionComponent<{
 }> = (props) => {
   const [{ isCollection }] = useSketchProperties();
   const { t } = useTranslation();
+
   const title = t("Classification Overview");
 
   return (
     <ResultsCard title={title} functionName="classification" useChildCard>
-      {(data: ReportResult) => {
+      {(metrics: Metric[]) => {
         return (
           <div style={{ breakInside: "avoid" }}>
             <ReportError>
@@ -61,7 +56,7 @@ export const ClassificationCard: React.FunctionComponent<{
                     filename="classification"
                     formats={["csv", "json"]}
                     placement="left-end"
-                    data={data.metrics}
+                    data={metrics}
                   />
                 }
               >
@@ -85,8 +80,8 @@ export const ClassificationCard: React.FunctionComponent<{
                 </Trans>
 
                 {isCollection
-                  ? sketchCollectionReport(data.sketch!, data.metrics, t)
-                  : sketchReport(data.metrics[0], t)}
+                  ? sketchCollectionReport(metrics, t)
+                  : sketchReport(metrics[0], t)}
 
                 {isCollection && (
                   <Collapse
@@ -94,11 +89,7 @@ export const ClassificationCard: React.FunctionComponent<{
                     key={props.printing + "Classification MPA"}
                     collapsed={!props.printing}
                   >
-                    {genMpaSketchTable(
-                      toNullSketchArray(data.sketch!),
-                      t,
-                      props.printing,
-                    )}
+                    {genMpaSketchTable(t, props.printing)}
                   </Collapse>
                 )}
 
@@ -161,11 +152,7 @@ const sketchReport = (metric: Metric, t: any) => {
 };
 
 // Reports classification level for MPA network
-const sketchCollectionReport = (
-  sketch: NullSketchCollection | NullSketch,
-  metrics: Metric[],
-  t: any,
-) => {
+const sketchCollectionReport = (metrics: Metric[], t: any) => {
   const sortedMetrics = metrics.sort(
     (a, b) => groups.indexOf(a.groupId || "") - groups.indexOf(b.groupId || ""),
   );
@@ -210,11 +197,13 @@ const sketchCollectionReport = (
 };
 
 // Generates table of MPAs with classification level and level of protection
-const genMpaSketchTable = (
-  sketches: NullSketch[],
-  t: any,
-  printing: boolean,
-) => {
+const genMpaSketchTable = (t: any, printing: boolean) => {
+  const [{ childProperties }] = useSketchProperties();
+
+  if (!childProperties || childProperties.length === 0) {
+    return <div>{t("No MPAs found")}</div>;
+  }
+
   const lopMap: Record<string, string> = {
     A: t("Very High"),
     B: t("High"),
@@ -225,15 +214,15 @@ const genMpaSketchTable = (
     G: t("N/A"),
   };
 
-  const columns: Column<NullSketch>[] = [
+  const columns: Column<SketchProperties>[] = [
     {
       Header: t("MPA"),
-      accessor: (row) => row.properties.name,
+      accessor: (row) => row.name,
     },
     {
       Header: t("Classification Level"),
       accessor: (row) => {
-        const designation = row.properties.proposed_designation;
+        const designation = row.proposed_designation;
         if (!designation) return "N/A";
 
         return (
@@ -253,7 +242,7 @@ const genMpaSketchTable = (
     },
     {
       Header: t("Level of Protection"),
-      accessor: (row) => lopMap[row.properties.proposed_lop] || "N/A",
+      accessor: (row) => lopMap[row.proposed_lop] || "N/A",
       style: { textAlign: "center" },
     },
   ];
@@ -263,9 +252,7 @@ const genMpaSketchTable = (
       <Table
         className="styled"
         columns={columns}
-        data={sketches.sort((a, b) =>
-          a.properties.name.localeCompare(b.properties.name),
-        )}
+        data={childProperties.sort((a, b) => a.name.localeCompare(b.name))}
         manualPagination={printing}
       />
     </SmallReportTableStyled>

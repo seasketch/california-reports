@@ -1,21 +1,19 @@
 import {
   rekeyMetrics,
   sortMetrics,
-  toNullSketch,
   Sketch,
   SketchCollection,
   Polygon,
-  ReportResult,
   createMetric,
   getSketchFeatures,
   getUserAttribute,
 } from "@seasketch/geoprocessing/client-core";
-import { GeoprocessingHandler } from "@seasketch/geoprocessing";
+import { GeoprocessingHandler, Metric } from "@seasketch/geoprocessing";
 import project from "../../project/projectClient.js";
 
 export async function classification(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>,
-): Promise<ReportResult> {
+): Promise<Metric[]> {
   const mg = project.getMetricGroup("classification");
   const sketchFeatures = getSketchFeatures(sketch);
 
@@ -44,10 +42,7 @@ export async function classification(
     });
   });
 
-  return {
-    metrics: sortMetrics(rekeyMetrics(metrics)),
-    sketch: toNullSketch(sketch),
-  };
+  return sortMetrics(rekeyMetrics(metrics));
 }
 
 export default new GeoprocessingHandler(classification, {
