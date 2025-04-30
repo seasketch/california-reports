@@ -78,7 +78,7 @@ export async function spacing(
 
     // Find all sketches that abut this sketch
     const simpleSketch = simplifiedSketches[sk.properties.id];
-    const buffered = buffer(simpleSketch, 100, { units: "meters" });
+    const buffered = buffer(simpleSketch, 5, { units: "meters" });
     const cluster = sketchArray.filter((potentialCluster) => {
       if (addedMap[potentialCluster.properties.id]) return false;
       if (potentialCluster.properties.id === sk.properties.id) return false;

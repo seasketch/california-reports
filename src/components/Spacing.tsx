@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import {
   Card,
+  Collapse,
   DataDownload,
   InfoStatus,
   Pill,
@@ -157,6 +158,13 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                   </p>
                 );
               })}
+              <Collapse
+                title={t("Learn More")}
+                key={props.printing + "Spacing Learn More"}
+                collapsed={!props.printing}
+              >
+                <p>{t("Last updated")}: April 30, 2025.</p>
+              </Collapse>
             </ToolbarCard>
           );
         }}

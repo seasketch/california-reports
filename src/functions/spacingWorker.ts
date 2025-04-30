@@ -18,6 +18,7 @@ import {
 import { loadCog } from "@seasketch/geoprocessing/dataproviders";
 import { overlapLineLength } from "../util/overlapLineLength.js";
 import { bathyStats } from "./bathymetry.js";
+import { buffer } from "@turf/turf";
 
 const replicateMap = {
   kelp: 1.1,
@@ -76,8 +77,15 @@ export async function spacingWorker(
         case "rocks":
         case "linearSubstrate_hard":
         case "linearSubstrate_soft": {
+          const finalSketch =
+            dsId === "beaches" || dsId === "rocks"
+              ? (buffer(sketch, 250, { units: "meters" })! as Sketch<
+                  Polygon | MultiPolygon
+                >)
+              : sketch;
+
           const features = await getFeaturesForSketchBBoxes<LineString>(
-            sketch,
+            finalSketch,
             url,
           );
 
@@ -95,7 +103,7 @@ export async function spacingWorker(
           const [metric] = await overlapLineLength(
             dsId,
             finalFeatures,
-            sketch,
+            finalSketch,
             {
               units: "miles",
             },
