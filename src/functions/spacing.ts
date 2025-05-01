@@ -40,12 +40,7 @@ import {
 } from "@turf/turf";
 import { spacingGraphWorker } from "./spacingGraphWorker.js";
 
-/**
- * span: A geoprocessing function that calculates overlap metrics
- * @param sketch - A sketch or collection of sketches
- * @param extraParams
- * @returns Calculated metrics and a null sketch
- */
+// Spacing function calculates distance between habitat replicates
 export async function spacing(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>,
   extraParams: DefaultExtraParams = {},
@@ -57,9 +52,8 @@ export async function spacing(
   const highLOPSketches = toSketchArray(sketch).filter((sk) =>
     ["A", "B", "C"].includes(sk.properties.proposed_lop?.[0]),
   );
-  console.log(`${highLOPSketches.length} sketch(es) with high LOP`);
 
-  // Buffer every geometry once (5 meters) for checking contiguity
+  // Buffer each sketch once (5 meters) for checking contiguity
   const buffered = Object.fromEntries(
     highLOPSketches.map((sk) => [
       sk.properties.id,
@@ -71,11 +65,13 @@ export async function spacing(
   const visited: Record<string, boolean> = {};
   const clusters: Sketch<Polygon | MultiPolygon>[] = [];
   highLOPSketches.forEach((sk) => {
+    // Skip if already in cluster
     if (visited[sk.properties.id]) return;
 
     const stack = [sk];
     const cluster: Sketch<Polygon>[] = [];
 
+    // Run through contiguous sketches to find all in cluster
     while (stack.length) {
       const curSketch = stack.pop()!;
       if (visited[curSketch.properties.id]) return;
@@ -95,6 +91,7 @@ export async function spacing(
       });
     }
 
+    // Add cluster to clusters array, either as a single sketch or union of contiguous sketches
     clusters.push(
       cluster.length === 1
         ? cluster[0]
@@ -108,35 +105,32 @@ export async function spacing(
           } as Sketch<Polygon | MultiPolygon>),
     );
   });
-  console.log(`${clusters.length} clusters`, Date.now() - start);
 
-  // Filter to clusters that meet 9 sq mi minimum size
+  // Filter to clusters that meet 9 sq mi minimum size (for all habitats except estuaries)
   const largeClusters = clusters.filter(
     (sk) => squareMeterToMile(area(sk)) > 9,
   );
-  console.log(`${largeClusters.length} large clusters`, Date.now() - start);
 
   // Start the spacing workers to calculate metrics
-  console.log("Running workers", Date.now() - start);
   const metricPromises: Promise<
     { id: string; replicateIds: string[] } | InvocationResponse
   >[] = [];
   metricGroup.classes.forEach((curClass) => {
     // Use the large clusters for all except estuaries, which can be any size
-    const finalSketches =
+    const possibleReplicates =
       curClass.datasourceId === "estuaries" ? clusters : largeClusters;
 
     // If no clusters, no replicates
-    if (finalSketches.length === 0) {
+    if (!possibleReplicates.length) {
       metricPromises.push(
         Promise.resolve({ id: curClass.datasourceId!, replicateIds: [] }),
       );
       return;
     }
 
-    // Create sketch collection that gp worker accepts
+    // Create dummy sketch collection that gp worker accepts
     const finalSketch = {
-      ...featureCollection(finalSketches),
+      ...featureCollection(possibleReplicates),
       properties: {
         name: `sketchCollection`,
         isCollection: true,
@@ -146,14 +140,13 @@ export async function spacing(
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       },
-      bbox: bbox(featureCollection(finalSketches)),
+      bbox: bbox(featureCollection(possibleReplicates)),
     };
-
     const parameters = {
       datasourceId: curClass.datasourceId!,
     };
 
-    // Run workers
+    // Run workers and store promises
     metricPromises.push(
       process.env.NODE_ENV === "test"
         ? spacingWorker(finalSketch, parameters)
@@ -168,9 +161,8 @@ export async function spacing(
     );
   });
 
-  // Add all possible sketches to the graph
+  // Adds sketches to the graph and calculates distances
   const finalGraph = await addSketchesToGraph(clusters, request);
-  console.log("Added sketches to graph:", Date.now() - start);
 
   // Await the replicate metrics from workers
   const replicates: Record<string, string[]> = {};
@@ -185,9 +177,8 @@ export async function spacing(
           });
     replicates[finalResult.id] = finalResult.replicateIds;
   });
-  console.log("Got replicate metrics", Date.now() - start);
 
-  // Generate MST
+  // Generate MST for each class
   const result = await Promise.all(
     metricGroup.classes.map(async (curClass) => {
       const classReplicateIds = replicates[curClass.datasourceId!];
@@ -198,7 +189,7 @@ export async function spacing(
       ) as Sketch<Polygon>[];
 
       // Calculate centroids
-      const sketchesWithCentroids = await Promise.all(
+      const sketchCentroids = await Promise.all(
         replicateSketches.map(async (sketch) => ({
           sketch,
           id: sketch.properties!.id as string,
@@ -208,14 +199,12 @@ export async function spacing(
 
       // Create a graph for the MST
       const mstGraph = new graphlib.Graph();
-      sketchesWithCentroids.forEach((sketch) => {
+      sketchCentroids.forEach((sketch) => {
         mstGraph.setNode(sketch.id, sketch.centroid);
       });
-
-      // Build the MST graph by adding edges
       await Promise.all(
-        sketchesWithCentroids.map((sourceSketch, i) =>
-          sketchesWithCentroids.slice(i + 1).map(async (targetSketch) => {
+        sketchCentroids.map((sourceSketch, i) =>
+          sketchCentroids.slice(i + 1).map(async (targetSketch) => {
             const dist = distance(
               point(sourceSketch.centroid),
               point(targetSketch.centroid),
@@ -225,8 +214,6 @@ export async function spacing(
           }),
         ),
       );
-
-      // Generate the MST using Prim's algorithm
       const mst = graphlib.alg.prim(mstGraph, (edge) => mstGraph.edge(edge));
 
       const pathsWithColors: {
@@ -235,15 +222,11 @@ export async function spacing(
         color: string;
       }[] = [];
 
-      // Iterate over MST edges and calculate paths concurrently
+      // Iterate over MST edges and calculate paths between replicates
       await Promise.all(
         mst.edges().map(async (edge) => {
-          const sourceSketch = sketchesWithCentroids.find(
-            (s) => s.id === edge.v,
-          );
-          const targetSketch = sketchesWithCentroids.find(
-            (s) => s.id === edge.w,
-          );
+          const sourceSketch = sketchCentroids.find((s) => s.id === edge.v);
+          const targetSketch = sketchCentroids.find((s) => s.id === edge.w);
 
           if (sourceSketch && targetSketch) {
             const { path, totalDistance } = findShortestPath(
@@ -273,9 +256,8 @@ export async function spacing(
       };
     }),
   );
-  console.log("Generated MST", Date.now() - start);
 
-  // Strictly for viewing on the map, add in the original sketches
+  // Strictly for viewing on the map, add in the low LOP sketches
   const skArrayLowProtection = toSketchArray(sketch).filter((sk) => {
     const lop = sk.properties.proposed_lop;
     return !lop || !["A", "B", "C"].includes(lop[0]);
@@ -289,6 +271,7 @@ export async function spacing(
   };
 }
 
+// Read the graph from the file and load it into an R-tree
 export async function readGraphFromFile(
   graphData: any,
 ): Promise<{ graph: graphlib.Graph; tree: any }> {
@@ -304,6 +287,7 @@ export async function readGraphFromFile(
   return { graph, tree };
 }
 
+// Add sketches to the graph and calculate distances
 async function addSketchesToGraph(
   sketch: Sketch<Polygon | MultiPolygon>[],
   request?: GeoprocessingRequestModel<Polygon | MultiPolygon>,
@@ -323,15 +307,8 @@ async function addSketchesToGraph(
 
   // Filter the land features that overlap with the sketch bounding box
   const filteredFeatures = (landData as FeatureCollection).features.filter(
-    (feature) => {
-      const landBoundingBox = bbox(feature);
-
-      // Check if the bounding boxes overlap
-      return booleanOverlap(
-        bboxPolygon(sketchBox),
-        bboxPolygon(landBoundingBox),
-      );
-    },
+    (feature) =>
+      booleanOverlap(bboxPolygon(sketchBox), bboxPolygon(bbox(feature))),
   );
 
   const landSimplified = buffer(
@@ -342,6 +319,7 @@ async function addSketchesToGraph(
     { units: "meters" },
   );
 
+  // Add each sketch node to the graph and rtree
   const sketchNodes: Record<string, string[]> = {};
   const allVertices: { node: string; coord: number[] }[] = [];
   sketchesSimplified.forEach((sketch: any, sketchIndex: number) => {
@@ -368,7 +346,7 @@ async function addSketchesToGraph(
     });
   });
 
-  // For each node in sketchNodes, run spacingGraphWorker
+  // Calculate the distance between new nodes
   const edgePromises: Promise<
     { node1: string; node2: string; dist: number }[] | InvocationResponse
   >[] = [];
@@ -395,6 +373,7 @@ async function addSketchesToGraph(
     );
   });
 
+  // Await the edge metrics from workers
   (await Promise.all(edgePromises)).forEach((result) => {
     const finalResult =
       process.env.NODE_ENV === "test"
@@ -412,12 +391,12 @@ async function addSketchesToGraph(
   return { graph, tree, sketchNodes };
 }
 
+// Extract exterior vertices
 function extractVerticesFromPolygon(
   polygon: any,
   featureIndex: number,
   vertices: Map<string, number[]>,
 ): void {
-  // Only take the perimeter of the polygon
   const exteriorRing = polygon[0];
   exteriorRing.forEach((coord: [number, number], vertexIndex: number) => {
     const id = `polynode_${featureIndex}_0_${vertexIndex}`;
@@ -425,6 +404,7 @@ function extractVerticesFromPolygon(
   });
 }
 
+// Find the shortest path between two sketches
 function findShortestPath(
   graph: graphlib.Graph,
   currentSketch: Sketch<Polygon | MultiPolygon>,
