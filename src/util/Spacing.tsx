@@ -1,17 +1,10 @@
 import React, { useEffect, useRef, useTransition } from "react";
-import {
-  select,
-  scaleLinear,
-  extent,
-  geoTransform,
-  geoPath,
-  line,
-  color,
-} from "d3";
+import { select, scaleLinear, extent, geoTransform, geoPath, line } from "d3";
 import {
   Feature,
   FeatureCollection,
   LineString,
+  MultiPolygon,
   Polygon,
   Sketch,
 } from "@seasketch/geoprocessing/client-core";
@@ -20,7 +13,7 @@ import landData from "../../data/bin/landShrunk.01.json" with { type: "json" };
 
 // Props for the Replicate Map
 interface ReplicateMapProps {
-  sketch: Sketch<Polygon>[];
+  sketch: Sketch<Polygon | MultiPolygon>[];
   replicates: string[];
   paths: {
     path: Feature<LineString>;
@@ -30,7 +23,7 @@ interface ReplicateMapProps {
 }
 
 function calculateProportionalHeight(
-  featureCollection: FeatureCollection<Polygon>,
+  featureCollection: FeatureCollection<Polygon | MultiPolygon>,
   fixedWidth: number = 430,
 ): number {
   const [minX, minY, maxX, maxY] = bbox(featureCollection);
@@ -60,7 +53,11 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
     svg.attr("width", width).attr("height", height);
 
     const nodes = featureCollection(sketch).features.flatMap((feature) =>
-      feature.geometry.coordinates.flatMap((coords) => coords),
+      feature.geometry.type === "Polygon"
+        ? feature.geometry.coordinates.flatMap((coords) => coords)
+        : feature.geometry.coordinates.flatMap((polygon) =>
+            polygon.flatMap((coords) => coords),
+          ),
     );
 
     const xExtent = extent(nodes, (d) => d[0]) as [number, number];
@@ -169,7 +166,11 @@ export const ReplicateMap: React.FC<ReplicateMapProps> = ({
       svg
         .append("g")
         .selectAll(".sketch-path")
-        .data(s.geometry.coordinates)
+        .data(
+          s.geometry.type === "Polygon"
+            ? s.geometry.coordinates
+            : s.geometry.coordinates.flatMap((polygon) => polygon),
+        )
         .enter()
         .append("path")
         .attr("class", "sketch-path")

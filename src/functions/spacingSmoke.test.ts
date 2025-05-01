@@ -10,7 +10,7 @@ describe("Basic smoke tests", () => {
     expect(typeof spacing).toBe("function");
   });
   test("spacing - tests run against all examples", async () => {
-    const examples = await getExamplePolygonSketchAll("");
+    const examples = await getExamplePolygonSketchAll();
     for (const example of examples) {
       const result = await spacing(example);
       expect(result).toBeTruthy();

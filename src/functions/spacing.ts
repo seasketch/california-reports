@@ -36,7 +36,7 @@ import {
   lineString,
   union,
   area,
-  booleanOverlap as turfBooleanOverlap,
+  booleanIntersects,
 } from "@turf/turf";
 import { spacingGraphWorker } from "./spacingGraphWorker.js";
 
@@ -54,67 +54,66 @@ export async function spacing(
   const start = Date.now();
   const metricGroup = project.getMetricGroup("spacing");
 
-  // Narrow sketches down to only those that meet LOP of moderate-high, high, or very high
-  const sketchArray = toSketchArray(sketch).filter((sk) => {
-    const lop = sk.properties.proposed_lop;
-    return lop && ["A", "B", "C"].includes(lop[0]);
-  });
-  console.log(`Found ${sketchArray.length} sketches with high LOP`);
+  const highLOPSketches = toSketchArray(sketch).filter((sk) =>
+    ["A", "B", "C"].includes(sk.properties.proposed_lop?.[0]),
+  );
+  console.log(`${highLOPSketches.length} sketch(es) with high LOP`);
 
-  // Simplify sketches to use for clustering
-  const simplifiedSketches = Object.fromEntries(
-    sketchArray.map((sketch) => [
-      sketch.properties.id,
-      simplify(sketch, { tolerance: 0.001 }),
+  // Buffer every geometry once (5 meters) for checking contiguity
+  const buffered = Object.fromEntries(
+    highLOPSketches.map((sk) => [
+      sk.properties.id,
+      buffer(sk, 5, { units: "meters" })!,
     ]),
   );
 
-  // Combine contiguous sketches into clusters
-  const sketchClusters: Sketch<Polygon | MultiPolygon>[] = [];
-  const addedMap: Record<string, boolean> = {};
-  sketchArray.forEach((sk) => {
-    // Skip if already added to a cluster
-    if (addedMap[sk.properties.id]) return;
+  // Create clusters of contiguous sketches
+  const visited: Record<string, boolean> = {};
+  const clusters: Sketch<Polygon | MultiPolygon>[] = [];
+  highLOPSketches.forEach((sk) => {
+    if (visited[sk.properties.id]) return;
 
-    // Find all sketches that abut this sketch
-    const simpleSketch = simplifiedSketches[sk.properties.id];
-    const buffered = buffer(simpleSketch, 5, { units: "meters" });
-    const cluster = sketchArray.filter((potentialCluster) => {
-      if (addedMap[potentialCluster.properties.id]) return false;
-      if (potentialCluster.properties.id === sk.properties.id) return false;
-      return turfBooleanOverlap(
-        simplifiedSketches[potentialCluster.properties.id].geometry,
-        buffered!.geometry,
-      );
-    });
+    const stack = [sk];
+    const cluster: Sketch<Polygon>[] = [];
 
-    // Add the sketch to the cluster (Use buffered to ensure overlap dissolve succeeds)
-    cluster.push(cluster.length === 0 ? sk : (buffered! as Sketch<Polygon>));
+    while (stack.length) {
+      const curSketch = stack.pop()!;
+      if (visited[curSketch.properties.id]) return;
+      visited[curSketch.properties.id] = true;
+      cluster.push(curSketch);
 
-    // Mark all sketches as added
-    cluster.forEach((clusterSk) => (addedMap[clusterSk.properties.id] = true));
+      highLOPSketches.forEach((potentialCluster) => {
+        if (
+          !visited[potentialCluster.properties.id] &&
+          booleanIntersects(
+            buffered[curSketch.properties.id].geometry,
+            potentialCluster.geometry,
+          )
+        ) {
+          stack.push(potentialCluster);
+        }
+      });
+    }
 
-    // If the cluster is only one sketch, add it to the final array, else union before adding
-    sketchClusters.push(
+    clusters.push(
       cluster.length === 1
         ? cluster[0]
         : ({
-            ...union(featureCollection(cluster))!,
+            geometry: union(featureCollection(cluster))!.geometry,
             properties: {
               id: sk.properties.id,
               name: `Cluster: ${cluster.map((sk) => sk.properties.name).join(", ")}`,
             },
+            type: "Feature",
           } as Sketch<Polygon | MultiPolygon>),
     );
   });
-
-  console.log(`${sketchClusters.length} clusters`, Date.now() - start);
+  console.log(`${clusters.length} clusters`, Date.now() - start);
 
   // Filter to clusters that meet 9 sq mi minimum size
-  const largeClusters = sketchClusters.filter(
+  const largeClusters = clusters.filter(
     (sk) => squareMeterToMile(area(sk)) > 9,
   );
-
   console.log(`${largeClusters.length} large clusters`, Date.now() - start);
 
   // Start the spacing workers to calculate metrics
@@ -125,8 +124,9 @@ export async function spacing(
   metricGroup.classes.forEach((curClass) => {
     // Use the large clusters for all except estuaries, which can be any size
     const finalSketches =
-      curClass.datasourceId === "estuaries" ? sketchClusters : largeClusters;
+      curClass.datasourceId === "estuaries" ? clusters : largeClusters;
 
+    // If no clusters, no replicates
     if (finalSketches.length === 0) {
       metricPromises.push(
         Promise.resolve({ id: curClass.datasourceId!, replicateIds: [] }),
@@ -153,7 +153,7 @@ export async function spacing(
       datasourceId: curClass.datasourceId!,
     };
 
-    // Run worker to find replicates
+    // Run workers
     metricPromises.push(
       process.env.NODE_ENV === "test"
         ? spacingWorker(finalSketch, parameters)
@@ -169,10 +169,10 @@ export async function spacing(
   });
 
   // Add all possible sketches to the graph
-  const finalGraph = await addSketchesToGraph(sketchClusters, request);
+  const finalGraph = await addSketchesToGraph(clusters, request);
   console.log("Added sketches to graph:", Date.now() - start);
 
-  // Await the replicate metrics
+  // Await the replicate metrics from workers
   const replicates: Record<string, string[]> = {};
   (await Promise.all(metricPromises)).forEach((result) => {
     const finalResult =
@@ -192,8 +192,8 @@ export async function spacing(
     metricGroup.classes.map(async (curClass) => {
       const classReplicateIds = replicates[curClass.datasourceId!];
 
-      // Filter sketches asynchronously
-      const replicateSketches = sketchArray.filter((sk) =>
+      // Filter sketches
+      const replicateSketches = highLOPSketches.filter((sk) =>
         classReplicateIds.some((id) => id === sk.properties.id),
       ) as Sketch<Polygon>[];
 
@@ -282,7 +282,7 @@ export async function spacing(
   });
 
   return {
-    sketch: sketchClusters
+    sketch: clusters
       .concat(skArrayLowProtection)
       .map((sketch) => simplify(sketch, { tolerance: 0.005 })),
     result,
