@@ -83,7 +83,18 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
               items={
                 <DataDownload
                   filename={titleLabel}
-                  data={data.result}
+                  data={data.result.map((report) => ({
+                    ...report,
+                    replicates: report.replicates.map((replicateId) => {
+                      const sketch = data.sketch.find(
+                        (s: Sketch<Polygon>) => s.properties.id === replicateId,
+                      );
+                      return {
+                        id: replicateId,
+                        name: sketch?.properties.name || "Unknown",
+                      };
+                    }),
+                  }))}
                   formats={["csv", "json"]}
                   placement="left-end"
                 />

@@ -71,17 +71,21 @@ export const Depth: React.FunctionComponent<{ printing: boolean }> = (
                 <KeySection
                   style={{ display: "flex", justifyContent: "space-around" }}
                 >
-                  <span>
-                    {t("Min")}: <b>{formatDepth(overallStats!.max)}</b>
-                  </span>
-                  {overallStats!.mean && (
+                  {overallStats && overallStats.max !== undefined && (
                     <span>
-                      {t("Avg")}: <b>{formatDepth(overallStats!.mean)}</b>
+                      {t("Min")}: <b>{formatDepth(overallStats.max)}</b>
                     </span>
                   )}
-                  <span>
-                    {t("Max")}: <b>{formatDepth(overallStats!.min)}</b>
-                  </span>
+                  {overallStats && overallStats.mean !== undefined && (
+                    <span>
+                      {t("Avg")}: <b>{formatDepth(overallStats.mean)}</b>
+                    </span>
+                  )}
+                  {overallStats && overallStats.min !== undefined && (
+                    <span>
+                      {t("Max")}: <b>{formatDepth(overallStats.min)}</b>
+                    </span>
+                  )}
                 </KeySection>
 
                 {isCollection && (
