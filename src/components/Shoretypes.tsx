@@ -144,6 +144,8 @@ export const Shoretypes: React.FunctionComponent<{
                         Number.format(
                           roundDecimal(
                             typeof val === "string" ? parseInt(val) : val,
+                            2,
+                            { keepSmallValues: true },
                           ),
                         ),
                       colStyle: { textAlign: "center" },
@@ -197,6 +199,8 @@ export const Shoretypes: React.FunctionComponent<{
                             Number.format(
                               roundDecimal(
                                 typeof val === "string" ? parseInt(val) : val,
+                                2,
+                                { keepSmallValues: true },
                               ),
                             ),
                           colStyle: { textAlign: "center" },
@@ -253,6 +257,8 @@ export const Shoretypes: React.FunctionComponent<{
                             Number.format(
                               roundDecimal(
                                 typeof val === "string" ? parseInt(val) : val,
+                                2,
+                                { keepSmallValues: true },
                               ),
                             ),
                           colStyle: { textAlign: "center" },
@@ -382,7 +388,9 @@ export const genLengthSketchTable = (
               const valDisplay =
                 miVal && miVal < 0.1
                   ? "< 0.1"
-                  : Number.format(roundDecimal(miVal));
+                  : Number.format(
+                      roundDecimal(miVal, 2, { keepSmallValues: true }),
+                    );
               return valDisplay + " " + t("mi");
             },
           },

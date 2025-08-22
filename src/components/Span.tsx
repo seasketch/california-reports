@@ -391,7 +391,9 @@ export const genLengthSketchTable = (
               const valDisplay =
                 miVal && miVal < 0.1
                   ? "< 0.1"
-                  : Number.format(roundDecimal(miVal));
+                  : Number.format(
+                      roundDecimal(miVal, 2, { keepSmallValues: true }),
+                    );
               return valDisplay + " " + t("mi");
             },
           },

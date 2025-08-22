@@ -2,7 +2,6 @@ import React from "react";
 import {
   squareMeterToMile,
   firstMatchingMetric,
-  roundLower,
   percentWithEdge,
   roundDecimal,
   Metric,
@@ -21,7 +20,6 @@ import {
   ObjectiveStatus,
 } from "@seasketch/geoprocessing/client-ui";
 import project from "../../project/projectClient.js";
-import Translator from "../components/TranslatorAsync.js";
 import { Trans, useTranslation } from "react-i18next";
 import { genSketchTable } from "../util/genSketchTable.js";
 import {
@@ -78,7 +76,7 @@ export const SizeCard: React.FunctionComponent<{
         );
 
         // Format area metrics for key section display
-        const areaDisplay = roundLower(squareMeterToMile(areaMetric.value));
+        const areaDisplay = squareMeterToMile(areaMetric.value).toFixed(2);
         const percDisplay = percentWithEdge(
           areaMetric.value / totalAreaMetric.value,
         );

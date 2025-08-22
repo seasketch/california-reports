@@ -109,6 +109,8 @@ export const Kelp: React.FunctionComponent<{
                         Number.format(
                           roundDecimal(
                             typeof val === "string" ? parseInt(val) : val,
+                            2,
+                            { keepSmallValues: true },
                           ),
                         ),
                       colStyle: { textAlign: "center" },
@@ -156,6 +158,8 @@ export const Kelp: React.FunctionComponent<{
                           Number.format(
                             roundDecimal(
                               typeof val === "string" ? parseInt(val) : val,
+                              2,
+                              { keepSmallValues: true },
                             ),
                           ),
                         colStyle: { textAlign: "center" },
@@ -204,6 +208,8 @@ export const Kelp: React.FunctionComponent<{
                           Number.format(
                             roundDecimal(
                               typeof val === "string" ? parseInt(val) : val,
+                              2,
+                              { keepSmallValues: true },
                             ),
                           ),
                         colStyle: { textAlign: "center" },

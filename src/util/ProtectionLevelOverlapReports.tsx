@@ -20,7 +20,6 @@ import {
   ObjectiveAnswer,
   squareMeterToMile,
   roundDecimal,
-  roundLower,
 } from "@seasketch/geoprocessing/client-core";
 import { groupColorMapTransparent, groupColors, groups } from "./getGroup.js";
 import { InfoCircleFill } from "@styled-icons/bootstrap";
@@ -210,7 +209,7 @@ export const genClassTableGrouped = (
   }));
 
   const valueFormatter = (value: number) => {
-    return roundLower(squareMeterToMile(value)) + " mi²";
+    return roundDecimal(squareMeterToMile(value), 2) + " mi²";
   };
   const percValueFormatter = (value: number) => {
     if (isNaN(value)) {
@@ -439,9 +438,6 @@ export const genAreaGroupLevelTable = (
 
   const classColumns: Column<Record<string, string | number>>[] =
     metricGroup.classes.map((curClass, index) => {
-      /* i18next-extract-disable-next-line */
-      const transString = t(curClass.display);
-
       return {
         Header: " ",
         style: { color: "#777" },
@@ -456,7 +452,7 @@ export const genAreaGroupLevelTable = (
               const valDisplay =
                 miVal && miVal < 0.1
                   ? "< 0.1"
-                  : Number.format(roundDecimal(miVal));
+                  : Number.format(roundDecimal(miVal, 2));
               return (
                 <GroupPill
                   groupColorMap={groupColorMapTransparent}
