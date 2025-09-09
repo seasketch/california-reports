@@ -23,6 +23,15 @@ import { GeographyTable } from "../util/GeographyTable.js";
 import { genSketchTable } from "../util/genSketchTable.js";
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
+// Conversion factor for habitat metrics
+const CELL_SIZE = 9.710648864705849093;
+
+// Helper function to apply habitat conversion factor
+const rawtoMeter = (val: string | number): number => {
+  const numericVal = typeof val === "string" ? parseInt(val) : val;
+  return numericVal * CELL_SIZE * CELL_SIZE;
+};
+
 // Reports on substrate overlap
 export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
   props,
@@ -90,7 +99,10 @@ export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
                 items={
                   <DataDownload
                     filename={titleLabel}
-                    data={metricResults}
+                    data={metricResults.map((metric) => ({
+                      ...metric,
+                      value: rawtoMeter(metric.value),
+                    }))}
                     formats={["csv", "json"]}
                     placement="left-end"
                   />
@@ -147,19 +159,9 @@ export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
                       metricId: metricGroup.metricId,
                       valueFormatter: (val: string | number) =>
                         Number.format(
-                          roundDecimal(
-                            squareMeterToMile(
-                              typeof val === "string"
-                                ? parseInt(val) *
-                                    9.710648864705849093 *
-                                    9.710648864705849093
-                                : val *
-                                    9.710648864705849093 *
-                                    9.710648864705849093,
-                            ),
-                            2,
-                            { keepSmallValues: true },
-                          ),
+                          roundDecimal(squareMeterToMile(rawtoMeter(val)), 2, {
+                            keepSmallValues: true,
+                          }),
                         ),
                       valueLabel: unitsLabel,
                       chartOptions: {
@@ -211,15 +213,7 @@ export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
                           valueFormatter: (val: string | number) =>
                             Number.format(
                               roundDecimal(
-                                squareMeterToMile(
-                                  typeof val === "string"
-                                    ? parseInt(val) *
-                                        9.710648864705849093 *
-                                        9.710648864705849093
-                                    : val *
-                                        9.710648864705849093 *
-                                        9.710648864705849093,
-                                ),
+                                squareMeterToMile(rawtoMeter(val)),
                                 2,
                                 { keepSmallValues: true },
                               ),
@@ -276,15 +270,7 @@ export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
                           valueFormatter: (val: string | number) =>
                             Number.format(
                               roundDecimal(
-                                squareMeterToMile(
-                                  typeof val === "string"
-                                    ? parseInt(val) *
-                                        9.710648864705849093 *
-                                        9.710648864705849093
-                                    : val *
-                                        9.710648864705849093 *
-                                        9.710648864705849093,
-                                ),
+                                squareMeterToMile(rawtoMeter(val)),
                                 2,
                                 { keepSmallValues: true },
                               ),
@@ -323,8 +309,7 @@ export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
                       metricGroup,
                       t,
                       {
-                        valueFormatter: (val) =>
-                          val * 9.710648864705849093 * 9.710648864705849093,
+                        valueFormatter: (val) => rawtoMeter(val),
                         printing: props.printing,
                       },
                     )}
@@ -348,7 +333,7 @@ export const Habitat: React.FunctionComponent<{ printing: boolean }> = (
                       downscaled to 30x30 meter resolution.
                     </p>
                   </Trans>
-                  <p>{t("Last updated")}: January 24, 2025.</p>
+                  <p>{t("Last updated")}: September 8, 2025.</p>
                 </Collapse>
               </ToolbarCard>
             </ReportError>
