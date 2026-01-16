@@ -85,6 +85,10 @@ export const Spacing: React.FunctionComponent<any> = (props) => {
                   filename={titleLabel}
                   data={data.result.map((report) => ({
                     ...report,
+                    id: metricGroup.classes.find((c) => c.classId === report.id)
+                      ? metricGroup.classes.find((c) => c.classId === report.id)
+                          ?.display
+                      : report.id,
                     replicates: report.replicates.map((replicateId) => {
                       const sketch = data.sketch.find(
                         (s: Sketch<Polygon>) => s.properties.id === replicateId,
