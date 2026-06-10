@@ -392,5 +392,71 @@
     "src": "data/src/California MPAs 2024/Data_Received/CDFW/unzipped/LinearSubstrate_Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE/Contour_CAbath_PairwiseInter_15m_ExportFeatures_DIVIDE.shp",
     "propertiesToKeep": ["Sub_depth"],
     "explodeMulti": true
+  },
+  {
+    "datasourceId": "fish_surveys_2024_aggregated",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "fish_surveys_2024_aggregated",
+    "classKeys": [],
+    "created": "2026-06-10T19:40:17.909Z",
+    "lastUpdated": "2026-06-10T19:40:17.909Z",
+    "src": "data/src/Monitoring/KelpForest/reports/fish_surveys_2024_aggregated.fgb",
+    "propertiesToKeep": [
+      "site",
+      "classcode",
+      "count",
+      "CA_MPA_Name_Short",
+      "site_designation",
+      "site_status",
+      "species_definition",
+      "common_name"
+    ],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "swath_2024_aggregated",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "swath_2024_aggregated",
+    "classKeys": [],
+    "created": "2026-06-10T22:09:41.693Z",
+    "lastUpdated": "2026-06-10T22:09:41.693Z",
+    "src": "data/src/Monitoring/KelpForest/reports/swath_2024_aggregated.fgb",
+    "propertiesToKeep": [
+      "site",
+      "classcode",
+      "count",
+      "CA_MPA_Name_Short",
+      "site_designation",
+      "site_status",
+      "species_definition",
+      "common_name"
+    ],
+    "explodeMulti": true
+  },
+  {
+    "src": "data/src/Monitoring/KelpForest/reports/upc_2024_aggregated.fgb",
+    "layerName": "upc_2024_aggregated",
+    "geo_type": "vector",
+    "datasourceId": "upc_2024_aggregated",
+    "formats": ["fgb"],
+    "classKeys": [],
+    "created": "2026-06-10T22:32:17.898Z",
+    "lastUpdated": "2026-06-10T22:32:17.898Z",
+    "propertiesToKeep": [
+      "site",
+      "classcode",
+      "pct_cov",
+      "CA_MPA_Name_Short",
+      "site_designation",
+      "site_status",
+      "species_definition",
+      "common_name"
+    ],
+    "explodeMulti": true,
+    "precalc": true
   }
 ]

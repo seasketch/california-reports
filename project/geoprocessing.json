@@ -7,6 +7,11 @@
       "name": "MpaTabReport",
       "description": "Report suite for MPA planning within EEZ with tab navigation",
       "source": "src/clients/MpaTabReport.tsx"
+    },
+    {
+      "name": "Monitoring",
+      "description": "Report suite for Monitoring",
+      "source": "src/clients/Monitoring.tsx"
     }
   ],
   "preprocessingFunctions": ["src/functions/clipToOceanEez.ts"],
@@ -31,6 +36,7 @@
     "src/functions/spanWorker.ts",
     "src/functions/span.ts",
     "src/functions/habitatNearshore.ts",
-    "src/functions/habitatNearshoreWorker.ts"
+    "src/functions/habitatNearshoreWorker.ts",
+    "src/functions/kelpForest.ts"
   ]
 }

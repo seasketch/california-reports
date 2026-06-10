@@ -1,0 +1,158 @@
+{
+  "fish": [
+    {
+      "classcode": "SMYS",
+      "minAbundance": 47,
+      "meanAbundance": 197.5,
+      "maxAbundance": 356,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Sebastes mystinus",
+      "commonName": "Blue Rockfish"
+    },
+    {
+      "classcode": "KGB",
+      "minAbundance": 3,
+      "meanAbundance": 47.333333333333336,
+      "maxAbundance": 148,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Sebastes atrovirens/carnatus/chrysomelas/caurinus",
+      "commonName": "Kelp, Gopher, Black And Yellow, and Copper Rockfish Young of Year"
+    },
+    {
+      "classcode": "OPIC",
+      "minAbundance": 4,
+      "meanAbundance": 17.333333333333332,
+      "maxAbundance": 34,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Oxylebius pictus",
+      "commonName": "Painted Greenling"
+    },
+    {
+      "classcode": "OYT",
+      "minAbundance": 2,
+      "meanAbundance": 13.333333333333334,
+      "maxAbundance": 36,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Sebastes serranoides/flavidus",
+      "commonName": "Olive Or Yellowtail Rockfish"
+    },
+    {
+      "classcode": "SCAR",
+      "minAbundance": 2,
+      "meanAbundance": 10,
+      "maxAbundance": 23,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Sebastes carnatus",
+      "commonName": "Gopher Rockfish"
+    }
+  ],
+  "swath": [
+    {
+      "classcode": "LAMREC",
+      "minAbundance": 4,
+      "meanAbundance": 1505.1666666666667,
+      "maxAbundance": 5468,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Laminariales",
+      "commonName": "Laminariales recruit- smaller than can be ID'd as MACPYRJUV or other Laminariales spp."
+    },
+    {
+      "classcode": "PTECALJUV",
+      "minAbundance": 2,
+      "meanAbundance": 1134.5,
+      "maxAbundance": 2815,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Pterygophora californica",
+      "commonName": "Pterygophora,  juvenile (<30cm stipe)"
+    },
+    {
+      "classcode": "STRPURAD",
+      "minAbundance": 437,
+      "meanAbundance": 921,
+      "maxAbundance": 1676,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Strongylocentrotus purpuratus",
+      "commonName": "Purple Urchin adult"
+    },
+    {
+      "classcode": "PTECALAD",
+      "minAbundance": 190,
+      "meanAbundance": 591,
+      "maxAbundance": 1108,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Pterygophora californica",
+      "commonName": "Pterygophora"
+    },
+    {
+      "classcode": "LAMSETAD",
+      "minAbundance": 6,
+      "meanAbundance": 405.3333333333333,
+      "maxAbundance": 1158,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Laminaria setchellii",
+      "commonName": "Setchell's Kelp"
+    }
+  ],
+  "upc": [
+    {
+      "classcode": "SLTREL",
+      "minAbundance": 65,
+      "meanAbundance": 71.81916666666666,
+      "maxAbundance": 78.61666666666666,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Vertical Relief: Slight",
+      "commonName": "Vertical Relief: Slight"
+    },
+    {
+      "classcode": "BEDRK",
+      "minAbundance": 52.43333333333333,
+      "meanAbundance": 69.39833333333333,
+      "maxAbundance": 97.5,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Substrate: Bedrock",
+      "commonName": "Substrate: Bedrock"
+    },
+    {
+      "classcode": "HIREL",
+      "minAbundance": 3.4,
+      "meanAbundance": 31.983333333333334,
+      "maxAbundance": 65.2,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Vertical Relief: High",
+      "commonName": "Vertical Relief: High"
+    },
+    {
+      "classcode": "COB",
+      "minAbundance": 10,
+      "meanAbundance": 31.35138888888889,
+      "maxAbundance": 89.80000000000001,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Substrate: Cobble",
+      "commonName": "Substrate: Cobble"
+    },
+    {
+      "classcode": "CRUCOR",
+      "minAbundance": 12.680000000000001,
+      "meanAbundance": 22.411944444444444,
+      "maxAbundance": 34.474999999999994,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Coralline Algae -Crustose",
+      "commonName": "Coralline Algae -Crustose"
+    }
+  ]
+}

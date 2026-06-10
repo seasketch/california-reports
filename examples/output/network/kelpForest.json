@@ -1,0 +1,158 @@
+{
+  "fish": [
+    {
+      "classcode": "CPUN",
+      "minAbundance": 0,
+      "meanAbundance": 133.36,
+      "maxAbundance": 632,
+      "siteCount": 25,
+      "observedSiteCount": 19,
+      "speciesDefinition": "Chromis punctipinnis",
+      "commonName": "Blacksmith"
+    },
+    {
+      "classcode": "HROS",
+      "minAbundance": 0,
+      "meanAbundance": 131.6,
+      "maxAbundance": 919,
+      "siteCount": 25,
+      "observedSiteCount": 19,
+      "speciesDefinition": "Heterostichus rostratus",
+      "commonName": "Giant Kelpfish"
+    },
+    {
+      "classcode": "SMYS",
+      "minAbundance": 0,
+      "meanAbundance": 47.6,
+      "maxAbundance": 356,
+      "siteCount": 25,
+      "observedSiteCount": 8,
+      "speciesDefinition": "Sebastes mystinus",
+      "commonName": "Blue Rockfish"
+    },
+    {
+      "classcode": "ATHE",
+      "minAbundance": 0,
+      "meanAbundance": 33.64,
+      "maxAbundance": 359,
+      "siteCount": 25,
+      "observedSiteCount": 9,
+      "speciesDefinition": "Atherinopsidae",
+      "commonName": "Grunion, Topsmelt Or Jacksmelt"
+    },
+    {
+      "classcode": "BFRE",
+      "minAbundance": 0,
+      "meanAbundance": 26.48,
+      "maxAbundance": 80,
+      "siteCount": 25,
+      "observedSiteCount": 16,
+      "speciesDefinition": "Brachyistius frenatus",
+      "commonName": "Kelp Surfperch"
+    }
+  ],
+  "swath": [
+    {
+      "classcode": "STRPURAD",
+      "minAbundance": 23,
+      "meanAbundance": 1087.875,
+      "maxAbundance": 5392,
+      "siteCount": 24,
+      "observedSiteCount": 24,
+      "speciesDefinition": "Strongylocentrotus purpuratus",
+      "commonName": "Purple Urchin adult"
+    },
+    {
+      "classcode": "LAMREC",
+      "minAbundance": 0,
+      "meanAbundance": 376.2916666666667,
+      "maxAbundance": 5468,
+      "siteCount": 24,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Laminariales",
+      "commonName": "Laminariales recruit- smaller than can be ID'd as MACPYRJUV or other Laminariales spp."
+    },
+    {
+      "classcode": "MEGUND",
+      "minAbundance": 0,
+      "meanAbundance": 339.6666666666667,
+      "maxAbundance": 1496,
+      "siteCount": 24,
+      "observedSiteCount": 18,
+      "speciesDefinition": "Megastraea undosa",
+      "commonName": "Wavy Turban Snail"
+    },
+    {
+      "classcode": "LAMFAR",
+      "minAbundance": 0,
+      "meanAbundance": 311.1666666666667,
+      "maxAbundance": 1412,
+      "siteCount": 24,
+      "observedSiteCount": 14,
+      "speciesDefinition": "Laminaria farlowii",
+      "commonName": "Oar Weed"
+    },
+    {
+      "classcode": "PTECALJUV",
+      "minAbundance": 0,
+      "meanAbundance": 283.625,
+      "maxAbundance": 2815,
+      "siteCount": 24,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Pterygophora californica",
+      "commonName": "Pterygophora,  juvenile (<30cm stipe)"
+    }
+  ],
+  "upc": [
+    {
+      "classcode": "SLTREL",
+      "minAbundance": 62.474999999999994,
+      "meanAbundance": 77.48326388888887,
+      "maxAbundance": 90.825,
+      "siteCount": 24,
+      "observedSiteCount": 24,
+      "speciesDefinition": "Vertical Relief: Slight",
+      "commonName": "Vertical Relief: Slight"
+    },
+    {
+      "classcode": "BEDRK",
+      "minAbundance": 39.175,
+      "meanAbundance": 67.39784722222223,
+      "maxAbundance": 97.5,
+      "siteCount": 24,
+      "observedSiteCount": 24,
+      "speciesDefinition": "Substrate: Bedrock",
+      "commonName": "Substrate: Bedrock"
+    },
+    {
+      "classcode": "CRUCOR",
+      "minAbundance": 5,
+      "meanAbundance": 23.097083333333334,
+      "maxAbundance": 51.275000000000006,
+      "siteCount": 24,
+      "observedSiteCount": 24,
+      "speciesDefinition": "Coralline Algae -Crustose",
+      "commonName": "Coralline Algae -Crustose"
+    },
+    {
+      "classcode": "BOULD",
+      "minAbundance": 5.825,
+      "meanAbundance": 21.711180555555558,
+      "maxAbundance": 45.825,
+      "siteCount": 24,
+      "observedSiteCount": 24,
+      "speciesDefinition": "Substrate: Boulder",
+      "commonName": "Substrate: Boulder"
+    },
+    {
+      "classcode": "MODREL",
+      "minAbundance": 5.1,
+      "meanAbundance": 19.21715277777778,
+      "maxAbundance": 30,
+      "siteCount": 24,
+      "observedSiteCount": 24,
+      "speciesDefinition": "Vertical Relief: Moderate",
+      "commonName": "Vertical Relief: Moderate"
+    }
+  ]
+}

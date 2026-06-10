@@ -17,6 +17,7 @@ import { kelp } from "./kelp.js";
 import { shoretypes } from "./shoretypes.js";
 import { spacing } from "./spacing.js";
 import { span } from "./span.js";
+import { kelpForest } from "./kelpForest.js";
 
 // Create standard smoke tests
 function createSmokeTest(
@@ -56,6 +57,7 @@ const tests = [
   { name: "shoretypes", func: shoretypes, timeout: 180_000 },
   { name: "spacing", func: spacing, timeout: 1000_000 },
   { name: "span", func: span, timeout: 180_000 },
+  { name: "kelpForest", func: kelpForest, timeout: 180_000 },
 ];
 
 // Generate tests
