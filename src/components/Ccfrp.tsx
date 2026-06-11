@@ -42,7 +42,7 @@ export const Ccfrp: React.FunctionComponent = () => {
 
               <LayerToggle
                 label={t("Show Nearshore Fisheries Monitoring Sites On Map")}
-                layerId="lVCbwMAu6"
+                layerId="pXKFkNvLs"
               />
               <VerticalSpacer />
 

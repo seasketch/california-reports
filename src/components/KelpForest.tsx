@@ -52,7 +52,7 @@ export const KelpForest: React.FunctionComponent = () => {
               </Trans>
               <LayerToggle
                 label={t("Show Kelp Forest Monitoring Sites on Map")}
-                layerId="pXKFkNvLs"
+                layerId="lVCbwMAu6"
               />
               <VerticalSpacer />
 
