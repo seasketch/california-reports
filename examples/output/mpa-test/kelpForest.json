@@ -1,62 +1,62 @@
 {
   "fish": [
     {
+      "classcode": "AFLA",
+      "minAbundance": 0,
+      "meanAbundance": 5.166666666666667,
+      "maxAbundance": 23,
+      "siteCount": 6,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Aulorhynchus flavidus",
+      "commonName": "Tubesnout"
+    },
+    {
       "classcode": "SMYS",
-      "minAbundance": 47,
-      "meanAbundance": 197.5,
-      "maxAbundance": 356,
+      "minAbundance": 1,
+      "meanAbundance": 5,
+      "maxAbundance": 8,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Sebastes mystinus",
       "commonName": "Blue Rockfish"
     },
     {
+      "classcode": "OCAL",
+      "minAbundance": 0,
+      "meanAbundance": 4.333333333333333,
+      "maxAbundance": 22,
+      "siteCount": 6,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Oxyjulis californica",
+      "commonName": "Senorita"
+    },
+    {
       "classcode": "KGB",
-      "minAbundance": 3,
-      "meanAbundance": 47.333333333333336,
-      "maxAbundance": 148,
+      "minAbundance": 2,
+      "meanAbundance": 3.3333333333333335,
+      "maxAbundance": 5,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Sebastes atrovirens/carnatus/chrysomelas/caurinus",
       "commonName": "Kelp, Gopher, Black And Yellow, and Copper Rockfish Young of Year"
     },
     {
-      "classcode": "OPIC",
-      "minAbundance": 4,
-      "meanAbundance": 17.333333333333332,
-      "maxAbundance": 34,
-      "siteCount": 6,
-      "observedSiteCount": 6,
-      "speciesDefinition": "Oxylebius pictus",
-      "commonName": "Painted Greenling"
-    },
-    {
       "classcode": "OYT",
-      "minAbundance": 2,
-      "meanAbundance": 13.333333333333334,
-      "maxAbundance": 36,
+      "minAbundance": 1,
+      "meanAbundance": 2.3333333333333335,
+      "maxAbundance": 5,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Sebastes serranoides/flavidus",
       "commonName": "Olive Or Yellowtail Rockfish"
-    },
-    {
-      "classcode": "SCAR",
-      "minAbundance": 2,
-      "meanAbundance": 10,
-      "maxAbundance": 23,
-      "siteCount": 6,
-      "observedSiteCount": 6,
-      "speciesDefinition": "Sebastes carnatus",
-      "commonName": "Gopher Rockfish"
     }
   ],
   "swath": [
     {
       "classcode": "LAMREC",
-      "minAbundance": 4,
-      "meanAbundance": 1505.1666666666667,
-      "maxAbundance": 5468,
+      "minAbundance": 2,
+      "meanAbundance": 360.1666666666667,
+      "maxAbundance": 1367,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Laminariales",
@@ -65,28 +65,18 @@
     {
       "classcode": "PTECALJUV",
       "minAbundance": 2,
-      "meanAbundance": 1134.5,
-      "maxAbundance": 2815,
+      "meanAbundance": 281.8333333333333,
+      "maxAbundance": 704,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Pterygophora californica",
       "commonName": "Pterygophora,  juvenile (<30cm stipe)"
     },
     {
-      "classcode": "STRPURAD",
-      "minAbundance": 437,
-      "meanAbundance": 921,
-      "maxAbundance": 1676,
-      "siteCount": 6,
-      "observedSiteCount": 6,
-      "speciesDefinition": "Strongylocentrotus purpuratus",
-      "commonName": "Purple Urchin adult"
-    },
-    {
       "classcode": "PTECALAD",
-      "minAbundance": 190,
-      "meanAbundance": 591,
-      "maxAbundance": 1108,
+      "minAbundance": 48,
+      "meanAbundance": 124.66666666666667,
+      "maxAbundance": 191,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Pterygophora californica",
@@ -94,13 +84,23 @@
     },
     {
       "classcode": "LAMSETAD",
-      "minAbundance": 6,
-      "meanAbundance": 405.3333333333333,
-      "maxAbundance": 1158,
+      "minAbundance": 3,
+      "meanAbundance": 100.5,
+      "maxAbundance": 290,
       "siteCount": 6,
       "observedSiteCount": 6,
       "speciesDefinition": "Laminaria setchellii",
       "commonName": "Setchell's Kelp"
+    },
+    {
+      "classcode": "STRPURAD",
+      "minAbundance": 18,
+      "meanAbundance": 46.5,
+      "maxAbundance": 73,
+      "siteCount": 6,
+      "observedSiteCount": 6,
+      "speciesDefinition": "Strongylocentrotus purpuratus",
+      "commonName": "Purple Urchin adult"
     }
   ],
   "upc": [

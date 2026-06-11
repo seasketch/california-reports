@@ -1,62 +1,62 @@
 {
   "fish": [
     {
-      "classcode": "CPUN",
-      "minAbundance": 0,
-      "meanAbundance": 133.36,
-      "maxAbundance": 632,
-      "siteCount": 25,
-      "observedSiteCount": 19,
-      "speciesDefinition": "Chromis punctipinnis",
-      "commonName": "Blacksmith"
-    },
-    {
-      "classcode": "HROS",
-      "minAbundance": 0,
-      "meanAbundance": 131.6,
-      "maxAbundance": 919,
-      "siteCount": 25,
-      "observedSiteCount": 19,
-      "speciesDefinition": "Heterostichus rostratus",
-      "commonName": "Giant Kelpfish"
-    },
-    {
-      "classcode": "SMYS",
-      "minAbundance": 0,
-      "meanAbundance": 47.6,
-      "maxAbundance": 356,
-      "siteCount": 25,
-      "observedSiteCount": 8,
-      "speciesDefinition": "Sebastes mystinus",
-      "commonName": "Blue Rockfish"
-    },
-    {
       "classcode": "ATHE",
       "minAbundance": 0,
-      "meanAbundance": 33.64,
-      "maxAbundance": 359,
+      "meanAbundance": 10.72,
+      "maxAbundance": 90,
       "siteCount": 25,
       "observedSiteCount": 9,
       "speciesDefinition": "Atherinopsidae",
       "commonName": "Grunion, Topsmelt Or Jacksmelt"
     },
     {
-      "classcode": "BFRE",
+      "classcode": "EMOR",
       "minAbundance": 0,
-      "meanAbundance": 26.48,
+      "meanAbundance": 7.08,
       "maxAbundance": 80,
       "siteCount": 25,
-      "observedSiteCount": 16,
-      "speciesDefinition": "Brachyistius frenatus",
-      "commonName": "Kelp Surfperch"
+      "observedSiteCount": 3,
+      "speciesDefinition": "Engraulis mordax",
+      "commonName": "Northern Anchovy"
+    },
+    {
+      "classcode": "HROS",
+      "minAbundance": 0,
+      "meanAbundance": 6.52,
+      "maxAbundance": 27,
+      "siteCount": 25,
+      "observedSiteCount": 19,
+      "speciesDefinition": "Heterostichus rostratus",
+      "commonName": "Giant Kelpfish"
+    },
+    {
+      "classcode": "CPUN",
+      "minAbundance": 0,
+      "meanAbundance": 6.24,
+      "maxAbundance": 32,
+      "siteCount": 25,
+      "observedSiteCount": 19,
+      "speciesDefinition": "Chromis punctipinnis",
+      "commonName": "Blacksmith"
+    },
+    {
+      "classcode": "OCAL",
+      "minAbundance": 0,
+      "meanAbundance": 2.36,
+      "maxAbundance": 22,
+      "siteCount": 25,
+      "observedSiteCount": 19,
+      "speciesDefinition": "Oxyjulis californica",
+      "commonName": "Senorita"
     }
   ],
   "swath": [
     {
       "classcode": "STRPURAD",
-      "minAbundance": 23,
-      "meanAbundance": 1087.875,
-      "maxAbundance": 5392,
+      "minAbundance": 6,
+      "meanAbundance": 228.08333333333334,
+      "maxAbundance": 1348,
       "siteCount": 24,
       "observedSiteCount": 24,
       "speciesDefinition": "Strongylocentrotus purpuratus",
@@ -65,38 +65,38 @@
     {
       "classcode": "LAMREC",
       "minAbundance": 0,
-      "meanAbundance": 376.2916666666667,
-      "maxAbundance": 5468,
+      "meanAbundance": 90.04166666666667,
+      "maxAbundance": 1367,
       "siteCount": 24,
       "observedSiteCount": 6,
       "speciesDefinition": "Laminariales",
       "commonName": "Laminariales recruit- smaller than can be ID'd as MACPYRJUV or other Laminariales spp."
     },
     {
-      "classcode": "MEGUND",
-      "minAbundance": 0,
-      "meanAbundance": 339.6666666666667,
-      "maxAbundance": 1496,
-      "siteCount": 24,
-      "observedSiteCount": 18,
-      "speciesDefinition": "Megastraea undosa",
-      "commonName": "Wavy Turban Snail"
-    },
-    {
       "classcode": "LAMFAR",
       "minAbundance": 0,
-      "meanAbundance": 311.1666666666667,
-      "maxAbundance": 1412,
+      "meanAbundance": 88.45833333333333,
+      "maxAbundance": 447,
       "siteCount": 24,
       "observedSiteCount": 14,
       "speciesDefinition": "Laminaria farlowii",
       "commonName": "Oar Weed"
     },
     {
+      "classcode": "MEGUND",
+      "minAbundance": 0,
+      "meanAbundance": 85.58333333333333,
+      "maxAbundance": 374,
+      "siteCount": 24,
+      "observedSiteCount": 18,
+      "speciesDefinition": "Megastraea undosa",
+      "commonName": "Wavy Turban Snail"
+    },
+    {
       "classcode": "PTECALJUV",
       "minAbundance": 0,
-      "meanAbundance": 283.625,
-      "maxAbundance": 2815,
+      "meanAbundance": 70.45833333333333,
+      "maxAbundance": 704,
       "siteCount": 24,
       "observedSiteCount": 6,
       "speciesDefinition": "Pterygophora californica",

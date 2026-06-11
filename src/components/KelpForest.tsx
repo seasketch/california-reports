@@ -1,6 +1,11 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { ReportError, ResultsCard } from "@seasketch/geoprocessing/client-ui";
+import {
+  LayerToggle,
+  ReportError,
+  ResultsCard,
+  VerticalSpacer,
+} from "@seasketch/geoprocessing/client-ui";
 import type {
   KelpForestResults,
   KelpForestSpecies,
@@ -16,7 +21,7 @@ export const KelpForest: React.FunctionComponent = () => {
   const fishSpeciesLabel = t("Fish");
   const swathSpeciesLabel = t("Macroinvertebrates and Algae");
   const upcSpeciesLabel = t("Substrate");
-  const countLabel = t("Count");
+  const countLabel = t("# / Transect");
   const percentCoverLabel = t("% Cover");
   const minAbundanceLabel = t("Min");
   const meanAbundanceLabel = t("Mean");
@@ -45,6 +50,11 @@ export const KelpForest: React.FunctionComponent = () => {
                   </small>
                 </p>
               </Trans>
+              <LayerToggle
+                label={t("Show Kelp Forest Monitoring Sites on Map")}
+                layerId="pXKFkNvLs"
+              />
+              <VerticalSpacer />
 
               {kelpForestResults.fish.length === 0 &&
               kelpForestResults.swath.length === 0 &&

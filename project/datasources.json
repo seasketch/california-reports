@@ -401,7 +401,7 @@
     "layerName": "fish_surveys_2024_aggregated",
     "classKeys": [],
     "created": "2026-06-10T19:40:17.909Z",
-    "lastUpdated": "2026-06-10T19:40:17.909Z",
+    "lastUpdated": "2026-06-11T17:18:11.575Z",
     "src": "data/src/Monitoring/KelpForest/reports/fish_surveys_2024_aggregated.fgb",
     "propertiesToKeep": [
       "site",
@@ -423,7 +423,7 @@
     "layerName": "swath_2024_aggregated",
     "classKeys": [],
     "created": "2026-06-10T22:09:41.693Z",
-    "lastUpdated": "2026-06-10T22:09:41.693Z",
+    "lastUpdated": "2026-06-11T17:22:03.662Z",
     "src": "data/src/Monitoring/KelpForest/reports/swath_2024_aggregated.fgb",
     "propertiesToKeep": [
       "site",
@@ -438,14 +438,15 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/Monitoring/KelpForest/reports/upc_2024_aggregated.fgb",
-    "layerName": "upc_2024_aggregated",
-    "geo_type": "vector",
     "datasourceId": "upc_2024_aggregated",
+    "geo_type": "vector",
     "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "upc_2024_aggregated",
     "classKeys": [],
     "created": "2026-06-10T22:32:17.898Z",
     "lastUpdated": "2026-06-10T22:32:17.898Z",
+    "src": "data/src/Monitoring/KelpForest/reports/upc_2024_aggregated.fgb",
     "propertiesToKeep": [
       "site",
       "classcode",
@@ -456,7 +457,24 @@
       "species_definition",
       "common_name"
     ],
-    "explodeMulti": true,
-    "precalc": true
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "ccfrp_derived_effort_2023",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "ccfrp_derived_effort_2023",
+    "classKeys": [],
+    "created": "2026-06-11T17:27:57.810Z",
+    "lastUpdated": "2026-06-11T17:38:46.116Z",
+    "src": "data/src/Monitoring/CCFRP/reports/ccfrp_derived_effort_2023.fgb",
+    "propertiesToKeep": [
+      "Grid_Cell_ID",
+      "Common_Name",
+      "CPUE_catch_per_angler_hour",
+      "BPUE_biomass(kg)_per_angler_hour"
+    ],
+    "explodeMulti": true
   }
 ]

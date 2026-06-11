@@ -37,6 +37,7 @@
     "src/functions/span.ts",
     "src/functions/habitatNearshore.ts",
     "src/functions/habitatNearshoreWorker.ts",
-    "src/functions/kelpForest.ts"
+    "src/functions/kelpForest.ts",
+    "src/functions/ccfrp.ts"
   ]
 }

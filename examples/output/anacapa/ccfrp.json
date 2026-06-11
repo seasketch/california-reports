@@ -1,0 +1,697 @@
+{
+  "species": [
+    {
+      "commonName": "Ocean Whitefish",
+      "meanCpue": 7.01912247875,
+      "meanBpue": 3.07721918925,
+      "siteCount": 4,
+      "sitesWithCatch": 4
+    },
+    {
+      "commonName": "Blue Rockfish",
+      "meanCpue": 0.094339622625,
+      "meanBpue": 0.02226873675,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "California Scorpionfish",
+      "meanCpue": 0.093179223875,
+      "meanBpue": 0.042276669125,
+      "siteCount": 4,
+      "sitesWithCatch": 2
+    },
+    {
+      "commonName": "Rosy Rockfish",
+      "meanCpue": 0.064680796125,
+      "meanBpue": 0.009342594624999999,
+      "siteCount": 4,
+      "sitesWithCatch": 2
+    },
+    {
+      "commonName": "Lingcod",
+      "meanCpue": 0.047169811375,
+      "meanBpue": 0.108693326375,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Copper Rockfish",
+      "meanCpue": 0.0410958905,
+      "meanBpue": 0.01902415,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Blacksmith",
+      "meanCpue": 0.026041666625,
+      "meanBpue": 0.00518723625,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "California Halibut",
+      "meanCpue": 0.023584905625,
+      "meanBpue": 0.137876593125,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Treefish",
+      "meanCpue": 0.023584905625,
+      "meanBpue": 0.009494149625,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Olive or Yellowtail Rockfish",
+      "meanCpue": 0.023584905625,
+      "meanBpue": 0.00784772225,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Mackerel (Family Scombridae)",
+      "meanCpue": 0.023584905625,
+      "meanBpue": 0.000324823,
+      "siteCount": 4,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Rock Greenling",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Rock Sole",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Rock Wrasse",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Rubberlip Seaperch",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Salema",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Sand Sole",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Sanddab spp.",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Sarcastic Fringehead",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Sargo",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Scalyhead Sculpin",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Senorita",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Rainbow Seaperch",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Quillback Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pile Perch",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Petrale Sole",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pelagic Stingray",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Painted Greenling",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pacific Sardine",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pacific Sanddab",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pacific Halibut",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pacific Bonito",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pacific Barracuda",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Pacific  (Chub) Mackerel",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Opaleye",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Tubesnout",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Olive Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Yellowtail Jack",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Yellowfin Croaker",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Yelloweye Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Wolf Eel",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Widow Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "White Seabass",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "White Croaker",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Vermilion Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Unknown rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Unknown",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "UnID Blue Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Sharpnose Surfperch",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Top smelt",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Tiger Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Striped Seaperch",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Starry Skate",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Starry Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Squarespot Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Spiny Dogfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Speckled Sanddab",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Soupfin Shark",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Silversides (Family Atherinopsidae)",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Brown Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Chinook Salmon",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "China Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Chilipepper Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Canary Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "California Sheephead",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "California Lizardfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Calico Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Cabezon",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Bull Sculpin",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Buffalo Sculpin",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Bocaccio",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Black Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Black-and-Yellow Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Bigmouth Sole",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Big Skate",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Bat Ray",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Barred Sand Bass",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Fantail Sole",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Yellowtail Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Common Thresher Shark",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Ocean Sunfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Northern Anchovy",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Longfin Sanddab",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Kelp Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Kelp Greenling",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Kelp Bass",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Jack Smelt",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Jack Mackerel",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Halfmoon",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Honeycomb Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Deacon Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "English Sole",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Finescale Triggerfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Flag Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Garibaldi",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Giant Sea Bass",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Gopher Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Grass Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    },
+    {
+      "commonName": "Freckled Rockfish",
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 4,
+      "sitesWithCatch": 0
+    }
+  ]
+}

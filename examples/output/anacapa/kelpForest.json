@@ -1,0 +1,158 @@
+{
+  "fish": [
+    {
+      "classcode": "CPUN",
+      "minAbundance": 7,
+      "meanAbundance": 9.5,
+      "maxAbundance": 12,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Chromis punctipinnis",
+      "commonName": "Blacksmith"
+    },
+    {
+      "classcode": "HROS",
+      "minAbundance": 6,
+      "meanAbundance": 8,
+      "maxAbundance": 10,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Heterostichus rostratus",
+      "commonName": "Giant Kelpfish"
+    },
+    {
+      "classcode": "ADAV",
+      "minAbundance": 0,
+      "meanAbundance": 4.5,
+      "maxAbundance": 9,
+      "siteCount": 2,
+      "observedSiteCount": 1,
+      "speciesDefinition": "Anisotremus davidsonii",
+      "commonName": "Sargo"
+    },
+    {
+      "classcode": "BFRE",
+      "minAbundance": 3,
+      "meanAbundance": 4,
+      "maxAbundance": 5,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Brachyistius frenatus",
+      "commonName": "Kelp Surfperch"
+    },
+    {
+      "classcode": "GNIG",
+      "minAbundance": 2,
+      "meanAbundance": 3,
+      "maxAbundance": 4,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Girella nigricans",
+      "commonName": "Opaleye"
+    }
+  ],
+  "swath": [
+    {
+      "classcode": "STRPURAD",
+      "minAbundance": 40,
+      "meanAbundance": 115.5,
+      "maxAbundance": 191,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Strongylocentrotus purpuratus",
+      "commonName": "Purple Urchin adult"
+    },
+    {
+      "classcode": "MEGUND",
+      "minAbundance": 35,
+      "meanAbundance": 110,
+      "maxAbundance": 185,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Megastraea undosa",
+      "commonName": "Wavy Turban Snail"
+    },
+    {
+      "classcode": "LAMFAR",
+      "minAbundance": 6,
+      "meanAbundance": 83,
+      "maxAbundance": 160,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Laminaria farlowii",
+      "commonName": "Oar Weed"
+    },
+    {
+      "classcode": "EISARBADSUB",
+      "minAbundance": 2,
+      "meanAbundance": 21,
+      "maxAbundance": 40,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Eisenia arborea",
+      "commonName": "Southern Sea Palm"
+    },
+    {
+      "classcode": "STEOSMAD",
+      "minAbundance": 10,
+      "meanAbundance": 19.5,
+      "maxAbundance": 29,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Stephanocystis osmundacea",
+      "commonName": "chain-bladder kelp adult"
+    }
+  ],
+  "upc": [
+    {
+      "classcode": "SLTREL",
+      "minAbundance": 64.46666666666667,
+      "meanAbundance": 71.83333333333334,
+      "maxAbundance": 79.2,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Vertical Relief: Slight",
+      "commonName": "Vertical Relief: Slight"
+    },
+    {
+      "classcode": "BEDRK",
+      "minAbundance": 45.825,
+      "meanAbundance": 60.8375,
+      "maxAbundance": 75.85,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Substrate: Bedrock",
+      "commonName": "Substrate: Bedrock"
+    },
+    {
+      "classcode": "HIREL",
+      "minAbundance": 11.65,
+      "meanAbundance": 27.491666666666667,
+      "maxAbundance": 43.333333333333336,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Vertical Relief: High",
+      "commonName": "Vertical Relief: High"
+    },
+    {
+      "classcode": "BOULD",
+      "minAbundance": 23.333333333333332,
+      "meanAbundance": 25.829166666666666,
+      "maxAbundance": 28.325,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Substrate: Boulder",
+      "commonName": "Substrate: Boulder"
+    },
+    {
+      "classcode": "MODREL",
+      "minAbundance": 17.766666666666666,
+      "meanAbundance": 21.65,
+      "maxAbundance": 25.53333333333333,
+      "siteCount": 2,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Vertical Relief: Moderate",
+      "commonName": "Vertical Relief: Moderate"
+    }
+  ]
+}
