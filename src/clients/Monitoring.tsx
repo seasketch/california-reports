@@ -4,15 +4,18 @@ import { useTranslation } from "react-i18next";
 import { Translator } from "../components/TranslatorAsync.js";
 import { KelpForest } from "../components/KelpForest.js";
 import { Ccfrp } from "../components/Ccfrp.js";
+import { Intertidal } from "../components/Intertidal.js";
 
 const BaseReport = () => {
   const { t } = useTranslation();
   const kelpForestId = "kelpForest";
   const nearshoreFisheriesId = "nearshoreFisheries";
+  const intertidalId = "intertidal";
   const [tab, setTab] = useState<string>(kelpForestId);
   const segments = [
     { id: kelpForestId, label: t("Kelp Forest") },
     { id: nearshoreFisheriesId, label: t("Nearshore Fisheries") },
+    { id: intertidalId, label: t("Rocky Intertidal") },
   ];
 
   return (
@@ -27,6 +30,7 @@ const BaseReport = () => {
 
       {tab === kelpForestId && <KelpForest />}
       {tab === nearshoreFisheriesId && <Ccfrp />}
+      {tab === intertidalId && <Intertidal />}
     </>
   );
 };

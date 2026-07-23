@@ -467,13 +467,54 @@
     "layerName": "ccfrp_derived_effort_2023",
     "classKeys": [],
     "created": "2026-06-11T17:27:57.810Z",
-    "lastUpdated": "2026-06-11T17:38:46.116Z",
+    "lastUpdated": "2026-07-23T16:32:05.398Z",
     "src": "data/src/Monitoring/CCFRP/reports/ccfrp_derived_effort_2023.fgb",
     "propertiesToKeep": [
       "Grid_Cell_ID",
       "Common_Name",
       "CPUE_catch_per_angler_hour",
+      "BPUE_biomass(kg)_per_angler_hour",
+      "MPA_status"
+    ],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "ccfrp-full",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "ccfrp_derived_effort",
+    "classKeys": [],
+    "created": "2026-07-23T17:38:00.091Z",
+    "lastUpdated": "2026-07-23T17:38:00.091Z",
+    "src": "data/src/Monitoring/CCFRP/ccfrp_derived_effort.fgb",
+    "propertiesToKeep": [
+      "MPA_Status",
+      "Date",
+      "Grid_Cell_ID",
+      "Common_Name",
+      "CPUE_catch_per_angler_hour",
       "BPUE_biomass(kg)_per_angler_hour"
+    ],
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "intertidal",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "percent_cover",
+    "classKeys": [],
+    "created": "2026-07-23T18:26:30.171Z",
+    "lastUpdated": "2026-07-23T18:29:03.968Z",
+    "src": "data/src/Monitoring/IntertidalBiodiversity/percent_cover.fgb",
+    "propertiesToKeep": [
+      "marine_site_name",
+      "marine_site_code",
+      "cbs_site_code",
+      "year",
+      "species_lump",
+      "percent_cover"
     ],
     "explodeMulti": true
   }

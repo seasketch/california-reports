@@ -1,0 +1,158 @@
+{
+  "fish": [
+    {
+      "classcode": "EMOR",
+      "minAbundance": 0,
+      "meanAbundance": 38,
+      "maxAbundance": 80,
+      "siteCount": 4,
+      "observedSiteCount": 2,
+      "speciesDefinition": "Engraulis mordax",
+      "commonName": "Northern Anchovy"
+    },
+    {
+      "classcode": "HROS",
+      "minAbundance": 1,
+      "meanAbundance": 17.25,
+      "maxAbundance": 27,
+      "siteCount": 4,
+      "observedSiteCount": 4,
+      "speciesDefinition": "Heterostichus rostratus",
+      "commonName": "Giant Kelpfish"
+    },
+    {
+      "classcode": "CPUN",
+      "minAbundance": 3,
+      "meanAbundance": 7,
+      "maxAbundance": 12,
+      "siteCount": 4,
+      "observedSiteCount": 4,
+      "speciesDefinition": "Chromis punctipinnis",
+      "commonName": "Blacksmith"
+    },
+    {
+      "classcode": "ATHE",
+      "minAbundance": 0,
+      "meanAbundance": 4.25,
+      "maxAbundance": 17,
+      "siteCount": 4,
+      "observedSiteCount": 1,
+      "speciesDefinition": "Atherinopsidae",
+      "commonName": "Grunion, Topsmelt Or Jacksmelt"
+    },
+    {
+      "classcode": "BFRE",
+      "minAbundance": 0,
+      "meanAbundance": 2,
+      "maxAbundance": 5,
+      "siteCount": 4,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Brachyistius frenatus",
+      "commonName": "Kelp Surfperch"
+    }
+  ],
+  "swath": [
+    {
+      "classcode": "LAMFAR",
+      "minAbundance": 113,
+      "meanAbundance": 267,
+      "maxAbundance": 353,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Laminaria farlowii",
+      "commonName": "Oar Weed"
+    },
+    {
+      "classcode": "STRPURAD",
+      "minAbundance": 12,
+      "meanAbundance": 34.666666666666664,
+      "maxAbundance": 68,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Strongylocentrotus purpuratus",
+      "commonName": "Purple Urchin adult"
+    },
+    {
+      "classcode": "APOPAR",
+      "minAbundance": 18,
+      "meanAbundance": 29,
+      "maxAbundance": 39,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Apostichopus parvimensis",
+      "commonName": "Warty Sea Cucumber"
+    },
+    {
+      "classcode": "MEGUND",
+      "minAbundance": 11,
+      "meanAbundance": 21,
+      "maxAbundance": 33,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Megastraea undosa",
+      "commonName": "Wavy Turban Snail"
+    },
+    {
+      "classcode": "EISARBADSUB",
+      "minAbundance": 11,
+      "meanAbundance": 20.666666666666668,
+      "maxAbundance": 26,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Eisenia arborea",
+      "commonName": "Southern Sea Palm"
+    }
+  ],
+  "upc": [
+    {
+      "classcode": "SLTREL",
+      "minAbundance": 75.85,
+      "meanAbundance": 83.89999999999999,
+      "maxAbundance": 88.35,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Vertical Relief: Slight",
+      "commonName": "Vertical Relief: Slight"
+    },
+    {
+      "classcode": "BEDRK",
+      "minAbundance": 41.675,
+      "meanAbundance": 49.166666666666664,
+      "maxAbundance": 58.325,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Substrate: Bedrock",
+      "commonName": "Substrate: Bedrock"
+    },
+    {
+      "classcode": "BOULD",
+      "minAbundance": 27.5,
+      "meanAbundance": 30.833333333333332,
+      "maxAbundance": 33.325,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Substrate: Boulder",
+      "commonName": "Substrate: Boulder"
+    },
+    {
+      "classcode": "UNDLAMFAR",
+      "minAbundance": 10,
+      "meanAbundance": 27.224999999999998,
+      "maxAbundance": 40.825,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Laminaria farlowii",
+      "commonName": "Laminaria farlowii Sub-Canopy (Layer Above Primary Spaceholder)"
+    },
+    {
+      "classcode": "CRUCOR",
+      "minAbundance": 16.675,
+      "meanAbundance": 18.333333333333332,
+      "maxAbundance": 20.825,
+      "siteCount": 3,
+      "observedSiteCount": 3,
+      "speciesDefinition": "Coralline Algae -Crustose",
+      "commonName": "Coralline Algae -Crustose"
+    }
+  ]
+}

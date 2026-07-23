@@ -1,6 +1,7 @@
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 import {
+  InfoStatus,
   LayerToggle,
   ReportError,
   ResultsCard,
@@ -59,11 +60,15 @@ export const KelpForest: React.FunctionComponent = () => {
               {kelpForestResults.fish.length === 0 &&
               kelpForestResults.swath.length === 0 &&
               kelpForestResults.upc.length === 0 ? (
-                <p>
-                  {t(
-                    "No kelp forest monitoring points were found within the selected MPA(s).",
-                  )}
-                </p>
+                <InfoStatus
+                  msg={
+                    <i>
+                      {t(
+                        "No kelp forest monitoring sites surveyed in 2024 were found within the selected area.",
+                      )}
+                    </i>
+                  }
+                />
               ) : (
                 <>
                   <SpeciesTable

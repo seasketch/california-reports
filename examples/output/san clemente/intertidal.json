@@ -1,0 +1,2111 @@
+{
+  "years": [
+    2025
+  ],
+  "species": [
+    {
+      "species": "Rock",
+      "minPercentCover": 30.858676208,
+      "meanPercentCover": 39.7840345524,
+      "maxPercentCover": 53.153988868,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Chthamalus dalli/fissus",
+      "minPercentCover": 2.9513888889,
+      "meanPercentCover": 7.82920080402,
+      "maxPercentCover": 16.319129646,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Corallina spp",
+      "minPercentCover": 4.8695652174,
+      "meanPercentCover": 6.9842950215399995,
+      "maxPercentCover": 8.7035358114,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Chondracanthus canaliculatus",
+      "minPercentCover": 2.5046382189,
+      "meanPercentCover": 5.9542589370800005,
+      "maxPercentCover": 10.782608696,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Encrusting coralline",
+      "minPercentCover": 4.9864007253,
+      "meanPercentCover": 5.75831300172,
+      "maxPercentCover": 6.9565217391,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Pterocladiella capillacea",
+      "minPercentCover": 1.0204081633,
+      "meanPercentCover": 4.68939399142,
+      "maxPercentCover": 7.1304347826,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Blue Green Algae",
+      "minPercentCover": 0.5439709882,
+      "meanPercentCover": 4.32675474834,
+      "maxPercentCover": 7.8260869565,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Non Coralline crust",
+      "minPercentCover": 1.6697588126,
+      "meanPercentCover": 4.261147997539999,
+      "maxPercentCover": 6.7708333333,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Sargassum agardhianum",
+      "minPercentCover": 0,
+      "meanPercentCover": 3.6374511722999996,
+      "maxPercentCover": 8.1597222222,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Stephanocystis dioica",
+      "minPercentCover": 1.0416666667,
+      "meanPercentCover": 3.6316074156,
+      "maxPercentCover": 6.3506261181,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Laurencia spp",
+      "minPercentCover": 0.0906618314,
+      "meanPercentCover": 2.7597148010200003,
+      "maxPercentCover": 5.7291666667,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Tetraclita rubescens",
+      "minPercentCover": 0.7155635063,
+      "meanPercentCover": 2.47834297738,
+      "maxPercentCover": 3.8984587489,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Phyllospadix scouleri/serrulatus",
+      "minPercentCover": 0,
+      "meanPercentCover": 2.3934841988800004,
+      "maxPercentCover": 7.2356215213,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Egregia menziesii",
+      "minPercentCover": 0,
+      "meanPercentCover": 1.78813448728,
+      "maxPercentCover": 6.8872987478,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Thylacodes squamigerus",
+      "minPercentCover": 0.0906618314,
+      "meanPercentCover": 1.6073015513000002,
+      "maxPercentCover": 4.5138888889,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Jania rosea",
+      "minPercentCover": 0.7421150278,
+      "meanPercentCover": 1.5492620036,
+      "maxPercentCover": 2.7728085868,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Mazzaella affinis",
+      "minPercentCover": 0.1736111111,
+      "meanPercentCover": 1.35771913268,
+      "maxPercentCover": 2.9565217391,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Silvetia compressa",
+      "minPercentCover": 0,
+      "meanPercentCover": 1.23682366532,
+      "maxPercentCover": 3.4722222222,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Phragmatopoma/Sabellaria spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 1.21801733132,
+      "maxPercentCover": 2.9684601113,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Laurencia pacifica/masonii",
+      "minPercentCover": 0.5217391304,
+      "meanPercentCover": 1.13207107484,
+      "maxPercentCover": 1.6697588126,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Chondracanthus spinosus",
+      "minPercentCover": 0.1736111111,
+      "meanPercentCover": 1.10762390408,
+      "maxPercentCover": 1.8132366274,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Caulacanthus okamurae",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.95572282554,
+      "maxPercentCover": 2.6833631485,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Mytilus californianus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.9268532270800002,
+      "maxPercentCover": 4.170444243,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Lithothrix aspergillum",
+      "minPercentCover": 0.185528757,
+      "meanPercentCover": 0.91301535096,
+      "maxPercentCover": 2.4305555556,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Diatom",
+      "minPercentCover": 0.3626473255,
+      "meanPercentCover": 0.85608975942,
+      "maxPercentCover": 1.8783542039,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Endoplura aurea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.8218002494600001,
+      "maxPercentCover": 2.1758839529,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Melanosiphon/Scytosiphon spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.81164486706,
+      "maxPercentCover": 2.1466905188,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Dendropoma lituella",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.8105302602,
+      "maxPercentCover": 1.9097222222,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Gelidium spp",
+      "minPercentCover": 0.5217391304,
+      "meanPercentCover": 0.8062713586400001,
+      "maxPercentCover": 1.1786038078,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Ceramiales",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.6576724309199999,
+      "maxPercentCover": 2.5939177102,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Bossiella spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.6010910573999999,
+      "maxPercentCover": 1.9038984587,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Petrospongium rugosum",
+      "minPercentCover": 0.1813236627,
+      "meanPercentCover": 0.59927257708,
+      "maxPercentCover": 1.3888888889,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Osmundea sinicola",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.5969171614200001,
+      "maxPercentCover": 1.7361111111,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Endarachne/Petalonia/Phaeostrophion spp",
+      "minPercentCover": 0.0927643785,
+      "meanPercentCover": 0.53251902464,
+      "maxPercentCover": 1.0733452594,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Pollicipes polymerus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.50938829336,
+      "maxPercentCover": 2.1758839529,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Pseudolithoderma nigrum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.4905939094600001,
+      "maxPercentCover": 0.9276437848,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Lithophyllum/Lithothamnion spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.47861610802000004,
+      "maxPercentCover": 1.0416666667,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Neogastroclonium subarticulatum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.45294710656000003,
+      "maxPercentCover": 0.9276437848,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Sargassum muticum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.42752462541999997,
+      "maxPercentCover": 1.2692656392,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Spirorbis spp",
+      "minPercentCover": 0.0906618314,
+      "meanPercentCover": 0.42746970708000004,
+      "maxPercentCover": 1.0733452594,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Jania verrucosa",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.32341834524,
+      "maxPercentCover": 1.2692656392,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Ulvophyceae",
+      "minPercentCover": 0.0906618314,
+      "meanPercentCover": 0.31847582648,
+      "maxPercentCover": 0.5217391304,
+      "siteCount": 5,
+      "observedSiteCount": 5
+    },
+    {
+      "species": "Pyropia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.31503461148,
+      "maxPercentCover": 1.2173913043,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Eisenia arborea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.30254952768,
+      "maxPercentCover": 0.9838998211,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Eudistoma psammion",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.29600499228,
+      "maxPercentCover": 1.2987012987,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Phyllospadix torreyi",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.28981619658,
+      "maxPercentCover": 0.9276437848,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Polysiphonia/Eutrichosiphonia/Leptosiphonia/Vertebrata spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.28489828818,
+      "maxPercentCover": 0.6956521739,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Zonaria farlowii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.28240530876000003,
+      "maxPercentCover": 0.8680555556,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Symphyocladiella baileyi",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.2792581689,
+      "maxPercentCover": 0.6944444444,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Cryptopleura/Hymenena spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.27265671388,
+      "maxPercentCover": 0.6493506494,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Mazzaella leptorhynchos",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.26435427926,
+      "maxPercentCover": 1.0434782609,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Plocamium pacificum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.25184108196,
+      "maxPercentCover": 0.3710575139,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Hapterophycus canaliculatus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.24656108564,
+      "maxPercentCover": 0.8680555556,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Codium setchellii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.20839371982000002,
+      "maxPercentCover": 0.8680555556,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Endocladia muricata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.20029704786,
+      "maxPercentCover": 0.8159564823,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Gelidium purpurascens",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.19649178132,
+      "maxPercentCover": 0.6346328196,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Serpula vermicularis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.19279769774,
+      "maxPercentCover": 0.6956521739,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Osmundea spectabilis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.18203258594,
+      "maxPercentCover": 0.3710575139,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Anthopleura elegantissima",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.18152357658,
+      "maxPercentCover": 0.3710575139,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Gelidium robustum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.16170917262,
+      "maxPercentCover": 0.6346328196,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Dictyota coriacea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.15979694938,
+      "maxPercentCover": 0.3472222222,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Chondria decipiens",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.14775921754,
+      "maxPercentCover": 0.6493506494,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Sargassum horneri",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.14589994904,
+      "maxPercentCover": 0.5439709882,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Rhodymenia californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.14078978943999998,
+      "maxPercentCover": 0.5217391304,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Codium fragile",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.14072940297999997,
+      "maxPercentCover": 0.347826087,
+      "siteCount": 5,
+      "observedSiteCount": 4
+    },
+    {
+      "species": "Mytilisepta/Brachidontes spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.12384154326,
+      "maxPercentCover": 0.3472222222,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Chaetomorpha spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.10658223793999999,
+      "maxPercentCover": 0.2683363148,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Tar",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.10655019584,
+      "maxPercentCover": 0.3472222222,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Anthopleura sola",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.09002072638,
+      "maxPercentCover": 0.185528757,
+      "siteCount": 5,
+      "observedSiteCount": 3
+    },
+    {
+      "species": "Plocamium violaceum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.08799732013999999,
+      "maxPercentCover": 0.3472222222,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Aplidium spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.07294997452,
+      "maxPercentCover": 0.2719854941,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Symphyocladiella dendroidea/Xiphosiphonia pennata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.07155635062,
+      "maxPercentCover": 0.3577817531,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Macrocystis pyrifera",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.07104734124,
+      "maxPercentCover": 0.1813236627,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Dictyopteris undulata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.07056078402,
+      "maxPercentCover": 0.1788908766,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Tiffaniella snyderae",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.07056078402,
+      "maxPercentCover": 0.1788908766,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Nemalion elminthoides",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.052914974979999994,
+      "maxPercentCover": 0.1739130435,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Anthopleura mariae",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.05261130988,
+      "maxPercentCover": 0.1736111111,
+      "siteCount": 5,
+      "observedSiteCount": 2
+    },
+    {
+      "species": "Haliclona spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.0371057514,
+      "maxPercentCover": 0.185528757,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Spyridia filamentosa",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.0371057514,
+      "maxPercentCover": 0.185528757,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Balanus glandula",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.03577817532,
+      "maxPercentCover": 0.1788908766,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Callithamnion rupicola",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.03472222222,
+      "maxPercentCover": 0.1736111111,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Colpomenia/Leathesia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.03472222222,
+      "maxPercentCover": 0.1736111111,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Pseudochama exogyra",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.03472222222,
+      "maxPercentCover": 0.1736111111,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Sand",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.03472222222,
+      "maxPercentCover": 0.1736111111,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Colonial diatom",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.0185528757,
+      "maxPercentCover": 0.0927643785,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Herposiphonia verticillata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.0185528757,
+      "maxPercentCover": 0.0927643785,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Petaloconchus montereyensis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.0185528757,
+      "maxPercentCover": 0.0927643785,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Acrosorium spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.01788908766,
+      "maxPercentCover": 0.0894454383,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Jania tenella",
+      "minPercentCover": 0,
+      "meanPercentCover": 0.01788908766,
+      "maxPercentCover": 0.0894454383,
+      "siteCount": 5,
+      "observedSiteCount": 1
+    },
+    {
+      "species": "Abietinaria/Amphisbetia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Acrosiphonia/Cladophora spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Aglaophenia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ahnfeltia fastigiata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ahnfeltiopsis linearis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Alaria marginata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Amphiroa beauvoisii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Analipus japonicus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Anisocladella pacifica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Anthopleura artemisia",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Anthopleura xanthogrammica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Antithamnionella spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Asparagopsis taxiformis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Balanus crenatus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Balanus glandula/Semibalanus balanoides",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Balanus nubilus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Bangia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Besa leptophylla",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Boring clam",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Bryopsis spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Bugula neritina",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Calliarthron spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Callithamnion pikeanum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Callophyllis spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Carpopeltis bushiae",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ceramothamnion coulteri",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondracanthus corymbiferus/exaspertata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondracanthus harveyanus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondria acrorhizophora",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondria arcuata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondria dasyphylla",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondria nidifica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chondria oppositiclada",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Chone minuta",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Cladophora columbiana",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Cladophora graminea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Clathria pennata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Clavelina huntsmani",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Cliona celata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Collinsiella tuberculata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Constantinea simplex",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Corynactis californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Costaria costata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Cryptosiphonia woodii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Cumagloia andersonii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Cumathamnion decipiens",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dasya binghamiae",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dasysiphonia japonica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dendrobeania lichenoides",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Derbesia marina",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Desmarestia ligulata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Diadumene lineata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Diaperoforma californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dictyoneurum californicum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dictyota flabellata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Didemnum vexillum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dilsea californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Distaplia occidentalis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Distaplia stylifera",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dodecaceria spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Dynamenella glabra",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ectocarpus spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Encephalophycus tuberculatus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Epiactis prolifera",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Erythroglossum californicum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Erythrophyllum delesserioides",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Eudendrium californicum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Eudistoma ritteri",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Eudistylia polymorpha/vancouveri",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Farlowia/Pikea spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Flustrellidra corniculata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Fredericqia chiton",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Fucus spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Gastroclonium parvum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Gloiopeltis furcata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Gloiosiphonia californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Gracilariopsis/Gracilaria spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Grateloupia angusta",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Grateloupia californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Grateloupia cornea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Halichondria spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Halosaccion glandiforme",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Halymenia/Schizymenia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Hapalospongidion gelatinosum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Haplogloia andersonii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Hedophyllum sessile",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Herpochondria borealis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Herposiphonia littoralis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Herposiphonia plumula",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Hypnea spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Idotea spp/Pentidotea spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Integripelta bilabiata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Johansenia macmillanii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Laminaria ephemera",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Laminaria farlowii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Laminaria setchellii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Laminaria sinclairii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Lessoniopsis littoralis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Lichen",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Lomentaria hakodatensis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Magallana gigas",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mastocarpus spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mazzaella flaccida/oregona/splendens",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mazzaella japonica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mazzaella linearis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mazzaella parksii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mazzaella phyllocarpa",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mazzaella volans",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Megabalanus californicus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Membranipora spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mesophyllum/Clathromorphum/Neopolyporolithon spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Metridium senile",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Mytilus trossulus/galloprovincialis/edulis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Neoamphitrite robusta",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Neoptilota/Ptilota spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Neorhodomela larix",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Neorhodomela oregona",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Nereocystis luetkeana",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Nienburgia andersoniana",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Obelia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Odonthalia floccosa",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Odonthalia washingtoniensis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Opuntiella californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Osmundea splendens",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Padina spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Palmaria callophylloides",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Palmaria hecatensis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Palmaria mollis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Palmaria palmata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pelvetiopsis arborescens/limitata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pelvetiopsis californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Petaloconchus compactus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pista spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pleonosporium spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Plocamium oregonum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pododesmus macrochisma",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Polyneura latissima",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Prasiola spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Primavelans insculpta",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Prionitis filiformis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Prionitis lanceolata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Prionitis linearis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Prionitis sternbergii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pseudopotamilla occelata",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pterocladiella media",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pterygophora californica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Pylaiella littoralis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ralfsia fungiformis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Rhizoclonium spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Rhodymenia pacifica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ruditapes philippinarum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Saccharina latissima",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Sarcodiotheca gaudichaudii",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Sargassum palmeri",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Savoiea bipinnata/robusta",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Schizoporella japonica",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Schizoporella unicornis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Semibalanus cariosus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Sertularella/Sertularia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Sorella delicatula",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Sphacelaria/Battersia spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Spirobranchus spinosus",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Stenogramma interruptum",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Stephanocystis osmundacea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Styela montereyensis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Taonia lennebackerae",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Turnerella mertensiana",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Ulothrix spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Urospora spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Urticina coriacea",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Urticina crassicornis",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Verrucaria maura",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Xingyurella turgida",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    },
+    {
+      "species": "Zostera spp",
+      "minPercentCover": 0,
+      "meanPercentCover": 0,
+      "maxPercentCover": 0,
+      "siteCount": 5,
+      "observedSiteCount": 0
+    }
+  ]
+}

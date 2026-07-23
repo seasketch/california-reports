@@ -19,6 +19,7 @@ import { spacing } from "./spacing.js";
 import { span } from "./span.js";
 import { kelpForest } from "./kelpForest.js";
 import { ccfrp } from "./ccfrp.js";
+import { intertidal } from "./intertidal.js";
 
 // Create standard smoke tests
 function createSmokeTest(
@@ -60,6 +61,11 @@ const tests = [
   { name: "span", func: span, timeout: 180_000 },
   { name: "kelpForest", func: kelpForest, timeout: 180_000 },
   { name: "ccfrp", func: ccfrp, timeout: 180_000 },
+  {
+    name: "intertidal",
+    func: intertidal,
+    timeout: 180_000,
+  },
 ];
 
 // Generate tests
