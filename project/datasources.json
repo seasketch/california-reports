@@ -569,5 +569,34 @@
       "MPA_Status"
     ],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/Monitoring/IntertidalBiodiversity/intertidalBiodiversity_sites.fgb",
+    "layerName": "intertidalBiodiversity_sites",
+    "geo_type": "vector",
+    "datasourceId": "intertidalBiodiversity_sites",
+    "formats": ["fgb"],
+    "classKeys": [],
+    "created": "2026-08-03T21:29:51.380Z",
+    "lastUpdated": "2026-08-03T21:29:51.380Z",
+    "propertiesToKeep": [
+      "marine_site_code",
+      "marine_site_name",
+      "marine_sort_order",
+      "county",
+      "island",
+      "state_province",
+      "country",
+      "pisco_code",
+      "mpa_region",
+      "mpa_lt_region",
+      "mpa_designation",
+      "mpa_name",
+      "LTM_project_short_code",
+      "georegion",
+      "bioregion"
+    ],
+    "explodeMulti": true,
+    "precalc": true
   }
 ]

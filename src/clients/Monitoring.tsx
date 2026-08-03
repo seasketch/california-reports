@@ -5,6 +5,7 @@ import { Translator } from "../components/TranslatorAsync.js";
 import { KelpForest } from "../components/KelpForest.js";
 import { KelpForestOverview } from "../components/KelpForestOverview.js";
 import { CcfrpOverview } from "../components/CcfrpOverview.js";
+import { IntertidalOverview } from "../components/IntertidalOverview.js";
 import { Ccfrp } from "../components/Ccfrp.js";
 import { Intertidal } from "../components/Intertidal.js";
 
@@ -35,6 +36,7 @@ const BaseReport = () => {
       <ReportPage hidden={tab !== overviewId}>
         <KelpForestOverview />
         <CcfrpOverview />
+        <IntertidalOverview />
       </ReportPage>
       <ReportPage hidden={tab !== kelpForestId}>
         <KelpForest />

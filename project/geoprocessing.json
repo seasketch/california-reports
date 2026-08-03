@@ -41,6 +41,7 @@
     "src/functions/kelpForestOverview.ts",
     "src/functions/ccfrp.ts",
     "src/functions/ccfrpOverview.ts",
+    "src/functions/intertidalOverview.ts",
     "src/functions/intertidal.ts"
   ]
 }
