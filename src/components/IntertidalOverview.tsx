@@ -59,7 +59,7 @@ export const IntertidalOverview: React.FunctionComponent = () => {
                     }}
                   />
                   <VerticalSpacer />
-                  <Collapse title={t("Show by Site")}>
+                  <Collapse title={t("Sites")}>
                     <SiteBreakdownTable
                       sites={results.sites}
                       labels={{

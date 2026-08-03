@@ -58,7 +58,7 @@ export const CcfrpOverview: React.FunctionComponent = () => {
                     }}
                   />
                   <VerticalSpacer />
-                  <Collapse title={t("Show by Site")}>
+                  <Collapse title={t("Sites")}>
                     <SiteBreakdownTable
                       sites={results.sites}
                       labels={{
