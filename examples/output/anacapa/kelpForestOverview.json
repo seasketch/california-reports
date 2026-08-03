@@ -8,6 +8,9 @@
     {
       "site": "ANACAPA_ADMIRALS_CEN",
       "siteName": "Anacapa Admirals Center",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         1999,
         2004,
@@ -315,6 +318,9 @@
     {
       "site": "ANACAPA_ADMIRALS_E",
       "siteName": "Anacapa Admirals East",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         1999,
         2004,
@@ -622,6 +628,9 @@
     {
       "site": "ANACAPA_ADMIRALS_W",
       "siteName": "Anacapa Admirals West",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,
@@ -926,6 +935,9 @@
     {
       "site": "ANACAPA_BLACK_SEA_BASS",
       "siteName": "Anacapa Black Sea Bass",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2006,
         2007,
@@ -1085,6 +1097,9 @@
     {
       "site": "ANACAPA_EAST_FISH_CAMP_CEN",
       "siteName": "Anacapa East Fish Camp Center",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,
@@ -1390,6 +1405,9 @@
     {
       "site": "ANACAPA_EAST_FISH_CAMP_E",
       "siteName": "Anacapa East Fish Camp East",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,
@@ -1695,6 +1713,9 @@
     {
       "site": "ANACAPA_EAST_FISH_CAMP_W",
       "siteName": "Anacapa East Fish Camp West",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,
@@ -2000,6 +2021,9 @@
     {
       "site": "ANACAPA_EAST_ISLE_CEN",
       "siteName": "Anacapa East Isle Center",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         1999,
         2000,
@@ -2323,6 +2347,9 @@
     {
       "site": "ANACAPA_EAST_ISLE_E",
       "siteName": "Anacapa East Isle East",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         1999,
         2000,
@@ -2646,6 +2673,9 @@
     {
       "site": "ANACAPA_EAST_ISLE_W",
       "siteName": "Anacapa East Isle West",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         1999,
         2000,
@@ -2969,6 +2999,9 @@
     {
       "site": "ANACAPA_LIGHTHOUSE_REEF_CEN",
       "siteName": "Anacapa Lighthouse Reef Center",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2004,
         2005,
@@ -3287,6 +3320,9 @@
     {
       "site": "ANACAPA_LIGHTHOUSE_REEF_E",
       "siteName": "Anacapa Lighthouse Reef East",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2004,
         2005,
@@ -3605,6 +3641,9 @@
     {
       "site": "ANACAPA_LIGHTHOUSE_REEF_W",
       "siteName": "Anacapa Lighthouse Reef West",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,
@@ -3921,6 +3960,9 @@
     {
       "site": "ANACAPA_MIDDLE_ISLE_CEN",
       "siteName": "Anacapa Middle Isle Center",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2000,
         2001,
@@ -4243,6 +4285,9 @@
     {
       "site": "ANACAPA_MIDDLE_ISLE_E",
       "siteName": "Anacapa Middle Isle East",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2000,
         2001,
@@ -4565,6 +4610,9 @@
     {
       "site": "ANACAPA_MIDDLE_ISLE_W",
       "siteName": "Anacapa Middle Isle West",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2001,
         2002,
@@ -4888,6 +4936,9 @@
     {
       "site": "ANACAPA_WEST_ISLE_CEN",
       "siteName": "Anacapa West Isle Center",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2003,
         2004,
@@ -5206,6 +5257,9 @@
     {
       "site": "ANACAPA_WEST_ISLE_E",
       "siteName": "Anacapa West Isle East",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2003,
         2004,
@@ -5524,6 +5578,9 @@
     {
       "site": "ANACAPA_WEST_ISLE_W",
       "siteName": "Anacapa West Isle West",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2003,
         2004,

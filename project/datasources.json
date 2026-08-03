@@ -486,10 +486,11 @@
     "layerName": "ccfrp_derived_effort",
     "classKeys": [],
     "created": "2026-07-23T17:38:00.091Z",
-    "lastUpdated": "2026-07-23T17:38:00.091Z",
+    "lastUpdated": "2026-08-03T20:39:17.205Z",
     "src": "data/src/Monitoring/CCFRP/ccfrp_derived_effort.fgb",
     "propertiesToKeep": [
       "MPA_Status",
+      "Area",
       "Date",
       "Grid_Cell_ID",
       "Common_Name",
@@ -519,14 +520,15 @@
     "explodeMulti": true
   },
   {
-    "src": "data/src/Monitoring/KelpForest/MLPA_kelpforest_site_table.fgb",
-    "layerName": "MLPA_kelpforest_site_table",
-    "geo_type": "vector",
     "datasourceId": "kelpforest_sites",
+    "geo_type": "vector",
     "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "MLPA_kelpforest_site_table",
     "classKeys": [],
     "created": "2026-08-03T18:07:59.409Z",
     "lastUpdated": "2026-08-03T18:07:59.409Z",
+    "src": "data/src/Monitoring/KelpForest/MLPA_kelpforest_site_table.fgb",
     "propertiesToKeep": [
       "LTM_project_short_code",
       "campus",
@@ -544,7 +546,28 @@
       "BaselineRegion",
       "LongTermRegion"
     ],
-    "explodeMulti": true,
-    "precalc": true
+    "explodeMulti": true
+  },
+  {
+    "datasourceId": "ccfrp_sites",
+    "geo_type": "vector",
+    "formats": ["fgb"],
+    "precalc": true,
+    "layerName": "ccfrp_sites",
+    "classKeys": [],
+    "created": "2026-08-03T20:28:39.191Z",
+    "lastUpdated": "2026-08-03T20:28:39.191Z",
+    "src": "data/src/Monitoring/CCFRP/ccfrp_sites.fgb",
+    "propertiesToKeep": [
+      "LTM_project_short_code",
+      "Monitoring_Group",
+      "Area",
+      "MPA_names",
+      "CA_MPA_name_short",
+      "Grid_Cell_ID",
+      "Area_Code",
+      "MPA_Status"
+    ],
+    "explodeMulti": true
   }
 ]

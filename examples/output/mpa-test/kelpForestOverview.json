@@ -8,6 +8,9 @@
     {
       "site": "ANDREW_MOLERA_DC",
       "siteName": "Andrew Molera Dc",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2003,
         2004,
@@ -324,6 +327,9 @@
     {
       "site": "ANDREW_MOLERA_OLD_DC",
       "siteName": "Andrew Molera Old Dc",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2003
       ],
@@ -585,6 +591,9 @@
     {
       "site": "ANDREW_MOLERA_UC",
       "siteName": "Andrew Molera Uc",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2004,
         2005,
@@ -899,6 +908,9 @@
     {
       "site": "COOPER",
       "siteName": "Cooper",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2007,
         2008,
@@ -1207,6 +1219,9 @@
     {
       "site": "FALSE_SUR",
       "siteName": "False Sur",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         2007,
         2008,
@@ -1514,6 +1529,9 @@
     {
       "site": "PT_SUR_DC",
       "siteName": "Pt Sur Dc",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         1999
       ],
@@ -1743,6 +1761,9 @@
     {
       "site": "PT_SUR_UC",
       "siteName": "Pt Sur Uc",
+      "mpaStatuses": [
+        "MPA"
+      ],
       "years": [
         1999
       ],
@@ -1972,6 +1993,9 @@
     {
       "site": "SOUTH_WRECK_DC",
       "siteName": "South Wreck Dc",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,
@@ -2285,6 +2309,9 @@
     {
       "site": "SOUTH_WRECK_UC",
       "siteName": "South Wreck Uc",
+      "mpaStatuses": [
+        "REF"
+      ],
       "years": [
         2005,
         2006,

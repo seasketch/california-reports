@@ -32,6 +32,7 @@ export interface KelpForestOverviewProperties {
 export interface KelpForestSiteSummary {
   site: string;
   siteName: string;
+  mpaStatuses: string[];
   years: number[];
   campuses: string[];
   methods: string[];
@@ -118,6 +119,7 @@ function getSiteSummaries(
     string,
     {
       siteName: string;
+      mpaStatuses: Set<string>;
       years: Set<number>;
       campuses: Set<string>;
       methods: Set<string>;
@@ -133,6 +135,7 @@ function getSiteSummaries(
       siteName: formatSiteName(
         normalizeLabel(feature.properties.site_name_old) ?? site,
       ),
+      mpaStatuses: new Set<string>(),
       years: new Set<number>(),
       campuses: new Set<string>(),
       methods: new Set<string>(),
@@ -142,10 +145,12 @@ function getSiteSummaries(
     const year = getFeatureYear(feature);
     const campus = normalizeLabel(feature.properties.campus);
     const method = normalizeLabel(feature.properties.method);
+    const mpaStatus = normalizeMpaStatus(feature.properties.site_status);
 
     if (year !== undefined) group.years.add(year);
     if (campus) group.campuses.add(campus);
     if (method) group.methods.add(method);
+    if (mpaStatus) group.mpaStatuses.add(mpaStatus);
     group.records.push({ year, campus, method });
     siteGroups.set(site, group);
   });
@@ -167,6 +172,7 @@ function getSiteSummaries(
       return {
         site,
         siteName: group.siteName,
+        mpaStatuses: [...group.mpaStatuses].sort((a, b) => a.localeCompare(b)),
         years,
         campuses: [...group.campuses].sort((a, b) => a.localeCompare(b)),
         methods: [...group.methods].sort((a, b) => a.localeCompare(b)),
@@ -307,6 +313,14 @@ function normalizeLabel(value: unknown): string | undefined {
   if (value === undefined || value === null) return undefined;
   const label = String(value).trim();
   return label && label.toUpperCase() !== "NA" ? label : undefined;
+}
+
+function normalizeMpaStatus(value: unknown): string | undefined {
+  const status = normalizeLabel(value)?.toUpperCase();
+  if (!status) return undefined;
+  if (status.includes("MPA")) return "MPA";
+  if (status.includes("REF")) return "REF";
+  return undefined;
 }
 
 function formatSiteName(siteName: string): string {

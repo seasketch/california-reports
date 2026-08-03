@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Translator } from "../components/TranslatorAsync.js";
 import { KelpForest } from "../components/KelpForest.js";
 import { KelpForestOverview } from "../components/KelpForestOverview.js";
+import { CcfrpOverview } from "../components/CcfrpOverview.js";
 import { Ccfrp } from "../components/Ccfrp.js";
 import { Intertidal } from "../components/Intertidal.js";
 
@@ -33,6 +34,7 @@ const BaseReport = () => {
 
       <ReportPage hidden={tab !== overviewId}>
         <KelpForestOverview />
+        <CcfrpOverview />
       </ReportPage>
       <ReportPage hidden={tab !== kelpForestId}>
         <KelpForest />

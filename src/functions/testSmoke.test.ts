@@ -20,6 +20,7 @@ import { span } from "./span.js";
 import { kelpForest } from "./kelpForest.js";
 import { kelpForestOverview } from "./kelpForestOverview.js";
 import { ccfrp } from "./ccfrp.js";
+import { ccfrpOverview } from "./ccfrpOverview.js";
 import { intertidal } from "./intertidal.js";
 
 // Create standard smoke tests
@@ -63,6 +64,7 @@ const tests = [
   { name: "kelpForest", func: kelpForest, timeout: 180_000 },
   { name: "kelpForestOverview", func: kelpForestOverview, timeout: 180_000 },
   { name: "ccfrp", func: ccfrp, timeout: 180_000 },
+  { name: "ccfrpOverview", func: ccfrpOverview, timeout: 180_000 },
   {
     name: "intertidal",
     func: intertidal,

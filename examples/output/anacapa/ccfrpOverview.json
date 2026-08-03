@@ -1,0 +1,376 @@
+{
+  "siteCount": 17,
+  "yearRange": {
+    "min": 2017,
+    "max": 2023
+  },
+  "species": [
+    "Barred Sand Bass",
+    "Bat Ray",
+    "Big Skate",
+    "Bigmouth Sole",
+    "Black Rockfish",
+    "Black Seaperch",
+    "Black-and-Yellow Rockfish",
+    "Blacksmith",
+    "Blue Rockfish",
+    "Bocaccio",
+    "Brown Rockfish",
+    "Buffalo Sculpin",
+    "Bull Sculpin",
+    "Cabezon",
+    "Calico Rockfish",
+    "California Halibut",
+    "California Lizardfish",
+    "California Scorpionfish",
+    "California Sheephead",
+    "Canary Rockfish",
+    "Chilipepper Rockfish",
+    "China Rockfish",
+    "Chinook Salmon",
+    "Common Thresher Shark",
+    "Copper Rockfish",
+    "Deacon Rockfish",
+    "English Sole",
+    "Fantail Sole",
+    "Finescale Triggerfish",
+    "Flag Rockfish",
+    "Freckled Rockfish",
+    "Garibaldi",
+    "Giant Sea Bass",
+    "Gopher Rockfish",
+    "Grass Rockfish",
+    "Halfmoon",
+    "Honeycomb Rockfish",
+    "Jack Mackerel",
+    "Jack Smelt",
+    "Kelp Bass",
+    "Kelp Greenling",
+    "Kelp Rockfish",
+    "Leopard Shark",
+    "Lingcod",
+    "Longfin Sanddab",
+    "Mackerel (Family Scombridae)",
+    "Northern Anchovy",
+    "Northern Blue Rockfish",
+    "Ocean Sunfish",
+    "Ocean Whitefish",
+    "Olive or Yellowtail Rockfish",
+    "Olive Rockfish",
+    "Opaleye",
+    "Pacific  (Chub) Mackerel",
+    "Pacific Barracuda",
+    "Pacific Bonito",
+    "Pacific Halibut",
+    "Pacific Sanddab",
+    "Pacific Sardine",
+    "Painted Greenling",
+    "Pelagic Stingray",
+    "Petrale Sole",
+    "Pile Perch",
+    "Quillback Rockfish",
+    "Rainbow Seaperch",
+    "Rock Greenling",
+    "Rock Sole",
+    "Rock Wrasse",
+    "Rosy Rockfish",
+    "Rubberlip Seaperch",
+    "Salema",
+    "Sand Sole",
+    "Sanddab spp.",
+    "Sarcastic Fringehead",
+    "Sargo",
+    "Scalyhead Sculpin",
+    "Senorita",
+    "Sharpnose Surfperch",
+    "Silver Salmon",
+    "Silversides (Family Atherinopsidae)",
+    "Soupfin Shark",
+    "Speckled Sanddab",
+    "Spiny Dogfish",
+    "Squarespot Rockfish",
+    "Starry Rockfish",
+    "Starry Skate",
+    "Striped Seaperch",
+    "Tiger Rockfish",
+    "Top smelt",
+    "Treefish",
+    "Tubesnout",
+    "UnID Blue Rockfish",
+    "Unknown",
+    "Unknown rockfish",
+    "Vermilion Rockfish",
+    "White Croaker",
+    "White Seabass",
+    "White Seaperch",
+    "Widow Rockfish",
+    "Wolf Eel",
+    "Yelloweye Rockfish",
+    "Yellowfin Croaker",
+    "Yellowtail Jack",
+    "Yellowtail Rockfish"
+  ],
+  "sites": [
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI01",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI02",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI03",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI04",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI05",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI06",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI07",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI08",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI09",
+      "mpaStatuses": [
+        "MPA"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI10",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI11",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI12",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI13",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI14",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI15",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI16",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    },
+    {
+      "areaName": "Anacapa Island",
+      "gridCellId": "AI17",
+      "mpaStatuses": [
+        "REF"
+      ],
+      "years": [
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ]
+    }
+  ]
+}

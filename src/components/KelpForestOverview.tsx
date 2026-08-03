@@ -62,6 +62,7 @@ export const KelpForestOverview: React.FunctionComponent = () => {
                         siteName: t("Site Name"),
                         surveyYears: t("Survey Years"),
                         campus: t("Campus"),
+                        status: t("Status"),
                         methods: t("Methods"),
                         noMethods: t("No methods listed"),
                         species: t("Species Surveyed"),
@@ -72,11 +73,16 @@ export const KelpForestOverview: React.FunctionComponent = () => {
                   <Collapse title={t("Learn More")}>
                     <p>
                       <small>
-                        Partnership for Interdisciplinary Studies of Coastal
-                        Oceans (PISCO) Kelp Forest Program (UCSC/UCSB), Vantuna
-                        Research Group (Occidental College), Cooperative
-                        Research and Assessment of Nearshore Ecosystems (CRANE)
-                        Program, Humboldt State University
+                        This report provides a summary of kelp forest monitoring
+                        data across California. It includes information about
+                        survey sites, sampling years, scientific methods, and
+                        species surveyed within the selected area. The report
+                        draws on data contributed by Partnership for
+                        Interdisciplinary Studies of Coastal Oceans (PISCO) Kelp
+                        Forest Program (UCSC/UCSB), Vantuna Research Group
+                        (Occidental College), Cooperative Research and
+                        Assessment of Nearshore Ecosystems (CRANE) Program, and
+                        Humboldt State University.
                       </small>
                     </p>
                   </Collapse>
@@ -122,6 +128,7 @@ const SiteBreakdownTable: React.FunctionComponent<{
     siteName: string;
     surveyYears: string;
     campus: string;
+    status: string;
     methods: string;
     noMethods: string;
     species: string;
@@ -147,15 +154,17 @@ const SiteBreakdownTable: React.FunctionComponent<{
   return (
     <table style={tableStyle}>
       <colgroup>
-        <col style={{ width: "50%" }} />
-        <col style={{ width: "28%" }} />
-        <col style={{ width: "22%" }} />
+        <col style={{ width: "46%" }} />
+        <col style={{ width: "26%" }} />
+        <col style={{ width: "16%" }} />
+        <col style={{ width: "12%" }} />
       </colgroup>
       <thead>
         <tr>
           <th style={headerStyle}>{labels.siteName}</th>
           <th style={headerStyle}>{labels.surveyYears}</th>
           <th style={headerStyle}>{labels.campus}</th>
+          <th style={headerStyle}>{labels.status}</th>
         </tr>
       </thead>
       <tbody>
@@ -186,10 +195,11 @@ const SiteBreakdownTable: React.FunctionComponent<{
                 </td>
                 <td style={cellStyle}>{formatYears(site.years)}</td>
                 <td style={cellStyle}>{formatList(site.campuses)}</td>
+                <td style={cellStyle}>{formatMpaStatuses(site.mpaStatuses)}</td>
               </tr>
               {isExpanded && (
                 <tr style={rowBackgroundStyle}>
-                  <td colSpan={3} style={expandedCellStyle}>
+                  <td colSpan={4} style={expandedCellStyle}>
                     <div style={expandedDetailsGridStyle}>
                       <div style={detailLabelStyle}>{labels.methods}</div>
                       {site.methods.length === 0 ? (
@@ -250,8 +260,22 @@ const formatYears = (years: number[]) => {
     .join(", ");
 };
 
-const formatList = (values: string[]) =>
-  values.length === 0 ? "n/a" : values.join(", ");
+const formatList = (values: string[] | undefined) =>
+  values?.length ? values.join(", ") : "n/a";
+
+const formatMpaStatuses = (values: string[] | undefined) =>
+  formatList(
+    values
+      ?.map(normalizeMpaStatus)
+      .filter((status): status is string => Boolean(status)),
+  );
+
+const normalizeMpaStatus = (value: string): string | undefined => {
+  const status = value.toUpperCase();
+  if (status.includes("MPA")) return "MPA";
+  if (status.includes("REF")) return "REF";
+  return undefined;
+};
 
 const summaryGridStyle: React.CSSProperties = {
   display: "grid",
