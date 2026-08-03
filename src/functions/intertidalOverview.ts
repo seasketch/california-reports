@@ -1,19 +1,19 @@
-import {
-  Sketch,
-  SketchCollection,
-  Polygon,
-  MultiPolygon,
-  GeoprocessingHandler,
-  isVectorDatasource,
-  loadFgb,
-} from "@seasketch/geoprocessing";
-import project from "../../project/projectClient.js";
+import { GeoprocessingHandler } from "@seasketch/geoprocessing";
 import { toSketchArray } from "@seasketch/geoprocessing/client-core";
-import { bbox, booleanPointInPolygon } from "@turf/turf";
-import { BBox, Feature, Point } from "geojson";
-import { readFileSync } from "fs";
+import { bbox } from "@turf/turf";
+import {
+  addIfPresent,
+  getDatasourceFeatures,
+  getFeaturesWithinSketch,
+  getUniqueNormalizedValues,
+  getYearRange,
+  type MonitoringSketch,
+  normalizeLabel,
+  type PointFeature,
+  readCsvRows,
+} from "./monitoringOverviewHelpers.js";
 
-export interface IntertidalOverviewSiteProperties {
+type IntertidalOverviewSiteProperties = {
   marine_site_code?: string;
   marine_site_name?: string;
   marine_sort_order?: number | string;
@@ -28,14 +28,14 @@ export interface IntertidalOverviewSiteProperties {
   LTM_project_short_code?: string;
   georegion?: string;
   bioregion?: string;
-}
+};
 
-export interface IntertidalOverviewSurveyProperties {
+type IntertidalOverviewSurveyProperties = {
   marine_site_name?: string;
   marine_site_code?: string;
   cbs_site_code?: number | string;
   year?: number | string;
-}
+};
 
 export interface IntertidalSiteSummary {
   siteCode: string;
@@ -63,14 +63,10 @@ export interface IntertidalGeneraMethodSummary {
   genera: string[];
 }
 
-type IntertidalOverviewSiteFeature = Feature<
-  Point,
-  IntertidalOverviewSiteProperties
->;
-type IntertidalOverviewSurveyFeature = Feature<
-  Point,
-  IntertidalOverviewSurveyProperties
->;
+type IntertidalOverviewSiteFeature =
+  PointFeature<IntertidalOverviewSiteProperties>;
+type IntertidalOverviewSurveyFeature =
+  PointFeature<IntertidalOverviewSurveyProperties>;
 type IntertidalSpeciesTableRow = Record<string, string | undefined>;
 
 const SPECIES_TABLE_PATH = "data/monitoring/intertidal_species_table.csv";
@@ -81,59 +77,24 @@ let speciesTableRowsCache: IntertidalSpeciesTableRow[] | undefined;
  * @returns Rocky intertidal monitoring site summaries
  */
 export async function intertidalOverview(
-  sketch:
-    | Sketch<Polygon | MultiPolygon>
-    | SketchCollection<Polygon | MultiPolygon>,
+  sketch: MonitoringSketch,
 ): Promise<IntertidalOverviewResults> {
   const sketchArray = toSketchArray(sketch);
-  const sketchBbox = bbox(sketch) as BBox;
+  const sketchBbox = bbox(sketch);
   const [siteFeatures, surveyFeatures] = await Promise.all([
-    getSiteFeatures(sketchBbox),
-    getSurveyFeatures(sketchBbox),
+    getDatasourceFeatures<IntertidalOverviewSiteFeature>(
+      "intertidalBiodiversity_sites",
+      sketchBbox,
+    ),
+    getDatasourceFeatures<IntertidalOverviewSurveyFeature>(
+      "intertidal",
+      sketchBbox,
+    ),
   ]);
   const sitesInSketch = getFeaturesWithinSketch(siteFeatures, sketchArray);
   const surveysInSketch = getFeaturesWithinSketch(surveyFeatures, sketchArray);
 
   return summarizeSites(sitesInSketch, surveysInSketch);
-}
-
-async function getSiteFeatures(
-  sketchBbox: BBox,
-): Promise<IntertidalOverviewSiteFeature[]> {
-  const ds = project.getDatasourceById("intertidalBiodiversity_sites");
-  if (!isVectorDatasource(ds))
-    throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
-  const url = project.getDatasourceUrl(ds);
-
-  return (await loadFgb<Feature<Point>>(
-    url,
-    sketchBbox,
-  )) as IntertidalOverviewSiteFeature[];
-}
-
-async function getSurveyFeatures(
-  sketchBbox: BBox,
-): Promise<IntertidalOverviewSurveyFeature[]> {
-  const ds = project.getDatasourceById("intertidal");
-  if (!isVectorDatasource(ds))
-    throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
-  const url = project.getDatasourceUrl(ds);
-
-  return (await loadFgb<Feature<Point>>(
-    url,
-    sketchBbox,
-  )) as IntertidalOverviewSurveyFeature[];
-}
-
-function getFeaturesWithinSketch<T extends Feature<Point>>(
-  features: T[],
-  sketchArray: Sketch<Polygon | MultiPolygon>[],
-): T[] {
-  return features.filter((feature) =>
-    sketchArray.some((sketchFeature) =>
-      booleanPointInPolygon(feature, sketchFeature),
-    ),
-  );
 }
 
 function summarizeSites(
@@ -143,17 +104,11 @@ function summarizeSites(
   const surveySummaryBySite = getSurveySummaryBySite(surveyFeatures);
   const sites = getSiteSummaries(siteFeatures, surveySummaryBySite);
   const genera = sites.length === 0 ? [] : getGeneraSurveyed();
-  const years = sites.flatMap((site) => site.years).sort((a, b) => a - b);
+  const years = sites.flatMap((site) => site.years);
 
   return {
     siteCount: sites.length,
-    yearRange:
-      years.length === 0
-        ? null
-        : {
-            min: years[0],
-            max: years[years.length - 1],
-          },
+    yearRange: getYearRange(years),
     genera,
     sites,
   };
@@ -202,8 +157,12 @@ function getSiteSummaries(
   >();
 
   siteFeatures.forEach((feature) => {
-    const siteCode = normalizeLabel(feature.properties.marine_site_code);
-    const siteName = normalizeLabel(feature.properties.marine_site_name);
+    const siteCode = normalizeIntertidalLabel(
+      feature.properties.marine_site_code,
+    );
+    const siteName = normalizeIntertidalLabel(
+      feature.properties.marine_site_name,
+    );
     const siteId = siteCode ?? siteName;
     if (!siteId) return;
 
@@ -266,8 +225,8 @@ function getGeneraSurveyed(): IntertidalGeneraMethodSummary[] {
   const generaByMethod = new Map<string, Set<string>>();
 
   getSpeciesTableRows().forEach((row) => {
-    const method = normalizeLabel(row.primary_survey_type);
-    const genus = normalizeLabel(row.genus);
+    const method = normalizeIntertidalLabel(row.primary_survey_type);
+    const genus = normalizeIntertidalLabel(row.genus);
     if (
       !method ||
       !genus ||
@@ -291,57 +250,11 @@ function getGeneraSurveyed(): IntertidalGeneraMethodSummary[] {
 
 function getSpeciesTableRows(): IntertidalSpeciesTableRow[] {
   if (!speciesTableRowsCache) {
-    speciesTableRowsCache = parseCsv(
-      readFileSync(
-        `${process.env.PROJECT_PATH ?? process.cwd()}/${SPECIES_TABLE_PATH}`,
-        "utf8",
-      ),
-    );
+    speciesTableRowsCache =
+      readCsvRows<IntertidalSpeciesTableRow>(SPECIES_TABLE_PATH);
   }
 
   return speciesTableRowsCache;
-}
-
-function parseCsv(csv: string): IntertidalSpeciesTableRow[] {
-  const [headerLine, ...recordLines] = csv.trim().split(/\r?\n/);
-  const headers = parseCsvLine(headerLine);
-
-  return recordLines.map((line) => {
-    const values = parseCsvLine(line);
-    const row: IntertidalSpeciesTableRow = {};
-
-    headers.forEach((header, index) => {
-      row[header] = values[index];
-    });
-
-    return row;
-  });
-}
-
-function parseCsvLine(line: string): string[] {
-  const values: string[] = [];
-  let value = "";
-  let inQuotes = false;
-
-  for (let index = 0; index < line.length; index++) {
-    const char = line[index];
-    const nextChar = line[index + 1];
-
-    if (char === '"' && nextChar === '"') {
-      value += char;
-      index++;
-    } else if (char === '"') {
-      inQuotes = !inQuotes;
-    } else if (char === "," && !inQuotes) {
-      values.push(value);
-      value = "";
-    } else {
-      value += char;
-    }
-  }
-
-  values.push(value);
-  return values;
 }
 
 function getSiteKeys(feature: IntertidalOverviewSiteFeature): string[] {
@@ -359,21 +272,6 @@ function getSurveySiteKeys(feature: IntertidalOverviewSurveyFeature): string[] {
   ]);
 }
 
-function getUniqueNormalizedValues(values: unknown[]): string[] {
-  return [
-    ...new Set(
-      values
-        .map(normalizeLabel)
-        .filter((value): value is string => Boolean(value)),
-    ),
-  ];
-}
-
-function addIfPresent(values: Set<string>, value: unknown) {
-  const label = normalizeLabel(value);
-  if (label) values.add(label);
-}
-
 function getFeatureYear(
   feature: IntertidalOverviewSurveyFeature,
 ): number | undefined {
@@ -386,13 +284,8 @@ function getSortOrder(feature: IntertidalOverviewSiteFeature): number {
   return Number.isFinite(sortOrder) ? sortOrder : Infinity;
 }
 
-function normalizeLabel(value: unknown): string | undefined {
-  if (value === undefined || value === null) return undefined;
-  const label = String(value).trim();
-  return label && label.toUpperCase() !== "NA" && label.toUpperCase() !== "NONE"
-    ? label
-    : undefined;
-}
+const normalizeIntertidalLabel = (value: unknown) =>
+  normalizeLabel(value, ["NA", "NONE"]);
 
 function normalizeMpaStatus(value: unknown): string | undefined {
   const designation = String(value ?? "")

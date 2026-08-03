@@ -1,19 +1,19 @@
-import {
-  Sketch,
-  SketchCollection,
-  Polygon,
-  MultiPolygon,
-  GeoprocessingHandler,
-  isVectorDatasource,
-  loadFgb,
-} from "@seasketch/geoprocessing";
-import project from "../../project/projectClient.js";
+import { GeoprocessingHandler } from "@seasketch/geoprocessing";
 import { toSketchArray } from "@seasketch/geoprocessing/client-core";
-import { bbox, booleanPointInPolygon } from "@turf/turf";
-import { BBox, Feature, Point } from "geojson";
-import { readFileSync } from "fs";
+import { bbox } from "@turf/turf";
+import {
+  getDatasourceFeatures,
+  getFeaturesWithinSketch,
+  getUniqueSortedValues,
+  getYearRange,
+  type MonitoringSketch,
+  normalizeLabel,
+  normalizeMpaStatus,
+  type PointFeature,
+  readCsvRows,
+} from "./monitoringOverviewHelpers.js";
 
-export interface KelpForestOverviewProperties {
+type KelpForestOverviewProperties = {
   LTM_project_short_code?: string;
   campus?: string;
   method?: string;
@@ -27,7 +27,7 @@ export interface KelpForestOverviewProperties {
   Secondary_site_designation?: string;
   BaselineRegion?: string;
   LongTermRegion?: string;
-}
+};
 
 export interface KelpForestSiteSummary {
   site: string;
@@ -48,7 +48,7 @@ export interface KelpForestOverviewResults {
   sites: KelpForestSiteSummary[];
 }
 
-type KelpForestOverviewFeature = Feature<Point, KelpForestOverviewProperties>;
+type KelpForestOverviewFeature = PointFeature<KelpForestOverviewProperties>;
 type KelpForestTaxonRow = Record<string, string | undefined>;
 type SiteSurveyRecord = {
   year?: number;
@@ -65,26 +65,14 @@ let taxonRowsCache: KelpForestTaxonRow[] | undefined;
  * @returns Kelp forest monitoring site summaries
  */
 export async function kelpForestOverview(
-  sketch:
-    | Sketch<Polygon | MultiPolygon>
-    | SketchCollection<Polygon | MultiPolygon>,
+  sketch: MonitoringSketch,
 ): Promise<KelpForestOverviewResults> {
   const sketchArray = toSketchArray(sketch);
-  const sketchBbox = bbox(sketch) as BBox;
-  const ds = project.getDatasourceById("kelpforest_sites");
-  if (!isVectorDatasource(ds))
-    throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
-  const url = project.getDatasourceUrl(ds);
-  const features = (await loadFgb<Feature<Point>>(
-    url,
-    sketchBbox,
-  )) as KelpForestOverviewFeature[];
-
-  const pointsInSketch = features.filter((feature) =>
-    sketchArray.some((sketchFeature) =>
-      booleanPointInPolygon(feature, sketchFeature),
-    ),
+  const features = await getDatasourceFeatures<KelpForestOverviewFeature>(
+    "kelpforest_sites",
+    bbox(sketch),
   );
+  const pointsInSketch = getFeaturesWithinSketch(features, sketchArray);
 
   return summarizeSites(pointsInSketch);
 }
@@ -95,18 +83,11 @@ function summarizeSites(
   const siteSummaries = getSiteSummaries(features);
   const years = features
     .map(getFeatureYear)
-    .filter((year): year is number => year !== undefined)
-    .sort((a, b) => a - b);
+    .filter((year): year is number => year !== undefined);
 
   return {
     siteCount: siteSummaries.length,
-    yearRange:
-      years.length === 0
-        ? null
-        : {
-            min: years[0],
-            max: years[years.length - 1],
-          },
+    yearRange: getYearRange(years),
     sites: siteSummaries,
   };
 }
@@ -190,12 +171,6 @@ function getSiteSummaries(
     );
 }
 
-function getUniqueSortedValues(values: (string | undefined)[]): string[] {
-  return [
-    ...new Set(values.filter((value): value is string => Boolean(value))),
-  ].sort((a, b) => a.localeCompare(b));
-}
-
 function getSurveyedSpecies(
   taxonRows: KelpForestTaxonRow[],
   year: number | undefined,
@@ -249,57 +224,10 @@ function getMethodSampleType(method: string | undefined): string | undefined {
 
 function getTaxonRows(): KelpForestTaxonRow[] {
   if (!taxonRowsCache) {
-    taxonRowsCache = parseCsv(
-      readFileSync(
-        `${process.env.PROJECT_PATH ?? process.cwd()}/${TAXON_TABLE_PATH}`,
-        "utf8",
-      ),
-    );
+    taxonRowsCache = readCsvRows<KelpForestTaxonRow>(TAXON_TABLE_PATH);
   }
 
   return taxonRowsCache;
-}
-
-function parseCsv(csv: string): KelpForestTaxonRow[] {
-  const [headerLine, ...recordLines] = csv.trim().split(/\r?\n/);
-  const headers = parseCsvLine(headerLine);
-
-  return recordLines.map((line) => {
-    const values = parseCsvLine(line);
-    const row: KelpForestTaxonRow = {};
-
-    headers.forEach((header, index) => {
-      row[header] = values[index];
-    });
-
-    return row;
-  });
-}
-
-function parseCsvLine(line: string): string[] {
-  const values: string[] = [];
-  let value = "";
-  let inQuotes = false;
-
-  for (let index = 0; index < line.length; index++) {
-    const char = line[index];
-    const nextChar = line[index + 1];
-
-    if (char === '"' && nextChar === '"') {
-      value += char;
-      index++;
-    } else if (char === '"') {
-      inQuotes = !inQuotes;
-    } else if (char === "," && !inQuotes) {
-      values.push(value);
-      value = "";
-    } else {
-      value += char;
-    }
-  }
-
-  values.push(value);
-  return values;
 }
 
 function getFeatureYear(
@@ -307,20 +235,6 @@ function getFeatureYear(
 ): number | undefined {
   const year = Number(feature.properties.survey_year);
   return Number.isFinite(year) ? year : undefined;
-}
-
-function normalizeLabel(value: unknown): string | undefined {
-  if (value === undefined || value === null) return undefined;
-  const label = String(value).trim();
-  return label && label.toUpperCase() !== "NA" ? label : undefined;
-}
-
-function normalizeMpaStatus(value: unknown): string | undefined {
-  const status = normalizeLabel(value)?.toUpperCase();
-  if (!status) return undefined;
-  if (status.includes("MPA")) return "MPA";
-  if (status.includes("REF")) return "REF";
-  return undefined;
 }
 
 function formatSiteName(siteName: string): string {
