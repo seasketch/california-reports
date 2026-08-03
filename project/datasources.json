@@ -517,5 +517,34 @@
       "percent_cover"
     ],
     "explodeMulti": true
+  },
+  {
+    "src": "data/src/Monitoring/KelpForest/MLPA_kelpforest_site_table.fgb",
+    "layerName": "MLPA_kelpforest_site_table",
+    "geo_type": "vector",
+    "datasourceId": "kelpforest_sites",
+    "formats": ["fgb"],
+    "classKeys": [],
+    "created": "2026-08-03T18:07:59.409Z",
+    "lastUpdated": "2026-08-03T18:07:59.409Z",
+    "propertiesToKeep": [
+      "LTM_project_short_code",
+      "campus",
+      "method",
+      "survey_year",
+      "site",
+      "site_name_old",
+      "latitude",
+      "longitude",
+      "CA_MPA_Name_Short",
+      "site_designation",
+      "site_status",
+      "Secondary_MPA_Name",
+      "Secondary_site_designation",
+      "BaselineRegion",
+      "LongTermRegion"
+    ],
+    "explodeMulti": true,
+    "precalc": true
   }
 ]

@@ -18,6 +18,7 @@ import { shoretypes } from "./shoretypes.js";
 import { spacing } from "./spacing.js";
 import { span } from "./span.js";
 import { kelpForest } from "./kelpForest.js";
+import { kelpForestOverview } from "./kelpForestOverview.js";
 import { ccfrp } from "./ccfrp.js";
 import { intertidal } from "./intertidal.js";
 
@@ -60,6 +61,7 @@ const tests = [
   { name: "spacing", func: spacing, timeout: 1000_000 },
   { name: "span", func: span, timeout: 180_000 },
   { name: "kelpForest", func: kelpForest, timeout: 180_000 },
+  { name: "kelpForestOverview", func: kelpForestOverview, timeout: 180_000 },
   { name: "ccfrp", func: ccfrp, timeout: 180_000 },
   {
     name: "intertidal",

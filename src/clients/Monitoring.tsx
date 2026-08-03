@@ -3,18 +3,21 @@ import { ReportPage, SegmentControl } from "@seasketch/geoprocessing/client-ui";
 import { useTranslation } from "react-i18next";
 import { Translator } from "../components/TranslatorAsync.js";
 import { KelpForest } from "../components/KelpForest.js";
+import { KelpForestOverview } from "../components/KelpForestOverview.js";
 import { Ccfrp } from "../components/Ccfrp.js";
 import { Intertidal } from "../components/Intertidal.js";
 
 const BaseReport = () => {
   const { t } = useTranslation();
+  const overviewId = "overview";
   const kelpForestId = "kelpForest";
   const nearshoreFisheriesId = "nearshoreFisheries";
   const intertidalId = "intertidal";
-  const [tab, setTab] = useState<string>(kelpForestId);
+  const [tab, setTab] = useState<string>(overviewId);
   const segments = [
+    { id: overviewId, label: t("Overview") },
     { id: kelpForestId, label: t("Kelp Forest") },
-    { id: nearshoreFisheriesId, label: t("Nearshore Fisheries") },
+    { id: nearshoreFisheriesId, label: t("Fisheries") },
     { id: intertidalId, label: t("Rocky Intertidal") },
   ];
 
@@ -28,6 +31,9 @@ const BaseReport = () => {
         />
       </div>
 
+      <ReportPage hidden={tab !== overviewId}>
+        <KelpForestOverview />
+      </ReportPage>
       <ReportPage hidden={tab !== kelpForestId}>
         <KelpForest />
       </ReportPage>
