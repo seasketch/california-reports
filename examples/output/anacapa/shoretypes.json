@@ -1,0 +1,530 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 3.312462,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 20.156339,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 3.312462,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 20.156339,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 3.312462,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 20.156339,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  }
+]

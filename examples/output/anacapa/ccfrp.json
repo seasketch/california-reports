@@ -2,1910 +2,873 @@
   "species": [
     {
       "commonName": "Ocean Whitefish",
-      "mpa": {
-        "meanCpue": 14.472075768185185,
-        "meanBpue": 8.429996426851853,
-        "siteCount": 9,
-        "sitesWithCatch": 9
-      },
-      "ref": {
-        "meanCpue": 1.7828823301428574,
-        "meanBpue": 0.7775400794999999,
-        "siteCount": 7,
-        "sitesWithCatch": 7
-      }
+      "meanCpue": 8.920553639041668,
+      "meanBpue": 5.082046774885417,
+      "siteCount": 16,
+      "sitesWithCatch": 16
     },
     {
       "commonName": "Copper Rockfish",
-      "mpa": {
-        "meanCpue": 0.325260014,
-        "meanBpue": 0.2924229806111111,
-        "siteCount": 9,
-        "sitesWithCatch": 7
-      },
-      "ref": {
-        "meanCpue": 0.06475799764285714,
-        "meanBpue": 0.04142859842857143,
-        "siteCount": 7,
-        "sitesWithCatch": 3
-      }
+      "meanCpue": 0.21129038184374999,
+      "meanBpue": 0.18261293840625,
+      "siteCount": 16,
+      "sitesWithCatch": 10
     },
     {
       "commonName": "California Sheephead",
-      "mpa": {
-        "meanCpue": 0.3085898062407408,
-        "meanBpue": 0.5232631575185185,
-        "siteCount": 9,
-        "sitesWithCatch": 7
-      },
-      "ref": {
-        "meanCpue": 0.026455026428571428,
-        "meanBpue": 0.011659205,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "mpa": {
-        "meanCpue": 0.05939780474074073,
-        "meanBpue": 0.02561789725925926,
-        "siteCount": 9,
-        "sitesWithCatch": 2
-      },
-      "ref": {
-        "meanCpue": 0.2502006130714286,
-        "meanBpue": 0.05689221,
-        "siteCount": 7,
-        "sitesWithCatch": 2
-      }
+      "meanCpue": 0.1851558400729167,
+      "meanBpue": 0.29943642829166667,
+      "siteCount": 16,
+      "sitesWithCatch": 8
     },
     {
       "commonName": "California Scorpionfish",
-      "mpa": {
-        "meanCpue": 0.23564004833333335,
-        "meanBpue": 0.14653257640740738,
-        "siteCount": 9,
-        "sitesWithCatch": 7
-      },
-      "ref": {
-        "meanCpue": 0.07816221428571428,
-        "meanBpue": 0.038910307357142855,
-        "siteCount": 7,
-        "sitesWithCatch": 3
-      }
+      "meanCpue": 0.1667434959375,
+      "meanBpue": 0.09944783369791667,
+      "siteCount": 16,
+      "sitesWithCatch": 10
+    },
+    {
+      "commonName": "Blue Rockfish",
+      "meanCpue": 0.14287403338541665,
+      "meanBpue": 0.03930040908333333,
+      "siteCount": 16,
+      "sitesWithCatch": 4
     },
     {
       "commonName": "Rosy Rockfish",
-      "mpa": {
-        "meanCpue": 0.04894805474074074,
-        "meanBpue": 0.008771298222222222,
-        "siteCount": 9,
-        "sitesWithCatch": 1
-      },
-      "ref": {
-        "meanCpue": 0.23558000678571428,
-        "meanBpue": 0.026483683071428572,
-        "siteCount": 7,
-        "sitesWithCatch": 5
-      }
+      "meanCpue": 0.13059953376041666,
+      "meanBpue": 0.016520466593749998,
+      "siteCount": 16,
+      "sitesWithCatch": 6
     },
     {
       "commonName": "Kelp Bass",
-      "mpa": {
-        "meanCpue": 0.1518059346111111,
-        "meanBpue": 0.06022747349999999,
-        "siteCount": 9,
-        "sitesWithCatch": 4
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0.08539083821875,
+      "meanBpue": 0.033877953843749996,
+      "siteCount": 16,
+      "sitesWithCatch": 4
     },
     {
       "commonName": "Treefish",
-      "mpa": {
-        "meanCpue": 0.04149132522222222,
-        "meanBpue": 0.020327222981481482,
-        "siteCount": 9,
-        "sitesWithCatch": 2
-      },
-      "ref": {
-        "meanCpue": 0.11945003914285714,
-        "meanBpue": 0.05066703314285714,
-        "siteCount": 7,
-        "sitesWithCatch": 4
-      }
+      "meanCpue": 0.07559826256249999,
+      "meanBpue": 0.033600889927083336,
+      "siteCount": 16,
+      "sitesWithCatch": 6
     },
     {
       "commonName": "Lingcod",
-      "mpa": {
-        "meanCpue": 0.029680231999999997,
-        "meanBpue": 0.03729434533333333,
-        "siteCount": 9,
-        "sitesWithCatch": 1
-      },
-      "ref": {
-        "meanCpue": 0.04331186607142857,
-        "meanBpue": 0.09685045621428572,
-        "siteCount": 7,
-        "sitesWithCatch": 2
-      }
+      "meanCpue": 0.03564407190625,
+      "meanBpue": 0.06335014384375,
+      "siteCount": 16,
+      "sitesWithCatch": 3
     },
     {
       "commonName": "Vermilion Rockfish",
-      "mpa": {
-        "meanCpue": 0.04220713833333333,
-        "meanBpue": 0.029853005666666668,
-        "siteCount": 9,
-        "sitesWithCatch": 3
-      },
-      "ref": {
-        "meanCpue": 0.01635768814285714,
-        "meanBpue": 0.0022438310000000004,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.030898003875000003,
+      "meanBpue": 0.017773991750000002,
+      "siteCount": 16,
+      "sitesWithCatch": 4
     },
     {
       "commonName": "Starry Rockfish",
-      "mpa": {
-        "meanCpue": 0.04009264125925926,
-        "meanBpue": 0.03488820555555556,
-        "siteCount": 9,
-        "sitesWithCatch": 1
-      },
-      "ref": {
-        "meanCpue": 0.01635768814285714,
-        "meanBpue": 0.0010098307142857143,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.029708599270833334,
+      "meanBpue": 0.0200664165625,
+      "siteCount": 16,
+      "sitesWithCatch": 2
     },
     {
       "commonName": "Brown Rockfish",
-      "mpa": {
-        "meanCpue": 0.038238371666666666,
-        "meanBpue": 0.023153864611111113,
-        "siteCount": 9,
-        "sitesWithCatch": 3
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
-    },
-    {
-      "commonName": "Olive Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0.03271537628571428,
-        "meanBpue": 0.00922590942857143,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
-    },
-    {
-      "commonName": "Mackerel (Family Scombridae)",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0.02983477707142857,
-        "meanBpue": 0.001193736142857143,
-        "siteCount": 7,
-        "sitesWithCatch": 2
-      }
-    },
-    {
-      "commonName": "Bocaccio",
-      "mpa": {
-        "meanCpue": 0.01683501685185185,
-        "meanBpue": 0.02793712055555556,
-        "siteCount": 9,
-        "sitesWithCatch": 1
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0.0215090840625,
+      "meanBpue": 0.01302404884375,
+      "siteCount": 16,
+      "sitesWithCatch": 3
     },
     {
       "commonName": "Honeycomb Rockfish",
-      "mpa": {
-        "meanCpue": 0.012882555925925925,
-        "meanBpue": 0.0039441596111111105,
-        "siteCount": 9,
-        "sitesWithCatch": 2
-      },
-      "ref": {
-        "meanCpue": 0.01635768814285714,
-        "meanBpue": 0.003367888,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.014402926270833333,
+      "meanBpue": 0.0036920407812499998,
+      "siteCount": 16,
+      "sitesWithCatch": 3
+    },
+    {
+      "commonName": "Olive Rockfish",
+      "meanCpue": 0.014312977125,
+      "meanBpue": 0.004036335375,
+      "siteCount": 16,
+      "sitesWithCatch": 1
+    },
+    {
+      "commonName": "Mackerel (Family Scombridae)",
+      "meanCpue": 0.01305271496875,
+      "meanBpue": 0.0005222595625,
+      "siteCount": 16,
+      "sitesWithCatch": 2
+    },
+    {
+      "commonName": "Bocaccio",
+      "meanCpue": 0.009469696979166666,
+      "meanBpue": 0.015714630312500002,
+      "siteCount": 16,
+      "sitesWithCatch": 1
     },
     {
       "commonName": "Squarespot Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0.01635768814285714,
-        "meanBpue": 0.003737724285714286,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.0071564885625,
+      "meanBpue": 0.001635254375,
+      "siteCount": 16,
+      "sitesWithCatch": 1
     },
     {
       "commonName": "Blacksmith",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0.014880952357142858,
-        "meanBpue": 0.002964135,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.00651041665625,
+      "meanBpue": 0.0012968090625,
+      "siteCount": 16,
+      "sitesWithCatch": 1
     },
     {
       "commonName": "California Halibut",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0.013477088928571428,
-        "meanBpue": 0.07878662464285714,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.00589622640625,
+      "meanBpue": 0.03446914828125,
+      "siteCount": 16,
+      "sitesWithCatch": 1
     },
     {
       "commonName": "Olive or Yellowtail Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0.013477088928571428,
-        "meanBpue": 0.004484412714285714,
-        "siteCount": 7,
-        "sitesWithCatch": 1
-      }
+      "meanCpue": 0.00589622640625,
+      "meanBpue": 0.0019619305625,
+      "siteCount": 16,
+      "sitesWithCatch": 1
     },
     {
       "commonName": "Giant Sea Bass",
-      "mpa": {
-        "meanCpue": 0.006459948333333333,
-        "meanBpue": 0.0859913893888889,
-        "siteCount": 9,
-        "sitesWithCatch": 1
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0.0036337209375,
+      "meanBpue": 0.04837015653125,
+      "siteCount": 16,
+      "sitesWithCatch": 1
     },
     {
       "commonName": "Bigmouth Sole",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Black-and-Yellow Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Black Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Petrale Sole",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Opaleye",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pacific  (Chub) Mackerel",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pacific Barracuda",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pacific Bonito",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pacific Halibut",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pacific Sanddab",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pacific Sardine",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Painted Greenling",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pelagic Stingray",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Pile Perch",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Quillback Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Rainbow Seaperch",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Rock Greenling",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Rock Sole",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Rock Wrasse",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Rubberlip Seaperch",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Kelp Greenling",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Garibaldi",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Gopher Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Grass Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Halfmoon",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Jack Mackerel",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Jack Smelt",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Salema",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Kelp Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Longfin Sanddab",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Northern Anchovy",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Ocean Sunfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Yelloweye Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Tubesnout",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "UnID Blue Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Unknown",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Unknown rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "White Croaker",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "White Seabass",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Widow Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Wolf Eel",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Yellowfin Croaker",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Yellowtail Jack",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Yellowtail Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Flag Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Soupfin Shark",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Sand Sole",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Sanddab spp.",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Sarcastic Fringehead",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Sargo",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Scalyhead Sculpin",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Senorita",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Sharpnose Surfperch",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Silversides (Family Atherinopsidae)",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Freckled Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Speckled Sanddab",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Spiny Dogfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Starry Skate",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Striped Seaperch",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Tiger Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Top smelt",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Chilipepper Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Buffalo Sculpin",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Bull Sculpin",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Cabezon",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Calico Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "California Lizardfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Canary Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "China Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Chinook Salmon",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Common Thresher Shark",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Deacon Rockfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "English Sole",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Fantail Sole",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Finescale Triggerfish",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Barred Sand Bass",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Bat Ray",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     },
     {
       "commonName": "Big Skate",
-      "mpa": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 9,
-        "sitesWithCatch": 0
-      },
-      "ref": {
-        "meanCpue": 0,
-        "meanBpue": 0,
-        "siteCount": 7,
-        "sitesWithCatch": 0
-      }
+      "meanCpue": 0,
+      "meanBpue": 0,
+      "siteCount": 16,
+      "sitesWithCatch": 0
     }
   ],
   "cpueTimeSeries": [
     {
       "commonName": "Ocean Whitefish",
-      "status": "MPA",
       "year": 2017,
-      "meanCpue": 12.9197275835
+      "meanCpue": 9.2436433705
     },
     {
       "commonName": "Ocean Whitefish",
-      "status": "REF",
+      "year": 2018,
+      "meanCpue": 8.728152408588235
+    },
+    {
+      "commonName": "Ocean Whitefish",
+      "year": 2019,
+      "meanCpue": 7.010062844875
+    },
+    {
+      "commonName": "Ocean Whitefish",
+      "year": 2020,
+      "meanCpue": 8.3727708025
+    },
+    {
+      "commonName": "Ocean Whitefish",
+      "year": 2021,
+      "meanCpue": 6.186733339250001
+    },
+    {
+      "commonName": "Ocean Whitefish",
+      "year": 2022,
+      "meanCpue": 8.687613735822918
+    },
+    {
+      "commonName": "Ocean Whitefish",
+      "year": 2023,
+      "meanCpue": 8.920553639041668
+    },
+    {
+      "commonName": "Copper Rockfish",
       "year": 2017,
-      "meanCpue": 6.792920561833333
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "MPA",
-      "year": 2018,
-      "meanCpue": 11.563354874888889
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "REF",
-      "year": 2018,
-      "meanCpue": 5.538549634
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "MPA",
-      "year": 2019,
-      "meanCpue": 11.21484606325
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "REF",
-      "year": 2019,
-      "meanCpue": 2.8052796265
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "MPA",
-      "year": 2020,
-      "meanCpue": 13.60057504338889
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "REF",
-      "year": 2020,
-      "meanCpue": 2.4914910315
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "MPA",
-      "year": 2021,
-      "meanCpue": 11.260364534812501
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "REF",
-      "year": 2021,
-      "meanCpue": 1.1131021436874997
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "MPA",
-      "year": 2022,
-      "meanCpue": 14.546264238458335
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "REF",
-      "year": 2022,
-      "meanCpue": 2.8289632331875
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "MPA",
-      "year": 2023,
-      "meanCpue": 14.472075768185185
-    },
-    {
-      "commonName": "Ocean Whitefish",
-      "status": "REF",
-      "year": 2023,
-      "meanCpue": 1.7828823301428574
+      "meanCpue": 0.3097461704000001
     },
     {
       "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "year": 2018,
+      "meanCpue": 0.2087217555882353
+    },
+    {
+      "commonName": "Copper Rockfish",
+      "year": 2019,
+      "meanCpue": 0.17886837215625
+    },
+    {
+      "commonName": "Copper Rockfish",
+      "year": 2020,
+      "meanCpue": 0.33730527288235296
+    },
+    {
+      "commonName": "Copper Rockfish",
+      "year": 2021,
+      "meanCpue": 0.2437618835625
+    },
+    {
+      "commonName": "Copper Rockfish",
+      "year": 2022,
+      "meanCpue": 0.13015965709375
+    },
+    {
+      "commonName": "Copper Rockfish",
+      "year": 2023,
+      "meanCpue": 0.21129038184374999
+    },
+    {
+      "commonName": "California Sheephead",
       "year": 2017,
-      "meanCpue": 0.28435981225
+      "meanCpue": 0.3684880598
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
+      "commonName": "California Sheephead",
+      "year": 2018,
+      "meanCpue": 0.25820138044117646
+    },
+    {
+      "commonName": "California Sheephead",
+      "year": 2019,
+      "meanCpue": 0.2216354345625
+    },
+    {
+      "commonName": "California Sheephead",
+      "year": 2020,
+      "meanCpue": 0.23862174482352944
+    },
+    {
+      "commonName": "California Sheephead",
+      "year": 2021,
+      "meanCpue": 0.27434172184375
+    },
+    {
+      "commonName": "California Sheephead",
+      "year": 2022,
+      "meanCpue": 0.16661289941666665
+    },
+    {
+      "commonName": "California Sheephead",
+      "year": 2023,
+      "meanCpue": 0.1851558400729167
+    },
+    {
+      "commonName": "California Scorpionfish",
       "year": 2017,
-      "meanCpue": 0.3266704091666667
+      "meanCpue": 0.16280902260000002
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "commonName": "California Scorpionfish",
       "year": 2018,
-      "meanCpue": 0.18465280855555555
+      "meanCpue": 0.14272724032352943
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
-      "year": 2018,
-      "meanCpue": 0.235799321
-    },
-    {
-      "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "commonName": "California Scorpionfish",
       "year": 2019,
-      "meanCpue": 0.26301633525
+      "meanCpue": 0.15463093762500002
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
-      "year": 2019,
-      "meanCpue": 0.09472040906250001
-    },
-    {
-      "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "commonName": "California Scorpionfish",
       "year": 2020,
-      "meanCpue": 0.5143683376111111
+      "meanCpue": 0.1832630445882353
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
-      "year": 2020,
-      "meanCpue": 0.1381093250625
-    },
-    {
-      "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "commonName": "California Scorpionfish",
       "year": 2021,
-      "meanCpue": 0.330514144125
+      "meanCpue": 0.21660115853125
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
-      "year": 2021,
-      "meanCpue": 0.15700962300000001
-    },
-    {
-      "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "commonName": "California Scorpionfish",
       "year": 2022,
-      "meanCpue": 0.24066718112500002
+      "meanCpue": 0.14322794570833333
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
-      "year": 2022,
-      "meanCpue": 0.0196521330625
-    },
-    {
-      "commonName": "Copper Rockfish",
-      "status": "MPA",
+      "commonName": "California Scorpionfish",
       "year": 2023,
-      "meanCpue": 0.325260014
+      "meanCpue": 0.1667434959375
     },
     {
-      "commonName": "Copper Rockfish",
-      "status": "REF",
-      "year": 2023,
-      "meanCpue": 0.06475799764285714
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2017,
-      "meanCpue": 0.702204332
+      "meanCpue": 0.1006732521
     },
     {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2017,
-      "meanCpue": 0.14601054500000002
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2018,
-      "meanCpue": 0.4196939695
+      "meanCpue": 0.04716814135294117
     },
     {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2018,
-      "meanCpue": 0.07652221775000001
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2019,
-      "meanCpue": 0.41365445
+      "meanCpue": 0.0347347295625
     },
     {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2019,
-      "meanCpue": 0.029616419125
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2020,
-      "meanCpue": 0.3617545800555556
+      "meanCpue": 0.15348680158823527
     },
     {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2020,
-      "meanCpue": 0.1000973051875
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2021,
-      "meanCpue": 0.5201663334375
+      "meanCpue": 0.07164935071875
     },
     {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2021,
-      "meanCpue": 0.02851711025
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2022,
-      "meanCpue": 0.2982896762708333
+      "meanCpue": 0.10312402705208333
     },
     {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2022,
-      "meanCpue": 0.0349361225625
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "MPA",
+      "commonName": "Blue Rockfish",
       "year": 2023,
-      "meanCpue": 0.3085898062407408
-    },
-    {
-      "commonName": "California Sheephead",
-      "status": "REF",
-      "year": 2023,
-      "meanCpue": 0.026455026428571428
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2017,
-      "meanCpue": 0
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2017,
-      "meanCpue": 0.1677887535
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2018,
-      "meanCpue": 0.05490734388888889
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2018,
-      "meanCpue": 0.0384615385
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2019,
-      "meanCpue": 0
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2019,
-      "meanCpue": 0.069469459125
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2020,
-      "meanCpue": 0.16234789733333332
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2020,
-      "meanCpue": 0.14351806887500002
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2021,
-      "meanCpue": 0.0999937011875
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2021,
-      "meanCpue": 0.04330500025
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2022,
-      "meanCpue": 0.06438712510416666
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2022,
-      "meanCpue": 0.141860929
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "MPA",
-      "year": 2023,
-      "meanCpue": 0.05939780474074073
-    },
-    {
-      "commonName": "Blue Rockfish",
-      "status": "REF",
-      "year": 2023,
-      "meanCpue": 0.2502006130714286
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2017,
-      "meanCpue": 0.0966245
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2017,
-      "meanCpue": 0.20693203766666668
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2018,
-      "meanCpue": 0.10324792205555555
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2018,
-      "meanCpue": 0.187141473375
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2019,
-      "meanCpue": 0.09037217025000001
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2019,
-      "meanCpue": 0.218889705
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2020,
-      "meanCpue": 0.06742767038888889
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2020,
-      "meanCpue": 0.31357784056250004
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2021,
-      "meanCpue": 0.10572810124999998
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2021,
-      "meanCpue": 0.32747421581249997
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2022,
-      "meanCpue": 0.08367311510416667
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2022,
-      "meanCpue": 0.20278277631250002
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "MPA",
-      "year": 2023,
-      "meanCpue": 0.23564004833333335
-    },
-    {
-      "commonName": "California Scorpionfish",
-      "status": "REF",
-      "year": 2023,
-      "meanCpue": 0.07816221428571428
+      "meanCpue": 0.14287403338541665
     }
   ]
 }

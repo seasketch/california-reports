@@ -1,0 +1,530 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 27.494365,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 1.377231,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0.178441,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 37.225978,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 27.494365,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 1.377231,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0.178441,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 37.225978,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "beaches",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 27.494365,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "coastal_marsh",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "hardened_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 1.377231,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "rock_islands",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0.178441,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "rocky_shores",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 37.225978,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "shoretypes",
+    "classId": "tidal_flats",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 2729.320476,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 2729.320476,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 2729.320476,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  }
+]

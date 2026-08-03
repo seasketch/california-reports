@@ -1,0 +1,706 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 327305,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 5256,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 431284,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 93267,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 5377,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 954536,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 99453,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 960201,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 327305,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 5256,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 431284,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 93267,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 5377,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 954536,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 99453,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 960201,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "1",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 327305,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "101",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 5256,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "102",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 431284,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "2",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 93267,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "201",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 5377,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "202",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 954536,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "31",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 99453,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "habitat",
+    "classId": "32",
+    "sketchId": "143192",
+    "groupId": "band-0",
+    "value": 960201,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  }
+]

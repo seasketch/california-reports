@@ -1,0 +1,90 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  }
+]

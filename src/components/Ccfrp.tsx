@@ -9,7 +9,7 @@ import {
   VerticalSpacer,
 } from "@seasketch/geoprocessing/client-ui";
 import type {
-  CcfrpCpueTimeSeriesDatum,
+  cpueTimeSeriesPt,
   CcfrpResults,
   CcfrpSpecies,
 } from "../functions/ccfrp.js";
@@ -19,10 +19,7 @@ const Number = new Intl.NumberFormat("en", {
   maximumFractionDigits: 2,
 });
 const DEFAULT_SPECIES_COUNT = 5;
-const STATUS_COLORS = {
-  MPA: "#0077b6",
-  REF: "#d95f02",
-};
+const CPUE_COLOR = "#0077b6";
 
 // Reports CCFRP catch and biomass per unit effort within the sketch
 export const Ccfrp: React.FunctionComponent = () => {
@@ -32,9 +29,7 @@ export const Ccfrp: React.FunctionComponent = () => {
   const speciesLabel = t("Species");
   const meanCpueLabel = t("Mean CPUE");
   const meanBpueLabel = t("Mean BPUE");
-  const sitesPresentLabel = t("# of Sites Present");
-  const mpaLabel = t("MPA");
-  const refLabel = t("Reference");
+  const sitesPresentLabel = t("# Sites Present / Total Sites");
   const showAllLabel = t("Show all species");
   const showTopFiveLabel = t("Show top 5 species");
   const cpueTimeSeriesLabel = t("CPUE");
@@ -47,9 +42,9 @@ export const Ccfrp: React.FunctionComponent = () => {
             <ReportError>
               <Trans i18nKey="CCFRP 1">
                 <p>
-                  This report summarizes mean catch per unit effort (CPUE) and
-                  biomass per unit effort (BPUE) for species sampled in 2023
-                  within the selected area(s).
+                  This report summarizes mean catch per angler hour and biomass
+                  (kg) per angler hour for species sampled in 2023 within the
+                  selected area(s).
                 </p>
               </Trans>
 
@@ -72,30 +67,27 @@ export const Ccfrp: React.FunctionComponent = () => {
               ) : (
                 <SpeciesTable
                   species={ccfrpResults.species}
-                  speciesLabel={speciesLabel}
-                  meanCpueLabel={meanCpueLabel}
-                  meanBpueLabel={meanBpueLabel}
-                  sitesPresentLabel={sitesPresentLabel}
-                  mpaLabel={mpaLabel}
-                  refLabel={refLabel}
-                  showAllLabel={showAllLabel}
-                  showTopFiveLabel={showTopFiveLabel}
+                  labels={{
+                    species: speciesLabel,
+                    meanCpue: meanCpueLabel,
+                    meanBpue: meanBpueLabel,
+                    sitesPresent: sitesPresentLabel,
+                    showAll: showAllLabel,
+                    showTopFive: showTopFiveLabel,
+                  }}
                 />
               )}
-              {/* <Collapse title={"Time Series"}>
+              <Collapse title={"Time Series"}>
                 {ccfrpResults.cpueTimeSeries.length > 0 && (
                   <>
                     <VerticalSpacer />
                     <CpueTimeSeriesChart
                       data={ccfrpResults.cpueTimeSeries}
                       title={cpueTimeSeriesLabel}
-                      mpaLabel={mpaLabel}
-                      refLabel={refLabel}
-                      meanCpueLabel={meanCpueLabel}
                     />
                   </>
                 )}
-              </Collapse> */}
+              </Collapse>
             </ReportError>
           </div>
         );
@@ -106,80 +98,30 @@ export const Ccfrp: React.FunctionComponent = () => {
 
 const SpeciesTable: React.FunctionComponent<{
   species: CcfrpSpecies[];
-  speciesLabel: string;
-  meanCpueLabel: string;
-  meanBpueLabel: string;
-  sitesPresentLabel: string;
-  mpaLabel: string;
-  refLabel: string;
-  showAllLabel: string;
-  showTopFiveLabel: string;
-}> = ({
-  species,
-  speciesLabel,
-  meanCpueLabel,
-  meanBpueLabel,
-  sitesPresentLabel,
-  mpaLabel,
-  refLabel,
-  showAllLabel,
-  showTopFiveLabel,
-}) => {
+  labels: {
+    species: string;
+    meanCpue: string;
+    meanBpue: string;
+    sitesPresent: string;
+    showAll: string;
+    showTopFive: string;
+  };
+}> = ({ species, labels }) => {
   const [showAllSpecies, setShowAllSpecies] = useState(false);
   const hasMoreSpecies = species.length > DEFAULT_SPECIES_COUNT;
   const displayedSpecies = showAllSpecies
     ? species
     : species.slice(0, DEFAULT_SPECIES_COUNT);
-  const showMpaColumns = species.some(
-    (curSpecies) => curSpecies.mpa.siteCount > 0,
-  );
-  const showRefColumns = species.some(
-    (curSpecies) => curSpecies.ref.siteCount > 0,
-  );
-  const refGroupHeaderStyle = showMpaColumns
-    ? groupDividerHeaderStyle
-    : centeredHeaderStyle;
-  const refFirstColumnHeaderStyle = showMpaColumns
-    ? groupDividerNumericHeaderStyle
-    : numericHeaderStyle;
-  const refFirstColumnCellStyle = showMpaColumns
-    ? groupDividerNumericCellStyle
-    : numericCellStyle;
 
   return (
     <>
       <table style={tableStyle}>
         <thead>
           <tr>
-            <th rowSpan={2} style={headerStyle}>
-              {speciesLabel}
-            </th>
-            {showMpaColumns && (
-              <th colSpan={3} style={centeredHeaderStyle}>
-                {mpaLabel}
-              </th>
-            )}
-            {showRefColumns && (
-              <th colSpan={3} style={refGroupHeaderStyle}>
-                {refLabel}
-              </th>
-            )}
-          </tr>
-          <tr>
-            {showMpaColumns && (
-              <>
-                <th style={numericHeaderStyle}>{meanCpueLabel}</th>
-                <th style={numericHeaderStyle}>{meanBpueLabel}</th>
-                <th style={numericHeaderStyle}>{sitesPresentLabel}</th>
-              </>
-            )}
-            {showRefColumns && (
-              <>
-                <th style={refFirstColumnHeaderStyle}>{meanCpueLabel}</th>
-                <th style={numericHeaderStyle}>{meanBpueLabel}</th>
-                <th style={numericHeaderStyle}>{sitesPresentLabel}</th>
-              </>
-            )}
+            <th style={headerStyle}>{labels.species}</th>
+            <th style={numericHeaderStyle}>{labels.meanCpue}</th>
+            <th style={numericHeaderStyle}>{labels.meanBpue}</th>
+            <th style={numericHeaderStyle}>{labels.sitesPresent}</th>
           </tr>
         </thead>
         <tbody>
@@ -189,34 +131,16 @@ const SpeciesTable: React.FunctionComponent<{
               style={index % 2 === 0 ? rowStyle : alternateRowStyle}
             >
               <td style={cellStyle}>{curSpecies.commonName}</td>
-              {showMpaColumns && (
-                <>
-                  <td style={numericCellStyle}>
-                    {Number.format(curSpecies.mpa.meanCpue)}
-                  </td>
-                  <td style={numericCellStyle}>
-                    {Number.format(curSpecies.mpa.meanBpue)}
-                  </td>
-                  <td style={numericCellStyle}>
-                    {Number.format(curSpecies.mpa.sitesWithCatch)} /{" "}
-                    {Number.format(curSpecies.mpa.siteCount)}
-                  </td>
-                </>
-              )}
-              {showRefColumns && (
-                <>
-                  <td style={refFirstColumnCellStyle}>
-                    {Number.format(curSpecies.ref.meanCpue)}
-                  </td>
-                  <td style={numericCellStyle}>
-                    {Number.format(curSpecies.ref.meanBpue)}
-                  </td>
-                  <td style={numericCellStyle}>
-                    {Number.format(curSpecies.ref.sitesWithCatch)} /{" "}
-                    {Number.format(curSpecies.ref.siteCount)}
-                  </td>
-                </>
-              )}
+              <td style={numericCellStyle}>
+                {Number.format(curSpecies.meanCpue)}
+              </td>
+              <td style={numericCellStyle}>
+                {Number.format(curSpecies.meanBpue)}
+              </td>
+              <td style={numericCellStyle}>
+                {Number.format(curSpecies.sitesWithCatch)} /{" "}
+                {Number.format(curSpecies.siteCount)}
+              </td>
             </tr>
           ))}
         </tbody>
@@ -227,7 +151,7 @@ const SpeciesTable: React.FunctionComponent<{
           style={toggleButtonStyle}
           onClick={() => setShowAllSpecies((prev) => !prev)}
         >
-          {showAllSpecies ? showTopFiveLabel : showAllLabel}
+          {showAllSpecies ? labels.showTopFive : labels.showAll}
         </button>
       )}
     </>
@@ -235,12 +159,9 @@ const SpeciesTable: React.FunctionComponent<{
 };
 
 const CpueTimeSeriesChart: React.FunctionComponent<{
-  data: CcfrpCpueTimeSeriesDatum[];
+  data: cpueTimeSeriesPt[];
   title: string;
-  mpaLabel: string;
-  refLabel: string;
-  meanCpueLabel: string;
-}> = ({ data, title, mpaLabel, refLabel, meanCpueLabel }) => {
+}> = ({ data, title }) => {
   const width = 680;
   const height = 320;
   const margin = { top: 24, right: 24, bottom: 54, left: 64 };
@@ -257,9 +178,17 @@ const CpueTimeSeriesChart: React.FunctionComponent<{
   const years = [...new Set(selectedData.map((datum) => datum.year))].sort(
     (a, b) => a - b,
   );
+  const yearSpan = years.length > 0 ? years[years.length - 1] - years[0] : 0;
+  const xAxisYears =
+    yearSpan > 10
+      ? years.filter(
+          (year, index) =>
+            year % 5 === 0 || index === 0 || index === years.length - 1,
+        )
+      : years;
   const maxCpue = Math.max(...selectedData.map((datum) => datum.meanCpue), 0);
-  const yMax = maxCpue === 0 ? 1 : maxCpue * 1.1;
-  const yTicks = [0, yMax / 2, yMax];
+  const yTicks = getNiceTicks(maxCpue);
+  const yMax = yTicks[yTicks.length - 1];
 
   const getX = (year: number) => {
     if (years.length <= 1) return margin.left + plotWidth / 2;
@@ -271,15 +200,9 @@ const CpueTimeSeriesChart: React.FunctionComponent<{
   };
   const getY = (value: number) =>
     margin.top + plotHeight - (value / yMax) * plotHeight;
-  const series = (["MPA", "REF"] as const)
-    .map((status) => ({
-      status,
-      color: STATUS_COLORS[status],
-      values: selectedData.filter((datum) => datum.status === status),
-    }))
-    .filter((curSeries) => curSeries.values.length > 0);
-  const statusLabel = (status: "MPA" | "REF") =>
-    status === "MPA" ? mpaLabel : refLabel;
+  const points = selectedData
+    .map((datum) => `${getX(datum.year)},${getY(datum.meanCpue)}`)
+    .join(" ");
 
   return (
     <div>
@@ -336,7 +259,7 @@ const CpueTimeSeriesChart: React.FunctionComponent<{
             </text>
           </g>
         ))}
-        {years.map((year) => (
+        {xAxisYears.map((year) => (
           <text
             key={year}
             x={getX(year)}
@@ -365,59 +288,72 @@ const CpueTimeSeriesChart: React.FunctionComponent<{
           fontSize={16}
           fontWeight={600}
         >
-          {meanCpueLabel}
+          {"Mean CPUE"}
         </text>
-        {series.map((curSeries) => {
-          const points = curSeries.values
-            .map((datum) => `${getX(datum.year)},${getY(datum.meanCpue)}`)
-            .join(" ");
-
-          if (!points) return null;
-
-          return (
-            <g key={curSeries.status}>
-              <polyline
-                points={points}
-                fill="none"
-                stroke={curSeries.color}
-                strokeDasharray={curSeries.status === "REF" ? "5 4" : undefined}
+        {points && (
+          <g>
+            <polyline
+              points={points}
+              fill="none"
+              stroke={CPUE_COLOR}
+              strokeWidth={2}
+            />
+            {selectedData.map((datum) => (
+              <circle
+                key={datum.year}
+                cx={getX(datum.year)}
+                cy={getY(datum.meanCpue)}
+                r={3}
+                fill="#fff"
+                stroke={CPUE_COLOR}
                 strokeWidth={2}
               />
-              {curSeries.values.map((datum) => (
-                <circle
-                  key={`${curSeries.status}-${datum.year}`}
-                  cx={getX(datum.year)}
-                  cy={getY(datum.meanCpue)}
-                  r={3}
-                  fill="#fff"
-                  stroke={curSeries.color}
-                  strokeWidth={2}
-                />
-              ))}
-            </g>
-          );
-        })}
+            ))}
+          </g>
+        )}
       </svg>
-      <div>
-        {series.map((curSeries) => (
-          <span key={curSeries.status} style={{ marginRight: 12 }}>
-            <span
-              style={{
-                borderTop: `2px ${
-                  curSeries.status === "REF" ? "dashed" : "solid"
-                } ${curSeries.color}`,
-                display: "inline-block",
-                marginRight: 5,
-                verticalAlign: "middle",
-                width: 18,
-              }}
-            />
-            {statusLabel(curSeries.status)}
-          </span>
-        ))}
-      </div>
     </div>
   );
+};
+
+const getNiceTicks = (maxValue: number, tickCount = 4) => {
+  if (maxValue <= 0) return [0, 0.25, 0.5, 0.75, 1];
+
+  const niceMax = niceNumber(maxValue * 1.1, true);
+  const interval = niceNumber(niceMax / tickCount, false);
+  const roundedMax = Math.ceil(niceMax / interval) * interval;
+  const ticks: number[] = [];
+
+  for (let tick = 0; tick <= roundedMax + interval / 2; tick += interval) {
+    ticks.push(roundTick(tick));
+  }
+
+  return ticks;
+};
+
+const niceNumber = (value: number, round: boolean) => {
+  const exponent = Math.floor(Math.log10(value));
+  const fraction = value / 10 ** exponent;
+  let niceFraction: number;
+
+  if (round) {
+    if (fraction < 1.5) niceFraction = 1;
+    else if (fraction < 3) niceFraction = 2;
+    else if (fraction < 7) niceFraction = 5;
+    else niceFraction = 10;
+  } else {
+    if (fraction <= 1) niceFraction = 1;
+    else if (fraction <= 2) niceFraction = 2;
+    else if (fraction <= 5) niceFraction = 5;
+    else niceFraction = 10;
+  }
+
+  return niceFraction * 10 ** exponent;
+};
+
+const roundTick = (value: number) => {
+  const precision = Math.max(0, -Math.floor(Math.log10(value || 1)) + 2);
+  return globalThis.parseFloat(value.toFixed(precision));
 };
 
 const tableStyle: React.CSSProperties = {
@@ -447,21 +383,6 @@ const numericHeaderStyle: React.CSSProperties = {
   textAlign: "right",
 };
 
-const centeredHeaderStyle: React.CSSProperties = {
-  ...headerStyle,
-  textAlign: "center",
-};
-
-const groupDividerHeaderStyle: React.CSSProperties = {
-  ...centeredHeaderStyle,
-  borderLeft: "1px solid #d8d8d8",
-};
-
-const groupDividerNumericHeaderStyle: React.CSSProperties = {
-  ...numericHeaderStyle,
-  borderLeft: "1px solid #d8d8d8",
-};
-
 const cellStyle: React.CSSProperties = {
   borderBottom: "1px solid #eee",
   color: "#333",
@@ -473,11 +394,6 @@ const numericCellStyle: React.CSSProperties = {
   ...cellStyle,
   fontVariantNumeric: "tabular-nums",
   textAlign: "right",
-};
-
-const groupDividerNumericCellStyle: React.CSSProperties = {
-  ...numericCellStyle,
-  borderLeft: "1px solid #d8d8d8",
 };
 
 const rowStyle: React.CSSProperties = {

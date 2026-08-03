@@ -16,41 +16,35 @@ export interface CcfrpProperties {
   Common_Name: string;
   Date?: string;
   Grid_Cell_ID?: string;
-  ID_Cell_per_Trip?: string;
-  MPA_status?: CcfrpStatus;
-  MPA_Status?: CcfrpStatus;
   CPUE_catch_per_angler_hour: number;
   "BPUE_biomass(kg)_per_angler_hour": number;
 }
 
-export type CcfrpStatus = "MPA" | "REF";
-
-export interface CcfrpStatusMeans {
+export interface CcfrpSpecies {
+  commonName: string;
   meanCpue: number;
   meanBpue: number;
   siteCount: number;
   sitesWithCatch: number;
 }
 
-export interface CcfrpSpecies {
+export interface cpueTimeSeriesPt {
   commonName: string;
-  mpa: CcfrpStatusMeans;
-  ref: CcfrpStatusMeans;
-}
-
-export interface CcfrpCpueTimeSeriesDatum {
-  commonName: string;
-  status: CcfrpStatus;
   year: number;
   meanCpue: number;
 }
 
 export interface CcfrpResults {
   species: CcfrpSpecies[];
-  cpueTimeSeries: CcfrpCpueTimeSeriesDatum[];
+  cpueTimeSeries: cpueTimeSeriesPt[];
 }
 
 type CcfrpFeature = Feature<Point, CcfrpProperties>;
+type SiteEffortTotals = {
+  cpueTotal: number;
+  bpueTotal: number;
+  recordCount: number;
+};
 
 /**
  * ccfrp: Return mean CPUE and BPUE by species for CCFRP sites inside a sketch.
@@ -59,131 +53,109 @@ type CcfrpFeature = Feature<Point, CcfrpProperties>;
  */
 export async function ccfrp(
   sketch:
-    Sketch<Polygon | MultiPolygon> | SketchCollection<Polygon | MultiPolygon>,
+    | Sketch<Polygon | MultiPolygon>
+    | SketchCollection<Polygon | MultiPolygon>,
 ): Promise<CcfrpResults> {
   const sketchArray = toSketchArray(sketch);
   const sketchBbox = bbox(sketch) as BBox;
-  const features = await getDatasourceFeatures(sketchBbox);
-  const sketchFeatures = getFeaturesWithinSketch(features, sketchArray);
-  const species = getSpeciesMeans(
-    sketchFeatures.filter((feature) => getFeatureYear(feature) === 2023),
-  );
-
-  return {
-    species,
-    cpueTimeSeries: getCpueTimeSeries(
-      sketchFeatures,
-      species.slice(0, 5).map((curSpecies) => curSpecies.commonName),
-    ),
-  };
-}
-
-async function getDatasourceFeatures(
-  sketchBbox: BBox,
-): Promise<CcfrpFeature[]> {
   const ds = project.getDatasourceById("ccfrp-full");
   if (!isVectorDatasource(ds))
     throw new Error(`Expected vector datasource for ${ds.datasourceId}`);
   const url = project.getDatasourceUrl(ds);
+  const features = (await loadFgb<Feature<Point>>(
+    url,
+    sketchBbox,
+  )) as CcfrpFeature[];
 
-  return (await loadFgb<Feature<Point>>(url, sketchBbox)) as CcfrpFeature[];
-}
-
-function getFeaturesWithinSketch(
-  features: CcfrpFeature[],
-  sketchArray: Sketch<Polygon | MultiPolygon>[],
-): CcfrpFeature[] {
-  return features.filter((feature) =>
+  const pointsInSketch = features.filter((feature) =>
     sketchArray.some((sketchFeature) =>
       booleanPointInPolygon(feature, sketchFeature),
     ),
   );
+
+  const pointsInSketch2023 = pointsInSketch.filter(
+    (feature) => getFeatureYear(feature) === 2023,
+  );
+  const species = getMeans(pointsInSketch2023);
+
+  const cpueTimeSeries = getCpueTimeSeries(
+    pointsInSketch,
+    species.slice(0, 5).map((curSpecies) => curSpecies.commonName),
+  );
+
+  return {
+    species,
+    cpueTimeSeries,
+  };
 }
 
-function getSpeciesMeans(features: CcfrpFeature[]): CcfrpSpecies[] {
-  const statusSites = new Map<CcfrpStatus, Set<string>>([
-    ["MPA", new Set()],
-    ["REF", new Set()],
-  ]);
+function getMeans(features: CcfrpFeature[]): CcfrpSpecies[] {
+  // Keep a complete set of sampled sites so species means are averaged across
+  // the same site denominator, even when a species is absent from some sites.
+  const sites = new Set<string>();
 
-  features.forEach((feature) => {
-    const siteId = getSiteId(feature);
-    const status = getStatus(feature);
-
-    if (siteId && status) statusSites.get(status)?.add(siteId);
-  });
-
-  if (statusSites.get("MPA")!.size === 0 && statusSites.get("REF")!.size === 0)
-    return [];
-
-  const speciesGroups = new Map<
+  // Records are grouped by species and Grid_Cell_ID first. This prevents a site
+  // with more survey records from outweighing another site in the final mean.
+  const recordsBySpeciesAndSite: Record<
     string,
-    Map<
-      CcfrpStatus,
-      Map<string, { cpueTotal: number; bpueTotal: number; recordCount: number }>
-    >
-  >();
+    Record<string, SiteEffortTotals>
+  > = {};
 
   features.forEach((feature) => {
+    const siteId = feature.properties.Grid_Cell_ID;
+    if (siteId) sites.add(siteId);
     const commonName = feature.properties.Common_Name;
-    const siteId = getSiteId(feature);
-    const status = getStatus(feature);
     const cpue = Number(feature.properties.CPUE_catch_per_angler_hour);
     const bpue = Number(feature.properties["BPUE_biomass(kg)_per_angler_hour"]);
 
     if (
       !commonName ||
       !siteId ||
-      !status ||
       !Number.isFinite(cpue) ||
       !Number.isFinite(bpue)
     )
       return;
 
-    const statusGroups = speciesGroups.get(commonName) ?? new Map();
-    const siteGroups = statusGroups.get(status) ?? new Map();
-    const siteValues = siteGroups.get(siteId) ?? {
+    const siteRecords = recordsBySpeciesAndSite[commonName] ?? {};
+    const siteTotals = siteRecords[siteId] ?? {
       cpueTotal: 0,
       bpueTotal: 0,
       recordCount: 0,
     };
 
-    siteValues.cpueTotal += cpue;
-    siteValues.bpueTotal += bpue;
-    siteValues.recordCount += 1;
-    siteGroups.set(siteId, siteValues);
-    statusGroups.set(status, siteGroups);
-    speciesGroups.set(commonName, statusGroups);
+    siteTotals.cpueTotal += cpue;
+    siteTotals.bpueTotal += bpue;
+    siteTotals.recordCount += 1;
+    siteRecords[siteId] = siteTotals;
+    recordsBySpeciesAndSite[commonName] = siteRecords;
   });
 
-  return [...speciesGroups.entries()]
-    .map(([commonName, statusGroups]) => ({
-      commonName,
-      mpa: getStatusMeans(
-        statusGroups.get("MPA"),
-        statusSites.get("MPA")!.size,
-      ),
-      ref: getStatusMeans(
-        statusGroups.get("REF"),
-        statusSites.get("REF")!.size,
-      ),
-    }))
-    .sort(
-      (a, b) =>
-        Math.max(b.mpa.meanCpue, b.ref.meanCpue) -
-          Math.max(a.mpa.meanCpue, a.ref.meanCpue) ||
-        Math.max(b.mpa.meanBpue, b.ref.meanBpue) -
-          Math.max(a.mpa.meanBpue, a.ref.meanBpue),
-    );
-}
+  if (sites.size === 0) return [];
 
-function getSiteId(feature: CcfrpFeature): string | undefined {
-  return feature.properties.Grid_Cell_ID ?? feature.properties.ID_Cell_per_Trip;
-}
+  return Object.entries(recordsBySpeciesAndSite)
+    .map(([commonName, siteRecords]) => {
+      // First average all records from the same site, then average those site
+      // means across the full set of sampled sites in the sketch.
+      const siteMeans = Object.values(siteRecords).map((siteRecords) => ({
+        meanCpue: siteRecords.cpueTotal / siteRecords.recordCount,
+        meanBpue: siteRecords.bpueTotal / siteRecords.recordCount,
+      }));
 
-function getStatus(feature: CcfrpFeature): CcfrpStatus | undefined {
-  const status = feature.properties.MPA_status ?? feature.properties.MPA_Status;
-  return status === "MPA" || status === "REF" ? status : undefined;
+      return {
+        commonName,
+        meanCpue:
+          siteMeans.reduce((sum, siteMean) => sum + siteMean.meanCpue, 0) /
+          sites.size,
+        meanBpue:
+          siteMeans.reduce((sum, siteMean) => sum + siteMean.meanBpue, 0) /
+          sites.size,
+        siteCount: sites.size,
+        sitesWithCatch: siteMeans.filter(
+          (siteMean) => siteMean.meanCpue > 0 || siteMean.meanBpue > 0,
+        ).length,
+      };
+    })
+    .sort((a, b) => b.meanCpue - a.meanCpue || b.meanBpue - a.meanBpue);
 }
 
 function getFeatureYear(feature: CcfrpFeature): number | undefined {
@@ -197,125 +169,70 @@ function getFeatureYear(feature: CcfrpFeature): number | undefined {
 function getCpueTimeSeries(
   features: CcfrpFeature[],
   speciesNames: string[],
-): CcfrpCpueTimeSeriesDatum[] {
+): cpueTimeSeriesPt[] {
   const selectedSpecies = new Set(speciesNames);
   if (selectedSpecies.size === 0) return [];
 
-  const yearlyStatusSites = new Map<number, Map<CcfrpStatus, Set<string>>>();
-  const speciesGroups = new Map<
+  const sitesByYear: Record<number, Set<string>> = {};
+  const recordsBySpeciesYearAndSite: Record<
     string,
-    Map<
-      number,
-      Map<CcfrpStatus, Map<string, { cpueTotal: number; recordCount: number }>>
-    >
-  >();
+    Record<number, Record<string, { cpueTotal: number; recordCount: number }>>
+  > = {};
 
   features.forEach((feature) => {
     const commonName = feature.properties.Common_Name;
-    const siteId = getSiteId(feature);
-    const status = getStatus(feature);
+    const siteId = feature.properties.Grid_Cell_ID;
     const year = getFeatureYear(feature);
     const cpue = Number(feature.properties.CPUE_catch_per_angler_hour);
 
-    if (!commonName || !siteId || !status || !year || !Number.isFinite(cpue))
-      return;
+    if (!commonName || !siteId || !year || !Number.isFinite(cpue)) return;
 
-    const statusSites =
-      yearlyStatusSites.get(year) ??
-      new Map<CcfrpStatus, Set<string>>([
-        ["MPA", new Set()],
-        ["REF", new Set()],
-      ]);
-    statusSites.get(status)?.add(siteId);
-    yearlyStatusSites.set(year, statusSites);
+    const sites = sitesByYear[year] ?? new Set<string>();
+    sites.add(siteId);
+    sitesByYear[year] = sites;
 
     if (!selectedSpecies.has(commonName)) return;
 
-    const yearGroups = speciesGroups.get(commonName) ?? new Map();
-    const statusGroups = yearGroups.get(year) ?? new Map();
-    const siteGroups = statusGroups.get(status) ?? new Map();
-    const siteValues = siteGroups.get(siteId) ?? {
+    const recordsByYear = recordsBySpeciesYearAndSite[commonName] ?? {};
+    const recordsBySite = recordsByYear[year] ?? {};
+    const siteRecords = recordsBySite[siteId] ?? {
       cpueTotal: 0,
       recordCount: 0,
     };
 
-    siteValues.cpueTotal += cpue;
-    siteValues.recordCount += 1;
-    siteGroups.set(siteId, siteValues);
-    statusGroups.set(status, siteGroups);
-    yearGroups.set(year, statusGroups);
-    speciesGroups.set(commonName, yearGroups);
+    siteRecords.cpueTotal += cpue;
+    siteRecords.recordCount += 1;
+    recordsBySite[siteId] = siteRecords;
+    recordsByYear[year] = recordsBySite;
+    recordsBySpeciesYearAndSite[commonName] = recordsByYear;
   });
 
-  const years = [...yearlyStatusSites.keys()].sort((a, b) => a - b);
+  const years = Object.keys(sitesByYear)
+    .map(Number)
+    .sort((a, b) => a - b);
 
   return speciesNames.flatMap((commonName) =>
-    years.flatMap((year) =>
-      (["MPA", "REF"] as CcfrpStatus[]).flatMap((status) => {
-        const siteCount = yearlyStatusSites.get(year)?.get(status)?.size ?? 0;
-        if (siteCount === 0) return [];
+    years.map((year) => {
+      const siteCount = sitesByYear[year]?.size ?? 0;
+      const recordsBySite = recordsBySpeciesYearAndSite[commonName]?.[year];
+      const siteCpueMeans = recordsBySite
+        ? Object.values(recordsBySite).map(
+            (siteRecords) => siteRecords.cpueTotal / siteRecords.recordCount,
+          )
+        : [];
+      const meanCpueAcrossSites =
+        siteCount === 0
+          ? 0
+          : siteCpueMeans.reduce((sum, siteMean) => sum + siteMean, 0) /
+            siteCount;
 
-        const siteGroups = speciesGroups
-          .get(commonName)
-          ?.get(year)
-          ?.get(status);
-        const meanCpue = getMeanCpue(siteGroups, siteCount);
-
-        return {
-          commonName,
-          status,
-          year,
-          meanCpue,
-        };
-      }),
-    ),
+      return {
+        commonName,
+        year,
+        meanCpue: meanCpueAcrossSites,
+      };
+    }),
   );
-}
-
-function getMeanCpue(
-  siteGroups:
-    Map<string, { cpueTotal: number; recordCount: number }> | undefined,
-  siteCount: number,
-): number {
-  if (!siteGroups || siteCount === 0) return 0;
-
-  const siteMeans = [...siteGroups.values()].map(
-    (siteValues) => siteValues.cpueTotal / siteValues.recordCount,
-  );
-
-  return siteMeans.reduce((sum, siteMean) => sum + siteMean, 0) / siteCount;
-}
-
-function getStatusMeans(
-  siteGroups:
-    | Map<string, { cpueTotal: number; bpueTotal: number; recordCount: number }>
-    | undefined,
-  siteCount: number,
-): CcfrpStatusMeans {
-  if (!siteGroups || siteCount === 0) {
-    return {
-      meanCpue: 0,
-      meanBpue: 0,
-      siteCount,
-      sitesWithCatch: 0,
-    };
-  }
-
-  const siteMeans = [...siteGroups.values()].map((siteValues) => ({
-    cpue: siteValues.cpueTotal / siteValues.recordCount,
-    bpue: siteValues.bpueTotal / siteValues.recordCount,
-  }));
-
-  return {
-    meanCpue:
-      siteMeans.reduce((sum, siteMean) => sum + siteMean.cpue, 0) / siteCount,
-    meanBpue:
-      siteMeans.reduce((sum, siteMean) => sum + siteMean.bpue, 0) / siteCount,
-    siteCount,
-    sitesWithCatch: siteMeans.filter(
-      (siteMean) => siteMean.cpue > 0 || siteMean.bpue > 0,
-    ).length,
-  };
 }
 
 export default new GeoprocessingHandler(ccfrp, {

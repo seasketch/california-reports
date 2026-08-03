@@ -1,0 +1,90 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "estuaries",
+    "classId": "estuaries",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  }
+]

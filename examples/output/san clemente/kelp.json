@@ -1,0 +1,90 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 39.709304,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 39.709304,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "kelp",
+    "classId": "kelp",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 39.709304,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  }
+]

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SegmentControl } from "@seasketch/geoprocessing/client-ui";
+import { ReportPage, SegmentControl } from "@seasketch/geoprocessing/client-ui";
 import { useTranslation } from "react-i18next";
 import { Translator } from "../components/TranslatorAsync.js";
 import { KelpForest } from "../components/KelpForest.js";
@@ -28,9 +28,15 @@ const BaseReport = () => {
         />
       </div>
 
-      {tab === kelpForestId && <KelpForest />}
-      {tab === nearshoreFisheriesId && <Ccfrp />}
-      {tab === intertidalId && <Intertidal />}
+      <ReportPage hidden={tab !== kelpForestId}>
+        <KelpForest />
+      </ReportPage>
+      <ReportPage hidden={tab !== nearshoreFisheriesId}>
+        <Ccfrp />
+      </ReportPage>
+      <ReportPage hidden={tab !== intertidalId}>
+        <Intertidal />
+      </ReportPage>
     </>
   );
 };

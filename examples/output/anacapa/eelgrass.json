@@ -1,0 +1,90 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 11770.892493,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 11770.892493,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "eelgrass",
+    "classId": "eelgrass",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 11770.892493,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  }
+]

@@ -1,0 +1,178 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 4.818424,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 5.385637,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 4.818424,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 5.385637,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 4.818424,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "141811",
+    "groupId": null,
+    "value": 5.385637,
+    "extra": {
+      "sketchName": "anacapa"
+    }
+  }
+]

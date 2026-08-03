@@ -1,0 +1,178 @@
+[
+  {
+    "geographyId": "central_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "central_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "north_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "northcentral_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 0,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 39.376025,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_br",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 8.734282,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 39.376025,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "south_sr",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 8.734282,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "substrate_nearshore",
+    "classId": "Hard 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 39.376025,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  },
+  {
+    "geographyId": "world",
+    "metricId": "substrate_nearshore",
+    "classId": "Soft 0 - 30m",
+    "sketchId": "143192",
+    "groupId": null,
+    "value": 8.734282,
+    "extra": {
+      "sketchName": "san clemente"
+    }
+  }
+]
